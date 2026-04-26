@@ -1,0 +1,9 @@
+Bradford LL (Book, Book Italic) and Bradford Mono LL (Regular)
+Copyright Lineto GmbH. Designer: Laurenz Brunner.
+
+These web font files are included pursuant to a Lineto web licence
+held by Jonas Hertner. Filenames must not be changed. Self-hosted use
+is restricted to licensed domains; verify domain coverage before
+deploying to additional hosts.
+
+Lineto EULA: https://lineto.com/eula

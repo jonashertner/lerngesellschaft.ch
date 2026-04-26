@@ -1,0 +1,572 @@
+/* ==========================================================================
+   Lerngesellschaft — Bradford LL on the open page
+
+   Pure white. Bradford roman title. Two precise color accents:
+   fountain-pen blue (#1a3a5e) for structure, parchment yellow (#fcf2c6)
+   for selection. Three motion gestures (no title animation): cover-mark
+   draws in, sidenote hairline binds on hover, section numeral pulses on
+   scroll-arrival.
+
+   Layout is fluid via clamp() — no breakpoint snapping for type and
+   spacing. The 900px breakpoint is reserved only for the sidenote layout
+   switch (margin → inline-expandable).
+   ========================================================================== */
+
+@font-face {
+  font-family: "BradfordLLWeb-Book";
+  font-style: normal;
+  font-weight: normal;
+  font-display: swap;
+  src: url("/fonts/BradfordLLWeb-Book.woff2") format("woff2"),
+       url("/fonts/BradfordLLWeb-Book.woff") format("woff");
+}
+
+@font-face {
+  font-family: "BradfordLLWeb-Book";
+  font-style: italic;
+  font-weight: normal;
+  font-display: swap;
+  src: url("/fonts/BradfordLLWeb-BookItalic.woff2") format("woff2"),
+       url("/fonts/BradfordLLWeb-BookItalic.woff") format("woff");
+}
+
+/* --------------------------------------------------------------------------
+   Tokens — fluid across viewport widths
+   -------------------------------------------------------------------------- */
+
+:root {
+  --serif: "BradfordLLWeb-Book", "Iowan Old Style", Georgia, serif;
+
+  --paper: #ffffff;
+  --ink:   #050505;
+  --ink-soft:  #5d574e;
+  --ink-faint: #989188;
+  --rule:  rgba(5, 5, 5, 0.10);
+
+  --accent:        #1a3a5e;
+  --accent-bright: #2a52a3;
+  --highlight:     #fcf2c6;
+
+  --measure: 30em;
+  --gutter:  2.4em;
+  --sidenote-width: 13em;
+
+  /* Fluid sizing — minimum (small phones) → maximum (large desktops) */
+  --pad-top:    clamp(3em,    1em + 11vw, 9.5em);
+  --pad-side:   clamp(1em,    0.6em + 1.4vw, 1.5em);
+  --pad-bottom: clamp(3em,    1em + 4vw, 6em);
+
+  --title-size:    clamp(1.85rem, 1.4rem + 2.6vw, 3.4rem);
+  --subtitle-size: clamp(0.96rem, 0.9rem + 0.2vw, 1.04rem);
+
+  --leading: 1.55;
+  --motion:  cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* --------------------------------------------------------------------------
+   Reset + base
+   -------------------------------------------------------------------------- */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  font-size: 19px;
+  text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+@media (max-width: 480px) {
+  html { font-size: 17px; }
+}
+
+html, body { overflow-x: hidden; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 1rem;
+  line-height: var(--leading);
+  font-feature-settings: "kern", "liga", "onum", "calt";
+  font-variant-numeric: oldstyle-nums;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+  overflow-wrap: break-word;
+  /* Respect notch / safe-area on iOS */
+  padding-left: env(safe-area-inset-left, 0);
+  padding-right: env(safe-area-inset-right, 0);
+}
+
+a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-thickness: from-font;
+  text-decoration-color: var(--rule);
+  text-underline-offset: 0.18em;
+  transition: color 220ms var(--motion),
+              text-decoration-color 220ms var(--motion),
+              border-color 220ms var(--motion);
+}
+a:hover {
+  color: var(--accent);
+  text-decoration-color: var(--accent);
+}
+
+::selection      { background: var(--highlight); color: var(--ink); }
+::-moz-selection { background: var(--highlight); color: var(--ink); }
+
+.skip { position: absolute; left: -9999px; }
+.skip:focus {
+  position: fixed;
+  top: 1em;
+  left: 1em;
+  background: var(--ink);
+  color: var(--paper);
+  padding: 0.4em 0.8em;
+  z-index: 100;
+}
+
+/* --------------------------------------------------------------------------
+   Document
+   -------------------------------------------------------------------------- */
+
+.document {
+  position: relative;
+  max-width: calc(var(--measure) + var(--gutter) + var(--sidenote-width));
+  margin: 0 auto;
+  padding: var(--pad-top) var(--pad-side) var(--pad-bottom);
+  counter-reset: section;
+}
+
+.document > * { max-width: var(--measure); }
+
+/* --------------------------------------------------------------------------
+   Cover
+   -------------------------------------------------------------------------- */
+
+.cover {
+  margin: 0;
+  padding: 0;
+  max-width: var(--measure);
+}
+
+.cover-title {
+  font-style: normal;
+  font-size: var(--title-size);
+  line-height: 1.0;
+  margin: 0;
+  font-weight: normal;
+  letter-spacing: -0.022em;
+  hanging-punctuation: first last;
+}
+
+.cover-mark {
+  width: clamp(24px, 1.6em, 32px);
+  height: 3px;
+  background: var(--accent);
+  margin: 1.6em 0 1.4em;
+  transform-origin: left center;
+  transform: scaleX(0);
+  transition: transform 720ms var(--motion);
+}
+body.is-loaded .cover-mark {
+  transform: scaleX(1);
+  transition-delay: 200ms;
+}
+
+.cover-subtitle,
+.cover-byline,
+.cover-altlang { text-indent: 0; }
+
+.cover-subtitle {
+  font-style: normal;
+  font-size: var(--subtitle-size);
+  line-height: 1.5;
+  color: var(--ink-soft);
+  margin: 0;
+  max-width: 24em;
+  opacity: 0;
+  transition: opacity 720ms var(--motion);
+}
+body.is-loaded .cover-subtitle {
+  opacity: 1;
+  transition-delay: 360ms;
+}
+
+.cover-byline {
+  font-style: italic;
+  font-size: 0.86rem;
+  color: var(--ink-soft);
+  margin: 4em 0 0;
+  letter-spacing: 0.005em;
+  opacity: 0;
+  transition: opacity 720ms var(--motion);
+}
+body.is-loaded .cover-byline {
+  opacity: 1;
+  transition-delay: 540ms;
+}
+
+.cover-altlang {
+  font-style: italic;
+  font-size: 0.78rem;
+  margin: 0.5em 0 0;
+  opacity: 0;
+  transition: opacity 720ms var(--motion);
+}
+body.is-loaded .cover-altlang {
+  opacity: 1;
+  transition-delay: 680ms;
+}
+.cover-altlang a {
+  color: var(--ink-faint);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  padding-bottom: 0.05em;
+  transition: color 220ms var(--motion), border-color 220ms var(--motion);
+}
+.cover-altlang a:hover {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+/* --------------------------------------------------------------------------
+   Body — justified, hyphens, indented continuation paragraphs.
+   :where() flattens the specificity so cover-class margins win.
+   -------------------------------------------------------------------------- */
+
+.cover + p {
+  margin-top: clamp(3.5em, 6em, 6em);
+}
+
+:where(.document) p,
+:where(.document) ul,
+:where(.document) ol {
+  margin: 0;
+  text-align: justify;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphenate-limit-chars: 7 3 3;
+  word-spacing: -0.015em;
+  text-justify: inter-word;
+}
+
+:where(.document) p + p { text-indent: 1.2em; }
+
+.document hr { display: none; }
+
+/* --------------------------------------------------------------------------
+   Section headings — italic title + lower-roman numeral in fountain-pen blue
+   -------------------------------------------------------------------------- */
+
+.document h2 {
+  counter-increment: section;
+  font-weight: normal;
+  font-style: italic;
+  font-size: clamp(1.1rem, 1rem + 0.3vw, 1.22rem);
+  text-align: left;
+  margin: clamp(3.5em, 5.5em, 5.5em) 0 1.6em;
+  line-height: 1.32;
+  hyphens: none;
+}
+.document h2::before {
+  content: counter(section, lower-roman);
+  display: block;
+  font-style: italic;
+  font-size: 0.8rem;
+  color: var(--accent);
+  margin-bottom: 0.45em;
+  letter-spacing: 0.02em;
+  transition: color 200ms var(--motion);
+}
+.document h2.is-arrived::before {
+  animation: numeral-pulse 1200ms var(--motion);
+}
+
+@keyframes numeral-pulse {
+  0%   { color: var(--accent); }
+  18%  { color: var(--accent-bright); }
+  100% { color: var(--accent); }
+}
+
+.document h3 {
+  font-weight: normal;
+  font-style: italic;
+  font-size: 1rem;
+  margin: 2.4em 0 0.6em;
+  text-align: left;
+}
+
+.document blockquote {
+  font-style: italic;
+  margin: 2em 0 2em 1.6em;
+  padding: 0;
+  border: none;
+  color: var(--ink);
+  max-width: calc(var(--measure) - 3.2em);
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  text-align: left;
+}
+.document blockquote p { text-indent: 0; text-align: left; }
+.document blockquote p + p { text-indent: 1.2em; }
+
+.document ul, .document ol { padding-left: 1.4em; margin: 1em 0; }
+.document li { margin: 0.3em 0; text-align: left; }
+.document li > p { text-indent: 0; text-align: left; }
+
+.document em, .document i, .document cite { font-style: italic; }
+.document strong, .document b { font-style: italic; font-weight: normal; }
+
+.document q { quotes: "“" "”" "‘" "’"; }
+.document[lang="de"] q,
+.document :lang(de) q { quotes: "»" "«" "›" "‹"; }
+
+/* --------------------------------------------------------------------------
+   Sidenotes — JS line-aligned on wide screens; inline expandable on narrow
+   -------------------------------------------------------------------------- */
+
+.note { display: inline; }
+
+.note-marker {
+  display: inline;
+  cursor: pointer;
+  position: relative;
+  font-style: italic;
+  font-size: 0.78em;
+  vertical-align: super;
+  line-height: 0;
+  margin: 0 0.04em;
+  color: var(--ink-soft);
+  user-select: none;
+  transition: color 160ms var(--motion);
+  text-decoration: none;
+}
+.note-marker sup { font-size: inherit; vertical-align: baseline; }
+.note-marker:hover,
+.note-marker:focus-visible {
+  color: var(--accent);
+  outline: none;
+}
+
+.sidenote {
+  position: absolute;
+  right: 0;
+  width: var(--sidenote-width);
+  top: 0;
+  font-style: italic;
+  font-size: 0.78rem;
+  line-height: 1.42;
+  color: var(--ink-soft);
+  text-align: left;
+  text-indent: 0;
+  hyphens: none;
+
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity 480ms var(--motion),
+              transform 480ms var(--motion),
+              color 220ms var(--motion);
+}
+.sidenote.is-revealed { opacity: 1; transform: translateY(0); }
+.sidenote.is-active   { color: var(--ink); }
+
+.sidenote-num {
+  font-style: italic;
+  font-size: 0.85em;
+  color: var(--ink-faint);
+  margin-right: 0.4em;
+  transition: color 220ms var(--motion);
+}
+.sidenote.is-active .sidenote-num { color: var(--accent); }
+
+.sidenote-overlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: visible;
+  z-index: 1;
+}
+.sidenote-overlay .hairline {
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 0.85;
+  opacity: 0.65;
+  vector-effect: non-scaling-stroke;
+}
+
+.footnotes-print { display: none; }
+
+/* --------------------------------------------------------------------------
+   Colophon
+   -------------------------------------------------------------------------- */
+
+.colophon {
+  max-width: var(--measure);
+  margin: clamp(5em, 9em, 9em) 0 0;
+  padding: 2em 0 0;
+  font-style: italic;
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+  line-height: 1.7;
+  border-top: 1px solid var(--rule);
+}
+.colophon p { margin: 0; text-align: left; text-indent: 0; }
+.colophon-alt {
+  font-size: 0.78rem;
+  color: var(--ink-faint);
+  margin-top: 0.2em;
+}
+.colophon a {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: 0.05em;
+  transition: color 220ms var(--motion), border-color 220ms var(--motion);
+}
+.colophon a:hover {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+/* --------------------------------------------------------------------------
+   Below 900px: sidenotes collapse to inline expandable
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 900px) {
+  :root { --sidenote-width: auto; }
+
+  .document { max-width: var(--measure); }
+  .document p { text-align: left; word-spacing: 0; }
+
+  /* Larger tap target around the marker without affecting visual layout */
+  .note-marker {
+    padding: 0.5em 0.35em;
+    margin: -0.5em -0.35em;
+    display: inline-block;
+  }
+  .note-marker sup {
+    vertical-align: 0.45em;
+  }
+
+  .sidenote {
+    position: relative;
+    right: auto;
+    top: auto !important;
+    width: auto;
+    margin: 0;
+    padding: 0 0 0 1em;
+    border-left: 1px solid var(--rule);
+    display: block;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transform: none;
+    transition: max-height 320ms var(--motion),
+                opacity 280ms var(--motion),
+                margin 280ms var(--motion),
+                padding 280ms var(--motion);
+    pointer-events: none;
+    font-size: 0.86rem;
+  }
+  .sidenote.is-expanded {
+    max-height: 32em;
+    opacity: 1;
+    margin: 0.6em 0 0.8em;
+    padding: 0.2em 0 0.2em 1em;
+    pointer-events: auto;
+  }
+  .sidenote.is-revealed { transform: none; }
+
+  .note-marker[aria-expanded="true"] { color: var(--accent); }
+
+  .sidenote-overlay { display: none; }
+}
+
+/* --------------------------------------------------------------------------
+   Below 480px — phone-specific adjustments
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 480px) {
+  .cover-mark { height: 2px; }
+  .cover-byline { margin-top: 3em; }
+  .colophon { font-size: 0.86rem; }
+}
+
+/* --------------------------------------------------------------------------
+   Reduced motion
+   -------------------------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+  .cover-mark,
+  .cover-subtitle,
+  .cover-byline,
+  .cover-altlang,
+  .sidenote,
+  .note-marker,
+  .document h2::before,
+  a {
+    transition: none !important;
+    transform: none !important;
+    animation: none !important;
+  }
+  .cover-subtitle,
+  .cover-byline,
+  .cover-altlang,
+  .sidenote { opacity: 1 !important; }
+  .cover-mark { transform: scaleX(1) !important; }
+  .sidenote-overlay { display: none; }
+}
+
+/* --------------------------------------------------------------------------
+   Print
+   -------------------------------------------------------------------------- */
+
+@media print {
+  :root {
+    --paper: #fff;
+    --ink: #000;
+    --ink-soft: #333;
+    --ink-faint: #777;
+    --accent: #000;
+    --rule: rgba(0, 0, 0, 0.2);
+  }
+  @page { size: A5; margin: 22mm 18mm 24mm 22mm; }
+  body { background: #fff; padding: 0; }
+  .skip { display: none; }
+  .document { padding: 0; max-width: none; }
+  .document > * { max-width: none; }
+  .cover-mark { display: none; }
+  .cover { padding: 4em 0 0; page-break-after: always; }
+  .cover-title { font-size: 2.4rem; }
+  .cover-subtitle, .cover-byline { opacity: 1; }
+  .cover-altlang, .sidenote-overlay { display: none; }
+  .document h2 { page-break-after: avoid; }
+  .document p, .document blockquote { orphans: 3; widows: 3; }
+  .sidenote {
+    position: static;
+    float: footnote;
+    width: auto;
+    margin: 0;
+    padding: 0;
+    font-size: 9pt;
+    color: #000;
+    opacity: 1;
+    transform: none;
+  }
+  .footnotes-print {
+    display: block;
+    margin-top: 4em;
+    padding-top: 1em;
+    border-top: 1px solid var(--rule);
+    font-size: 9pt;
+  }
+  .colophon { page-break-before: always; border-top: none; }
+  .colophon-alt { display: none; }
+  a { text-decoration: none; color: inherit; }
+}

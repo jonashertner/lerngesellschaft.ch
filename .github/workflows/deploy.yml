@@ -1,0 +1,78 @@
+name: deploy
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - run: npm ci
+      - run: npm run build
+
+      - name: Prepare DE deploy (lerngesellschaft.ch)
+        run: |
+          rm -rf _site_de
+          cp -r _site _site_de
+          echo "lerngesellschaft.ch" > _site_de/CNAME
+          cat > _site_de/index.html <<'EOF'
+          <!doctype html>
+          <html lang="de">
+          <head>
+            <meta charset="utf-8">
+            <title>Lerngesellschaft</title>
+            <meta http-equiv="refresh" content="0; url=/de/">
+            <link rel="canonical" href="https://lerngesellschaft.ch/de/">
+            <script>location.replace('/de/')</script>
+          </head>
+          <body><p><a href="/de/">Lerngesellschaft</a></p></body>
+          </html>
+          EOF
+
+      - name: Prepare EN deploy (learningsociety.ch)
+        run: |
+          rm -rf _site_en
+          cp -r _site _site_en
+          echo "learningsociety.ch" > _site_en/CNAME
+          cat > _site_en/index.html <<'EOF'
+          <!doctype html>
+          <html lang="en">
+          <head>
+            <meta charset="utf-8">
+            <title>Learning Society</title>
+            <meta http-equiv="refresh" content="0; url=/en/">
+            <link rel="canonical" href="https://learningsociety.ch/en/">
+            <script>location.replace('/en/')</script>
+          </head>
+          <body><p><a href="/en/">Learning Society</a></p></body>
+          </html>
+          EOF
+
+      - name: Deploy DE → gh-pages of this repo
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: ./_site_de
+          cname: lerngesellschaft.ch
+
+      - name: Deploy EN → gh-pages of learningsociety.ch
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          personal_token: ${{ secrets.DEPLOY_TOKEN }}
+          external_repository: jonashertner/learningsociety.ch
+          publish_branch: gh-pages
+          publish_dir: ./_site_en
+          cname: learningsociety.ch

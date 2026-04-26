@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="{{ lang }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ title }}{% if subtitle %} — {{ subtitle }}{% endif %}</title>
+  <meta name="description" content="{{ description or site.tagline[lang] }}">
+  <meta name="author" content="{{ site.author }}">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="alternate" hreflang="de" href="https://lerngesellschaft.ch/de/">
+  <link rel="alternate" hreflang="en" href="https://learningsociety.ch/en/">
+  <link rel="alternate" hreflang="x-default" href="https://lerngesellschaft.ch/de/">
+  <link rel="preload" as="font" type="font/woff2" href="/fonts/BradfordLLWeb-Book.woff2" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="/fonts/BradfordLLWeb-BookItalic.woff2" crossorigin>
+  <link rel="stylesheet" href="/css/site.css">
+</head>
+<body lang="{{ lang }}">
+  <a class="skip" href="#document">{% if lang == 'de' %}Zum Inhalt{% else %}Skip to content{% endif %}</a>
+
+  <main class="document" id="document">
+    {{ content | safe }}
+
+    <footer class="colophon" role="contentinfo">
+      <p>
+        {% if lang == 'de' %}
+          Gesetzt in Bradford LL. Jonas Hertner, Zürich, {{ site.year }}. <a href="mailto:{{ site.mail }}">{{ site.mail }}</a>.
+        {% else %}
+          Set in Bradford LL. Jonas Hertner, Zurich, {{ site.year }}. <a href="mailto:{{ site.mail }}">{{ site.mail }}</a>.
+        {% endif %}
+      </p>
+      <p class="colophon-alt">
+        <a href="/{% if lang == 'de' %}en{% else %}de{% endif %}/">{% if lang == 'de' %}Read in English{% else %}Auf Deutsch lesen{% endif %}</a>
+      </p>
+    </footer>
+  </main>
+
+  <script type="module" src="/js/sidenotes.js"></script>
+</body>
+</html>
