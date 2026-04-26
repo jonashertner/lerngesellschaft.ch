@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <url>
+    <loc>https://lerngesellschaft.ch/de/</loc>
+    <lastmod>2026-04-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://lerngesellschaft.ch/de/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://learningsociety.ch/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lerngesellschaft.ch/de/"/>
+  </url>
+
+  <url>
+    <loc>https://learningsociety.ch/en/</loc>
+    <lastmod>2026-04-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://learningsociety.ch/en/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://lerngesellschaft.ch/de/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lerngesellschaft.ch/de/"/>
+  </url>
+
+  <url>
+    <loc>https://lerngesellschaft.ch/de/print/</loc>
+    <lastmod>2026-04-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://learningsociety.ch/en/print/</loc>
+    <lastmod>2026-04-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://lerngesellschaft.ch/de/paper.md</loc>
+    <lastmod>2026-04-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://learningsociety.ch/en/paper.md</loc>
+    <lastmod>2026-04-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+</urlset>

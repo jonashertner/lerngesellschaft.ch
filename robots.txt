@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+# Crawlers welcome — content is published as a public manifesto.
+Sitemap: https://lerngesellschaft.ch/sitemap.xml
+Sitemap: https://learningsociety.ch/sitemap.xml

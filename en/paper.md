@@ -1,0 +1,102 @@
+# Learning Society
+
+*A manifesto for relational learning.*
+
+Jonas Hertner — Zurich — 2026
+
+Contact: team@jonashertner.com
+Web (HTML): https://learningsociety.ch/en/
+Web (PDF): https://learningsociety.ch/en/print/
+German edition: https://lerngesellschaft.ch/de/
+
+---
+
+
+Education is, at its core, a relational matter. What a teacher can do in half an hour one-on-one with a child, no curriculum, no classroom, and no machine can do. This paper sets out what a practice built on that simple truth consists in — and why it is, just now, needed.
+
+## Premise
+
+A child sits with an open textbook in front of them and does not understand what they are reading. They do not know that they do not understand. They read the words, the words make sentences, the sentences make pages — and nothing in the process gives the child any signal that they are taking nothing in. Anyone who has ever spent an hour one-on-one with a student has seen it.
+
+This is not the failure of a single child. It is the functioning of a system not made for that child, and one that cannot be made for any single child. Public schooling — in Switzerland and in every other industrial nation — was engineered in the nineteenth century for a precise purpose: to give a population, in a comparatively short time, a comparatively uniform preparation for a comparatively uniform world of work.[^volksschule] It succeeded. Public schooling has, in Switzerland and elsewhere, made literate generations, enabled class mobility, and shaped citizens able to carry a country. There is no reason to be ungrateful to it.
+
+There is only one reason not to consider it sufficient for the task in front of a child today. The uniform world of work for which it was conceived no longer exists. What will be asked of tomorrow's adult — judgment in unstructured situations, the capacity to work alongside machines without disappearing into them, the willingness to keep learning across a lifetime when no one is producing a curriculum — for this, public schooling is not built. It cannot be. A class of thirty children, a curriculum, a timetable, an exam at the end: these are the tools it has, and they are not tools with which one meets the individual student at their own pace, with their own question, in their own language.
+
+Ken Robinson set out the indictment in its best-known form.[^robinson] He did not invent it — Ivan Illich, Paul Goodman, and others articulated it decades earlier — but he carried it to a generation that otherwise reads little on such matters. The argument, in essence: in its standard operation, schooling produces precisely those qualities of least use to the world it sends its graduates into. It teaches one to endure an activity that does not interest one, instead of finding an activity that genuinely engages one. It rewards correct memorisation over the honest question. It treats curiosity — the central resource of any act of learning — as something to be left at the classroom door.
+
+The question this paper concerns itself with is therefore not how the system ought to be reformed. That question has been asked, repeatedly, by smarter people than us, and will be asked as long as schools exist. The question is a different one — narrower and more honest. It is: what is possible for the single child, *now*, in an hour where nothing is asked of the system except that it briefly loosen its grip? What can a teacher do who has an hour, a child, a table, a piece of paper — and nothing else?
+
+The answer this paper concerns itself with begins by understanding what is uniquely available in that hour. It is not the material. It is not the method. It is the relation itself.
+
+## The Relational Core
+
+What a teacher can do in an hour with a child, no one and nothing else can. That is the fact this paper means to take seriously, and it is the fact that has been most thoroughly forgotten in the schooling system — not because it is unknown, but because the system in which the teacher works leaves her no room for it.
+
+What is here called *relation* is not a sentimental word. It is the description of a sober fact: that a person learns by being perceived by another person who is thinking alongside them. The teacher sees what the child is doing. She sees where they hesitate, sees what they do not understand, sees what interests them, and her next question follows that perception. The child accompanied in this way learns differently from a child listening to a class. It is not a difference of pace; it is a difference in the kind of learning.
+
+This insight has gained new weight in recent years. In an age in which machines can write texts, solve problems, and supply explanations, the question presses itself: what does education actually still have to do?[^ssir] The answer that emerges is not reassuring but demanding: what education has to deliver in a world with artificial intelligence is precisely what the machine *cannot* do. And what the machine cannot do is exactly relational intelligence — the perceiving, the responding, the thinking-with of one person and another.
+
+It is important to set out the argument correctly here. It is not that the human, compared with the machine, retains some residual competence. It is that the capacity to engage with other people in such a way that something comes of the engagement is the central competence of the world we are growing into. Whoever wishes to judge, to collaborate, to lead, to teach, or to care — and that is most of what counts — must have this capacity. It is not a consolation prize for the end of the industrial worker. It is the main thing.
+
+History gives us little reason to consider this a novelty. Education was always relational. The Greek *paideia* is a relation between teacher and student, not a curriculum.[^paideia] In the Jewish and the Christian traditions the relation between teacher and student is so conceived that the knowledge cannot be passed on apart from it. The apprenticeship, study under a master, the scientific school — all of these are structures that have bound learning to relation. Mass schooling is, in this long history, the exception, not the rule. We are not turning to something new but to something older, which we have lost sight of for a while.
+
+But if relation is the medium in which education takes place, one has to ask what is actually transmitted in it. The answer this paper proposes: curiosity. That is the subject of the next section.
+
+## The Developmental Ground
+
+Children come into the world curious. This is not sentimentality but a fact that has been empirically documented. Susan Engel has counted, over decades and in classrooms, how often children spontaneously ask questions, and she has set down what no one who has ever spoken with a four-year-old would dispute: the frequency of such questions in the first years of life is striking.[^engel]
+
+Engel's deeper finding lies in the longitudinal arc. Across the school years, the number of freely asked questions falls — and falls steeply. In first grade there are still many; by fourth grade fewer; by twelfth, if anyone is still keeping count, scarcely one per hour. The classroom is not a place where curiosity is given up because the teacher would forbid it; it is a place where children learn that a question adds something to what is already given that one would have done better to leave alone. Whoever asks holds up the class, risks saying something wrong, admits not knowing. There are reasonable grounds not to do it, and children learn them quickly.
+
+What is left, when curiosity has been so thoroughly trained out, is the student who knows the right answer without being interested in the question. It is a familiar picture: the high school is full of young people who turn in top performances and no longer know what they once wanted to know. They have not become stupid — they have become polite. Education as politeness.
+
+The first task of a tutor is therefore not to teach. It is to protect the curiosity of the child sitting opposite. That sounds inflated, but it is not. In practice it means: returning questions. Taking a child's question seriously, however naive. Refusing to be the answer-machine the child already knows from the classroom. Pressing the child to say in their own words what they have been thinking before they receive the correct information.
+
+An example makes the point visible. A child says they don't understand fractions. The easy answer would be to explain fractions again. The right answer is to ask: "Well — what do you think a fraction is?" The child is surprised that this question is being asked, and has to think for a moment. They say something — something half-right, something half-wrong. And here, in this half-right, half-wrong sentence, the lesson begins. Not at the curriculum, but at the point where the child actually stands.
+
+It would be a mistake to misunderstand curiosity as a method through which the child then takes in the curriculum better. Curiosity is not the way to learning; it is the learning itself. What a child takes from an hour endures to the extent that it answers the child's own question. What they take in apart from that they forget after the test anyway — an experience every adult knows from their own school years.
+
+But curiosity must lead somewhere. It leads, when it does not run off into the arbitrary, to understanding. And understanding has a test that is incorruptible. That is the subject of the next section.
+
+## The Test of Understanding
+
+Richard Feynman once said that one has not understood something until one can explain it to a beginner.[^feynman] That sounds simple but is not banal. It is the most honest test learning knows, and it is systematically undercut in the schooling system.
+
+It is undercut because school confuses memorisation with understanding — not out of malice but out of administrative economy. A class of thirty children can be examined on the one but not the other. The student who solves a quadratic equation by following a memorised procedure produces a correct answer. The student who does the same and can also explain in their own words *why* the procedure works has accomplished something else. The first has memorised. The second has understood. School rewards them equally, and the child knows by the first exam that the one is enough.
+
+Feynman's test is so effective because it forces memorisation to show itself. When one explains to a beginner what one has learned, all the places stand out where one has only the words and not the matter. One hesitates. One reaches for terms that themselves require explanation. One cannot answer a follow-up because one never had the answer oneself, only the right vocabulary. In this hesitation what one has not understood becomes visible — and here, in this hesitation, the next lesson begins.
+
+The tutor is the ideal site for this test, because she can play the beginner without being the beginner. She knows what a quadratic equation is. But she can ask as if she did not, and the student must explain as if speaking of it for the first time. In this play — and it is a play impossible in a class of thirty — the gaps come to light. They come to light without shame, because they appear at a point at which hesitation is in order. In explaining one *may* hesitate; in being examined one may not. That is exactly the difference the tutor can offer the school.
+
+And then there is a phenomenon that does not appear in textbooks but which every practitioner knows. When a child has truly understood something, they take on a particular face. The eyes settle, sometimes the child laughs briefly, sometimes says "ah." This response is not a politeness; it is the body's answer to a process that has just taken place in it. Something has rearranged itself. Joy, in this strictly sober sense, is not the bonus of learning. It is the diagnostic that learning has occurred. Whoever has seen this face once knows what a successful hour is, and everything that is measured by grades looks clumsy beside it.
+
+What remains is the question: what does this look like in practice? What does the tutor do in a single hour with a single child? That is the subject of the last section.
+
+## The Practice
+
+An hour. A child. A table. A piece of paper. That is all that is needed for something essential to happen.
+
+An hour begins with the child arriving — usually with a task they have not managed, or do not want to manage. That task is the occasion; it is not the content of the hour. Before tutor and child bend to it, a question comes first: how the week was, what happened at school, what stayed with them. The question is not cosmetic. It is the first condition of the child thinking along today rather than running through one more curriculum.
+
+Then to the matter. The matter is always concrete: a math problem, a German text, an English translation, a passage to memorise. But the tutor does not go through the matter by explaining while the child listens. The tutor asks, and the child explains. *What do you think is being asked here? If you were explaining it to a third-grader, where would you start? Where, would you say, do you stop understanding it?* These questions are the actual work. If the child can answer them, they have already half-understood the matter, and the other half often comes in the conversation. If they cannot, then the lesson begins — and begins not at the curriculum but where the child actually stands.
+
+What remains at the end of a good hour is not a list of solved problems. It is a child who sees a problem differently today than an hour ago — and at best, the moment in which the child notices this themselves. Parents want grades and progress; that is understandable, and one often comes with the other. But what they receive for the investment is exactly that moment, repeated over the weeks until it becomes a habit.
+
+To the parents reading this: what is offered is not homework help. Homework help is honourable work, but a different kind of work. What is offered is an hour in which your child uses the school's material to learn what the school structurally cannot teach: that learning is a process that belongs to oneself, and that a question, honestly asked, is the beginning of something rather than its end. Grades often follow; that is the unromantic truth. But they follow as a side-effect, not as a programme.
+
+What this practice does not do: promise grade jumps. Deliver weekly progress reports. Take over the parenting. The child comes for an hour a week — that is the dosage with which the child arranges the rest of the week so that what began in the hour echoes through it.
+
+Whoever finds this attractive should be in touch. We talk, the child comes by once, and we see whether it fits.
+
+[^volksschule]: On the history of Swiss public schooling, the standard reference is Lucien Criblez (ed.), *Bildungsraum Schweiz: Historische Entwicklung und aktuelle Herausforderungen* (NZZ Libro, 2008). For the broader industrial-historical context: Ivan Illich, *Deschooling Society* (Harper & Row, 1971), and David F. Labaree, *Someone Has to Fail: The Zero-Sum Game of Public Schooling* (Harvard University Press, 2010).
+
+[^robinson]: Ken Robinson, *Out of Our Minds: Learning to Be Creative* (Capstone, 3rd ed. 2017); see also the TED talk *Do schools kill creativity?* (2006), now one of the most-viewed TED talks ever recorded — a frequency that says more about the need than about the answer.
+
+[^ssir]: See the essay "The Era of Relational Intelligence" in the *Stanford Social Innovation Review* (2024). The thesis is developed there in an organisational context, but for pedagogy it has the same point: what the machine can do ceases to be a specifically human task; what it cannot becomes the proper one.
+
+[^paideia]: The classical study is Werner Jaeger, *Paideia: The Ideals of Greek Culture* (3 vols., Oxford University Press, 1939–1944). For the pedagogical follow-through see also Hans-Georg Gadamer, *Education Is Self-Education* (1999).
+
+[^engel]: Susan Engel, *The Hungry Mind: The Origins of Curiosity in Childhood* (Harvard University Press, 2015). The central longitudinal observation — the steep decline in spontaneously asked questions over the school years — is the empirical core of the book.
+
+[^feynman]: The phrasing is widely attributed to Feynman; it does not appear in this exact form in his writings, but is a fair compression of what he set out at several places. See *The Pleasure of Finding Things Out* (Perseus, 1999), particularly the essays on teaching, and the prefaces to *The Feynman Lectures on Physics* (Addison-Wesley, 1963).
+

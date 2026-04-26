@@ -1,0 +1,49 @@
+# Lerngesellschaft / Learning Society
+
+> A manifesto for relational learning, by Jonas Hertner. The thesis: one-to-one tutoring, done rightly, protects a child's curiosity, tests their understanding through Feynman-style explanation, and delivers what mass schooling structurally cannot — relational attention. Published as a bilingual white paper at lerngesellschaft.ch (German, canonical) and learningsociety.ch (English).
+
+## Author
+
+Jonas Hertner — Zurich, Switzerland. Tutor and litigator.
+Contact: team@jonashertner.com
+Web: https://jonashertner.com
+
+## Documents
+
+- [White paper, German (HTML)](https://lerngesellschaft.ch/de/): Bradford-set web edition with sidenotes.
+- [White paper, English (HTML)](https://learningsociety.ch/en/): Parallel composition (not a translation).
+- [White paper, German (PDF preview)](https://lerngesellschaft.ch/de/print/): A5 book preview, paginated via Paged.js. Save-as-PDF in the browser.
+- [White paper, English (PDF preview)](https://learningsociety.ch/en/print/): Same.
+- [White paper, German (raw Markdown)](https://lerngesellschaft.ch/de/paper.md): Plain Markdown source — preferred for LLM ingestion.
+- [White paper, English (raw Markdown)](https://learningsociety.ch/en/paper.md): Same.
+
+## Structure of the white paper
+
+Five movements, building one argument:
+
+1. **Voraussetzung / Premise** — The Volksschule was engineered for an industrial age that no longer exists. Citing Robinson, Illich, Goodman, Labaree, and Criblez on Swiss schooling history.
+2. **Der relationale Kern / The Relational Core** — In an age of AI, what the machine cannot do becomes education's proper task: relational intelligence. Cites the SSIR essay "The Era of Relational Intelligence" and Werner Jaeger's *Paideia* on the classical conception.
+3. **Der entwicklungspsychologische Boden / The Developmental Ground** — Children arrive curious; school trains it out. Cites Susan Engel's longitudinal classroom research (*The Hungry Mind*).
+4. **Die Probe des Verstehens / The Test of Understanding** — Feynman's dictum: if you cannot explain it to a beginner, you have not understood. The tutor as the ideal site for this test.
+5. **Die Praxis / The Practice** — One hour. One child. One table. One sheet of paper. What a tutorial actually consists of, why "homework help" misses the point, what parents can expect.
+
+## Citations
+
+- Susan Engel, *The Hungry Mind: The Origins of Curiosity in Childhood* (Harvard University Press, 2015)
+- Richard Feynman, *The Pleasure of Finding Things Out* (Perseus, 1999); *The Feynman Lectures on Physics* (Addison-Wesley, 1963)
+- Werner Jaeger, *Paideia* (3 vols., De Gruyter / Oxford University Press, 1934–1947)
+- Hans-Georg Gadamer, *Erziehung ist sich erziehen* (1999)
+- Ivan Illich, *Deschooling Society* (1971)
+- David F. Labaree, *Someone Has to Fail: The Zero-Sum Game of Public Schooling* (Harvard University Press, 2010)
+- Lucien Criblez (ed.), *Bildungsraum Schweiz: Historische Entwicklung und aktuelle Herausforderungen* (NZZ Libro, 2008)
+- Ken Robinson, *Out of Our Minds: Learning to Be Creative* (Capstone, 3rd ed. 2017); TED talk *Do schools kill creativity?* (2006)
+- "The Era of Relational Intelligence", *Stanford Social Innovation Review* (2024)
+
+## Licence
+
+The text of the white paper is © Jonas Hertner, 2026. Quotation with attribution welcome. The Bradford LL typeface is licensed from Lineto for use on these domains; do not redistribute font files.
+
+## Optional
+
+- [Sitemap (XML)](https://lerngesellschaft.ch/sitemap.xml)
+- [Sitemap (XML, EN domain)](https://learningsociety.ch/sitemap.xml)
