@@ -3,21 +3,50 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Lerngesellschaft — Ein Manifest für relationales Lernen</title>
-  <meta name="description" content="Ein Manifest für relationales Lernen — von Jonas Hertner.">
+  <title>Lerngesellschaft — PDF-Ausgabe</title>
+  <meta name="description" content="PDF-Ausgabe — Ein Manifest für relationales Lernen.">
   <meta name="author" content="Jonas Hertner">
-  <meta name="theme-color" content="#ffffff">
-  <link rel="alternate" hreflang="de" href="https://lerngesellschaft.ch/de/">
-  <link rel="alternate" hreflang="en" href="https://learningsociety.ch/en/">
-  <link rel="alternate" hreflang="x-default" href="https://lerngesellschaft.ch/de/">
+  <meta name="robots" content="noindex">
   <link rel="preload" as="font" type="font/woff2" href="/fonts/BradfordLLWeb-Book.woff2" crossorigin>
   <link rel="preload" as="font" type="font/woff2" href="/fonts/BradfordLLWeb-BookItalic.woff2" crossorigin>
-  <link rel="stylesheet" href="/css/site.css">
+  <link rel="stylesheet" href="/css/print.css">
 </head>
 <body lang="de">
-  <a class="skip" href="#document">Zum Inhalt</a>
 
-  <main class="document" id="document">
+  <a class="back-to-web" href="/de/">← Zurück zur Webseite</a>
+  <button class="print-trigger" type="button" onclick="window.print()">Als PDF speichern</button>
+
+  
+  <section class="page-cover">
+    <div class="cover-inner">
+      <p class="imprint">Lerngesellschaft</p>
+      <h1 class="book-title">Lerngesellschaft</h1>
+      <div class="book-rule" aria-hidden="true"></div>
+      <p class="book-subtitle">Ein Manifest für relationales Lernen</p>
+      <p class="book-byline">Jonas Hertner</p>
+      <p class="book-place">Zürich · 2026</p>
+    </div>
+  </section>
+
+  
+  <section class="page-blank"></section>
+
+  
+  <section class="page-toc">
+    <h2 class="toc-heading">Inhalt</h2>
+    <ol class="toc-list">
+      
+      <li><span class="toc-num">i</span><span class="toc-title">Voraussetzung</span></li>
+      <li><span class="toc-num">ii</span><span class="toc-title">Der relationale Kern</span></li>
+      <li><span class="toc-num">iii</span><span class="toc-title">Der entwicklungspsychologische Boden</span></li>
+      <li><span class="toc-num">iv</span><span class="toc-title">Die Probe des Verstehens</span></li>
+      <li><span class="toc-num">v</span><span class="toc-title">Die Praxis</span></li>
+      
+    </ol>
+  </section>
+
+  
+  <main class="document">
     <header class="cover">
   <h1 class="cover-title">Lerngesellschaft</h1>
   <div class="cover-mark" aria-hidden="true"></div>
@@ -80,21 +109,26 @@
 </ol>
 </section>
 
-
-    <footer class="colophon" role="contentinfo">
-      <p>
-        
-          Gesetzt in Bradford LL. Jonas Hertner, Zürich, 2026. <a href="mailto:kontakt@lerngesellschaft.ch">kontakt@lerngesellschaft.ch</a>.
-        
-      </p>
-      <p class="colophon-alt">
-        <a href="/de/print/">Als PDF lesen</a>
-        <span aria-hidden="true"> · </span>
-        <a href="/en/">Read in English</a>
-      </p>
-    </footer>
   </main>
 
-  <script type="module" src="/js/sidenotes.js"></script>
+  
+  <section class="page-colophon">
+    <div class="colophon-inner">
+      <p class="colophon-mark">⁂</p>
+      <p>
+        
+          Gesetzt in <i>Bradford LL</i> von Laurenz Brunner (Lineto, Zürich).
+        
+      </p>
+      <p>
+        
+          © Jonas Hertner, Zürich, 2026.<br>
+          <a href="mailto:kontakt@lerngesellschaft.ch">kontakt@lerngesellschaft.ch</a>
+        
+      </p>
+    </div>
+  </section>
+
+  <script src="https://unpkg.com/pagedjs@0.4.3/dist/paged.polyfill.js"></script>
 </body>
 </html>

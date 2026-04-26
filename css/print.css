@@ -1,0 +1,489 @@
+/* ==========================================================================
+   Lerngesellschaft — PDF artifact
+
+   A5 book pages set with Bradford LL. Cover · half-title · TOC · body with
+   running heads, drop caps, folios, footnotes at page foot · colophon.
+   Paged.js polyfills the @page rules on-screen so the user sees a paginated
+   preview and can save the result as PDF.
+   ========================================================================== */
+
+@font-face {
+  font-family: "BradfordLLWeb-Book";
+  font-style: normal;
+  font-weight: normal;
+  src: url("/fonts/BradfordLLWeb-Book.woff2") format("woff2"),
+       url("/fonts/BradfordLLWeb-Book.woff") format("woff");
+}
+
+@font-face {
+  font-family: "BradfordLLWeb-Book";
+  font-style: italic;
+  font-weight: normal;
+  src: url("/fonts/BradfordLLWeb-BookItalic.woff2") format("woff2"),
+       url("/fonts/BradfordLLWeb-BookItalic.woff") format("woff");
+}
+
+:root {
+  --serif: "BradfordLLWeb-Book", "Iowan Old Style", Georgia, serif;
+  --paper: #fffdf8;
+  --ink: #0a0807;
+  --ink-soft: #5d574e;
+  --ink-faint: #9a948c;
+  --rule:  rgba(10, 8, 7, 0.10);
+  --accent: #1a3a5e;
+  --accent-warm: #9a3a14;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: 11pt;
+  line-height: 1.46;
+  color: var(--ink);
+  background: var(--paper);
+  font-feature-settings: "kern", "liga", "onum", "calt";
+  font-variant-numeric: oldstyle-nums;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+a { color: inherit; text-decoration: none; }
+
+::selection { background: #fcf2c6; color: var(--ink); }
+
+/* --------------------------------------------------------------------------
+   Page rules — classical book proportions, asymmetric margins for binding
+   -------------------------------------------------------------------------- */
+
+@page {
+  size: A5;
+  margin: 22mm 18mm 24mm 22mm;
+
+  @bottom-outside {
+    content: counter(page);
+    font-family: var(--serif);
+    font-size: 9pt;
+    font-style: italic;
+    color: var(--ink-soft);
+    vertical-align: top;
+    padding-top: 6mm;
+  }
+}
+
+@page :left {
+  margin-left: 18mm;
+  margin-right: 22mm;
+  @top-left {
+    content: string(book-title);
+    font-family: var(--serif);
+    font-size: 9pt;
+    font-style: italic;
+    color: var(--ink-soft);
+    padding-top: 8mm;
+  }
+}
+
+@page :right {
+  margin-left: 22mm;
+  margin-right: 18mm;
+  @top-right {
+    content: string(section-title);
+    font-family: var(--serif);
+    font-size: 9pt;
+    font-style: italic;
+    color: var(--ink-soft);
+    padding-top: 8mm;
+  }
+}
+
+@page :first {
+  @top-left { content: ""; }
+  @top-right { content: ""; }
+  @bottom-outside { content: ""; }
+  margin: 30mm 22mm;
+}
+
+@page :blank {
+  @top-left { content: ""; }
+  @top-right { content: ""; }
+  @bottom-outside { content: ""; }
+}
+
+/* --------------------------------------------------------------------------
+   On-screen controls (hidden when actually printing)
+   -------------------------------------------------------------------------- */
+
+@media screen {
+  body {
+    padding: 4em 0 0;
+  }
+
+  .back-to-web,
+  .print-trigger {
+    position: fixed;
+    top: 1em;
+    z-index: 100;
+    font-family: var(--serif);
+    font-size: 13px;
+    border-radius: 2px;
+    transition: background 200ms ease;
+  }
+
+  .back-to-web {
+    left: 1em;
+    background: var(--ink);
+    color: var(--paper);
+    padding: 0.5em 0.95em;
+  }
+  .back-to-web:hover { background: var(--accent); }
+
+  .print-trigger {
+    right: 1em;
+    background: var(--accent);
+    color: var(--paper);
+    border: 0;
+    padding: 0.55em 1.15em;
+    cursor: pointer;
+    font-style: italic;
+  }
+  .print-trigger:hover { background: var(--accent-warm); }
+
+  /* Paged.js pagedjs_pages container — soft shadow on each page */
+  .pagedjs_page {
+    margin: 8mm auto;
+    box-shadow: 0 1px 2px rgba(10, 8, 7, 0.04),
+                0 8px 24px rgba(10, 8, 7, 0.08);
+  }
+}
+
+@media print {
+  .back-to-web, .print-trigger { display: none !important; }
+}
+
+/* --------------------------------------------------------------------------
+   Cover page — title, sienna rule, subtitle, byline
+   -------------------------------------------------------------------------- */
+
+.page-cover {
+  break-after: page;
+  text-align: center;
+  page: cover;
+}
+
+@page cover {
+  margin: 30mm 22mm;
+  @top-left { content: ""; }
+  @top-right { content: ""; }
+  @bottom-outside { content: ""; }
+}
+
+.cover-inner {
+  max-width: 100mm;
+  margin: 56mm auto 0;
+}
+
+.imprint {
+  font-size: 7.5pt;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin: 0 0 28mm;
+}
+
+.book-title {
+  font-style: italic;
+  font-size: 30pt;
+  line-height: 1.04;
+  margin: 0;
+  font-weight: normal;
+  letter-spacing: -0.018em;
+}
+
+.book-rule {
+  width: 24px;
+  height: 2px;
+  background: var(--accent-warm);
+  margin: 7mm auto;
+}
+
+.book-subtitle {
+  font-size: 10.5pt;
+  margin: 0;
+  color: var(--ink);
+  font-style: normal;
+  line-height: 1.4;
+}
+
+.book-byline {
+  font-style: italic;
+  font-size: 11pt;
+  margin: 24mm 0 1mm;
+  color: var(--ink);
+}
+
+.book-place {
+  font-style: italic;
+  font-size: 9pt;
+  margin: 0;
+  color: var(--ink-soft);
+}
+
+/* --------------------------------------------------------------------------
+   Blank page (verso of cover)
+   -------------------------------------------------------------------------- */
+
+.page-blank {
+  break-after: page;
+  height: 100%;
+  page: blank;
+}
+
+/* --------------------------------------------------------------------------
+   Table of contents
+   -------------------------------------------------------------------------- */
+
+.page-toc {
+  break-after: page;
+  padding-top: 16mm;
+  page: toc;
+}
+
+@page toc {
+  @top-left { content: ""; }
+  @top-right { content: ""; }
+}
+
+.toc-heading {
+  font-style: italic;
+  font-size: 14pt;
+  margin: 0 0 14mm;
+  font-weight: normal;
+  text-align: left;
+}
+
+.toc-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.toc-list li {
+  display: flex;
+  margin-bottom: 5mm;
+  font-size: 11pt;
+  align-items: baseline;
+}
+
+.toc-num {
+  font-style: italic;
+  color: var(--accent);
+  width: 10mm;
+  flex: 0 0 10mm;
+  letter-spacing: 0.02em;
+}
+
+.toc-title {
+  font-style: italic;
+}
+
+/* --------------------------------------------------------------------------
+   Document body
+   -------------------------------------------------------------------------- */
+
+body[lang="de"] .document { string-set: book-title "Lerngesellschaft"; }
+body[lang="en"] .document { string-set: book-title "Learning Society"; }
+
+.document {
+  counter-reset: section;
+}
+
+/* Hide the embedded web cover header and web colophon — print has its own */
+.document .cover { display: none; }
+.document .colophon { display: none; }
+
+.document p,
+.document ul,
+.document ol {
+  margin: 0;
+  text-align: justify;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphenate-limit-chars: 7 3 3;
+  word-spacing: -0.005em;
+}
+
+.document p + p { text-indent: 1.2em; }
+.document h2 + p { text-indent: 0; }
+
+.document hr { display: none; }
+
+/* The first body paragraph (lede) — slightly distinguished */
+.document .cover + p {
+  font-size: 11pt;
+  margin-top: 4mm;
+  text-indent: 0;
+}
+
+/* --------------------------------------------------------------------------
+   Section headings — start on recto, with Roman numeral above
+   -------------------------------------------------------------------------- */
+
+.document h2 {
+  counter-increment: section;
+  break-before: right;
+  string-set: section-title content();
+  font-style: italic;
+  font-weight: normal;
+  font-size: 16pt;
+  line-height: 1.2;
+  text-align: left;
+  margin: 0 0 8mm;
+  hyphens: none;
+}
+
+.document h2::before {
+  content: counter(section, lower-roman);
+  display: block;
+  font-style: italic;
+  font-size: 10pt;
+  color: var(--accent);
+  margin-bottom: 3mm;
+  letter-spacing: 0.05em;
+}
+
+/* Drop cap on first paragraph of each section.
+   `initial-letter` is the proper rule (Safari + paged.js polyfill).
+   The float-left + tuned font-size acts as the universal fallback so the
+   drop cap is visible in headless Chrome rendering and most browsers. */
+.document h2 + p::first-letter {
+  font-style: normal;
+  font-weight: normal;
+  color: var(--accent);
+  font-size: 3.4em;
+  line-height: 0.86;
+  float: left;
+  padding: 0.04em 0.09em 0 0;
+  initial-letter: 3;
+}
+
+.document h3 {
+  font-weight: normal;
+  font-style: italic;
+  font-size: 11pt;
+  margin: 4mm 0 2mm;
+  text-align: left;
+}
+
+/* --------------------------------------------------------------------------
+   Italics, blockquotes, quotation marks
+   -------------------------------------------------------------------------- */
+
+.document em, .document i, .document cite { font-style: italic; }
+.document strong, .document b { font-style: italic; font-weight: normal; }
+
+.document blockquote {
+  font-style: italic;
+  margin: 4mm 6mm;
+  padding: 0;
+  border: none;
+  text-align: left;
+  hyphens: auto;
+}
+.document blockquote p { text-indent: 0; }
+.document blockquote p + p { text-indent: 1.2em; }
+
+.document q { quotes: "“" "”" "‘" "’"; }
+.document[lang="de"] q,
+.document :lang(de) q { quotes: "»" "«" "›" "‹"; }
+
+/* --------------------------------------------------------------------------
+   Footnotes — float to page foot via Paged.js
+   -------------------------------------------------------------------------- */
+
+.note { display: inline; }
+
+.note-marker {
+  font-style: italic;
+  font-size: 0.75em;
+  vertical-align: super;
+  line-height: 0;
+  color: var(--accent);
+}
+.note-marker sup { font-size: inherit; vertical-align: baseline; }
+
+.sidenote {
+  float: footnote;
+  font-style: italic;
+  font-size: 8.5pt;
+  line-height: 1.4;
+  hyphens: none;
+  text-align: left;
+}
+
+.sidenote-num { display: none; }
+.sidenote-overlay { display: none; }
+.footnotes-print { display: none; }
+
+::footnote-call {
+  font-family: var(--serif);
+  font-size: 0.7em;
+  vertical-align: super;
+  color: var(--accent);
+  font-style: italic;
+}
+
+::footnote-marker {
+  font-family: var(--serif);
+  font-style: italic;
+  color: var(--accent);
+}
+
+@page {
+  @footnote {
+    border-top: 0.5pt solid var(--ink-soft);
+    padding-top: 2mm;
+    margin-top: 4mm;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Colophon page — final leaf
+   -------------------------------------------------------------------------- */
+
+.page-colophon {
+  break-before: right;
+  text-align: center;
+  font-style: italic;
+  font-size: 9pt;
+  color: var(--ink-soft);
+  page: colophon;
+}
+
+@page colophon {
+  @top-left { content: ""; }
+  @top-right { content: ""; }
+  @bottom-outside { content: ""; }
+}
+
+.colophon-inner {
+  max-width: 80mm;
+  margin: 70mm auto 0;
+  line-height: 1.6;
+}
+
+.colophon-mark {
+  font-size: 14pt;
+  color: var(--accent-warm);
+  margin: 0 0 14mm;
+  letter-spacing: 0.4em;
+  font-style: normal;
+}
+
+.page-colophon p { margin: 0 0 4mm; }
+.page-colophon a {
+  color: var(--ink-soft);
+  text-decoration: none;
+  border-bottom: 0.5pt solid var(--ink-faint);
+}

@@ -3,21 +3,50 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Learning Society — A manifesto for relational learning</title>
-  <meta name="description" content="A manifesto for relational learning — by Jonas Hertner.">
+  <title>Learning Society — PDF edition</title>
+  <meta name="description" content="PDF edition — A manifesto for relational learning.">
   <meta name="author" content="Jonas Hertner">
-  <meta name="theme-color" content="#ffffff">
-  <link rel="alternate" hreflang="de" href="https://lerngesellschaft.ch/de/">
-  <link rel="alternate" hreflang="en" href="https://learningsociety.ch/en/">
-  <link rel="alternate" hreflang="x-default" href="https://lerngesellschaft.ch/de/">
+  <meta name="robots" content="noindex">
   <link rel="preload" as="font" type="font/woff2" href="/fonts/BradfordLLWeb-Book.woff2" crossorigin>
   <link rel="preload" as="font" type="font/woff2" href="/fonts/BradfordLLWeb-BookItalic.woff2" crossorigin>
-  <link rel="stylesheet" href="/css/site.css">
+  <link rel="stylesheet" href="/css/print.css">
 </head>
 <body lang="en">
-  <a class="skip" href="#document">Skip to content</a>
 
-  <main class="document" id="document">
+  <a class="back-to-web" href="/en/">← Back to web</a>
+  <button class="print-trigger" type="button" onclick="window.print()">Save as PDF</button>
+
+  
+  <section class="page-cover">
+    <div class="cover-inner">
+      <p class="imprint">Learning Society</p>
+      <h1 class="book-title">Learning Society</h1>
+      <div class="book-rule" aria-hidden="true"></div>
+      <p class="book-subtitle">A manifesto for relational learning</p>
+      <p class="book-byline">Jonas Hertner</p>
+      <p class="book-place">Zurich · 2026</p>
+    </div>
+  </section>
+
+  
+  <section class="page-blank"></section>
+
+  
+  <section class="page-toc">
+    <h2 class="toc-heading">Contents</h2>
+    <ol class="toc-list">
+      
+      <li><span class="toc-num">i</span><span class="toc-title">Premise</span></li>
+      <li><span class="toc-num">ii</span><span class="toc-title">The Relational Core</span></li>
+      <li><span class="toc-num">iii</span><span class="toc-title">The Developmental Ground</span></li>
+      <li><span class="toc-num">iv</span><span class="toc-title">The Test of Understanding</span></li>
+      <li><span class="toc-num">v</span><span class="toc-title">The Practice</span></li>
+      
+    </ol>
+  </section>
+
+  
+  <main class="document">
     <header class="cover">
   <h1 class="cover-title">Learning Society</h1>
   <div class="cover-mark" aria-hidden="true"></div>
@@ -80,21 +109,26 @@
 </ol>
 </section>
 
-
-    <footer class="colophon" role="contentinfo">
-      <p>
-        
-          Set in Bradford LL. Jonas Hertner, Zurich, 2026. <a href="mailto:kontakt@lerngesellschaft.ch">kontakt@lerngesellschaft.ch</a>.
-        
-      </p>
-      <p class="colophon-alt">
-        <a href="/en/print/">Read as PDF</a>
-        <span aria-hidden="true"> · </span>
-        <a href="/de/">Auf Deutsch lesen</a>
-      </p>
-    </footer>
   </main>
 
-  <script type="module" src="/js/sidenotes.js"></script>
+  
+  <section class="page-colophon">
+    <div class="colophon-inner">
+      <p class="colophon-mark">⁂</p>
+      <p>
+        
+          Set in <i>Bradford LL</i> by Laurenz Brunner (Lineto, Zurich).
+        
+      </p>
+      <p>
+        
+          © Jonas Hertner, Zurich, 2026.<br>
+          <a href="mailto:kontakt@lerngesellschaft.ch">kontakt@lerngesellschaft.ch</a>
+        
+      </p>
+    </div>
+  </section>
+
+  <script src="https://unpkg.com/pagedjs@0.4.3/dist/paged.polyfill.js"></script>
 </body>
 </html>
