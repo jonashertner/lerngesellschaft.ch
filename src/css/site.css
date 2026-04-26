@@ -43,9 +43,10 @@
   --ink-faint: #989188;
   --rule:  rgba(5, 5, 5, 0.10);
 
-  --accent:        #1a3a5e;
-  --accent-bright: #2a52a3;
-  --highlight:     #fcf2c6;
+  --accent:        #1a3a5e;     /* fountain-pen blue: structure markers — section numerals, hairline bind, link hover */
+  --accent-bright: #2a52a3;     /* brighter blue (legacy, currently unused outside fallback) */
+  --accent-warm:   #9a3a14;     /* burnt sienna: cover mark, pulse highlight — the warm counterpoint */
+  --highlight:     #fcf2c6;     /* parchment yellow: selection only */
 
   --measure: 30em;
   --gutter:  2.4em;
@@ -166,7 +167,7 @@ a:hover {
 .cover-mark {
   width: clamp(24px, 1.6em, 32px);
   height: 3px;
-  background: var(--accent);
+  background: var(--accent-warm);
   margin: 1.6em 0 1.4em;
   transform-origin: left center;
   transform: scaleX(0);
@@ -252,6 +253,7 @@ body.is-loaded .cover-altlang {
   hyphenate-limit-chars: 7 3 3;
   word-spacing: -0.015em;
   text-justify: inter-word;
+  hanging-punctuation: first last;
 }
 
 :where(.document) p + p { text-indent: 1.2em; }
@@ -288,7 +290,7 @@ body.is-loaded .cover-altlang {
 
 @keyframes numeral-pulse {
   0%   { color: var(--accent); }
-  18%  { color: var(--accent-bright); }
+  20%  { color: var(--accent-warm); }
   100% { color: var(--accent); }
 }
 

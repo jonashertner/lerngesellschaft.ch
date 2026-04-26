@@ -29,6 +29,8 @@
         {% endif %}
       </p>
       <p class="colophon-alt">
+        <a href="/{{ lang }}/print/">{% if lang == 'de' %}Als PDF lesen{% else %}Read as PDF{% endif %}</a>
+        <span aria-hidden="true"> · </span>
         <a href="/{% if lang == 'de' %}en{% else %}de{% endif %}/">{% if lang == 'de' %}Read in English{% else %}Auf Deutsch lesen{% endif %}</a>
       </p>
     </footer>

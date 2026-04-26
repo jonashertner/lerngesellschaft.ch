@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="{{ lang }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ title }} — {% if lang == 'de' %}PDF-Ausgabe{% else %}PDF edition{% endif %}</title>
+  <meta name="description" content="{{ description or site.tagline[lang] }}">
+  <meta name="author" content="{{ site.author }}">
+  <meta name="robots" content="noindex">
+  <link rel="preload" as="font" type="font/woff2" href="/fonts/BradfordLLWeb-Book.woff2" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="/fonts/BradfordLLWeb-BookItalic.woff2" crossorigin>
+  <link rel="stylesheet" href="/css/print.css">
+</head>
+<body lang="{{ lang }}">
+
+  <a class="back-to-web" href="/{{ lang }}/">← {% if lang == 'de' %}Zurück zur Webseite{% else %}Back to web{% endif %}</a>
+  <button class="print-trigger" type="button" onclick="window.print()">{% if lang == 'de' %}Als PDF speichern{% else %}Save as PDF{% endif %}</button>
+
+  {# Cover (recto) #}
+  <section class="page-cover">
+    <div class="cover-inner">
+      <p class="imprint">{% if lang == 'de' %}Lerngesellschaft{% else %}Learning Society{% endif %}</p>
+      <h1 class="book-title">{% if lang == 'de' %}Lerngesellschaft{% else %}Learning Society{% endif %}</h1>
+      <div class="book-rule" aria-hidden="true"></div>
+      <p class="book-subtitle">{% if lang == 'de' %}Ein Manifest für relationales Lernen{% else %}A manifesto for relational learning{% endif %}</p>
+      <p class="book-byline">Jonas Hertner</p>
+      <p class="book-place">{% if lang == 'de' %}Zürich{% else %}Zurich{% endif %} · {{ site.year }}</p>
+    </div>
+  </section>
+
+  {# Half-title (verso of cover) — intentionally blank; matches book convention #}
+  <section class="page-blank"></section>
+
+  {# Table of contents #}
+  <section class="page-toc">
+    <h2 class="toc-heading">{% if lang == 'de' %}Inhalt{% else %}Contents{% endif %}</h2>
+    <ol class="toc-list">
+      {% if lang == 'de' %}
+      <li><span class="toc-num">i</span><span class="toc-title">Voraussetzung</span></li>
+      <li><span class="toc-num">ii</span><span class="toc-title">Der relationale Kern</span></li>
+      <li><span class="toc-num">iii</span><span class="toc-title">Der entwicklungspsychologische Boden</span></li>
+      <li><span class="toc-num">iv</span><span class="toc-title">Die Probe des Verstehens</span></li>
+      <li><span class="toc-num">v</span><span class="toc-title">Die Praxis</span></li>
+      {% else %}
+      <li><span class="toc-num">i</span><span class="toc-title">Premise</span></li>
+      <li><span class="toc-num">ii</span><span class="toc-title">The Relational Core</span></li>
+      <li><span class="toc-num">iii</span><span class="toc-title">The Developmental Ground</span></li>
+      <li><span class="toc-num">iv</span><span class="toc-title">The Test of Understanding</span></li>
+      <li><span class="toc-num">v</span><span class="toc-title">The Practice</span></li>
+      {% endif %}
+    </ol>
+  </section>
+
+  {# Body — same content as web, restyled by print.css #}
+  <main class="document">
+    {{ content | safe }}
+  </main>
+
+  {# Colophon (final leaf) #}
+  <section class="page-colophon">
+    <div class="colophon-inner">
+      <p class="colophon-mark">⁂</p>
+      <p>
+        {% if lang == 'de' %}
+          Gesetzt in <i>Bradford LL</i> von Laurenz Brunner (Lineto, Zürich).
+        {% else %}
+          Set in <i>Bradford LL</i> by Laurenz Brunner (Lineto, Zurich).
+        {% endif %}
+      </p>
+      <p>
+        {% if lang == 'de' %}
+          © Jonas Hertner, Zürich, {{ site.year }}.<br>
+          <a href="mailto:{{ site.mail }}">{{ site.mail }}</a>
+        {% else %}
+          © Jonas Hertner, Zurich, {{ site.year }}.<br>
+          <a href="mailto:{{ site.mail }}">{{ site.mail }}</a>
+        {% endif %}
+      </p>
+    </div>
+  </section>
+
+  <script src="https://unpkg.com/pagedjs@0.4.3/dist/paged.polyfill.js"></script>
+</body>
+</html>
