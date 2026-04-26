@@ -1,5 +1,5 @@
 export default {
-  mail: "kontakt@lerngesellschaft.ch",
+  mail: "team@jonashertner.com",
   author: "Jonas Hertner",
   year: "2026",
   brand: {
