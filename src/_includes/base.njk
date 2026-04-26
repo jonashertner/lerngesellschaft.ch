@@ -4,12 +4,62 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{{ title }}{% if subtitle %} — {{ subtitle }}{% endif %}</title>
-  <meta name="description" content="{{ description or site.tagline[lang] }}">
+  <meta name="description" content="{{ description or site.description[lang] }}">
   <meta name="author" content="{{ site.author }}">
   <meta name="theme-color" content="#ffffff">
-  <link rel="alternate" hreflang="de" href="https://lerngesellschaft.ch/de/">
-  <link rel="alternate" hreflang="en" href="https://learningsociety.ch/en/">
-  <link rel="alternate" hreflang="x-default" href="https://lerngesellschaft.ch/de/">
+
+  <link rel="canonical" href="{{ site.urls[lang] }}{{ page.url }}">
+  <link rel="alternate" hreflang="de" href="{{ site.urls.de }}/de/">
+  <link rel="alternate" hreflang="en" href="{{ site.urls.en }}/en/">
+  <link rel="alternate" hreflang="x-default" href="{{ site.urls.de }}/de/">
+  <link rel="alternate" type="text/markdown" title="Markdown source" href="/{{ lang }}/paper.md">
+
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="{% if lang == 'de' %}de_CH{% else %}en_US{% endif %}">
+  <meta property="og:locale:alternate" content="{% if lang == 'de' %}en_US{% else %}de_CH{% endif %}">
+  <meta property="og:title" content="{{ title }}{% if subtitle %} — {{ subtitle }}{% endif %}">
+  <meta property="og:description" content="{{ description or site.description[lang] }}">
+  <meta property="og:url" content="{{ site.urls[lang] }}{{ page.url }}">
+  <meta property="og:site_name" content="{{ site.brand[lang] }}">
+  <meta property="article:author" content="{{ site.author }}">
+  <meta property="article:published_time" content="{{ site.published }}">
+  <meta property="article:modified_time" content="{{ site.modified }}">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="{{ title }}{% if subtitle %} — {{ subtitle }}{% endif %}">
+  <meta name="twitter:description" content="{{ description or site.description[lang] }}">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "{{ title }}",
+    "alternativeHeadline": "{{ subtitle }}",
+    "description": "{{ description or site.description[lang] }}",
+    "inLanguage": "{{ lang }}",
+    "url": "{{ site.urls[lang] }}{{ page.url }}",
+    "datePublished": "{{ site.published }}",
+    "dateModified": "{{ site.modified }}",
+    "mainEntityOfPage": "{{ site.urls[lang] }}{{ page.url }}",
+    "author": {
+      "@type": "Person",
+      "name": "{{ site.author }}",
+      "url": "{{ site.authorUrl }}",
+      "email": "{{ site.mail }}",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Zurich",
+        "addressCountry": "CH"
+      }
+    },
+    "publisher": {
+      "@type": "Person",
+      "name": "{{ site.author }}",
+      "url": "{{ site.authorUrl }}"
+    }
+  }
+  </script>
+
   <link rel="preload" as="font" type="font/woff2" href="/fonts/BradfordLLWeb-Book.woff2" crossorigin>
   <link rel="preload" as="font" type="font/woff2" href="/fonts/BradfordLLWeb-BookItalic.woff2" crossorigin>
   <link rel="stylesheet" href="/css/site.css">

@@ -40,7 +40,7 @@
   --paper: #ffffff;
   --ink:   #050505;
   --ink-soft:  #5d574e;
-  --ink-faint: #989188;
+  --ink-faint: #7a7268;     /* WCAG AA: 4.7:1 against white */
   --rule:  rgba(5, 5, 5, 0.10);
 
   --accent:        #1a3a5e;     /* fountain-pen blue: structure markers — section numerals, hairline bind, link hover */

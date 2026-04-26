@@ -1,0 +1,58 @@
+---
+permalink: /sitemap.xml
+templateEngineOverride: njk
+eleventyExcludeFromCollections: true
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <url>
+    <loc>{{ site.urls.de }}/de/</loc>
+    <lastmod>{{ site.modified }}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="{{ site.urls.de }}/de/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="{{ site.urls.en }}/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="{{ site.urls.de }}/de/"/>
+  </url>
+
+  <url>
+    <loc>{{ site.urls.en }}/en/</loc>
+    <lastmod>{{ site.modified }}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="{{ site.urls.en }}/en/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="{{ site.urls.de }}/de/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="{{ site.urls.de }}/de/"/>
+  </url>
+
+  <url>
+    <loc>{{ site.urls.de }}/de/print/</loc>
+    <lastmod>{{ site.modified }}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>{{ site.urls.en }}/en/print/</loc>
+    <lastmod>{{ site.modified }}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>{{ site.urls.de }}/de/paper.md</loc>
+    <lastmod>{{ site.modified }}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>{{ site.urls.en }}/en/paper.md</loc>
+    <lastmod>{{ site.modified }}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+</urlset>

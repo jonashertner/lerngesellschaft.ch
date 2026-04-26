@@ -1,12 +1,4 @@
 
-<header class="cover">
-  <h1 class="cover-title">Learning Society</h1>
-  <div class="cover-mark" aria-hidden="true"></div>
-  <p class="cover-subtitle">A manifesto for relational learning.</p>
-  <p class="cover-byline">Jonas Hertner, Zurich, {{ site.year }}.</p>
-  <p class="cover-altlang"><a href="/de/">Auf Deutsch lesen</a></p>
-</header>
-
 Education is, at its core, a relational matter. What a teacher can do in half an hour one-on-one with a child, no curriculum, no classroom, and no machine can do. This paper sets out what a practice built on that simple truth consists in — and why it is, just now, needed.
 
 ## Premise

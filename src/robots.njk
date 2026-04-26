@@ -1,0 +1,11 @@
+---
+permalink: /robots.txt
+templateEngineOverride: njk
+eleventyExcludeFromCollections: true
+---
+User-agent: *
+Allow: /
+
+# Crawlers welcome — content is published as a public manifesto.
+Sitemap: {{ site.urls.de }}/sitemap.xml
+Sitemap: {{ site.urls.en }}/sitemap.xml

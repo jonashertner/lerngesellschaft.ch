@@ -1,12 +1,4 @@
 
-<header class="cover">
-  <h1 class="cover-title">Lerngesellschaft</h1>
-  <div class="cover-mark" aria-hidden="true"></div>
-  <p class="cover-subtitle">Ein Manifest für relationales Lernen.</p>
-  <p class="cover-byline">Jonas Hertner, Zürich, {{ site.year }}.</p>
-  <p class="cover-altlang"><a href="/en/">Read in English</a></p>
-</header>
-
 Bildung ist im Kern eine relationale Angelegenheit. Was eine Lehrerin in einer halben Stunde unter vier Augen vermag, vermag kein Lehrplan, kein Klassenzimmer und keine Maschine. Dieses Papier setzt fest, woraus eine Praxis besteht, die das Beste aus dieser einfachen Wahrheit macht — und warum sie gerade jetzt nötig ist.
 
 ## Voraussetzung
