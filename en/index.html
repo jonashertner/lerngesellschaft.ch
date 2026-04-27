@@ -10,6 +10,14 @@
   <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1">
   <meta name="format-detection" content="telephone=no">
   <meta name="theme-color" content="#ffffff">
+  <script>
+    (function () {
+      var local = /^(localhost|127\.0\.0\.1|\[::1\]|::1)$/.test(location.hostname);
+      if (location.protocol === "http:" && !local) {
+        location.replace("https:" + location.href.slice(location.protocol.length));
+      }
+    })();
+  </script>
 
   <link rel="canonical" href="https://learningsociety.ch/en/">
   <link rel="alternate" hreflang="de" href="https://lerngesellschaft.ch/de/">
