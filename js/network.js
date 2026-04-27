@@ -83,8 +83,8 @@
   const SCROLL_PITCH_RANGE = 0.08;
   const CAMERA_LERP = 0.055;
 
-  const ACCENT_BLUE = "26, 58, 94";
-  const ACCENT_WARM = "154, 58, 20";
+  const ACCENT_BLUE = "22, 88, 126";
+  const ACCENT_WARM = "184, 76, 38";
 
   /* ---- circuit model -------------------------------------------------- */
 
@@ -702,8 +702,8 @@
       const charge = clamp((n.V - V_REST) / (SPIKE_PEAK - V_REST), 0, 1);
       const synGlow = clamp(n.synGlowE + n.synGlowI, 0, 0.32);
       const colour = n.inhibitory ? ACCENT_WARM : ACCENT_BLUE;
-      const radius = (12 + n.baseSize * 4.8 + charge * 4 + synGlow * 16 + n.spike * 8) * n.scale;
-      const alpha = (0.0048 + charge * 0.0025 + synGlow * 0.018 + n.spike * 0.012) *
+      const radius = (10 + n.baseSize * 4.1 + charge * 3.1 + synGlow * 12 + n.spike * 6) * n.scale;
+      const alpha = (0.0038 + charge * 0.0018 + synGlow * 0.013 + n.spike * 0.0085) *
         n.depthFade *
         (n.inhibitory ? 0.72 : 1);
 
@@ -726,9 +726,9 @@
       const charge = clamp((n.V - V_REST) / (SPIKE_PEAK - V_REST), 0, 1);
       const synGlow = clamp(n.synGlowE + n.synGlowI, 0, 0.28);
       const colour = n.inhibitory ? ACCENT_WARM : ACCENT_BLUE;
-      const alphaBase = (n.inhibitory ? 0.034 : 0.029) *
+      const alphaBase = (n.inhibitory ? 0.027 : 0.023) *
         n.depthFade *
-        (0.58 + charge * 0.24 + n.spike * 0.70 + synGlow * 1.65) *
+        (0.55 + charge * 0.22 + n.spike * 0.62 + synGlow * 1.42) *
         (0.94 + rhythmDrive * 0.06);
 
       for (let a = 0; a < n.arbors.length; a++) {
@@ -788,7 +788,7 @@
       const strengthNorm = (edge.strength - MIN_WEIGHT) / (MAX_WEIGHT - MIN_WEIGHT);
       const depthFade = (pre.depthFade + post.depthFade) * 0.5;
       const colour = edge.inhibitory ? ACCENT_WARM : ACCENT_BLUE;
-      const opacity = (0.004 + strengthNorm * 0.026) *
+      const opacity = (0.003 + strengthNorm * 0.019) *
         depthFade *
         (edge.inhibitory ? 0.72 : 1) *
         (0.92 + rhythmDrive * 0.08) *
@@ -810,7 +810,7 @@
       if (inReadingBand(n.px) || n.spike < 0.24) continue;
       const colour = n.inhibitory ? ACCENT_WARM : ACCENT_BLUE;
       const r = (3.8 + n.spike * 5.8) * n.scale;
-      const opacity = n.spike * 0.024 * n.depthFade;
+      const opacity = n.spike * 0.018 * n.depthFade;
       ctx.fillStyle = `rgba(${colour}, ${opacity})`;
       ctx.beginPath();
       ctx.arc(n.px, n.py, r, 0, Math.PI * 2);
@@ -824,7 +824,7 @@
       const synGlow = clamp(n.synGlowE + n.synGlowI, 0, 0.32);
       const colour = n.inhibitory ? ACCENT_WARM : ACCENT_BLUE;
       const size = (n.baseSize * 0.82 + n.spike * 0.52 + charge * 0.20 + synGlow * 0.45) * n.scale;
-      const opacity = (0.070 + charge * 0.055 + n.spike * 0.16 + synGlow * 0.14) *
+      const opacity = (0.055 + charge * 0.043 + n.spike * 0.12 + synGlow * 0.10) *
         n.depthFade *
         (n.inhibitory ? 0.78 : 1);
 
@@ -854,7 +854,7 @@
 
         const df = pre.depthFade + (post.depthFade - pre.depthFade) * tt;
         const sc = pre.scale + (post.scale - pre.scale) * tt;
-        const alpha = pulse.strength * (1 - s * 0.52) * (edge.inhibitory ? 0.12 : 0.10) * df;
+        const alpha = pulse.strength * (1 - s * 0.52) * (edge.inhibitory ? 0.090 : 0.076) * df;
         const radius = (1.18 - s * 0.42) * sc;
 
         ctx.fillStyle = `rgba(${colour}, ${alpha})`;
