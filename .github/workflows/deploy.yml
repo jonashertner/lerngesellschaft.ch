@@ -41,24 +41,6 @@ jobs:
           </html>
           EOF
 
-      - name: Prepare EN deploy (learningsociety.ch)
-        run: |
-          rm -rf _site_en
-          cp -r _site _site_en
-          echo "learningsociety.ch" > _site_en/CNAME
-          cat > _site_en/index.html <<'EOF'
-          <!doctype html>
-          <html lang="en">
-          <head>
-            <meta charset="utf-8">
-            <title>Learning Society</title>
-            <meta http-equiv="refresh" content="0; url=/en/">
-            <link rel="canonical" href="https://learningsociety.ch/en/">
-            <script>location.replace('/en/')</script>
-          </head>
-          <body><p><a href="/en/">Learning Society</a></p></body>
-          </html>
-          EOF
 
       - name: Deploy DE → gh-pages of this repo
         uses: peaceiris/actions-gh-pages@v4
@@ -68,11 +50,6 @@ jobs:
           publish_dir: ./_site_de
           cname: lerngesellschaft.ch
 
-      - name: Deploy EN → gh-pages of learningsociety.ch
-        uses: peaceiris/actions-gh-pages@v4
-        with:
-          personal_token: ${{ secrets.DEPLOY_TOKEN }}
-          external_repository: jonashertner/learningsociety.ch
-          publish_branch: gh-pages
-          publish_dir: ./_site_en
-          cname: learningsociety.ch
+      # learningsociety.ch is a permanent redirect to lerngesellschaft.ch/en/
+      # (configured manually on the gh-pages branch of that repo). No deploy
+      # step needed here; the EN content lives at lerngesellschaft.ch/en/.
