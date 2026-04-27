@@ -22,13 +22,19 @@ Output goes to `_site/`.
 
 ## Authoring
 
-Content lives in `src/de/index.md` and `src/en/index.md`. Standard Markdown
-plus footnote syntax (`[^1]`). Each footnote is rendered twice:
+The web entry pages live in `src/de/index.md` and `src/en/index.md`; the
+paper text itself lives in `src/_includes/paper-de.md` and
+`src/_includes/paper-en.md`. Standard Markdown plus footnote syntax (`[^1]`)
+is supported. Each footnote is rendered twice:
 
 - as a sidenote in the right margin (screen)
 - as a classical footnote at the page foot (print)
 
 No author action required to map between the two.
+
+`src/llms.njk` publishes a compact machine-readable orientation at
+`/llms.txt`. `src/social-card.svg` is the link-preview artwork used by the
+Open Graph and Twitter metadata.
 
 ## Deployment
 

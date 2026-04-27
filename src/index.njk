@@ -3,18 +3,22 @@ permalink: /index.html
 eleventyExcludeFromCollections: true
 ---
 <!doctype html>
-<html>
+<html lang="de">
 <head>
 <meta charset="utf-8">
-<title>Lerngesellschaft</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lerngesellschaft / Learning Society</title>
+<meta name="description" content="A bilingual manifesto for relational learning by Jonas Hertner.">
+<link rel="canonical" href="{{ site.urls.de }}/de/">
+<link rel="alternate" hreflang="de" href="{{ site.urls.de }}/de/">
+<link rel="alternate" hreflang="en" href="{{ site.urls.en }}/en/">
+<link rel="alternate" hreflang="x-default" href="{{ site.urls.de }}/de/">
 <script>
   // Domain-aware default routing.
   var host = location.hostname;
-  var target = host.indexOf("learningsociety") === 0 ? "/en/" : "/de/";
-  location.replace(target);
+  var target = host.indexOf("learningsociety") !== -1 ? "/en/" : "/de/";
+  location.replace(target + location.search + location.hash);
 </script>
-<meta http-equiv="refresh" content="0; url=/de/">
-<link rel="canonical" href="/de/">
 </head>
 <body>
 <p><a href="/de/">Deutsch</a> · <a href="/en/">English</a></p>

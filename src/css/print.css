@@ -186,7 +186,7 @@ a { color: inherit; text-decoration: none; }
 
 .imprint {
   font-size: 7.5pt;
-  letter-spacing: 0.22em;
+  letter-spacing: 0;
   text-transform: uppercase;
   color: var(--ink-soft);
   margin: 0 0 28mm;
@@ -198,7 +198,7 @@ a { color: inherit; text-decoration: none; }
   line-height: 1.04;
   margin: 0;
   font-weight: normal;
-  letter-spacing: -0.018em;
+  letter-spacing: 0;
 }
 
 .book-rule {
@@ -281,7 +281,7 @@ a { color: inherit; text-decoration: none; }
   color: var(--accent);
   width: 10mm;
   flex: 0 0 10mm;
-  letter-spacing: 0.02em;
+  letter-spacing: 0;
 }
 
 .toc-title {
@@ -350,7 +350,7 @@ body[lang="en"] .document { string-set: book-title "Learning Society"; }
   font-size: 10pt;
   color: var(--accent);
   margin-bottom: 3mm;
-  letter-spacing: 0.05em;
+  letter-spacing: 0;
 }
 
 /* Drop cap on first paragraph of each section.
@@ -477,7 +477,7 @@ body[lang="en"] .document { string-set: book-title "Learning Society"; }
   font-size: 14pt;
   color: var(--accent-warm);
   margin: 0 0 14mm;
-  letter-spacing: 0.4em;
+  letter-spacing: 0;
   font-style: normal;
 }
 

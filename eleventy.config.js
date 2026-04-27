@@ -21,6 +21,7 @@ export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/fonts");
   eleventyConfig.addPassthroughCopy("src/css");
   eleventyConfig.addPassthroughCopy("src/js");
+  eleventyConfig.addPassthroughCopy("src/social-card.svg");
 
   eleventyConfig.addTransform("sidenotes", function (content) {
     if (!this.page.outputPath || !this.page.outputPath.endsWith(".html")) return content;
@@ -47,8 +48,8 @@ export default function (eleventyConfig) {
         const body = notes[n] || "";
         return (
           `<span class="note">` +
-          `<span class="note-marker" data-fn="${n}" tabindex="0" role="button" aria-expanded="false"><sup>${n}</sup></span>` +
-          `<span class="sidenote" data-fn="${n}"><span class="sidenote-num">${n}</span>${body}</span>` +
+          `<span class="note-marker" data-fn="${n}" tabindex="0" role="button" aria-expanded="false" aria-controls="sidenote-${n}"><sup>${n}</sup></span>` +
+          `<span class="sidenote" id="sidenote-${n}" data-fn="${n}"><span class="sidenote-num">${n}</span>${body}</span>` +
           `</span>`
         );
       }

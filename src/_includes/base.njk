@@ -6,6 +6,9 @@
   <title>{{ title }}{% if subtitle %} — {{ subtitle }}{% endif %}</title>
   <meta name="description" content="{{ description or site.description[lang] }}">
   <meta name="author" content="{{ site.author }}">
+  <meta name="keywords" content="{{ site.keywords[lang] }}">
+  <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1">
+  <meta name="format-detection" content="telephone=no">
   <meta name="theme-color" content="#ffffff">
 
   <link rel="canonical" href="{{ site.urls[lang] }}{{ page.url }}">
@@ -13,21 +16,25 @@
   <link rel="alternate" hreflang="en" href="{{ site.urls.en }}/en/">
   <link rel="alternate" hreflang="x-default" href="{{ site.urls.de }}/de/">
   <link rel="alternate" type="text/markdown" title="Markdown source" href="/{{ lang }}/paper.md">
-
   <meta property="og:type" content="article">
   <meta property="og:locale" content="{% if lang == 'de' %}de_CH{% else %}en_US{% endif %}">
   <meta property="og:locale:alternate" content="{% if lang == 'de' %}en_US{% else %}de_CH{% endif %}">
   <meta property="og:title" content="{{ title }}{% if subtitle %} — {{ subtitle }}{% endif %}">
   <meta property="og:description" content="{{ description or site.description[lang] }}">
   <meta property="og:url" content="{{ site.urls[lang] }}{{ page.url }}">
+  <meta property="og:image" content="{{ site.urls[lang] }}{{ site.socialImage }}">
+  <meta property="og:image:type" content="image/svg+xml">
+  <meta property="og:image:alt" content="{{ title }}{% if subtitle %} — {{ subtitle }}{% endif %}">
   <meta property="og:site_name" content="{{ site.brand[lang] }}">
   <meta property="article:author" content="{{ site.author }}">
   <meta property="article:published_time" content="{{ site.published }}">
   <meta property="article:modified_time" content="{{ site.modified }}">
 
-  <meta name="twitter:card" content="summary">
+  <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="{{ title }}{% if subtitle %} — {{ subtitle }}{% endif %}">
   <meta name="twitter:description" content="{{ description or site.description[lang] }}">
+  <meta name="twitter:image" content="{{ site.urls[lang] }}{{ site.socialImage }}">
+  <meta name="twitter:image:alt" content="{{ title }}{% if subtitle %} — {{ subtitle }}{% endif %}">
 
   <script type="application/ld+json">
   {
@@ -36,8 +43,10 @@
     "headline": "{{ title }}",
     "alternativeHeadline": "{{ subtitle }}",
     "description": "{{ description or site.description[lang] }}",
-    "inLanguage": "{{ lang }}",
+    "keywords": "{{ site.keywords[lang] }}",
+    "inLanguage": "{% if lang == 'de' %}de-CH{% else %}en{% endif %}",
     "url": "{{ site.urls[lang] }}{{ page.url }}",
+    "image": "{{ site.urls[lang] }}{{ site.socialImage }}",
     "datePublished": "{{ site.published }}",
     "dateModified": "{{ site.modified }}",
     "mainEntityOfPage": "{{ site.urls[lang] }}{{ page.url }}",

@@ -1,4 +1,4 @@
-/* Background neural-network animation — 3D, scroll-coupled rotation.
+/* Background neural-network animation — 3D, scroll-coupled margin field.
 
    Each node is a leaky integrate-and-fire neuron in 3D space. Membrane
    potential V accumulates from incoming pulses + Wiener noise; when V
@@ -7,7 +7,7 @@
    from targets — cortical interneurons). Hebbian growth on successful
    pulse delivery; idle edges decay.
 
-   3D: nodes positioned in a viewport-wide volume with depth ±300px.
+   3D: nodes positioned in the page margins with depth ±300px.
    Edges connect by 3D Euclidean distance. Each frame the volume
    rotates: a constant X-tilt for depth visibility, plus a Y-rotation
    that lerps toward scrollY (so reading rotates the network). Render
@@ -16,8 +16,6 @@
    Two-colour system: blue is structure, sienna is moving signal. */
 
 (function () {
-  console.log("[network] script loaded");
-
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   const canvas = document.createElement("canvas");
@@ -28,7 +26,6 @@
   try {
     ctx = canvas.getContext("2d", { alpha: true });
   } catch (err) {
-    console.error("[network] getContext failed:", err);
     return;
   }
   if (!ctx) return;
@@ -41,6 +38,7 @@
   let nodes = [];
   let edges = [];
   let pulses = [];
+  let readingBand = { left: 0, right: 0 };
   let lastTime = 0;
   let rafId = 0;
 
@@ -58,10 +56,11 @@
 
   /* ---- tuning (neural sim) ------------------------------------------- */
 
-  const NODE_COUNT_DESKTOP = 220;
-  const NODE_COUNT_TABLET = 130;
+  const NODE_COUNT_DESKTOP = 180;
+  const NODE_COUNT_TABLET = 90;
   const EDGE_DISTANCE = 145;
   const MAX_NEIGHBORS = 4;
+  const READING_BAND_PAD = 28;
 
   const INHIBITORY_FRACTION = 0.20;
 
@@ -96,10 +95,51 @@
     return function () { clearTimeout(t); t = setTimeout(fn, ms); };
   }
 
+  function updateReadingBand() {
+    const body = document.body;
+    const measure = document.querySelector(".document > p") || document.querySelector(".cover");
+    if (!body || !measure) {
+      readingBand = { left: W * 0.25, right: W * 0.75 };
+      return;
+    }
+    const rect = measure.getBoundingClientRect();
+    readingBand = {
+      left: Math.max(0, rect.left - READING_BAND_PAD),
+      right: Math.min(W, rect.right + READING_BAND_PAD),
+    };
+  }
+
+  function inReadingBand(x) {
+    return x > readingBand.left && x < readingBand.right;
+  }
+
+  function segmentCrossesReadingBand(x1, x2) {
+    const lo = Math.min(x1, x2);
+    const hi = Math.max(x1, x2);
+    return lo < readingBand.right && hi > readingBand.left;
+  }
+
+  function randomMarginX() {
+    const leftMax = Math.max(0, readingBand.left);
+    const rightMin = Math.min(W, readingBand.right);
+    const leftWidth = leftMax;
+    const rightWidth = Math.max(0, W - rightMin);
+
+    if (leftWidth <= 0 && rightWidth <= 0) return Math.random() * W;
+    if (leftWidth <= 0) return rightMin + Math.random() * rightWidth;
+    if (rightWidth <= 0) return Math.random() * leftWidth;
+
+    const chooseLeft = Math.random() < leftWidth / (leftWidth + rightWidth);
+    return chooseLeft
+      ? Math.random() * leftWidth
+      : rightMin + Math.random() * rightWidth;
+  }
+
   function resize() {
     dpr = Math.min(window.devicePixelRatio || 1, 2);
     W = window.innerWidth;
     H = window.innerHeight;
+    updateReadingBand();
     canvas.width = Math.floor(W * dpr);
     canvas.height = Math.floor(H * dpr);
     canvas.style.width = W + "px";
@@ -107,14 +147,28 @@
     ctx.setTransform(1, 0, 0, 1, 0, 0);
     ctx.scale(dpr, dpr);
     seed(nodeCountFor(W));
+    lastTime = 0;
+
+    if (!nodes.length) {
+      ctx.clearRect(0, 0, W, H);
+      if (rafId) cancelAnimationFrame(rafId);
+      rafId = 0;
+      return;
+    }
+
+    if (reducedMotion) {
+      renderStatic();
+    } else if (!rafId) {
+      rafId = requestAnimationFrame(tick);
+    }
   }
 
   function seed(count) {
     pulses = [];
     nodes = new Array(count);
     for (let i = 0; i < count; i++) {
-      // 3D position: x, y, z all randomised within volume
-      const x = Math.random() * W;
+      // 3D position: x is constrained to the margins; y and z fill the volume.
+      const x = randomMarginX();
       const y = Math.random() * H;
       // Gaussian-ish z (sum of three uniforms biases toward zero)
       const z = (Math.random() + Math.random() + Math.random() - 1.5) * Z_RANGE * 0.85;
@@ -306,14 +360,14 @@
     ctx.clearRect(0, 0, W, H);
     ctx.lineCap = "round";
 
-    // Network elements are dialed back ~40% — text now reads over them
-    // with the help of a small white text-shadow.
+    // Network elements are dialed back so they remain atmospheric in the margins.
 
     // Edges
     for (let e = 0; e < edges.length; e++) {
       const edge = edges[e];
       if (edge.strength < 0.03) continue;
       const a = nodes[edge.a], b = nodes[edge.b];
+      if (inReadingBand(a.px) || inReadingBand(b.px) || segmentCrossesReadingBand(a.px, b.px)) continue;
       const depthFade = (a.depthFade + b.depthFade) * 0.5;
       const opacity = Math.min(0.18, edge.strength * 0.24) * depthFade;
       ctx.strokeStyle = `rgba(${ACCENT_BLUE}, ${opacity})`;
@@ -327,6 +381,7 @@
     // Halos
     for (let i = 0; i < nodes.length; i++) {
       const n = nodes[i];
+      if (inReadingBand(n.px)) continue;
       if (n.spike < 0.35) continue;
       const r = (5 + n.spike * 9) * n.scale;
       const opacity = n.spike * 0.045 * n.depthFade;
@@ -339,6 +394,7 @@
     // Nodes
     for (let i = 0; i < nodes.length; i++) {
       const n = nodes[i];
+      if (inReadingBand(n.px)) continue;
       const charge = Math.min(1, n.V / THRESHOLD);
       const activity = 0.18 + 0.18 * charge + n.spike * 0.35;
       const size = (n.baseSize + n.spike * 1.0) * n.scale;
@@ -354,6 +410,7 @@
       const pulse = pulses[p];
       const edge = edges[pulse.edge];
       const a = nodes[edge.a], b = nodes[edge.b];
+      if (inReadingBand(a.px) || inReadingBand(b.px) || segmentCrossesReadingBand(a.px, b.px)) continue;
       const fromA = pulse.fromA;
       const ax = fromA ? a.px : b.px, ay = fromA ? a.py : b.py;
       const bx = fromA ? b.px : a.px, by = fromA ? b.py : a.py;
@@ -367,6 +424,7 @@
         if (tt < 0 || tt > 1) continue;
         const px = ax + (bx - ax) * tt;
         const py = ay + (by - ay) * tt;
+        if (inReadingBand(px)) continue;
         const df = aDF + (bDF - aDF) * tt;
         const sc = aS + (bS - aS) * tt;
         const trailAlpha = pulse.strength * (1 - s * 0.50) * 0.42 * df;
@@ -379,26 +437,22 @@
     }
   }
 
+  function renderStatic() {
+    if (!nodes.length) return;
+    const cosY = 1, sinY = 0;
+    const cosX = Math.cos(X_TILT), sinX = Math.sin(X_TILT);
+    for (let i = 0; i < nodes.length; i++) {
+      projectNode(nodes[i], cosY, sinY, cosX, sinX);
+    }
+    drawFrame();
+  }
+
   /* ---- boot ----------------------------------------------------------- */
 
   function init() {
-    resize();
-    if (reducedMotion) {
-      // Render once, no rotation, no rAF
-      const cosY = 1, sinY = 0;
-      const cosX = Math.cos(X_TILT), sinX = Math.sin(X_TILT);
-      for (let i = 0; i < nodes.length; i++) {
-        projectNode(nodes[i], cosY, sinY, cosX, sinX);
-      }
-      drawFrame();
-      console.log("[network] reduced-motion: static render only");
-      return;
-    }
-    if (rafId) cancelAnimationFrame(rafId);
-    rafId = requestAnimationFrame(tick);
     window.addEventListener("resize", debounce(resize, 200));
     document.addEventListener("visibilitychange", () => {
-      if (document.visibilityState === "visible" && !rafId) {
+      if (document.visibilityState === "visible" && nodes.length && !reducedMotion && !rafId) {
         lastTime = 0;
         rafId = requestAnimationFrame(tick);
       } else if (document.visibilityState !== "visible" && rafId) {
@@ -406,12 +460,12 @@
         rafId = 0;
       }
     });
+    resize();
   }
 
   function attach() {
     if (!document.body) return;
     document.body.insertBefore(canvas, document.body.firstChild);
-    console.log("[network] canvas attached, dim:", window.innerWidth, "x", window.innerHeight);
     init();
   }
 
