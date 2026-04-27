@@ -6,7 +6,8 @@
    - neurons stay fixed in space; only voltage, spikes, and synapses change
    - ~80/20 excitatory/inhibitory cell balance, following Dale's principle
    - six soft cortical depth layers and local dendritic/arbor fields
-   - directed local small-world synapses, not undirected graph edges
+   - directed local small-world synapses, mostly hidden from view rather than
+     drawn as a graph
    - Izhikevich regular-spiking excitatory cells and fast-spiking inhibitory
      interneurons, with reset and recovery variables
    - conductance-like EPSP/IPSP inputs with different decay constants
@@ -16,9 +17,9 @@
    - theta/gamma-like rhythmic modulation of background input
    - scroll turns the 3D camera; it does not move neurons in model space
 
-   Biological time is slowed for readability. Dendrites are rendered as local
-   fields, not individually simulated cable compartments; relative dynamics are
-   the point. */
+   Biological time is slowed for readability. Dendrites and neuropil are
+   rendered as local fields, not individually simulated cable compartments;
+   relative dynamics are the point. */
 
 (function () {
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -58,8 +59,8 @@
 
   /* ---- visual geometry ------------------------------------------------ */
 
-  const NODE_COUNT_DESKTOP = 180;
-  const NODE_COUNT_TABLET = 90;
+  const NODE_COUNT_DESKTOP = 150;
+  const NODE_COUNT_TABLET = 72;
   const READING_BAND_PAD = 30;
   const Z_RANGE = 300;
   const FOCAL = 900;
@@ -78,9 +79,9 @@
   ];
 
   const BASE_PITCH = 0.10;
-  const SCROLL_YAW_RANGE = 0.52;
-  const SCROLL_PITCH_RANGE = 0.12;
-  const CAMERA_LERP = 0.075;
+  const SCROLL_YAW_RANGE = 0.36;
+  const SCROLL_PITCH_RANGE = 0.08;
+  const CAMERA_LERP = 0.055;
 
   const ACCENT_BLUE = "26, 58, 94";
   const ACCENT_WARM = "154, 58, 20";
@@ -89,9 +90,9 @@
 
   const EXCITATORY_FRACTION = 0.80;
   const OUT_DEGREE_MIN = 2;
-  const OUT_DEGREE_MAX = 5;
-  const EDGE_DISTANCE = 170;
-  const LONG_RANGE_CHANCE = 0.035;
+  const OUT_DEGREE_MAX = 4;
+  const EDGE_DISTANCE = 150;
+  const LONG_RANGE_CHANCE = 0.026;
 
   // Slow model time down so millisecond-scale dynamics remain visible.
   const MODEL_MS_PER_REAL_MS = 0.22;
@@ -111,10 +112,10 @@
   const NOISE_TAU_MS = 80;
   const NOISE_SIGMA = 0.55;
 
-  const BACKGROUND_INPUT_RATE_HZ = 1.05;
-  const SCROLL_INPUT_RATE_HZ = 2.4;
+  const BACKGROUND_INPUT_RATE_HZ = 0.82;
+  const SCROLL_INPUT_RATE_HZ = 1.55;
   const BACKGROUND_EPSC = 0.052;
-  const RELEASE_PROBABILITY = 0.82;
+  const RELEASE_PROBABILITY = 0.68;
   const THETA_RATE_HZ = 6.0;
   const GAMMA_RATE_HZ = 42.0;
   const THETA_INPUT_DEPTH = 0.18;
@@ -130,7 +131,9 @@
 
   const AXON_DELAY_BASE_MS = 1.2;
   const AXON_DELAY_PER_PX = 0.018;
-  const MAX_PULSES = 260;
+  const MAX_PULSES = 160;
+  const VISIBLE_TRACE_DISTANCE = 118;
+  const VISIBLE_TRACE_CHANCE = 0.115;
   const SHORT_TERM_RECOVERY_TAU_MS = 650;
   const SHORT_TERM_FACILITATION_TAU_MS = 180;
   const SHORT_TERM_FACILITATION_STEP = 0.055;
@@ -336,6 +339,8 @@
         U: cell.b * v0,
         ge: 0,
         gi: 0,
+        synGlowE: 0,
+        synGlowI: 0,
         noise: 0,
         bias: inhibitory ? 2.2 + Math.random() * 1.2 : 2.7 + Math.random() * 1.6,
         refractory: Math.random() * cell.refractory,
@@ -424,10 +429,12 @@
       : logNormal(EXCITATORY_WEIGHT, 0.48);
     const delay = AXON_DELAY_BASE_MS + distance * AXON_DELAY_PER_PX + Math.random() * 0.8;
     const releaseBaseline = inhibitory ? 0.24 + Math.random() * 0.08 : 0.17 + Math.random() * 0.07;
+    const visibleChance = VISIBLE_TRACE_CHANCE * (inhibitory ? 0.55 : 1) * Math.exp(-distance / VISIBLE_TRACE_DISTANCE);
     const idx = edges.length;
     edges.push({
       pre,
       post,
+      distance,
       inhibitory,
       strength: clamp(baseline, MIN_WEIGHT, MAX_WEIGHT),
       baseline: clamp(baseline, MIN_WEIGHT, MAX_WEIGHT),
@@ -438,6 +445,8 @@
       releaseBaseline,
       resources: 0.88 + Math.random() * 0.12,
       bend: clamp(gaussian() * 0.42, -0.85, 0.85),
+      visibleTrace: distance < VISIBLE_TRACE_DISTANCE && Math.random() < visibleChance,
+      visualAlpha: 0.52 + Math.random() * 0.55,
     });
     nodes[pre].outgoing.push(idx);
     nodes[post].incoming.push(idx);
@@ -555,8 +564,10 @@
 
     if (edge.inhibitory) {
       post.gi += conductance * INHIBITORY_GAIN;
+      post.synGlowI += conductance * 1.9;
     } else {
       post.ge += conductance * EXCITATORY_GAIN;
+      post.synGlowE += conductance * 1.6;
     }
 
     const postBeforePre = modelTime - post.lastSpike;
@@ -577,6 +588,8 @@
 
   function updateNode(n, idx, dt, bioDt, inputRateHz) {
     n.spike *= Math.exp(-dt / 170);
+    n.synGlowE *= Math.exp(-dt / 280);
+    n.synGlowI *= Math.exp(-dt / 340);
 
     if (Math.random() < (inputRateHz * dt) / 1000) {
       n.ge += BACKGROUND_EPSC * (0.65 + Math.random() * 0.70);
@@ -681,16 +694,41 @@
     };
   }
 
+  function drawNeuropilHaze() {
+    for (let i = 0; i < nodes.length; i++) {
+      const n = nodes[i];
+      if (inReadingBand(n.px)) continue;
+
+      const charge = clamp((n.V - V_REST) / (SPIKE_PEAK - V_REST), 0, 1);
+      const synGlow = clamp(n.synGlowE + n.synGlowI, 0, 0.32);
+      const colour = n.inhibitory ? ACCENT_WARM : ACCENT_BLUE;
+      const radius = (12 + n.baseSize * 4.8 + charge * 4 + synGlow * 16 + n.spike * 8) * n.scale;
+      const alpha = (0.0048 + charge * 0.0025 + synGlow * 0.018 + n.spike * 0.012) *
+        n.depthFade *
+        (n.inhibitory ? 0.72 : 1);
+
+      const gradient = ctx.createRadialGradient(n.px, n.py, 0, n.px, n.py, radius);
+      gradient.addColorStop(0, `rgba(${colour}, ${alpha})`);
+      gradient.addColorStop(0.48, `rgba(${colour}, ${alpha * 0.36})`);
+      gradient.addColorStop(1, `rgba(${colour}, 0)`);
+      ctx.fillStyle = gradient;
+      ctx.beginPath();
+      ctx.arc(n.px, n.py, radius, 0, Math.PI * 2);
+      ctx.fill();
+    }
+  }
+
   function drawArbors() {
     for (let i = 0; i < nodes.length; i++) {
       const n = nodes[i];
       if (inReadingBand(n.px)) continue;
 
       const charge = clamp((n.V - V_REST) / (SPIKE_PEAK - V_REST), 0, 1);
+      const synGlow = clamp(n.synGlowE + n.synGlowI, 0, 0.28);
       const colour = n.inhibitory ? ACCENT_WARM : ACCENT_BLUE;
-      const alphaBase = (n.inhibitory ? 0.042 : 0.035) *
+      const alphaBase = (n.inhibitory ? 0.034 : 0.029) *
         n.depthFade *
-        (0.72 + charge * 0.32 + n.spike * 1.20) *
+        (0.58 + charge * 0.24 + n.spike * 0.70 + synGlow * 1.65) *
         (0.94 + rhythmDrive * 0.06);
 
       for (let a = 0; a < n.arbors.length; a++) {
@@ -707,7 +745,7 @@
         const alpha = alphaBase * arbor.alpha;
 
         ctx.strokeStyle = `rgba(${colour}, ${alpha})`;
-        ctx.lineWidth = Math.max(0.30, (0.38 + n.spike * 0.13) * n.scale);
+        ctx.lineWidth = Math.max(0.24, (0.34 + n.spike * 0.09 + synGlow * 0.24) * n.scale);
         ctx.beginPath();
         ctx.moveTo(n.px, n.py);
         ctx.quadraticCurveTo(cx, cy, x2, y2);
@@ -738,8 +776,11 @@
     ctx.clearRect(0, 0, W, H);
     ctx.lineCap = "round";
 
+    drawNeuropilHaze();
+
     for (let e = 0; e < edges.length; e++) {
       const edge = edges[e];
+      if (!edge.visibleTrace) continue;
       const pre = nodes[edge.pre];
       const post = nodes[edge.post];
       if (inReadingBand(pre.px) || inReadingBand(post.px) || segmentCrossesReadingBand(pre.px, post.px)) continue;
@@ -747,14 +788,15 @@
       const strengthNorm = (edge.strength - MIN_WEIGHT) / (MAX_WEIGHT - MIN_WEIGHT);
       const depthFade = (pre.depthFade + post.depthFade) * 0.5;
       const colour = edge.inhibitory ? ACCENT_WARM : ACCENT_BLUE;
-      const opacity = (0.014 + strengthNorm * 0.090) *
+      const opacity = (0.004 + strengthNorm * 0.026) *
         depthFade *
         (edge.inhibitory ? 0.72 : 1) *
-        (0.92 + rhythmDrive * 0.08);
+        (0.92 + rhythmDrive * 0.08) *
+        edge.visualAlpha;
       const control = edgeControl(pre, post, edge);
 
       ctx.strokeStyle = `rgba(${colour}, ${opacity})`;
-      ctx.lineWidth = (0.45 + strengthNorm * 0.55) * Math.min(1, depthFade + 0.15);
+      ctx.lineWidth = (0.28 + strengthNorm * 0.25) * Math.min(1, depthFade + 0.15);
       ctx.beginPath();
       ctx.moveTo(pre.px, pre.py);
       ctx.quadraticCurveTo(control.x, control.y, post.px, post.py);
@@ -767,8 +809,8 @@
       const n = nodes[i];
       if (inReadingBand(n.px) || n.spike < 0.24) continue;
       const colour = n.inhibitory ? ACCENT_WARM : ACCENT_BLUE;
-      const r = (5.2 + n.spike * 9.5) * n.scale;
-      const opacity = n.spike * 0.052 * n.depthFade;
+      const r = (3.8 + n.spike * 5.8) * n.scale;
+      const opacity = n.spike * 0.024 * n.depthFade;
       ctx.fillStyle = `rgba(${colour}, ${opacity})`;
       ctx.beginPath();
       ctx.arc(n.px, n.py, r, 0, Math.PI * 2);
@@ -779,9 +821,12 @@
       const n = nodes[i];
       if (inReadingBand(n.px)) continue;
       const charge = clamp((n.V - V_REST) / (SPIKE_PEAK - V_REST), 0, 1);
+      const synGlow = clamp(n.synGlowE + n.synGlowI, 0, 0.32);
       const colour = n.inhibitory ? ACCENT_WARM : ACCENT_BLUE;
-      const size = (n.baseSize + n.spike * 1.05 + charge * 0.35) * n.scale;
-      const opacity = (0.13 + charge * 0.12 + n.spike * 0.30) * n.depthFade * (n.inhibitory ? 0.86 : 1);
+      const size = (n.baseSize * 0.82 + n.spike * 0.52 + charge * 0.20 + synGlow * 0.45) * n.scale;
+      const opacity = (0.070 + charge * 0.055 + n.spike * 0.16 + synGlow * 0.14) *
+        n.depthFade *
+        (n.inhibitory ? 0.78 : 1);
 
       ctx.fillStyle = `rgba(${colour}, ${opacity})`;
       ctx.beginPath();
@@ -792,6 +837,7 @@
     for (let p = 0; p < pulses.length; p++) {
       const pulse = pulses[p];
       const edge = edges[pulse.edge];
+      if (!edge.visibleTrace) continue;
       const pre = nodes[edge.pre];
       const post = nodes[edge.post];
       if (inReadingBand(pre.px) || inReadingBand(post.px) || segmentCrossesReadingBand(pre.px, post.px)) continue;
@@ -808,8 +854,8 @@
 
         const df = pre.depthFade + (post.depthFade - pre.depthFade) * tt;
         const sc = pre.scale + (post.scale - pre.scale) * tt;
-        const alpha = pulse.strength * (1 - s * 0.52) * (edge.inhibitory ? 0.34 : 0.30) * df;
-        const radius = (1.9 - s * 0.62) * sc;
+        const alpha = pulse.strength * (1 - s * 0.52) * (edge.inhibitory ? 0.12 : 0.10) * df;
+        const radius = (1.18 - s * 0.42) * sc;
 
         ctx.fillStyle = `rgba(${colour}, ${alpha})`;
         ctx.beginPath();
