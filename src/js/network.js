@@ -5,16 +5,20 @@
 
    - neurons stay fixed in space; only voltage, spikes, and synapses change
    - ~80/20 excitatory/inhibitory cell balance, following Dale's principle
+   - six soft cortical depth layers and local dendritic/arbor fields
    - directed local small-world synapses, not undirected graph edges
    - Izhikevich regular-spiking excitatory cells and fast-spiking inhibitory
      interneurons, with reset and recovery variables
    - conductance-like EPSP/IPSP inputs with different decay constants
    - log-normal-ish synaptic weights and distance-based axonal delay
-   - probabilistic transmitter release
+   - probabilistic transmitter release with short-term facilitation/depression
    - spike-timing-dependent plasticity with slow homeostatic return
+   - theta/gamma-like rhythmic modulation of background input
    - scroll turns the 3D camera; it does not move neurons in model space
 
-   Biological time is slowed for readability; relative dynamics are the point. */
+   Biological time is slowed for readability. Dendrites are rendered as local
+   fields, not individually simulated cable compartments; relative dynamics are
+   the point. */
 
 (function () {
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -48,6 +52,8 @@
   let currentYaw = 0;
   let targetPitch = 0;
   let currentPitch = 0;
+  let rhythmPhase = Math.random() * Math.PI * 2;
+  let rhythmDrive = 1;
   let rafId = 0;
 
   /* ---- visual geometry ------------------------------------------------ */
@@ -62,6 +68,14 @@
   const CLUSTER_SPREAD_X = 72;
   const CLUSTER_SPREAD_Y = 125;
   const CLUSTER_SPREAD_Z = 115;
+  const CORTICAL_LAYERS = [
+    { z: -190, spread: 28, weight: 0.06 },
+    { z: -132, spread: 38, weight: 0.16 },
+    { z: -68, spread: 43, weight: 0.23 },
+    { z: 6, spread: 45, weight: 0.23 },
+    { z: 86, spread: 45, weight: 0.18 },
+    { z: 166, spread: 40, weight: 0.14 },
+  ];
 
   const BASE_PITCH = 0.10;
   const SCROLL_YAW_RANGE = 0.52;
@@ -101,6 +115,10 @@
   const SCROLL_INPUT_RATE_HZ = 2.4;
   const BACKGROUND_EPSC = 0.052;
   const RELEASE_PROBABILITY = 0.82;
+  const THETA_RATE_HZ = 6.0;
+  const GAMMA_RATE_HZ = 42.0;
+  const THETA_INPUT_DEPTH = 0.18;
+  const GAMMA_INPUT_DEPTH = 0.045;
 
   const MIN_WEIGHT = 0.006;
   const MAX_WEIGHT = 0.070;
@@ -113,6 +131,9 @@
   const AXON_DELAY_BASE_MS = 1.2;
   const AXON_DELAY_PER_PX = 0.018;
   const MAX_PULSES = 260;
+  const SHORT_TERM_RECOVERY_TAU_MS = 650;
+  const SHORT_TERM_FACILITATION_TAU_MS = 180;
+  const SHORT_TERM_FACILITATION_STEP = 0.055;
 
   const STDP_WINDOW_MS = 45;
   const STDP_TAU_MS = 18;
@@ -149,6 +170,50 @@
 
   function logNormal(mean, sigma) {
     return mean * Math.exp(gaussian() * sigma - 0.5 * sigma * sigma);
+  }
+
+  function chooseLayer() {
+    let r = Math.random();
+    for (let i = 0; i < CORTICAL_LAYERS.length; i++) {
+      r -= CORTICAL_LAYERS[i].weight;
+      if (r <= 0) return i;
+    }
+    return CORTICAL_LAYERS.length - 1;
+  }
+
+  function layerOffset(layerIndex) {
+    return layerIndex - (CORTICAL_LAYERS.length - 1) * 0.5;
+  }
+
+  function makeArbors(inhibitory, layerIndex) {
+    const arbors = [];
+    const basalCount = inhibitory ? 4 : 3 + Math.floor(Math.random() * 2);
+
+    if (!inhibitory) {
+      arbors.push({
+        angle: -Math.PI / 2 + layerOffset(layerIndex) * 0.09 + gaussian() * 0.16,
+        length: 34 + Math.random() * 36,
+        curve: gaussian() * 9,
+        forkAt: 0.54 + Math.random() * 0.22,
+        forkAngle: (Math.random() < 0.5 ? -1 : 1) * (0.45 + Math.random() * 0.38),
+        forkLength: 0.32 + Math.random() * 0.18,
+        alpha: 1,
+      });
+    }
+
+    for (let i = 0; i < basalCount; i++) {
+      arbors.push({
+        angle: Math.random() * Math.PI * 2,
+        length: (inhibitory ? 15 : 20) + Math.random() * (inhibitory ? 17 : 24),
+        curve: gaussian() * (inhibitory ? 6 : 8),
+        forkAt: inhibitory ? 0 : 0.44 + Math.random() * 0.24,
+        forkAngle: (Math.random() < 0.5 ? -1 : 1) * (0.50 + Math.random() * 0.42),
+        forkLength: 0.24 + Math.random() * 0.16,
+        alpha: inhibitory ? 0.76 : 0.58,
+      });
+    }
+
+    return arbors;
   }
 
   function updateReadingBand() {
@@ -246,9 +311,15 @@
 
     for (let i = 0; i < count; i++) {
       const cluster = clusters[Math.floor(Math.random() * clusters.length)];
+      const layerIndex = chooseLayer();
+      const layer = CORTICAL_LAYERS[layerIndex];
       const x = marginXNear(cluster.x + gaussian() * CLUSTER_SPREAD_X);
-      const y = clamp(cluster.y + gaussian() * CLUSTER_SPREAD_Y, 0, H);
-      const z = clamp(cluster.z + gaussian() * CLUSTER_SPREAD_Z, -Z_RANGE, Z_RANGE);
+      const y = clamp(cluster.y + gaussian() * CLUSTER_SPREAD_Y + layerOffset(layerIndex) * 6, 0, H);
+      const z = clamp(
+        layer.z + cluster.z * 0.22 + gaussian() * (layer.spread + CLUSTER_SPREAD_Z * 0.12),
+        -Z_RANGE,
+        Z_RANGE
+      );
       const inhibitory = Math.random() > EXCITATORY_FRACTION;
       const cell = inhibitory ? FAST_SPIKING : REGULAR_SPIKING;
       const v0 = cell.c + Math.random() * 9;
@@ -270,8 +341,11 @@
         refractory: Math.random() * cell.refractory,
         lastSpike: -Infinity,
         spike: 0,
-        baseSize: inhibitory ? 1.05 + Math.random() * 0.9 : 1.25 + Math.random() * 1.25,
+        baseSize: (inhibitory ? 1.05 + Math.random() * 0.9 : 1.25 + Math.random() * 1.25) *
+          (0.96 + layerIndex * 0.025),
         inhibitory,
+        layer: layerIndex,
+        arbors: makeArbors(inhibitory, layerIndex),
         cell,
         incoming: [],
         outgoing: [],
@@ -307,7 +381,10 @@
         const b = nodes[post];
         const d = distance3(a, b);
         const local = Math.exp(-(d * d) / (2 * EDGE_DISTANCE * EDGE_DISTANCE));
-        const weight = local + LONG_RANGE_CHANCE * 0.12;
+        const layerDistance = Math.abs(a.layer - b.layer);
+        const laminarAffinity = layerDistance === 0 ? 1.16 : Math.exp(-layerDistance * 0.34);
+        const inhibitoryLocality = a.inhibitory ? Math.exp(-layerDistance * 0.52) : 1;
+        const weight = local * laminarAffinity * inhibitoryLocality + LONG_RANGE_CHANCE * 0.12;
         candidates.push({ post, d, weight });
       }
 
@@ -346,6 +423,7 @@
       ? logNormal(INHIBITORY_WEIGHT, 0.42)
       : logNormal(EXCITATORY_WEIGHT, 0.48);
     const delay = AXON_DELAY_BASE_MS + distance * AXON_DELAY_PER_PX + Math.random() * 0.8;
+    const releaseBaseline = inhibitory ? 0.24 + Math.random() * 0.08 : 0.17 + Math.random() * 0.07;
     const idx = edges.length;
     edges.push({
       pre,
@@ -356,6 +434,10 @@
       delay,
       displayDelay: delay * DISPLAY_MS_PER_MODEL_MS,
       lastArrival: -Infinity,
+      release: releaseBaseline,
+      releaseBaseline,
+      resources: 0.88 + Math.random() * 0.12,
+      bend: clamp(gaussian() * 0.42, -0.85, 0.85),
     });
     nodes[pre].outgoing.push(idx);
     nodes[post].incoming.push(idx);
@@ -445,14 +527,21 @@
 
     for (let i = 0; i < n.outgoing.length; i++) {
       const edgeIdx = n.outgoing[i];
+      const edge = edges[edgeIdx];
       if (pulses.length >= MAX_PULSES) break;
-      if (Math.random() > RELEASE_PROBABILITY) continue;
+      const releaseChance = RELEASE_PROBABILITY * clamp(edge.resources * (0.74 + edge.release), 0.08, 1.06);
+      if (Math.random() > releaseChance) continue;
+      const releaseStrength = (0.80 + Math.random() * 0.24) *
+        (0.58 + edge.resources * 0.52) *
+        (0.88 + edge.release * 0.34);
+      edge.resources = clamp(edge.resources * (1 - edge.release * 0.74), 0.04, 1);
+      edge.release = clamp(edge.release + (1 - edge.release) * SHORT_TERM_FACILITATION_STEP, 0, 1);
       pulses.push({
         edge: edgeIdx,
         age: 0,
         ageBio: 0,
         delivered: false,
-        strength: 0.82 + Math.random() * 0.28,
+        strength: releaseStrength,
       });
     }
   }
@@ -477,6 +566,14 @@
   }
 
   /* ---- per-frame ------------------------------------------------------ */
+
+  function updateRhythm() {
+    const t = modelTime / 1000;
+    const theta = Math.sin(Math.PI * 2 * THETA_RATE_HZ * t + rhythmPhase);
+    const gamma = Math.sin(Math.PI * 2 * GAMMA_RATE_HZ * t + rhythmPhase * 0.37);
+    rhythmDrive = clamp(1 + theta * THETA_INPUT_DEPTH + gamma * GAMMA_INPUT_DEPTH * (0.75 + theta * 0.25), 0.76, 1.26);
+    return rhythmDrive;
+  }
 
   function updateNode(n, idx, dt, bioDt, inputRateHz) {
     n.spike *= Math.exp(-dt / 170);
@@ -523,7 +620,7 @@
     const scrollDelta = Math.abs(scrollY - lastScrollY);
     lastScrollY = scrollY;
     scrollDrive = scrollDrive * Math.exp(-dt / 420) + Math.min(1, scrollDelta / 260);
-    const inputRateHz = BACKGROUND_INPUT_RATE_HZ + scrollDrive * SCROLL_INPUT_RATE_HZ;
+    const inputRateHz = (BACKGROUND_INPUT_RATE_HZ + scrollDrive * SCROLL_INPUT_RATE_HZ) * updateRhythm();
     updateCamera(false);
     projectAll();
 
@@ -547,9 +644,13 @@
     pulses = remaining;
 
     const relax = 1 - Math.exp(-dt / WEIGHT_RELAX_TAU_MS);
+    const recover = 1 - Math.exp(-bioDt / SHORT_TERM_RECOVERY_TAU_MS);
+    const releaseRelax = 1 - Math.exp(-bioDt / SHORT_TERM_FACILITATION_TAU_MS);
     for (let e = 0; e < edges.length; e++) {
       const edge = edges[e];
       edge.strength += (edge.baseline - edge.strength) * relax;
+      edge.resources += (1 - edge.resources) * recover;
+      edge.release += (edge.releaseBaseline - edge.release) * releaseRelax;
     }
 
     drawFrame();
@@ -557,6 +658,77 @@
   }
 
   /* ---- render --------------------------------------------------------- */
+
+  function edgeControl(pre, post, edge) {
+    const mx = (pre.px + post.px) * 0.5;
+    const my = (pre.py + post.py) * 0.5;
+    const dx = post.px - pre.px;
+    const dy = post.py - pre.py;
+    const len = Math.max(1, Math.sqrt(dx * dx + dy * dy));
+    const bend = edge.bend * Math.min(54, len * 0.18);
+
+    return {
+      x: mx - (dy / len) * bend,
+      y: my + (dx / len) * bend,
+    };
+  }
+
+  function quadraticPoint(x1, y1, cx, cy, x2, y2, t) {
+    const u = 1 - t;
+    return {
+      x: u * u * x1 + 2 * u * t * cx + t * t * x2,
+      y: u * u * y1 + 2 * u * t * cy + t * t * y2,
+    };
+  }
+
+  function drawArbors() {
+    for (let i = 0; i < nodes.length; i++) {
+      const n = nodes[i];
+      if (inReadingBand(n.px)) continue;
+
+      const charge = clamp((n.V - V_REST) / (SPIKE_PEAK - V_REST), 0, 1);
+      const colour = n.inhibitory ? ACCENT_WARM : ACCENT_BLUE;
+      const alphaBase = (n.inhibitory ? 0.042 : 0.035) *
+        n.depthFade *
+        (0.72 + charge * 0.32 + n.spike * 1.20) *
+        (0.94 + rhythmDrive * 0.06);
+
+      for (let a = 0; a < n.arbors.length; a++) {
+        const arbor = n.arbors[a];
+        const angle = arbor.angle + currentYaw * 0.30 - currentPitch * 0.10;
+        const length = arbor.length * n.scale * (0.92 + charge * 0.14);
+        const x2 = n.px + Math.cos(angle) * length;
+        const y2 = n.py + Math.sin(angle) * length;
+
+        if (inReadingBand(x2) || segmentCrossesReadingBand(n.px, x2)) continue;
+
+        const cx = n.px + Math.cos(angle) * length * 0.52 - Math.sin(angle) * arbor.curve * n.scale;
+        const cy = n.py + Math.sin(angle) * length * 0.52 + Math.cos(angle) * arbor.curve * n.scale;
+        const alpha = alphaBase * arbor.alpha;
+
+        ctx.strokeStyle = `rgba(${colour}, ${alpha})`;
+        ctx.lineWidth = Math.max(0.30, (0.38 + n.spike * 0.13) * n.scale);
+        ctx.beginPath();
+        ctx.moveTo(n.px, n.py);
+        ctx.quadraticCurveTo(cx, cy, x2, y2);
+        ctx.stroke();
+
+        if (!arbor.forkAt) continue;
+
+        const fork = quadraticPoint(n.px, n.py, cx, cy, x2, y2, arbor.forkAt);
+        const forkAngle = angle + arbor.forkAngle;
+        const fx2 = fork.x + Math.cos(forkAngle) * length * arbor.forkLength;
+        const fy2 = fork.y + Math.sin(forkAngle) * length * arbor.forkLength;
+        if (inReadingBand(fx2) || segmentCrossesReadingBand(fork.x, fx2)) continue;
+
+        ctx.strokeStyle = `rgba(${colour}, ${alpha * 0.72})`;
+        ctx.beginPath();
+        ctx.moveTo(fork.x, fork.y);
+        ctx.lineTo(fx2, fy2);
+        ctx.stroke();
+      }
+    }
+  }
 
   function signalColour(edge) {
     return edge.inhibitory ? ACCENT_WARM : ACCENT_BLUE;
@@ -575,15 +747,21 @@
       const strengthNorm = (edge.strength - MIN_WEIGHT) / (MAX_WEIGHT - MIN_WEIGHT);
       const depthFade = (pre.depthFade + post.depthFade) * 0.5;
       const colour = edge.inhibitory ? ACCENT_WARM : ACCENT_BLUE;
-      const opacity = (0.030 + strengthNorm * 0.145) * depthFade * (edge.inhibitory ? 0.72 : 1);
+      const opacity = (0.014 + strengthNorm * 0.090) *
+        depthFade *
+        (edge.inhibitory ? 0.72 : 1) *
+        (0.92 + rhythmDrive * 0.08);
+      const control = edgeControl(pre, post, edge);
 
       ctx.strokeStyle = `rgba(${colour}, ${opacity})`;
       ctx.lineWidth = (0.45 + strengthNorm * 0.55) * Math.min(1, depthFade + 0.15);
       ctx.beginPath();
       ctx.moveTo(pre.px, pre.py);
-      ctx.lineTo(post.px, post.py);
+      ctx.quadraticCurveTo(control.x, control.y, post.px, post.py);
       ctx.stroke();
     }
+
+    drawArbors();
 
     for (let i = 0; i < nodes.length; i++) {
       const n = nodes[i];
@@ -620,13 +798,13 @@
 
       const t = pulse.age / edge.displayDelay;
       const colour = signalColour(edge);
+      const control = edgeControl(pre, post, edge);
 
       for (let s = 0; s < 2; s++) {
         const tt = t - s * 0.055;
         if (tt < 0 || tt > 1) continue;
-        const px = pre.px + (post.px - pre.px) * tt;
-        const py = pre.py + (post.py - pre.py) * tt;
-        if (inReadingBand(px)) continue;
+        const point = quadraticPoint(pre.px, pre.py, control.x, control.y, post.px, post.py, tt);
+        if (inReadingBand(point.x)) continue;
 
         const df = pre.depthFade + (post.depthFade - pre.depthFade) * tt;
         const sc = pre.scale + (post.scale - pre.scale) * tt;
@@ -635,7 +813,7 @@
 
         ctx.fillStyle = `rgba(${colour}, ${alpha})`;
         ctx.beginPath();
-        ctx.arc(px, py, radius, 0, Math.PI * 2);
+        ctx.arc(point.x, point.y, radius, 0, Math.PI * 2);
         ctx.fill();
       }
     }
