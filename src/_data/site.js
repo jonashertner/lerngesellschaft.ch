@@ -4,7 +4,7 @@ export default {
   authorUrl: "https://jonashertner.com",
   year: "2026",
   published: "2026-04-26",
-  modified: "2026-04-26",
+  modified: "2026-04-27",
   brand: {
     de: "Lerngesellschaft",
     en: "Learning Society",
