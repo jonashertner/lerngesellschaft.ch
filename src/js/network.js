@@ -4,14 +4,15 @@
    local cortical circuit dynamics:
 
    - neurons stay fixed in space; only voltage, spikes, and synapses change
-   - ~80/20 excitatory/inhibitory cell balance
+   - ~80/20 excitatory/inhibitory cell balance, following Dale's principle
    - directed local small-world synapses, not undirected graph edges
-   - leaky integrate-and-fire membrane voltage with rest, reset, threshold,
-     refractory period, and spike-frequency adaptation
+   - Izhikevich regular-spiking excitatory cells and fast-spiking inhibitory
+     interneurons, with reset and recovery variables
    - conductance-like EPSP/IPSP inputs with different decay constants
-   - axonal propagation delay proportional to connection length
+   - log-normal-ish synaptic weights and distance-based axonal delay
    - probabilistic transmitter release
    - spike-timing-dependent plasticity with slow homeostatic return
+   - scroll turns the 3D camera; it does not move neurons in model space
 
    Biological time is slowed for readability; relative dynamics are the point. */
 
@@ -43,6 +44,10 @@
   let modelTime = 0;
   let lastScrollY = 0;
   let scrollDrive = 0;
+  let targetYaw = 0;
+  let currentYaw = 0;
+  let targetPitch = 0;
+  let currentPitch = 0;
   let rafId = 0;
 
   /* ---- visual geometry ------------------------------------------------ */
@@ -58,6 +63,11 @@
   const CLUSTER_SPREAD_Y = 125;
   const CLUSTER_SPREAD_Z = 115;
 
+  const BASE_PITCH = 0.10;
+  const SCROLL_YAW_RANGE = 0.52;
+  const SCROLL_PITCH_RANGE = 0.12;
+  const CAMERA_LERP = 0.075;
+
   const ACCENT_BLUE = "26, 58, 94";
   const ACCENT_WARM = "154, 58, 20";
 
@@ -71,38 +81,37 @@
 
   // Slow model time down so millisecond-scale dynamics remain visible.
   const MODEL_MS_PER_REAL_MS = 0.22;
+  const DISPLAY_MS_PER_MODEL_MS = 48;
+
+  const REGULAR_SPIKING = { a: 0.02, b: 0.20, c: -65, d: 8, refractory: 3 };
+  const FAST_SPIKING = { a: 0.10, b: 0.20, c: -65, d: 2, refractory: 2 };
 
   const V_REST = -70;
-  const V_RESET = -65;
-  const V_THRESHOLD = -50;
-  const V_FLOOR = -85;
+  const SPIKE_PEAK = 30;
+  const V_FLOOR = -90;
   const E_EXCITATORY = 0;
   const E_INHIBITORY = -80;
 
-  const MEMBRANE_TAU_MS = 22;
   const EXC_DECAY_TAU_MS = 5;
-  const INH_DECAY_TAU_MS = 12;
-  const NOISE_TAU_MS = 90;
-  const NOISE_SIGMA = 0.19;
-  const REFRACTORY_MS = 4;
-  const ADAPTATION_INC_MV = 2.8;
-  const ADAPTATION_TAU_MS = 260;
+  const INH_DECAY_TAU_MS = 10;
+  const NOISE_TAU_MS = 80;
+  const NOISE_SIGMA = 0.55;
 
-  const BACKGROUND_INPUT_RATE_HZ = 0.85;
-  const SCROLL_INPUT_RATE_HZ = 1.7;
-  const BACKGROUND_EPSC = 0.24;
+  const BACKGROUND_INPUT_RATE_HZ = 1.05;
+  const SCROLL_INPUT_RATE_HZ = 2.4;
+  const BACKGROUND_EPSC = 0.052;
   const RELEASE_PROBABILITY = 0.82;
 
-  const MIN_WEIGHT = 0.018;
-  const MAX_WEIGHT = 0.160;
-  const EXCITATORY_WEIGHT = 0.060;
-  const INHIBITORY_WEIGHT = 0.082;
-  const EXCITATORY_GAIN = 1.15;
-  const INHIBITORY_GAIN = 1.25;
+  const MIN_WEIGHT = 0.006;
+  const MAX_WEIGHT = 0.070;
+  const EXCITATORY_WEIGHT = 0.022;
+  const INHIBITORY_WEIGHT = 0.034;
+  const EXCITATORY_GAIN = 1.05;
+  const INHIBITORY_GAIN = 1.30;
   const WEIGHT_RELAX_TAU_MS = 14000;
 
-  const AXON_DELAY_BASE_MS = 360;
-  const AXON_DELAY_PER_PX = 3.6;
+  const AXON_DELAY_BASE_MS = 1.2;
+  const AXON_DELAY_PER_PX = 0.018;
   const MAX_PULSES = 260;
 
   const STDP_WINDOW_MS = 45;
@@ -136,6 +145,10 @@
     while (u === 0) u = Math.random();
     while (v === 0) v = Math.random();
     return Math.sqrt(-2 * Math.log(u)) * Math.cos(2 * Math.PI * v);
+  }
+
+  function logNormal(mean, sigma) {
+    return mean * Math.exp(gaussian() * sigma - 0.5 * sigma * sigma);
   }
 
   function updateReadingBand() {
@@ -195,11 +208,12 @@
     canvas.style.height = H + "px";
     ctx.setTransform(1, 0, 0, 1, 0, 0);
     ctx.scale(dpr, dpr);
-    seed(nodeCountFor(W));
     lastTime = 0;
     modelTime = 0;
     lastScrollY = window.scrollY || 0;
     scrollDrive = 0;
+    updateCamera(true);
+    seed(nodeCountFor(W));
 
     if (!nodes.length) {
       ctx.clearRect(0, 0, W, H);
@@ -236,6 +250,8 @@
       const y = clamp(cluster.y + gaussian() * CLUSTER_SPREAD_Y, 0, H);
       const z = clamp(cluster.z + gaussian() * CLUSTER_SPREAD_Z, -Z_RANGE, Z_RANGE);
       const inhibitory = Math.random() > EXCITATORY_FRACTION;
+      const cell = inhibitory ? FAST_SPIKING : REGULAR_SPIKING;
+      const v0 = cell.c + Math.random() * 9;
 
       nodes[i] = {
         x3: x,
@@ -245,16 +261,18 @@
         py: 0,
         scale: 1,
         depthFade: 1,
-        V: V_REST + Math.random() * 8,
+        V: v0,
+        U: cell.b * v0,
         ge: 0,
         gi: 0,
         noise: 0,
-        adaptation: Math.random() * 1.5,
-        refractory: Math.random() * REFRACTORY_MS,
+        bias: inhibitory ? 2.2 + Math.random() * 1.2 : 2.7 + Math.random() * 1.6,
+        refractory: Math.random() * cell.refractory,
         lastSpike: -Infinity,
         spike: 0,
         baseSize: inhibitory ? 1.05 + Math.random() * 0.9 : 1.25 + Math.random() * 1.25,
         inhibitory,
+        cell,
         incoming: [],
         outgoing: [],
       };
@@ -288,37 +306,46 @@
         if (pre === post) continue;
         const b = nodes[post];
         const d = distance3(a, b);
-        if (d < EDGE_DISTANCE || Math.random() < LONG_RANGE_CHANCE) {
-          candidates.push({ post, d });
-        }
+        const local = Math.exp(-(d * d) / (2 * EDGE_DISTANCE * EDGE_DISTANCE));
+        const weight = local + LONG_RANGE_CHANCE * 0.12;
+        candidates.push({ post, d, weight });
       }
 
-      candidates.sort((p, q) => p.d - q.d);
       const outDegree = OUT_DEGREE_MIN + Math.floor(Math.random() * (OUT_DEGREE_MAX - OUT_DEGREE_MIN + 1));
       let made = 0;
 
-      for (let c = 0; c < candidates.length && made < outDegree; c++) {
-        const post = candidates[c].post;
-        const key = pre + ">" + post;
+      while (candidates.length && made < outDegree) {
+        const candidate = takeWeightedCandidate(candidates);
+        if (!candidate) break;
+        const key = pre + ">" + candidate.post;
         if (built.has(key)) continue;
-
-        const d = candidates[c].d;
-        const localBias = Math.exp(-(d * d) / (2 * EDGE_DISTANCE * EDGE_DISTANCE));
-        if (d > EDGE_DISTANCE && Math.random() > LONG_RANGE_CHANCE * localBias) continue;
-
         built.add(key);
-        addSynapse(pre, post, d);
+        addSynapse(pre, candidate.post, candidate.d);
         made++;
       }
     }
+  }
+
+  function takeWeightedCandidate(candidates) {
+    let total = 0;
+    for (let i = 0; i < candidates.length; i++) total += candidates[i].weight;
+    if (total <= 0) return candidates.pop();
+
+    let r = Math.random() * total;
+    for (let i = 0; i < candidates.length; i++) {
+      r -= candidates[i].weight;
+      if (r <= 0) return candidates.splice(i, 1)[0];
+    }
+    return candidates.pop();
   }
 
   function addSynapse(pre, post, distance) {
     const preNode = nodes[pre];
     const inhibitory = preNode.inhibitory;
     const baseline = inhibitory
-      ? INHIBITORY_WEIGHT * (0.75 + Math.random() * 0.50)
-      : EXCITATORY_WEIGHT * (0.75 + Math.random() * 0.50);
+      ? logNormal(INHIBITORY_WEIGHT, 0.42)
+      : logNormal(EXCITATORY_WEIGHT, 0.48);
+    const delay = AXON_DELAY_BASE_MS + distance * AXON_DELAY_PER_PX + Math.random() * 0.8;
     const idx = edges.length;
     edges.push({
       pre,
@@ -326,7 +353,8 @@
       inhibitory,
       strength: clamp(baseline, MIN_WEIGHT, MAX_WEIGHT),
       baseline: clamp(baseline, MIN_WEIGHT, MAX_WEIGHT),
-      delay: AXON_DELAY_BASE_MS + distance * AXON_DELAY_PER_PX + Math.random() * 120,
+      delay,
+      displayDelay: delay * DISPLAY_MS_PER_MODEL_MS,
       lastArrival: -Infinity,
     });
     nodes[pre].outgoing.push(idx);
@@ -335,14 +363,46 @@
 
   /* ---- projection ----------------------------------------------------- */
 
+  function updateCamera(immediate) {
+    const page = document.documentElement;
+    const scrollable = Math.max(1, page.scrollHeight - H);
+    const progress = clamp((window.scrollY || 0) / scrollable, 0, 1);
+    targetYaw = progress * SCROLL_YAW_RANGE;
+    targetPitch = BASE_PITCH + progress * SCROLL_PITCH_RANGE;
+
+    if (immediate) {
+      currentYaw = targetYaw;
+      currentPitch = targetPitch;
+    } else {
+      currentYaw += (targetYaw - currentYaw) * CAMERA_LERP;
+      currentPitch += (targetPitch - currentPitch) * CAMERA_LERP;
+    }
+  }
+
   function projectNode(n) {
     const cx = W * 0.5;
     const cy = H * 0.5;
-    const scale = FOCAL / (FOCAL + n.z3);
-    n.px = cx + (n.x3 - cx) * scale;
-    n.py = cy + (n.y3 - cy) * scale;
+    const dx = n.x3 - cx;
+    const dy = n.y3 - cy;
+    const dz = n.z3;
+
+    const cosY = Math.cos(currentYaw);
+    const sinY = Math.sin(currentYaw);
+    const cosX = Math.cos(currentPitch);
+    const sinX = Math.sin(currentPitch);
+
+    const x1 = dx * cosY + dz * sinY;
+    const y1 = dy;
+    const z1 = -dx * sinY + dz * cosY;
+    const x2 = x1;
+    const y2 = y1 * cosX - z1 * sinX;
+    const z2 = y1 * sinX + z1 * cosX;
+
+    const scale = FOCAL / (FOCAL + z2);
+    n.px = cx + x2 * scale;
+    n.py = cy + y2 * scale;
     n.scale = scale;
-    const df = (FOCAL * 0.62) / (FOCAL + n.z3);
+    const df = (FOCAL * 0.62) / (FOCAL + z2);
     n.depthFade = Math.min(1, Math.max(0.32, df * 1.35));
   }
 
@@ -377,9 +437,9 @@
 
     applyPostSpikePlasticity(nodeIdx);
 
-    n.V = V_RESET;
-    n.refractory = REFRACTORY_MS;
-    n.adaptation += ADAPTATION_INC_MV;
+    n.V = n.cell.c;
+    n.U += n.cell.d;
+    n.refractory = n.cell.refractory;
     n.lastSpike = modelTime;
     n.spike = 1;
 
@@ -390,6 +450,8 @@
       pulses.push({
         edge: edgeIdx,
         age: 0,
+        ageBio: 0,
+        delivered: false,
         strength: 0.82 + Math.random() * 0.28,
       });
     }
@@ -418,7 +480,6 @@
 
   function updateNode(n, idx, dt, bioDt, inputRateHz) {
     n.spike *= Math.exp(-dt / 170);
-    n.adaptation *= Math.exp(-bioDt / ADAPTATION_TAU_MS);
 
     if (Math.random() < (inputRateHz * dt) / 1000) {
       n.ge += BACKGROUND_EPSC * (0.65 + Math.random() * 0.70);
@@ -432,17 +493,23 @@
 
     if (n.refractory > 0) {
       n.refractory -= bioDt;
-      n.V = V_RESET;
       return;
     }
 
-    const synapticDrive = n.ge * (E_EXCITATORY - n.V) + n.gi * (E_INHIBITORY - n.V);
-    const leak = V_REST - n.V;
-    n.V += ((leak + synapticDrive + n.noise) * bioDt) / MEMBRANE_TAU_MS;
-    n.V = clamp(n.V, V_FLOOR, V_THRESHOLD + 8);
+    const steps = Math.max(1, Math.ceil(bioDt));
+    const h = bioDt / steps;
+    for (let step = 0; step < steps; step++) {
+      const synapticDrive = n.ge * (E_EXCITATORY - n.V) + n.gi * (E_INHIBITORY - n.V);
+      const dv = 0.04 * n.V * n.V + 5 * n.V + 140 - n.U + n.bias + synapticDrive + n.noise;
+      const du = n.cell.a * (n.cell.b * n.V - n.U);
+      n.V += dv * h;
+      n.U += du * h;
 
-    if (n.V >= V_THRESHOLD + n.adaptation) {
-      fire(idx, false);
+      if (n.V >= SPIKE_PEAK) {
+        fire(idx, false);
+        break;
+      }
+      n.V = clamp(n.V, V_FLOOR, SPIKE_PEAK + 5);
     }
   }
 
@@ -457,6 +524,8 @@
     lastScrollY = scrollY;
     scrollDrive = scrollDrive * Math.exp(-dt / 420) + Math.min(1, scrollDelta / 260);
     const inputRateHz = BACKGROUND_INPUT_RATE_HZ + scrollDrive * SCROLL_INPUT_RATE_HZ;
+    updateCamera(false);
+    projectAll();
 
     for (let i = 0; i < nodes.length; i++) {
       updateNode(nodes[i], i, dt, bioDt, inputRateHz);
@@ -466,9 +535,12 @@
     for (let p = 0; p < pulses.length; p++) {
       const pulse = pulses[p];
       pulse.age += dt;
-      if (pulse.age >= edges[pulse.edge].delay) {
+      pulse.ageBio += bioDt;
+      if (!pulse.delivered && pulse.ageBio >= edges[pulse.edge].delay) {
         deliverPulse(pulse);
-      } else {
+        pulse.delivered = true;
+      }
+      if (pulse.age < edges[pulse.edge].displayDelay) {
         remaining.push(pulse);
       }
     }
@@ -528,8 +600,7 @@
     for (let i = 0; i < nodes.length; i++) {
       const n = nodes[i];
       if (inReadingBand(n.px)) continue;
-      const threshold = V_THRESHOLD + n.adaptation;
-      const charge = clamp((n.V - V_REST) / (threshold - V_REST), 0, 1);
+      const charge = clamp((n.V - V_REST) / (SPIKE_PEAK - V_REST), 0, 1);
       const colour = n.inhibitory ? ACCENT_WARM : ACCENT_BLUE;
       const size = (n.baseSize + n.spike * 1.05 + charge * 0.35) * n.scale;
       const opacity = (0.13 + charge * 0.12 + n.spike * 0.30) * n.depthFade * (n.inhibitory ? 0.86 : 1);
@@ -547,7 +618,7 @@
       const post = nodes[edge.post];
       if (inReadingBand(pre.px) || inReadingBand(post.px) || segmentCrossesReadingBand(pre.px, post.px)) continue;
 
-      const t = pulse.age / edge.delay;
+      const t = pulse.age / edge.displayDelay;
       const colour = signalColour(edge);
 
       for (let s = 0; s < 2; s++) {
