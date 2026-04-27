@@ -1,19 +1,19 @@
-/* Background neural-network animation — 3D, scroll-coupled margin field.
+/* Background neural-field animation - scientifically informed margin field.
 
-   Each node is a leaky integrate-and-fire neuron in 3D space. Membrane
-   potential V accumulates from incoming pulses + Wiener noise; when V
-   crosses threshold the cell fires (refractory period 320ms blocks
-   re-firing). ~20% of nodes are inhibitory (their pulses subtract V
-   from targets — cortical interneurons). Hebbian growth on successful
-   pulse delivery; idle edges decay.
+   This is not an anatomical connectome. It is a quiet, legible abstraction of
+   local cortical circuit dynamics:
 
-   3D: nodes positioned in the page margins with depth ±300px.
-   Edges connect by 3D Euclidean distance. Each frame the volume
-   rotates: a constant X-tilt for depth visibility, plus a Y-rotation
-   that lerps toward scrollY (so reading rotates the network). Render
-   uses perspective projection — far nodes smaller and dimmer.
+   - neurons stay fixed in space; only voltage, spikes, and synapses change
+   - ~80/20 excitatory/inhibitory cell balance
+   - directed local small-world synapses, not undirected graph edges
+   - leaky integrate-and-fire membrane voltage with rest, reset, threshold,
+     refractory period, and spike-frequency adaptation
+   - conductance-like EPSP/IPSP inputs with different decay constants
+   - axonal propagation delay proportional to connection length
+   - probabilistic transmitter release
+   - spike-timing-dependent plasticity with slow homeostatic return
 
-   Two-colour system: blue is structure, sienna is moving signal. */
+   Biological time is slowed for readability; relative dynamics are the point. */
 
 (function () {
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -40,47 +40,75 @@
   let pulses = [];
   let readingBand = { left: 0, right: 0 };
   let lastTime = 0;
+  let modelTime = 0;
+  let lastScrollY = 0;
+  let scrollDrive = 0;
   let rafId = 0;
 
-  // Rotation state
-  let targetYAngle = 0;
-  let currentYAngle = 0;
-  const X_TILT = 0.18; // constant ~10° forward tilt for 3D visibility
-  const Y_SCROLL_RATIO = 0.00009; // rad per scroll px
-  const Y_TIME_RATE = 0.000028; // rad per ms — gentle constant rotation
-  const ANGLE_LERP = 0.07;
-
-  // 3D depth
-  const Z_RANGE = 320;
-  const FOCAL = 850;
-
-  /* ---- tuning (neural sim) ------------------------------------------- */
+  /* ---- visual geometry ------------------------------------------------ */
 
   const NODE_COUNT_DESKTOP = 180;
   const NODE_COUNT_TABLET = 90;
-  const EDGE_DISTANCE = 145;
-  const MAX_NEIGHBORS = 4;
-  const READING_BAND_PAD = 28;
+  const READING_BAND_PAD = 30;
+  const Z_RANGE = 300;
+  const FOCAL = 900;
 
-  const INHIBITORY_FRACTION = 0.20;
-
-  const DRIFT_AMPLITUDE = 6;
-  const DRIFT_RATE_MIN = 0.00012;
-  const DRIFT_RATE_MAX = 0.00040;
-
-  const V_DECAY = 0.985;
-  const V_NOISE = 0.0008;
-  const THRESHOLD = 1.0;
-  const REFRACTORY_MS = 320;
-
-  const SPIKE_DECAY_RATE = 0.0035;
-  const PULSE_DURATION_MS = 1100;
-  const PULSE_DELIVERY_V = 0.55;
-  const HEBBIAN_GROWTH = 0.025;
-  const STRENGTH_DECAY = 0.99965;
+  const CLUSTER_SIZE = 22;
+  const CLUSTER_SPREAD_X = 72;
+  const CLUSTER_SPREAD_Y = 125;
+  const CLUSTER_SPREAD_Z = 115;
 
   const ACCENT_BLUE = "26, 58, 94";
   const ACCENT_WARM = "154, 58, 20";
+
+  /* ---- circuit model -------------------------------------------------- */
+
+  const EXCITATORY_FRACTION = 0.80;
+  const OUT_DEGREE_MIN = 2;
+  const OUT_DEGREE_MAX = 5;
+  const EDGE_DISTANCE = 170;
+  const LONG_RANGE_CHANCE = 0.035;
+
+  // Slow model time down so millisecond-scale dynamics remain visible.
+  const MODEL_MS_PER_REAL_MS = 0.22;
+
+  const V_REST = -70;
+  const V_RESET = -65;
+  const V_THRESHOLD = -50;
+  const V_FLOOR = -85;
+  const E_EXCITATORY = 0;
+  const E_INHIBITORY = -80;
+
+  const MEMBRANE_TAU_MS = 22;
+  const EXC_DECAY_TAU_MS = 5;
+  const INH_DECAY_TAU_MS = 12;
+  const NOISE_TAU_MS = 90;
+  const NOISE_SIGMA = 0.19;
+  const REFRACTORY_MS = 4;
+  const ADAPTATION_INC_MV = 2.8;
+  const ADAPTATION_TAU_MS = 260;
+
+  const BACKGROUND_INPUT_RATE_HZ = 0.85;
+  const SCROLL_INPUT_RATE_HZ = 1.7;
+  const BACKGROUND_EPSC = 0.24;
+  const RELEASE_PROBABILITY = 0.82;
+
+  const MIN_WEIGHT = 0.018;
+  const MAX_WEIGHT = 0.160;
+  const EXCITATORY_WEIGHT = 0.060;
+  const INHIBITORY_WEIGHT = 0.082;
+  const EXCITATORY_GAIN = 1.15;
+  const INHIBITORY_GAIN = 1.25;
+  const WEIGHT_RELAX_TAU_MS = 14000;
+
+  const AXON_DELAY_BASE_MS = 360;
+  const AXON_DELAY_PER_PX = 3.6;
+  const MAX_PULSES = 260;
+
+  const STDP_WINDOW_MS = 45;
+  const STDP_TAU_MS = 18;
+  const STDP_POTENTIATION = 0.010;
+  const STDP_DEPRESSION = 0.012;
 
   /* ---- setup ---------------------------------------------------------- */
 
@@ -92,7 +120,22 @@
 
   function debounce(fn, ms) {
     let t = 0;
-    return function () { clearTimeout(t); t = setTimeout(fn, ms); };
+    return function () {
+      clearTimeout(t);
+      t = setTimeout(fn, ms);
+    };
+  }
+
+  function clamp(v, lo, hi) {
+    return Math.max(lo, Math.min(hi, v));
+  }
+
+  function gaussian() {
+    let u = 0;
+    let v = 0;
+    while (u === 0) u = Math.random();
+    while (v === 0) v = Math.random();
+    return Math.sqrt(-2 * Math.log(u)) * Math.cos(2 * Math.PI * v);
   }
 
   function updateReadingBand() {
@@ -129,10 +172,16 @@
     if (leftWidth <= 0) return rightMin + Math.random() * rightWidth;
     if (rightWidth <= 0) return Math.random() * leftWidth;
 
-    const chooseLeft = Math.random() < leftWidth / (leftWidth + rightWidth);
-    return chooseLeft
+    return Math.random() < leftWidth / (leftWidth + rightWidth)
       ? Math.random() * leftWidth
       : rightMin + Math.random() * rightWidth;
+  }
+
+  function marginXNear(x) {
+    const pad = 12;
+    if (x < readingBand.left) return clamp(x, pad, Math.max(pad, readingBand.left - pad));
+    if (x > readingBand.right) return clamp(x, Math.min(W - pad, readingBand.right + pad), W - pad);
+    return randomMarginX();
   }
 
   function resize() {
@@ -148,6 +197,9 @@
     ctx.scale(dpr, dpr);
     seed(nodeCountFor(W));
     lastTime = 0;
+    modelTime = 0;
+    lastScrollY = window.scrollY || 0;
+    scrollDrive = 0;
 
     if (!nodes.length) {
       ctx.clearRect(0, 0, W, H);
@@ -165,189 +217,267 @@
 
   function seed(count) {
     pulses = [];
+    edges = [];
     nodes = new Array(count);
-    for (let i = 0; i < count; i++) {
-      // 3D position: x is constrained to the margins; y and z fill the volume.
-      const x = randomMarginX();
-      const y = Math.random() * H;
-      // Gaussian-ish z (sum of three uniforms biases toward zero)
-      const z = (Math.random() + Math.random() + Math.random() - 1.5) * Z_RANGE * 0.85;
-      nodes[i] = {
-        x3: x, y3: y, z3: z,             // current 3D
-        baseX3: x, baseY3: y, baseZ3: z, // anchor for drift
-        driftPhaseX: Math.random() * Math.PI * 2,
-        driftPhaseY: Math.random() * Math.PI * 2,
-        driftPhaseZ: Math.random() * Math.PI * 2,
-        driftSpeedX: DRIFT_RATE_MIN + Math.random() * (DRIFT_RATE_MAX - DRIFT_RATE_MIN),
-        driftSpeedY: DRIFT_RATE_MIN + Math.random() * (DRIFT_RATE_MAX - DRIFT_RATE_MIN),
-        driftSpeedZ: DRIFT_RATE_MIN + Math.random() * (DRIFT_RATE_MAX - DRIFT_RATE_MIN),
-        // Projected coords (computed each frame)
-        px: 0, py: 0, scale: 1, depthFade: 1,
-        // Neuron state
-        V: Math.random() * 0.3,
-        spike: 0,
-        refractory: 0,
-        baseSize: 1.1 + Math.random() * 1.5,
-        inhibitory: Math.random() < INHIBITORY_FRACTION,
-        edgeIndices: [],
+
+    const clusterCount = Math.max(4, Math.round(count / CLUSTER_SIZE));
+    const clusters = new Array(clusterCount);
+    for (let c = 0; c < clusterCount; c++) {
+      clusters[c] = {
+        x: randomMarginX(),
+        y: Math.random() * H,
+        z: gaussian() * Z_RANGE * 0.28,
       };
     }
 
-    // Build edges by 3D proximity
-    const built = new Set();
-    edges = [];
     for (let i = 0; i < count; i++) {
-      const a = nodes[i];
+      const cluster = clusters[Math.floor(Math.random() * clusters.length)];
+      const x = marginXNear(cluster.x + gaussian() * CLUSTER_SPREAD_X);
+      const y = clamp(cluster.y + gaussian() * CLUSTER_SPREAD_Y, 0, H);
+      const z = clamp(cluster.z + gaussian() * CLUSTER_SPREAD_Z, -Z_RANGE, Z_RANGE);
+      const inhibitory = Math.random() > EXCITATORY_FRACTION;
+
+      nodes[i] = {
+        x3: x,
+        y3: y,
+        z3: z,
+        px: 0,
+        py: 0,
+        scale: 1,
+        depthFade: 1,
+        V: V_REST + Math.random() * 8,
+        ge: 0,
+        gi: 0,
+        noise: 0,
+        adaptation: Math.random() * 1.5,
+        refractory: Math.random() * REFRACTORY_MS,
+        lastSpike: -Infinity,
+        spike: 0,
+        baseSize: inhibitory ? 1.05 + Math.random() * 0.9 : 1.25 + Math.random() * 1.25,
+        inhibitory,
+        incoming: [],
+        outgoing: [],
+      };
+    }
+
+    buildSynapses();
+    projectAll();
+
+    // A few initial spikes prevent the field from starting in total silence.
+    const starters = Math.min(5, Math.floor(count * 0.04));
+    for (let i = 0; i < starters; i++) {
+      const idx = Math.floor(Math.random() * nodes.length);
+      fire(idx, true);
+    }
+  }
+
+  function distance3(a, b) {
+    const dx = b.x3 - a.x3;
+    const dy = b.y3 - a.y3;
+    const dz = b.z3 - a.z3;
+    return Math.sqrt(dx * dx + dy * dy + dz * dz);
+  }
+
+  function buildSynapses() {
+    const built = new Set();
+
+    for (let pre = 0; pre < nodes.length; pre++) {
+      const a = nodes[pre];
       const candidates = [];
-      for (let j = 0; j < count; j++) {
-        if (i === j) continue;
-        const b = nodes[j];
-        const dx = b.baseX3 - a.baseX3;
-        const dy = b.baseY3 - a.baseY3;
-        const dz = b.baseZ3 - a.baseZ3;
-        const d2 = dx * dx + dy * dy + dz * dz;
-        if (d2 < EDGE_DISTANCE * EDGE_DISTANCE) candidates.push({ j, d2 });
+      for (let post = 0; post < nodes.length; post++) {
+        if (pre === post) continue;
+        const b = nodes[post];
+        const d = distance3(a, b);
+        if (d < EDGE_DISTANCE || Math.random() < LONG_RANGE_CHANCE) {
+          candidates.push({ post, d });
+        }
       }
-      candidates.sort((p, q) => p.d2 - q.d2);
-      const k = Math.min(candidates.length, MAX_NEIGHBORS);
-      for (let n = 0; n < k; n++) {
-        const j = candidates[n].j;
-        const lo = Math.min(i, j), hi = Math.max(i, j);
-        const key = lo * 100000 + hi;
+
+      candidates.sort((p, q) => p.d - q.d);
+      const outDegree = OUT_DEGREE_MIN + Math.floor(Math.random() * (OUT_DEGREE_MAX - OUT_DEGREE_MIN + 1));
+      let made = 0;
+
+      for (let c = 0; c < candidates.length && made < outDegree; c++) {
+        const post = candidates[c].post;
+        const key = pre + ">" + post;
         if (built.has(key)) continue;
+
+        const d = candidates[c].d;
+        const localBias = Math.exp(-(d * d) / (2 * EDGE_DISTANCE * EDGE_DISTANCE));
+        if (d > EDGE_DISTANCE && Math.random() > LONG_RANGE_CHANCE * localBias) continue;
+
         built.add(key);
-        edges.push({
-          a: lo,
-          b: hi,
-          strength: 0.10 + Math.random() * 0.14,
-        });
+        addSynapse(pre, post, d);
+        made++;
       }
-    }
-    for (let e = 0; e < edges.length; e++) {
-      nodes[edges[e].a].edgeIndices.push(e);
-      nodes[edges[e].b].edgeIndices.push(e);
     }
   }
 
-  /* ---- 3D projection -------------------------------------------------- */
+  function addSynapse(pre, post, distance) {
+    const preNode = nodes[pre];
+    const inhibitory = preNode.inhibitory;
+    const baseline = inhibitory
+      ? INHIBITORY_WEIGHT * (0.75 + Math.random() * 0.50)
+      : EXCITATORY_WEIGHT * (0.75 + Math.random() * 0.50);
+    const idx = edges.length;
+    edges.push({
+      pre,
+      post,
+      inhibitory,
+      strength: clamp(baseline, MIN_WEIGHT, MAX_WEIGHT),
+      baseline: clamp(baseline, MIN_WEIGHT, MAX_WEIGHT),
+      delay: AXON_DELAY_BASE_MS + distance * AXON_DELAY_PER_PX + Math.random() * 120,
+      lastArrival: -Infinity,
+    });
+    nodes[pre].outgoing.push(idx);
+    nodes[post].incoming.push(idx);
+  }
 
-  function projectNode(n, cosY, sinY, cosX, sinX) {
-    // Translate to center
-    const cx = W * 0.5, cy = H * 0.5;
-    const dx = n.x3 - cx;
-    const dy = n.y3 - cy;
-    const dz = n.z3;
-    // Rotate around Y axis
-    const x1 = dx * cosY + dz * sinY;
-    const y1 = dy;
-    const z1 = -dx * sinY + dz * cosY;
-    // Rotate around X axis
-    const x2 = x1;
-    const y2 = y1 * cosX - z1 * sinX;
-    const z2 = y1 * sinX + z1 * cosX;
-    // Perspective project
-    const scale = FOCAL / (FOCAL + z2);
-    n.px = cx + x2 * scale;
-    n.py = cy + y2 * scale;
+  /* ---- projection ----------------------------------------------------- */
+
+  function projectNode(n) {
+    const cx = W * 0.5;
+    const cy = H * 0.5;
+    const scale = FOCAL / (FOCAL + n.z3);
+    n.px = cx + (n.x3 - cx) * scale;
+    n.py = cy + (n.y3 - cy) * scale;
     n.scale = scale;
-    // Depth fade — far points dimmer (z2 large positive)
-    // depthFade ranges from ~0.4 (far) to ~1.2 (near), clamp 0.35..1
-    const df = (FOCAL * 0.6) / (FOCAL + z2);
-    n.depthFade = Math.min(1, Math.max(0.30, df * 1.4));
+    const df = (FOCAL * 0.62) / (FOCAL + n.z3);
+    n.depthFade = Math.min(1, Math.max(0.32, df * 1.35));
   }
 
-  /* ---- spike + pulse ------------------------------------------------- */
+  function projectAll() {
+    for (let i = 0; i < nodes.length; i++) projectNode(nodes[i]);
+  }
 
-  function spawnPulsesFrom(nodeIdx) {
-    const n = nodes[nodeIdx];
-    const list = n.edgeIndices;
-    for (let k = 0; k < list.length; k++) {
-      const eIdx = list[k];
-      const edge = edges[eIdx];
-      if (Math.random() < edge.strength * 1.6) {
-        pulses.push({
-          edge: eIdx,
-          t: 0,
-          fromA: edge.a === nodeIdx,
-          inhibitory: n.inhibitory,
-          strength: 0.6 + Math.random() * 0.3,
-        });
+  /* ---- spikes, pulses, plasticity ------------------------------------ */
+
+  function strengthen(edge, amount) {
+    edge.strength = clamp(edge.strength + amount * (MAX_WEIGHT - edge.strength), MIN_WEIGHT, MAX_WEIGHT);
+  }
+
+  function weaken(edge, amount) {
+    edge.strength = clamp(edge.strength - amount * (edge.strength - MIN_WEIGHT), MIN_WEIGHT, MAX_WEIGHT);
+  }
+
+  function applyPostSpikePlasticity(postIdx) {
+    const post = nodes[postIdx];
+    for (let i = 0; i < post.incoming.length; i++) {
+      const edge = edges[post.incoming[i]];
+      const dt = modelTime - edge.lastArrival;
+      if (dt > 0 && dt < STDP_WINDOW_MS) {
+        strengthen(edge, STDP_POTENTIATION * Math.exp(-dt / STDP_TAU_MS));
       }
     }
   }
 
-  function fire(nodeIdx) {
+  function fire(nodeIdx, seeded) {
     const n = nodes[nodeIdx];
-    n.spike = 1.0;
-    n.V = 0;
+    if (!seeded && n.refractory > 0) return;
+
+    applyPostSpikePlasticity(nodeIdx);
+
+    n.V = V_RESET;
     n.refractory = REFRACTORY_MS;
-    spawnPulsesFrom(nodeIdx);
+    n.adaptation += ADAPTATION_INC_MV;
+    n.lastSpike = modelTime;
+    n.spike = 1;
+
+    for (let i = 0; i < n.outgoing.length; i++) {
+      const edgeIdx = n.outgoing[i];
+      if (pulses.length >= MAX_PULSES) break;
+      if (Math.random() > RELEASE_PROBABILITY) continue;
+      pulses.push({
+        edge: edgeIdx,
+        age: 0,
+        strength: 0.82 + Math.random() * 0.28,
+      });
+    }
+  }
+
+  function deliverPulse(pulse) {
+    const edge = edges[pulse.edge];
+    const post = nodes[edge.post];
+    const conductance = edge.strength * pulse.strength;
+
+    edge.lastArrival = modelTime;
+
+    if (edge.inhibitory) {
+      post.gi += conductance * INHIBITORY_GAIN;
+    } else {
+      post.ge += conductance * EXCITATORY_GAIN;
+    }
+
+    const postBeforePre = modelTime - post.lastSpike;
+    if (postBeforePre > 0 && postBeforePre < STDP_WINDOW_MS) {
+      weaken(edge, STDP_DEPRESSION * Math.exp(-postBeforePre / STDP_TAU_MS));
+    }
   }
 
   /* ---- per-frame ------------------------------------------------------ */
 
+  function updateNode(n, idx, dt, bioDt, inputRateHz) {
+    n.spike *= Math.exp(-dt / 170);
+    n.adaptation *= Math.exp(-bioDt / ADAPTATION_TAU_MS);
+
+    if (Math.random() < (inputRateHz * dt) / 1000) {
+      n.ge += BACKGROUND_EPSC * (0.65 + Math.random() * 0.70);
+    }
+
+    n.ge *= Math.exp(-bioDt / EXC_DECAY_TAU_MS);
+    n.gi *= Math.exp(-bioDt / INH_DECAY_TAU_MS);
+    n.ge = Math.min(n.ge, 0.75);
+    n.gi = Math.min(n.gi, 0.95);
+    n.noise += (-n.noise * bioDt) / NOISE_TAU_MS + gaussian() * NOISE_SIGMA * Math.sqrt(Math.max(bioDt, 0.001));
+
+    if (n.refractory > 0) {
+      n.refractory -= bioDt;
+      n.V = V_RESET;
+      return;
+    }
+
+    const synapticDrive = n.ge * (E_EXCITATORY - n.V) + n.gi * (E_INHIBITORY - n.V);
+    const leak = V_REST - n.V;
+    n.V += ((leak + synapticDrive + n.noise) * bioDt) / MEMBRANE_TAU_MS;
+    n.V = clamp(n.V, V_FLOOR, V_THRESHOLD + 8);
+
+    if (n.V >= V_THRESHOLD + n.adaptation) {
+      fire(idx, false);
+    }
+  }
+
   function tick(time) {
     const dt = lastTime ? Math.min(time - lastTime, 50) : 16;
     lastTime = time;
+    const bioDt = dt * MODEL_MS_PER_REAL_MS;
+    modelTime += bioDt;
 
-    // 1. Drift in 3D, leaky integrate-and-fire dynamics
+    const scrollY = window.scrollY || 0;
+    const scrollDelta = Math.abs(scrollY - lastScrollY);
+    lastScrollY = scrollY;
+    scrollDrive = scrollDrive * Math.exp(-dt / 420) + Math.min(1, scrollDelta / 260);
+    const inputRateHz = BACKGROUND_INPUT_RATE_HZ + scrollDrive * SCROLL_INPUT_RATE_HZ;
+
     for (let i = 0; i < nodes.length; i++) {
-      const n = nodes[i];
-      n.driftPhaseX += n.driftSpeedX * dt;
-      n.driftPhaseY += n.driftSpeedY * dt;
-      n.driftPhaseZ += n.driftSpeedZ * dt;
-      n.x3 = n.baseX3 + Math.sin(n.driftPhaseX) * DRIFT_AMPLITUDE;
-      n.y3 = n.baseY3 + Math.cos(n.driftPhaseY) * DRIFT_AMPLITUDE;
-      n.z3 = n.baseZ3 + Math.sin(n.driftPhaseZ) * DRIFT_AMPLITUDE * 0.6;
-
-      n.spike *= Math.exp(-SPIKE_DECAY_RATE * dt);
-
-      if (n.refractory > 0) {
-        n.refractory -= dt;
-        continue;
-      }
-      n.V += (Math.random() - 0.48) * V_NOISE * dt;
-      n.V *= Math.pow(V_DECAY, dt / 16);
-      if (n.V < 0) n.V = 0;
-      if (n.V >= THRESHOLD) fire(i);
+      updateNode(nodes[i], i, dt, bioDt, inputRateHz);
     }
 
-    // 2. Pulses
-    const surviving = [];
+    const remaining = [];
     for (let p = 0; p < pulses.length; p++) {
       const pulse = pulses[p];
-      pulse.t += dt / PULSE_DURATION_MS;
-      if (pulse.t >= 1) {
-        const edge = edges[pulse.edge];
-        const target = pulse.fromA ? edge.b : edge.a;
-        const node = nodes[target];
-        edge.strength = Math.min(1, edge.strength + HEBBIAN_GROWTH * pulse.strength);
-        if (node.refractory <= 0) {
-          const sign = pulse.inhibitory ? -1.0 : 1.0;
-          node.V += sign * pulse.strength * PULSE_DELIVERY_V;
-          if (node.V < 0) node.V = 0;
-          if (node.V >= THRESHOLD) fire(target);
-        }
+      pulse.age += dt;
+      if (pulse.age >= edges[pulse.edge].delay) {
+        deliverPulse(pulse);
       } else {
-        surviving.push(pulse);
+        remaining.push(pulse);
       }
     }
-    pulses = surviving;
+    pulses = remaining;
 
-    // 3. Edge decay
+    const relax = 1 - Math.exp(-dt / WEIGHT_RELAX_TAU_MS);
     for (let e = 0; e < edges.length; e++) {
-      edges[e].strength *= Math.pow(STRENGTH_DECAY, dt / 16);
-    }
-
-    // 4. Update rotation
-    targetYAngle = window.scrollY * Y_SCROLL_RATIO + time * Y_TIME_RATE;
-    currentYAngle += (targetYAngle - currentYAngle) * ANGLE_LERP;
-
-    // 5. Project all nodes once
-    const cosY = Math.cos(currentYAngle), sinY = Math.sin(currentYAngle);
-    const cosX = Math.cos(X_TILT), sinX = Math.sin(X_TILT);
-    for (let i = 0; i < nodes.length; i++) {
-      projectNode(nodes[i], cosY, sinY, cosX, sinX);
+      const edge = edges[e];
+      edge.strength += (edge.baseline - edge.strength) * relax;
     }
 
     drawFrame();
@@ -356,82 +486,85 @@
 
   /* ---- render --------------------------------------------------------- */
 
+  function signalColour(edge) {
+    return edge.inhibitory ? ACCENT_WARM : ACCENT_BLUE;
+  }
+
   function drawFrame() {
     ctx.clearRect(0, 0, W, H);
     ctx.lineCap = "round";
 
-    // Network elements are dialed back so they remain atmospheric in the margins.
-
-    // Edges
     for (let e = 0; e < edges.length; e++) {
       const edge = edges[e];
-      if (edge.strength < 0.03) continue;
-      const a = nodes[edge.a], b = nodes[edge.b];
-      if (inReadingBand(a.px) || inReadingBand(b.px) || segmentCrossesReadingBand(a.px, b.px)) continue;
-      const depthFade = (a.depthFade + b.depthFade) * 0.5;
-      const opacity = Math.min(0.18, edge.strength * 0.24) * depthFade;
-      ctx.strokeStyle = `rgba(${ACCENT_BLUE}, ${opacity})`;
-      ctx.lineWidth = (0.5 + edge.strength * 0.3) * Math.min(1, depthFade + 0.2);
+      const pre = nodes[edge.pre];
+      const post = nodes[edge.post];
+      if (inReadingBand(pre.px) || inReadingBand(post.px) || segmentCrossesReadingBand(pre.px, post.px)) continue;
+
+      const strengthNorm = (edge.strength - MIN_WEIGHT) / (MAX_WEIGHT - MIN_WEIGHT);
+      const depthFade = (pre.depthFade + post.depthFade) * 0.5;
+      const colour = edge.inhibitory ? ACCENT_WARM : ACCENT_BLUE;
+      const opacity = (0.030 + strengthNorm * 0.145) * depthFade * (edge.inhibitory ? 0.72 : 1);
+
+      ctx.strokeStyle = `rgba(${colour}, ${opacity})`;
+      ctx.lineWidth = (0.45 + strengthNorm * 0.55) * Math.min(1, depthFade + 0.15);
       ctx.beginPath();
-      ctx.moveTo(a.px, a.py);
-      ctx.lineTo(b.px, b.py);
+      ctx.moveTo(pre.px, pre.py);
+      ctx.lineTo(post.px, post.py);
       ctx.stroke();
     }
 
-    // Halos
     for (let i = 0; i < nodes.length; i++) {
       const n = nodes[i];
-      if (inReadingBand(n.px)) continue;
-      if (n.spike < 0.35) continue;
-      const r = (5 + n.spike * 9) * n.scale;
-      const opacity = n.spike * 0.045 * n.depthFade;
-      ctx.fillStyle = `rgba(${ACCENT_WARM}, ${opacity})`;
+      if (inReadingBand(n.px) || n.spike < 0.24) continue;
+      const colour = n.inhibitory ? ACCENT_WARM : ACCENT_BLUE;
+      const r = (5.2 + n.spike * 9.5) * n.scale;
+      const opacity = n.spike * 0.052 * n.depthFade;
+      ctx.fillStyle = `rgba(${colour}, ${opacity})`;
       ctx.beginPath();
       ctx.arc(n.px, n.py, r, 0, Math.PI * 2);
       ctx.fill();
     }
 
-    // Nodes
     for (let i = 0; i < nodes.length; i++) {
       const n = nodes[i];
       if (inReadingBand(n.px)) continue;
-      const charge = Math.min(1, n.V / THRESHOLD);
-      const activity = 0.18 + 0.18 * charge + n.spike * 0.35;
-      const size = (n.baseSize + n.spike * 1.0) * n.scale;
-      const opacity = (0.12 + activity * 0.30) * n.depthFade;
-      ctx.fillStyle = `rgba(${ACCENT_BLUE}, ${opacity})`;
+      const threshold = V_THRESHOLD + n.adaptation;
+      const charge = clamp((n.V - V_REST) / (threshold - V_REST), 0, 1);
+      const colour = n.inhibitory ? ACCENT_WARM : ACCENT_BLUE;
+      const size = (n.baseSize + n.spike * 1.05 + charge * 0.35) * n.scale;
+      const opacity = (0.13 + charge * 0.12 + n.spike * 0.30) * n.depthFade * (n.inhibitory ? 0.86 : 1);
+
+      ctx.fillStyle = `rgba(${colour}, ${opacity})`;
       ctx.beginPath();
       ctx.arc(n.px, n.py, size, 0, Math.PI * 2);
       ctx.fill();
     }
 
-    // Pulses
     for (let p = 0; p < pulses.length; p++) {
       const pulse = pulses[p];
       const edge = edges[pulse.edge];
-      const a = nodes[edge.a], b = nodes[edge.b];
-      if (inReadingBand(a.px) || inReadingBand(b.px) || segmentCrossesReadingBand(a.px, b.px)) continue;
-      const fromA = pulse.fromA;
-      const ax = fromA ? a.px : b.px, ay = fromA ? a.py : b.py;
-      const bx = fromA ? b.px : a.px, by = fromA ? b.py : a.py;
-      const aDF = fromA ? a.depthFade : b.depthFade;
-      const bDF = fromA ? b.depthFade : a.depthFade;
-      const aS = fromA ? a.scale : b.scale;
-      const bS = fromA ? b.scale : a.scale;
+      const pre = nodes[edge.pre];
+      const post = nodes[edge.post];
+      if (inReadingBand(pre.px) || inReadingBand(post.px) || segmentCrossesReadingBand(pre.px, post.px)) continue;
+
+      const t = pulse.age / edge.delay;
+      const colour = signalColour(edge);
 
       for (let s = 0; s < 2; s++) {
-        const tt = pulse.t - s * 0.06;
+        const tt = t - s * 0.055;
         if (tt < 0 || tt > 1) continue;
-        const px = ax + (bx - ax) * tt;
-        const py = ay + (by - ay) * tt;
+        const px = pre.px + (post.px - pre.px) * tt;
+        const py = pre.py + (post.py - pre.py) * tt;
         if (inReadingBand(px)) continue;
-        const df = aDF + (bDF - aDF) * tt;
-        const sc = aS + (bS - aS) * tt;
-        const trailAlpha = pulse.strength * (1 - s * 0.50) * 0.42 * df;
-        const trailSize = (1.8 - s * 0.6) * sc;
-        ctx.fillStyle = `rgba(${ACCENT_WARM}, ${trailAlpha})`;
+
+        const df = pre.depthFade + (post.depthFade - pre.depthFade) * tt;
+        const sc = pre.scale + (post.scale - pre.scale) * tt;
+        const alpha = pulse.strength * (1 - s * 0.52) * (edge.inhibitory ? 0.34 : 0.30) * df;
+        const radius = (1.9 - s * 0.62) * sc;
+
+        ctx.fillStyle = `rgba(${colour}, ${alpha})`;
         ctx.beginPath();
-        ctx.arc(px, py, trailSize, 0, Math.PI * 2);
+        ctx.arc(px, py, radius, 0, Math.PI * 2);
         ctx.fill();
       }
     }
@@ -439,11 +572,7 @@
 
   function renderStatic() {
     if (!nodes.length) return;
-    const cosY = 1, sinY = 0;
-    const cosX = Math.cos(X_TILT), sinX = Math.sin(X_TILT);
-    for (let i = 0; i < nodes.length; i++) {
-      projectNode(nodes[i], cosY, sinY, cosX, sinX);
-    }
+    projectAll();
     drawFrame();
   }
 
