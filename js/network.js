@@ -306,47 +306,50 @@
     ctx.clearRect(0, 0, W, H);
     ctx.lineCap = "round";
 
-    // Edges — draw each as straight projected line, opacity scaled by depth
+    // Network elements are dialed back ~40% — text now reads over them
+    // with the help of a small white text-shadow.
+
+    // Edges
     for (let e = 0; e < edges.length; e++) {
       const edge = edges[e];
       if (edge.strength < 0.03) continue;
       const a = nodes[edge.a], b = nodes[edge.b];
       const depthFade = (a.depthFade + b.depthFade) * 0.5;
-      const opacity = Math.min(0.30, edge.strength * 0.40) * depthFade;
+      const opacity = Math.min(0.18, edge.strength * 0.24) * depthFade;
       ctx.strokeStyle = `rgba(${ACCENT_BLUE}, ${opacity})`;
-      ctx.lineWidth = (0.5 + edge.strength * 0.4) * Math.min(1, depthFade + 0.2);
+      ctx.lineWidth = (0.5 + edge.strength * 0.3) * Math.min(1, depthFade + 0.2);
       ctx.beginPath();
       ctx.moveTo(a.px, a.py);
       ctx.lineTo(b.px, b.py);
       ctx.stroke();
     }
 
-    // Halos for spiking nodes (sienna, very faint)
+    // Halos
     for (let i = 0; i < nodes.length; i++) {
       const n = nodes[i];
-      if (n.spike < 0.30) continue;
-      const r = (5 + n.spike * 11) * n.scale;
-      const opacity = n.spike * 0.07 * n.depthFade;
+      if (n.spike < 0.35) continue;
+      const r = (5 + n.spike * 9) * n.scale;
+      const opacity = n.spike * 0.045 * n.depthFade;
       ctx.fillStyle = `rgba(${ACCENT_WARM}, ${opacity})`;
       ctx.beginPath();
       ctx.arc(n.px, n.py, r, 0, Math.PI * 2);
       ctx.fill();
     }
 
-    // Nodes — perspective-scaled, depth-faded
+    // Nodes
     for (let i = 0; i < nodes.length; i++) {
       const n = nodes[i];
       const charge = Math.min(1, n.V / THRESHOLD);
       const activity = 0.18 + 0.18 * charge + n.spike * 0.35;
-      const size = (n.baseSize + n.spike * 1.2) * n.scale;
-      const opacity = (0.18 + activity * 0.45) * n.depthFade;
+      const size = (n.baseSize + n.spike * 1.0) * n.scale;
+      const opacity = (0.12 + activity * 0.30) * n.depthFade;
       ctx.fillStyle = `rgba(${ACCENT_BLUE}, ${opacity})`;
       ctx.beginPath();
       ctx.arc(n.px, n.py, size, 0, Math.PI * 2);
       ctx.fill();
     }
 
-    // Pulses — sienna dots travelling along projected edges
+    // Pulses
     for (let p = 0; p < pulses.length; p++) {
       const pulse = pulses[p];
       const edge = edges[pulse.edge];
@@ -359,7 +362,6 @@
       const aS = fromA ? a.scale : b.scale;
       const bS = fromA ? b.scale : a.scale;
 
-      // Trail of two
       for (let s = 0; s < 2; s++) {
         const tt = pulse.t - s * 0.06;
         if (tt < 0 || tt > 1) continue;
@@ -367,8 +369,8 @@
         const py = ay + (by - ay) * tt;
         const df = aDF + (bDF - aDF) * tt;
         const sc = aS + (bS - aS) * tt;
-        const trailAlpha = pulse.strength * (1 - s * 0.50) * 0.65 * df;
-        const trailSize = (2.0 - s * 0.65) * sc;
+        const trailAlpha = pulse.strength * (1 - s * 0.50) * 0.42 * df;
+        const trailSize = (1.8 - s * 0.6) * sc;
         ctx.fillStyle = `rgba(${ACCENT_WARM}, ${trailAlpha})`;
         ctx.beginPath();
         ctx.arc(px, py, trailSize, 0, Math.PI * 2);

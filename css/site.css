@@ -158,13 +158,29 @@ a:hover {
 .document {
   position: relative;
   z-index: 1;
-  /* Slightly translucent so the background network shows through at low
-     opacity behind the text — full-background, not margins-only. */
-  background: rgba(255, 255, 255, 0.86);
+  /* Transparent so the network reads through behind text, full-view. */
+  background: transparent;
   max-width: calc(var(--measure) + var(--gutter) + var(--sidenote-width));
   margin: 0 auto;
   padding: var(--pad-top) var(--pad-side) var(--pad-bottom);
   counter-reset: section;
+}
+
+/* Text crispness over the live background */
+.document p,
+.document h2,
+.document h3,
+.document blockquote,
+.document li,
+.cover-title,
+.cover-subtitle,
+.cover-byline,
+.cover-altlang,
+.colophon,
+.sidenote {
+  text-shadow:
+    0 0 3px var(--paper),
+    0 0 1px var(--paper);
 }
 
 .document > * { max-width: var(--measure); }
