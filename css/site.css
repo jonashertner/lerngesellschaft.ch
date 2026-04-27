@@ -57,8 +57,8 @@
   --pad-side:   clamp(1em,    0.6em + 1.4vw, 1.5em);
   --pad-bottom: clamp(3em,    1em + 4vw, 6em);
 
-  --title-size:    clamp(1.85rem, 1.4rem + 2.6vw, 3.4rem);
-  --subtitle-size: clamp(0.96rem, 0.9rem + 0.2vw, 1.04rem);
+  --title-size: 3.15rem;
+  --subtitle-size: 1rem;
 
   --leading: 1.55;
   --motion:  cubic-bezier(0.22, 1, 0.36, 1);
@@ -78,6 +78,7 @@ html {
 
 @media (max-width: 480px) {
   html { font-size: 17px; }
+  :root { --title-size: 2.05rem; }
 }
 
 html { background: var(--paper); overflow-x: hidden; }
@@ -103,8 +104,8 @@ body {
 
 /* --------------------------------------------------------------------------
    Background neural-network canvas — fixed behind everything.
-   Hidden on narrow viewports (where the document fills the viewport and
-   would obscure the network anyway).
+   The animation is generated outside the main reading measure, so it reads
+   as margin atmosphere rather than a texture behind the prose.
    -------------------------------------------------------------------------- */
 
 .network-bg {
@@ -118,8 +119,8 @@ body {
   display: block !important;
 }
 
-@media (max-width: 600px) {
-  .network-bg { display: none; }
+@media (max-width: 700px) {
+  .network-bg { display: none !important; }
 }
 
 a {
@@ -158,29 +159,11 @@ a:hover {
 .document {
   position: relative;
   z-index: 1;
-  /* Transparent so the network reads through behind text, full-view. */
   background: transparent;
   max-width: calc(var(--measure) + var(--gutter) + var(--sidenote-width));
   margin: 0 auto;
   padding: var(--pad-top) var(--pad-side) var(--pad-bottom);
   counter-reset: section;
-}
-
-/* Text crispness over the live background */
-.document p,
-.document h2,
-.document h3,
-.document blockquote,
-.document li,
-.cover-title,
-.cover-subtitle,
-.cover-byline,
-.cover-altlang,
-.colophon,
-.sidenote {
-  text-shadow:
-    0 0 3px var(--paper),
-    0 0 1px var(--paper);
 }
 
 .document > * { max-width: var(--measure); }
@@ -201,7 +184,7 @@ a:hover {
   line-height: 1.0;
   margin: 0;
   font-weight: normal;
-  letter-spacing: -0.022em;
+  letter-spacing: 0;
   hanging-punctuation: first last;
 }
 
@@ -243,7 +226,7 @@ body.is-loaded .cover-subtitle {
   font-size: 0.86rem;
   color: var(--ink-soft);
   margin: 4em 0 0;
-  letter-spacing: 0.005em;
+  letter-spacing: 0;
   opacity: 0;
   transition: opacity 720ms var(--motion);
 }
@@ -309,7 +292,7 @@ body.is-loaded .cover-altlang {
   counter-increment: section;
   font-weight: normal;
   font-style: italic;
-  font-size: clamp(1.1rem, 1rem + 0.3vw, 1.22rem);
+  font-size: 1.18rem;
   text-align: left;
   margin: clamp(3.5em, 5.5em, 5.5em) 0 1.6em;
   line-height: 1.32;
@@ -322,7 +305,7 @@ body.is-loaded .cover-altlang {
   font-size: 0.8rem;
   color: var(--accent);
   margin-bottom: 0.45em;
-  letter-spacing: 0.02em;
+  letter-spacing: 0;
   transition: color 200ms var(--motion);
 }
 .document h2.is-arrived::before {
@@ -484,7 +467,10 @@ body.is-loaded .cover-altlang {
 @media (max-width: 900px) {
   :root { --sidenote-width: auto; }
 
-  .document { max-width: var(--measure); }
+  .document {
+    max-width: var(--measure);
+    background: transparent;
+  }
   .document p { text-align: left; word-spacing: 0; }
 
   /* Larger tap target around the marker without affecting visual layout */
@@ -538,6 +524,7 @@ body.is-loaded .cover-altlang {
 @media (max-width: 480px) {
   .cover-mark { height: 2px; }
   .cover-byline { margin-top: 3em; }
+  .document h2 { font-size: 1.12rem; }
   .colophon { font-size: 0.86rem; }
 }
 
@@ -583,6 +570,7 @@ body.is-loaded .cover-altlang {
   @page { size: A5; margin: 22mm 18mm 24mm 22mm; }
   body { background: #fff; padding: 0; }
   .skip { display: none; }
+  .network-bg { display: none !important; }
   .document { padding: 0; max-width: none; }
   .document > * { max-width: none; }
   .cover-mark { display: none; }

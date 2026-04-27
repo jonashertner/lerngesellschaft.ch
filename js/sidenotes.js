@@ -31,18 +31,20 @@ if (document.readyState === "loading") {
 
 /* ---- Sidenote line-alignment + overlap stacking ------------------------- */
 
-const reveal = new IntersectionObserver(
-  (entries, obs) => {
-    for (const entry of entries) {
-      if (entry.isIntersecting) {
-        const target = entry.target;
-        setTimeout(() => target.classList.add("is-revealed"), REVEAL_DELAY_MS);
-        obs.unobserve(target);
-      }
-    }
-  },
-  { rootMargin: "0px 0px -10% 0px", threshold: 0.05 }
-);
+const reveal = "IntersectionObserver" in window
+  ? new IntersectionObserver(
+      (entries, obs) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            const target = entry.target;
+            setTimeout(() => target.classList.add("is-revealed"), REVEAL_DELAY_MS);
+            obs.unobserve(target);
+          }
+        }
+      },
+      { rootMargin: "0px 0px -10% 0px", threshold: 0.05 }
+    )
+  : null;
 
 let placeFrame = 0;
 function place() {
@@ -166,24 +168,35 @@ function bindSidenotes() {
     const note = document.querySelector(`.sidenote[data-fn="${fn}"]`);
     if (!note) return;
 
-    reveal.observe(note);
+    if (reveal) reveal.observe(note);
+    else note.classList.add("is-revealed");
 
     let activeLine = null;
+    let hovered = false;
+    let focused = false;
 
     const activate = () => {
+      if (note.classList.contains("is-active")) return;
       note.classList.add("is-active");
+      marker.setAttribute("aria-expanded", "true");
       activeLine = drawHairline(marker, note);
     };
     const deactivate = () => {
       note.classList.remove("is-active");
+      marker.setAttribute("aria-expanded", "false");
       eraseHairline(activeLine);
       activeLine = null;
     };
+    const syncWideState = () => {
+      if (!WIDE.matches) return;
+      if (hovered || focused) activate();
+      else deactivate();
+    };
 
-    marker.addEventListener("mouseenter", () => { if (WIDE.matches) activate(); });
-    marker.addEventListener("mouseleave", () => { if (WIDE.matches) deactivate(); });
-    marker.addEventListener("focus", () => { if (WIDE.matches) activate(); });
-    marker.addEventListener("blur", () => { if (WIDE.matches) deactivate(); });
+    marker.addEventListener("mouseenter", () => { hovered = true; syncWideState(); });
+    marker.addEventListener("mouseleave", () => { hovered = false; syncWideState(); });
+    marker.addEventListener("focus", () => { focused = true; syncWideState(); });
+    marker.addEventListener("blur", () => { focused = false; syncWideState(); });
 
     const toggleInline = () => {
       const expanded = note.classList.toggle("is-expanded");
@@ -199,6 +212,16 @@ function bindSidenotes() {
         e.preventDefault();
         if (WIDE.matches) activate();
         else toggleInline();
+      } else if (e.key === "Escape") {
+        if (WIDE.matches) {
+          hovered = false;
+          focused = false;
+          deactivate();
+        } else if (note.classList.contains("is-expanded")) {
+          note.classList.remove("is-expanded");
+          marker.setAttribute("aria-expanded", "false");
+          requestAnimationFrame(place);
+        }
       }
     });
   });
@@ -213,6 +236,21 @@ function bindSidenotes() {
   if (document.fonts && document.fonts.ready) {
     document.fonts.ready.then(place);
   }
+  const resetResponsiveState = () => {
+    document.querySelectorAll(".sidenote.is-expanded").forEach((note) => {
+      note.classList.remove("is-expanded");
+    });
+    document.querySelectorAll(".sidenote.is-active").forEach((note) => {
+      note.classList.remove("is-active");
+    });
+    document.querySelectorAll(".note-marker[aria-expanded='true']").forEach((marker) => {
+      marker.setAttribute("aria-expanded", "false");
+    });
+    if (overlay) overlay.replaceChildren();
+    requestAnimationFrame(place);
+  };
+  if (WIDE.addEventListener) WIDE.addEventListener("change", resetResponsiveState);
+  else if (WIDE.addListener) WIDE.addListener(resetResponsiveState);
   window.addEventListener("load", place);
   setTimeout(place, 120);
   setTimeout(place, 600);
