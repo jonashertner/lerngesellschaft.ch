@@ -1,16 +1,21 @@
 /* Background neural-network animation.
 
-   A continuously alive network in the page background:
-   - Each node breathes on its own sinusoidal phase (continuous activity).
-   - Each node drifts gently in a Lissajous pattern (the network is alive).
-   - Edges are quadratic Bézier curves with stable perpendicular offsets.
-   - Spikes travel as sienna pulses along edges over ~1s; on arrival they
-     trigger downstream spikes — cascading activity, like real brain waves.
-   - Hebbian growth: edges that carry signals strengthen; unused edges decay.
-   - Halos bloom around spiking nodes.
+   Integrate-and-fire neurons with refractory periods, Hebbian
+   plasticity, and sparse activity — the most biologically accurate
+   simulation we can render in real time at this scale.
 
-   Two-colour system: fountain-pen blue for structure, burnt sienna for the
-   moving signal. */
+   Each node is a leaky integrator with membrane potential V.
+   Synaptic input from a pulse adds (or subtracts, for inhibitory
+   edges) to V. When V crosses threshold the neuron spikes:
+   V resets, refractory period engages, pulses emit on outgoing
+   edges. While refractory, the cell ignores incoming pulses.
+
+   ~20% of nodes are inhibitory (their outgoing pulses subtract V
+   from targets), modelling cortical inhibition. Hebbian: edges
+   that successfully deliver pulses strengthen.
+
+   Two-colour system: fountain-pen blue is structure (substrate);
+   burnt sienna is signal (electrochemical activity, transient). */
 
 (function () {
   console.log("[network] script loaded");
@@ -43,27 +48,29 @@
 
   /* ---- tuning --------------------------------------------------------- */
 
-  const NODE_COUNT_DESKTOP = 130;
-  const NODE_COUNT_TABLET = 75;
-  const EDGE_DISTANCE = 145;
+  const NODE_COUNT_DESKTOP = 200;
+  const NODE_COUNT_TABLET = 110;
+  const EDGE_DISTANCE = 130;
   const MAX_NEIGHBORS = 4;
 
-  const DRIFT_AMPLITUDE = 8;
-  const DRIFT_RATE_MIN = 0.00018;
-  const DRIFT_RATE_MAX = 0.00055;
+  const INHIBITORY_FRACTION = 0.20; // ~20% of cells are inhibitory (cortical fraction)
 
-  const PHASE_SPEED_MIN = 0.0008;
-  const PHASE_SPEED_MAX = 0.0030;
+  const DRIFT_AMPLITUDE = 6;
+  const DRIFT_RATE_MIN = 0.00012;
+  const DRIFT_RATE_MAX = 0.00040;
 
-  const SPIKE_PROB_PER_MS = 0.000035;
-  const SPIKE_DECAY_RATE = 0.0015; // per ms
+  // Membrane dynamics
+  const V_DECAY = 0.985;          // per frame leak toward 0
+  const V_NOISE = 0.0008;         // per-ms stochastic drive (random walk on V)
+  const THRESHOLD = 1.0;
+  const REFRACTORY_MS = 320;
 
-  const PULSE_DURATION_MS = 950;
-  const PULSE_CASCADE_PROB = 0.55;
-  const PULSE_DELIVERY_GAIN = 0.7;
-
-  const HEBBIAN_GROWTH = 0.05;
-  const STRENGTH_DECAY = 0.99935;
+  // Spike & pulse
+  const SPIKE_DECAY_RATE = 0.0035; // per ms (visual decay only)
+  const PULSE_DURATION_MS = 1100;
+  const PULSE_DELIVERY_V = 0.55;
+  const HEBBIAN_GROWTH = 0.025;
+  const STRENGTH_DECAY = 0.99965;
 
   const ACCENT_BLUE = "26, 58, 94";
   const ACCENT_WARM = "154, 58, 20";
@@ -107,10 +114,11 @@
         driftPhaseY: Math.random() * Math.PI * 2,
         driftSpeedX: DRIFT_RATE_MIN + Math.random() * (DRIFT_RATE_MAX - DRIFT_RATE_MIN),
         driftSpeedY: DRIFT_RATE_MIN + Math.random() * (DRIFT_RATE_MAX - DRIFT_RATE_MIN),
-        omega: PHASE_SPEED_MIN + Math.random() * (PHASE_SPEED_MAX - PHASE_SPEED_MIN),
-        phase: Math.random() * Math.PI * 2,
+        V: Math.random() * 0.3,
         spike: 0,
-        baseSize: 1.0 + Math.random() * 1.6,
+        refractory: 0,
+        baseSize: 1.0 + Math.random() * 1.4,
+        inhibitory: Math.random() < INHIBITORY_FRACTION,
         edgeIndices: [],
       };
     }
@@ -139,12 +147,11 @@
         edges.push({
           a: lo,
           b: hi,
-          strength: 0.16 + Math.random() * 0.18,
-          curve: (Math.random() - 0.5) * 16, // signed perpendicular offset magnitude
+          strength: 0.10 + Math.random() * 0.14,
+          curve: (Math.random() - 0.5) * 14,
         });
       }
     }
-    // adjacency
     for (let e = 0; e < edges.length; e++) {
       nodes[edges[e].a].edgeIndices.push(e);
       nodes[edges[e].b].edgeIndices.push(e);
@@ -173,30 +180,31 @@
 
   /* ---- spike + pulse spawn ------------------------------------------- */
 
-  function spawnPulsesFrom(nodeIdx, intensity) {
+  function spawnPulsesFrom(nodeIdx) {
     const n = nodes[nodeIdx];
     const list = n.edgeIndices;
     for (let k = 0; k < list.length; k++) {
       const eIdx = list[k];
       const edge = edges[eIdx];
-      if (edge.strength < 0.10) continue;
-      // Probability scales with edge strength
-      if (Math.random() < edge.strength * 1.4) {
+      // Probability scales with edge strength; stronger edges fire reliably
+      if (Math.random() < edge.strength * 1.6) {
         pulses.push({
           edge: eIdx,
           t: 0,
           fromA: edge.a === nodeIdx,
-          strength: 0.7 + Math.random() * 0.3 * intensity,
+          inhibitory: n.inhibitory,
+          strength: 0.6 + Math.random() * 0.3,
         });
       }
     }
   }
 
-  function triggerSpike(nodeIdx, magnitude) {
+  function fire(nodeIdx) {
     const n = nodes[nodeIdx];
-    if (n.spike > 0.6) return; // already spiking
-    n.spike = Math.max(n.spike, magnitude);
-    spawnPulsesFrom(nodeIdx, magnitude);
+    n.spike = 1.0;
+    n.V = 0;
+    n.refractory = REFRACTORY_MS;
+    spawnPulsesFrom(nodeIdx);
   }
 
   /* ---- per-frame update ---------------------------------------------- */
@@ -207,40 +215,49 @@
     const dt = lastTime ? Math.min(time - lastTime, 50) : 16;
     lastTime = time;
 
-    // 1. Drift + phase + spike decay
+    // 1. Drift, V leak, V noise drive, refractory countdown, spike decay
     for (let i = 0; i < nodes.length; i++) {
       const n = nodes[i];
       n.driftPhaseX += n.driftSpeedX * dt;
       n.driftPhaseY += n.driftSpeedY * dt;
       n.x = n.baseX + Math.sin(n.driftPhaseX) * DRIFT_AMPLITUDE;
       n.y = n.baseY + Math.cos(n.driftPhaseY) * DRIFT_AMPLITUDE;
-      n.phase += n.omega * dt;
-      n.spike *= Math.exp(-SPIKE_DECAY_RATE * dt);
-    }
 
-    // 2. Spontaneous spikes
-    const spikeChance = SPIKE_PROB_PER_MS * dt;
-    for (let i = 0; i < nodes.length; i++) {
-      if (Math.random() < spikeChance) {
-        triggerSpike(i, 1.0);
+      n.spike *= Math.exp(-SPIKE_DECAY_RATE * dt);
+
+      if (n.refractory > 0) {
+        n.refractory -= dt;
+        continue; // refractory: ignore inputs, no integration
+      }
+
+      // Stochastic drift on V (Wiener-like noise — drives sparse spontaneous spikes)
+      n.V += (Math.random() - 0.48) * V_NOISE * dt;
+      // Leak
+      n.V *= Math.pow(V_DECAY, dt / 16);
+      if (n.V < 0) n.V = 0;
+      // Threshold check
+      if (n.V >= THRESHOLD) {
+        fire(i);
       }
     }
 
-    // 3. Advance pulses
+    // 2. Advance pulses; deliveries
     const surviving = [];
     for (let p = 0; p < pulses.length; p++) {
       const pulse = pulses[p];
       pulse.t += dt / PULSE_DURATION_MS;
       if (pulse.t >= 1) {
-        // delivered
         const edge = edges[pulse.edge];
         const target = pulse.fromA ? edge.b : edge.a;
-        // Hebbian
+        const node = nodes[target];
+        // Hebbian growth applies regardless of refractory (the synapse remembers)
         edge.strength = Math.min(1, edge.strength + HEBBIAN_GROWTH * pulse.strength);
-        // Cascade
-        nodes[target].spike = Math.min(1, nodes[target].spike + pulse.strength * PULSE_DELIVERY_GAIN);
-        if (Math.random() < PULSE_CASCADE_PROB * pulse.strength) {
-          spawnPulsesFrom(target, pulse.strength);
+        if (node.refractory <= 0) {
+          // Excitatory or inhibitory contribution to V
+          const sign = pulse.inhibitory ? -1.0 : 1.0;
+          node.V += sign * pulse.strength * PULSE_DELIVERY_V;
+          if (node.V < 0) node.V = 0;
+          if (node.V >= THRESHOLD) fire(target);
         }
       } else {
         surviving.push(pulse);
@@ -248,9 +265,9 @@
     }
     pulses = surviving;
 
-    // 4. Edge decay
+    // 3. Edge slow decay
     for (let e = 0; e < edges.length; e++) {
-      edges[e].strength *= STRENGTH_DECAY;
+      edges[e].strength *= Math.pow(STRENGTH_DECAY, dt / 16);
     }
 
     drawFrame();
@@ -262,48 +279,48 @@
   function drawFrame() {
     ctx.clearRect(0, 0, W, H);
 
-    // Edges — curved, soft, blue
+    // Edges — soft, blue, low opacity
     ctx.lineCap = "round";
     for (let e = 0; e < edges.length; e++) {
       const edge = edges[e];
-      if (edge.strength < 0.04) continue;
+      if (edge.strength < 0.03) continue;
       const a = nodes[edge.a], b = nodes[edge.b];
       controlPoint(a, b, edge.curve, ctrl);
-      const opacity = Math.min(0.50, edge.strength * 0.65);
+      const opacity = Math.min(0.22, edge.strength * 0.30);
       ctx.strokeStyle = `rgba(${ACCENT_BLUE}, ${opacity})`;
-      ctx.lineWidth = 0.6 + edge.strength * 0.4;
+      ctx.lineWidth = 0.5 + edge.strength * 0.3;
       ctx.beginPath();
       ctx.moveTo(a.x, a.y);
       ctx.quadraticCurveTo(ctrl.x, ctrl.y, b.x, b.y);
       ctx.stroke();
     }
 
-    // Halos for spiking nodes (drawn before nodes so node sits on top)
+    // Halos (only for strong spikes; very faint)
     for (let i = 0; i < nodes.length; i++) {
       const n = nodes[i];
-      if (n.spike < 0.15) continue;
-      const r = 6 + n.spike * 22;
-      const opacity = n.spike * 0.16;
+      if (n.spike < 0.30) continue;
+      const r = 5 + n.spike * 11;
+      const opacity = n.spike * 0.06;
       ctx.fillStyle = `rgba(${ACCENT_WARM}, ${opacity})`;
       ctx.beginPath();
       ctx.arc(n.x, n.y, r, 0, Math.PI * 2);
       ctx.fill();
     }
 
-    // Nodes — breathing brightness
+    // Nodes — dim by default, brighter when V is high or spiking
     for (let i = 0; i < nodes.length; i++) {
       const n = nodes[i];
-      const osc = (Math.sin(n.phase) + 1) * 0.5; // 0..1
-      const activity = 0.30 + 0.25 * osc + n.spike * 0.50;
-      const size = n.baseSize + n.spike * 1.8;
-      const opacity = 0.32 + activity * 0.50;
+      const charge = Math.min(1, n.V / THRESHOLD); // 0..1
+      const activity = 0.18 + 0.18 * charge + n.spike * 0.35;
+      const size = n.baseSize + n.spike * 1.2;
+      const opacity = 0.15 + activity * 0.40;
       ctx.fillStyle = `rgba(${ACCENT_BLUE}, ${opacity})`;
       ctx.beginPath();
       ctx.arc(n.x, n.y, size, 0, Math.PI * 2);
       ctx.fill();
     }
 
-    // Pulses — sienna dots travelling along edges (with short trail)
+    // Pulses — sienna; small dot with brief trail
     for (let p = 0; p < pulses.length; p++) {
       const pulse = pulses[p];
       const edge = edges[pulse.edge];
@@ -313,14 +330,13 @@
       const p0y = pulse.fromA ? a.y : b.y;
       const p1x = pulse.fromA ? b.x : a.x;
       const p1y = pulse.fromA ? b.y : a.y;
-
-      // Trail of three positions
-      for (let s = 0; s < 3; s++) {
+      // Tail of two positions
+      for (let s = 0; s < 2; s++) {
         const tt = pulse.t - s * 0.05;
         if (tt < 0 || tt > 1) continue;
         const pos = bezierAt(p0x, p0y, ctrl.x, ctrl.y, p1x, p1y, tt);
-        const trailAlpha = pulse.strength * (1 - s * 0.32);
-        const trailSize = 2.6 - s * 0.55;
+        const trailAlpha = pulse.strength * (1 - s * 0.45) * 0.55;
+        const trailSize = 2.0 - s * 0.55;
         ctx.fillStyle = `rgba(${ACCENT_WARM}, ${trailAlpha})`;
         ctx.beginPath();
         ctx.arc(pos.x, pos.y, trailSize, 0, Math.PI * 2);
@@ -343,7 +359,7 @@
     window.addEventListener("resize", debounce(resize, 200));
     document.addEventListener("visibilitychange", () => {
       if (document.visibilityState === "visible" && !rafId) {
-        lastTime = 0; // reset dt accumulator
+        lastTime = 0;
         rafId = requestAnimationFrame(tick);
       } else if (document.visibilityState !== "visible" && rafId) {
         cancelAnimationFrame(rafId);

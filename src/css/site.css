@@ -158,7 +158,9 @@ a:hover {
 .document {
   position: relative;
   z-index: 1;
-  background: var(--paper);
+  /* Slightly translucent so the background network shows through at low
+     opacity behind the text — full-background, not margins-only. */
+  background: rgba(255, 255, 255, 0.86);
   max-width: calc(var(--measure) + var(--gutter) + var(--sidenote-width));
   margin: 0 auto;
   padding: var(--pad-top) var(--pad-side) var(--pad-bottom);
