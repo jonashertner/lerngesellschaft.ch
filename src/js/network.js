@@ -79,12 +79,12 @@
   ];
 
   const BASE_PITCH = 0.10;
-  const SCROLL_YAW_RANGE = 0.36;
-  const SCROLL_PITCH_RANGE = 0.08;
-  const CAMERA_LERP = 0.055;
+  const SCROLL_YAW_RANGE = 0.62;
+  const SCROLL_PITCH_RANGE = 0.13;
+  const CAMERA_LERP = 0.065;
 
-  const ACCENT_BLUE = "22, 88, 126";
-  const ACCENT_WARM = "184, 76, 38";
+  const ACCENT_BLUE = "0, 126, 172";
+  const ACCENT_WARM = "226, 94, 45";
 
   /* ---- circuit model -------------------------------------------------- */
 
@@ -587,7 +587,7 @@
   }
 
   function updateNode(n, idx, dt, bioDt, inputRateHz) {
-    n.spike *= Math.exp(-dt / 170);
+    n.spike *= Math.exp(-dt / 280);
     n.synGlowE *= Math.exp(-dt / 280);
     n.synGlowI *= Math.exp(-dt / 340);
 
@@ -702,8 +702,8 @@
       const charge = clamp((n.V - V_REST) / (SPIKE_PEAK - V_REST), 0, 1);
       const synGlow = clamp(n.synGlowE + n.synGlowI, 0, 0.32);
       const colour = n.inhibitory ? ACCENT_WARM : ACCENT_BLUE;
-      const radius = (10 + n.baseSize * 4.1 + charge * 3.1 + synGlow * 12 + n.spike * 6) * n.scale;
-      const alpha = (0.0038 + charge * 0.0018 + synGlow * 0.013 + n.spike * 0.0085) *
+      const radius = (11 + n.baseSize * 4.6 + charge * 3.4 + synGlow * 11 + n.spike * 3.5) * n.scale;
+      const alpha = (0.0080 + charge * 0.0025 + synGlow * 0.014 + n.spike * 0.0045) *
         n.depthFade *
         (n.inhibitory ? 0.72 : 1);
 
@@ -726,9 +726,9 @@
       const charge = clamp((n.V - V_REST) / (SPIKE_PEAK - V_REST), 0, 1);
       const synGlow = clamp(n.synGlowE + n.synGlowI, 0, 0.28);
       const colour = n.inhibitory ? ACCENT_WARM : ACCENT_BLUE;
-      const alphaBase = (n.inhibitory ? 0.027 : 0.023) *
+      const alphaBase = (n.inhibitory ? 0.043 : 0.037) *
         n.depthFade *
-        (0.55 + charge * 0.22 + n.spike * 0.62 + synGlow * 1.42) *
+        (0.68 + charge * 0.20 + n.spike * 0.32 + synGlow * 1.25) *
         (0.94 + rhythmDrive * 0.06);
 
       for (let a = 0; a < n.arbors.length; a++) {
@@ -745,7 +745,7 @@
         const alpha = alphaBase * arbor.alpha;
 
         ctx.strokeStyle = `rgba(${colour}, ${alpha})`;
-        ctx.lineWidth = Math.max(0.24, (0.34 + n.spike * 0.09 + synGlow * 0.24) * n.scale);
+        ctx.lineWidth = Math.max(0.26, (0.38 + n.spike * 0.04 + synGlow * 0.20) * n.scale);
         ctx.beginPath();
         ctx.moveTo(n.px, n.py);
         ctx.quadraticCurveTo(cx, cy, x2, y2);
@@ -788,7 +788,7 @@
       const strengthNorm = (edge.strength - MIN_WEIGHT) / (MAX_WEIGHT - MIN_WEIGHT);
       const depthFade = (pre.depthFade + post.depthFade) * 0.5;
       const colour = edge.inhibitory ? ACCENT_WARM : ACCENT_BLUE;
-      const opacity = (0.003 + strengthNorm * 0.019) *
+      const opacity = (0.0055 + strengthNorm * 0.030) *
         depthFade *
         (edge.inhibitory ? 0.72 : 1) *
         (0.92 + rhythmDrive * 0.08) *
@@ -810,7 +810,7 @@
       if (inReadingBand(n.px) || n.spike < 0.24) continue;
       const colour = n.inhibitory ? ACCENT_WARM : ACCENT_BLUE;
       const r = (3.8 + n.spike * 5.8) * n.scale;
-      const opacity = n.spike * 0.018 * n.depthFade;
+      const opacity = n.spike * 0.011 * n.depthFade;
       ctx.fillStyle = `rgba(${colour}, ${opacity})`;
       ctx.beginPath();
       ctx.arc(n.px, n.py, r, 0, Math.PI * 2);
@@ -824,7 +824,7 @@
       const synGlow = clamp(n.synGlowE + n.synGlowI, 0, 0.32);
       const colour = n.inhibitory ? ACCENT_WARM : ACCENT_BLUE;
       const size = (n.baseSize * 0.82 + n.spike * 0.52 + charge * 0.20 + synGlow * 0.45) * n.scale;
-      const opacity = (0.055 + charge * 0.043 + n.spike * 0.12 + synGlow * 0.10) *
+      const opacity = (0.092 + charge * 0.048 + n.spike * 0.060 + synGlow * 0.10) *
         n.depthFade *
         (n.inhibitory ? 0.78 : 1);
 
@@ -854,7 +854,7 @@
 
         const df = pre.depthFade + (post.depthFade - pre.depthFade) * tt;
         const sc = pre.scale + (post.scale - pre.scale) * tt;
-        const alpha = pulse.strength * (1 - s * 0.52) * (edge.inhibitory ? 0.090 : 0.076) * df;
+        const alpha = pulse.strength * (1 - s * 0.52) * (edge.inhibitory ? 0.062 : 0.052) * df;
         const radius = (1.18 - s * 0.42) * sc;
 
         ctx.fillStyle = `rgba(${colour}, ${alpha})`;
