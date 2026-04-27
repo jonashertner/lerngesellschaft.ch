@@ -80,8 +80,7 @@ html {
   html { font-size: 17px; }
 }
 
-html, body { overflow-x: hidden; }
-html { background: var(--paper); }
+html { background: var(--paper); overflow-x: hidden; }
 
 body {
   margin: 0;
@@ -109,11 +108,14 @@ body {
    -------------------------------------------------------------------------- */
 
 .network-bg {
-  position: fixed;
-  inset: 0;
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
   z-index: 0;
   pointer-events: none;
-  display: block;
+  display: block !important;
 }
 
 @media (max-width: 600px) {

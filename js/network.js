@@ -1,23 +1,22 @@
 /* Background neural-network animation.
-
-   Hebbian-like dynamics: a population of nodes fire on individual timers;
-   activity propagates along strong edges; co-firing strengthens an edge
-   (Hebb's rule), unused edges decay. The visible network is therefore
-   sparse-but-alive — only edges above a strength threshold render — so
-   the page's margins are populated by a continuously evolving filigree
-   of connections that grow, settle, and fade.
-
-   Respects prefers-reduced-motion. Hidden on narrow viewports. */
+   Hebbian-like dynamics — see commit history for design notes. */
 
 (function () {
-  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  console.log("[network] script loaded");
+
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   const canvas = document.createElement("canvas");
   canvas.className = "network-bg";
   canvas.setAttribute("aria-hidden", "true");
 
   function attach() {
+    if (!document.body) {
+      console.warn("[network] document.body missing at attach()");
+      return;
+    }
     document.body.insertBefore(canvas, document.body.firstChild);
+    console.log("[network] canvas attached, dim:", window.innerWidth, "x", window.innerHeight);
     init();
   }
 
@@ -27,7 +26,17 @@
     attach();
   }
 
-  const ctx = canvas.getContext("2d");
+  let ctx;
+  try {
+    ctx = canvas.getContext("2d");
+  } catch (err) {
+    console.error("[network] getContext failed:", err);
+    return;
+  }
+  if (!ctx) {
+    console.error("[network] no 2d context available");
+    return;
+  }
 
   let dpr = 1;
   let W = 0;
@@ -37,33 +46,36 @@
   let lastTime = 0;
   let rafId = 0;
 
-  const NODE_COUNT_DESKTOP = 120;
-  const NODE_COUNT_TABLET = 70;
-  const NODE_COUNT_MOBILE = 0; // hidden on mobile via CSS, but also no nodes
+  const NODE_COUNT_DESKTOP = 130;
+  const NODE_COUNT_TABLET = 80;
   const EDGE_DISTANCE = 130;
   const MAX_NEIGHBORS = 5;
 
-  // Tuning constants
-  const FIRE_DECAY = 0.94; // per frame
+  const FIRE_DECAY = 0.94;
   const STRENGTH_DECAY = 0.9988;
   const STRENGTH_GROWTH = 0.06;
-  const PROPAGATE_PROB = 0.012; // per-frame chance a strong edge propagates a fire
+  const PROPAGATE_PROB = 0.012;
   const VISIBLE_EDGE_THRESHOLD = 0.02;
   const VISIBLE_EDGE_OPACITY_SCALE = 1.0;
   const NODE_BASE_OPACITY = 0.55;
   const NODE_FIRE_OPACITY_GAIN = 0.45;
 
-  // Colour: fountain-pen blue (#1a3a5e) — CSS var read once
   const ACCENT_RGB = "26, 58, 94";
 
   function nodeCountFor(w) {
-    if (w < 700) return NODE_COUNT_MOBILE;
+    if (w < 700) return 0;
     if (w < 1100) return NODE_COUNT_TABLET;
     return NODE_COUNT_DESKTOP;
   }
 
   function init() {
     resize();
+    if (reducedMotion) {
+      // Render static snapshot, no rAF
+      drawFrame();
+      console.log("[network] reduced-motion: static render only");
+      return;
+    }
     if (rafId) cancelAnimationFrame(rafId);
     rafId = requestAnimationFrame(tick);
     window.addEventListener("resize", debounce(resize, 200));
@@ -79,10 +91,7 @@
 
   function debounce(fn, ms) {
     let t = 0;
-    return function () {
-      clearTimeout(t);
-      t = setTimeout(fn, ms);
-    };
+    return function () { clearTimeout(t); t = setTimeout(fn, ms); };
   }
 
   function resize() {
@@ -95,9 +104,7 @@
     canvas.style.height = H + "px";
     ctx.setTransform(1, 0, 0, 1, 0, 0);
     ctx.scale(dpr, dpr);
-
-    const count = nodeCountFor(W);
-    seedNodesAndEdges(count);
+    seedNodesAndEdges(nodeCountFor(W));
   }
 
   function seedNodesAndEdges(count) {
@@ -111,7 +118,6 @@
         nextFire: 600 + Math.random() * 5500,
       };
     }
-
     const built = new Set();
     edges = [];
     for (let i = 0; i < count; i++) {
@@ -120,28 +126,41 @@
       for (let j = 0; j < count; j++) {
         if (i === j) continue;
         const b = nodes[j];
-        const dx = b.x - a.x;
-        const dy = b.y - a.y;
+        const dx = b.x - a.x, dy = b.y - a.y;
         const d2 = dx * dx + dy * dy;
-        if (d2 < EDGE_DISTANCE * EDGE_DISTANCE) {
-          candidates.push({ j, d2 });
-        }
+        if (d2 < EDGE_DISTANCE * EDGE_DISTANCE) candidates.push({ j, d2 });
       }
       candidates.sort((p, q) => p.d2 - q.d2);
       const k = Math.min(candidates.length, MAX_NEIGHBORS);
       for (let n = 0; n < k; n++) {
         const j = candidates[n].j;
-        const lo = Math.min(i, j);
-        const hi = Math.max(i, j);
+        const lo = Math.min(i, j), hi = Math.max(i, j);
         const key = lo * 100000 + hi;
         if (built.has(key)) continue;
         built.add(key);
-        edges.push({
-          a: lo,
-          b: hi,
-          strength: 0.10 + Math.random() * 0.20,
-        });
+        edges.push({ a: lo, b: hi, strength: 0.10 + Math.random() * 0.20 });
       }
+    }
+  }
+
+  function drawFrame() {
+    ctx.clearRect(0, 0, W, H);
+    ctx.lineWidth = 1.0;
+    for (let e = 0; e < edges.length; e++) {
+      const edge = edges[e];
+      if (edge.strength < VISIBLE_EDGE_THRESHOLD) continue;
+      const opacity = (edge.strength - VISIBLE_EDGE_THRESHOLD) * VISIBLE_EDGE_OPACITY_SCALE;
+      if (opacity < 0.005) continue;
+      const a = nodes[edge.a], b = nodes[edge.b];
+      ctx.strokeStyle = `rgba(${ACCENT_RGB}, ${opacity})`;
+      ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke();
+    }
+    for (let i = 0; i < nodes.length; i++) {
+      const n = nodes[i];
+      const size = n.baseSize + n.fire * 1.6;
+      const opacity = NODE_BASE_OPACITY + n.fire * NODE_FIRE_OPACITY_GAIN;
+      ctx.fillStyle = `rgba(${ACCENT_RGB}, ${opacity})`;
+      ctx.beginPath(); ctx.arc(n.x, n.y, size, 0, Math.PI * 2); ctx.fill();
     }
   }
 
@@ -149,7 +168,6 @@
     const dt = lastTime ? Math.min(time - lastTime, 80) : 16;
     lastTime = time;
 
-    // 1. Update node fire decay + spontaneous firing
     for (let i = 0; i < nodes.length; i++) {
       const n = nodes[i];
       n.fire *= FIRE_DECAY;
@@ -160,21 +178,14 @@
       }
     }
 
-    // 2. Update edges (strength decay + Hebbian growth + propagation)
     const propagated = new Float32Array(nodes.length);
     for (let e = 0; e < edges.length; e++) {
       const edge = edges[e];
-      const a = nodes[edge.a];
-      const b = nodes[edge.b];
-
-      // Hebbian co-firing growth
+      const a = nodes[edge.a], b = nodes[edge.b];
       if (a.fire > 0.4 && b.fire > 0.4) {
         edge.strength = Math.min(1, edge.strength + STRENGTH_GROWTH);
       }
-      // Slow decay
       edge.strength *= STRENGTH_DECAY;
-
-      // Propagate signal along strong edges (probabilistic)
       if (edge.strength > 0.25) {
         const p = edge.strength * PROPAGATE_PROB * (dt / 16);
         if (a.fire > 0.6 && Math.random() < p) {
@@ -189,36 +200,7 @@
       if (propagated[i] > nodes[i].fire) nodes[i].fire = propagated[i];
     }
 
-    // 3. Render
-    ctx.clearRect(0, 0, W, H);
-
-    // Edges (only above visible threshold)
-    ctx.lineWidth = 1.0;
-    for (let e = 0; e < edges.length; e++) {
-      const edge = edges[e];
-      if (edge.strength < VISIBLE_EDGE_THRESHOLD) continue;
-      const opacity = (edge.strength - VISIBLE_EDGE_THRESHOLD) * VISIBLE_EDGE_OPACITY_SCALE;
-      if (opacity < 0.005) continue;
-      const a = nodes[edge.a];
-      const b = nodes[edge.b];
-      ctx.strokeStyle = `rgba(${ACCENT_RGB}, ${opacity})`;
-      ctx.beginPath();
-      ctx.moveTo(a.x, a.y);
-      ctx.lineTo(b.x, b.y);
-      ctx.stroke();
-    }
-
-    // Nodes
-    for (let i = 0; i < nodes.length; i++) {
-      const n = nodes[i];
-      const size = n.baseSize + n.fire * 1.6;
-      const opacity = NODE_BASE_OPACITY + n.fire * NODE_FIRE_OPACITY_GAIN;
-      ctx.fillStyle = `rgba(${ACCENT_RGB}, ${opacity})`;
-      ctx.beginPath();
-      ctx.arc(n.x, n.y, size, 0, Math.PI * 2);
-      ctx.fill();
-    }
-
+    drawFrame();
     rafId = requestAnimationFrame(tick);
   }
 })();
