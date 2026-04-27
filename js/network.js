@@ -1,21 +1,19 @@
-/* Background neural-network animation.
+/* Background neural-network animation — 3D, scroll-coupled rotation.
 
-   Integrate-and-fire neurons with refractory periods, Hebbian
-   plasticity, and sparse activity — the most biologically accurate
-   simulation we can render in real time at this scale.
+   Each node is a leaky integrate-and-fire neuron in 3D space. Membrane
+   potential V accumulates from incoming pulses + Wiener noise; when V
+   crosses threshold the cell fires (refractory period 320ms blocks
+   re-firing). ~20% of nodes are inhibitory (their pulses subtract V
+   from targets — cortical interneurons). Hebbian growth on successful
+   pulse delivery; idle edges decay.
 
-   Each node is a leaky integrator with membrane potential V.
-   Synaptic input from a pulse adds (or subtracts, for inhibitory
-   edges) to V. When V crosses threshold the neuron spikes:
-   V resets, refractory period engages, pulses emit on outgoing
-   edges. While refractory, the cell ignores incoming pulses.
+   3D: nodes positioned in a viewport-wide volume with depth ±300px.
+   Edges connect by 3D Euclidean distance. Each frame the volume
+   rotates: a constant X-tilt for depth visibility, plus a Y-rotation
+   that lerps toward scrollY (so reading rotates the network). Render
+   uses perspective projection — far nodes smaller and dimmer.
 
-   ~20% of nodes are inhibitory (their outgoing pulses subtract V
-   from targets), modelling cortical inhibition. Hebbian: edges
-   that successfully deliver pulses strengthen.
-
-   Two-colour system: fountain-pen blue is structure (substrate);
-   burnt sienna is signal (electrochemical activity, transient). */
+   Two-colour system: blue is structure, sienna is moving signal. */
 
 (function () {
   console.log("[network] script loaded");
@@ -46,27 +44,37 @@
   let lastTime = 0;
   let rafId = 0;
 
-  /* ---- tuning --------------------------------------------------------- */
+  // Rotation state
+  let targetYAngle = 0;
+  let currentYAngle = 0;
+  const X_TILT = 0.18; // constant ~10° forward tilt for 3D visibility
+  const Y_SCROLL_RATIO = 0.00009; // rad per scroll px
+  const Y_TIME_RATE = 0.000028; // rad per ms — gentle constant rotation
+  const ANGLE_LERP = 0.07;
 
-  const NODE_COUNT_DESKTOP = 200;
-  const NODE_COUNT_TABLET = 110;
-  const EDGE_DISTANCE = 130;
+  // 3D depth
+  const Z_RANGE = 320;
+  const FOCAL = 850;
+
+  /* ---- tuning (neural sim) ------------------------------------------- */
+
+  const NODE_COUNT_DESKTOP = 220;
+  const NODE_COUNT_TABLET = 130;
+  const EDGE_DISTANCE = 145;
   const MAX_NEIGHBORS = 4;
 
-  const INHIBITORY_FRACTION = 0.20; // ~20% of cells are inhibitory (cortical fraction)
+  const INHIBITORY_FRACTION = 0.20;
 
   const DRIFT_AMPLITUDE = 6;
   const DRIFT_RATE_MIN = 0.00012;
   const DRIFT_RATE_MAX = 0.00040;
 
-  // Membrane dynamics
-  const V_DECAY = 0.985;          // per frame leak toward 0
-  const V_NOISE = 0.0008;         // per-ms stochastic drive (random walk on V)
+  const V_DECAY = 0.985;
+  const V_NOISE = 0.0008;
   const THRESHOLD = 1.0;
   const REFRACTORY_MS = 320;
 
-  // Spike & pulse
-  const SPIKE_DECAY_RATE = 0.0035; // per ms (visual decay only)
+  const SPIKE_DECAY_RATE = 0.0035;
   const PULSE_DURATION_MS = 1100;
   const PULSE_DELIVERY_V = 0.55;
   const HEBBIAN_GROWTH = 0.025;
@@ -105,24 +113,33 @@
     pulses = [];
     nodes = new Array(count);
     for (let i = 0; i < count; i++) {
+      // 3D position: x, y, z all randomised within volume
       const x = Math.random() * W;
       const y = Math.random() * H;
+      // Gaussian-ish z (sum of three uniforms biases toward zero)
+      const z = (Math.random() + Math.random() + Math.random() - 1.5) * Z_RANGE * 0.85;
       nodes[i] = {
-        x, y,
-        baseX: x, baseY: y,
+        x3: x, y3: y, z3: z,             // current 3D
+        baseX3: x, baseY3: y, baseZ3: z, // anchor for drift
         driftPhaseX: Math.random() * Math.PI * 2,
         driftPhaseY: Math.random() * Math.PI * 2,
+        driftPhaseZ: Math.random() * Math.PI * 2,
         driftSpeedX: DRIFT_RATE_MIN + Math.random() * (DRIFT_RATE_MAX - DRIFT_RATE_MIN),
         driftSpeedY: DRIFT_RATE_MIN + Math.random() * (DRIFT_RATE_MAX - DRIFT_RATE_MIN),
+        driftSpeedZ: DRIFT_RATE_MIN + Math.random() * (DRIFT_RATE_MAX - DRIFT_RATE_MIN),
+        // Projected coords (computed each frame)
+        px: 0, py: 0, scale: 1, depthFade: 1,
+        // Neuron state
         V: Math.random() * 0.3,
         spike: 0,
         refractory: 0,
-        baseSize: 1.0 + Math.random() * 1.4,
+        baseSize: 1.1 + Math.random() * 1.5,
         inhibitory: Math.random() < INHIBITORY_FRACTION,
         edgeIndices: [],
       };
     }
 
+    // Build edges by 3D proximity
     const built = new Set();
     edges = [];
     for (let i = 0; i < count; i++) {
@@ -131,9 +148,10 @@
       for (let j = 0; j < count; j++) {
         if (i === j) continue;
         const b = nodes[j];
-        const dx = b.baseX - a.baseX;
-        const dy = b.baseY - a.baseY;
-        const d2 = dx * dx + dy * dy;
+        const dx = b.baseX3 - a.baseX3;
+        const dy = b.baseY3 - a.baseY3;
+        const dz = b.baseZ3 - a.baseZ3;
+        const d2 = dx * dx + dy * dy + dz * dz;
         if (d2 < EDGE_DISTANCE * EDGE_DISTANCE) candidates.push({ j, d2 });
       }
       candidates.sort((p, q) => p.d2 - q.d2);
@@ -148,7 +166,6 @@
           a: lo,
           b: hi,
           strength: 0.10 + Math.random() * 0.14,
-          curve: (Math.random() - 0.5) * 14,
         });
       }
     }
@@ -158,27 +175,34 @@
     }
   }
 
-  /* ---- maths ---------------------------------------------------------- */
+  /* ---- 3D projection -------------------------------------------------- */
 
-  function bezierAt(p0x, p0y, cx, cy, p1x, p1y, t) {
-    const u = 1 - t;
-    return {
-      x: u * u * p0x + 2 * u * t * cx + t * t * p1x,
-      y: u * u * p0y + 2 * u * t * cy + t * t * p1y,
-    };
+  function projectNode(n, cosY, sinY, cosX, sinX) {
+    // Translate to center
+    const cx = W * 0.5, cy = H * 0.5;
+    const dx = n.x3 - cx;
+    const dy = n.y3 - cy;
+    const dz = n.z3;
+    // Rotate around Y axis
+    const x1 = dx * cosY + dz * sinY;
+    const y1 = dy;
+    const z1 = -dx * sinY + dz * cosY;
+    // Rotate around X axis
+    const x2 = x1;
+    const y2 = y1 * cosX - z1 * sinX;
+    const z2 = y1 * sinX + z1 * cosX;
+    // Perspective project
+    const scale = FOCAL / (FOCAL + z2);
+    n.px = cx + x2 * scale;
+    n.py = cy + y2 * scale;
+    n.scale = scale;
+    // Depth fade — far points dimmer (z2 large positive)
+    // depthFade ranges from ~0.4 (far) to ~1.2 (near), clamp 0.35..1
+    const df = (FOCAL * 0.6) / (FOCAL + z2);
+    n.depthFade = Math.min(1, Math.max(0.30, df * 1.4));
   }
 
-  function controlPoint(a, b, curveAmount, out) {
-    const dx = b.x - a.x;
-    const dy = b.y - a.y;
-    const len = Math.sqrt(dx * dx + dy * dy) || 1;
-    const px = -dy / len;
-    const py = dx / len;
-    out.x = (a.x + b.x) * 0.5 + px * curveAmount;
-    out.y = (a.y + b.y) * 0.5 + py * curveAmount;
-  }
-
-  /* ---- spike + pulse spawn ------------------------------------------- */
+  /* ---- spike + pulse ------------------------------------------------- */
 
   function spawnPulsesFrom(nodeIdx) {
     const n = nodes[nodeIdx];
@@ -186,7 +210,6 @@
     for (let k = 0; k < list.length; k++) {
       const eIdx = list[k];
       const edge = edges[eIdx];
-      // Probability scales with edge strength; stronger edges fire reliably
       if (Math.random() < edge.strength * 1.6) {
         pulses.push({
           edge: eIdx,
@@ -207,41 +230,35 @@
     spawnPulsesFrom(nodeIdx);
   }
 
-  /* ---- per-frame update ---------------------------------------------- */
-
-  const ctrl = { x: 0, y: 0 };
+  /* ---- per-frame ------------------------------------------------------ */
 
   function tick(time) {
     const dt = lastTime ? Math.min(time - lastTime, 50) : 16;
     lastTime = time;
 
-    // 1. Drift, V leak, V noise drive, refractory countdown, spike decay
+    // 1. Drift in 3D, leaky integrate-and-fire dynamics
     for (let i = 0; i < nodes.length; i++) {
       const n = nodes[i];
       n.driftPhaseX += n.driftSpeedX * dt;
       n.driftPhaseY += n.driftSpeedY * dt;
-      n.x = n.baseX + Math.sin(n.driftPhaseX) * DRIFT_AMPLITUDE;
-      n.y = n.baseY + Math.cos(n.driftPhaseY) * DRIFT_AMPLITUDE;
+      n.driftPhaseZ += n.driftSpeedZ * dt;
+      n.x3 = n.baseX3 + Math.sin(n.driftPhaseX) * DRIFT_AMPLITUDE;
+      n.y3 = n.baseY3 + Math.cos(n.driftPhaseY) * DRIFT_AMPLITUDE;
+      n.z3 = n.baseZ3 + Math.sin(n.driftPhaseZ) * DRIFT_AMPLITUDE * 0.6;
 
       n.spike *= Math.exp(-SPIKE_DECAY_RATE * dt);
 
       if (n.refractory > 0) {
         n.refractory -= dt;
-        continue; // refractory: ignore inputs, no integration
+        continue;
       }
-
-      // Stochastic drift on V (Wiener-like noise — drives sparse spontaneous spikes)
       n.V += (Math.random() - 0.48) * V_NOISE * dt;
-      // Leak
       n.V *= Math.pow(V_DECAY, dt / 16);
       if (n.V < 0) n.V = 0;
-      // Threshold check
-      if (n.V >= THRESHOLD) {
-        fire(i);
-      }
+      if (n.V >= THRESHOLD) fire(i);
     }
 
-    // 2. Advance pulses; deliveries
+    // 2. Pulses
     const surviving = [];
     for (let p = 0; p < pulses.length; p++) {
       const pulse = pulses[p];
@@ -250,10 +267,8 @@
         const edge = edges[pulse.edge];
         const target = pulse.fromA ? edge.b : edge.a;
         const node = nodes[target];
-        // Hebbian growth applies regardless of refractory (the synapse remembers)
         edge.strength = Math.min(1, edge.strength + HEBBIAN_GROWTH * pulse.strength);
         if (node.refractory <= 0) {
-          // Excitatory or inhibitory contribution to V
           const sign = pulse.inhibitory ? -1.0 : 1.0;
           node.V += sign * pulse.strength * PULSE_DELIVERY_V;
           if (node.V < 0) node.V = 0;
@@ -265,9 +280,20 @@
     }
     pulses = surviving;
 
-    // 3. Edge slow decay
+    // 3. Edge decay
     for (let e = 0; e < edges.length; e++) {
       edges[e].strength *= Math.pow(STRENGTH_DECAY, dt / 16);
+    }
+
+    // 4. Update rotation
+    targetYAngle = window.scrollY * Y_SCROLL_RATIO + time * Y_TIME_RATE;
+    currentYAngle += (targetYAngle - currentYAngle) * ANGLE_LERP;
+
+    // 5. Project all nodes once
+    const cosY = Math.cos(currentYAngle), sinY = Math.sin(currentYAngle);
+    const cosX = Math.cos(X_TILT), sinX = Math.sin(X_TILT);
+    for (let i = 0; i < nodes.length; i++) {
+      projectNode(nodes[i], cosY, sinY, cosX, sinX);
     }
 
     drawFrame();
@@ -278,68 +304,74 @@
 
   function drawFrame() {
     ctx.clearRect(0, 0, W, H);
-
-    // Edges — soft, blue, low opacity
     ctx.lineCap = "round";
+
+    // Edges — draw each as straight projected line, opacity scaled by depth
     for (let e = 0; e < edges.length; e++) {
       const edge = edges[e];
       if (edge.strength < 0.03) continue;
       const a = nodes[edge.a], b = nodes[edge.b];
-      controlPoint(a, b, edge.curve, ctrl);
-      const opacity = Math.min(0.22, edge.strength * 0.30);
+      const depthFade = (a.depthFade + b.depthFade) * 0.5;
+      const opacity = Math.min(0.30, edge.strength * 0.40) * depthFade;
       ctx.strokeStyle = `rgba(${ACCENT_BLUE}, ${opacity})`;
-      ctx.lineWidth = 0.5 + edge.strength * 0.3;
+      ctx.lineWidth = (0.5 + edge.strength * 0.4) * Math.min(1, depthFade + 0.2);
       ctx.beginPath();
-      ctx.moveTo(a.x, a.y);
-      ctx.quadraticCurveTo(ctrl.x, ctrl.y, b.x, b.y);
+      ctx.moveTo(a.px, a.py);
+      ctx.lineTo(b.px, b.py);
       ctx.stroke();
     }
 
-    // Halos (only for strong spikes; very faint)
+    // Halos for spiking nodes (sienna, very faint)
     for (let i = 0; i < nodes.length; i++) {
       const n = nodes[i];
       if (n.spike < 0.30) continue;
-      const r = 5 + n.spike * 11;
-      const opacity = n.spike * 0.06;
+      const r = (5 + n.spike * 11) * n.scale;
+      const opacity = n.spike * 0.07 * n.depthFade;
       ctx.fillStyle = `rgba(${ACCENT_WARM}, ${opacity})`;
       ctx.beginPath();
-      ctx.arc(n.x, n.y, r, 0, Math.PI * 2);
+      ctx.arc(n.px, n.py, r, 0, Math.PI * 2);
       ctx.fill();
     }
 
-    // Nodes — dim by default, brighter when V is high or spiking
+    // Nodes — perspective-scaled, depth-faded
     for (let i = 0; i < nodes.length; i++) {
       const n = nodes[i];
-      const charge = Math.min(1, n.V / THRESHOLD); // 0..1
+      const charge = Math.min(1, n.V / THRESHOLD);
       const activity = 0.18 + 0.18 * charge + n.spike * 0.35;
-      const size = n.baseSize + n.spike * 1.2;
-      const opacity = 0.15 + activity * 0.40;
+      const size = (n.baseSize + n.spike * 1.2) * n.scale;
+      const opacity = (0.18 + activity * 0.45) * n.depthFade;
       ctx.fillStyle = `rgba(${ACCENT_BLUE}, ${opacity})`;
       ctx.beginPath();
-      ctx.arc(n.x, n.y, size, 0, Math.PI * 2);
+      ctx.arc(n.px, n.py, size, 0, Math.PI * 2);
       ctx.fill();
     }
 
-    // Pulses — sienna; small dot with brief trail
+    // Pulses — sienna dots travelling along projected edges
     for (let p = 0; p < pulses.length; p++) {
       const pulse = pulses[p];
       const edge = edges[pulse.edge];
       const a = nodes[edge.a], b = nodes[edge.b];
-      controlPoint(a, b, edge.curve, ctrl);
-      const p0x = pulse.fromA ? a.x : b.x;
-      const p0y = pulse.fromA ? a.y : b.y;
-      const p1x = pulse.fromA ? b.x : a.x;
-      const p1y = pulse.fromA ? b.y : a.y;
-      // Tail of two positions
+      const fromA = pulse.fromA;
+      const ax = fromA ? a.px : b.px, ay = fromA ? a.py : b.py;
+      const bx = fromA ? b.px : a.px, by = fromA ? b.py : a.py;
+      const aDF = fromA ? a.depthFade : b.depthFade;
+      const bDF = fromA ? b.depthFade : a.depthFade;
+      const aS = fromA ? a.scale : b.scale;
+      const bS = fromA ? b.scale : a.scale;
+
+      // Trail of two
       for (let s = 0; s < 2; s++) {
-        const tt = pulse.t - s * 0.05;
+        const tt = pulse.t - s * 0.06;
         if (tt < 0 || tt > 1) continue;
-        const pos = bezierAt(p0x, p0y, ctrl.x, ctrl.y, p1x, p1y, tt);
-        const trailAlpha = pulse.strength * (1 - s * 0.45) * 0.55;
-        const trailSize = 2.0 - s * 0.55;
+        const px = ax + (bx - ax) * tt;
+        const py = ay + (by - ay) * tt;
+        const df = aDF + (bDF - aDF) * tt;
+        const sc = aS + (bS - aS) * tt;
+        const trailAlpha = pulse.strength * (1 - s * 0.50) * 0.65 * df;
+        const trailSize = (2.0 - s * 0.65) * sc;
         ctx.fillStyle = `rgba(${ACCENT_WARM}, ${trailAlpha})`;
         ctx.beginPath();
-        ctx.arc(pos.x, pos.y, trailSize, 0, Math.PI * 2);
+        ctx.arc(px, py, trailSize, 0, Math.PI * 2);
         ctx.fill();
       }
     }
@@ -350,6 +382,12 @@
   function init() {
     resize();
     if (reducedMotion) {
+      // Render once, no rotation, no rAF
+      const cosY = 1, sinY = 0;
+      const cosX = Math.cos(X_TILT), sinX = Math.sin(X_TILT);
+      for (let i = 0; i < nodes.length; i++) {
+        projectNode(nodes[i], cosY, sinY, cosX, sinX);
+      }
       drawFrame();
       console.log("[network] reduced-motion: static render only");
       return;
