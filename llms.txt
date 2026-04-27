@@ -1,6 +1,6 @@
 # Lerngesellschaft / Learning Society
 
-> A manifesto for relational learning, by Jonas Hertner. The thesis: one-to-one tutoring, done rightly, protects a child's curiosity, tests their understanding through Feynman-style explanation, and delivers what mass schooling structurally cannot — relational attention. Published as a bilingual white paper at lerngesellschaft.ch (German, canonical) and learningsociety.ch (English).
+> A manifesto for relational learning, by Jonas Hertner. The thesis: one-to-one tutoring, done rightly, protects a child's curiosity, tests understanding through explanation, and gives what mass schooling structurally cannot give — sustained relational attention. Published as a bilingual white paper at lerngesellschaft.ch (German, canonical) and learningsociety.ch (English).
 
 ## Author
 
@@ -22,14 +22,15 @@ Web: https://jonashertner.com
 Five movements, building one argument:
 
 1. **Voraussetzung / Premise** — The Volksschule was engineered for an industrial age that no longer exists. Citing Robinson, Illich, Goodman, Labaree, and Criblez on Swiss schooling history.
-2. **Der relationale Kern / The Relational Core** — In an age of AI, what the machine cannot do becomes education's proper task: relational intelligence. Cites the SSIR essay "The Era of Relational Intelligence" and Werner Jaeger's *Paideia* on the classical conception.
-3. **Der entwicklungspsychologische Boden / The Developmental Ground** — Children arrive curious; school trains it out. Cites Susan Engel's longitudinal classroom research (*The Hungry Mind*).
+2. **Der relationale Kern / The Relational Core** — In an age of AI, what the machine cannot responsibly embody becomes education's proper task: relational intelligence. Cites Isabelle C. Hau's SSIR essay "Welcome to the Era of Relational Intelligence" and Werner Jaeger's *Paideia* on the classical conception.
+3. **Der entwicklungspsychologische Boden / The Developmental Ground** — Children arrive curious; ordinary school structures often make curiosity risky to express. Cites Susan Engel's work on curiosity in classrooms.
 4. **Die Probe des Verstehens / The Test of Understanding** — Feynman's dictum: if you cannot explain it to a beginner, you have not understood. The tutor as the ideal site for this test.
 5. **Die Praxis / The Practice** — One hour. One child. One table. One sheet of paper. What a tutorial actually consists of, why "homework help" misses the point, what parents can expect.
 
 ## Citations
 
 - Susan Engel, *The Hungry Mind: The Origins of Curiosity in Childhood* (Harvard University Press, 2015)
+- Susan Engel, "Children's Need to Know: Curiosity in Schools", *Harvard Educational Review* 81/4 (2011), 625–645, DOI 10.17763/haer.81.4.h054131316473115
 - Richard Feynman, *The Pleasure of Finding Things Out* (Perseus, 1999); *The Feynman Lectures on Physics* (Addison-Wesley, 1963)
 - Werner Jaeger, *Paideia* (3 vols., De Gruyter / Oxford University Press, 1934–1947)
 - Hans-Georg Gadamer, *Erziehung ist sich erziehen* (1999)
@@ -37,7 +38,7 @@ Five movements, building one argument:
 - David F. Labaree, *Someone Has to Fail: The Zero-Sum Game of Public Schooling* (Harvard University Press, 2010)
 - Lucien Criblez (ed.), *Bildungsraum Schweiz: Historische Entwicklung und aktuelle Herausforderungen* (NZZ Libro, 2008)
 - Ken Robinson, *Out of Our Minds: Learning to Be Creative* (Capstone, 3rd ed. 2017); TED talk *Do schools kill creativity?* (2006)
-- "The Era of Relational Intelligence", *Stanford Social Innovation Review* (2024)
+- Isabelle C. Hau, "Welcome to the Era of Relational Intelligence", *Stanford Social Innovation Review* 24/2 (Spring 2026), DOI 10.48558/PY66-AH68
 
 ## Licence
 

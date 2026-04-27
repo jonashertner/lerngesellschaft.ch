@@ -4,7 +4,7 @@
 
   <url>
     <loc>https://lerngesellschaft.ch/de/</loc>
-    <lastmod>2026-04-26</lastmod>
+    <lastmod>2026-04-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="de" href="https://lerngesellschaft.ch/de/"/>
@@ -14,7 +14,7 @@
 
   <url>
     <loc>https://learningsociety.ch/en/</loc>
-    <lastmod>2026-04-26</lastmod>
+    <lastmod>2026-04-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://learningsociety.ch/en/"/>
@@ -24,28 +24,28 @@
 
   <url>
     <loc>https://lerngesellschaft.ch/de/print/</loc>
-    <lastmod>2026-04-26</lastmod>
+    <lastmod>2026-04-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://learningsociety.ch/en/print/</loc>
-    <lastmod>2026-04-26</lastmod>
+    <lastmod>2026-04-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://lerngesellschaft.ch/de/paper.md</loc>
-    <lastmod>2026-04-26</lastmod>
+    <lastmod>2026-04-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://learningsociety.ch/en/paper.md</loc>
-    <lastmod>2026-04-26</lastmod>
+    <lastmod>2026-04-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
