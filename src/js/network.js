@@ -1,5 +1,4 @@
-/* Background neural-network animation.
-   Hebbian-like dynamics — see commit history for design notes. */
+/* Background neural-network animation — Hebbian-like dynamics. */
 
 (function () {
   console.log("[network] script loaded");
@@ -9,22 +8,6 @@
   const canvas = document.createElement("canvas");
   canvas.className = "network-bg";
   canvas.setAttribute("aria-hidden", "true");
-
-  function attach() {
-    if (!document.body) {
-      console.warn("[network] document.body missing at attach()");
-      return;
-    }
-    document.body.insertBefore(canvas, document.body.firstChild);
-    console.log("[network] canvas attached, dim:", window.innerWidth, "x", window.innerHeight);
-    init();
-  }
-
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", attach);
-  } else {
-    attach();
-  }
 
   let ctx;
   try {
@@ -66,27 +49,6 @@
     if (w < 700) return 0;
     if (w < 1100) return NODE_COUNT_TABLET;
     return NODE_COUNT_DESKTOP;
-  }
-
-  function init() {
-    resize();
-    if (reducedMotion) {
-      // Render static snapshot, no rAF
-      drawFrame();
-      console.log("[network] reduced-motion: static render only");
-      return;
-    }
-    if (rafId) cancelAnimationFrame(rafId);
-    rafId = requestAnimationFrame(tick);
-    window.addEventListener("resize", debounce(resize, 200));
-    document.addEventListener("visibilitychange", () => {
-      if (document.visibilityState === "visible" && !rafId) {
-        rafId = requestAnimationFrame(tick);
-      } else if (document.visibilityState !== "visible" && rafId) {
-        cancelAnimationFrame(rafId);
-        rafId = 0;
-      }
-    });
   }
 
   function debounce(fn, ms) {
@@ -202,5 +164,41 @@
 
     drawFrame();
     rafId = requestAnimationFrame(tick);
+  }
+
+  function init() {
+    resize();
+    if (reducedMotion) {
+      drawFrame();
+      console.log("[network] reduced-motion: static render only");
+      return;
+    }
+    if (rafId) cancelAnimationFrame(rafId);
+    rafId = requestAnimationFrame(tick);
+    window.addEventListener("resize", debounce(resize, 200));
+    document.addEventListener("visibilitychange", () => {
+      if (document.visibilityState === "visible" && !rafId) {
+        rafId = requestAnimationFrame(tick);
+      } else if (document.visibilityState !== "visible" && rafId) {
+        cancelAnimationFrame(rafId);
+        rafId = 0;
+      }
+    });
+  }
+
+  function attach() {
+    if (!document.body) {
+      console.warn("[network] document.body missing at attach()");
+      return;
+    }
+    document.body.insertBefore(canvas, document.body.firstChild);
+    console.log("[network] canvas attached, dim:", window.innerWidth, "x", window.innerHeight);
+    init();
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", attach);
+  } else {
+    attach();
   }
 })();
