@@ -15,4 +15,6 @@ permalink: /en/
   <p class="cover-altlang"><a href="/de/">Auf Deutsch lesen</a></p>
 </header>
 
+{% include "network-diagram.njk" %}
+
 {% include "paper-en.md" %}

@@ -235,6 +235,55 @@ body.is-loaded .cover-altlang {
 }
 
 /* --------------------------------------------------------------------------
+   Network diagram — a small frontispiece. Seven nodes in a diamond-chain;
+   a signal propagates left to right, drawing edges as it goes. Hebbian
+   learning visualised: connections form through co-activation.
+   -------------------------------------------------------------------------- */
+
+.network-diagram {
+  display: block;
+  width: 100%;
+  max-width: 26em;
+  margin: 5.5em 0 0;
+  padding: 0;
+}
+
+.network-diagram svg {
+  width: 100%;
+  height: auto;
+  display: block;
+  overflow: visible;
+}
+
+.network-diagram .edges { stroke: var(--accent); }
+.network-diagram .nodes { fill: var(--accent); }
+.network-diagram .node-center { fill: var(--accent-warm); }
+
+.network-diagram .edge {
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+  opacity: 0.85;
+  transition: stroke-dashoffset 800ms var(--motion);
+}
+
+.network-diagram .node {
+  opacity: 0;
+  transition: opacity 500ms var(--motion);
+}
+
+.network-diagram .edge[data-step="1"],
+.network-diagram .node[data-step="1"] { transition-delay: 480ms; }
+.network-diagram .edge[data-step="2"],
+.network-diagram .node[data-step="2"] { transition-delay: 960ms; }
+.network-diagram .edge[data-step="3"],
+.network-diagram .node[data-step="3"] { transition-delay: 1440ms; }
+.network-diagram .edge[data-step="4"],
+.network-diagram .node[data-step="4"] { transition-delay: 1920ms; }
+
+.network-diagram.is-active .edge { stroke-dashoffset: 0; }
+.network-diagram.is-active .node { opacity: 1; }
+
+/* --------------------------------------------------------------------------
    Body — justified, hyphens, indented continuation paragraphs.
    :where() flattens the specificity so cover-class margins win.
    -------------------------------------------------------------------------- */
@@ -512,8 +561,11 @@ body.is-loaded .cover-altlang {
   .sidenote,
   .note-marker,
   .document h2::before,
+  .network-diagram .edge,
+  .network-diagram .node,
   a {
     transition: none !important;
+    transition-delay: 0ms !important;
     transform: none !important;
     animation: none !important;
   }
@@ -522,6 +574,8 @@ body.is-loaded .cover-altlang {
   .cover-altlang,
   .sidenote { opacity: 1 !important; }
   .cover-mark { transform: scaleX(1) !important; }
+  .network-diagram .edge { stroke-dashoffset: 0; }
+  .network-diagram .node { opacity: 1; }
   .sidenote-overlay { display: none; }
 }
 

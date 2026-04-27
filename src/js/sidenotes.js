@@ -218,6 +218,25 @@ function bindSidenotes() {
   setTimeout(place, 600);
 }
 
+/* ---- Network-diagram frontispiece -------------------------------------- */
+
+function bindNetworkDiagram() {
+  const diagrams = document.querySelectorAll(".network-diagram");
+  if (!diagrams.length) return;
+  const obs = new IntersectionObserver(
+    (entries, observer) => {
+      for (const entry of entries) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-active");
+          observer.unobserve(entry.target);
+        }
+      }
+    },
+    { rootMargin: "0px 0px -10% 0px", threshold: 0.2 }
+  );
+  diagrams.forEach((el) => obs.observe(el));
+}
+
 /* ---- Section arrival pulse --------------------------------------------- */
 
 function bindSectionPulse() {
@@ -247,6 +266,7 @@ function bindSectionPulse() {
 function boot() {
   bindSidenotes();
   bindSectionPulse();
+  bindNetworkDiagram();
 }
 
 if (document.readyState === "loading") {
