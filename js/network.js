@@ -48,10 +48,10 @@
   const STRENGTH_DECAY = 0.9988;
   const STRENGTH_GROWTH = 0.06;
   const PROPAGATE_PROB = 0.012; // per-frame chance a strong edge propagates a fire
-  const VISIBLE_EDGE_THRESHOLD = 0.04;
-  const VISIBLE_EDGE_OPACITY_SCALE = 0.65;
-  const NODE_BASE_OPACITY = 0.32;
-  const NODE_FIRE_OPACITY_GAIN = 0.50;
+  const VISIBLE_EDGE_THRESHOLD = 0.02;
+  const VISIBLE_EDGE_OPACITY_SCALE = 1.0;
+  const NODE_BASE_OPACITY = 0.55;
+  const NODE_FIRE_OPACITY_GAIN = 0.45;
 
   // Colour: fountain-pen blue (#1a3a5e) — CSS var read once
   const ACCENT_RGB = "26, 58, 94";
@@ -107,7 +107,7 @@
         x: Math.random() * W,
         y: Math.random() * H,
         fire: Math.random() * 0.5,
-        baseSize: 1.0 + Math.random() * 1.6,
+        baseSize: 1.5 + Math.random() * 1.8,
         nextFire: 600 + Math.random() * 5500,
       };
     }
@@ -139,7 +139,7 @@
         edges.push({
           a: lo,
           b: hi,
-          strength: 0.04 + Math.random() * 0.10,
+          strength: 0.10 + Math.random() * 0.20,
         });
       }
     }
@@ -193,7 +193,7 @@
     ctx.clearRect(0, 0, W, H);
 
     // Edges (only above visible threshold)
-    ctx.lineWidth = 0.8;
+    ctx.lineWidth = 1.0;
     for (let e = 0; e < edges.length; e++) {
       const edge = edges[e];
       if (edge.strength < VISIBLE_EDGE_THRESHOLD) continue;
