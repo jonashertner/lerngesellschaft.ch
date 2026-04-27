@@ -14,10 +14,18 @@ eleventyExcludeFromCollections: true
 <link rel="alternate" hreflang="en" href="{{ site.urls.en }}/en/">
 <link rel="alternate" hreflang="x-default" href="{{ site.urls.de }}/de/">
 <script>
-  // Domain-aware default routing.
-  var host = location.hostname;
-  var target = host.indexOf("learningsociety") !== -1 ? "/en/" : "/de/";
-  location.replace(target + location.search + location.hash);
+  (function () {
+    var local = /^(localhost|127\.0\.0\.1|\[::1\]|::1)$/.test(location.hostname);
+    if (location.protocol === "http:" && !local) {
+      location.replace("https:" + location.href.slice(location.protocol.length));
+      return;
+    }
+
+    // Domain-aware default routing.
+    var host = location.hostname;
+    var target = host.indexOf("learningsociety") !== -1 ? "/en/" : "/de/";
+    location.replace(target + location.search + location.hash);
+  })();
 </script>
 </head>
 <body>
