@@ -15,6 +15,7 @@
    - probabilistic transmitter release with short-term facilitation/depression
    - spike-timing-dependent plasticity with slow homeostatic return
    - theta/gamma-like rhythmic modulation of background input
+   - slow spatial field waves that softly recruit nearby cells
    - scroll turns the 3D camera; it does not move neurons in model space
 
    Biological time is slowed for readability. Dendrites and neuropil are
@@ -44,6 +45,7 @@
   let nodes = [];
   let edges = [];
   let pulses = [];
+  let fieldWaves = [];
   let readingBand = { left: 0, right: 0 };
   let lastTime = 0;
   let modelTime = 0;
@@ -120,6 +122,13 @@
   const GAMMA_RATE_HZ = 42.0;
   const THETA_INPUT_DEPTH = 0.18;
   const GAMMA_INPUT_DEPTH = 0.045;
+  const FIELD_WAVE_RATE_HZ = 0.14;
+  const FIELD_WAVE_SCROLL_RATE_HZ = 0.34;
+  const FIELD_WAVE_SPEED_PX_PER_S = 126;
+  const FIELD_WAVE_WIDTH = 118;
+  const FIELD_WAVE_MAX_AGE_MS = 4300;
+  const FIELD_WAVE_DRIVE = 0.42;
+  const MAX_FIELD_WAVES = 4;
 
   const MIN_WEIGHT = 0.006;
   const MAX_WEIGHT = 0.070;
@@ -173,6 +182,11 @@
 
   function logNormal(mean, sigma) {
     return mean * Math.exp(gaussian() * sigma - 0.5 * sigma * sigma);
+  }
+
+  function randomLayerZ() {
+    const layer = CORTICAL_LAYERS[chooseLayer()];
+    return clamp(layer.z + gaussian() * layer.spread, -Z_RANGE, Z_RANGE);
   }
 
   function chooseLayer() {
@@ -300,6 +314,7 @@
   function seed(count) {
     pulses = [];
     edges = [];
+    fieldWaves = [];
     nodes = new Array(count);
 
     const clusterCount = Math.max(4, Math.round(count / CLUSTER_SIZE));
@@ -341,6 +356,8 @@
         gi: 0,
         synGlowE: 0,
         synGlowI: 0,
+        fieldGlow: 0,
+        lifePhase: Math.random() * Math.PI * 2,
         noise: 0,
         bias: inhibitory ? 2.2 + Math.random() * 1.2 : 2.7 + Math.random() * 1.6,
         refractory: Math.random() * cell.refractory,
@@ -359,6 +376,12 @@
 
     buildSynapses();
     projectAll();
+
+    // Start with a soft ongoing field wave so the page never feels inert.
+    if (count) {
+      spawnFieldWave(0.55);
+      fieldWaves[0].age = FIELD_WAVE_MAX_AGE_MS * (0.12 + Math.random() * 0.34);
+    }
 
     // A few initial spikes prevent the field from starting in total silence.
     const starters = Math.min(5, Math.floor(count * 0.04));
@@ -578,6 +601,54 @@
 
   /* ---- per-frame ------------------------------------------------------ */
 
+  function spawnFieldWave(strength) {
+    fieldWaves.push({
+      x3: randomMarginX(),
+      y3: H * (0.12 + Math.random() * 0.76),
+      z3: randomLayerZ(),
+      age: 0,
+      strength: strength * (0.72 + Math.random() * 0.48),
+      phase: Math.random() * Math.PI * 2,
+    });
+
+    while (fieldWaves.length > MAX_FIELD_WAVES) fieldWaves.shift();
+  }
+
+  function updateFieldWaves(dt) {
+    const chance = (FIELD_WAVE_RATE_HZ + scrollDrive * FIELD_WAVE_SCROLL_RATE_HZ) * dt / 1000;
+    if (fieldWaves.length < MAX_FIELD_WAVES && Math.random() < chance) {
+      spawnFieldWave(0.78 + scrollDrive * 0.38);
+    }
+
+    const alive = [];
+    for (let i = 0; i < fieldWaves.length; i++) {
+      const wave = fieldWaves[i];
+      wave.age += dt;
+      if (wave.age < FIELD_WAVE_MAX_AGE_MS) alive.push(wave);
+    }
+    fieldWaves = alive;
+  }
+
+  function fieldWaveDrive(n) {
+    let drive = 0;
+    for (let i = 0; i < fieldWaves.length; i++) {
+      const wave = fieldWaves[i];
+      const dx = n.x3 - wave.x3;
+      const dy = n.y3 - wave.y3;
+      const dz = (n.z3 - wave.z3) * 0.62;
+      const distance = Math.sqrt(dx * dx + dy * dy + dz * dz);
+      const radius = (wave.age / 1000) * FIELD_WAVE_SPEED_PX_PER_S;
+      const shell = Math.exp(-Math.pow(distance - radius, 2) / (2 * FIELD_WAVE_WIDTH * FIELD_WAVE_WIDTH));
+      const fade = Math.sin(Math.PI * clamp(wave.age / FIELD_WAVE_MAX_AGE_MS, 0, 1));
+      drive += wave.strength * shell * fade;
+    }
+    return clamp(drive, 0, 1.35);
+  }
+
+  function lifeBreath(n, offset) {
+    return 0.5 + 0.5 * Math.sin(modelTime * 0.0022 + n.lifePhase + n.layer * 0.42 + offset);
+  }
+
   function updateRhythm() {
     const t = modelTime / 1000;
     const theta = Math.sin(Math.PI * 2 * THETA_RATE_HZ * t + rhythmPhase);
@@ -590,9 +661,17 @@
     n.spike *= Math.exp(-dt / 280);
     n.synGlowE *= Math.exp(-dt / 280);
     n.synGlowI *= Math.exp(-dt / 340);
+    n.fieldGlow *= Math.exp(-dt / 920);
 
     if (Math.random() < (inputRateHz * dt) / 1000) {
       n.ge += BACKGROUND_EPSC * (0.65 + Math.random() * 0.70);
+    }
+
+    const waveDrive = fieldWaveDrive(n);
+    if (waveDrive > 0.001) {
+      n.ge += BACKGROUND_EPSC * FIELD_WAVE_DRIVE * waveDrive;
+      n.fieldGlow = Math.max(n.fieldGlow, waveDrive * 0.42);
+      n.synGlowE += waveDrive * 0.010;
     }
 
     n.ge *= Math.exp(-bioDt / EXC_DECAY_TAU_MS);
@@ -636,6 +715,7 @@
     const inputRateHz = (BACKGROUND_INPUT_RATE_HZ + scrollDrive * SCROLL_INPUT_RATE_HZ) * updateRhythm();
     updateCamera(false);
     projectAll();
+    updateFieldWaves(dt);
 
     for (let i = 0; i < nodes.length; i++) {
       updateNode(nodes[i], i, dt, bioDt, inputRateHz);
@@ -701,9 +781,11 @@
 
       const charge = clamp((n.V - V_REST) / (SPIKE_PEAK - V_REST), 0, 1);
       const synGlow = clamp(n.synGlowE + n.synGlowI, 0, 0.32);
+      const fieldGlow = clamp(n.fieldGlow, 0, 0.56);
+      const breath = lifeBreath(n, 0);
       const colour = n.inhibitory ? ACCENT_WARM : ACCENT_BLUE;
-      const radius = (11 + n.baseSize * 4.6 + charge * 3.4 + synGlow * 11 + n.spike * 3.5) * n.scale;
-      const alpha = (0.0080 + charge * 0.0025 + synGlow * 0.014 + n.spike * 0.0045) *
+      const radius = (11 + n.baseSize * 4.6 + charge * 3.4 + synGlow * 11 + fieldGlow * 20 + n.spike * 3.5) * n.scale;
+      const alpha = (0.0080 + breath * 0.0024 + charge * 0.0025 + synGlow * 0.014 + fieldGlow * 0.020 + n.spike * 0.0045) *
         n.depthFade *
         (n.inhibitory ? 0.72 : 1);
 
@@ -725,16 +807,19 @@
 
       const charge = clamp((n.V - V_REST) / (SPIKE_PEAK - V_REST), 0, 1);
       const synGlow = clamp(n.synGlowE + n.synGlowI, 0, 0.28);
+      const fieldGlow = clamp(n.fieldGlow, 0, 0.50);
+      const breath = lifeBreath(n, 0.7);
       const colour = n.inhibitory ? ACCENT_WARM : ACCENT_BLUE;
       const alphaBase = (n.inhibitory ? 0.043 : 0.037) *
         n.depthFade *
-        (0.68 + charge * 0.20 + n.spike * 0.32 + synGlow * 1.25) *
+        (0.66 + breath * 0.12 + charge * 0.18 + n.spike * 0.24 + synGlow * 1.05 + fieldGlow * 0.82) *
         (0.94 + rhythmDrive * 0.06);
 
       for (let a = 0; a < n.arbors.length; a++) {
         const arbor = n.arbors[a];
-        const angle = arbor.angle + currentYaw * 0.30 - currentPitch * 0.10;
-        const length = arbor.length * n.scale * (0.92 + charge * 0.14);
+        const sway = Math.sin(modelTime * 0.003 + n.lifePhase + a * 1.7) * (0.008 + fieldGlow * 0.020);
+        const angle = arbor.angle + currentYaw * 0.30 - currentPitch * 0.10 + sway;
+        const length = arbor.length * n.scale * (0.92 + breath * 0.020 + charge * 0.10 + fieldGlow * 0.045);
         const x2 = n.px + Math.cos(angle) * length;
         const y2 = n.py + Math.sin(angle) * length;
 
@@ -822,9 +907,11 @@
       if (inReadingBand(n.px)) continue;
       const charge = clamp((n.V - V_REST) / (SPIKE_PEAK - V_REST), 0, 1);
       const synGlow = clamp(n.synGlowE + n.synGlowI, 0, 0.32);
+      const fieldGlow = clamp(n.fieldGlow, 0, 0.48);
+      const breath = lifeBreath(n, 1.4);
       const colour = n.inhibitory ? ACCENT_WARM : ACCENT_BLUE;
-      const size = (n.baseSize * 0.82 + n.spike * 0.52 + charge * 0.20 + synGlow * 0.45) * n.scale;
-      const opacity = (0.092 + charge * 0.048 + n.spike * 0.060 + synGlow * 0.10) *
+      const size = (n.baseSize * (0.80 + breath * 0.045) + n.spike * 0.42 + charge * 0.18 + synGlow * 0.36 + fieldGlow * 0.36) * n.scale;
+      const opacity = (0.088 + breath * 0.024 + charge * 0.040 + n.spike * 0.046 + synGlow * 0.082 + fieldGlow * 0.085) *
         n.depthFade *
         (n.inhibitory ? 0.78 : 1);
 
