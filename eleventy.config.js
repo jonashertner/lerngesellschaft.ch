@@ -22,6 +22,7 @@ export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/css");
   eleventyConfig.addPassthroughCopy("src/js");
   eleventyConfig.addPassthroughCopy("src/social-card.svg");
+  eleventyConfig.addPassthroughCopy("src/vorschau");
 
   eleventyConfig.addTransform("sidenotes", function (content) {
     if (!this.page.outputPath || !this.page.outputPath.endsWith(".html")) return content;
