@@ -72,8 +72,7 @@ h2.big{ font-size:var(--fs-h2); max-width:18ch; margin-top:1rem; }
 .accent-blob{ position:absolute; border-radius:50%; filter:blur(55px); opacity:.4; z-index:0; pointer-events:none; }
 
 /* prose body in two readable columns (fills width, consistent with the grid sections) */
-.prose2{ margin-top:clamp(2rem, 1.4rem + 2vw, 3rem); display:grid; gap:1.6rem; grid-template-columns:1fr; }
-@media (min-width:880px){ .prose2{ grid-template-columns:1fr 1fr; gap:clamp(2rem, 1rem + 3vw, 4rem); } }
+.prose2{ margin-top:clamp(2rem, 1.4rem + 2vw, 3rem); display:grid; gap:1.6rem clamp(2rem, 1rem + 3vw, 4rem); grid-template-columns:repeat(auto-fit, minmax(min(100%, 22rem), 1fr)); }
 .prose2 .lead{ max-width:42ch; }
 
 /* ---- Buttons ---- */
@@ -159,16 +158,14 @@ h2.big{ font-size:var(--fs-h2); max-width:18ch; margin-top:1rem; }
 
 /* ---- Ziele (goals) ---- */
 .tint{ background:var(--bg-2); }
-.goals{ margin-top:2.8rem; display:grid; gap:clamp(1.5rem, 1rem + 2vw, 2.6rem); grid-template-columns:1fr; }
-@media (min-width:880px){ .goals{ grid-template-columns:repeat(3,1fr); } }
+.goals{ margin-top:2.8rem; display:grid; gap:clamp(1.5rem, 1rem + 2vw, 2.6rem); grid-template-columns:repeat(auto-fit, minmax(min(100%, 13rem), 1fr)); }
 .goal{ border-top:3px solid var(--dot); padding-top:1.2rem; }
 .goal .n{ font-family:var(--display); font-weight:800; font-size:clamp(2.6rem, 2rem + 2vw, 3.8rem); line-height:1; color:var(--dot); }
 .goal h3{ font-family:var(--display); font-weight:800; font-size:var(--fs-h3); margin:.6rem 0 .5rem; }
 .goal p{ color:var(--ink-soft); max-width:34ch; }
 
 /* ---- Saeulen (pillars) ---- */
-.pillars{ margin-top:2.8rem; display:grid; gap:clamp(1.1rem, 0.8rem + 1.5vw, 1.8rem); grid-template-columns:1fr; }
-@media (min-width:880px){ .pillars{ grid-template-columns:repeat(3,1fr); } }
+.pillars{ margin-top:2.8rem; display:grid; gap:clamp(1.1rem, 0.8rem + 1.5vw, 1.8rem); grid-template-columns:repeat(auto-fit, minmax(min(100%, 17rem), 1fr)); }
 .pillar{ position:relative; isolation:isolate; background:#fff; border-radius:26px; padding:clamp(1.6rem, 1.1rem + 1.6vw, 2.4rem);
   box-shadow:0 30px 60px -44px rgba(31,15,51,.55); transition:transform .3s cubic-bezier(.34,1.3,.5,1); display:flex; flex-direction:column; }
 .pillar:hover{ transform:translateY(-6px); }
@@ -218,6 +215,14 @@ h2.big{ font-size:var(--fs-h2); max-width:18ch; margin-top:1rem; }
 @media (max-width:759px){
   .hero-scrim{ background:linear-gradient(180deg, rgba(255,245,236,.3) 0%, rgba(255,245,236,.84) 58%, var(--bg) 100%); }
   .video-on .hero-scrim{ background:linear-gradient(180deg, rgba(16,7,34,.32) 0%, rgba(16,7,34,.52) 52%, rgba(16,7,34,.78) 100%); }
+}
+
+/* ---- Small phones ---- */
+.foot .wrap span{ overflow-wrap:anywhere; }
+@media (max-width:380px){
+  .brand b{ font-size:1.22rem; }
+  .brand span{ letter-spacing:.18em; }
+  .nav-cta{ padding:.5em 1em; font-size:.9rem; }
 }
 
 /* ---- Reduced motion ---- */
