@@ -199,6 +199,16 @@ h2.big{ font-size:var(--fs-h2); max-width:18ch; margin-top:1rem; }
 .placeholder{ border:2px dashed var(--line); border-radius:20px; padding:clamp(1.5rem, 1rem + 2vw, 2.4rem); color:var(--ink-soft); max-width:52ch; }
 .who{ margin-top:1.6rem; font-weight:800; }
 
+/* subpage detail content */
+.detail{ display:grid; gap:clamp(1.9rem, 1.2rem + 1.8vw, 3rem); max-width:62ch; }
+.dsec h2{ font-family:var(--display); font-weight:800; font-size:var(--fs-h3); letter-spacing:-0.02em; }
+.dsec h2::before{ content:""; display:block; width:2.4rem; height:.5rem; border-radius:999px; background:var(--dot); margin-bottom:.95rem; }
+.dsec p{ margin-top:.7rem; color:var(--ink-soft); max-width:58ch; }
+.vignette{ margin-top:clamp(2.8rem, 1.8rem + 3vw, 4.4rem); padding:clamp(1.5rem, 1.1rem + 1.6vw, 2.4rem) clamp(1.6rem, 1.1rem + 2vw, 2.6rem);
+  background:var(--bg-2); border-radius:6px 22px 22px 6px; border-left:5px solid var(--dot);
+  font-family:var(--display); font-weight:500; font-size:clamp(1.2rem, 1.05rem + 0.7vw, 1.6rem); line-height:1.42; letter-spacing:-0.01em; max-width:54ch; color:var(--ink); }
+.invest-row{ margin-top:clamp(2.4rem, 1.6rem + 2vw, 3.4rem); }
+
 /* ---- Footer ---- */
 .foot{ padding-block:2.6rem; }
 .foot .wrap{ display:flex; flex-wrap:wrap; gap:.6rem 1.4rem; justify-content:space-between; align-items:center;
