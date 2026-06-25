@@ -1,11 +1,117 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="utf-8">
-  <title>Lerngesellschaft</title>
-  <meta http-equiv="refresh" content="0; url=/de/">
-  <link rel="canonical" href="https://lerngesellschaft.ch/de/">
-  <script>location.replace('/de/')</script>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Lerngesellschaft</title>
+<meta name="description" content="Lerngesellschaft, Basel." />
+<meta name="robots" content="noindex" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M16 3c5 0 9 3 9 8 0 3-2 4-2 7s3 3 3 6-4 5-10 5S6 31 6 27s3-3 3-6-2-4-2-7c0-5 4-8 9-8z' fill='%23ff3d8b'/%3E%3C/svg%3E" />
+<style>
+@font-face{ font-family:'Bricolage Grotesque'; font-style:normal; font-weight:400 800; font-display:swap; src:url('./fonts/bricolage-latin.woff2') format('woff2'); unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
+@font-face{ font-family:'Bricolage Grotesque'; font-style:normal; font-weight:400 800; font-display:swap; src:url('./fonts/bricolage-latin-ext.woff2') format('woff2'); unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF; }
+:root{ --bg:#fff5ec; --ink:#1f0f33; }
+*{ box-sizing:border-box; }
+html,body{ margin:0; height:100%; }
+body{ background:var(--bg); color:var(--ink); font-family:'Bricolage Grotesque', system-ui, sans-serif; overflow:hidden; -webkit-font-smoothing:antialiased; }
+.stage{ position:fixed; inset:0; z-index:0; }
+.fallback{ position:absolute; inset:0;
+  background:
+    radial-gradient(40% 46% at 28% 34%, #7d66f5, transparent 60%),
+    radial-gradient(44% 48% at 72% 40%, #ff6bad, transparent 60%),
+    radial-gradient(42% 46% at 58% 76%, #ffd185, transparent 60%),
+    var(--bg); }
+#gl{ position:absolute; inset:0; width:100%; height:100%; opacity:0; transition:opacity 1.2s ease; }
+#gl.on{ opacity:1; }
+.scrim{ position:fixed; inset:0; z-index:1; pointer-events:none;
+  background:radial-gradient(60% 52% at 50% 50%, rgba(255,245,236,.84), rgba(255,245,236,.34) 46%, rgba(255,245,236,0) 72%); }
+.wrap{ position:fixed; inset:0; z-index:2; display:grid; place-items:center; padding:clamp(0.75rem, 3vw, 4rem); }
+.mark{ margin:0; font-weight:800; letter-spacing:-0.035em; line-height:.92; text-align:center;
+  font-size:clamp(1.55rem, 7.5vw, 11rem); hyphens:auto; overflow-wrap:break-word; text-shadow:0 2px 34px rgba(255,245,236,.55); }
+@media (prefers-reduced-motion:reduce){ #gl{ transition:none; } }
+</style>
 </head>
-<body><p><a href="/de/">Lerngesellschaft</a></p></body>
+<body>
+<div class="stage" aria-hidden="true">
+  <div class="fallback"></div>
+  <canvas id="gl"></canvas>
+</div>
+<div class="scrim" aria-hidden="true"></div>
+<div class="wrap"><h1 class="mark">Lerngesellschaft</h1></div>
+
+<script>
+(function(){
+  var canvas=document.getElementById('gl');
+  var gl=null; try{ gl=canvas.getContext('webgl')||canvas.getContext('experimental-webgl'); }catch(e){}
+  if(!gl) return; // CSS fallback stays
+  var vsrc='attribute vec2 p; void main(){ gl_Position=vec4(p,0.0,1.0); }';
+  var fsrc=[
+    'precision highp float;',
+    'uniform float uTime; uniform vec2 uRes; uniform vec2 uMouse;',
+    'float ball(vec2 p, vec2 c, float r){ vec2 d=p-c; return (r*r)/(dot(d,d)+0.0004); }',
+    'float field(vec2 p){',
+    '  float asp=uRes.x/uRes.y; float s=0.0;',
+    '  vec2 m=vec2(uMouse.x*asp, uMouse.y);',
+    '  s+=ball(p,m,0.36);',
+    '  for(int i=0;i<7;i++){ float fi=float(i); float t=uTime*0.32+fi*1.7;',
+    '    vec2 c=vec2((0.05+0.72*sin(t*0.7+fi*1.3))*asp, 0.72*cos(t*0.6+fi*2.1));',
+    '    float r=0.17+0.09*sin(t*0.9+fi);',
+    '    s+=ball(p,c,r); }',
+    '  return s;',
+    '}',
+    'void main(){',
+    '  vec2 p=(gl_FragCoord.xy/uRes)*2.0-1.0; p.x*=uRes.x/uRes.y;',
+    '  vec3 cA=vec3(0.49,0.40,0.96), cB=vec3(1.0,0.42,0.68), cC=vec3(1.0,0.58,0.44), cD=vec3(1.0,0.82,0.52);',
+    '  vec3 bg=vec3(1.0,0.961,0.925);',
+    '  float s=field(p);',
+    '  float T=1.0; float h=smoothstep(T-0.06,T+0.06,s);',
+    '  float e=0.006;',
+    '  vec2 g=vec2(field(p+vec2(e,0.0))-field(p-vec2(e,0.0)), field(p+vec2(0.0,e))-field(p-vec2(0.0,e)));',
+    '  vec3 n=normalize(vec3(-g*0.85,1.0));',
+    '  vec3 L=normalize(vec3(0.4,0.55,0.9));',
+    '  float diff=clamp(dot(n,L)*0.5+0.5,0.0,1.0);',
+    '  float spec=pow(clamp(dot(reflect(-L,n),vec3(0.0,0.0,1.0)),0.0,1.0),24.0);',
+    '  float fres=pow(1.0-clamp(n.z,0.0,1.0),2.2);',
+    '  float gp=clamp((p.y*0.32+0.5)+0.12*sin(uTime*0.3)+g.x*0.04,0.0,1.0);',
+    '  vec3 col=mix(cA,cB,smoothstep(0.0,0.45,gp));',
+    '  col=mix(col,cC,smoothstep(0.4,0.78,gp));',
+    '  col=mix(col,cD,smoothstep(0.72,1.0,gp));',
+    '  col*=(0.6+0.55*diff);',
+    '  col+=spec*0.9;',
+    '  col=mix(col,vec3(1.0),fres*0.28);',
+    '  float glow=smoothstep(0.4,T,s)*(1.0-h);',
+    '  float a=clamp(h+glow*0.4,0.0,1.0);',
+    '  gl_FragColor=vec4(mix(bg,col,a),1.0);',
+    '}'
+  ].join('\n');
+  function sh(t,src){ var s=gl.createShader(t); gl.shaderSource(s,src); gl.compileShader(s); return s; }
+  var prog=gl.createProgram();
+  gl.attachShader(prog,sh(gl.VERTEX_SHADER,vsrc));
+  gl.attachShader(prog,sh(gl.FRAGMENT_SHADER,fsrc));
+  gl.linkProgram(prog); gl.useProgram(prog);
+  var buf=gl.createBuffer(); gl.bindBuffer(gl.ARRAY_BUFFER,buf);
+  gl.bufferData(gl.ARRAY_BUFFER,new Float32Array([-1,-1, 3,-1, -1,3]),gl.STATIC_DRAW);
+  var loc=gl.getAttribLocation(prog,'p'); gl.enableVertexAttribArray(loc); gl.vertexAttribPointer(loc,2,gl.FLOAT,false,0,0);
+  var uTime=gl.getUniformLocation(prog,'uTime'), uRes=gl.getUniformLocation(prog,'uRes'), uMouse=gl.getUniformLocation(prog,'uMouse');
+  var dpr=Math.min(window.devicePixelRatio||1,1.5);
+  function resize(){ var w=window.innerWidth,hh=window.innerHeight; canvas.width=Math.round(w*dpr); canvas.height=Math.round(hh*dpr); canvas.style.width=w+'px'; canvas.style.height=hh+'px'; gl.viewport(0,0,canvas.width,canvas.height); gl.uniform2f(uRes,canvas.width,canvas.height); }
+  window.addEventListener('resize',resize,{passive:true}); resize();
+  var mx=0.25,my=0.0, tx=0.25,ty=0.0, usePointer=false;
+  var fine = window.matchMedia('(pointer:fine)').matches;
+  if(fine){ window.addEventListener('pointermove',function(e){ usePointer=true; tx=(e.clientX/window.innerWidth)*2-1; ty=-((e.clientY/window.innerHeight)*2-1); },{passive:true}); }
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function draw(t){
+    if(!usePointer){ tx=0.62*Math.sin(t*0.00022); ty=0.46*Math.sin(t*0.00018+1.3); }
+    mx+=(tx-mx)*0.05; my+=(ty-my)*0.05;
+    gl.uniform1f(uTime, t*0.001); gl.uniform2f(uMouse, mx, my);
+    gl.drawArrays(gl.TRIANGLES,0,3);
+  }
+  canvas.classList.add('on');
+  if(reduce){ draw(3000); }
+  else{ (function loop(t){ draw(t||0); raf=requestAnimationFrame(loop); })(0); }
+  var raf;
+  document.addEventListener('visibilitychange',function(){ if(document.hidden){ cancelAnimationFrame(raf); } else if(!reduce){ (function loop(t){ draw(t||0); raf=requestAnimationFrame(loop); })(performance.now?performance.now():0); } });
+})();
+</script>
+</body>
 </html>
