@@ -17,9 +17,9 @@ body{ background:var(--bg); color:var(--ink); font-family:'Bricolage Grotesque',
 .stage{ position:fixed; inset:0; z-index:0; }
 .fallback{ position:absolute; inset:0;
   background:
-    radial-gradient(40% 46% at 28% 34%, #7d66f5, transparent 60%),
-    radial-gradient(44% 48% at 72% 40%, #ff6bad, transparent 60%),
-    radial-gradient(42% 46% at 58% 76%, #ffd185, transparent 60%),
+    radial-gradient(40% 46% at 28% 34%, #cc4db8, transparent 60%),
+    radial-gradient(44% 48% at 72% 40%, #ff5c9e, transparent 60%),
+    radial-gradient(42% 46% at 58% 76%, #ff8a6b, transparent 60%),
     var(--bg); }
 #gl{ position:absolute; inset:0; width:100%; height:100%; opacity:0; transition:opacity 1.2s ease; }
 #gl.on{ opacity:1; }
@@ -61,7 +61,7 @@ body{ background:var(--bg); color:var(--ink); font-family:'Bricolage Grotesque',
     '}',
     'void main(){',
     '  vec2 p=(gl_FragCoord.xy/uRes)*2.0-1.0; p.x*=uRes.x/uRes.y;',
-    '  vec3 cA=vec3(0.49,0.40,0.96), cB=vec3(1.0,0.42,0.68), cC=vec3(1.0,0.58,0.44), cD=vec3(1.0,0.82,0.52);',
+    '  vec3 cA=vec3(0.80,0.30,0.72), cB=vec3(1.0,0.36,0.62), cC=vec3(1.0,0.50,0.44), cD=vec3(1.0,0.64,0.54);',
     '  vec3 bg=vec3(1.0,0.961,0.925);',
     '  float s=field(p);',
     '  float T=1.0; float h=smoothstep(T-0.06,T+0.06,s);',
@@ -77,8 +77,8 @@ body{ background:var(--bg); color:var(--ink); font-family:'Bricolage Grotesque',
     '  col=mix(col,cC,smoothstep(0.4,0.78,gp));',
     '  col=mix(col,cD,smoothstep(0.72,1.0,gp));',
     '  col*=(0.6+0.55*diff);',
-    '  col+=spec*0.9;',
-    '  col=mix(col,vec3(1.0),fres*0.28);',
+    '  col+=spec*0.6;',
+    '  col=mix(col,vec3(1.0),fres*0.22);',
     '  float glow=smoothstep(0.4,T,s)*(1.0-h);',
     '  float a=clamp(h+glow*0.4,0.0,1.0);',
     '  gl_FragColor=vec4(mix(bg,col,a),1.0);',
