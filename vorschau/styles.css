@@ -230,6 +230,8 @@ h2.big{ font-size:var(--fs-h2); max-width:18ch; margin-top:1rem; }
 
 /* ---- Small phones ---- */
 .foot .wrap span{ overflow-wrap:anywhere; }
+/* hide the brand subtitle on phones so the Investieren button never clips */
+@media (max-width:560px){ .brand span{ display:none; } }
 @media (max-width:380px){
   .brand b{ font-size:1.22rem; }
   .brand span{ letter-spacing:.18em; }
