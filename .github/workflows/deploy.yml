@@ -27,19 +27,10 @@ jobs:
           rm -rf _site_de
           cp -r _site _site_de
           echo "lerngesellschaft.ch" > _site_de/CNAME
-          cat > _site_de/index.html <<'EOF'
-          <!doctype html>
-          <html lang="de">
-          <head>
-            <meta charset="utf-8">
-            <title>Lerngesellschaft</title>
-            <meta http-equiv="refresh" content="0; url=/de/">
-            <link rel="canonical" href="https://lerngesellschaft.ch/de/">
-            <script>location.replace('/de/')</script>
-          </head>
-          <body><p><a href="/de/">Lerngesellschaft</a></p></body>
-          </html>
-          EOF
+          # Root = hold page (the manifest stays reachable at /de and /en)
+          cp hold/index.html _site_de/index.html
+          mkdir -p _site_de/fonts
+          cp hold/fonts/* _site_de/fonts/
 
 
       - name: Deploy DE → gh-pages of this repo
