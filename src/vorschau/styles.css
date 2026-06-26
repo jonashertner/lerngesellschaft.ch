@@ -216,6 +216,8 @@ h2.big{ font-size:var(--fs-h2); max-width:18ch; margin-top:1rem; }
 .foot{ padding-block:2.6rem; }
 .foot .wrap{ display:flex; flex-wrap:wrap; gap:.6rem 1.4rem; justify-content:space-between; align-items:center;
   font-size:.82rem; color:var(--ink-soft); font-weight:600; border-top:2px solid var(--line); padding-top:2rem; }
+.foot .wrap a{ color:var(--ink-soft); font-weight:800; }
+.foot .wrap a:hover, .foot .wrap a:focus-visible{ color:var(--ink); }
 
 /* ---- Reveals ---- */
 @media (prefers-reduced-motion:no-preference){
@@ -229,6 +231,14 @@ h2.big{ font-size:var(--fs-h2); max-width:18ch; margin-top:1rem; }
 @media (max-width:759px){
   .hero-scrim{ background:linear-gradient(180deg, rgba(255,245,236,.3) 0%, rgba(255,245,236,.84) 58%, var(--bg) 100%); }
   .video-on .hero-scrim{ background:linear-gradient(180deg, rgba(16,7,34,.32) 0%, rgba(16,7,34,.52) 52%, rgba(16,7,34,.78) 100%); }
+}
+
+/* ---- Mobile nav: keep Ziele / Die Säulen reachable on phones (second row) ---- */
+@media (max-width:759px){
+  .head-right{ flex-wrap:wrap; justify-content:flex-end; row-gap:.35rem; }
+  .nav{ display:flex; order:3; flex-basis:100%; justify-content:flex-end; gap:1.2rem; }
+  .navlink{ padding:.2rem .15rem; font-size:.92rem; }
+  .navlink::before{ display:none; }
 }
 
 /* ---- Small phones ---- */
