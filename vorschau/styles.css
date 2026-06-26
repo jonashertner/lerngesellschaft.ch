@@ -109,6 +109,9 @@ h2.big{ font-size:var(--fs-h2); max-width:18ch; margin-top:1rem; }
 .navlink:hover, .navlink:focus-visible{ color:var(--ink); }
 .navlink:hover::before, .navlink:focus-visible::before{ transform:scale(1) rotate(-3deg); animation:blob 2.6s ease-in-out .12s infinite; }
 .nav-cta{ padding:.6em 1.2em; font-size:.95rem; min-height:0; }
+.lang{ font-weight:800; font-size:.9rem; letter-spacing:.04em; color:var(--ink-soft); padding:.45rem .55rem; border-radius:999px; }
+.lang:hover, .lang:focus-visible{ color:var(--ink); }
+.video-on .lang{ color:rgba(255,255,255,.92); }
 @keyframes blob{
   0%,100%{ border-radius:47% 53% 62% 38% / 57% 45% 55% 43%; }
   33%{ border-radius:63% 37% 44% 56% / 43% 59% 41% 57%; }
