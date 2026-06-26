@@ -31,7 +31,7 @@
   --display:'Bricolage Grotesque', system-ui, sans-serif;
   --body:'Hanken Grotesk', system-ui, sans-serif;
 
-  --fs-hero:clamp(2rem, 0.7rem + 5.8vw, 6.25rem);
+  --fs-hero:clamp(2.1rem, 1rem + 4.6vw, 5.5rem);
   --fs-h2:clamp(2rem, 1.1rem + 3.6vw, 4rem);
   --fs-h3:clamp(1.35rem, 1.1rem + 1.1vw, 1.9rem);
   --fs-lead:clamp(1.12rem, 1rem + 0.6vw, 1.45rem);
