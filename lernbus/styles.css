@@ -129,10 +129,6 @@ h2.big + .lead, h2.big + .prose2{ margin-top:1.5rem; }
 .navlink{ position:relative; padding:.55rem .85rem; font-weight:700; font-size:.95rem; color:rgba(248,247,252,.94); transition:color .2s ease; }
 .navlink::after{ content:""; position:absolute; left:.85rem; right:.85rem; bottom:.28rem; height:2.5px; border-radius:2px; background:var(--cyan); transform:scaleX(0); transform-origin:left; transition:transform .22s ease; }
 .navlink:hover::after, .navlink:focus-visible::after{ transform:scaleX(1); }
-.nav-cta{ padding:.6em 1.2em; font-size:.93rem; min-height:0; }
-/* the header always sits on the night hero: sunny CTA */
-.site-head .btn-pink{ background:var(--yellow); color:var(--ink); box-shadow:0 10px 22px -14px rgba(0,0,0,.55); }
-.site-head .btn-pink:hover{ background:#fff; color:var(--ink); }
 .lang{ font-weight:700; font-size:.9rem; letter-spacing:.04em; color:rgba(248,247,252,.72); padding:.45rem .55rem; border-radius:999px; }
 .lang:hover, .lang:focus-visible{ color:#fff; }
 .video-on .lang{ color:rgba(255,255,255,.92); }
@@ -317,24 +313,52 @@ h2.big + .lead, h2.big + .prose2{ margin-top:1.5rem; }
 .bullets li::before{ content:""; position:absolute; left:0; top:1.5em; width:.85rem; height:3px; border-radius:2px; background:var(--dot); }
 .bullets li b{ color:var(--ink); font-weight:700; }
 
-/* ---- Steps: typographic numerals ---- */
+/* ---- Steps: marker-blob numerals, the notebook thread ---- */
 .steps{ margin-top:2.4rem; max-width:34rem; counter-reset:none; }
 .step{ position:relative; padding:0 0 2rem 3.2rem; }
 .step:last-child{ padding-bottom:0; }
-.step::before{ content:""; position:absolute; left:.75rem; top:2.3rem; bottom:.2rem; width:2px; background:var(--line); border-radius:2px; }
+.step::before{ content:""; position:absolute; left:.8rem; top:2.1rem; bottom:.2rem; width:2px; background:var(--line); border-radius:2px; }
 .step:last-child::before{ display:none; }
-.step .dotn{ position:absolute; left:0; top:0; width:1.6rem; font-family:var(--display); font-weight:700; font-size:1.35rem; line-height:1.3;
-  color:var(--dot); display:inline-block; text-align:center;
-  background:linear-gradient(transparent 58%, var(--marker) 58%, var(--marker) 94%, transparent 94%); }
+.step .dotn{ position:absolute; left:0; top:-.15rem; width:1.75rem; height:1.75rem; display:grid; place-items:center;
+  font-family:var(--display); font-weight:700; font-size:1rem; line-height:1; color:var(--ink);
+  background:rgba(231,226,118,.85); border-radius:48% 52% 55% 45% / 55% 48% 52% 45%; transform:rotate(-4deg); }
+.step:nth-child(even) .dotn{ transform:rotate(3deg); border-radius:52% 48% 45% 55% / 48% 55% 45% 52%; }
 .step h3{ font-size:1.12rem; line-height:1.35; }
 .step p{ margin-top:.35rem; color:var(--ink-soft); }
 .steps.grid2{ max-width:none; display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%, 26rem), 1fr)); gap:.4rem clamp(2.5rem, 1.5rem + 3vw, 5rem); }
 .steps.grid2 .step{ padding-bottom:1.6rem; border-bottom:1px solid var(--hairline); margin-bottom:0; }
 .steps.grid2 .step::before{ display:none; }
 
+/* ---- Checklist sheet: the six goals, ticked off in the notebook ---- */
+.checksheet{ position:relative; margin-top:clamp(2.4rem, 1.8rem + 2vw, 3.4rem); background:var(--card);
+  border:1px solid var(--hairline); border-radius:14px; rotate:0.4deg;
+  box-shadow:0 1px 2px rgba(44,39,80,.06), 0 16px 36px -30px rgba(44,39,80,.45);
+  padding:clamp(1.6rem, 1.2rem + 1.6vw, 2.4rem); }
+.checksheet::after{ content:""; position:absolute; top:-.6rem; left:50%; width:5.4rem; height:1.35rem;
+  transform:translateX(-50%) rotate(2deg); background:rgba(231,226,118,.55);
+  border:1px solid rgba(190,183,80,.35); border-radius:2px; }
+.ticks{ list-style:none; margin:1.2rem 0 0; padding:0; display:grid; gap:1rem clamp(1.6rem, 1rem + 2vw, 2.6rem);
+  grid-template-columns:repeat(auto-fit, minmax(min(100%, 21rem), 1fr)); }
+.ticks li{ position:relative; padding-left:2.35rem; font-weight:650; line-height:1.45; }
+.ticks li::before{ content:""; position:absolute; left:0; top:-.05em; width:1.55rem; height:1.55rem;
+  background:rgba(231,226,118,.75) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 28'%3E%3Cpath d='M6 15 C10 17 11 20 12.5 22 C15 15 20 9 24 5.5' fill='none' stroke='%232c2750' stroke-width='3.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / 74% no-repeat;
+  border-radius:44% 56% 52% 48% / 56% 44% 56% 44%; transform:rotate(-3deg); }
+.ticks li:nth-child(even)::before{ transform:rotate(2.5deg); border-radius:56% 44% 48% 52% / 44% 56% 44% 56%; }
+
+/* ---- Zielgruppe: manifesto rows with marker-highlighted keywords ---- */
+.fuerwen{ list-style:none; margin:clamp(1.8rem, 1.2rem + 1.6vw, 2.6rem) 0 0; padding:0; max-width:56rem; }
+.fuerwen li{ font-family:var(--display); font-weight:600; font-size:clamp(1.25rem, 1.02rem + 1vw, 1.85rem);
+  line-height:1.35; letter-spacing:-0.012em; padding:1em 0; border-bottom:1px solid var(--line); text-wrap:balance; }
+.fuerwen li:first-child{ border-top:1px solid var(--line); }
+.fuerwen b{ font-weight:700;
+  background:linear-gradient(transparent 60%, rgba(231,226,118,.8) 60%, rgba(231,226,118,.8) 95%, transparent 95%); }
+
 /* ---- Booking card / form ---- */
-.book-card{ margin-top:2.4rem; background:var(--card); border-radius:18px; padding:clamp(1.6rem, 1.1rem + 2vw, 2.6rem);
+.book-card{ position:relative; margin-top:2.4rem; background:var(--card); border-radius:18px; padding:clamp(1.6rem, 1.1rem + 2vw, 2.6rem);
   border:1px solid var(--hairline); box-shadow:0 1px 2px rgba(44,39,80,.05), 0 18px 40px -34px rgba(44,39,80,.4); max-width:46rem; }
+.book-card::after{ content:""; position:absolute; top:-.6rem; left:50%; width:5.4rem; height:1.35rem;
+  transform:translateX(-50%) rotate(-2.5deg); background:rgba(231,226,118,.55);
+  border:1px solid rgba(190,183,80,.35); border-radius:2px; }
 .form-grid{ display:grid; gap:1.1rem; grid-template-columns:repeat(auto-fit, minmax(min(100%, 15rem), 1fr)); }
 .field{ display:grid; gap:.4rem; }
 .field label{ font-weight:700; font-size:.85rem; letter-spacing:.02em; }
@@ -352,10 +376,14 @@ h2.big + .lead, h2.big + .prose2{ margin-top:1.5rem; }
 #zielgruppe .bullets li:first-child{ border-top:1px solid var(--hairline); }
 /* Qualitaet: manifesto voice */
 #qualitaet .prose2 .lead{ font-family:var(--display); font-weight:500; font-size:clamp(1.2rem, 1.05rem + 0.7vw, 1.6rem); line-height:1.45; letter-spacing:-0.005em; max-width:34ch; }
-/* Kosten: two quiet panels */
-#kosten .detail{ grid-template-columns:repeat(auto-fit, minmax(min(100%, 20rem), 1fr)); max-width:56rem; gap:clamp(1rem, 0.8rem + 1vw, 1.5rem); margin-top:2.2rem; }
-#kosten .dsec{ background:var(--card); border:1px solid var(--hairline); border-radius:18px; padding:clamp(1.5rem, 1.1rem + 1.4vw, 2.2rem);
+/* Kosten: two taped panels, same family as the pillars */
+#kosten .detail{ grid-template-columns:repeat(auto-fit, minmax(min(100%, 20rem), 1fr)); max-width:56rem; gap:clamp(1rem, 0.8rem + 1vw, 1.5rem); margin-top:2.6rem; }
+#kosten .dsec{ position:relative; background:var(--card); border:1px solid var(--hairline); border-radius:18px; padding:clamp(1.5rem, 1.1rem + 1.4vw, 2.2rem);
   box-shadow:0 1px 2px rgba(44,39,80,.05), 0 14px 34px -30px rgba(44,39,80,.4); }
+#kosten .dsec::after{ content:""; position:absolute; top:-.6rem; left:50%; width:5.4rem; height:1.35rem;
+  transform:translateX(-50%) rotate(-2.5deg); background:rgba(231,226,118,.55);
+  border:1px solid rgba(190,183,80,.35); border-radius:2px; }
+#kosten .dsec:nth-child(even)::after{ transform:translateX(-50%) rotate(2deg); }
 /* FAQ: question-and-answer rows */
 #fragen .detail{ max-width:66ch; margin-top:1.2rem; gap:0; }
 #fragen .dsec{ border-bottom:1px solid var(--line); padding-block:1.7rem; }
