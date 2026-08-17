@@ -232,6 +232,13 @@ h2.big{ font-size:var(--fs-h2); max-width:18ch; margin-top:1rem; }
 .fact b{ display:block; font-family:var(--display); font-weight:800; font-size:1.06rem; letter-spacing:-0.01em; }
 .fact span{ display:block; margin-top:.25rem; color:var(--ink-soft); font-size:.92rem; line-height:1.45; }
 
+/* bullet lists (Ziele, Zielgruppe und Zugang) */
+.bullets{ margin:1.8rem 0 0; padding:0; list-style:none; display:grid; gap:.9rem clamp(1.5rem, 1rem + 2vw, 3rem);
+  grid-template-columns:repeat(auto-fit, minmax(min(100%, 20rem), 1fr)); max-width:62rem; }
+.bullets li{ position:relative; padding-left:1.7rem; color:var(--ink-soft); line-height:1.55; }
+.bullets li::before{ content:""; position:absolute; left:0; top:.6em; width:.55rem; height:.55rem; border-radius:50%; background:var(--dot); }
+.bullets li b{ color:var(--ink); font-weight:800; }
+
 .steps{ margin-top:2.2rem; max-width:34rem; }
 .step{ position:relative; padding:0 0 1.9rem 3rem; }
 .step:last-child{ padding-bottom:0; }
