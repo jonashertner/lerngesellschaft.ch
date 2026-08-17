@@ -63,8 +63,37 @@
     </div>
   </section>
 
+  <!-- THE PROGRAMME: TWO PATHS -->
+  <section class="section" id="angebot" style="--dot:var(--violet)">
+    <div class="wrap">
+      <p class="eyebrow reveal" style="--dot:var(--violet)">The programme</p>
+      <h2 class="big reveal">Individual learning support, along two paths.</h2>
+      <p class="lead reveal" style="margin-top:1.4rem; max-width:56ch">The Learning Bus supports children from the first year of kindergarten to the third year of primary school. Depending on what your child needs right now, one of two paths leads there.</p>
+      <div class="pillars">
+
+        <article class="pillar reveal" style="--dot:var(--violet)">
+          <div class="gb" style="background:radial-gradient(circle at 40% 40%, var(--violet), var(--cyan))"></div>
+          <span class="bar"></span>
+          <h3>Learning support</h3>
+          <p>For every child. It is about the joy of learning, self-confidence, thinking independently, and the ability to stay with something. Alongside that come individual learning goals, which we set together with you and your child.</p>
+          <a class="morelink" href="#treffen">What a meeting looks like <span>&rarr;</span></a>
+        </article>
+
+        <article class="pillar reveal" style="--dot:var(--pink-ink)">
+          <div class="gb" style="background:radial-gradient(circle at 40% 40%, var(--cyan), var(--violet))"></div>
+          <span class="bar"></span>
+          <h3>Early German language support</h3>
+          <p>From the age of three. Your child builds up German step by step: understanding, speaking, telling a story, and word by word a vocabulary that carries in daily life and later at school.</p>
+          <a class="morelink" href="#deutsch">More on German support <span>&rarr;</span></a>
+        </article>
+
+      </div>
+      <p class="lead reveal" style="margin-top:2.2rem; max-width:58ch">The same on both paths: your child learns alone or with one other child, always with the same learning mentor, accompanied playfully and with care.</p>
+    </div>
+  </section>
+
   <!-- AT A GLANCE -->
-  <section class="section" id="angebot" style="padding-bottom:0">
+  <section class="section" style="padding-bottom:0">
     <div class="wrap">
       <p class="eyebrow reveal" style="--dot:var(--violet)">At a glance</p>
       <h2 class="big reveal">The essentials, in four lines.</h2>
@@ -96,8 +125,21 @@
     </div>
   </section>
 
+  <!-- EARLY GERMAN LANGUAGE SUPPORT -->
+  <section class="section" id="deutsch" style="--dot:var(--cyan)">
+    <div class="wrap">
+      <p class="eyebrow reveal" style="--dot:var(--cyan)">Early German language support</p>
+      <h2 class="big reveal">When German is still new.</h2>
+      <p class="lead reveal" style="margin-top:1.4rem; max-width:56ch">Some children grow up with another language and arrive at kindergarten with little German. That is not a delay, it is a beginning. From the age of three we help children build German up: understanding, speaking, telling a story, and word by word a vocabulary that carries.</p>
+      <p class="lead reveal" style="margin-top:1.2rem; max-width:56ch">It happens playfully, in stories, songs, pictures and conversations about whatever is on your child's mind. Alone or with one other child, with the same person, who takes the time and listens closely. Your child's first language stays welcome throughout.</p>
+      <div class="reveal" style="margin-top:2rem">
+        <a class="morelink" href="#gespraech">Arrange a conversation about German support <span>&rarr;</span></a>
+      </div>
+    </div>
+  </section>
+
   <!-- WHAT A MEETING LOOKS LIKE -->
-  <section class="section tint" style="--dot:var(--violet)">
+  <section class="section tint" id="treffen" style="--dot:var(--violet)">
     <div class="wrap">
       <p class="eyebrow reveal" style="--dot:var(--violet)">What a meeting looks like</p>
       <h2 class="big reveal">Not a lesson. No marks.</h2>
@@ -170,7 +212,7 @@
             </div>
             <div class="field"><label for="f-when">When can we best reach you?</label><input id="f-when" name="when" type="text" placeholder="e.g. weekdays after 5pm" /></div>
             <div class="field wide"><label for="f-msg">What is it about? (optional)</label><textarea id="f-msg" name="msg"></textarea></div>
-            <label class="check wide"><input type="checkbox" name="lang" /> This is about early German language support.</label>
+            <label class="check wide"><input type="checkbox" name="lang" /> My child should build up German and speak it more confidently.</label>
             <label class="check wide"><input type="checkbox" name="reduced" /> Please tell me about subsidised places.</label>
           </div>
           <div style="margin-top:1.4rem"><button type="submit" class="btn btn-pink">Request a conversation</button></div>
@@ -244,7 +286,7 @@ f.addEventListener('submit',function(e){e.preventDefault();
 var g=function(n){var el=f.elements[n];return el?el.value.trim():'';};
 var L=['Enquiry: introductory conversation, Learning Bus','','Name: '+g('name'),'Contact: '+g('contact'),'Age of the child: '+g('age')];
 if(g('when'))L.push('Reachable: '+g('when'));
-if(f.elements['lang'].checked)L.push('Early German language support.');
+if(f.elements['lang'].checked)L.push('Early German language support: build up German, speak more confidently.');
 if(f.elements['reduced'].checked)L.push('Please send information on subsidised places.');
 if(g('msg')){L.push('');L.push(g('msg'));}
 location.href='mailto:hallo@lerngesellschaft.ch?subject='+encodeURIComponent('Learning Bus: introductory conversation')+'&body='+encodeURIComponent(L.join('\n'));});})();
