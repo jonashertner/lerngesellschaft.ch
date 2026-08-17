@@ -95,9 +95,10 @@ h2.big{ font-size:var(--fs-h2); max-width:18ch; margin-top:1rem; }
 /* ---- Header / nav ---- */
 .site-head{ position:absolute; top:0; left:0; right:0; z-index:20; }
 .site-head .wrap{ display:flex; align-items:center; justify-content:space-between; gap:1rem; padding-block:1.4rem; }
-.brand{ line-height:1; }
+.brand{ line-height:1; display:inline-block; }
 .brand b{ font-family:var(--display); font-weight:800; font-size:1.4rem; letter-spacing:-0.03em; }
-.brand span{ display:block; font-size:.64rem; letter-spacing:.24em; text-transform:uppercase; color:var(--ink-soft); font-weight:800; margin-top:.3rem; }
+.brand-logo{ display:block; height:clamp(3.4rem, 2.7rem + 2.2vw, 4.5rem); width:auto; }
+.brand span{ display:block; font-size:.64rem; letter-spacing:.24em; text-transform:uppercase; color:var(--ink-soft); font-weight:800; margin-top:.45rem; }
 .head-right{ display:flex; align-items:center; gap:.4rem; }
 .nav{ display:none; align-items:center; gap:.2rem; }
 @media (min-width:760px){ .nav{ display:flex; } }
@@ -268,6 +269,7 @@ h2.big{ font-size:var(--fs-h2); max-width:18ch; margin-top:1rem; }
 .foot{ padding-block:2.6rem; }
 .foot .wrap{ display:flex; flex-wrap:wrap; gap:.6rem 1.4rem; justify-content:space-between; align-items:center;
   font-size:.82rem; color:var(--ink-soft); font-weight:600; border-top:2px solid var(--line); padding-top:2rem; }
+.foot-logo{ flex-basis:100%; height:3.1rem; object-fit:contain; object-position:left center; margin-bottom:.4rem; }
 .foot .wrap a{ color:var(--ink-soft); font-weight:800; }
 .foot .wrap a:hover, .foot .wrap a:focus-visible{ color:var(--ink); }
 
@@ -291,6 +293,7 @@ h2.big{ font-size:var(--fs-h2); max-width:18ch; margin-top:1rem; }
 @media (max-width:560px){ .brand span{ display:none; } }
 @media (max-width:380px){
   .brand b{ font-size:1.22rem; }
+  .brand-logo{ height:3rem; }
   .brand span{ letter-spacing:.18em; }
   .nav-cta{ padding:.5em 1em; font-size:.9rem; }
 }
