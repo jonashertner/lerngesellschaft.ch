@@ -248,6 +248,9 @@ h2.big{ font-size:var(--fs-h2); max-width:18ch; margin-top:1rem; }
 .step .dotn{ position:absolute; left:0; top:.1rem; width:1.35rem; height:1.35rem; border-radius:50%; background:var(--dot); color:#fff; font-weight:800; font-size:.72rem; display:flex; align-items:center; justify-content:center; }
 .step h3{ font-family:var(--display); font-weight:800; font-size:1.15rem; }
 .step p{ margin-top:.3rem; color:var(--ink-soft); }
+.steps.grid2{ max-width:none; display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%, 26rem), 1fr)); gap:0 clamp(2rem, 1rem + 3vw, 4rem); }
+.steps.grid2 .step{ padding-bottom:1.5rem; }
+.steps.grid2 .step::before{ display:none; }
 
 .book-card{ margin-top:2.4rem; background:#fff; border-radius:26px; padding:clamp(1.6rem, 1.1rem + 2vw, 2.6rem); box-shadow:0 30px 60px -44px rgba(31,15,51,.55); max-width:46rem; }
 .form-grid{ display:grid; gap:1.1rem; grid-template-columns:repeat(auto-fit, minmax(min(100%, 15rem), 1fr)); }
