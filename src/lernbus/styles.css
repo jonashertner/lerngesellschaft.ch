@@ -25,6 +25,7 @@
   /* AA-safe text accents on the warm bg (4.67 to 5.93 : 1) */
   --pink-ink:#c01a5b;
   --orange-ink:#b8430a;
+  --cyan-ink:#0a6e78;
   --line:rgba(31,15,51,.14);
   --dot:var(--pink); /* per-section accent, set inline */
 
