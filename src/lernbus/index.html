@@ -17,7 +17,7 @@
 <link rel="preload" href="./fonts/hanken-latin.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="stylesheet" href="./styles.css" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"EducationalOrganization","name":"Lernbus","areaServed":"Basel","description":"Präventives, pädagogisch fundiertes Förderangebot für Kinder vom 1. Kindergarten bis zur 3. Primarschule, im Einzel- und Zweiersetting. Frühe Sprachförderung in Deutsch ab 3 Jahren. Ein Angebot der Lerngesellschaft.","address":"Münsterplatz 17, 4051 Basel","email":"hallo@lerngesellschaft.ch","parentOrganization":{"@type":"NGO","name":"Lerngesellschaft / Learning Society","url":"https://lerngesellschaft.ch/"}}
+{"@context":"https://schema.org","@type":"EducationalOrganization","name":"Lernbus","areaServed":"Basel","description":"Präventives, pädagogisch fundiertes Förderangebot für Kinder vom 1. Kindergarten bis zur 3. Primarschule, im Einzel- und Zweiersetting. Frühe Deutschförderung ab 3 Jahren. Ein Angebot der Lerngesellschaft.","address":"Münsterplatz 17, 4051 Basel","email":"hallo@lerngesellschaft.ch","parentOrganization":{"@type":"NGO","name":"Lerngesellschaft / Learning Society","url":"https://lerngesellschaft.ch/"}}
 </script>
 </head>
 <body>
@@ -72,7 +72,7 @@
       <p class="eyebrow reveal" style="--dot:var(--violet)">Auf einen Blick</p>
       <h2 class="big reveal">Individuelle Lernbegleitung für eine starke Bildungsbiografie.</h2>
       <div class="lb-facts reveal" style="--dot:var(--violet)">
-        <div class="fact"><b>1. Kindergarten bis 3. Primarklasse</b><span>frühe Sprachförderung schon ab 3 Jahren</span></div>
+        <div class="fact"><b>1. Kindergarten bis 3. Primarklasse</b><span>frühe Deutschförderung schon ab 3 Jahren</span></div>
         <div class="fact"><b>60 bis 90 Minuten</b><span>pro Treffen, in der Regel wöchentlich</span></div>
         <div class="fact"><b>Mindestens sechs Monate</b><span>Vertrauen und Fortschritt brauchen Zeit</span></div>
         <div class="fact"><b>Einzel- oder Zweiersetting</b><span>ein Kind oder zwei, nie eine Klasse</span></div>
@@ -129,8 +129,8 @@
           <p>Lernen gelingt dann besonders gut, wenn Aufgaben dem individuellen Entwicklungsstand eines Kindes entsprechen. Deshalb orientiert sich die Lernbegleitung an den Interessen, Stärken und Lernvoraussetzungen des Kindes. Die Förderung erfolgt in der optimalen Lernzone: anspruchsvoll genug, um Entwicklung anzuregen, und zugleich so gestaltet, dass Erfolgserlebnisse möglich bleiben. Fehler werden als wichtiger Bestandteil des Lernprozesses verstanden und als Lerngelegenheiten genutzt. Ein Kind, das keinen Fehler machen darf, versucht irgendwann nichts Neues mehr.</p>
         </div>
         <div class="dsec">
-          <h2>Frühe Sprachförderung in Deutsch</h2>
-          <p>Sprache bildet die Grundlage für Lernen, soziale Teilhabe und Bildungserfolg. Die frühe Sprachförderung unterstützt Kinder ab drei Jahren dabei, sprachliche Grundlagen aufzubauen, sich sicherer auszudrücken und mit mehr Vertrauen am Unterricht teilzunehmen. Sie findet ebenfalls im Einzel- und Zweiersetting statt. Das Angebot stärkt die Kinder in ihrem Selbstvertrauen, ihrer Resilienz und ihrer Bereitschaft zum eigenständigen Lernen.</p>
+          <h2>Frühe Deutschförderung</h2>
+          <p>Sprache bildet die Grundlage für Lernen, soziale Teilhabe und Bildungserfolg. Die frühe Deutschförderung unterstützt Kinder ab drei Jahren dabei, sprachliche Grundlagen aufzubauen, sich sicherer auszudrücken und mit mehr Vertrauen am Unterricht teilzunehmen. Sie findet ebenfalls im Einzel- und Zweiersetting statt. Das Angebot stärkt die Kinder in ihrem Selbstvertrauen, ihrer Resilienz und ihrer Bereitschaft zum eigenständigen Lernen.</p>
         </div>
         <div class="dsec">
           <h2>Ein geschützter Lernraum ohne Bildschirme</h2>
@@ -166,7 +166,7 @@
       <ul class="bullets reveal" style="--dot:var(--violet)">
         <li>Kinder vom <b>1. Kindergarten bis zur 3. Primarschule</b></li>
         <li>Besonders geeignet für Kinder, die in ihren <b>Lern- und Zukunftskompetenzen</b> gezielt gestärkt werden sollen</li>
-        <li><b>Frühe Sprachförderung in Deutsch ab 3 Jahren</b>, im Einzel- und Zweiersetting</li>
+        <li><b>Frühe Deutschförderung ab 3 Jahren</b>, im Einzel- und Zweiersetting</li>
         <li><b>Subventionierte und spendenfinanzierte Plätze</b> zur Förderung der Chancengleichheit</li>
         <li>Zugang über <b>Schulen, Kindergärten, Kitas und Eltern</b></li>
       </ul>
@@ -264,7 +264,7 @@
             </div>
             <div class="field"><label for="f-quartier">Quartier (optional)</label><input id="f-quartier" name="quartier" type="text" /></div>
             <div class="field wide"><label for="f-msg">Nachricht (optional)</label><textarea id="f-msg" name="msg"></textarea></div>
-            <label class="check wide"><input type="checkbox" name="lang" /> Es geht um die frühe Sprachförderung in Deutsch.</label>
+            <label class="check wide"><input type="checkbox" name="lang" /> Mein Kind soll Deutsch aufbauen und sicherer sprechen.</label>
             <label class="check wide"><input type="checkbox" name="reduced" /> Ich möchte mehr über subventionierte und spendenfinanzierte Plätze erfahren.</label>
           </div>
           <div style="margin-top:1.4rem"><button type="submit" class="btn btn-pink">Anfrage senden</button></div>
@@ -304,7 +304,7 @@ f.addEventListener('submit',function(e){e.preventDefault();
 var g=function(n){var el=f.elements[n];return el?el.value.trim():'';};
 var L=['Anfrage Lernbus','','Name: '+g('name'),'Kontakt: '+g('contact'),'Anfrage als: '+g('role'),'Alter des Kindes: '+g('age'),'Wunschsetting: '+g('setting')];
 if(g('quartier'))L.push('Quartier: '+g('quartier'));
-if(f.elements['lang'].checked)L.push('Frühe Sprachförderung in Deutsch.');
+if(f.elements['lang'].checked)L.push('Frühe Deutschförderung: Deutsch aufbauen und sicherer sprechen.');
 if(f.elements['reduced'].checked)L.push('Bitte Informationen zu subventionierten und spendenfinanzierten Plätzen.');
 if(g('msg')){L.push('');L.push(g('msg'));}
 location.href='mailto:hallo@lerngesellschaft.ch?subject='+encodeURIComponent('Anfrage Lernbus')+'&body='+encodeURIComponent(L.join('\n'));});})();
