@@ -39,11 +39,11 @@
   --display:'Bricolage Grotesque', system-ui, sans-serif;
   --body:'Hanken Grotesk', system-ui, sans-serif;
 
-  /* calmer, editorial type scale */
-  --fs-hero:clamp(2.4rem, 1.3rem + 4.2vw, 5rem);
-  --fs-h2:clamp(1.8rem, 1.25rem + 2.1vw, 2.9rem);
+  /* magazine-scale editorial type: dense display blocks, generous body */
+  --fs-hero:clamp(2.7rem, 1.4rem + 5.8vw, 6.6rem);
+  --fs-h2:clamp(1.9rem, 1.2rem + 3.1vw, 4.1rem);
   --fs-h3:clamp(1.22rem, 1.08rem + 0.6vw, 1.5rem);
-  --fs-lead:clamp(1.08rem, 1rem + 0.45vw, 1.3rem);
+  --fs-lead:clamp(1.1rem, 1rem + 0.5vw, 1.36rem);
   --fs-eyebrow:clamp(0.72rem, 0.7rem + 0.1vw, 0.78rem);
 
   --wrap:74rem;
@@ -72,9 +72,9 @@ img,canvas,svg,video{ max-width:100%; display:block; }
 :focus-visible{ outline:3px solid var(--violet); outline-offset:3px; border-radius:8px; }
 
 .wrap{ width:100%; max-width:var(--wrap); margin-inline:auto; padding-inline:var(--pad); }
-.section{ padding-block:clamp(4.5rem, 3rem + 4.5vw, 7.5rem); position:relative; overflow:hidden; }
+.section{ padding-block:clamp(5rem, 3rem + 6vw, 9.5rem); position:relative; overflow:hidden; }
 /* tinted sections read as a second sheet of paper with torn wavy edges */
-.tint{ background:var(--bg-2); padding-block:clamp(5.5rem, 4rem + 4.5vw, 8.5rem); }
+.tint{ background:var(--bg-2); padding-block:clamp(6rem, 4rem + 6vw, 10.5rem); }
 .tint::before, .tint::after, #gespraech::before, #gespraech::after, #anmelden::before, #anmelden::after{ content:""; position:absolute; left:0; right:0; height:2.3rem; pointer-events:none;
   background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 40' preserveAspectRatio='none'%3E%3Cpath d='M0 0 H300 V16 C272 23 252 10 224 16 C196 22 180 8 150 15 C120 22 104 31 76 24 C48 17 26 25 0 16 Z' fill='%23fbfaf3'/%3E%3C/svg%3E") repeat-x; background-size:300px 100%; }
 .tint::before, #gespraech::before, #anmelden::before{ top:-1px; }
@@ -86,8 +86,8 @@ img,canvas,svg,video{ max-width:100%; display:block; }
 .eyebrow{ display:inline-flex; align-items:center; gap:.7rem; font-family:var(--body); font-weight:700; font-size:var(--fs-eyebrow); letter-spacing:.17em; text-transform:uppercase; color:var(--ink-soft); }
 .eyebrow::before{ content:""; width:1.6rem; height:3px; border-radius:2px; background:var(--dot); flex:none; }
 .lead{ font-size:var(--fs-lead); line-height:1.6; color:var(--ink); max-width:56ch; }
-h2.big{ font-size:var(--fs-h2); max-width:24ch; margin-top:.9rem; }
-h2.big + .lead, h2.big + .prose2{ margin-top:1.5rem; }
+h2.big{ font-size:var(--fs-h2); max-width:22ch; margin-top:.9rem; line-height:1.02; letter-spacing:-0.028em; font-weight:800; }
+h2.big + .lead, h2.big + .prose2{ margin-top:1.9rem; }
 
 .skip{ position:absolute; left:-9999px; top:0; background:var(--ink); color:#fff; padding:.7rem 1rem; z-index:200; border-radius:0 0 10px 0; }
 .skip:focus{ left:0; }
@@ -207,7 +207,7 @@ h2.big + .lead, h2.big + .prose2{ margin-top:1.5rem; }
 .hero-inner{ position:relative; z-index:3; width:100%; min-width:0;
   /* clearance for the absolute header + breathing room below */
   padding-top:clamp(8rem, 6.5rem + 5vw, 11rem); padding-bottom:clamp(3rem, 2rem + 3vw, 5rem); }
-.hero h1{ font-size:var(--fs-hero); max-width:17ch; line-height:1.04; letter-spacing:-0.022em; font-weight:800; color:#fff; }
+.hero h1{ font-size:var(--fs-hero); max-width:15ch; line-height:.98; letter-spacing:-0.03em; font-weight:800; color:#fff; }
 .hero h1 .pop{ position:relative; white-space:nowrap; color:var(--yellow); }
 /* hand-drawn marker underline instead of a block (readable on the night sheet) */
 .hero h1 .pop::after{ content:""; position:absolute; left:-.04em; right:-.04em; bottom:-.08em; height:.13em; z-index:-1;
@@ -223,7 +223,7 @@ h2.big + .lead, h2.big + .prose2{ margin-top:1.5rem; }
 .site-head :focus-visible, .hero :focus-visible{ outline-color:var(--yellow); }
 
 /* ---- Statement (concept page) ---- */
-.statement{ font-family:var(--display); font-weight:600; font-size:clamp(1.4rem, 1.05rem + 1.6vw, 2.3rem); line-height:1.25; letter-spacing:-0.01em; max-width:36ch; }
+.statement{ font-family:var(--display); font-weight:600; font-size:clamp(1.55rem, 1.1rem + 2.1vw, 2.8rem); line-height:1.2; letter-spacing:-0.015em; max-width:34ch; }
 .statement b{ font-weight:700; }
 
 /* ---- Goals ---- */
@@ -244,11 +244,11 @@ h2.big + .lead, h2.big + .prose2{ margin-top:1.5rem; }
 /* ---- Pillars: quiet white panels ---- */
 .pillars{ margin-top:2.6rem; display:grid; gap:clamp(1rem, 0.8rem + 1vw, 1.5rem); grid-template-columns:repeat(auto-fit, minmax(min(100%, 17rem), 1fr)); }
 .pillar{ position:relative; isolation:isolate; background:var(--card); border-radius:14px; padding:clamp(1.5rem, 1.1rem + 1.4vw, 2.2rem);
-  border:1px solid var(--hairline); box-shadow:0 1px 2px rgba(44,39,80,.06), 0 16px 36px -30px rgba(44,39,80,.45);
+  border:1.5px solid var(--line);
   display:flex; flex-direction:column; rotate:-0.6deg;
-  transition:rotate .3s ease, transform .3s ease, box-shadow .3s ease; }
+  transition:rotate .3s ease, transform .3s ease; }
 .pillars .pillar:nth-child(even){ rotate:0.5deg; }
-.pillar:hover{ rotate:0deg; transform:translateY(-4px); box-shadow:0 2px 3px rgba(44,39,80,.06), 0 22px 44px -30px rgba(44,39,80,.5); }
+.pillar:hover{ rotate:0deg; transform:translateY(-3px); }
 /* a strip of tape pins each note to the page */
 .pillar::after{ content:""; position:absolute; top:-.6rem; left:50%; width:5.4rem; height:1.35rem;
   transform:translateX(-50%) rotate(-2.5deg); background:rgba(231,226,118,.55);
@@ -279,7 +279,7 @@ h2.big + .lead, h2.big + .prose2{ margin-top:1.5rem; }
 /* ---- Subpages ---- */
 .subhero{ padding-top:clamp(8rem, 6rem + 6vw, 11rem); padding-bottom:clamp(3rem, 2rem + 4vw, 5rem); position:relative; overflow:hidden; }
 .subhero .back{ display:flex; width:fit-content; align-items:center; gap:.4rem; font-weight:700; color:var(--ink-soft); margin-bottom:1.8rem; }
-.subhero h1{ font-size:clamp(2.2rem, 1.4rem + 3.6vw, 4.2rem); max-width:18ch; margin-top:.6rem; }
+.subhero h1{ font-size:clamp(2.4rem, 1.4rem + 4.4vw, 5.2rem); max-width:16ch; margin-top:.6rem; line-height:1; letter-spacing:-0.028em; font-weight:800; }
 .subhero .lead{ margin-top:1.5rem; }
 .placeholder{ border:2px dashed var(--line); border-radius:16px; padding:clamp(1.5rem, 1rem + 2vw, 2.4rem); color:var(--ink-soft); max-width:52ch; }
 .who{ margin-top:1.6rem; font-weight:700; }
@@ -331,8 +331,7 @@ h2.big + .lead, h2.big + .prose2{ margin-top:1.5rem; }
 
 /* ---- Checklist sheet: the six goals, ticked off in the notebook ---- */
 .checksheet{ position:relative; margin-top:clamp(2.4rem, 1.8rem + 2vw, 3.4rem); background:var(--card);
-  border:1px solid var(--hairline); border-radius:14px; rotate:0.4deg;
-  box-shadow:0 1px 2px rgba(44,39,80,.06), 0 16px 36px -30px rgba(44,39,80,.45);
+  border:1.5px solid var(--line); border-radius:14px; rotate:0.4deg;
   padding:clamp(1.6rem, 1.2rem + 1.6vw, 2.4rem); }
 .checksheet::after{ content:""; position:absolute; top:-.6rem; left:50%; width:5.4rem; height:1.35rem;
   transform:translateX(-50%) rotate(2deg); background:rgba(231,226,118,.55);
@@ -347,15 +346,15 @@ h2.big + .lead, h2.big + .prose2{ margin-top:1.5rem; }
 
 /* ---- Zielgruppe: manifesto rows with marker-highlighted keywords ---- */
 .fuerwen{ list-style:none; margin:clamp(1.8rem, 1.2rem + 1.6vw, 2.6rem) 0 0; padding:0; max-width:56rem; }
-.fuerwen li{ font-family:var(--display); font-weight:600; font-size:clamp(1.25rem, 1.02rem + 1vw, 1.85rem);
-  line-height:1.35; letter-spacing:-0.012em; padding:1em 0; border-bottom:1px solid var(--line); text-wrap:balance; }
+.fuerwen li{ font-family:var(--display); font-weight:600; font-size:clamp(1.35rem, 1.02rem + 1.5vw, 2.25rem);
+  line-height:1.3; letter-spacing:-0.015em; padding:.95em 0; border-bottom:1px solid var(--line); text-wrap:balance; }
 .fuerwen li:first-child{ border-top:1px solid var(--line); }
 .fuerwen b{ font-weight:700;
   background:linear-gradient(transparent 60%, rgba(231,226,118,.8) 60%, rgba(231,226,118,.8) 95%, transparent 95%); }
 
 /* ---- Booking card / form ---- */
 .book-card{ position:relative; margin-top:2.4rem; background:var(--card); border-radius:18px; padding:clamp(1.6rem, 1.1rem + 2vw, 2.6rem);
-  border:1px solid var(--hairline); box-shadow:0 1px 2px rgba(44,39,80,.05), 0 18px 40px -34px rgba(44,39,80,.4); max-width:46rem; }
+  border:1.5px solid var(--line); max-width:46rem; }
 .book-card::after{ content:""; position:absolute; top:-.6rem; left:50%; width:5.4rem; height:1.35rem;
   transform:translateX(-50%) rotate(-2.5deg); background:rgba(231,226,118,.55);
   border:1px solid rgba(190,183,80,.35); border-radius:2px; }
@@ -375,11 +374,10 @@ h2.big + .lead, h2.big + .prose2{ margin-top:1.5rem; }
 #zielgruppe .book-card{ background:transparent; border:0; box-shadow:none; padding:0; border-radius:0; max-width:44rem; margin-top:1.6rem; }
 #zielgruppe .bullets li:first-child{ border-top:1px solid var(--hairline); }
 /* Qualitaet: manifesto voice */
-#qualitaet .prose2 .lead{ font-family:var(--display); font-weight:500; font-size:clamp(1.2rem, 1.05rem + 0.7vw, 1.6rem); line-height:1.45; letter-spacing:-0.005em; max-width:34ch; }
+#qualitaet .prose2 .lead{ font-family:var(--display); font-weight:500; font-size:clamp(1.3rem, 1.05rem + 1.1vw, 1.95rem); line-height:1.4; letter-spacing:-0.008em; max-width:32ch; }
 /* Kosten: two taped panels, same family as the pillars */
 #kosten .detail{ grid-template-columns:repeat(auto-fit, minmax(min(100%, 20rem), 1fr)); max-width:56rem; gap:clamp(1rem, 0.8rem + 1vw, 1.5rem); margin-top:2.6rem; }
-#kosten .dsec{ position:relative; background:var(--card); border:1px solid var(--hairline); border-radius:18px; padding:clamp(1.5rem, 1.1rem + 1.4vw, 2.2rem);
-  box-shadow:0 1px 2px rgba(44,39,80,.05), 0 14px 34px -30px rgba(44,39,80,.4); }
+#kosten .dsec{ position:relative; background:var(--card); border:1.5px solid var(--line); border-radius:18px; padding:clamp(1.5rem, 1.1rem + 1.4vw, 2.2rem); }
 #kosten .dsec::after{ content:""; position:absolute; top:-.6rem; left:50%; width:5.4rem; height:1.35rem;
   transform:translateX(-50%) rotate(-2.5deg); background:rgba(231,226,118,.55);
   border:1px solid rgba(190,183,80,.35); border-radius:2px; }
@@ -413,6 +411,8 @@ h2.big + .lead, h2.big + .prose2{ margin-top:1.5rem; }
 /* ---- Mobile hero scrim ---- */
 @media (max-width:759px){
   .hero-scrim{ background:linear-gradient(180deg, rgba(30,25,58,.25) 0%, rgba(30,25,58,.6) 55%, rgba(34,29,67,.9) 100%); }
+  /* German compounds need hyphenation once display type gets this large */
+  .hero h1, h2.big, .subhero h1{ -webkit-hyphens:auto; hyphens:auto; }
   .video-on .hero-scrim{ background:linear-gradient(180deg, rgba(24,20,44,.32) 0%, rgba(24,20,44,.52) 52%, rgba(24,20,44,.78) 100%); }
 }
 
