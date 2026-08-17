@@ -10,24 +10,27 @@
 @font-face{ font-family:'Hanken Grotesk'; font-style:normal; font-weight:400 800; font-display:swap; src:url('./fonts/hanken-latin.woff2') format('woff2'); unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
 @font-face{ font-family:'Hanken Grotesk'; font-style:normal; font-weight:400 800; font-display:swap; src:url('./fonts/hanken-latin-ext.woff2') format('woff2'); unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF; }
 
-/* ---- Tokens ---- */
+/* ---- Tokens ----
+   Palette derived from the Lernbus logo:
+   violet #493f80 · teal #7dbeb9 · pale yellow #efed99 */
 :root{
-  --bg:#fff5ec;
-  --bg-2:#ffe9dc;
-  --ink:#1f0f33;
-  --ink-soft:#675978;
-  --pink:#ff3d8b;
-  --coral:#ff5a36;
-  --tang:#ff9e1b;
-  --yellow:#ffcf36;
-  --violet:#6b30f2;
-  --cyan:#16c6d6;
-  /* AA-safe text accents on the warm bg (4.67 to 5.93 : 1) */
-  --pink-ink:#c01a5b;
-  --orange-ink:#b8430a;
-  --cyan-ink:#0a6e78;
-  --line:rgba(31,15,51,.14);
-  --dot:var(--pink); /* per-section accent, set inline */
+  --bg:#fbfaf3;          /* warm paper, faint yellow undertone */
+  --bg-2:#ecf3f0;        /* soft teal wash for tinted sections */
+  --ink:#2c2750;         /* deep indigo, darkened logo violet */
+  --ink-soft:#5c567b;
+  --pink:#d9b3cc;        /* soft orchid */
+  --coral:#c9a4b8;
+  --tang:#e3d98a;
+  --yellow:#efed99;      /* logo yellow */
+  --violet:#493f80;      /* logo violet, primary accent */
+  --cyan:#7dbeb9;        /* logo teal */
+  /* AA-safe text accents on the paper bg */
+  --pink-ink:#8e4e75;    /* muted berry */
+  --orange-ink:#8a7a1f;  /* olive gold */
+  --cyan-ink:#2f6e68;    /* deep teal */
+  --marker:#e7e276;      /* saturated marker yellow for highlights */
+  --line:rgba(44,39,80,.15);
+  --dot:var(--violet); /* per-section accent, set inline */
 
   --display:'Bricolage Grotesque', system-ui, sans-serif;
   --body:'Hanken Grotesk', system-ui, sans-serif;
@@ -56,7 +59,7 @@ h1,h2,h3{ font-family:var(--display); margin:0; font-weight:800; letter-spacing:
 p{ margin:0; text-wrap:pretty; }
 a{ color:inherit; text-decoration:none; }
 img,canvas,svg,video{ max-width:100%; display:block; }
-::selection{ background:var(--pink); color:var(--ink); }
+::selection{ background:var(--yellow); color:var(--ink); }
 :focus-visible{ outline:3px solid var(--violet); outline-offset:3px; border-radius:8px; }
 
 .wrap{ width:100%; max-width:var(--wrap); margin-inline:auto; padding-inline:var(--pad); }
@@ -80,15 +83,15 @@ h2.big{ font-size:var(--fs-h2); max-width:18ch; margin-top:1rem; }
 .btn{ display:inline-flex; align-items:center; gap:.5rem; font-family:var(--body); font-weight:800;
   font-size:1.02rem; padding:.85em 1.5em; border-radius:999px; border:0; cursor:pointer; min-height:48px;
   transition:transform .18s cubic-bezier(.34,1.56,.64,1), box-shadow .18s ease; will-change:transform; }
-.btn-pink{ background:var(--pink); color:var(--ink); box-shadow:0 12px 30px -14px var(--pink); }
-.btn-pink:hover{ transform:translateY(-3px) rotate(-1.5deg); box-shadow:0 18px 38px -16px var(--pink); }
+.btn-pink{ background:var(--violet); color:#fff; box-shadow:0 12px 30px -14px rgba(73,63,128,.8); }
+.btn-pink:hover{ transform:translateY(-3px) rotate(-1.5deg); box-shadow:0 18px 38px -16px rgba(73,63,128,.7); }
 .btn-yellow{ background:var(--yellow); color:var(--ink); box-shadow:0 12px 30px -16px var(--tang); }
 .btn-yellow:hover{ transform:translateY(-3px) rotate(-1.5deg); }
 .btn-ghost{ background:transparent; color:var(--ink); box-shadow:inset 0 0 0 2.5px var(--ink); }
 .btn-ghost:hover{ transform:translateY(-3px); background:var(--ink); color:var(--bg); }
 
 /* text link with arrow */
-.morelink{ display:inline-flex; align-items:center; gap:.4rem; font-weight:800; color:var(--pink-ink); padding-block:.5rem; }
+.morelink{ display:inline-flex; align-items:center; gap:.4rem; font-weight:800; color:var(--violet); padding-block:.5rem; }
 .morelink span{ transition:transform .2s ease; }
 .morelink:hover span{ transform:translateX(4px); }
 
@@ -124,11 +127,12 @@ h2.big{ font-size:var(--fs-h2); max-width:18ch; margin-top:1rem; }
 .hero{ position:relative; min-height:max(560px, 100svh); display:flex; align-items:center; overflow:hidden; }
 .hero-stage{ position:absolute; inset:0; z-index:0; }
 .liquid-fallback{ position:absolute; inset:0;
+  /* unified brand watercolor — overrides per-page inline variants */
   background:
-    radial-gradient(42% 46% at 72% 36%, var(--pink), transparent 62%),
-    radial-gradient(40% 44% at 86% 66%, var(--tang), transparent 60%),
-    radial-gradient(36% 42% at 58% 72%, var(--violet), transparent 60%),
-    var(--bg); }
+    radial-gradient(46% 52% at 78% 30%, rgba(125,190,185,.5), transparent 62%),
+    radial-gradient(42% 48% at 60% 80%, rgba(239,237,153,.8), transparent 62%),
+    radial-gradient(34% 40% at 93% 66%, rgba(73,63,128,.22), transparent 58%),
+    var(--bg) !important; }
 .hero-video{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:50% 34%; opacity:0; transition:opacity 1s ease; filter:grayscale(.22) contrast(1.05) saturate(1.18); }
 .grade{ position:absolute; inset:0; opacity:0; transition:opacity 1s ease; pointer-events:none; mix-blend-mode:color;
   background:linear-gradient(125deg, var(--violet) 0%, var(--pink) 38%, var(--coral) 64%, var(--yellow) 100%); }
@@ -137,7 +141,7 @@ h2.big{ font-size:var(--fs-h2); max-width:18ch; margin-top:1rem; }
 .video-on .liquid-fallback{ display:none; }
 /* default (no-video / fallback) light scrim so dark text reads */
 .hero-scrim{ position:absolute; inset:0; z-index:1; pointer-events:none;
-  background:radial-gradient(120% 95% at -10% 50%, var(--bg) 0%, var(--bg) 28%, rgba(255,245,236,.7) 46%, rgba(255,245,236,0) 70%); }
+  background:radial-gradient(120% 95% at -10% 50%, var(--bg) 0%, var(--bg) 28%, rgba(251,250,243,.7) 46%, rgba(251,250,243,0) 70%); }
 /* film playing: footage-forward, white type, layered dark candy scrim (left text-backing + top for header + bottom for CTAs) */
 .video-on .hero-scrim{ background:
   linear-gradient(90deg, rgba(16,7,34,.74) 0%, rgba(16,7,34,.42) 38%, rgba(16,7,34,0) 66%),
@@ -153,7 +157,7 @@ h2.big{ font-size:var(--fs-h2); max-width:18ch; margin-top:1rem; }
 .hero h1{ font-size:var(--fs-hero); max-width:14ch; line-height:0.96; letter-spacing:-0.03em; }
 .hero h1 .pop{ position:relative; white-space:nowrap; }
 .hero h1 .pop::after{ content:""; position:absolute; left:-.08em; right:-.08em; bottom:.08em; height:.42em; z-index:-1;
-  background:var(--yellow); border-radius:46% 54% 60% 40% / 60% 50% 50% 40%; transform:rotate(-1.5deg); }
+  background:var(--marker); border-radius:46% 54% 60% 40% / 60% 50% 50% 40%; transform:rotate(-1.5deg); }
 .hero .lead{ margin-top:1.6rem; max-width:40ch; }
 .hero-cta{ margin-top:2.2rem; display:flex; flex-wrap:wrap; gap:.9rem; }
 
@@ -179,8 +183,9 @@ h2.big{ font-size:var(--fs-h2); max-width:18ch; margin-top:1rem; }
 
 /* ---- Saeulen (pillars) ---- */
 .pillars{ margin-top:2.8rem; display:grid; gap:clamp(1.1rem, 0.8rem + 1.5vw, 1.8rem); grid-template-columns:repeat(auto-fit, minmax(min(100%, 17rem), 1fr)); }
-.pillar{ position:relative; isolation:isolate; background:#fff; border-radius:26px; padding:clamp(1.6rem, 1.1rem + 1.6vw, 2.4rem);
-  box-shadow:0 30px 60px -44px rgba(31,15,51,.55); transition:transform .3s cubic-bezier(.34,1.3,.5,1); display:flex; flex-direction:column; }
+.pillar{ position:relative; isolation:isolate; background:#fff; border-radius:22px; padding:clamp(1.6rem, 1.1rem + 1.6vw, 2.4rem);
+  border:1px solid rgba(44,39,80,.06);
+  box-shadow:0 30px 60px -44px rgba(44,39,80,.5); transition:transform .3s cubic-bezier(.34,1.3,.5,1); display:flex; flex-direction:column; }
 .pillar:hover{ transform:translateY(-6px); }
 .pillar .bar{ width:3rem; height:.55rem; border-radius:999px; background:var(--dot); }
 .pillar h3{ font-family:var(--display); font-weight:800; font-size:var(--fs-h3); margin:1.1rem 0 .6rem; }
@@ -196,12 +201,12 @@ h2.big{ font-size:var(--fs-h2); max-width:18ch; margin-top:1rem; }
 @media (min-width:880px){ .give .gcols{ grid-template-columns:1.15fr .85fr; gap:3.5rem; } }
 .give .eyebrow{ color:var(--yellow); }
 .give h2{ font-size:var(--fs-h2); color:#fff; margin-top:.8rem; max-width:16ch; hyphens:auto; }
-.give p.body{ margin-top:1.3rem; color:rgba(255,245,236,.86); max-width:46ch; font-size:1.05rem; line-height:1.55; }
+.give p.body{ margin-top:1.3rem; color:rgba(248,247,252,.86); max-width:46ch; font-size:1.05rem; line-height:1.55; }
 .give-cta{ margin-top:2rem; display:flex; flex-wrap:wrap; align-items:center; gap:1rem 1.4rem; }
-.give .fineprint{ font-size:.92rem; color:rgba(255,245,236,.66); max-width:32ch; }
+.give .fineprint{ font-size:.92rem; color:rgba(248,247,252,.66); max-width:32ch; }
 .give .figure{ border-radius:24px; background:rgba(255,255,255,.06); padding:clamp(1.6rem, 1rem + 2vw, 2.4rem); }
 .give .figure .amt{ font-family:var(--display); font-weight:800; font-size:clamp(3rem, 2rem + 4vw, 5rem); line-height:.95; color:var(--yellow); letter-spacing:-0.03em; }
-.give .figure .cap{ margin-top:.6rem; color:rgba(255,245,236,.85); font-size:1.02rem; }
+.give .figure .cap{ margin-top:.6rem; color:rgba(248,247,252,.85); font-size:1.02rem; }
 .give .gblob{ position:absolute; border-radius:50%; filter:blur(60px); opacity:.5; z-index:0; }
 
 /* ---- Subpages (pillar detail stubs) ---- */
@@ -230,7 +235,7 @@ h2.big{ font-size:var(--fs-h2); max-width:18ch; margin-top:1rem; }
 
 /* ---- Lernbus page: facts, timeline, booking ---- */
 .lb-facts{ margin-top:clamp(2rem, 1.4rem + 2vw, 3rem); display:grid; gap:1rem; grid-template-columns:repeat(auto-fit, minmax(min(100%, 12rem), 1fr)); }
-.fact{ background:#fff; border-radius:18px; padding:1.1rem 1.25rem; box-shadow:0 20px 40px -34px rgba(31,15,51,.5); border-top:3px solid var(--dot); }
+.fact{ background:#fff; border-radius:16px; padding:1.1rem 1.25rem; box-shadow:0 20px 40px -34px rgba(44,39,80,.45); border:1px solid rgba(44,39,80,.06); border-top:3px solid var(--dot); }
 .fact b{ display:block; font-family:var(--display); font-weight:800; font-size:1.06rem; letter-spacing:-0.01em; }
 .fact span{ display:block; margin-top:.25rem; color:var(--ink-soft); font-size:.92rem; line-height:1.45; }
 
@@ -253,7 +258,7 @@ h2.big{ font-size:var(--fs-h2); max-width:18ch; margin-top:1rem; }
 .steps.grid2 .step{ padding-bottom:1.5rem; }
 .steps.grid2 .step::before{ display:none; }
 
-.book-card{ margin-top:2.4rem; background:#fff; border-radius:26px; padding:clamp(1.6rem, 1.1rem + 2vw, 2.6rem); box-shadow:0 30px 60px -44px rgba(31,15,51,.55); max-width:46rem; }
+.book-card{ margin-top:2.4rem; background:#fff; border-radius:22px; padding:clamp(1.6rem, 1.1rem + 2vw, 2.6rem); border:1px solid rgba(44,39,80,.06); box-shadow:0 30px 60px -44px rgba(44,39,80,.5); max-width:46rem; }
 .form-grid{ display:grid; gap:1.1rem; grid-template-columns:repeat(auto-fit, minmax(min(100%, 15rem), 1fr)); }
 .field{ display:grid; gap:.4rem; }
 .field label{ font-weight:800; font-size:.85rem; letter-spacing:.02em; }
@@ -283,7 +288,7 @@ h2.big{ font-size:var(--fs-h2); max-width:18ch; margin-top:1rem; }
 
 /* ---- Mobile hero scrim ---- */
 @media (max-width:759px){
-  .hero-scrim{ background:linear-gradient(180deg, rgba(255,245,236,.3) 0%, rgba(255,245,236,.84) 58%, var(--bg) 100%); }
+  .hero-scrim{ background:linear-gradient(180deg, rgba(251,250,243,.3) 0%, rgba(251,250,243,.84) 58%, var(--bg) 100%); }
   .video-on .hero-scrim{ background:linear-gradient(180deg, rgba(16,7,34,.32) 0%, rgba(16,7,34,.52) 52%, rgba(16,7,34,.78) 100%); }
 }
 
