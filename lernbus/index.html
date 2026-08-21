@@ -116,7 +116,7 @@
         <li>Kinder vom <b>1. Kindergarten bis zur 3. Primarschule</b></li>
         <li>Für Kinder, die in ihren <b>Lern- und Zukunftskompetenzen</b> gezielt gestärkt werden sollen</li>
         <li><b>Frühe Deutschförderung ab 3 Jahren</b> im Einzel- und Zweiersetting</li>
-        <li><b>Spendenfinanzierte Plätze</b> zur Förderung der Chancengleichheit</li>
+        <li><b>Ermöglichte Plätze</b> zur Förderung der Chancengleichheit</li>
       </ul>
     </div>
   </section>
@@ -159,8 +159,8 @@
           <p>Die Lernbegleitung kostet CHF 100 pro Stunde. Im Zweiersetting gilt ein reduzierter Tarif. Alles Weitere besprechen wir im Kennenlerngespräch.</p>
         </div>
         <div class="dsec">
-          <h2>Spendenfinanzierte Plätze</h2>
-          <p>Ein Teil der Plätze wird durch Spenden getragen. Wenn das Geld zu Hause knapp ist, sagen Sie es einfach. Das ist kein Hindernis, und es bleibt unter uns.</p>
+          <h2>Ermöglichte Plätze</h2>
+          <p>Ein Teil der Plätze wird von Menschen ermöglicht, die in Kinder investieren. Wenn das Geld zu Hause knapp ist, sagen Sie es einfach. Das ist kein Hindernis, und es bleibt unter uns.</p>
         </div>
       </div>
     </div>
@@ -186,7 +186,7 @@
             <div class="field"><label for="f-when">Wann erreichen wir Sie am besten?</label><input id="f-when" name="when" type="text" placeholder="z. B. werktags ab 17 Uhr" /></div>
             <div class="field wide"><label for="f-msg">Worum geht es? (optional)</label><textarea id="f-msg" name="msg"></textarea></div>
             <label class="check wide"><input type="checkbox" name="lang" /> Mein Kind soll Deutsch aufbauen und sicherer sprechen.</label>
-            <label class="check wide"><input type="checkbox" name="reduced" /> Bitte informieren Sie mich über spendenfinanzierte Plätze.</label>
+            <label class="check wide"><input type="checkbox" name="reduced" /> Bitte informieren Sie mich über ermöglichte Plätze.</label>
           </div>
           <div style="margin-top:1.4rem"><button type="submit" class="btn btn-pink">Gespräch anfragen</button></div>
         </form>
@@ -240,7 +240,7 @@
       <h2 class="big reveal">Ein Angebot der Lerngesellschaft.</h2>
       <p class="lead reveal" style="margin-top:1.4rem; max-width:56ch">Die Lerngesellschaft ist ein Verein mit Sitz in Basel. Sie fördert die natürliche Neugier und den Lernwillen von Kindern und Jugendlichen. Der Vorstand arbeitet ehrenamtlich.</p>
       <div class="reveal" style="margin-top:2rem; display:flex; flex-wrap:wrap; gap:.9rem">
-        <a href="https://lerngesellschaft.ch/vorschau/" class="btn btn-ghost">Zur Lerngesellschaft</a>
+        <a href="https://lerngesellschaft.ch/" class="btn btn-ghost">Zur Lerngesellschaft</a>
       </div>
     </div>
   </section>
@@ -264,7 +264,7 @@ var g=function(n){var el=f.elements[n];return el?el.value.trim():'';};
 var L=['Anfrage Kennenlerngespräch Lernbus','','Name: '+g('name'),'Kontakt: '+g('contact'),'Alter des Kindes: '+g('age')];
 if(g('when'))L.push('Erreichbar: '+g('when'));
 if(f.elements['lang'].checked)L.push('Frühe Deutschförderung: Deutsch aufbauen und sicherer sprechen.');
-if(f.elements['reduced'].checked)L.push('Bitte Informationen zu spendenfinanzierten Plätzen.');
+if(f.elements['reduced'].checked)L.push('Bitte Informationen zu ermöglichten Plätzen.');
 if(g('msg')){L.push('');L.push(g('msg'));}
 location.href='mailto:info@lernbus.ch?subject='+encodeURIComponent('Kennenlerngespräch Lernbus')+'&body='+encodeURIComponent(L.join('\n'));});})();
 </script>
