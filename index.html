@@ -3,115 +3,207 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Lerngesellschaft</title>
-<meta name="description" content="Lerngesellschaft, Basel." />
-<meta name="robots" content="noindex" />
+<title>Lerngesellschaft / Learning Society · Basel</title>
+<meta name="description" content="Die Lerngesellschaft fördert die natürliche Neugier und den Lernwillen von Kindern und Jugendlichen in Basel. Drei Wege: Forscherbühne, Lernbus und Gehirn und Gesellschaft." />
+<link rel="canonical" href="https://lerngesellschaft.ch/" />
+<meta property="og:title" content="Lerngesellschaft / Learning Society" />
+<meta property="og:description" content="Wir fördern die Neugier und den Lernwillen von Kindern in Basel. Forscherbühne, Lernbus und Gehirn und Gesellschaft." />
+<meta property="og:locale" content="de_CH" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://lerngesellschaft.ch/" />
+<meta property="og:image" content="https://lerngesellschaft.ch/media/hero-poster.jpg" />
+<meta property="og:image:alt" content="Kinder beim Experimentieren" />
+<meta name="twitter:card" content="summary_large_image" />
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M16 3c5 0 9 3 9 8 0 3-2 4-2 7s3 3 3 6-4 5-10 5S6 31 6 27s3-3 3-6-2-4-2-7c0-5 4-8 9-8z' fill='%23ff3d8b'/%3E%3C/svg%3E" />
-<style>
-@font-face{ font-family:'Bricolage Grotesque'; font-style:normal; font-weight:400 800; font-display:swap; src:url('./fonts/bricolage-latin.woff2') format('woff2'); unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
-@font-face{ font-family:'Bricolage Grotesque'; font-style:normal; font-weight:400 800; font-display:swap; src:url('./fonts/bricolage-latin-ext.woff2') format('woff2'); unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF; }
-:root{ --bg:#fff5ec; --ink:#1f0f33; }
-*{ box-sizing:border-box; }
-html,body{ margin:0; height:100%; }
-body{ background:var(--bg); color:var(--ink); font-family:'Bricolage Grotesque', system-ui, sans-serif; overflow:hidden; -webkit-font-smoothing:antialiased; }
-.stage{ position:fixed; inset:0; z-index:0; }
-.fallback{ position:absolute; inset:0;
-  background:
-    radial-gradient(40% 46% at 28% 34%, #db8ad4, transparent 60%),
-    radial-gradient(44% 48% at 72% 40%, #ff9ec7, transparent 60%),
-    radial-gradient(42% 46% at 58% 76%, #ffb3a3, transparent 60%),
-    var(--bg); }
-#gl{ position:absolute; inset:0; width:100%; height:100%; opacity:0; transition:opacity 1.2s ease; }
-#gl.on{ opacity:1; }
-.scrim{ position:fixed; inset:0; z-index:1; pointer-events:none;
-  background:radial-gradient(60% 52% at 50% 50%, rgba(255,245,236,.84), rgba(255,245,236,.34) 46%, rgba(255,245,236,0) 72%); }
-.wrap{ position:fixed; inset:0; z-index:2; display:grid; place-items:center; padding:clamp(0.75rem, 3vw, 4rem); }
-.mark{ margin:0; font-weight:800; letter-spacing:-0.035em; line-height:.92; text-align:center;
-  font-size:clamp(1.5rem, 7vw, 11rem); hyphens:auto; overflow-wrap:break-word; text-shadow:0 2px 34px rgba(255,245,236,.55); }
-@media (prefers-reduced-motion:reduce){ #gl{ transition:none; } }
-</style>
+<link rel="preload" href="/assets/fonts/bricolage-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="/assets/fonts/hanken-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="/assets/styles.css" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NGO","name":"Lerngesellschaft / Learning Society","areaServed":"Basel","description":"Verein, der die natürliche Neugier und den Lernwillen von Kindern und Jugendlichen in Basel fördert. Drei Wege: Forscherbühne, Lernbus und Gehirn und Gesellschaft.","address":"Münsterplatz 17, 4051 Basel","email":"team@jonashertner.com"}
+</script>
 </head>
 <body>
-<div class="stage" aria-hidden="true">
-  <div class="fallback"></div>
-  <canvas id="gl"></canvas>
-</div>
-<div class="scrim" aria-hidden="true"></div>
-<div class="wrap"><h1 class="mark">Lerngesellschaft</h1></div>
+<a href="#main" class="skip">Zum Inhalt springen</a>
+
+<header class="site-head">
+  <div class="wrap">
+    <a href="#top" class="brand">
+      <b>Lerngesellschaft</b>
+      <span>Learning Society · Basel</span>
+    </a>
+    <div class="head-right">
+      <nav class="nav" aria-label="Hauptnavigation">
+        <a href="#ziele" class="navlink">Ziele</a>
+        <a href="#wege" class="navlink">Drei Wege</a>
+      </nav>
+      <a href="/vorschau/en/index.html" class="lang" aria-label="In English">EN</a>
+      <a href="#investieren" class="btn btn-pink nav-cta">Investieren</a>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- HERO -->
+  <section class="hero" id="top">
+    <div class="hero-stage" aria-hidden="true">
+      <div class="liquid-fallback"></div>
+      <video class="hero-video" autoplay muted loop playsinline preload="metadata" width="640" height="640" poster="./media/hero-poster.jpg">
+        <source src="/assets/media/hero.webm" type="video/webm" />
+        <source src="/assets/media/hero.mp4" type="video/mp4" />
+      </video>
+      <div class="grade"></div>
+    </div>
+    <div class="hero-scrim" aria-hidden="true"></div>
+    <div class="hero-inner">
+      <div class="wrap">
+        <h1>Jedes Kind will lernen, <span class="pop">verstehen</span> und <span class="pop">verstanden</span> werden.</h1>
+        <p class="lead">Die Lerngesellschaft fördert die natürliche Neugier und den Lernwillen von Kindern und Jugendlichen in Basel. Wir machen Forschen nahbar und erlebbar. Mit individueller Begleitung stärken wir Lernfreude, Eigenmotivation und sprachliche Handlungsfähigkeit, damit Kinder ihre Potenziale entfalten und selbstbewusst ihren Weg gehen können.</p>
+        <div class="hero-cta">
+          <a href="#investieren" class="btn btn-pink">Ein Kind fördern</a>
+          <a href="#wege" class="btn btn-ghost">Die drei Wege</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AUSGANGSLAGE -->
+  <section class="section">
+    <div class="accent-blob" style="width:30vw;height:30vw;background:var(--pink);right:-8vw;top:-6vw"></div>
+    <div class="wrap">
+      <p class="eyebrow reveal" style="--dot:var(--pink)">Worum es geht</p>
+      <h2 class="big reveal">Neugier ist das Wertvollste, was ein Kind mitbringt.</h2>
+      <p class="statement reveal" style="margin-top:1.4rem">Jedes Kind will von sich aus entdecken, lernen und verstehen.</p>
+      <div class="prose2 reveal">
+        <p class="lead">Unsere Welt verändert sich rasant und stellt schon heute neue Anforderungen an Kinder. An Bedeutung gewinnen insbesondere Selbstständigkeit, Problemlösungskompetenz, Kreativität und ein konstruktiver Umgang mit Herausforderungen. Zugleich zeigen aktuelle schweizweite Erhebungen, dass nicht alle Kinder bereits in der Primarschule die erwarteten sprachlichen und mathematischen Mindeststandards erreichen: Nach der nationalen Überprüfung der Grundkompetenzen (ÜGK) erreicht schon in der zweiten Primarklasse fast jedes vierte Kind die Grundkompetenzen in Mathematik nicht, beim Lesen ist es gut jedes fünfte.</p>
+        <p class="lead">Gleichzeitig wird Lernen zunehmend durch passiven Konsum ersetzt. Eine zukunftsfähige Gesellschaft braucht jedoch neugierige Kinder, die Lernen aktiv erleben, erproben und erforschen können. Davon profitieren alle Kinder, weil genau jene Kompetenzen gezielt gefördert werden, auf die es künftig ankommt. Hier setzen wir an. Damit möglichst viele Kinder mitmachen können, sind wir als Verein auf Menschen angewiesen, die mitinvestieren.</p>
+      </div>
+      <div class="reveal" style="margin-top:2rem"><a class="morelink" href="/ansatz/">So arbeiten wir <span>&rarr;</span></a></div>
+    </div>
+  </section>
+
+  <!-- ZIELE -->
+  <section class="section tint" id="ziele">
+    <div class="wrap">
+      <p class="eyebrow reveal" style="--dot:var(--orange-ink)">Unsere Ziele</p>
+      <h2 class="big reveal">Worauf wir hinarbeiten.</h2>
+      <div class="goals">
+        <div class="goal reveal" style="--dot:var(--pink-ink)">
+          <div class="n">01</div>
+          <h3>Lernmotivation und Lernkompetenz</h3>
+          <p>Wir stärken die natürliche Neugier und die eigene Lernmotivation der Kinder gezielt, damit sie eine nachhaltige Lernbereitschaft entwickeln und lebenslanges Lernen als selbstbestimmten Prozess erleben.</p>
+        </div>
+        <div class="goal reveal" style="--dot:var(--violet)">
+          <div class="n">02</div>
+          <h3>Forschergeist</h3>
+          <p>Kinder erfahren Forschung, Experimentieren und Entdecken aktiv. So bleiben Wissbegierde, Erkenntnisfreude und eine forschende Grundhaltung langfristig erhalten.</p>
+        </div>
+        <div class="goal reveal" style="--dot:var(--orange-ink)">
+          <div class="n">03</div>
+          <h3>Sozial-emotionale Kompetenzen</h3>
+          <p>Kinder lernen, eigene Gefühle wahrzunehmen, zu benennen und zu reflektieren. Das stärkt ihre Selbstwahrnehmung und einen empathischen, respektvollen Umgang mit sich selbst und anderen.</p>
+        </div>
+        <div class="goal reveal" style="--dot:var(--pink-ink)">
+          <div class="n">04</div>
+          <h3>Bildungssprache Deutsch</h3>
+          <p>Kinder mit Deutsch als Zweitsprache entwickeln ihre alltags- und bildungssprachlichen Kompetenzen. Das stärkt ihre Kommunikationsfähigkeit, ihre Bildungsbeteiligung und ihre Chancengerechtigkeit.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DREI WEGE -->
+  <section class="section" id="wege">
+    <div class="accent-blob" style="width:28vw;height:28vw;background:var(--violet);left:-8vw;bottom:-6vw"></div>
+    <div class="wrap">
+      <p class="eyebrow reveal" style="--dot:var(--pink-ink)">Drei Wege</p>
+      <h2 class="big reveal">Drei Wege, ein Ziel.</h2>
+      <div class="prose2 reveal">
+        <p class="lead">Die Forscherbühne weckt Staunen und macht Wissenschaft für Kinder und Jugendliche in Basel unmittelbar erlebbar. Der Lernbus begleitet jedes Kind individuell in seinem eigenen Tempo, verlässlich an der Seite eines Menschen, der Vertrauen aufbaut und Entwicklung ermöglicht. Mit Gehirn und Gesellschaft bringen wir aktuelles Wissen darüber in die Schule, wie Lernen gelingt, wie soziale Kompetenzen wachsen und welche Rolle Menschen und Technologien in Bildungsprozessen spielen.</p>
+        <p class="lead">Unsere Arbeit orientiert sich an den Grundsätzen der Reggio-Pädagogik: Kinder werden als aktive Mitgestalter ihrer Bildungsprozesse verstanden, und ihre Lernwege werden sichtbar gemacht. Drei Wege, ein Ziel: Kinder dabei zu unterstützen, die Welt zu verstehen, ihre Potenziale zu entfalten und sich in ihrer Einzigartigkeit verstanden zu fühlen.</p>
+        <p class="lead">Drei Überzeugungen ziehen sich durch alles, was wir tun. Kinder lernen bei Menschen, nicht bei Programmen. Sie brauchen zuerst Breite und nicht früh ein Fach. Und sie müssen Fehler machen dürfen, sonst wagen sie nichts Eigenes.</p>
+      </div>
+      <div class="pillars">
+
+        <article class="pillar reveal" id="forscherbuehne" style="--dot:var(--pink-ink)">
+          <div class="gb" style="background:radial-gradient(circle at 40% 40%, var(--pink), var(--coral))"></div>
+          <span class="bar"></span>
+          <h3>Forscherbühne</h3>
+          <p>Forschende führen echte Experimente live vor Publikum vor und machen naturwissenschaftliche Phänomene anschaulich und verständlich. Kostenlos und offen für alle Kinder und Jugendlichen in Basel.</p>
+          <p class="soon">In Vorbereitung</p>
+        </article>
+
+        <article class="pillar reveal" id="lernbus" style="--dot:var(--violet)">
+          <div class="gb" style="background:radial-gradient(circle at 40% 40%, var(--violet), var(--cyan))"></div>
+          <span class="bar"></span>
+          <h3>Lernbus</h3>
+          <p>Präventive Lernbegleitung im Einzel- und Zweiersetting, vom 1. Kindergarten bis zur 3. Primarschule. Frühe Deutschförderung schon ab 3 Jahren.</p>
+          <a class="morelink" href="/lernbus/">Mehr zum Lernbus <span>&rarr;</span></a>
+        </article>
+
+        <article class="pillar reveal" id="gehirn-und-gesellschaft" style="--dot:var(--orange-ink)">
+          <div class="gb" style="background:radial-gradient(circle at 40% 40%, var(--tang), var(--yellow))"></div>
+          <span class="bar"></span>
+          <h3>Gehirn und Gesellschaft</h3>
+          <p>Altersgerechte, interaktive Lektionen in der Primarschule: wie Lernen funktioniert, was ein gelingendes Miteinander ausmacht und welche Rolle künstliche Intelligenz im Alltag der Kinder spielt.</p>
+          <p class="soon">In Vorbereitung</p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- DER VEREIN -->
+  <section class="section tint" id="verein">
+    <div class="wrap">
+      <p class="eyebrow reveal" style="--dot:var(--violet)">Der Verein</p>
+      <h2 class="big reveal">Wer hinter der Lerngesellschaft steht.</h2>
+      <p class="lead reveal" style="margin-top:1.4rem">Die Lerngesellschaft ist ein Verein mit Sitz in Basel. Getragen wird sie von Menschen aus Pädagogik und Recht, die in Basel zu Hause sind.</p>
+      <p class="board-note reveal">Der Vorstand arbeitet ehrenamtlich.</p>
+    </div>
+  </section>
+
+  <!-- INVESTIEREN -->
+  <section class="section" id="investieren">
+    <div class="wrap">
+      <div class="give reveal">
+        <div class="gblob" style="width:30rem;height:30rem;background:var(--pink);right:-8rem;top:-10rem"></div>
+        <div class="gblob" style="width:24rem;height:24rem;background:var(--violet);left:-6rem;bottom:-8rem"></div>
+        <div class="inner">
+          <div class="gcols">
+            <div class="gmain">
+              <p class="eyebrow" style="--dot:var(--yellow)">Investieren</p>
+              <h2>Bildungschancen ermöglichen.</h2>
+              <p class="body">Investieren Sie in die Neugier von Kindern. Ihr Beitrag öffnet ihnen den Weg in den Lernbus und auf die Forscherbühne, unabhängig davon, was ihre Familie tragen kann.</p>
+              <div class="give-cta">
+                <a href="mailto:team@jonashertner.com?subject=Investition%20Lerngesellschaft" class="btn btn-yellow">Jetzt investieren</a>
+                <span class="fineprint">Wir zeigen Ihnen gern, wie Ihre Investition wirkt.</span>
+              </div>
+            </div>
+            <div class="figure">
+              <div class="amt">CHF 100</div>
+              <div class="cap">ermöglichen einem Kind eine Stunde im Lernbus.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <span>Lerngesellschaft / Learning Society · Basel</span>
+    <a href="/ansatz/">So arbeiten wir</a>
+    <span>Münsterplatz 17, 4051 Basel · team@jonashertner.com</span>
+    <span>Verein · Start September 2026</span>
+    <a href="/impressum/">Impressum</a>
+  </div>
+</footer>
 
 <script>
-(function(){
-  var canvas=document.getElementById('gl');
-  var gl=null; try{ gl=canvas.getContext('webgl')||canvas.getContext('experimental-webgl'); }catch(e){}
-  if(!gl) return; // CSS fallback stays
-  var vsrc='attribute vec2 p; void main(){ gl_Position=vec4(p,0.0,1.0); }';
-  var fsrc=[
-    'precision highp float;',
-    'uniform float uTime; uniform vec2 uRes; uniform vec2 uMouse;',
-    'float ball(vec2 p, vec2 c, float r){ vec2 d=p-c; return (r*r)/(dot(d,d)+0.0004); }',
-    'float field(vec2 p){',
-    '  float asp=uRes.x/uRes.y; float s=0.0;',
-    '  vec2 m=vec2(uMouse.x*asp, uMouse.y);',
-    '  s+=ball(p,m,0.36);',
-    '  for(int i=0;i<7;i++){ float fi=float(i); float t=uTime*0.32+fi*1.7;',
-    '    vec2 c=vec2((0.05+0.72*sin(t*0.7+fi*1.3))*asp, 0.72*cos(t*0.6+fi*2.1));',
-    '    float r=0.17+0.09*sin(t*0.9+fi);',
-    '    s+=ball(p,c,r); }',
-    '  return s;',
-    '}',
-    'void main(){',
-    '  vec2 p=(gl_FragCoord.xy/uRes)*2.0-1.0; p.x*=uRes.x/uRes.y;',
-    '  vec3 cA=vec3(0.86,0.54,0.83), cB=vec3(1.0,0.62,0.78), cC=vec3(1.0,0.70,0.64), cD=vec3(1.0,0.82,0.74);',
-    '  vec3 bg=vec3(1.0,0.961,0.925);',
-    '  float s=field(p);',
-    '  float T=1.0; float h=smoothstep(T-0.06,T+0.06,s);',
-    '  float e=0.006;',
-    '  vec2 g=vec2(field(p+vec2(e,0.0))-field(p-vec2(e,0.0)), field(p+vec2(0.0,e))-field(p-vec2(0.0,e)));',
-    '  vec3 n=normalize(vec3(-g*0.85,1.0));',
-    '  vec3 L=normalize(vec3(0.4,0.55,0.9));',
-    '  float diff=clamp(dot(n,L)*0.5+0.5,0.0,1.0);',
-    '  float spec=pow(clamp(dot(reflect(-L,n),vec3(0.0,0.0,1.0)),0.0,1.0),24.0);',
-    '  float fres=pow(1.0-clamp(n.z,0.0,1.0),2.2);',
-    '  float gp=clamp((p.y*0.32+0.5)+0.12*sin(uTime*0.3)+g.x*0.04,0.0,1.0);',
-    '  vec3 col=mix(cA,cB,smoothstep(0.0,0.45,gp));',
-    '  col=mix(col,cC,smoothstep(0.4,0.78,gp));',
-    '  col=mix(col,cD,smoothstep(0.72,1.0,gp));',
-    '  col*=(0.72+0.45*diff);',
-    '  col+=spec*0.6;',
-    '  col=mix(col,vec3(1.0),fres*0.22);',
-    '  float glow=smoothstep(0.4,T,s)*(1.0-h);',
-    '  float a=clamp(h+glow*0.4,0.0,1.0);',
-    '  gl_FragColor=vec4(mix(bg,col,a),1.0);',
-    '}'
-  ].join('\n');
-  function sh(t,src){ var s=gl.createShader(t); gl.shaderSource(s,src); gl.compileShader(s); return s; }
-  var prog=gl.createProgram();
-  gl.attachShader(prog,sh(gl.VERTEX_SHADER,vsrc));
-  gl.attachShader(prog,sh(gl.FRAGMENT_SHADER,fsrc));
-  gl.linkProgram(prog); gl.useProgram(prog);
-  var buf=gl.createBuffer(); gl.bindBuffer(gl.ARRAY_BUFFER,buf);
-  gl.bufferData(gl.ARRAY_BUFFER,new Float32Array([-1,-1, 3,-1, -1,3]),gl.STATIC_DRAW);
-  var loc=gl.getAttribLocation(prog,'p'); gl.enableVertexAttribArray(loc); gl.vertexAttribPointer(loc,2,gl.FLOAT,false,0,0);
-  var uTime=gl.getUniformLocation(prog,'uTime'), uRes=gl.getUniformLocation(prog,'uRes'), uMouse=gl.getUniformLocation(prog,'uMouse');
-  var dpr=Math.min(window.devicePixelRatio||1,1.5);
-  function resize(){ var w=window.innerWidth,hh=window.innerHeight; canvas.width=Math.round(w*dpr); canvas.height=Math.round(hh*dpr); canvas.style.width=w+'px'; canvas.style.height=hh+'px'; gl.viewport(0,0,canvas.width,canvas.height); gl.uniform2f(uRes,canvas.width,canvas.height); }
-  window.addEventListener('resize',resize,{passive:true}); resize();
-  var mx=0.25,my=0.0, tx=0.25,ty=0.0, usePointer=false;
-  var fine = window.matchMedia('(pointer:fine)').matches;
-  if(fine){ window.addEventListener('pointermove',function(e){ usePointer=true; tx=(e.clientX/window.innerWidth)*2-1; ty=-((e.clientY/window.innerHeight)*2-1); },{passive:true}); }
-  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  function draw(t){
-    if(!usePointer){ tx=0.62*Math.sin(t*0.00022); ty=0.46*Math.sin(t*0.00018+1.3); }
-    mx+=(tx-mx)*0.05; my+=(ty-my)*0.05;
-    gl.uniform1f(uTime, t*0.001); gl.uniform2f(uMouse, mx, my);
-    gl.drawArrays(gl.TRIANGLES,0,3);
-  }
-  canvas.classList.add('on');
-  if(reduce){ draw(3000); }
-  else{ (function loop(t){ draw(t||0); raf=requestAnimationFrame(loop); })(0); }
-  var raf;
-  document.addEventListener('visibilitychange',function(){ if(document.hidden){ cancelAnimationFrame(raf); } else if(!reduce){ (function loop(t){ draw(t||0); raf=requestAnimationFrame(loop); })(performance.now?performance.now():0); } });
-})();
+(function(){var v=document.querySelector('.hero-video');if(!v)return;if(matchMedia('(prefers-reduced-motion: reduce)').matches){v.removeAttribute('autoplay');try{v.pause();}catch(e){}return;}v.addEventListener('canplay',function(){document.documentElement.classList.add('video-on');},{once:true});var p=v.play&&v.play();if(p&&p.catch)p.catch(function(){});})();
 </script>
 </body>
 </html>
