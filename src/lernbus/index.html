@@ -168,7 +168,7 @@
         <li>Kinder vom <b>1. Kindergarten bis zur 3. Primarschule</b></li>
         <li>Besonders geeignet für Kinder, die in ihren <b>Lern- und Zukunftskompetenzen</b> gezielt gestärkt werden sollen</li>
         <li><b>Frühe Deutschförderung ab 3 Jahren</b>, im Einzel- und Zweiersetting</li>
-        <li><b>Subventionierte und spendenfinanzierte Plätze</b> zur Förderung der Chancengleichheit</li>
+        <li><b>Spendenfinanzierte Plätze</b> zur Förderung der Chancengleichheit</li>
         <li>Zugang über <b>Schulen, Kindergärten, Kitas und Eltern</b></li>
       </ul>
     </div>
@@ -200,7 +200,7 @@
         </div>
         <div class="dsec">
           <h2>Buchbar für alle, ermöglicht für viele</h2>
-          <p>Familien können den Lernbus buchen. Die Beiträge richten sich nach dem Einkommen der Familie, und subventionierte sowie spendenfinanzierte Plätze sorgen dafür, dass jedes Kind dabei sein kann, auch wenn das Geld zu Hause knapp ist. Wer in einen Platz investiert, gibt einem Kind Zeit mit einem Menschen, der an es glaubt.</p>
+          <p>Die Lernbegleitung kostet CHF 100 pro Stunde, im Zweiersetting gilt ein reduzierter Tarif. Ein Teil der Plätze wird durch Spenden getragen, damit auch Kinder dabei sein können, bei denen das Geld zu Hause knapp ist. Wer in einen Platz investiert, gibt einem Kind Zeit mit einem Menschen, der an es glaubt.</p>
         </div>
       </div>
 
@@ -238,7 +238,7 @@
     <div class="wrap">
       <p class="eyebrow" style="--dot:var(--violet)">Platz anfragen</p>
       <h2 class="big" style="max-width:22ch">Melden Sie Ihr Kind an.</h2>
-      <p class="lead" style="margin-top:1.2rem">Der Lernbus startet im Herbst 2026 mit wenigen Plätzen. Am Anfang steht ein Kennenlerngespräch. Sagen Sie uns kurz, für wen Sie anfragen, wir melden uns innert weniger Tage. Die Beiträge richten sich nach dem Einkommen der Familie, alles Weitere besprechen wir persönlich.</p>
+      <p class="lead" style="margin-top:1.2rem">Der Lernbus startet im September 2026 mit wenigen Plätzen. Am Anfang steht ein Kennenlerngespräch. Sagen Sie uns kurz, für wen Sie anfragen, wir melden uns innert weniger Tage. Die Lernbegleitung kostet CHF 100 pro Stunde, alles Weitere besprechen wir persönlich.</p>
       <p class="lead" style="margin-top:1rem"><a class="morelink" href="vorschau/index.html">Sie sind Mutter oder Vater? Hier steht alles Wichtige kurz <span>&rarr;</span></a></p>
       <div class="book-card">
         <form id="anfrage">
@@ -266,7 +266,7 @@
             <div class="field"><label for="f-quartier">Quartier (optional)</label><input id="f-quartier" name="quartier" type="text" /></div>
             <div class="field wide"><label for="f-msg">Nachricht (optional)</label><textarea id="f-msg" name="msg"></textarea></div>
             <label class="check wide"><input type="checkbox" name="lang" /> Mein Kind soll Deutsch aufbauen und sicherer sprechen.</label>
-            <label class="check wide"><input type="checkbox" name="reduced" /> Ich möchte mehr über subventionierte und spendenfinanzierte Plätze erfahren.</label>
+            <label class="check wide"><input type="checkbox" name="reduced" /> Ich möchte mehr über spendenfinanzierte Plätze erfahren.</label>
           </div>
           <div style="margin-top:1.4rem"><button type="submit" class="btn btn-pink">Anfrage senden</button></div>
         </form>
@@ -307,7 +307,7 @@ var g=function(n){var el=f.elements[n];return el?el.value.trim():'';};
 var L=['Anfrage Lernbus','','Name: '+g('name'),'Kontakt: '+g('contact'),'Anfrage als: '+g('role'),'Alter des Kindes: '+g('age'),'Wunschsetting: '+g('setting')];
 if(g('quartier'))L.push('Quartier: '+g('quartier'));
 if(f.elements['lang'].checked)L.push('Frühe Deutschförderung: Deutsch aufbauen und sicherer sprechen.');
-if(f.elements['reduced'].checked)L.push('Bitte Informationen zu subventionierten und spendenfinanzierten Plätzen.');
+if(f.elements['reduced'].checked)L.push('Bitte Informationen zu spendenfinanzierten Plätzen.');
 if(g('msg')){L.push('');L.push(g('msg'));}
 location.href='mailto:info@lernbus.ch?subject='+encodeURIComponent('Anfrage Lernbus')+'&body='+encodeURIComponent(L.join('\n'));});})();
 </script>

@@ -168,7 +168,7 @@
         <li>Children from the <b>first year of kindergarten to the third year of primary school</b> (roughly ages four to nine)</li>
         <li>Particularly suited to children whose <b>learning and future capacities</b> would benefit from deliberate support</li>
         <li><b>Early German language support from age 3</b>, with one or two children at a time</li>
-        <li><b>Subsidised and donation-funded places</b>, so that opportunity does not depend on income</li>
+        <li><b>Donation-funded places</b>, so that opportunity does not depend on income</li>
         <li>Access through <b>schools, kindergartens, day-care centres and parents</b></li>
       </ul>
     </div>
@@ -200,7 +200,7 @@
         </div>
         <div class="dsec">
           <h2>Open to all, made possible for many</h2>
-          <p>Families can book the Learning Bus. Contributions follow the family's income, and subsidised and donation-funded places make sure that every child can take part, even when money at home is tight. When you fund a place, you give a child time with a person who believes in them.</p>
+          <p>Learning support costs CHF 100 per hour, with a reduced rate in the pair setting. Some of the places are carried by donations, so that children can take part even when money at home is tight. When you fund a place, you give a child time with a person who believes in them.</p>
         </div>
       </div>
 
@@ -238,7 +238,7 @@
     <div class="wrap">
       <p class="eyebrow" style="--dot:var(--violet)">Request a place</p>
       <h2 class="big" style="max-width:22ch">Sign your child up.</h2>
-      <p class="lead" style="margin-top:1.2rem">The Learning Bus starts in autumn 2026 with a small number of places. It begins with a first conversation. Tell us briefly who you are asking for, and we will be in touch within a few days. Contributions follow the family's income; everything else we discuss in person.</p>
+      <p class="lead" style="margin-top:1.2rem">The Learning Bus starts in September 2026 with a small number of places. It begins with a first conversation. Tell us briefly who you are asking for, and we will be in touch within a few days. Learning support costs CHF 100 per hour; everything else we discuss in person.</p>
       <p class="lead" style="margin-top:1rem"><a class="morelink" href="../vorschau/en/index.html">Are you a parent? Everything that matters, in short <span>&rarr;</span></a></p>
       <div class="book-card">
         <form id="anfrage">
@@ -266,7 +266,7 @@
             <div class="field"><label for="f-quartier">Neighbourhood (optional)</label><input id="f-quartier" name="quartier" type="text" /></div>
             <div class="field wide"><label for="f-msg">Message (optional)</label><textarea id="f-msg" name="msg"></textarea></div>
             <label class="check wide"><input type="checkbox" name="lang" /> My child should build up German and speak it more confidently.</label>
-            <label class="check wide"><input type="checkbox" name="reduced" /> I would like to know more about subsidised and donation-funded places.</label>
+            <label class="check wide"><input type="checkbox" name="reduced" /> I would like to know more about donation-funded places.</label>
           </div>
           <div style="margin-top:1.4rem"><button type="submit" class="btn btn-pink">Send request</button></div>
         </form>
@@ -307,7 +307,7 @@ var g=function(n){var el=f.elements[n];return el?el.value.trim():'';};
 var L=['Learning Bus request','','Name: '+g('name'),'Contact: '+g('contact'),'Asking as: '+g('role'),'Child\'s age: '+g('age'),'Preferred setting: '+g('setting')];
 if(g('quartier'))L.push('Neighbourhood: '+g('quartier'));
 if(f.elements['lang'].checked)L.push('Early German language support: build up German, speak more confidently.');
-if(f.elements['reduced'].checked)L.push('Please send information on subsidised and donation-funded places.');
+if(f.elements['reduced'].checked)L.push('Please send information on donation-funded places.');
 if(g('msg')){L.push('');L.push(g('msg'));}
 location.href='mailto:info@lernbus.ch?subject='+encodeURIComponent('Learning Bus request')+'&body='+encodeURIComponent(L.join('\n'));});})();
 </script>
