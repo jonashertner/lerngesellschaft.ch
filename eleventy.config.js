@@ -22,6 +22,7 @@ export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/css");
   eleventyConfig.addPassthroughCopy("src/js");
   eleventyConfig.addPassthroughCopy("src/social-card.svg");
+  eleventyConfig.addPassthroughCopy("src/assets");
   eleventyConfig.addPassthroughCopy("src/vorschau");
   eleventyConfig.addPassthroughCopy("src/lernbus");
   eleventyConfig.addPassthroughCopy("src/atlas");

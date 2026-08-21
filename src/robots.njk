@@ -6,6 +6,8 @@ eleventyExcludeFromCollections: true
 User-agent: *
 Allow: /
 
-# Crawlers welcome — content is published as a public manifesto.
+# Nicht öffentliche Seiten tragen ein noindex im Dokument selbst.
+# Sie werden bewusst nicht per Disallow ausgesperrt: Eine gesperrte Seite
+# kann nicht gelesen werden — und ein noindex, das niemand liest, wirkt nicht.
+
 Sitemap: {{ site.urls.de }}/sitemap.xml
-Sitemap: {{ site.urls.en }}/sitemap.xml

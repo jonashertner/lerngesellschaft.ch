@@ -291,3 +291,4 @@ h2.big{ font-size:var(--fs-h2); max-width:18ch; margin-top:1rem; }
   .navlink:hover::before,.navlink:focus-visible::before{ animation:none !important; }
   .btn:hover{ transform:none !important; }
 }
+.soon{ display:inline-block; margin-top:.4rem; font-weight:750; font-size:.78rem; letter-spacing:.14em; text-transform:uppercase; color:var(--ink); opacity:.55; }

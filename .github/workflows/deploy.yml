@@ -27,10 +27,7 @@ jobs:
           rm -rf _site_de
           cp -r _site _site_de
           echo "lerngesellschaft.ch" > _site_de/CNAME
-          # Root = hold page (the manifest stays reachable at /de and /en)
-          cp hold/index.html _site_de/index.html
-          mkdir -p _site_de/fonts
-          cp hold/fonts/* _site_de/fonts/
+          # Root is the Verein homepage (src/index.html). The hold page is retired.
 
 
       - name: Deploy DE → gh-pages of this repo

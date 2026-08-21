@@ -4,55 +4,21 @@ templateEngineOverride: njk
 eleventyExcludeFromCollections: true
 ---
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml">
-
+{#- Nur die öffentlichen Seiten. Alles Übrige trägt noindex und gehört nicht hierher. -#}
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+{%- set pages = [
+  { loc: "/",              prio: "1.0", freq: "monthly" },
+  { loc: "/lernbus/",      prio: "0.9", freq: "monthly" },
+  { loc: "/ansatz/",       prio: "0.7", freq: "monthly" },
+  { loc: "/lernbus/team/", prio: "0.5", freq: "monthly" },
+  { loc: "/impressum/",    prio: "0.2", freq: "yearly"  }
+] %}
+{%- for p in pages %}
   <url>
-    <loc>{{ site.urls.de }}/de/</loc>
+    <loc>{{ site.urls.de }}{{ p.loc }}</loc>
     <lastmod>{{ site.modified }}</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="de" href="{{ site.urls.de }}/de/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="{{ site.urls.en }}/en/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="{{ site.urls.de }}/de/"/>
+    <changefreq>{{ p.freq }}</changefreq>
+    <priority>{{ p.prio }}</priority>
   </url>
-
-  <url>
-    <loc>{{ site.urls.en }}/en/</loc>
-    <lastmod>{{ site.modified }}</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="{{ site.urls.en }}/en/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="{{ site.urls.de }}/de/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="{{ site.urls.de }}/de/"/>
-  </url>
-
-  <url>
-    <loc>{{ site.urls.de }}/de/print/</loc>
-    <lastmod>{{ site.modified }}</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>{{ site.urls.en }}/en/print/</loc>
-    <lastmod>{{ site.modified }}</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>{{ site.urls.de }}/de/paper.md</loc>
-    <lastmod>{{ site.modified }}</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>{{ site.urls.en }}/en/paper.md</loc>
-    <lastmod>{{ site.modified }}</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
+{%- endfor %}
 </urlset>
