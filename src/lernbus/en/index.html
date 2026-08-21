@@ -117,7 +117,7 @@
         <li>Children from the <b>first year of kindergarten to the third year of primary school</b></li>
         <li>For children whose <b>learning and future skills</b> should be strengthened in a targeted way</li>
         <li><b>Early German support from age 3</b>, one to one or in pairs</li>
-        <li><b>Donation-funded places</b> to promote equal opportunity</li>
+        <li><b>Places made possible</b> to promote equal opportunity</li>
       </ul>
     </div>
   </section>
@@ -160,8 +160,8 @@
           <p>Learning support costs CHF 100 per hour. A reduced rate applies in the pair setting. Everything else we discuss in the introductory conversation.</p>
         </div>
         <div class="dsec">
-          <h2>Donation-funded places</h2>
-          <p>Some of the places are carried by donations. If money is tight at home, simply say so. It is not an obstacle, and it stays between us.</p>
+          <h2>Places made possible</h2>
+          <p>Some of the places are made possible by people who invest in children. If money is tight at home, simply say so. It is not an obstacle, and it stays between us.</p>
         </div>
       </div>
     </div>
@@ -187,7 +187,7 @@
             <div class="field"><label for="f-when">When can we best reach you?</label><input id="f-when" name="when" type="text" placeholder="e.g. weekdays after 5pm" /></div>
             <div class="field wide"><label for="f-msg">What is it about? (optional)</label><textarea id="f-msg" name="msg"></textarea></div>
             <label class="check wide"><input type="checkbox" name="lang" /> My child should build up German and speak it more confidently.</label>
-            <label class="check wide"><input type="checkbox" name="reduced" /> Please tell me about donation-funded places.</label>
+            <label class="check wide"><input type="checkbox" name="reduced" /> Please tell me about places made possible by others.</label>
           </div>
           <div style="margin-top:1.4rem"><button type="submit" class="btn btn-pink">Request a conversation</button></div>
         </form>
@@ -265,7 +265,7 @@ var g=function(n){var el=f.elements[n];return el?el.value.trim():'';};
 var L=['Enquiry: introductory conversation, Learning Bus','','Name: '+g('name'),'Contact: '+g('contact'),'Age of the child: '+g('age')];
 if(g('when'))L.push('Reachable: '+g('when'));
 if(f.elements['lang'].checked)L.push('Early German language support: build up German, speak more confidently.');
-if(f.elements['reduced'].checked)L.push('Please send information on donation-funded places.');
+if(f.elements['reduced'].checked)L.push('Please send information on places made possible by others.');
 if(g('msg')){L.push('');L.push(g('msg'));}
 location.href='mailto:info@lernbus.ch?subject='+encodeURIComponent('Learning Bus: introductory conversation')+'&body='+encodeURIComponent(L.join('\n'));});})();
 </script>

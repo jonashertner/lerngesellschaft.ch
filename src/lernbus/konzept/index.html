@@ -168,7 +168,7 @@
         <li>Kinder vom <b>1. Kindergarten bis zur 3. Primarschule</b></li>
         <li>Besonders geeignet für Kinder, die in ihren <b>Lern- und Zukunftskompetenzen</b> gezielt gestärkt werden sollen</li>
         <li><b>Frühe Deutschförderung ab 3 Jahren</b>, im Einzel- und Zweiersetting</li>
-        <li><b>Spendenfinanzierte Plätze</b> zur Förderung der Chancengleichheit</li>
+        <li><b>Ermöglichte Plätze</b> zur Förderung der Chancengleichheit</li>
         <li>Zugang über <b>Schulen, Kindergärten, Kitas und Eltern</b></li>
       </ul>
     </div>
@@ -200,7 +200,7 @@
         </div>
         <div class="dsec">
           <h2>Buchbar für alle, ermöglicht für viele</h2>
-          <p>Die Lernbegleitung kostet CHF 100 pro Stunde, im Zweiersetting gilt ein reduzierter Tarif. Ein Teil der Plätze wird durch Spenden getragen, damit auch Kinder dabei sein können, bei denen das Geld zu Hause knapp ist. Wer in einen Platz investiert, gibt einem Kind Zeit mit einem Menschen, der an es glaubt.</p>
+          <p>Die Lernbegleitung kostet CHF 100 pro Stunde, im Zweiersetting gilt ein reduzierter Tarif. Ein Teil der Plätze wird von Menschen ermöglicht, die in Kinder investieren, damit auch Kinder dabei sein können, bei denen das Geld zu Hause knapp ist. Wer in einen Platz investiert, gibt einem Kind Zeit mit einem Menschen, der an es glaubt.</p>
         </div>
       </div>
 
@@ -266,7 +266,7 @@
             <div class="field"><label for="f-quartier">Quartier (optional)</label><input id="f-quartier" name="quartier" type="text" /></div>
             <div class="field wide"><label for="f-msg">Nachricht (optional)</label><textarea id="f-msg" name="msg"></textarea></div>
             <label class="check wide"><input type="checkbox" name="lang" /> Mein Kind soll Deutsch aufbauen und sicherer sprechen.</label>
-            <label class="check wide"><input type="checkbox" name="reduced" /> Ich möchte mehr über spendenfinanzierte Plätze erfahren.</label>
+            <label class="check wide"><input type="checkbox" name="reduced" /> Ich möchte mehr über ermöglichte Plätze erfahren.</label>
           </div>
           <div style="margin-top:1.4rem"><button type="submit" class="btn btn-pink">Anfrage senden</button></div>
         </form>
@@ -282,8 +282,8 @@
       <h2 class="big reveal">Der Lernbus ist ein Weg der Lerngesellschaft.</h2>
       <p class="lead reveal" style="margin-top:1.4rem">Die Lerngesellschaft ist ein Verein mit Sitz in Basel. Sie fördert die natürliche Neugier und den Lernwillen von Kindern und Jugendlichen auf drei Wegen: mit der Forscherbühne, mit dem Lernbus und mit Gehirn und Gesellschaft.</p>
       <div class="reveal" style="margin-top:2rem; display:flex; flex-wrap:wrap; gap:.9rem">
-        <a href="https://lerngesellschaft.ch/vorschau/" class="btn btn-ghost">Zur Lerngesellschaft</a>
-        <a href="https://lerngesellschaft.ch/vorschau/#investieren" class="btn btn-pink">Einen Platz ermöglichen</a>
+        <a href="https://lerngesellschaft.ch/" class="btn btn-ghost">Zur Lerngesellschaft</a>
+        <a href="https://lerngesellschaft.ch/#investieren" class="btn btn-pink">Einen Platz ermöglichen</a>
       </div>
     </div>
   </section>
@@ -294,7 +294,7 @@
   <div class="wrap">
     <img class="foot-logo" src="../img/logo-light.png" alt="" width="800" height="344" loading="lazy" />
     <span>Lernbus · ein Angebot der Lerngesellschaft</span>
-    <a href="https://lerngesellschaft.ch/vorschau/">lerngesellschaft.ch</a>
+    <a href="https://lerngesellschaft.ch/">lerngesellschaft.ch</a>
     <span>Münsterplatz 17, 4051 Basel · team@jonashertner.com</span>
     <span>Verein · Start September 2026</span>
     <a href="/impressum/">Impressum</a>
@@ -308,7 +308,7 @@ var g=function(n){var el=f.elements[n];return el?el.value.trim():'';};
 var L=['Anfrage Lernbus','','Name: '+g('name'),'Kontakt: '+g('contact'),'Anfrage als: '+g('role'),'Alter des Kindes: '+g('age'),'Wunschsetting: '+g('setting')];
 if(g('quartier'))L.push('Quartier: '+g('quartier'));
 if(f.elements['lang'].checked)L.push('Frühe Deutschförderung: Deutsch aufbauen und sicherer sprechen.');
-if(f.elements['reduced'].checked)L.push('Bitte Informationen zu spendenfinanzierten Plätzen.');
+if(f.elements['reduced'].checked)L.push('Bitte Informationen zu ermöglichten Plätzen.');
 if(g('msg')){L.push('');L.push(g('msg'));}
 location.href='mailto:info@lernbus.ch?subject='+encodeURIComponent('Anfrage Lernbus')+'&body='+encodeURIComponent(L.join('\n'));});})();
 </script>
