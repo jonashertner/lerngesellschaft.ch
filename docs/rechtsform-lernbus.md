@@ -193,3 +193,144 @@ aus offenzulegen und zu erklären — Übergänge von einer persönlichen
 Erwerbstätigkeit in einen steuerbefreiten Verein sind ein bekanntes Muster, und
 sie werden entdeckt. Aktiv dargelegt ist es ein Sachverhalt; nachträglich
 gefunden ist es ein Verdacht.
+
+---
+---
+
+# Nachtrag: Darf der Lernbus etwas kosten?
+
+**Ergänzung vom 24. August 2026 zur Frage der Elternbeiträge**
+
+## Die kurze Antwort
+
+Ja — der Verein kann gemeinnützig und steuerbefreit sein und für den Lernbus
+Beiträge der Eltern verlangen. **Aber nicht kostendeckend.** Genau dieses Wort
+ist der Bruch: Es gibt dazu eine ausdrückliche bundesgerichtliche Aussage, und
+sie geht gegen das Modell.
+
+## Der massgebende Satz
+
+[BGE 146 II 359, E. 6.1](https://mcp.opencaselaw.ch/entscheid/bge_BGE_146_II_359#e-6-1)
+— eine Genfer Privatschule, die um Steuerbefreiung ersuchte:
+
+> lorsque l'exploitation de l'établissement scolaire est poursuivie
+> **uniquement** sur la base de l'écolage couvrant ou dépassant les frais, le
+> critère d'utilité publique n'est pas rempli.
+
+Das Verwaltungsgericht des Kantons Bern hat diesen Massstab auf die
+Gemeinnützigkeit übertragen
+([Verwaltungsgericht BE 100 2022 15 vom 6. Februar 2024](https://mcp.opencaselaw.ch/entscheid/be_verwaltungsgericht_100%202022%2015), E. 2.2):
+
+> Verfolgt eine Privatschule wirtschaftliche (gewinnorientierte) Zwecke oder
+> wird der Schulbetrieb **nur** geführt, wenn kostendeckende oder
+> darüberhinausgehende Schulgelder eingenommen werden, liegt keine
+> Uneigennützigkeit vor, was die Steuerbefreiung wegen Gemeinnützigkeit
+> ausschliesst.
+
+## Warum das «nur» alles entscheidet
+
+Beide Formulierungen verbieten nicht das Entgelt. Sie verbieten die
+**Abhängigkeit des Betriebs vom Entgelt**. Untersagt ist der Satz: «Wir bieten
+an, soweit die Beiträge die Kosten decken.» Erlaubt bleibt: «Wir bieten an, und
+wer kann, beteiligt sich.»
+
+Das ist keine Wortklauberei — der Unterschied steht in der Jahresrechnung:
+
+| | Trägt die Steuerbefreiung | Gefährdet sie |
+| --- | --- | --- |
+| **Logik** | Das Angebot besteht; Beiträge mindern den Fehlbetrag | Das Angebot besteht, soweit es sich trägt |
+| **Deckungsgrad** | Strukturell und dauerhaft unter 100 % | Zielgrösse 100 % |
+| **Ergebnis** | Planmässiger Aufwandüberschuss, aus Zuwendungen gedeckt | Ausgeglichen oder Überschuss |
+| **Aufnahme** | Nach Förderbedarf | Nach Zahlungsbereitschaft |
+| **Tarif** | Höchstes Band unter Vollkosten *und* unter Marktpreis | Preisliste mit Rabatten |
+
+Ihre Formulierung «kostendeckend, soweit möglich» steht genau auf der Kante.
+Gemeint ist vermutlich die linke Spalte — geschrieben ist die rechte.
+
+## Die drei Zahlen, an denen es hängt
+
+**1. Deckungsgrad** (Elternbeiträge ÷ Vollkosten des Lernbusses). Muss dauerhaft
+und sichtbar unter 100 % liegen. Je tiefer, desto ruhiger das Gesuch.
+
+**2. Kein aufgebautes Eigenkapital aus dem Angebot.** Im Zürcher Entscheid
+SB.2022.00022 vom 15. März 2023 verlor ein Verein, der überwiegend
+subventionierte Kinderbetreuungsplätze anbot, die Steuerbefreiung — tragend
+waren das aus dem Betrieb erwirtschaftete Eigenkapital und die
+Wettbewerbsneutralität. Das Bundesgericht wies die dagegen erhobene Beschwerde
+laut Publikation des Gerichts am 18. März 2024 ab.
+
+Umgekehrt gilt die Warnung des Berner Gerichts
+([Verwaltungsgericht BE 100 2022 15 vom 6. Februar 2024](https://mcp.opencaselaw.ch/entscheid/be_verwaltungsgericht_100%202022%2015), E. 5.5): Verluste
+in den ersten Jahren beweisen für sich noch keine Uneigennützigkeit, denn ein
+Betrieb kann anfangs Verlust schreiben und Gewinn durchaus beabsichtigen. Rote
+Zahlen genügen also nicht — die **Konstruktion** muss Kostendeckung ausschliessen.
+
+**3. Anteil der Elternbeiträge am Gesamtertrag.** In
+[BGE 151 II 581, E. 8.2](https://mcp.opencaselaw.ch/entscheid/bge_BGE_151_II_581#e-8-2)
+waren rund 50 % des Gesamterlöses aus der Erwerbstätigkeit klar zu viel.
+Zuwendungen müssen den Betrieb sichtbar tragen.
+
+## Zum Wettbewerb — der Punkt, den Sie schon gesehen haben
+
+Sie schreiben zu Recht, dass der Verein nicht mit markttypischen Nachhilfe-
+angeboten konkurrieren darf. Eine Präzisierung dazu: Der Massstab ist nach
+[BGE 151 II 581, E. 8.3.2](https://mcp.opencaselaw.ch/entscheid/bge_BGE_151_II_581#e-8-3-2)
+**allein die Angebotsseite**. Das Argument «unsere Familien würden ohnehin keine
+Nachhilfe kaufen» ist ein nachfrageseitiges und trägt deshalb nicht. Was trägt,
+sind drei angebotsseitige Merkmale:
+
+- **Preisniveau** unter dem der gewerblichen Anbieter — nicht bloss unter den
+  eigenen Vollkosten. Das sind zwei verschiedene Schwellen, und die tiefere
+  gilt.
+- **Keine Bedingtheit**: Die Leistung wird nicht vom Beitrag abhängig gemacht.
+- **Anderes Angebot**: präventiv statt nachholend, ab Kindergarten statt ab
+  Oberstufe, feste Bezugsperson, frühe Deutschförderung, eingebettet in
+  Forscherbühne und Schularbeit. Das ist zu dokumentieren, nicht zu behaupten.
+
+## Ein Vorteil, den Sie haben
+
+Im Genfer Fall zählte das Bundesgericht ausdrücklich **gegen** die Schule, dass
+sie «über keine spezielle Unterstützung für Kinder mit Schulschwierigkeiten»
+verfügte und dass das Schulgeld so hoch war, «dass einzig Kinder aus einem
+privilegierten sozialen Umfeld Zugang dazu haben».
+
+Der Lernbus ist die Umkehrung von beidem. Das ist kein Nebenargument — es ist
+das stärkste Material für das Gesuch und gehört an dessen Anfang.
+
+## Konsequenz für Art. 4 Abs. 2 der Statuten
+
+Der Junientwurf hält bereits fest, dass Beiträge «nicht kostendeckend und nicht
+zu Marktpreisen» erfolgen. **Nach dieser Rechtsprechung ist das die richtige
+Fassung — sie sollte bleiben.**
+
+Wer den Einzelbeitrag nach oben etwas öffnen will, ohne die Aggregatregel zu
+brechen, kann so formulieren:
+
+> 2 Soweit der Verein für Angebote Beiträge erhebt, sind diese nach der
+> wirtschaftlichen Leistungsfähigkeit der Familie abgestuft und liegen unter
+> den Preisen vergleichbarer gewerblicher Angebote. Über sämtliche Nutzenden
+> hinweg decken die Beiträge die Kosten des Angebots nicht. Der Verein führt
+> seine Angebote unabhängig davon, ob und in welchem Umfang Beiträge anfallen.
+>
+> 3 Der Deckungsgrad der Angebote wird in der Jahresrechnung ausgewiesen.
+
+Der dritte Satz von Abs. 2 ist der tragende: Er sagt in der Sprache der
+Statuten genau das, was [BGE 146 II 359, E. 6.1](https://mcp.opencaselaw.ch/entscheid/bge_BGE_146_II_359#e-6-1)
+im Negativ verlangt. Der bisherige Abs. 3 (Ermässigungen und Freiplätze) rückt
+auf Abs. 4.
+
+## Noch zu lesen
+
+Die **Praxishinweise der Schweizerischen Steuerkonferenz vom 18. Januar 2008**
+zur Steuerbefreiung juristischer Personen. Das Bundesgericht orientiert sich
+daran, die kantonalen Verwaltungen wenden sie an, und für Bildungsangebote
+enthalten sie die Kriterien, an denen das Gesuch tatsächlich gemessen wird.
+
+## Eine Abgrenzung, die Sie sich sparen können
+
+Die Privatschul-Entscheide laufen grösstenteils über den Befreiungsgrund der
+**öffentlichen Zwecke**. Dieser Weg ist eng: Er verlangt eine staatsnahe
+Aufgabe und steht Schulen «in erster Linie» offen, die eine vollständige
+Schulbildung anbieten. Der Lernbus ist ein ergänzendes Angebot, keine Schule —
+dieser Weg führt nicht zum Ziel. Massgebend ist für Sie allein die
+**Gemeinnützigkeit**, und darauf ist der Zweckartikel bereits ausgerichtet.
