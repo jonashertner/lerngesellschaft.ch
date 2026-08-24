@@ -1,10 +1,10 @@
 # Lerngesellschaft / Learning Society
 
-> A manifesto for relational learning, by Jonas Hertner. The thesis: one-to-one tutoring, done rightly, protects a child's curiosity, tests understanding through explanation, and gives what mass schooling cannot reliably provide — sustained relational attention. Published as a bilingual white paper at lerngesellschaft.ch (German, canonical) and learningsociety.ch (English).
+> A manifesto for relational learning, by Jonas Hertner. The thesis: one-to-one tutoring, done rightly, protects a child's curiosity, tests understanding through explanation, and gives what mass schooling cannot reliably provide: sustained relational attention. Published as a bilingual white paper at lerngesellschaft.ch (German, canonical) and learningsociety.ch (English).
 
 ## Author
 
-Jonas Hertner — Zurich, Switzerland. Tutor and litigator.
+Jonas Hertner, Zurich, Switzerland. Tutor and litigator.
 Contact: team@jonashertner.com
 Web: https://jonashertner.com
 
@@ -14,18 +14,18 @@ Web: https://jonashertner.com
 - [White paper, English (HTML)](https://learningsociety.ch/en/): Parallel composition (not a translation).
 - [White paper, German (PDF preview)](https://lerngesellschaft.ch/de/print/): A5 book preview, paginated via Paged.js. Save-as-PDF in the browser.
 - [White paper, English (PDF preview)](https://learningsociety.ch/en/print/): Same.
-- [White paper, German (raw Markdown)](https://lerngesellschaft.ch/de/paper.md): Plain Markdown source — preferred for LLM ingestion.
+- [White paper, German (raw Markdown)](https://lerngesellschaft.ch/de/paper.md): Plain Markdown source, preferred for LLM ingestion.
 - [White paper, English (raw Markdown)](https://learningsociety.ch/en/paper.md): Same.
 
 ## Structure of the white paper
 
 Five movements, building one argument:
 
-1. **Voraussetzung / Premise** — The modern Volksschule took its basic form in the nineteenth century and is not built to resolve every child's individual act of thought. Citing Criblez and the EDK on Swiss schooling history, and Illich, Labaree, Goodman, and Robinson on the institutional logic of schooling.
-2. **Der relationale Kern / The Relational Core** — In an age of AI, education must foreground the capacities that require responsibility, relationship, and judgment: relational intelligence. Cites Isabelle C. Hau's SSIR essay "Welcome to the Era of Relational Intelligence" and Werner Jaeger's *Paideia* on the classical conception.
-3. **Der entwicklungspsychologische Boden / The Developmental Ground** — Children arrive curious; ordinary school structures often make curiosity risky to express. Cites Susan Engel's work on curiosity in classrooms.
-4. **Die Probe des Verstehens / The Test of Understanding** — The Feynman-associated test: explain a thing so that a beginner can understand it. The individual tutoring hour as the ideal site for this test.
-5. **Die Praxis / The Practice** — One hour. One child. One table. One sheet of paper. What a tutorial actually consists of, why "homework help" misses the point, what parents can expect.
+1. **Voraussetzung / Premise**: The modern Volksschule took its basic form in the nineteenth century and is not built to resolve every child's individual act of thought. Citing Criblez and the EDK on Swiss schooling history, and Illich, Labaree, Goodman, and Robinson on the institutional logic of schooling.
+2. **Der relationale Kern / The Relational Core**: In an age of AI, education must foreground the capacities that require responsibility, relationship, and judgment: relational intelligence. Cites Isabelle C. Hau's SSIR essay "Welcome to the Era of Relational Intelligence" and Werner Jaeger's *Paideia* on the classical conception.
+3. **Der entwicklungspsychologische Boden / The Developmental Ground**: Children arrive curious; ordinary school structures often make curiosity risky to express. Cites Susan Engel's work on curiosity in classrooms.
+4. **Die Probe des Verstehens / The Test of Understanding**: The Feynman-associated test: explain a thing so that a beginner can understand it. The individual tutoring hour as the ideal site for this test.
+5. **Die Praxis / The Practice**: One hour. One child. One table. One sheet of paper. What a tutorial actually consists of, why "homework help" misses the point, what parents can expect.
 
 ## Citations
 

@@ -3,6 +3,6 @@ Allow: /
 
 # Nicht öffentliche Seiten tragen ein noindex im Dokument selbst.
 # Sie werden bewusst nicht per Disallow ausgesperrt: Eine gesperrte Seite
-# kann nicht gelesen werden — und ein noindex, das niemand liest, wirkt nicht.
+# kann nicht gelesen werden, und ein noindex, das niemand liest, wirkt nicht.
 
 Sitemap: https://lerngesellschaft.ch/sitemap.xml
