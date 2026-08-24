@@ -1,152 +1,197 @@
-# Statuten des Vereins Lerngesellschaft
+# Statuten des Vereins Lerngesellschaft / Learning Society
 
 **Entwurf zuhanden der Gründungsversammlung**
 Stand: 24. August 2026 · Basel
 
-> Dieser Text ist ein Entwurf. Die eckigen Klammern bezeichnen Stellen, die vor
-> der Gründungsversammlung zu füllen sind. Die «Anmerkungen zum Entwurf» am
-> Schluss gehören nicht zu den Statuten; sie halten die offenen Entscheide und
-> die Überlegungen hinter einzelnen Bestimmungen fest.
+> Dieser Text führt den Entwurf des Zweckartikels vom 22. Juni 2026 zu vollständigen
+> Statuten fort. Art. 1–6 stammen aus jenem Entwurf und sind bis auf zwei
+> gekennzeichnete Ergänzungen unverändert übernommen; Art. 7–27 sind neu. Die
+> eckigen Klammern bezeichnen Stellen, die vor der Gründungsversammlung zu füllen
+> sind. Die «Anmerkungen zum Entwurf» am Schluss gehören nicht zu den Statuten;
+> sie halten fest, was gegenüber dem Junientwurf geändert wurde und welche
+> Entscheide offen sind.
 
 ---
 
-## I. Name, Sitz, Dauer
+## Präambel
 
-### Art. 1 Name und Rechtsform
-
-1 Unter dem Namen **«Lerngesellschaft»** besteht ein Verein im Sinne von
-Art. 60 ff. des Schweizerischen Zivilgesetzbuches (ZGB).
-
-2 Im englischsprachigen Verkehr führt der Verein die Bezeichnung
-«Learning Society». Massgebend ist die deutsche Fassung des Namens und dieser
-Statuten.
-
-### Art. 2 Sitz und Unabhängigkeit
-
-1 Der Sitz des Vereins ist Basel.
-
-2 Der Verein ist politisch und konfessionell unabhängig.
-
-### Art. 3 Dauer und Geschäftsjahr
-
-1 Die Dauer des Vereins ist unbeschränkt.
-
-2 Das Geschäftsjahr entspricht dem Kalenderjahr. Das erste Geschäftsjahr
-beginnt mit der Gründung und endet am 31. Dezember [2026].
+Kinder kommen neugierig zur Welt. Sie wollen verstehen, ausprobieren, gestalten,
+und sie lernen am besten, wenn jemand mit ihnen staunt. Die Lerngesellschaft will
+diese Neugier schützen und nähren: Sie will Kinder und Jugendliche für das Lernen
+und Forschen begeistern, ihnen Wissenschaft lebendig und allgemeinverständlich
+erlebbar machen und ihnen helfen, ihre eigenen Begabungen zu entdecken. Sie
+versteht Lernen zuerst als Beziehungsgeschehen, sieht Kinder als Gestaltende und
+nicht als blosse Empfangende und pflegt eine fehlerfreundliche,
+forschend-entdeckende und spielerische Lernkultur. Sie ist überzeugt, dass frühe
+Bildung der wirksamste Hebel für gleiche Chancen ist und das Potenzial jedes
+Kindes von Anfang an gefördert werden soll. Diese Präambel beschreibt das
+Selbstverständnis des Vereins; rechtsverbindlich sind die nachfolgenden Artikel.
 
 ---
 
-## II. Zweck und Tätigkeit
+## I. Name, Sitz, Zweck
 
-### Art. 4 Zweck
+### Art. 1 Name, Rechtsform und Sitz
 
-1 Der Verein fördert die natürliche Neugier und den Lernwillen von Kindern und
-Jugendlichen, namentlich in Basel und der Region.
+1 Unter dem Namen «Lerngesellschaft / Learning Society» besteht ein Verein im
+Sinne von Art. 60 ff. ZGB.
 
-2 Er unterstützt Kinder und Jugendliche insbesondere darin,
+2 Der Sitz des Vereins ist in Basel.
 
-&nbsp;&nbsp;a) ihre Lernmotivation und ihre Lernkompetenz zu entwickeln und Lernen als
-selbstbestimmten Prozess zu erfahren;
+3 Der Verein ist politisch und konfessionell unabhängig und neutral. Seine Dauer
+ist unbeschränkt.
 
-&nbsp;&nbsp;b) Forschen, Experimentieren und Entdecken unmittelbar zu erleben und eine
-forschende Grundhaltung zu bewahren;
+### Art. 2 Zweck
 
-&nbsp;&nbsp;c) ihre sozial-emotionalen Kompetenzen zu stärken, namentlich die Fähigkeit,
-eigene Gefühle wahrzunehmen, zu benennen und zu reflektieren und anderen
-respektvoll zu begegnen;
+1 Der Verein bezweckt, Kinder und Jugendliche für das Lernen und Forschen zu
+begeistern und ihre Bildung zu fördern, namentlich
 
-&nbsp;&nbsp;d) ihre alltags- und bildungssprachlichen Kompetenzen in der deutschen
-Sprache aufzubauen, insbesondere bei Deutsch als Zweitsprache, und damit ihre
-Bildungsbeteiligung und ihre Chancengerechtigkeit zu verbessern.
+&nbsp;&nbsp;a) ihre Lernförderung sowie das Erkennen und Entfalten ihrer
+unterschiedlichen Begabungen und Talente, stets mit Blick auf eine breite Wirkung
+im Allgemeininteresse;
 
-3 Der Verein versteht Kinder als aktive Mitgestalter ihrer Bildungsprozesse und
-orientiert sich in seiner Arbeit an den Grundsätzen der Reggio-Pädagogik.
+&nbsp;&nbsp;b) ihre naturwissenschaftliche Bildung im Sinne eines
+forschend-entdeckenden Lernens;
 
-### Art. 5 Tätigkeiten
+&nbsp;&nbsp;c) ihre emotionale und sozial-emotionale Bildung;
 
-1 Der Verein verwirklicht seinen Zweck insbesondere durch:
+&nbsp;&nbsp;d) die frühe Förderung von Kindern im Kindergarten und in der Unterstufe
+der Primarschule;
 
-&nbsp;&nbsp;a) **Forscherbühne** — öffentliche, unentgeltliche Veranstaltungen, an denen
-Forschende Experimente vor Publikum durchführen und naturwissenschaftliche
-Phänomene für Kinder und Jugendliche verständlich machen;
+&nbsp;&nbsp;e) die Leseförderung und die Förderung der Sprachkompetenz.
 
-&nbsp;&nbsp;b) **Lernbus** — präventive, individuelle Lernbegleitung im Einzel- oder
-Zweiersetting durch eine feste Bezugsperson, einschliesslich früher
-Deutschförderung;
+2 Der Verein verfolgt diesen Zweck gemeinnützig und uneigennützig im Interesse
+der Allgemeinheit. Er verfolgt keinen Erwerbszweck, keinen Selbsthilfezweck und
+keinen wirtschaftlichen Selbstzweck und erstrebt keinen Gewinn.
 
-&nbsp;&nbsp;c) **Gehirn und Gesellschaft** — altersgerechte, interaktive Lektionen an
-Schulen darüber, wie Lernen gelingt, wie ein gelingendes Miteinander entsteht
-und welche Rolle Menschen und Technologien in Bildungsprozessen spielen.
+### Art. 3 Adressatenkreis
 
-2 Der Verein kann alle weiteren Tätigkeiten aufnehmen, die dem Zweck dienen,
-insbesondere die Zusammenarbeit mit Schulen, Hochschulen, Behörden und anderen
-Organisationen, die Aus- und Weiterbildung der Lernbegleitenden, die
-Dokumentation und Evaluation seiner Arbeit sowie die Öffentlichkeitsarbeit.
+1 Die Tätigkeit des Vereins richtet sich an Kinder und Jugendliche allgemein,
+unabhängig von Herkunft, sozialer Lage, Religion oder Vorbildung.
 
-3 Die Angebote des Vereins stehen allen Kindern und Jugendlichen offen. Der
-Zugang darf nicht davon abhängen, was die Familie eines Kindes finanziell
-tragen kann.
+2 Der Verein wirkt darauf hin, dass möglichst alle Kinder und Jugendlichen
+gleichen Zugang zu seinen Angeboten erhalten.
 
-### Art. 6 Gemeinnützigkeit und Uneigennützigkeit
+3 Eine Bevorzugung von Mitgliedern des Vereins oder von ihnen nahestehenden
+Personen ist ausgeschlossen. Der Verein verfolgt keine Selbsthilfezwecke und
+keine Eigeninteressen seiner Mitglieder.
 
-1 Der Verein verfolgt ausschliesslich gemeinnützige Zwecke im Sinne von
-Art. 56 lit. g des Bundesgesetzes über die direkte Bundessteuer (DBG) und
-§ 66 Abs. 1 lit. f des Gesetzes über die direkten Steuern des Kantons
-Basel-Stadt. Er verfolgt weder Erwerbs- noch Selbsthilfezwecke und ist nicht
-auf Gewinn ausgerichtet.
+### Art. 4 Zugang unabhängig von der Zahlungsfähigkeit
 
-2 Die Mittel des Vereins sind ausschliesslich und unwiderruflich diesen Zwecken
-gewidmet.
+1 Der Zugang zu den Angeboten des Vereins ist unabhängig von der
+Zahlungsfähigkeit der Familie gewährleistet.
 
-3 Mitglieder und Organe erhalten keine Gewinnanteile, keine Zuwendungen aus dem
-Vereinsvermögen und keine anderen geldwerten Vorteile aus dem Vereinsvermögen.
+2 Soweit der Verein für Angebote Beiträge erhebt, erfolgen diese nicht
+kostendeckend und nicht zu Marktpreisen und sind nach wirtschaftlicher
+Leistungsfähigkeit abgestuft.
 
-4 Erhebt der Verein für einzelne Angebote Beiträge der Nutzenden, so dienen
-diese ausschliesslich der Deckung der Kosten. Sie werden nach der
-wirtschaftlichen Leistungsfähigkeit abgestuft und können ganz oder teilweise
-erlassen werden.
+3 Der Verein führt ein System von Ermässigungen und Freiplätzen, sodass kein Kind
+aus finanziellen Gründen ausgeschlossen wird.
+
+### Art. 5 Zweckverwirklichung
+
+1 Der Verein verwirklicht seinen Zweck insbesondere durch
+
+&nbsp;&nbsp;a) Frühförderangebote für Kinder im Kindergarten und in der Unterstufe
+der Primarschule;
+
+&nbsp;&nbsp;b) Leseförderung und Förderung der Sprachkompetenz;
+
+&nbsp;&nbsp;c) naturwissenschaftliche Bildungsangebote im Sinne eines
+forschend-entdeckenden Lernens;
+
+&nbsp;&nbsp;d) Angebote der emotionalen und sozial-emotionalen Bildung;
+
+&nbsp;&nbsp;e) projektbasierte, interessengeleitete, kooperative und
+spielerisch-experimentelle Lernformate, in denen Kinder und Jugendliche
+eigenständig erschaffen, ausprobieren und forschen;
+
+&nbsp;&nbsp;f) öffentliche, allgemein zugängliche und mitreissende Wissenschafts-
+und Lernveranstaltungen für junge Menschen, die Wissenschaft durch lebendige
+Experimente und Demonstrationen anschaulich und allgemeinverständlich erlebbar
+machen;
+
+&nbsp;&nbsp;g) Workshops, Kurse, Ferienangebote und Lernwerkstätten für Kinder und
+Jugendliche;
+
+&nbsp;&nbsp;h) Förderung individueller Talente und kreativer Ausdrucksformen mit
+Blick auf eine breite Wirkung im Allgemeininteresse;
+
+&nbsp;&nbsp;i) Aus- und Weiterbildung sowie Vernetzung von Lernbegleitenden,
+Lehrpersonen und Freiwilligen;
+
+&nbsp;&nbsp;j) Entwicklung und grundsätzlich unentgeltliche Bereitstellung von
+Lernmaterialien und frei zugänglichen Bildungsressourcen;
+
+&nbsp;&nbsp;k) Zusammenarbeit mit Schulen, Bibliotheken, Hochschulen und anderen
+gemeinnützigen Bildungsinstitutionen im In- und Ausland;
+
+&nbsp;&nbsp;l) Information und Sensibilisierung der Öffentlichkeit für frühe Bildung
+und gleiche Bildungschancen;
+
+sowie durch alle weiteren Massnahmen, die der Verwirklichung des Zwecks
+unmittelbar oder mittelbar dienen.
+
+2 Die Aufzählung in Absatz 1 ist nicht abschliessend. Der Verein kann zur
+Erfüllung seines Zwecks Personal anstellen und sich an anderen gemeinnützigen,
+ebenfalls steuerbefreiten Institutionen mit gleicher oder ähnlicher Zwecksetzung
+beteiligen, soweit dies dem Vereinszweck dient.
+
+3 *[neu]* Der Verein führt seine Angebote gegenwärtig namentlich unter den
+Bezeichnungen «Forscherbühne», «Lernbus» und «Gehirn und Gesellschaft». Diese
+Bezeichnungen begründen keine Bindung; der Vorstand kann sie ändern, aufgeben
+oder ergänzen.
+
+### Art. 6 Finanzierung; Gemeinnützigkeit, Uneigennützigkeit und ausschliessliche Mittelverwendung
+
+1 Die Mittel des Vereins bestehen namentlich aus Mitgliederbeiträgen, Spenden,
+Zuwendungen, Erbschaften und Vermächtnissen, Beiträgen der öffentlichen Hand und
+privater Förderer, den Erträgen des Vereinsvermögens sowie aus Beiträgen für
+zweckdienliche Angebote und Veranstaltungen.
+
+2 Eine allfällige wirtschaftliche Tätigkeit ist nur als dienendes Hilfsmittel
+zulässig; sie bleibt von klar untergeordneter Bedeutung gegenüber der
+gemeinnützigen Tätigkeit und tritt nicht zu Marktbedingungen in Wettbewerb mit
+gewinnorientierten Anbietern. Sie darf nie zum Selbstzweck werden. Allfällige
+Überschüsse werden vollumfänglich dem Vereinszweck zugeführt.
+
+3 Der Verein verfolgt weder Erwerbs- noch Selbsthilfezwecke und erstrebt keinen
+Gewinn. Sämtliche Mittel und Erträge des Vereins werden ausschliesslich und
+unwiderruflich dem gemeinnützigen Zweck gemäss Art. 2 gewidmet.
+
+4 Den Mitgliedern und Organmitgliedern stehen keine Anteile am Vereinsvermögen
+zu. Jede Ausschüttung von Gewinnen oder Vermögensteilen an Mitglieder ist
+ausgeschlossen; bei Austritt, Ausschluss oder Auflösung besteht kein Anspruch auf
+das Vereinsvermögen.
+
+5 *[neu]* Der Verein nimmt keine Zuwendungen an, die mit Auflagen verbunden sind,
+welche seinem Zweck widersprechen oder seine Unabhängigkeit gefährden.
 
 ---
 
-## III. Mittel, Haftung, Rechnungslegung
+## II. Haftung und Rechnungslegung
 
-### Art. 7 Mittel
+### Art. 7 Haftung
 
-1 Die Mittel des Vereins bestehen aus:
+Für die Verbindlichkeiten des Vereins haftet ausschliesslich das Vereinsvermögen.
+Eine persönliche Haftung der Mitglieder und eine Nachschusspflicht sind
+ausgeschlossen (Art. 75a ZGB).
 
-&nbsp;&nbsp;a) den Mitgliederbeiträgen;
+### Art. 8 Geschäftsjahr, Buchführung und Rechnungslegung
 
-&nbsp;&nbsp;b) Zuwendungen, Spenden, Legaten und Erbschaften;
+1 Das Geschäftsjahr entspricht dem Kalenderjahr. Das erste Geschäftsjahr beginnt
+mit der Gründung und endet am 31. Dezember [2026].
 
-&nbsp;&nbsp;c) Beiträgen von Stiftungen, Unternehmen, der öffentlichen Hand und Dritten;
+2 Der Vorstand führt die Geschäftsbücher des Vereins (Art. 69a ZGB).
 
-&nbsp;&nbsp;d) Beiträgen der Nutzenden nach Art. 6 Abs. 4;
-
-&nbsp;&nbsp;e) Erträgen aus Veranstaltungen und aus dem Vereinsvermögen;
-
-&nbsp;&nbsp;f) übrigen Einkünften.
-
-2 Der Verein nimmt keine Zuwendungen an, die mit Auflagen verbunden sind, welche
-seinem Zweck widersprechen oder seine Unabhängigkeit gefährden.
-
-### Art. 8 Haftung
-
-Für die Verbindlichkeiten des Vereins haftet ausschliesslich das
-Vereinsvermögen. Eine persönliche Haftung der Mitglieder und eine
-Nachschusspflicht sind ausgeschlossen (Art. 75a ZGB).
-
-### Art. 9 Buchführung und Rechnungslegung
-
-1 Der Vorstand führt die Geschäftsbücher des Vereins (Art. 69a ZGB).
-
-2 Er erstellt für jedes Geschäftsjahr einen Jahresbericht und eine
-Jahresrechnung und unterbreitet sie der ordentlichen Mitgliederversammlung.
+3 Er erstellt für jedes Geschäftsjahr einen Jahresbericht und eine Jahresrechnung
+und unterbreitet sie der ordentlichen Mitgliederversammlung.
 
 ---
 
-## IV. Mitgliedschaft
+## III. Mitgliedschaft
 
-### Art. 10 Mitglieder
+### Art. 9 Mitglieder
 
 1 Mitglied werden können natürliche Personen, die den Zweck des Vereins
 unterstützen (Einzelmitglieder), sowie juristische Personen und
@@ -161,15 +206,15 @@ Mitgliederversammlung vertritt.
 Förderkreis an. Die Zugehörigkeit zum Förderkreis begründet weder Mitgliedschaft
 noch Mitgliedschaftsrechte.
 
-### Art. 11 Erwerb der Mitgliedschaft
+### Art. 10 Erwerb der Mitgliedschaft
 
 1 Wer Mitglied werden will, richtet ein schriftliches Gesuch an den Vorstand.
 
 2 Der Vorstand entscheidet über die Aufnahme. Er ist nicht verpflichtet, eine
-Ablehnung zu begründen, und orientiert die nächste Mitgliederversammlung über
-die Aufnahmen.
+Ablehnung zu begründen, und orientiert die nächste Mitgliederversammlung über die
+Aufnahmen.
 
-### Art. 12 Mitgliederbeitrag
+### Art. 11 Mitgliederbeitrag
 
 1 Die Mitglieder leisten einen Jahresbeitrag (Art. 71 ZGB).
 
@@ -179,7 +224,7 @@ Ansätze vorsehen.
 
 3 Der Vorstand kann den Beitrag in Härtefällen ermässigen oder erlassen.
 
-### Art. 13 Erlöschen der Mitgliedschaft
+### Art. 12 Erlöschen der Mitgliedschaft
 
 1 Die Mitgliedschaft erlischt durch Austritt, Ausschluss, Streichung, Tod
 beziehungsweise Auflösung der juristischen Person.
@@ -195,15 +240,15 @@ endgültig.
 4 Ein Mitglied, das den Jahresbeitrag trotz zweimaliger schriftlicher Mahnung
 nicht bezahlt, kann vom Vorstand von der Mitgliederliste gestrichen werden.
 
-5 Ausgetretene, ausgeschlossene und gestrichene Mitglieder haben keinen Anspruch
-auf das Vereinsvermögen. Für die Beiträge haften sie nach Massgabe der Zeit ihrer
+5 Art. 6 Abs. 4 bleibt vorbehalten. Für die Beiträge haften ausgetretene,
+ausgeschlossene und gestrichene Mitglieder nach Massgabe der Zeit ihrer
 Mitgliedschaft (Art. 73 ZGB).
 
 ---
 
-## V. Organe
+## IV. Organe
 
-### Art. 14 Organe
+### Art. 13 Organe
 
 Die Organe des Vereins sind:
 
@@ -213,17 +258,17 @@ Die Organe des Vereins sind:
 
 &nbsp;&nbsp;c) die Revisionsstelle.
 
-### Art. 15 Mitgliederversammlung: Stellung und Einberufung
+### Art. 14 Mitgliederversammlung: Stellung und Einberufung
 
 1 Die Mitgliederversammlung ist das oberste Organ des Vereins
 (Art. 64 Abs. 1 ZGB).
 
-2 Die ordentliche Mitgliederversammlung findet jährlich innert sechs Monaten
-nach Abschluss des Geschäftsjahres statt.
+2 Die ordentliche Mitgliederversammlung findet jährlich innert sechs Monaten nach
+Abschluss des Geschäftsjahres statt.
 
-3 Eine ausserordentliche Mitgliederversammlung wird einberufen, wenn der
-Vorstand oder die Revisionsstelle es für nötig hält oder wenn ein Fünftel der
-Mitglieder es schriftlich unter Angabe der Verhandlungsgegenstände verlangt
+3 Eine ausserordentliche Mitgliederversammlung wird einberufen, wenn der Vorstand
+oder die Revisionsstelle es für nötig hält oder wenn ein Fünftel der Mitglieder
+es schriftlich unter Angabe der Verhandlungsgegenstände verlangt
 (Art. 64 Abs. 3 ZGB). Sie findet innert acht Wochen seit dem Begehren statt.
 
 4 Der Vorstand lädt die Mitglieder mindestens 20 Tage im Voraus schriftlich —
@@ -233,18 +278,19 @@ Verhandlungsgegenstände ein.
 5 Anträge von Mitgliedern zuhanden der ordentlichen Mitgliederversammlung sind
 dem Vorstand mindestens 30 Tage vor der Versammlung schriftlich einzureichen.
 
-### Art. 16 Befugnisse der Mitgliederversammlung
+### Art. 15 Befugnisse der Mitgliederversammlung
 
 1 Der Mitgliederversammlung stehen folgende unübertragbare Befugnisse zu:
 
 &nbsp;&nbsp;a) Genehmigung des Protokolls der letzten Versammlung;
 
-&nbsp;&nbsp;b) Abnahme des Jahresberichts, der Jahresrechnung und des Revisionsberichts;
+&nbsp;&nbsp;b) Abnahme des Jahresberichts, der Jahresrechnung und des
+Revisionsberichts;
 
 &nbsp;&nbsp;c) Entlastung des Vorstands;
 
-&nbsp;&nbsp;d) Wahl und Abberufung des Präsidiums, der übrigen Vorstandsmitglieder und
-der Revisionsstelle;
+&nbsp;&nbsp;d) Wahl und Abberufung des Präsidiums, der übrigen Vorstandsmitglieder
+und der Revisionsstelle;
 
 &nbsp;&nbsp;e) Festsetzung der Mitgliederbeiträge;
 
@@ -252,18 +298,18 @@ der Revisionsstelle;
 
 &nbsp;&nbsp;g) Beschlussfassung über Statutenänderungen;
 
-&nbsp;&nbsp;h) Entscheid über den Weiterzug eines Ausschlusses nach Art. 13 Abs. 3;
+&nbsp;&nbsp;h) Entscheid über den Weiterzug eines Ausschlusses nach Art. 12 Abs. 3;
 
-&nbsp;&nbsp;i) Beschlussfassung über die Auflösung des Vereins und die Verwendung des
-Vermögens;
+&nbsp;&nbsp;i) Beschlussfassung über die Auflösung des Vereins und die Verwendung
+des Vermögens;
 
-&nbsp;&nbsp;j) Genehmigung von Entschädigungen nach Art. 21 Abs. 2.
+&nbsp;&nbsp;j) Genehmigung von Entschädigungen nach Art. 20 Abs. 2.
 
 2 Sie beschliesst über alle Angelegenheiten, die nicht einem anderen Organ
 übertragen sind, und hat die Aufsicht über die Tätigkeit der Organe
 (Art. 65 ZGB).
 
-### Art. 17 Beschlussfassung der Mitgliederversammlung
+### Art. 16 Beschlussfassung der Mitgliederversammlung
 
 1 Die Mitgliederversammlung ist ohne Rücksicht auf die Zahl der anwesenden
 Mitglieder beschlussfähig.
@@ -278,8 +324,8 @@ entscheidet das Präsidium.
 4 Statutenänderungen bedürfen der Zustimmung von zwei Dritteln der abgegebenen
 Stimmen.
 
-5 Eine Änderung des Zwecks (Art. 4) und die Auflösung des Vereins bedürfen der
-Zustimmung von drei Vierteln der abgegebenen Stimmen. Art. 74 ZGB und Art. 27
+5 Eine Änderung des Zwecks (Art. 2) und die Auflösung des Vereins bedürfen der
+Zustimmung von drei Vierteln der abgegebenen Stimmen. Art. 74 ZGB und Art. 26
 dieser Statuten bleiben vorbehalten.
 
 6 Über Gegenstände, die nicht gehörig angekündigt worden sind, kann kein
@@ -287,13 +333,13 @@ Beschluss gefasst werden (Art. 67 Abs. 3 ZGB).
 
 7 Ein Mitglied ist vom Stimmrecht ausgeschlossen bei der Beschlussfassung über
 ein Rechtsgeschäft oder einen Rechtsstreit zwischen ihm, seiner Ehegattin oder
-seinem Ehegatten oder einer mit ihm in gerader Linie verwandten Person
-einerseits und dem Verein andererseits (Art. 68 ZGB).
+seinem Ehegatten oder einer mit ihm in gerader Linie verwandten Person einerseits
+und dem Verein andererseits (Art. 68 ZGB).
 
 8 Über die Verhandlungen und Beschlüsse wird ein Protokoll geführt, das vom
 Präsidium und von der protokollführenden Person unterzeichnet wird.
 
-### Art. 18 Teilnahme und Beschlussfassung ohne Versammlung
+### Art. 17 Teilnahme und Beschlussfassung ohne Versammlung
 
 1 Der Vorstand kann vorsehen, dass Mitglieder auf elektronischem Weg an der
 Versammlung teilnehmen und ihre Rechte ausüben. Die Übertragung muss die
@@ -304,7 +350,7 @@ Feststellung der Ergebnisse ermöglichen.
 werden, sofern nicht ein Mitglied innert zehn Tagen seit der Zustellung des
 Antrags die mündliche Beratung verlangt. Art. 66 Abs. 2 ZGB bleibt vorbehalten.
 
-### Art. 19 Vorstand: Zusammensetzung und Wahl
+### Art. 18 Vorstand: Zusammensetzung und Wahl
 
 1 Der Vorstand besteht aus mindestens drei und höchstens sieben Mitgliedern.
 
@@ -314,9 +360,10 @@ für das Aktuariat.
 
 3 Die Amtsdauer beträgt zwei Jahre. Wiederwahl ist möglich.
 
-4 Mindestens eine zeichnungsberechtigte Person muss Wohnsitz in der Schweiz haben.
+4 Mindestens eine zeichnungsberechtigte Person muss Wohnsitz in der Schweiz
+haben.
 
-### Art. 20 Aufgaben und Befugnisse des Vorstands
+### Art. 19 Aufgaben und Befugnisse des Vorstands
 
 1 Der Vorstand besorgt die Angelegenheiten des Vereins und vertritt ihn nach
 aussen (Art. 69 ZGB). Ihm stehen alle Befugnisse zu, die nicht einem anderen
@@ -326,29 +373,32 @@ Organ zugewiesen sind.
 
 &nbsp;&nbsp;a) Vollzug der Beschlüsse der Mitgliederversammlung;
 
-&nbsp;&nbsp;b) Ausgestaltung und Führung der Programme des Vereins sowie Erarbeitung von
-Jahresprogramm und Budget;
+&nbsp;&nbsp;b) Ausgestaltung und Führung der Angebote des Vereins sowie
+Erarbeitung von Jahresprogramm und Budget;
 
 &nbsp;&nbsp;c) Erstellung von Jahresbericht und Jahresrechnung;
 
 &nbsp;&nbsp;d) Entscheid über Aufnahme, Ausschluss und Streichung von Mitgliedern;
 
-&nbsp;&nbsp;e) Anstellung, Führung und Aufsicht des Personals und einer allfälligen
-Geschäftsleitung;
+&nbsp;&nbsp;e) Anstellung, Führung und Aufsicht des Personals und einer
+allfälligen Geschäftsleitung;
 
 &nbsp;&nbsp;f) Beschaffung der Mittel und Pflege der Beziehungen zu Zuwendenden;
 
-&nbsp;&nbsp;g) Erlass von Reglementen, namentlich eines Organisationsreglements, eines
-Entschädigungsreglements und eines Schutzkonzepts für die Arbeit mit Kindern und
-Jugendlichen;
+&nbsp;&nbsp;g) Festlegung der Beiträge nach Art. 4 Abs. 2 sowie der Ermässigungen
+und Freiplätze nach Art. 4 Abs. 3;
 
-&nbsp;&nbsp;h) Führung des Mitgliederverzeichnisses.
+&nbsp;&nbsp;h) Erlass von Reglementen, namentlich eines Organisationsreglements,
+eines Entschädigungsreglements und eines Schutzkonzepts für die Arbeit mit
+Kindern und Jugendlichen;
+
+&nbsp;&nbsp;i) Führung des Mitgliederverzeichnisses.
 
 3 Der Vorstand kann die operative Geschäftsführung ganz oder teilweise einer
 Geschäftsleitung übertragen. Die Aufsicht und die Verantwortung nach Abs. 1
 bleiben beim Vorstand.
 
-### Art. 21 Ehrenamt, Entschädigungen und Interessenkonflikte
+### Art. 20 Ehrenamt, Entschädigungen und Interessenkonflikte
 
 1 Die Mitglieder des Vorstands üben ihr Amt ehrenamtlich aus. Sie haben Anspruch
 auf Ersatz ihrer tatsächlichen Auslagen.
@@ -367,7 +417,7 @@ in der Jahresrechnung offengelegt. Art. 68 ZGB bleibt vorbehalten.
 
 4 Mitarbeitende des Vereins werden angemessen und marktüblich entlöhnt.
 
-### Art. 22 Beschlussfassung des Vorstands
+### Art. 21 Beschlussfassung des Vorstands
 
 1 Der Vorstand versammelt sich, sooft es die Geschäfte erfordern, mindestens
 jedoch viermal jährlich, sowie wenn ein Vorstandsmitglied es verlangt.
@@ -381,12 +431,12 @@ werden, sofern nicht ein Vorstandsmitglied die mündliche Beratung verlangt.
 
 4 Über die Verhandlungen und Beschlüsse wird ein Protokoll geführt.
 
-### Art. 23 Zeichnungsberechtigung
+### Art. 22 Zeichnungsberechtigung
 
 Der Verein wird durch Kollektivunterschrift zu zweien verpflichtet. Der Vorstand
 bezeichnet die zeichnungsberechtigten Personen.
 
-### Art. 24 Revisionsstelle
+### Art. 23 Revisionsstelle
 
 1 Die Mitgliederversammlung wählt für die Dauer von zwei Jahren eine
 Revisionsstelle. Als Revisionsstelle können natürliche oder juristische Personen
@@ -397,29 +447,29 @@ Wiederwahl ist möglich.
 Mitgliederversammlung schriftlich Bericht.
 
 3 Besteht eine gesetzliche Revisionspflicht nach Art. 69b ZGB, so richtet sich
-die Revision nach den Vorschriften des Obligationenrechts über die
-Revisionsstelle bei Aktiengesellschaften.
+die Revision nach den Vorschriften des Obligationenrechts über die Revisionsstelle
+bei Aktiengesellschaften.
 
 ---
 
-## VI. Schlussbestimmungen
+## V. Schlussbestimmungen
 
-### Art. 25 Handelsregister
+### Art. 24 Handelsregister
 
 Der Vorstand ist ermächtigt, den Verein in das Handelsregister eintragen zu
 lassen. Die Eintragungspflicht nach Art. 61 Abs. 2 ZGB bleibt vorbehalten.
 
-### Art. 26 Auflösung
+### Art. 25 Auflösung
 
 1 Die Mitgliederversammlung kann die Auflösung des Vereins jederzeit beschliessen
-(Art. 76 ZGB). Art. 17 Abs. 5 dieser Statuten ist anwendbar.
+(Art. 76 ZGB). Art. 16 Abs. 5 dieser Statuten ist anwendbar.
 
 2 Im Übrigen erfolgt die Auflösung von Gesetzes wegen nach Art. 77 ZGB.
 
 3 Die Liquidation wird vom Vorstand durchgeführt, sofern die
 Mitgliederversammlung nichts anderes beschliesst.
 
-### Art. 27 Verwendung des Vermögens (unabänderlich)
+### Art. 26 Verwendung des Vermögens (unabänderlich)
 
 1 Bei Auflösung des Vereins fällt das nach Tilgung der Schulden verbleibende
 Vermögen an eine von der Steuerpflicht befreite juristische Person mit Sitz in
@@ -431,7 +481,7 @@ nahestehende Personen ist ausgeschlossen.
 
 3 Diese Bestimmung ist unabänderlich.
 
-### Art. 28 Inkrafttreten
+### Art. 27 Inkrafttreten
 
 Diese Statuten wurden von der Gründungsversammlung vom [Datum] in Basel
 beschlossen und sind mit diesem Datum in Kraft getreten.
@@ -440,7 +490,7 @@ beschlossen und sind mit diesem Datum in Kraft getreten.
 
 Basel, [Datum]
 
-Für den Verein Lerngesellschaft:
+Für den Verein Lerngesellschaft / Learning Society:
 
 <br>
 
@@ -457,96 +507,124 @@ Für den Verein Lerngesellschaft:
 
 *Nicht Bestandteil der Statuten.*
 
-### 1. Was der Entwurf steuerlich voraussetzt
+### 1. Verhältnis zum Entwurf vom 22. Juni 2026
 
-Der Entwurf ist durchgehend auf ein Gesuch um Steuerbefreiung wegen
-Gemeinnützigkeit angelegt (Art. 56 lit. g DBG; § 66 Abs. 1 lit. f StG BS). Die
-Steuerverwaltung prüft nach den Kriterien des Kreisschreibens Nr. 12 der ESTV
-vom 8. Juli 1994. Vier Bestimmungen tragen dieses Gesuch:
+Der Junientwurf war ein Auszug: Präambel und Art. 1–6, also Zweck und die damit
+zusammenhängenden Bestimmungen. Diese Artikel sind hier **unverändert
+übernommen**, mit zwei gekennzeichneten Ergänzungen:
 
-- **Art. 6 Abs. 1 und 2** — ausschliessliche und unwiderrufliche Zweckwidmung,
-  kein Erwerbs- und kein Selbsthilfezweck.
-- **Art. 6 Abs. 3** — keine geldwerten Vorteile an Mitglieder.
-- **Art. 21 Abs. 1** — Ehrenamtlichkeit des Vorstands. Das Kreisschreiben
-  verlangt «Opfer» der Körperschaftsmitglieder; die Ehrenamtlichkeit ist der
-  sichtbarste Beleg dafür und entspricht dem, was die Website bereits
-  kommuniziert.
-- **Art. 27** — die unabänderliche Liquidationsklausel. Das Kreisschreiben
-  verlangt sie ausdrücklich als «unabänderliche Bestimmung im Gründungsstatut».
-  Deshalb steht die Unabänderlichkeit im Artikel selbst und ist in Art. 17 Abs. 5
-  vorbehalten.
+- **Art. 5 Abs. 3 (neu)** — nennt die drei gegenwärtigen Angebotsbezeichnungen
+  und stellt zugleich klar, dass sie den Verein nicht binden. Grund: Die
+  Steuerverwaltung wird die Statuten neben die Website legen. Der Junientwurf
+  beschreibt die Tätigkeiten bewusst generisch — das ist die haltbarere Lösung
+  und bleibt es —, aber eine Brücke zu den öffentlich verwendeten Namen erspart
+  Rückfragen. Wer diese Brücke nicht will, streicht den Absatz ersatzlos.
+- **Art. 6 Abs. 5 (neu)** — Ablehnung von Zuwendungen mit zweckwidrigen Auflagen.
 
-Hinzu kommt der offene Destinatärkreis (Art. 5 Abs. 3): ein zu enger Kreis
-schliesst die Gemeinnützigkeit aus.
+Neu hinzugekommen sind Art. 7–27: Haftung, Rechnungslegung, Mitgliedschaft,
+Organe und Schlussbestimmungen — alles, was Art. 60 Abs. 2 ZGB unter «Mittel und
+Organisation» verlangt und der Auszug noch nicht enthielt. Die
+Abschnittsgliederung (I.–V.) ist ebenfalls neu.
 
-### 2. Der heikelste Punkt: der Lernbus
+**Eine Bestimmung aus meinem früheren Entwurf ist gestrichen.** Ich hatte
+vorgesehen, Nutzendenbeiträge auf *Kostendeckung* zu verpflichten. Art. 4 Abs. 2
+des Junientwurfs geht weiter: nicht kostendeckend, nicht zu Marktpreisen. Das ist
+die richtige Fassung und ersetzt meine (siehe Ziff. 3).
 
-Individuelle Lernbegleitung gegen Entgelt ist wirtschaftlich dasselbe wie
-Nachhilfe — ein Markt mit gewerblichen Anbietern. Nach dem Kreisschreiben darf
-eine Erwerbstätigkeit «höchstens ein Mittel zum Zweck» sein und nicht die
-einzige wirtschaftliche Grundlage bilden. Art. 6 Abs. 4 zieht daraus die
-Konsequenz: Beiträge der Nutzenden nur kostendeckend, nach Leistungsfähigkeit
-abgestuft, erlassbar.
+### 2. Was das Steuerbefreiungsgesuch trägt
 
-Zwei Dinge sind vor dem Gesuch zu klären:
+Die Steuerverwaltung prüft nach Art. 56 lit. g DBG und § 66 Abs. 1 lit. f StG BS,
+inhaltlich nach dem Kreisschreiben Nr. 12 der ESTV vom 8. Juli 1994. Der Entwurf
+bedient dessen Kriterien durchgehend:
 
-- **Preisniveau.** Verlangt der Verein für den Lernbus, was der Markt verlangt,
-  wird die Steuerverwaltung genau hinschauen. Der Entwurf hält die Statuten
-  offen genug für Kostenbeiträge, verpflichtet aber auf Kostendeckung.
-- **Finanzierungsmix.** Der Verein sollte belegen können, dass Zuwendungen und
-  nicht die Nutzendenbeiträge die Tätigkeit tragen. Das ist eine Frage des
-  Budgets, nicht der Statuten — aber es entscheidet über das Gesuch.
+| Kriterium (KS Nr. 12) | Bestimmung |
+| --- | --- |
+| Allgemeininteresse | Art. 2 Abs. 1 lit. a und h, Art. 3 Abs. 1 |
+| Offener Destinatärkreis | Art. 3 Abs. 1 und 2 |
+| Uneigennützigkeit, «Opfer» | Art. 4 Abs. 2 und 3, Art. 20 Abs. 1 |
+| Kein Erwerbs-/Selbsthilfezweck | Art. 2 Abs. 2, Art. 3 Abs. 3, Art. 6 Abs. 2 und 3 |
+| Erwerbstätigkeit nur «Mittel zum Zweck» | Art. 6 Abs. 2 |
+| Ausschliessliche und unwiderrufliche Widmung | Art. 6 Abs. 3 |
+| Keine Vorteile an Mitglieder | Art. 3 Abs. 3, Art. 6 Abs. 4 |
+| Unabänderliche Liquidationsklausel | Art. 26 |
 
-Nebenbei: Die Website spricht von «investieren». Für die Statuten und für den
-Spendenabzug nach Art. 33 Abs. 1 lit. i DBG ist der massgebende Begriff die
-*freiwillige Zuwendung*; deshalb steht in Art. 7 «Zuwendungen, Spenden, Legate».
-Die Marketingsprache kann bleiben, die Belege und Statuten müssen die
-juristische verwenden.
+Art. 26 verlangt das Kreisschreiben ausdrücklich als «unabänderliche Bestimmung
+im Gründungsstatut»; deshalb steht die Unabänderlichkeit im Artikel selbst und
+ist in Art. 16 Abs. 5 vorbehalten.
 
-### 3. Die Gründerfrage
+Nicht in den Statuten steht die Nennung von Art. 56 lit. g DBG und § 66 Abs. 1
+lit. f StG BS. Der Junientwurf verwendet stattdessen die materielle Sprache des
+Gesetzes — das ist sauberer, weil Statuten keine Steuernormen zitieren müssen,
+die sich ändern können. Wer die Nennung im Gesuch dennoch will, setzt sie dort
+und nicht in die Statuten.
 
-Wenn eine Gründungsperson dem Verein zugleich Leistungen erbringt oder von ihm
-angestellt wird, ist die Uneigennützigkeit der wunde Punkt jedes Gesuchs.
-Art. 21 Abs. 2 und 3 regeln das offen statt es zu vermeiden: Ausstand,
-Marktüblichkeit, Offenlegung in der Jahresrechnung, und für Entschädigungen an
-Vorstandsmitglieder zusätzlich die Genehmigung durch die Mitgliederversammlung.
-Das ist strenger als nötig — aber es ist genau die Frage, die die
-Steuerverwaltung stellen wird.
+### 3. Die Preisregel ist eine strategische Festlegung, nicht nur eine juristische
 
-### 4. Offene Entscheide für die Gründungsversammlung
+Art. 4 Abs. 2 und Art. 6 Abs. 2 zusammen bedeuten: Der Verein darf für den
+Lernbus **nie** so viel verlangen, dass er die Kosten deckt, und nie so viel, wie
+der Markt verlangt — auch nicht von zahlungskräftigen Familien.
+
+Das ist die richtige Wahl. Individuelle Lernbegleitung gegen Entgelt ist
+wirtschaftlich Nachhilfe; ein Markt mit gewerblichen Anbietern. Wäre der Preis
+kostendeckend, fehlte genau das «Opfer», das das Kreisschreiben verlangt, und die
+Nähe zum Erwerbszweck wäre schwer zu widerlegen. Die Formulierung des
+Junientwurfs schneidet diese Diskussion ab, bevor sie beginnt.
+
+Der Preis dafür ist dauerhaft: Die Differenz zwischen Kosten und Beiträgen muss
+in jedem Jahr über Zuwendungen finanziert werden. Es gibt keinen Pfad, auf dem
+sich der Lernbus selbst trägt. Das sollte im Budget zum Gesuch sichtbar sein —
+und es ist eine Aussage, die auch gegenüber Zuwendenden trägt.
+
+Ein Detail der Konsistenz: Die Website spricht von «investieren». Für den
+Spendenabzug nach Art. 33 Abs. 1 lit. i DBG ist die *freiwillige Zuwendung* der
+massgebende Begriff; Art. 6 Abs. 1 verwendet ihn. Die Marketingsprache kann
+bleiben, die Spendenbestätigungen müssen die juristische verwenden.
+
+### 4. Die Gründerfrage
+
+Erbringt eine Gründungsperson dem Verein zugleich Leistungen oder wird von ihm
+angestellt, ist die Uneigennützigkeit der wunde Punkt jedes Gesuchs. Art. 20
+Abs. 2 und 3 regeln das offen statt es zu vermeiden: Ausstand, Marktüblichkeit,
+Offenlegung in der Jahresrechnung, für Entschädigungen an Vorstandsmitglieder
+zusätzlich die Genehmigung durch die Mitgliederversammlung. Strenger als das
+Gesetz verlangt — aber es ist genau die Frage, die gestellt werden wird.
+
+### 5. Offene Entscheide für die Gründungsversammlung
 
 | # | Frage | Vorschlag im Entwurf |
 | --- | --- | --- |
-| 1 | Handelsregistereintrag? | Art. 25 lässt es offen und ermächtigt den Vorstand. **Empfehlung: eintragen** — erleichtert Bankbeziehungen, Stiftungsgesuche und wirkt gegenüber Zuwendenden verbindlich. Kosten und Aufwand sind gering. |
-| 2 | Grösse des Vorstands | 3–7 (Art. 19 Abs. 1). |
-| 3 | Amtsdauer | 2 Jahre, Wiederwahl unbeschränkt. Eine Amtszeitbeschränkung wäre möglich, ist bei einem jungen Verein aber hinderlich. |
-| 4 | Revisionsstelle | Der Entwurf sieht sie zwingend vor, obwohl Art. 69b ZGB sie nicht verlangt. Das ist eine bewusste Wahl: Zuwendende und die Steuerverwaltung erwarten eine geprüfte Rechnung. Alternative: fakultativ, mit Verzicht bis zu einer Bilanzsumme von CHF […]. |
-| 5 | Mitgliederbeiträge | Höhe bewusst nicht in den Statuten (Art. 12 Abs. 2), damit sie ohne Statutenänderung angepasst werden kann. Ansätze für die Gründungsversammlung: Einzelmitglied CHF […], Kollektivmitglied CHF […]. |
-| 6 | Fördernde als Mitglieder? | Nein — Art. 10 Abs. 4 führt einen Förderkreis ohne Mitgliedschaft. Grund: Art. 67 Abs. 1 ZGB gibt allen Mitgliedern das gleiche Stimmrecht; eine Kategorie «Mitglieder ohne Stimmrecht» ist in der Lehre umstritten. Der Förderkreis vermeidet die Frage. |
-| 7 | Ausschluss ohne Begründung | Art. 13 Abs. 3 stützt sich auf Art. 72 Abs. 1 ZGB und schliesst damit die Anfechtung wegen des Grundes aus (Art. 72 Abs. 2 ZGB), gewährt aber den Weiterzug an die Mitgliederversammlung. Wer die härtere Variante will, streicht den Weiterzug; wer die weichere will, verlangt wichtige Gründe. |
-| 8 | Erstes Geschäftsjahr | Art. 3 Abs. 2 — Datum einsetzen. Bei einer Gründung im Herbst 2026 kann das erste Geschäftsjahr auch bis 31. Dezember 2027 verlängert werden. |
-| 9 | Zweitsprache | Art. 1 Abs. 2 erklärt die deutsche Fassung für massgebend. Eine englische Übersetzung ist möglich, sollte aber ausdrücklich als unverbindlich bezeichnet werden. |
+| 1 | Name mit Schrägstrich? | Art. 1 Abs. 1 übernimmt «Lerngesellschaft / Learning Society» aus dem Junientwurf. Für einen Handelsregistereintrag ist ein Name mit Schrägstrich zulässig, aber unhandlich. **Zu prüfen: «Lerngesellschaft» als Name, «Learning Society» als englische Bezeichnung** — falls der Eintrag kommt. |
+| 2 | Handelsregistereintrag? | Art. 24 lässt es offen und ermächtigt den Vorstand. **Empfehlung: eintragen** — erleichtert Bankbeziehungen und Stiftungsgesuche, wirkt gegenüber Zuwendenden verbindlich, Aufwand und Kosten sind gering. |
+| 3 | Grösse des Vorstands | 3–7 (Art. 18 Abs. 1). |
+| 4 | Amtsdauer | 2 Jahre, Wiederwahl unbeschränkt. Eine Amtszeitbeschränkung wäre möglich, bei einem jungen Verein aber hinderlich. |
+| 5 | Revisionsstelle | Der Entwurf sieht sie zwingend vor, obwohl Art. 69b ZGB sie nicht verlangt. Bewusste Wahl: Zuwendende und die Steuerverwaltung erwarten eine geprüfte Rechnung. Alternative: fakultativ, mit Verzicht bis zu einer Bilanzsumme von CHF […]. |
+| 6 | Mitgliederbeiträge | Höhe bewusst nicht in den Statuten (Art. 11 Abs. 2), damit sie ohne Statutenänderung anpassbar bleibt. Ansätze für die Gründungsversammlung: Einzelmitglied CHF […], Kollektivmitglied CHF […]. |
+| 7 | Fördernde als Mitglieder? | Nein — Art. 9 Abs. 4 führt einen Förderkreis ohne Mitgliedschaft. Grund: Art. 67 Abs. 1 ZGB gibt allen Mitgliedern das gleiche Stimmrecht; eine Kategorie «Mitglieder ohne Stimmrecht» ist in der Lehre umstritten. Der Förderkreis vermeidet die Frage. |
+| 8 | Ausschluss ohne Begründung | Art. 12 Abs. 3 stützt sich auf Art. 72 Abs. 1 ZGB und schliesst damit die Anfechtung wegen des Grundes aus (Art. 72 Abs. 2 ZGB), gewährt aber den Weiterzug an die Mitgliederversammlung. Härtere Variante: Weiterzug streichen. Weichere: wichtige Gründe verlangen. |
+| 9 | Erstes Geschäftsjahr | Art. 8 Abs. 1 — Datum einsetzen. Bei einer Gründung im Herbst 2026 kann das erste Geschäftsjahr auch bis 31. Dezember 2027 verlängert werden. |
+| 10 | Angebotsnamen in Art. 5 Abs. 3? | Siehe Ziff. 1. Streichen ist ohne Weiteres möglich. |
+| 11 | Sprachfassung | Der Junientwurf äussert sich nicht dazu. Falls eine englische Übersetzung entsteht, sollte sie ausdrücklich als unverbindlich bezeichnet und die deutsche Fassung für massgebend erklärt werden — entweder in Art. 1 oder im Beschluss der Gründungsversammlung. |
 
-### 5. Was bewusst nicht in den Statuten steht
+### 6. Was bewusst nicht in den Statuten steht
 
-- **Programmdetails** (Altersstufen, Settings, Tarife) — sie gehören in
-  Reglemente und das Jahresprogramm, sonst zwingt jede Anpassung des Lernbusses
-  zu einer Statutenänderung. Art. 5 nennt die drei Wege, ohne sie festzuzurren.
-- **Ein Schutzkonzept für die Arbeit mit Kindern** — Art. 20 Abs. 2 lit. g
-  verpflichtet den Vorstand dazu, der Inhalt gehört aber in ein Reglement. Für
-  einen Verein, dessen Mitarbeitende einzeln mit Kindern arbeiten, ist das kein
+- **Programmdetails** (Altersstufen, Settings, Tarife) — sie gehören in Reglemente
+  und das Jahresprogramm, sonst zwingt jede Anpassung des Lernbusses zu einer
+  Statutenänderung. Art. 5 beschreibt Formate, nicht Produkte.
+- **Ein Schutzkonzept für die Arbeit mit Kindern** — Art. 19 Abs. 2 lit. h
+  verpflichtet den Vorstand dazu, der Inhalt gehört in ein Reglement. Für einen
+  Verein, dessen Mitarbeitende einzeln mit Kindern arbeiten, ist das kein
   Nebenpunkt: Sonderprivatauszug, Vier-Augen-Prinzip, Meldewege.
-- **Datenschutz** — Vorgaben des DSG richten sich an den Verein unabhängig von
-  den Statuten.
+- **Datenschutz** — die Pflichten des DSG treffen den Verein unabhängig von den
+  Statuten.
 
-### 6. Gründung: die drei Schritte
+### 7. Gründung: die drei Schritte
 
 1. **Gründungsversammlung** mit mindestens zwei Personen. Sie beschliesst die
    Statuten, wählt den Vorstand und die Revisionsstelle. Protokoll führen.
 2. **Statuten und Protokoll unterzeichnen.** Der Verein erlangt die
    Rechtspersönlichkeit mit der Annahme der Statuten (Art. 60 Abs. 1 ZGB) — ein
    Handelsregistereintrag ist dafür nicht nötig.
-3. **Gesuch um Steuerbefreiung** an die Steuerverwaltung des Kantons
-   Basel-Stadt, mit Statuten, Gründungsprotokoll, Budget und einer Darstellung
-   der geplanten Tätigkeit. Sinnvollerweise vor dem Start der Mittelbeschaffung,
-   damit Zuwendende von Anfang an abzugsberechtigt spenden.
+3. **Gesuch um Steuerbefreiung** an die Steuerverwaltung des Kantons Basel-Stadt,
+   mit Statuten, Gründungsprotokoll, Budget und einer Darstellung der geplanten
+   Tätigkeit. Sinnvollerweise vor dem Start der Mittelbeschaffung, damit
+   Zuwendende von Anfang an abzugsberechtigt spenden.
