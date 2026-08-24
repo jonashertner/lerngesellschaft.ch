@@ -3,7 +3,7 @@ layout: base.njk
 lang: en
 title: Learning Society
 subtitle: A manifesto for relational learning
-description: Learning Society — A manifesto for relational learning. One-to-one tutoring practice in Zurich, Switzerland. By Jonas Hertner.
+description: Learning Society · A manifesto for relational learning. One-to-one tutoring practice in Zurich, Switzerland. By Jonas Hertner.
 permalink: /en/
 ---
 

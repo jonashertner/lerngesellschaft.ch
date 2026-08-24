@@ -3,7 +3,7 @@ layout: base.njk
 lang: de
 title: Lerngesellschaft
 subtitle: Ein Manifest für relationales Lernen
-description: Lerngesellschaft — Ein Manifest für relationales Lernen. Individuelle Begleitung von Schülerinnen und Schülern in Zürich. Von Jonas Hertner.
+description: Lerngesellschaft · Ein Manifest für relationales Lernen. Individuelle Begleitung von Schülerinnen und Schülern in Zürich. Von Jonas Hertner.
 permalink: /de/
 ---
 

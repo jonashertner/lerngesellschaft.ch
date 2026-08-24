@@ -18,8 +18,8 @@ export default {
     en: "https://learningsociety.ch",
   },
   description: {
-    de: "Lerngesellschaft — Ein Manifest für relationales Lernen. Individuelle Begleitung von Schülerinnen und Schülern in Zürich. Von Jonas Hertner.",
-    en: "Learning Society — A manifesto for relational learning. One-to-one tutoring in Zurich, Switzerland. By Jonas Hertner.",
+    de: "Lerngesellschaft · Ein Manifest für relationales Lernen. Individuelle Begleitung von Schülerinnen und Schülern in Zürich. Von Jonas Hertner.",
+    en: "Learning Society · A manifesto for relational learning. One-to-one tutoring in Zurich, Switzerland. By Jonas Hertner.",
   },
   keywords: {
     de: "Lerngesellschaft, relationales Lernen, Nachhilfe Zürich, individuelle Lernbegleitung, Jonas Hertner",

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{{ title }} — {% if lang == 'de' %}PDF-Ausgabe{% else %}PDF edition{% endif %}</title>
+  <title>{{ title }} · {% if lang == 'de' %}PDF-Ausgabe{% else %}PDF edition{% endif %}</title>
   <meta name="description" content="{{ description or site.tagline[lang] }}">
   <meta name="author" content="{{ site.author }}">
   <meta name="robots" content="noindex">
