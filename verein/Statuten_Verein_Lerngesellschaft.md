@@ -34,13 +34,13 @@ e) das Erkennen und Entfalten der unterschiedlichen Begabungen und Talente, stet
 
 **3** Die Angebote stehen allen Kindern und Jugendlichen offen, unabhängig von Herkunft, sozialer Lage, Religion und Vorbildung. Eine Bevorzugung von Mitgliedern oder ihnen nahestehenden Personen ist ausgeschlossen.
 
-**4** Soweit der Verein für seine Angebote Beiträge erhebt, sind diese nicht kostendeckend, liegen unter den Marktpreisen und sind nach der wirtschaftlichen Leistungsfähigkeit abgestuft. Ermässigungen und Freiplätze stellen sicher, dass kein Kind aus finanziellen Gründen ausgeschlossen wird.
+**4** Soweit der Verein für seine Angebote Beiträge erhebt, sind diese nach der wirtschaftlichen Leistungsfähigkeit abgestuft und decken die Kosten der Angebote insgesamt nicht. Ermässigungen und Freiplätze stellen sicher, dass kein Kind aus finanziellen Gründen ausgeschlossen wird.
 
 ### Art. 4 Mittel, Haftung und Geschäftsjahr
 
 **1** Die Mittel des Vereins bestehen aus Mitgliederbeiträgen, Spenden und Zuwendungen aller Art, Erbschaften und Vermächtnissen, Beiträgen der öffentlichen Hand und privater Förderer, Erträgen des Vereinsvermögens sowie Beiträgen für Angebote und Veranstaltungen.
 
-**2** Sämtliche Mittel sind ausschliesslich und unwiderruflich dem Vereinszweck gewidmet. Eine wirtschaftliche Tätigkeit ist nur als untergeordnetes Hilfsmittel zur Verwirklichung des Zwecks zulässig; Überschüsse werden vollumfänglich dem Vereinszweck zugeführt.
+**2** Sämtliche Mittel sind ausschliesslich und unwiderruflich dem Vereinszweck gewidmet. Eine Erwerbstätigkeit ist nur als untergeordnetes Mittel zur Verwirklichung des Zwecks zulässig; Überschüsse werden vollumfänglich dem Vereinszweck zugeführt.
 
 **3** Den Mitgliedern stehen keine Anteile am Vereinsvermögen zu, auch nicht bei Austritt, Ausschluss oder Auflösung. Jede Ausschüttung von Gewinnen oder Vermögensteilen an Mitglieder oder Organmitglieder ist ausgeschlossen.
 
