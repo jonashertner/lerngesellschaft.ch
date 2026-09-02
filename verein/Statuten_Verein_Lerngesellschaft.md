@@ -128,11 +128,11 @@ j) Auflösung des Vereins.
 
 **1** Die Mitglieder des Vorstands sind ehrenamtlich tätig. Sie haben Anspruch auf Ersatz ihrer tatsächlichen Auslagen.
 
-**2** Übernimmt ein Vorstandsmitglied ausnahmsweise operative Aufgaben, die über die Vorstandstätigkeit hinausgehen, kann dafür eine angemessene, marktübliche Entschädigung ausgerichtet werden. Der Vorstand beschliesst darüber unter Ausstand der betroffenen Person; der Beschluss bedarf der Genehmigung durch die Mitgliederversammlung.
+**2** Übernimmt ein Vorstandsmitglied ausnahmsweise operative Aufgaben, die über die Vorstandstätigkeit hinausgehen, kann dafür eine Entschädigung ausgerichtet werden. Der Vorstand beschliesst darüber unter Ausstand der betroffenen Person; der Beschluss bedarf der Genehmigung durch die Mitgliederversammlung.
 
 **3** Rechtsgeschäfte zwischen dem Verein und einem Vorstandsmitglied oder einer ihm nahestehenden Person erfolgen zu marktüblichen Bedingungen; der Vorstand beschliesst darüber unter Ausstand der betroffenen Person.
 
-**4** Entschädigungen nach Absatz 2 und Rechtsgeschäfte nach Absatz 3 werden in der Jahresrechnung offengelegt.
+**4** Entschädigungen und Löhne sind massvoll und im Hinblick auf die gemeinnützige Tätigkeit angemessen. Entschädigungen nach Absatz 2 und Rechtsgeschäfte nach Absatz 3 werden in der Jahresrechnung offengelegt.
 
 ### Art. 12 Revisionsstelle
 
@@ -146,7 +146,7 @@ j) Auflösung des Vereins.
 
 **1** Die Mitgliederversammlung kann die Auflösung des Vereins jederzeit beschliessen. Die Liquidation besorgt der Vorstand, sofern die Mitgliederversammlung nichts anderes beschliesst.
 
-**2** Das nach Tilgung der Schulden verbleibende Vermögen fällt an eine steuerbefreite juristische Person mit Sitz in der Schweiz, die einen gleichen oder ähnlichen Zweck verfolgt. Eine Verteilung unter die Mitglieder und ein Rückfall an die Gründerinnen und Gründer oder ihnen nahestehende Personen sind ausgeschlossen.
+**2** Das nach Tilgung der Schulden verbleibende Vermögen fällt an eine wegen gemeinnütziger oder öffentlicher Zwecke steuerbefreite juristische Person mit Sitz in der Schweiz, die einen gleichen oder ähnlichen Zweck verfolgt. Eine Verteilung unter die Mitglieder und ein Rückfall an die Gründerinnen und Gründer oder ihnen nahestehende Personen sind ausgeschlossen.
 
 **3** Absatz 2 ist unabänderlich.
 
