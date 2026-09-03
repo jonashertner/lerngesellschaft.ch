@@ -231,7 +231,7 @@ body.has-dock{ padding-bottom:5.5rem; }
 .stop h3{ font-size:1.22rem; padding-top:.5rem; }
 .stop p{ margin-top:.45rem; color:var(--ink-soft); max-width:52ch; }
 .stop .tag{ display:inline-block; margin-top:.55rem; font-size:.78rem; font-weight:740; letter-spacing:.08em; text-transform:uppercase; color:var(--teal-ink); }
-.route-bus{ position:absolute; left:-.35rem; top:-2.3rem; width:3.6rem; height:auto; z-index:2; pointer-events:none;
+.route-bus{ position:absolute; left:.05rem; top:-2.6rem; width:2.8rem; height:auto; z-index:2; pointer-events:none;
   transform:translateY(calc(var(--progress, 0) * var(--track, 0px))); transition:transform .15s linear; }
 .route-bus svg{ width:100%; height:auto; }
 @media (min-width:900px){
@@ -255,7 +255,9 @@ body.has-dock{ padding-bottom:5.5rem; }
 .beats{ list-style:none; margin:1rem 0 0; padding:0; counter-reset:beat; display:grid; gap:.6rem; grid-template-columns:repeat(auto-fit, minmax(min(100%, 11rem), 1fr)); }
 .beats li{ counter-increment:beat; position:relative; background:#fff; border-radius:14px; padding:.85rem .9rem .85rem 2.9rem; font-size:.95rem; line-height:1.45; color:var(--ink); border:1.5px solid var(--hairline); }
 .beats li::before{ content:counter(beat); position:absolute; left:.8rem; top:.8rem; width:1.5rem; height:1.5rem; border-radius:50%; background:var(--yellow); color:var(--violet); font-family:var(--display); font-weight:800; font-size:.9rem; display:grid; place-items:center; }
-.for-kids{ margin-top:1.6rem; background:#fff; border-radius:var(--radius); padding:1.5rem 1.5rem 1.6rem; border-left:8px solid var(--yellow); box-shadow:0 20px 40px -34px rgba(46,40,87,.5); }
+.for-kids{ position:relative; margin-top:1.8rem; background:#fff; border-radius:var(--radius); padding:1.4rem 1.4rem 1.5rem 5.2rem; border:3px dashed var(--teal); transform:rotate(-1deg); box-shadow:0 20px 40px -34px rgba(46,40,87,.5); }
+.for-kids::before{ content:""; position:absolute; left:1.1rem; top:1.5rem; width:3.2rem; height:2.4rem; background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 112 82'%3E%3Cpath fill='%237dbeb9' d='M0 30c0 30 26 52 56 52s56-22 56-52c0-8-6-12-12-12s-12 4-12 12c0 16-14 28-32 28S24 46 24 30c0-8-6-12-12-12S0 22 0 30z'/%3E%3Ccircle cx='56' cy='34' r='20' fill='%23efed99'/%3E%3C/svg%3E") no-repeat center / contain; }
+@media (max-width:420px){ .for-kids{ padding-left:4.4rem; } .for-kids::before{ width:2.6rem; left:.9rem; } }
 .for-kids .eyebrow{ margin-bottom:.5rem; }
 .for-kids p{ font-family:var(--display); font-weight:600; font-size:clamp(1.1rem, 1rem + .5vw, 1.35rem); line-height:1.35; color:var(--violet); }
 
@@ -264,6 +266,7 @@ body.has-dock{ padding-bottom:5.5rem; }
 .tile{ background:#fff; border-radius:var(--radius); padding:clamp(1.4rem, 1rem + 1.5vw, 2rem); display:grid; gap:.8rem; box-shadow:0 20px 40px -34px rgba(46,40,87,.5); }
 .tile .art{ display:none; width:100%; max-width:16rem; }
 @media (min-width:760px){ .tile .art{ display:block; } }
+.tile .art-seats{ display:block; max-width:12rem; }
 .tile .art svg{ width:100%; height:auto; }
 .tile p{ color:var(--ink-soft); }
 .tile address{ font-style:normal; font-weight:720; color:var(--violet); }
@@ -351,8 +354,8 @@ body.has-dock{ padding-bottom:5.5rem; }
 .people{ margin-top:2rem; display:grid; gap:1.2rem; grid-template-columns:repeat(auto-fit, minmax(min(100%, 16rem), 1fr)); }
 .person{ background:#fff; border-radius:var(--radius); padding:1.1rem 1.2rem; box-shadow:0 20px 40px -34px rgba(46,40,87,.5); display:grid; grid-template-columns:5rem 1fr; gap:.2rem 1rem; align-items:start; }
 .person .portrait{ grid-row:1 / span 3; width:5rem; aspect-ratio:1; border-radius:16px; background:var(--teal-pale); display:grid; place-items:center; overflow:hidden; }
-.person .portrait svg{ width:60%; height:auto; }
-@media (min-width:760px){ .person{ grid-template-columns:1fr; gap:.6rem; padding:1.3rem; } .person .portrait{ grid-row:auto; width:100%; border-radius:18px; } .person .portrait svg{ width:55%; } }
+.person .portrait svg{ width:78%; height:auto; }
+@media (min-width:760px){ .person{ grid-template-columns:1fr; gap:.6rem; padding:1.3rem; } .person .portrait{ grid-row:auto; width:100%; border-radius:18px; } .person .portrait svg{ width:66%; } }
 .person h3{ font-size:1.15rem; }
 .person .role{ font-size:.78rem; font-weight:740; letter-spacing:.1em; text-transform:uppercase; color:var(--teal-ink); }
 .person p{ color:var(--ink-soft); font-size:.95rem; }
