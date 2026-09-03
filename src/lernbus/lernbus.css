@@ -352,7 +352,12 @@ body.has-dock{ padding-bottom:5.5rem; }
 .subhero h1{ max-width:16ch; }
 .subhero .lead{ margin-top:1.1rem; }
 .people{ margin-top:2rem; display:grid; gap:1.2rem; grid-template-columns:repeat(auto-fit, minmax(min(100%, 16rem), 1fr)); }
-.person{ background:#fff; border-radius:var(--radius); padding:1.1rem 1.2rem; box-shadow:0 20px 40px -34px rgba(46,40,87,.5); display:grid; grid-template-columns:5rem 1fr; gap:.2rem 1rem; align-items:start; }
+.people-one{ grid-template-columns:1fr; max-width:34rem; }
+.people-one .person{ grid-template-columns:5.5rem minmax(0, 1fr); }
+.people-one .person .portrait{ grid-row:1 / span 3; width:5.5rem; }
+@media (min-width:760px){ .people-one .person{ grid-template-columns:9rem minmax(0, 1fr); gap:.4rem 1.4rem; } .people-one .person .portrait{ grid-row:1 / span 3; width:9rem; border-radius:18px; } .people-one .person .portrait svg{ width:78%; } }
+.person{ background:#fff; border-radius:var(--radius); padding:1.1rem 1.2rem; box-shadow:0 20px 40px -34px rgba(46,40,87,.5); display:grid; grid-template-columns:5rem minmax(0, 1fr); gap:.2rem 1rem; align-items:start; min-width:0; }
+.person > *{ min-width:0; overflow-wrap:anywhere; }
 .person .portrait{ grid-row:1 / span 3; width:5rem; aspect-ratio:1; border-radius:16px; background:var(--teal-pale); display:grid; place-items:center; overflow:hidden; }
 .person .portrait svg{ width:78%; height:auto; }
 @media (min-width:760px){ .person{ grid-template-columns:1fr; gap:.6rem; padding:1.3rem; } .person .portrait{ grid-row:auto; width:100%; border-radius:18px; } .person .portrait svg{ width:66%; } }
