@@ -25,6 +25,8 @@ export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/assets");
   eleventyConfig.addPassthroughCopy("src/vorschau");
   eleventyConfig.addPassthroughCopy("src/lernbus");
+  // The Lernbus pages are hand-written HTML: copy them byte for byte, never run them through Nunjucks.
+  eleventyConfig.ignores.add("src/lernbus/**");
   eleventyConfig.addPassthroughCopy("src/atlas");
 
   eleventyConfig.addTransform("sidenotes", function (content) {

@@ -8,8 +8,6 @@
 <meta name="description" content="The concept of the Lernbus: individual learning support for children from kindergarten to the third year of primary school, one child or two at a time, 60 to 90 minutes a week, at least six months. A programme of the Learning Society, Basel." />
 <meta name="robots" content="noindex" />
 <link rel="canonical" href="https://lerngesellschaft.ch/lernbus/en/konzept/" />
-<link rel="alternate" hreflang="de-CH" href="https://lerngesellschaft.ch/lernbus/konzept/" />
-<link rel="alternate" hreflang="en" href="https://lerngesellschaft.ch/lernbus/en/konzept/" />
 <meta property="og:title" content="Concept · Lernbus" />
 <meta property="og:description" content="The concept of the Lernbus: individual learning support for children from kindergarten to the third year of primary school, one child or two at a time, 60 to 90 minutes a week, at least six months." />
 <meta property="og:locale" content="en_GB" />
@@ -18,6 +16,7 @@
 <meta property="og:image" content="https://lerngesellschaft.ch/lernbus/img/social-card-en.png" />
 <link rel="icon" type="image/png" sizes="180x180" href="../../img/favicon.png" />
 <link rel="apple-touch-icon" href="../../img/apple-touch-icon.png" />
+<link rel="preload" href="../../img/logo.svg" as="image" type="image/svg+xml" />
 <link rel="preload" href="../../fonts/bricolage-latin.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="preload" href="../../fonts/hanken-latin.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="stylesheet" href="../../lernbus.css" />
@@ -28,7 +27,7 @@
 <header class="site-head">
   <div class="wrap">
     <a href="/lernbus/en/" class="brand" aria-label="Lernbus">
-      <svg viewBox="0 0 800 344" aria-hidden="true" focusable="false"><use href="../../img/logo.svg#logo"/></svg>
+      <img src="../../img/logo.svg" width="800" height="344" alt="" decoding="async" />
     </a>
     <div class="head-right">
       <nav class="nav" aria-label="Main navigation">
@@ -141,7 +140,7 @@
     <div class="wrap">
       <p class="eyebrow">Goals of the programme</p>
       <h2>What the support works towards.</h2>
-      <ul class="bullets mt-2">
+      <ul class="bullets mt-2" role="list">
         <li>Strengthening <b>learning competence, self-worth and self-efficacy</b></li>
         <li>Fostering <b>curiosity and intrinsic motivation</b></li>
         <li>Developing <b>resilience</b> and ways of dealing with setbacks</li>
@@ -158,7 +157,7 @@
     <div class="wrap">
       <p class="eyebrow">Who it is for, and how to get in</p>
       <h2>Who the Lernbus is there for.</h2>
-      <ul class="bullets mt-2">
+      <ul class="bullets mt-2" role="list">
         <li>Children from the <b>first year of kindergarten to the third year of primary school</b> (roughly ages four to nine)</li>
         <li>Particularly suited to children whose <b>learning and future capacities</b> would benefit from deliberate support</li>
         <li><b>Early German language support from age 3</b>, with one or two children at a time</li>
@@ -172,7 +171,7 @@
     <div class="wrap">
       <p class="eyebrow">How it works</p>
       <h2>From first conversation to the learning box.</h2>
-      <div class="route"><ol class="stops">
+      <div class="route"><ol class="stops" role="list">
         <li class="stop"><span class="sign" aria-hidden="true">1</span><h3>A first conversation</h3><p>We sit down with the parents: what does this child need, what do you hope for, what is possible.</p></li>
         <li class="stop"><span class="sign" aria-hidden="true">2</span><h3>The right mentor</h3><p>The child is matched with a learning mentor who fits their interests and their needs.</p></li>
         <li class="stop"><span class="sign" aria-hidden="true">3</span><h3>The sessions</h3><p>60 to 90 minutes with one or two children, over at least six months. The content follows the child's interests and brings together play, the creative, the linguistic, the mathematical and the emotional.</p></li>
@@ -236,22 +235,23 @@
           <p><a href="mailto:info@lernbus.ch?subject=Lernbus%20request">info@lernbus.ch</a></p>
         </div>
       </div>
-      <form class="form" id="anfrage" action="mailto:info@lernbus.ch?subject=Lernbus%20request" method="post" enctype="text/plain" data-to="info@lernbus.ch" data-subject="Lernbus request" novalidate>
+      <form class="form" id="anfrage" action="mailto:info@lernbus.ch?subject=Lernbus%20request" method="post" enctype="text/plain" data-to="info@lernbus.ch" data-subject="Lernbus request" data-greeting="Hello" data-error="Please fill in the highlighted fields." novalidate>
         <div class="form-grid">
           <div class="field"><label for="f-name">Your name</label><input id="f-name" name="name" type="text" autocomplete="name" required data-label="Name" /></div>
-          <div class="field"><label for="f-contact">Email or phone</label><input id="f-contact" name="contact" type="text" autocomplete="email" required data-label="Contact" /></div>
+          <div class="field"><label for="f-contact">Email or phone</label><input id="f-contact" name="contact" type="text" required data-label="Contact" /></div>
           <div class="field"><label for="f-role">You are asking as</label><select id="f-role" name="role" required data-label="Asking as"><option value="" selected disabled>Please choose</option><option>Parents</option><option>School</option><option>Kindergarten</option><option>Day-care centre</option><option>Other</option></select></div>
           <div class="field"><label for="f-stufe">The child's year</label><select id="f-stufe" name="stufe" required data-label="Year group"><option value="" selected disabled>Please choose</option><option>Younger than kindergarten (German support from age 3)</option><option>Kindergarten, year 1</option><option>Kindergarten, year 2</option><option>Primary school, year 1</option><option>Primary school, year 2</option><option>Primary school, year 3</option></select></div>
           <div class="field"><label for="f-setting">Preferred setting</label><select id="f-setting" name="setting" required data-label="Preferred setting"><option value="" selected disabled>Please choose</option><option>One-to-one</option><option>In a pair</option><option>Still open</option></select></div>
           <div class="field"><label for="f-quartier">Neighbourhood <span class="hint">(optional)</span></label><input id="f-quartier" name="quartier" type="text" data-label="Neighbourhood" /></div>
-          <div class="field wide"><label for="f-msg">Message <span class="hint">(optional)</span></label><textarea id="f-msg" name="msg" data-label="Message"></textarea></div>
+          <div class="field wide"><label for="f-msg">Message <span class="hint">(optional)</span></label><textarea id="f-msg" name="msg" maxlength="1000" data-label="Message"></textarea></div>
           <label class="check"><input type="checkbox" name="lang" data-label="The child should build up German and speak it more confidently." /> The child should build up German and speak it more confidently.</label>
           <label class="check"><input type="checkbox" name="reduced" data-label="I would like to learn more about places made possible by others." /> I would like to learn more about places made possible by others.</label>
         </div>
+        <p class="form-error" id="form-error" role="alert" hidden></p>
         <div class="form-actions"><button type="submit" class="btn btn-primary">Send request</button></div>
         <p class="form-note">The form opens your mail app with a ready-made message to <a href="mailto:info@lernbus.ch">info@lernbus.ch</a>. Nothing is stored on this website.</p>
-        <div class="sent" id="sent" hidden aria-live="polite">
-          <p><b>Your mail app should open now.</b> If it does not: copy the text and send it to <a href="mailto:info@lernbus.ch">info@lernbus.ch</a>.</p>
+        <div class="sent" id="sent" hidden>
+          <p id="sent-lead" tabindex="-1"><b>Your mail app should open now.</b> If it does not: copy the text and send it to <a href="mailto:info@lernbus.ch">info@lernbus.ch</a>.</p>
           <pre id="sent-text"></pre>
           <div class="row"><a id="open-mail" class="btn btn-primary" href="mailto:info@lernbus.ch">Open mail app</a><button id="copy-text" type="button" class="btn btn-secondary">Copy text</button><span id="copied" hidden>Copied.</span></div>
         </div>
@@ -277,7 +277,7 @@
 <footer class="foot">
   <div class="wrap">
     <a class="foot-logo" href="/lernbus/en/" aria-label="Lernbus">
-      <svg viewBox="0 0 800 344" aria-hidden="true" focusable="false"><use href="../../img/logo-light.svg#logo"/></svg>
+      <img src="../../img/logo-light.svg" width="800" height="344" alt="" loading="lazy" decoding="async" />
     </a>
     <p>Lernbus · a programme of the Learning Society<br />Münsterplatz 17, 4051 Basel · <a href="mailto:info@lernbus.ch">info@lernbus.ch</a><br />Association · starting September 2026</p>
     <nav aria-label="Legal">

@@ -8,13 +8,9 @@
 <meta name="description" content="The Lernbus accompanies children from the first year of kindergarten to the third year of primary school: once a week, one child or two, always with the same person. No screens, a Lernkiste of their own. Münsterplatz 17, Basel, from September 2026." />
 <meta name="robots" content="noindex,follow" />
 <link rel="canonical" href="https://lerngesellschaft.ch/lernbus/en/" />
-<link rel="alternate" hreflang="de-CH" href="https://lerngesellschaft.ch/lernbus/" />
-<link rel="alternate" hreflang="en" href="https://lerngesellschaft.ch/lernbus/en/" />
-<link rel="alternate" hreflang="x-default" href="https://lerngesellschaft.ch/lernbus/" />
 <meta property="og:title" content="Lernbus · One-to-one learning support for children in Basel" />
 <meta property="og:description" content="One child or two, never a class, always the same person. From the first year of kindergarten to the third year of primary school. Open to every child. Starting September 2026 on Münsterplatz." />
 <meta property="og:locale" content="en_GB" />
-<meta property="og:locale:alternate" content="de_CH" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://lerngesellschaft.ch/lernbus/en/" />
 <meta property="og:site_name" content="Lernbus" />
@@ -25,6 +21,7 @@
 <meta name="twitter:card" content="summary_large_image" />
 <link rel="icon" type="image/png" sizes="180x180" href="../img/favicon.png" />
 <link rel="apple-touch-icon" href="../img/apple-touch-icon.png" />
+<link rel="preload" href="../img/logo.svg" as="image" type="image/svg+xml" />
 <link rel="preload" href="../fonts/bricolage-latin.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="preload" href="../fonts/hanken-latin.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="stylesheet" href="../lernbus.css" />
@@ -51,7 +48,7 @@
 <header class="site-head">
   <div class="wrap">
     <a href="/lernbus/en/" class="brand" aria-label="Lernbus, home">
-      <svg viewBox="0 0 800 344" role="img" aria-hidden="true" focusable="false"><use href="../img/logo.svg#logo"/></svg>
+      <img src="../img/logo.svg" width="800" height="344" alt="" decoding="async" />
     </a>
     <div class="head-right">
       <nav class="nav" aria-label="Main navigation">
@@ -90,7 +87,7 @@
         <p class="eyebrow">A programme of the Learning Society, Basel</p>
         <h1 id="hero-title"><span class="hl">Love learning</span>, from the start.</h1>
         <p class="lead">The Lernbus accompanies children from the first year of kindergarten to the third year of primary school: once a week, one child or two, always with the same person. With books, pencils, a magnifying glass and clay instead of a screen. Open to every child, with German language support from the age of three.</p>
-        <ul class="facts" aria-label="The essentials">
+        <ul class="facts" role="list" aria-label="The essentials">
           <li><svg viewBox="0 0 20 20" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="6" r="3.2"/><path d="M4 17c0-3.5 2.7-6 6-6s6 2.5 6 6"/></g></svg>Kindergarten to Year 3</li>
           <li><svg viewBox="0 0 20 20" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="6.5" cy="6.5" r="2.6"/><circle cx="13.5" cy="6.5" r="2.6"/><path d="M1.5 17c0-3 2.2-5 5-5s5 2 5 5M9 17c0-3 2-5 4.5-5s4.5 2 4.5 5"/></g></svg>One child or two</li>
           <li><svg viewBox="0 0 20 20" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 18s-6-5.2-6-9.5a6 6 0 0 1 12 0C16 12.8 10 18 10 18z"/><circle cx="10" cy="8.5" r="2.2"/></g></svg>Münsterplatz 17, Basel</li>
@@ -153,7 +150,7 @@
       <p class="eyebrow">Why the Lernbus</p>
       <h2 id="warum-title" class="measure">We come before a child decides there is something they cannot do.</h2>
       <p class="lead mt-2">Most support programmes begin once something has already gone wrong: after poor marks, when a child has already formed a view of themselves. That view is more stubborn than any rule of arithmetic. The Lernbus begins before that, in the years that decide how a child feels about learning. It is open to every child, whatever they bring with them and wherever they come from.</p>
-      <ul class="convictions">
+      <ul class="convictions" role="list">
         <li class="conviction reveal">
           <div class="ico" aria-hidden="true"><svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="30" fill="#fbfaf3"/><path fill="#7dbeb9" d="M14 30c0 12 8 20 18 20s18-8 18-20c0-3.5-2.6-5-5-5s-5 1.5-5 5c0 5-3.5 9-8 9s-8-4-8-9c0-3.5-2.6-5-5-5s-5 1.5-5 5z"/><circle cx="32" cy="28" r="8" fill="#efed99"/></svg></div>
           <h3>Children learn from people, not from programmes.</h3>
@@ -181,7 +178,7 @@
       <p class="lead mt-2">From the first conversation to a child's own Lernkiste. Everything starts with getting to know each other, with no obligation.</p>
 
       <div class="route">
-        <ol class="stops" aria-label="The seven steps">
+        <ol class="stops" role="list" aria-label="The seven steps">
           <li class="stop"><span class="sign" aria-hidden="true">1</span>
             <h3>Getting to know each other</h3>
             <p>We sit down with you: what does your child need, what do you hope for, what is possible. This is also where we talk about times and price. No obligation.</p>
@@ -311,11 +308,11 @@
           <h2 id="lernkiste-title">Build, count, tell stories, look closely.</h2>
           <p class="lead mt-2">There is no screen in the Lernbus. We work with books, paper and pencils, with a magnifying glass, scales and clay, and with whatever can be found outside. What a child has worked out for themselves stays.</p>
           <p class="mt-1 measure">The content follows your child's interests and strengths. Reading, writing and arithmetic are not left out: where a child gets stuck, we practise it along the way. We accompany children who are still building up their German from the age of three, playfully, through stories, songs and conversation. And everything a child has thought, tried and discovered goes into their Lernkiste. It belongs to the child.</p>
-          <ul class="objects" aria-label="What we work with">
+          <ul class="objects" role="list" aria-label="What we work with">
             <li><b>Magnifying glass</b> looking closely</li><li><b>Scales</b> comparing and counting</li><li><b>Clay</b> shaping and staying with it</li><li><b>Books</b> language and stories</li><li><b>Pencils and paper</b> ideas of your own</li><li><b>Chestnuts and leaves</b> discovering outside</li><li><b>Paper planes</b> trying things out, mistakes allowed</li>
           </ul>
           <h3 class="mt-3">One session, for example</h3>
-          <ol class="beats" aria-label="What a session can look like">
+          <ol class="beats" role="list" aria-label="What a session can look like">
             <li>Arriving and telling what happened this week.</li>
             <li>Investigating something: with the magnifying glass, the scales or clay, depending on what is on the child's mind.</li>
             <li>Reading, writing, counting, wherever it fits in.</li>
@@ -401,10 +398,10 @@
           <p class="muted mt-1">Prefer to talk? Leave us your number and we will call you back.</p>
         </div>
       </div>
-      <form class="form" id="anfrage" action="mailto:info@lernbus.ch?subject=Lernbus%3A%20introductory%20conversation" method="post" enctype="text/plain" data-to="info@lernbus.ch" data-subject="Lernbus: introductory conversation" novalidate>
+      <form class="form" id="anfrage" action="mailto:info@lernbus.ch?subject=Lernbus%3A%20introductory%20conversation" method="post" enctype="text/plain" data-to="info@lernbus.ch" data-subject="Lernbus: introductory conversation" data-greeting="Hello" data-error="Please fill in the highlighted fields." novalidate>
         <div class="form-grid">
           <div class="field"><label for="f-name">Your name</label><input id="f-name" name="name" type="text" autocomplete="name" required data-label="Name" /></div>
-          <div class="field"><label for="f-contact">Email or phone</label><input id="f-contact" name="contact" type="text" autocomplete="email" required data-label="Contact" /></div>
+          <div class="field"><label for="f-contact">Email or phone</label><input id="f-contact" name="contact" type="text" required data-label="Contact" /></div>
           <div class="field"><label for="f-stufe">Your child's year</label>
             <select id="f-stufe" name="stufe" required data-label="Year group">
               <option value="" selected disabled>Please choose</option>
@@ -416,17 +413,18 @@
               <option>Primary school, year 3</option>
             </select>
           </div>
-          <div class="field"><label for="f-when">When can we best reach you? <span class="hint">(optional)</span></label><input id="f-when" name="when" type="text" placeholder="e.g. weekdays after 5 pm" data-label="Reachable" /></div>
-          <div class="field wide"><label for="f-msg">What is it about? <span class="hint">(optional)</span></label><textarea id="f-msg" name="msg" data-label="Message"></textarea></div>
+          <div class="field"><label for="f-when">When can we best reach you? <span class="hint">(optional, e.g. weekdays after 5 pm)</span></label><input id="f-when" name="when" type="text" data-label="Reachable" /></div>
+          <div class="field wide"><label for="f-msg">What is it about? <span class="hint">(optional, up to 1000 characters)</span></label><textarea id="f-msg" name="msg" maxlength="1000" data-label="Message"></textarea></div>
           <label class="check"><input type="checkbox" name="lang" data-label="My child should build up German and speak it more confidently." /> My child should build up German and speak it more confidently.</label>
           <label class="check"><input type="checkbox" name="reduced" data-label="Please tell me about places made possible by others." /> Please tell me about places made possible by others.</label>
         </div>
         <p class="form-note"><svg viewBox="0 0 20 20" aria-hidden="true" style="width:1em;height:1em;vertical-align:-.12em;margin-right:.3em"><rect x="4" y="9" width="12" height="9" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M7 9V6.5a3 3 0 0 1 6 0V9" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>The form opens your mail app with a ready-made message to <a href="mailto:info@lernbus.ch">info@lernbus.ch</a>. Nothing is stored on this website.</p>
+        <p class="form-error" id="form-error" role="alert" hidden></p>
         <div class="form-actions">
           <button type="submit" class="btn btn-primary">Request a conversation</button>
         </div>
-        <div class="sent" id="sent" hidden aria-live="polite">
-          <p><b>Your mail app should open now.</b> If it does not: copy the text and send it to <a href="mailto:info@lernbus.ch">info@lernbus.ch</a>.</p>
+        <div class="sent" id="sent" hidden>
+          <p id="sent-lead" tabindex="-1"><b>Your mail app should open now.</b> If it does not: copy the text and send it to <a href="mailto:info@lernbus.ch">info@lernbus.ch</a>.</p>
           <pre id="sent-text"></pre>
           <div class="row">
             <a id="open-mail" class="btn btn-primary" href="mailto:info@lernbus.ch">Open mail app</a>
@@ -481,7 +479,7 @@
 <footer class="foot">
   <div class="wrap">
     <a class="foot-logo" href="/lernbus/en/" aria-label="Lernbus">
-      <svg viewBox="0 0 800 344" aria-hidden="true" focusable="false"><use href="../img/logo-light.svg#logo"/></svg>
+      <img src="../img/logo-light.svg" width="800" height="344" alt="" loading="lazy" decoding="async" />
     </a>
     <p>Lernbus · a programme of the Learning Society<br />Münsterplatz 17, 4051 Basel · <a href="mailto:info@lernbus.ch">info@lernbus.ch</a><br />Association · starting September 2026</p>
     <nav aria-label="Legal">
