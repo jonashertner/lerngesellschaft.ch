@@ -18,13 +18,18 @@
   }
 
   /* mobile action dock: shown once the hero call to action has scrolled away, hidden at the form */
-  var dock = d.querySelector('.dock'), heroCta = d.querySelector('.hero-cta'), contact = d.getElementById('kontakt');
+  var dock = d.querySelector('.dock'), heroCta = d.querySelector('.hero-cta'), contact = d.getElementById('kontakt') || d.getElementById('anmelden');
   if (dock && heroCta && 'IntersectionObserver' in w) {
-    d.body.classList.add('has-dock');
-    var heroIn = true, contactIn = false;
-    var update = function () { dock.classList.toggle('is-visible', !heroIn && !contactIn); };
-    new IntersectionObserver(function (es) { heroIn = es[0].isIntersecting; update(); }, { rootMargin: '-56px 0px 0px 0px' }).observe(heroCta);
+    var passed = false, contactIn = false;
+    var update = function () {
+      var show = passed && !contactIn;
+      dock.classList.toggle('is-visible', show);
+      d.body.classList.toggle('has-dock', show);
+    };
+    /* shown only once the reader has scrolled past the hero buttons, never on the first screen */
+    new IntersectionObserver(function (es) { passed = es[0].boundingClientRect.bottom < 0; update(); }, { threshold: [0, 1] }).observe(heroCta);
     if (contact) new IntersectionObserver(function (es) { contactIn = es[0].isIntersecting; update(); }, { rootMargin: '0px 0px -30% 0px' }).observe(contact);
+    w.addEventListener('scroll', function () { var r = heroCta.getBoundingClientRect(); var p = r.bottom < 0; if (p !== passed) { passed = p; update(); } }, { passive: true });
   }
 
   /* the route: line fills and the bus drives as you scroll */
