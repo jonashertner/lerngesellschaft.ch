@@ -1,101 +1,93 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="theme-color" content="#fbfaf3" />
 <title>Concept · Learning Bus</title>
 <meta name="description" content="The Learning Bus is a preventive, pedagogically grounded support programme for children from the first year of kindergarten to the third year of primary school. One or two children at a time, 60 to 90 minutes, at least six months. A programme of Lerngesellschaft, Basel." />
 <meta name="robots" content="noindex" />
 <link rel="canonical" href="https://learningsociety.ch/learning-bus/concept/" />
 <meta property="og:title" content="Concept · Learning Bus" />
-<meta property="og:description" content="Preventive learning support, one or two children at a time, before difficult experiences of learning set in." />
-<meta property="og:locale" content="en" />
+<meta property="og:description" content="The Learning Bus is a preventive, pedagogically grounded support programme for children from the first year of kindergarten to the third year of primary school. One or two children at a time, 60 to 90 minutes, at least six months. A programme of Lerngesellschaft, Basel." />
+<meta property="og:locale" content="en_GB" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://learningsociety.ch/learning-bus/concept/" />
+<meta property="og:image" content="https://lerngesellschaft.ch/lernbus/img/social-card-en.png" />
 <link rel="icon" type="image/png" sizes="180x180" href="../../img/favicon.png" />
 <link rel="apple-touch-icon" href="../../img/apple-touch-icon.png" />
 <link rel="preload" href="../../fonts/bricolage-latin.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="preload" href="../../fonts/hanken-latin.woff2" as="font" type="font/woff2" crossorigin />
-<link rel="stylesheet" href="../../styles.css" />
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"EducationalOrganization","name":"Lernbus","areaServed":"Basel","description":"A preventive, pedagogically grounded support programme for children from the first year of kindergarten to the third year of primary school, working with one or two children at a time. Early German language support from age three. A programme of Lerngesellschaft.","address":"Münsterplatz 17, 4051 Basel","email":"team@jonashertner.com","parentOrganization":{"@type":"NGO","name":"Lerngesellschaft / Learning Society","url":"https://lerngesellschaft.ch/"}}
-</script>
+<link rel="stylesheet" href="../../lernbus.css" />
 </head>
 <body>
 <a href="#main" class="skip">Skip to content</a>
 
 <header class="site-head">
   <div class="wrap">
-    <a href="#top" class="brand">
-      <img class="brand-logo" src="../../img/logo.png" alt="Lernbus" width="800" height="344" />
-      <span>A programme of Lerngesellschaft · Basel</span>
+    <a href="/lernbus/en/" class="brand" aria-label="Lernbus">
+      <svg viewBox="0 0 800 344" aria-hidden="true" focusable="false"><use href="../../img/logo.svg#logo"/></svg>
     </a>
     <div class="head-right">
       <nav class="nav" aria-label="Main navigation">
         <a href="#ansatz" class="navlink">Approach</a>
         <a href="#umsetzung" class="navlink">How it works</a>
-        <a href="../index.html" class="navlink">Overview</a>
+        <a href="../../en/" class="navlink">Parents' page</a>
       </nav>
-      <a href="../../konzept/index.html" class="lang" aria-label="Auf Deutsch">DE</a>
+      <a href="../../konzept/" class="lang" lang="de" hreflang="de-CH" aria-label="Diese Seite auf Deutsch lesen">DE</a>
+      <a href="#anmelden" class="btn btn-primary head-cta">Request a place</a>
+      <details class="menu">
+        <summary aria-label="Menu">
+          <svg class="ico-open" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>
+          <svg class="ico-close" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>
+        </summary>
+        <nav class="menu-panel" aria-label="Menu">
+          <a href="#ansatz">Approach</a>
+          <a href="#umsetzung">How it works</a>
+          <a href="../../en/">Parents' page</a>
+          <a href="#anmelden" class="is-primary">Request a place</a>
+        </nav>
+      </details>
     </div>
   </div>
 </header>
 
 <main id="main">
-
-  <!-- HERO -->
-  <section class="hero" id="top">
-    <div class="hero-stage" aria-hidden="true">
-      <div class="liquid-fallback" style="background:
-        radial-gradient(42% 46% at 74% 34%, var(--violet), transparent 62%),
-        radial-gradient(40% 44% at 86% 68%, var(--cyan), transparent 60%),
-        radial-gradient(36% 42% at 56% 74%, var(--pink), transparent 60%),
-        var(--bg)"></div>
-    </div>
-    <div class="hero-scrim" aria-hidden="true"></div>
-    <div class="hero-inner">
-      <div class="wrap">
-        <p class="eyebrow" style="--dot:var(--violet); margin-bottom:1.1rem">So that children love learning now</p>
-        <h1>Learning at their <span class="pop">own pace</span>, with a <span class="pop">person</span> at their side.</h1>
-        <p class="lead">The Learning Bus is a preventive, pedagogically grounded support programme for children in their early learning years. It is open to every child, whatever they bring with them and wherever they come from. We begin early, to preserve and strengthen confidence and the joy of learning.</p>
-        <div class="hero-cta">
-          <a href="#anmelden" class="btn btn-pink">Request a place</a>
-          <a href="#umsetzung" class="btn btn-ghost">How it works</a>
-        </div>
-      </div>
+  <section class="subhero" aria-labelledby="k-title">
+    <div class="wrap">
+      <p class="eyebrow">So that children love learning now</p>
+      <h1 id="k-title">Learning at their <span class="hl">own pace</span>, with a <span class="hl">person</span> at their side.</h1>
+      <p class="lead">The Learning Bus is a preventive, pedagogically grounded support programme for children in their early learning years. It is open to every child, whatever they bring with them and wherever they come from. We begin early, to preserve and strengthen confidence and the joy of learning.</p>
+      <div class="hero-cta"><a href="#anmelden" class="btn btn-primary">Request a place</a><a href="#umsetzung" class="btn btn-secondary">How it works</a></div>
     </div>
   </section>
 
-  <!-- AT A GLANCE -->
-  <section class="section" style="padding-bottom:0">
+<section class="section">
     <div class="wrap">
-      <p class="eyebrow reveal" style="--dot:var(--violet)">At a glance</p>
-      <h2 class="big reveal">One-to-one learning support for a strong educational path.</h2>
-      <div class="lb-facts reveal" style="--dot:var(--violet)">
+      <p class="eyebrow">At a glance</p>
+      <h2>One-to-one learning support for a strong educational path.</h2>
+      <div class="facts-grid">
         <div class="fact"><b>Kindergarten to year 3</b><span>early German language support from age 3</span></div>
         <div class="fact"><b>60 to 90 minutes</b><span>per session, as a rule weekly</span></div>
         <div class="fact"><b>At least six months</b><span>trust and progress take time</span></div>
         <div class="fact"><b>One child or two</b><span>never a whole class</span></div>
       </div>
-      <p class="lead reveal" style="margin-top:2rem">At the centre is the lasting development of a positive relationship to learning. In this way the Learning Bus strengthens children to shape their own educational path with confidence, independence, and an eye on what is ahead.</p>
+      <p class="lead mt-2">At the centre is the lasting development of a positive relationship to learning. In this way the Learning Bus strengthens children to shape their own educational path with confidence, independence, and an eye on what is ahead.</p>
     </div>
   </section>
 
-  <!-- WHY -->
-  <section class="section" style="--dot:var(--violet)">
-    <div class="accent-blob" style="width:30vw;height:30vw;background:var(--violet);right:-8vw;top:2vw"></div>
+<section class="section">
     <div class="wrap">
-      <div class="detail">
-        <div class="dsec">
+      <div class="prose mt-3">
+        <div>
           <h2>Why the Learning Bus is needed</h2>
           <p>Our world is changing fast, and it already asks new things of children. Alongside subject knowledge, what will count most is independence, the ability to solve problems, creativity, and a constructive way of meeting difficulty. National assessments of basic competences show that not all children reach the expected minimum standards in language and mathematics even in primary school: according to Switzerland's national assessment, already in the second year of primary school almost one child in four does not reach basic competence in mathematics, and in reading it is just over one in five.</p>
         </div>
-        <div class="dsec">
+        <div>
           <h2>Beginning early rather than correcting late</h2>
           <p>Children with a greater need for support, or with fewer resources for learning at home, are affected most. Without early support, gaps risk hardening into lasting disadvantage. At the same time all children benefit from the programme, because the capacities that will matter are deliberately built. The Learning Bus begins early and strengthens children as a whole, before difficult experiences of learning set in.</p>
         </div>
-        <div class="dsec">
+        <div>
           <h2>Creating the conditions, not forcing the result</h2>
           <p>Learning cannot be ordered into being. As with a plant, you cannot make the growing happen; you can only create the conditions for it: time, attention, something worth wondering at, and a person who watches and believes the child can. That is precisely the work of the Learning Bus.</p>
         </div>
@@ -103,50 +95,48 @@
     </div>
   </section>
 
-  <!-- APPROACH -->
-  <section class="section tint" id="ansatz" style="--dot:var(--violet)">
+<section class="section band-teal" id="ansatz">
     <div class="wrap">
-      <p class="eyebrow reveal" style="--dot:var(--violet)">Approach and effect</p>
-      <h2 class="big reveal">What we work on with the children.</h2>
-      <div class="detail" style="margin-top:2.2rem">
-        <div class="dsec">
-          <h2>The relationship comes first</h2>
+      <p class="eyebrow">Approach and effect</p>
+      <h2>What we work on with the children.</h2>
+      <div class="prose mt-3">
+        <div>
+          <h3>The relationship comes first</h3>
           <p>Children learn from people, not from programmes. What a child dares to ask depends on how safe it feels. That is why the same person stays at its side for months: someone who knows its name, knows its detours, and remembers what it was working on last week. This reliability is not a pleasant extra. It is the ground everything else stands on.</p>
         </div>
-        <div class="dsec">
-          <h2>Starting broad, not narrowing early</h2>
+        <div>
+          <h3>Starting broad, not narrowing early</h3>
           <p>At this age the point is not to find one talent and drop everything else. Children need breadth first: building, counting, telling, drawing, examining something outdoors. A child who has tried many things finds it easier later to find what really fits, and can carry what it has learnt from one field into another. An early lead in a single subject says little about how far a child will go. And no child is without talent: talents simply look different from one another, and school cannot make all of them equally visible.</p>
         </div>
-        <div class="dsec">
-          <h2>Future capacities and foundations at once</h2>
+        <div>
+          <h3>Future capacities and foundations at once</h3>
           <p>The Learning Bus is oriented towards central future capacities: emotional intelligence, creativity, communication, and critical, connected thinking. Children learn to think for themselves, to see how things connect, to develop their own ways to a solution, and to use mistakes as chances to learn. They are given strategies for opening up even the less exciting material, and for staying with something when the first impulse is reluctance. Alongside this, gaps in the basic competences of language and mathematics are deliberately worked through and consolidated.</p>
         </div>
-        <div class="dsec">
-          <h2>Learning needs visible progress</h2>
+        <div>
+          <h3>Learning needs visible progress</h3>
           <p>Children develop a love of learning above all when they experience that their own effort leads to success. Progress they notice themselves strengthens their confidence in their own abilities, increases their persistence, and makes them readier to take on something new. Research from Erasmus University Rotterdam indicates that people learn with the greatest concentration and persistence when they can perceive their own progress. The Learning Bus makes learning visible and creates the moments of success that sustain motivation and a positive relationship to learning.</p>
         </div>
-        <div class="dsec">
-          <h2>The right challenge at the right time</h2>
+        <div>
+          <h3>The right challenge at the right time</h3>
           <p>Learning works best when a task matches a child's individual stage of development. The support therefore follows the child's interests, strengths and starting point. It happens in the optimal learning zone: demanding enough to prompt development, and shaped so that success remains possible. Mistakes are understood as an important part of learning and used as opportunities to learn. A child who is not allowed to get anything wrong eventually stops trying anything new.</p>
         </div>
-        <div class="dsec">
-          <h2>Early German language support</h2>
+        <div>
+          <h3>Early German language support</h3>
           <p>Language is the foundation of learning, of belonging, and of success in education. Early German language support helps children from the age of three to build the foundations of language, to express themselves with more assurance, and to take part in lessons with more confidence. It happens playfully, in stories, songs and conversations, because play is how young children learn most. It too takes place with one or two children at a time. The programme strengthens children in their confidence, their resilience, and their readiness to learn independently.</p>
         </div>
-        <div class="dsec">
-          <h2>A protected space, without screens</h2>
+        <div>
+          <h3>A protected space, without screens</h3>
           <p>The learning space is trusting, protected, and built on what the child already brings. Screens have no place in it: a screen interrupts this space and replaces the slow way to an answer with a quick one. The work is done with books, paper and pencils, with a magnifying glass, scales and clay, and with whatever can be found outdoors. The long way round is not lost time: what a child has worked out with effort stays, while what went down quickly and smoothly is often gone again just as quickly.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- GOALS -->
-  <section class="section" style="--dot:var(--violet)">
+<section class="section">
     <div class="wrap">
-      <p class="eyebrow reveal" style="--dot:var(--violet)">Goals of the programme</p>
-      <h2 class="big reveal">What the support works towards.</h2>
-      <ul class="bullets reveal" style="--dot:var(--violet)">
+      <p class="eyebrow">Goals of the programme</p>
+      <h2>What the support works towards.</h2>
+      <ul class="bullets mt-2">
         <li>Strengthening <b>learning competence, self-worth and self-efficacy</b></li>
         <li>Fostering <b>curiosity and intrinsic motivation</b></li>
         <li>Developing <b>resilience</b> and ways of dealing with setbacks</li>
@@ -159,12 +149,11 @@
     </div>
   </section>
 
-  <!-- WHO IT IS FOR -->
-  <section class="section tint" style="--dot:var(--violet)">
+<section class="section band-teal">
     <div class="wrap">
-      <p class="eyebrow reveal" style="--dot:var(--violet)">Who it is for, and how to get in</p>
-      <h2 class="big reveal">Who the Learning Bus is there for.</h2>
-      <ul class="bullets reveal" style="--dot:var(--violet)">
+      <p class="eyebrow">Who it is for, and how to get in</p>
+      <h2>Who the Learning Bus is there for.</h2>
+      <ul class="bullets mt-2">
         <li>Children from the <b>first year of kindergarten to the third year of primary school</b> (roughly ages four to nine)</li>
         <li>Particularly suited to children whose <b>learning and future capacities</b> would benefit from deliberate support</li>
         <li><b>Early German language support from age 3</b>, with one or two children at a time</li>
@@ -174,143 +163,129 @@
     </div>
   </section>
 
-  <!-- HOW IT WORKS -->
-  <section class="section" id="umsetzung" style="--dot:var(--violet)">
-    <div class="accent-blob" style="width:28vw;height:28vw;background:var(--cyan);left:-8vw;bottom:-6vw"></div>
+<section class="section" id="umsetzung">
     <div class="wrap">
-      <p class="eyebrow reveal" style="--dot:var(--violet)">How it works</p>
-      <h2 class="big reveal">From first conversation to the learning box.</h2>
-      <div class="steps reveal">
-        <div class="step"><span class="dotn">1</span><h3>A first conversation</h3><p>We sit down with the parents: what does this child need, what do you hope for, what is possible.</p></div>
-        <div class="step"><span class="dotn">2</span><h3>The right mentor</h3><p>The child is matched with a learning mentor who fits their interests and their needs.</p></div>
-        <div class="step"><span class="dotn">3</span><h3>The sessions</h3><p>60 to 90 minutes with one or two children, over at least six months. The content follows the child's interests and brings together play, the creative, the linguistic, the mathematical and the emotional.</p></div>
-        <div class="step"><span class="dotn">4</span><h3>The learning box</h3><p>Ideas, work, questions and discoveries collect in a personal Lernkiste that makes progress visible.</p></div>
-        <div class="step"><span class="dotn">5</span><h3>Regular talks with parents</h3><p>We stay in touch with the parents and support child and parents as needed, including accompaniment to meetings where that helps. These talks rest on the child's documented development and the Lernkiste: both show what has grown over the months.</p></div>
-        <div class="step"><span class="dotn">6</span><h3>Small groups in the school holidays</h3><p>In the holidays, small groups deepen and consolidate what has been worked on during the term.</p></div>
-      </div>
+      <p class="eyebrow">How it works</p>
+      <h2>From first conversation to the learning box.</h2>
+      <div class="route"><ol class="stops">
+        <li class="stop"><span class="sign" aria-hidden="true">1</span><h3>A first conversation</h3><p>We sit down with the parents: what does this child need, what do you hope for, what is possible.</p></li>
+        <li class="stop"><span class="sign" aria-hidden="true">2</span><h3>The right mentor</h3><p>The child is matched with a learning mentor who fits their interests and their needs.</p></li>
+        <li class="stop"><span class="sign" aria-hidden="true">3</span><h3>The sessions</h3><p>60 to 90 minutes with one or two children, over at least six months. The content follows the child's interests and brings together play, the creative, the linguistic, the mathematical and the emotional.</p></li>
+        <li class="stop"><span class="sign" aria-hidden="true">4</span><h3>The learning box</h3><p>Ideas, work, questions and discoveries collect in a personal Lernkiste that makes progress visible.</p></li>
+        <li class="stop"><span class="sign" aria-hidden="true">5</span><h3>Regular talks with parents</h3><p>We stay in touch with the parents and support child and parents as needed, including accompaniment to meetings where that helps. These talks rest on the child's documented development and the Lernkiste: both show what has grown over the months.</p></li>
+        <li class="stop"><span class="sign" aria-hidden="true">6</span><h3>Small groups in the school holidays</h3><p>In the holidays, small groups deepen and consolidate what has been worked on during the term.</p></li>
+      </ol><div class="route-bus" aria-hidden="true"><svg viewBox="0 -34 520 366" focusable="false"><g transform="translate(232 -28)"><path fill="#7dbeb9" d="M0 30c0 30 26 52 56 52s56-22 56-52c0-8-6-12-12-12s-12 4-12 12c0 16-14 28-32 28S24 46 24 30c0-8-6-12-12-12S0 22 0 30z"/><circle cx="56" cy="34" r="20" fill="#efed99"/></g><path fill="#493f80" d="M40 120c0-36 22-54 60-58l230-14c42-2 68 12 88 44l50 84c12 20 18 38 18 60v26c0 16-10 26-26 26H66c-16 0-26-10-26-26z"/><rect x="78" y="92" width="76" height="66" rx="16" fill="#fbfaf3"/><rect x="170" y="88" width="76" height="66" rx="16" fill="#fbfaf3"/><rect x="262" y="84" width="76" height="66" rx="16" fill="#fbfaf3"/><path fill="#fbfaf3" d="M356 86h40c18 0 30 8 38 22l30 54c6 10 0 20-12 20H366c-8 0-12-4-12-12V98c0-8 4-12 12-12z"/><circle cx="462" cy="222" r="10" fill="#efed99"/><circle cx="130" cy="288" r="38" fill="#493f80"/><circle cx="130" cy="288" r="15" fill="#fbfaf3"/><circle cx="400" cy="288" r="38" fill="#493f80"/><circle cx="400" cy="288" r="15" fill="#fbfaf3"/></svg></div></div>
 
-      <div class="detail" style="margin-top:clamp(3rem, 2rem + 3vw, 4.5rem)">
-        <div class="dsec">
-          <h2>From Münsterplatz into the neighbourhoods</h2>
+      <div class="prose mt-3">
+        <div>
+          <h3>From Münsterplatz into the neighbourhoods</h3>
           <p>We start at Münsterplatz: a fixed, quiet place where children arrive and to which they gladly return. Later the Learning Bus joins in and drives to where the children are, right into the neighbourhoods. The way to learning should be a short one.</p>
         </div>
-        <div class="dsec">
-          <h2>Making learning visible</h2>
+        <div>
+          <h3>Making learning visible</h3>
           <p>Over the course of the support, children document their ideas, their work, their questions and their discoveries in a personal Lernkiste, a learning box of their own. This makes individual development and learning visible, and open to reflection. The approach follows the strengths-based understanding of education in the Reggio Emilia tradition. What matters is not the result alone, but the path towards it. Children experience that their thoughts, their ideas and their progress are valuable and are noticed. Nothing is marked, everything is kept, and the box belongs to the child.</p>
         </div>
-        <div class="dsec">
-          <h2>Open to all, made possible for many</h2>
+        <div>
+          <h3>Open to all, made possible for many</h3>
           <p>Learning support costs CHF 100 per hour, with a reduced rate in the pair setting. Some of the places are made possible by people who invest in children, so that they can take part even when money at home is tight. When you fund a place, you give a child time with a person who believes in them.</p>
         </div>
       </div>
 
-      <p class="vignette">A girl is working on a mathematics problem that seemed unsolvable to her a few weeks ago. She thinks, discards one approach, tries again, and finally finds her own way to the answer. In that moment more than a subject goal is reached: the child experiences herself as capable and able to act.</p>
+      <p class="vignette mt-3">A girl is working on a mathematics problem that seemed unsolvable to her a few weeks ago. She thinks, discards one approach, tries again, and finally finds her own way to the answer. In that moment more than a subject goal is reached: the child experiences herself as capable and able to act.</p>
 
-      <div class="detail" style="margin-top:clamp(3rem, 2rem + 3vw, 4.5rem)">
-        <div class="dsec">
-          <h2>When self-efficacy becomes real</h2>
+      <div class="prose mt-3">
+        <div>
+          <h3>When self-efficacy becomes real</h3>
           <p>Experiences of self-efficacy like this one are at the heart of the Learning Bus. Children recognise that their effort has an effect, that learning is a process of development, and that difficulty can be met through persistence, curiosity and their own thinking. Out of this grows a positive and lasting relationship to learning.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- QUALITY -->
-  <section class="section tint" style="--dot:var(--violet)">
+<section class="section band-teal">
     <div class="wrap">
-      <p class="eyebrow reveal" style="--dot:var(--violet)">Conditions and quality</p>
-      <h2 class="big reveal">Who works with the children.</h2>
-      <div class="detail" style="margin-top:2.2rem">
-        <div class="dsec">
-          <h2>Our learning mentors</h2>
+      <p class="eyebrow">Conditions and quality</p>
+      <h2>Who works with the children.</h2>
+      <div class="prose mt-3">
+        <div>
+          <h3>Our learning mentors</h3>
           <p>Our learning mentors work reflectively, with empathy, and on a sound professional footing. Because they come from a range of professional backgrounds, children have varied and well-matched people to turn to, who can pick up on their individual interests and needs.</p>
         </div>
-        <div class="dsec">
-          <h2>Quality that is checked</h2>
+        <div>
+          <h3>Quality that is checked</h3>
           <p>The quality of the programme is secured and continually developed through team meetings, professional exchange, evaluation, and further training.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- REQUEST A PLACE -->
-  <section class="section" id="anmelden">
+  <section class="section band-violet contact" id="anmelden" aria-labelledby="anmelden-title">
     <div class="wrap">
-      <p class="eyebrow" style="--dot:var(--violet)">Request a place</p>
-      <h2 class="big" style="max-width:22ch">Sign your child up.</h2>
-      <p class="lead" style="margin-top:1.2rem">The Learning Bus starts in September 2026 with a small number of places. It begins with a first conversation. Tell us briefly who you are asking for, and we will be in touch within a few days. Learning support costs CHF 100 per hour; everything else we discuss in person.</p>
-      <p class="lead" style="margin-top:1rem"><a class="morelink" href="../index.html">Are you a parent? Everything that matters, in short <span>&rarr;</span></a></p>
-      <div class="book-card">
-        <form id="anfrage">
-          <div class="form-grid">
-            <div class="field"><label for="f-name">Your name</label><input id="f-name" name="name" type="text" autocomplete="name" required /></div>
-            <div class="field"><label for="f-contact">Email or phone</label><input id="f-contact" name="contact" type="text" autocomplete="email" required /></div>
-            <div class="field"><label for="f-role">You are asking as</label>
-              <select id="f-role" name="role" required>
-                <option value="" selected disabled>Please choose</option>
-                <option>Parent</option><option>School</option><option>Kindergarten</option><option>Day-care centre</option><option>Other</option>
-              </select>
-            </div>
-            <div class="field"><label for="f-age">Child's age</label>
-              <select id="f-age" name="age" required>
-                <option value="" selected disabled>Please choose</option>
-                <option>3 years</option><option>4 years</option><option>5 years</option><option>6 years</option><option>7 years</option><option>8 years</option><option>9 years</option>
-              </select>
-            </div>
-            <div class="field"><label for="f-setting">Preferred setting</label>
-              <select id="f-setting" name="setting" required>
-                <option value="" selected disabled>Please choose</option>
-                <option>One child</option><option>Two children</option><option>Not decided yet</option>
-              </select>
-            </div>
-            <div class="field"><label for="f-quartier">Neighbourhood (optional)</label><input id="f-quartier" name="quartier" type="text" /></div>
-            <div class="field wide"><label for="f-msg">Message (optional)</label><textarea id="f-msg" name="msg"></textarea></div>
-            <label class="check wide"><input type="checkbox" name="lang" /> My child should build up German and speak it more confidently.</label>
-            <label class="check wide"><input type="checkbox" name="reduced" /> I would like to know more about places made possible by others.</label>
-          </div>
-          <div style="margin-top:1.4rem"><button type="submit" class="btn btn-pink">Send request</button></div>
-        </form>
-        <p class="book-note">No obligation. Your request goes as an email directly to info@lernbus.ch and is not stored anywhere else.</p>
+      <div>
+        <p class="eyebrow">Request a place</p>
+        <h2 id="anmelden-title">Register your child.</h2>
+        <p class="lead mt-2">The Lernbus starts in September 2026 with a small number of places. It begins with an introductory conversation. Tell us briefly who you are asking for and we will get back to you within a few days. Learning support costs CHF 100 per hour; everything else we discuss in person.</p>
+        <p class="mt-2"><a class="link-arrow" style="color:#fff" href="../../en/">Are you a parent? Everything important, in brief <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11m-4-5 5 5-5 5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></p>
+        <div class="contact-direct">
+          <p class="muted">Prefer to write directly?</p>
+          <p><a href="mailto:info@lernbus.ch?subject=Learning%20Bus%20request">info@lernbus.ch</a></p>
+        </div>
       </div>
+      <form class="form" id="anfrage" data-to="info@lernbus.ch" data-subject="Learning Bus request" novalidate>
+        <div class="form-grid">
+          <div class="field"><label for="f-name">Your name</label><input id="f-name" name="name" type="text" autocomplete="name" required data-label="Name" /></div>
+          <div class="field"><label for="f-contact">Email or phone</label><input id="f-contact" name="contact" type="text" autocomplete="email" inputmode="email" required data-label="Contact" /></div>
+          <div class="field"><label for="f-role">You are asking as</label><select id="f-role" name="role" required data-label="Asking as"><option value="" selected disabled>Please choose</option><option>Parents</option><option>School</option><option>Kindergarten</option><option>Day care</option><option>Other</option></select></div>
+          <div class="field"><label for="f-stufe">The child is in</label><select id="f-stufe" name="stufe" required data-label="Year"><option value="" selected disabled>Please choose</option><option>Aged 3 to 4 (early German support)</option><option>Kindergarten, year 1</option><option>Kindergarten, year 2</option><option>Primary school, year 1</option><option>Primary school, year 2</option><option>Primary school, year 3</option></select></div>
+          <div class="field"><label for="f-setting">Preferred setting</label><select id="f-setting" name="setting" required data-label="Preferred setting"><option value="" selected disabled>Please choose</option><option>One to one</option><option>In a pair</option><option>Still open</option></select></div>
+          <div class="field"><label for="f-quartier">Neighbourhood <span class="hint">(optional)</span></label><input id="f-quartier" name="quartier" type="text" data-label="Neighbourhood" /></div>
+          <div class="field wide"><label for="f-msg">Message <span class="hint">(optional)</span></label><textarea id="f-msg" name="msg" data-label="Message"></textarea></div>
+          <label class="check"><input type="checkbox" name="lang" data-label="Early German support: build up German, speak more confidently." /> The child should build up German and speak it more confidently.</label>
+          <label class="check"><input type="checkbox" name="reduced" data-label="Please send information about places made possible by others." /> I would like to learn more about places made possible by others.</label>
+        </div>
+        <div class="form-actions"><button type="submit" class="btn btn-primary">Send request</button></div>
+        <p class="form-note">The form opens your mail app with a ready-made message to <a href="mailto:info@lernbus.ch">info@lernbus.ch</a>. Nothing is stored on this website.</p>
+        <div class="sent" id="sent" hidden aria-live="polite">
+          <p><b>Your mail app should open now.</b> If it does not: copy the text and send it to <a href="mailto:info@lernbus.ch">info@lernbus.ch</a>.</p>
+          <pre id="sent-text"></pre>
+          <div class="row"><a id="open-mail" class="btn btn-primary" href="mailto:info@lernbus.ch">Open mail app</a><button id="copy-text" type="button" class="btn btn-secondary">Copy text</button><span id="copied" hidden>Copied.</span></div>
+        </div>
+      </form>
     </div>
   </section>
 
-  <!-- WHO RUNS IT -->
-  <section class="section">
+  <section class="section band-teal" id="traeger" aria-labelledby="traeger-title">
     <div class="wrap">
-      <p class="eyebrow reveal" style="--dot:var(--pink-ink)">Who runs it</p>
-      <h2 class="big reveal">The Learning Bus is one of Lerngesellschaft's three paths.</h2>
-      <p class="lead reveal" style="margin-top:1.4rem">Lerngesellschaft is an association (Verein) based in Basel. It fosters the natural curiosity and the will to learn of children and young people along three paths: the Forscherbühne, the Learning Bus, and Brain and Society.</p>
-      <div class="reveal" style="margin-top:2rem; display:flex; flex-wrap:wrap; gap:.9rem">
-        <a href="https://lerngesellschaft.ch/vorschau/en/" class="btn btn-ghost">To Lerngesellschaft</a>
-        <a href="https://lerngesellschaft.ch/vorschau/en/#investieren" class="btn btn-pink">Make a place possible</a>
+      <div class="org">
+        <div class="figure" aria-hidden="true"><svg viewBox="0 0 112 82" focusable="false"><path fill="#7dbeb9" d="M0 30c0 30 26 52 56 52s56-22 56-52c0-8-6-12-12-12s-12 4-12 12c0 16-14 28-32 28S24 46 24 30c0-8-6-12-12-12S0 22 0 30z"/><circle cx="56" cy="34" r="20" fill="#efed99"/></svg></div>
+        <div>
+          <p class="eyebrow">Who runs it</p>
+          <h2 id="traeger-title">The Learning Bus is one of Lerngesellschaft's three paths.</h2>
+          <p class="lead mt-1">Lerngesellschaft is an association (Verein) based in Basel. It fosters the natural curiosity and the will to learn of children and young people along three paths: the Forscherbühne, the Learning Bus, and Brain and Society.</p>
+          <div class="org-cta"><a href="https://lerngesellschaft.ch/vorschau/en/" class="btn btn-secondary">To the Learning Society</a><a href="https://lerngesellschaft.ch/#investieren" class="btn btn-yellow">Make a place possible</a></div>
+        </div>
       </div>
     </div>
   </section>
-
 </main>
 
 <footer class="foot">
   <div class="wrap">
-    <img class="foot-logo" src="../../img/logo-light.png" alt="" width="800" height="344" loading="lazy" />
-    <span>Lernbus · a programme of Lerngesellschaft</span>
-    <a href="https://lerngesellschaft.ch/vorschau/en/">lerngesellschaft.ch</a>
-    <span>Münsterplatz 17, 4051 Basel · team@jonashertner.com</span>
-    <span>Verein · starting September 2026</span>
-    <a href="/imprint/">Imprint</a>
+    <a class="foot-logo" href="/lernbus/en/" aria-label="Lernbus">
+      <svg viewBox="0 0 800 344" aria-hidden="true" focusable="false"><use href="../../img/logo-light.svg#logo"/></svg>
+    </a>
+    <p>Lernbus · a programme of the Learning Society<br />Münsterplatz 17, 4051 Basel · <a href="mailto:info@lernbus.ch">info@lernbus.ch</a><br />Association · starting September 2026</p>
+    <nav aria-label="Legal">
+      <a href="https://lerngesellschaft.ch/">lerngesellschaft.ch</a>
+      <a href="/imprint/">Imprint and privacy</a>
+    </nav>
   </div>
 </footer>
 
-<script>
-(function(){var f=document.getElementById('anfrage');if(!f)return;
-f.addEventListener('submit',function(e){e.preventDefault();
-var g=function(n){var el=f.elements[n];return el?el.value.trim():'';};
-var L=['Learning Bus request','','Name: '+g('name'),'Contact: '+g('contact'),'Asking as: '+g('role'),'Child\'s age: '+g('age'),'Preferred setting: '+g('setting')];
-if(g('quartier'))L.push('Neighbourhood: '+g('quartier'));
-if(f.elements['lang'].checked)L.push('Early German language support: build up German, speak more confidently.');
-if(f.elements['reduced'].checked)L.push('Please send information on places made possible by others.');
-if(g('msg')){L.push('');L.push(g('msg'));}
-location.href='mailto:info@lernbus.ch?subject='+encodeURIComponent('Learning Bus request')+'&body='+encodeURIComponent(L.join('\n'));});})();
-</script>
+<nav class="dock" aria-label="Request a place">
+  <a href="#anmelden" class="btn btn-primary">Request a place</a>
+  <a href="mailto:info@lernbus.ch" class="btn btn-secondary" aria-label="info@lernbus.ch"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6.5A2.5 2.5 0 0 1 5.5 4h13A2.5 2.5 0 0 1 21 6.5v11a2.5 2.5 0 0 1-2.5 2.5h-13A2.5 2.5 0 0 1 3 17.5z" fill="none" stroke="currentColor" stroke-width="2"/><path d="m4 7 8 6 8-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+</nav>
+<script src="../../lernbus.js" defer></script>
 </body>
 </html>

@@ -1,105 +1,115 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="de-CH">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="theme-color" content="#fbfaf3" />
 <title>Team · Lernbus</title>
 <meta name="description" content="Die Lernmentorinnen und Lernmentoren des Lernbusses. Ein Angebot der Lerngesellschaft, Basel." />
+
 <link rel="canonical" href="https://lerngesellschaft.ch/lernbus/team/" />
+<link rel="alternate" hreflang="de-CH" href="https://lerngesellschaft.ch/lernbus/team/" />
+<link rel="alternate" hreflang="en" href="https://lerngesellschaft.ch/lernbus/team/en/" />
 <meta property="og:title" content="Team · Lernbus" />
-<meta property="og:description" content="Die Lernmentorinnen und Lernmentoren des Lernbusses." />
+<meta property="og:description" content="Die Lernmentorinnen und Lernmentoren des Lernbusses. Ein Angebot der Lerngesellschaft, Basel." />
 <meta property="og:locale" content="de_CH" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://lerngesellschaft.ch/lernbus/team/" />
+<meta property="og:image" content="https://lerngesellschaft.ch/lernbus/img/social-card.png" />
 <link rel="icon" type="image/png" sizes="180x180" href="../img/favicon.png" />
 <link rel="apple-touch-icon" href="../img/apple-touch-icon.png" />
 <link rel="preload" href="../fonts/bricolage-latin.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="preload" href="../fonts/hanken-latin.woff2" as="font" type="font/woff2" crossorigin />
-<link rel="stylesheet" href="../styles.css" />
+<link rel="stylesheet" href="../lernbus.css" />
 </head>
 <body>
 <a href="#main" class="skip">Zum Inhalt springen</a>
 
 <header class="site-head">
   <div class="wrap">
-    <a href="../index.html" class="brand">
-      <img class="brand-logo" src="../img/logo.png" alt="Lernbus" width="800" height="344" />
-      <span>Ein Angebot der Lerngesellschaft · Basel</span>
+    <a href="/lernbus/" class="brand" aria-label="Lernbus">
+      <svg viewBox="0 0 800 344" aria-hidden="true" focusable="false"><use href="../img/logo.svg#logo"/></svg>
     </a>
     <div class="head-right">
       <nav class="nav" aria-label="Hauptnavigation">
-        <a href="../index.html" class="navlink">Für Eltern</a>
+        <a href="../#ablauf" class="navlink">So läuft es ab</a>
+        <a href="../#kosten" class="navlink">Kosten</a>
+        <a href="../#fragen" class="navlink">Fragen</a>
       </nav>
-      <a href="en/index.html" class="lang" aria-label="In English">EN</a>
+      <a href="en/" class="lang" lang="en" hreflang="en" aria-label="Read this page in English">EN</a>
+      <a href="../#kontakt" class="btn btn-primary head-cta">Gespräch anfragen</a>
+      <details class="menu">
+        <summary aria-label="Menü">
+          <svg class="ico-open" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>
+          <svg class="ico-close" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>
+        </summary>
+        <nav class="menu-panel" aria-label="Menü">
+          <a href="../">Zur Elternseite</a>
+          <a href="../#ablauf">So läuft es ab</a>
+          <a href="../#kosten">Kosten</a>
+          <a href="../#fragen">Fragen</a>
+          <a href="../#kontakt" class="is-primary">Kennenlerngespräch anfragen</a>
+        </nav>
+      </details>
     </div>
   </div>
 </header>
 
 <main id="main">
-
-  <!-- HERO -->
-  <section class="hero" id="top" style="min-height:max(520px, 78svh)">
-    <div class="hero-stage" aria-hidden="true">
-      <div class="liquid-fallback" style="background:
-        radial-gradient(42% 46% at 74% 34%, var(--violet), transparent 62%),
-        radial-gradient(40% 44% at 86% 68%, var(--cyan), transparent 60%),
-        radial-gradient(36% 42% at 56% 74%, var(--pink), transparent 60%),
-        var(--bg)"></div>
-    </div>
-    <div class="hero-scrim" aria-hidden="true"></div>
-    <div class="hero-inner">
-      <div class="wrap">
-        <p class="eyebrow" style="--dot:var(--violet); margin-bottom:1.1rem">Team</p>
-        <h1>Die <span class="pop">Menschen</span> hinter dem Lernbus.</h1>
-        <p class="lead">Lernmentorinnen und Lernmentoren mit unterschiedlichen fachlichen Hintergründen, sorgfältig und nach höchsten Ansprüchen ausgewählt.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- TEAM -->
-  <section class="section" style="--dot:var(--violet)">
+  <section class="subhero" aria-labelledby="team-title">
     <div class="wrap">
-      <p class="eyebrow reveal" style="--dot:var(--violet)">Lernmentorinnen und Lernmentoren</p>
-      <h2 class="big reveal">Wir stellen uns in Kürze vor.</h2>
-      <div class="pillars" style="grid-template-columns:repeat(auto-fit, minmax(min(100%, 17rem), 1fr))">
-        <article class="pillar reveal" style="--dot:var(--violet)">
-          <div class="gb" style="background:radial-gradient(circle at 40% 40%, var(--violet), var(--cyan))"></div>
-          <span class="bar"></span>
-          <h3>Porträt folgt</h3>
-          <p>Name, Hintergrund und Schwerpunkte stellen wir hier bald vor.</p>
-        </article>
-        <article class="pillar reveal" style="--dot:var(--pink-ink)">
-          <div class="gb" style="background:radial-gradient(circle at 40% 40%, var(--pink), var(--yellow))"></div>
-          <span class="bar"></span>
-          <h3>Porträt folgt</h3>
-          <p>Name, Hintergrund und Schwerpunkte stellen wir hier bald vor.</p>
-        </article>
-        <article class="pillar reveal" style="--dot:var(--cyan-ink)">
-          <div class="gb" style="background:radial-gradient(circle at 40% 40%, var(--cyan), var(--violet))"></div>
-          <span class="bar"></span>
-          <h3>Porträt folgt</h3>
-          <p>Name, Hintergrund und Schwerpunkte stellen wir hier bald vor.</p>
-        </article>
-      </div>
-      <p class="lead reveal" style="margin-top:2.6rem; max-width:58ch">Die Qualität wird laufend durch Teamsitzungen, fachlichen Austausch, Evaluation und Weiterbildung gesichert.</p>
-      <div class="reveal" style="margin-top:2rem">
-        <a class="morelink" href="../index.html">Zurück zur Elternseite <span>&rarr;</span></a>
+      <a class="back" href="../"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M16 10H5m4 5-5-5 5-5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg> Zurück zur Elternseite</a>
+      <p class="eyebrow">Team</p>
+      <h1 id="team-title">Die Menschen hinter dem Lernbus.</h1>
+      <p class="lead">Lernmentorinnen und Lernmentoren mit unterschiedlichen fachlichen Hintergründen, sorgfältig ausgewählt. Jedes Kind behält seine Bezugsperson für die ganze Begleitung.</p>
+    </div>
+  </section>
+
+  <section class="section band-teal" aria-labelledby="people-title">
+    <div class="wrap">
+      <h2 id="people-title" class="measure">Wir stellen uns vor dem Start vor.</h2>
+      <p class="lead mt-1">Die Porträts folgen vor dem Start im September 2026: Name, Hintergrund und was die Person am Lernbus begeistert.</p>
+      <div class="people">
+        <article class="person reveal"><div class="portrait" aria-hidden="true"><svg viewBox="0 0 112 82" focusable="false"><path fill="#493f80" d="M0 30c0 30 26 52 56 52s56-22 56-52c0-8-6-12-12-12s-12 4-12 12c0 16-14 28-32 28S24 46 24 30c0-8-6-12-12-12S0 22 0 30z"/><circle cx="56" cy="34" r="20" fill="#efed99"/></svg></div><h3>Porträt folgt</h3><p class="role">Lernmentorin oder Lernmentor</p><p>Name, Hintergrund und Schwerpunkte stellen wir hier bald vor.</p></article>
+        <article class="person reveal"><div class="portrait" aria-hidden="true"><svg viewBox="0 0 112 82" focusable="false"><path fill="#7dbeb9" d="M0 30c0 30 26 52 56 52s56-22 56-52c0-8-6-12-12-12s-12 4-12 12c0 16-14 28-32 28S24 46 24 30c0-8-6-12-12-12S0 22 0 30z"/><circle cx="56" cy="34" r="20" fill="#efed99"/></svg></div><h3>Porträt folgt</h3><p class="role">Lernmentorin oder Lernmentor</p><p>Name, Hintergrund und Schwerpunkte stellen wir hier bald vor.</p></article>
+        <article class="person reveal"><div class="portrait" aria-hidden="true"><svg viewBox="0 0 112 82" focusable="false"><path fill="#493f80" d="M0 30c0 30 26 52 56 52s56-22 56-52c0-8-6-12-12-12s-12 4-12 12c0 16-14 28-32 28S24 46 24 30c0-8-6-12-12-12S0 22 0 30z"/><circle cx="56" cy="34" r="20" fill="#e2d64d"/></svg></div><h3>Porträt folgt</h3><p class="role">Lernmentorin oder Lernmentor</p><p>Name, Hintergrund und Schwerpunkte stellen wir hier bald vor.</p></article>
       </div>
     </div>
   </section>
 
+  <section class="section" aria-labelledby="quality-title">
+    <div class="wrap">
+      <div class="duo">
+        <div class="tile">
+          <h3 id="quality-title">Qualität, die überprüft wird</h3>
+          <p>Die Lernmentorinnen und Lernmentoren arbeiten reflektiert, empathisch und fachlich fundiert. Teamsitzungen, fachlicher Austausch, Evaluation und Weiterbildung sichern die Qualität und entwickeln das Angebot laufend weiter.</p>
+        </div>
+        <div class="tile">
+          <h3>Mitarbeiten</h3>
+          <p>Sie arbeiten gern mit kleinen Kindern, haben einen pädagogischen, sprachlichen, naturwissenschaftlichen oder künstlerischen Hintergrund und möchten ein Kind über Monate begleiten? Schreiben Sie uns.</p>
+          <a class="link-arrow" href="mailto:info@lernbus.ch?subject=Mitarbeit%20Lernbus">Schreiben Sie uns <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11m-4-5 5 5-5 5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </div>
+      <div class="org-cta mt-3">
+        <a href="../#kontakt" class="btn btn-primary">Kennenlerngespräch anfragen</a>
+        <a href="../" class="btn btn-secondary">Zurück zur Elternseite</a>
+      </div>
+    </div>
+  </section>
 </main>
 
 <footer class="foot">
   <div class="wrap">
-    <img class="foot-logo" src="../img/logo-light.png" alt="" width="800" height="344" loading="lazy" />
-    <span>Lernbus · ein Angebot der Lerngesellschaft</span>
-    <a href="https://lerngesellschaft.ch/">lerngesellschaft.ch</a>
-    <span>Münsterplatz 17, 4051 Basel · team@jonashertner.com</span>
-    <span>Verein · Start September 2026</span>
-    <a href="/impressum/">Impressum</a>
+    <a class="foot-logo" href="/lernbus/" aria-label="Lernbus">
+      <svg viewBox="0 0 800 344" aria-hidden="true" focusable="false"><use href="../img/logo-light.svg#logo"/></svg>
+    </a>
+    <p>Lernbus · ein Angebot der Lerngesellschaft<br />Münsterplatz 17, 4051 Basel · <a href="mailto:info@lernbus.ch">info@lernbus.ch</a><br />Verein · Start September 2026</p>
+    <nav aria-label="Rechtliches">
+      <a href="https://lerngesellschaft.ch/">lerngesellschaft.ch</a>
+      <a href="/impressum/">Impressum und Datenschutz</a>
+    </nav>
   </div>
 </footer>
+<script src="../lernbus.js" defer></script>
 </body>
 </html>

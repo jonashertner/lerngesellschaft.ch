@@ -36,6 +36,29 @@ No author action required to map between the two.
 `/llms.txt`. `src/social-card.svg` is the link-preview artwork used by the
 Open Graph and Twitter metadata.
 
+## Lernbus (lerngesellschaft.ch/lernbus)
+
+The Lernbus pages are plain, hand-written HTML in `src/lernbus/` and are
+copied to the output as they are (Eleventy passthrough, no templating):
+
+- `index.html` (DE, canonical), `en/index.html` (EN parallel composition)
+- `team/index.html`, `team/en/index.html`
+- `konzept/index.html`, `en/konzept/index.html` (long-form concept, noindex)
+- `lernbus.css` (one stylesheet for the family), `lernbus.js` (menu, sticky
+  action bar, route progress, the mailto form with a copy-text fallback)
+- `img/logo.svg`, `img/logo-light.svg` (vectorised logo), `img/social-card*.png`
+  (Open Graph images, 1200x630), favicons; `fonts/` (Bricolage Grotesque,
+  Hanken Grotesk, self-hosted)
+
+Illustrations (bus, route, Lernhaltestelle, Lernkiste, arms-up figure) are
+inline SVG in the pages themselves, drawn in the logo's palette
+(violet #493f80, teal #7dbeb9, yellow #efed99, chalk #fbfaf3).
+
+Copy rules: Swiss orthography (ss, never ß), no em-dashes, guillemets,
+Sie-form for parents, Du-form only in the «Für dich» box. The enquiry form
+composes an e-mail to info@lernbus.ch in the visitor's own mail app; nothing
+is stored on the site (see /impressum/).
+
 ## Deployment
 
 Two GitHub Pages targets, fed by a single source repo. See
