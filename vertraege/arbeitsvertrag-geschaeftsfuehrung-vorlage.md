@@ -52,11 +52,11 @@
 
 ## 3. Lohn und Spesen
 
-**3.1** Der Jahresbruttolohn beträgt CHF **[72'800]** für das Pensum von 80 % (entsprechend CHF **[91'000]** bei einem Vollpensum). Er wird in dreizehn gleichen Raten von CHF **[5'600]** ausgerichtet; die dreizehnte Rate wird mit dem Dezemberlohn, bei unterjährigem Ein- oder Austritt anteilig, ausbezahlt.
+**3.1** Der Jahresbruttolohn beträgt CHF **[82'550]** für das Pensum von 80 % (entsprechend CHF **[103'200]** bei einem Vollpensum). Er wird in dreizehn gleichen Raten von CHF **[6'350]** ausgerichtet; die dreizehnte Rate wird mit dem Dezemberlohn, bei unterjährigem Ein- oder Austritt anteilig, ausbezahlt. **[Der Lohn orientiert sich an Lohnklasse 13 des Lohngesetzes des Kantons Basel-Stadt (Lohntabelle gültig ab 1. September 2026). Ein Anspruch auf Nachvollzug der kantonalen Stufen- und Teuerungsanpassungen besteht nicht.]**
 
 **3.2** Der Lohn wird jeweils am Ende des Monats auf ein von der Geschäftsführerin bezeichnetes Bankkonto überwiesen. Abgezogen werden die gesetzlichen und vertraglichen Arbeitnehmerbeiträge (AHV/IV/EO, ALV, berufliche Vorsorge, Nichtberufsunfall- und Krankentaggeldversicherung) sowie gegebenenfalls die Quellensteuer.
 
-**3.3** Der Vorstand überprüft den Lohn jährlich im Rahmen des Budgets, erstmals auf den **[1. Januar 2028]**. Ein Anspruch auf Anpassung besteht nicht.
+**3.3** Der Vorstand überprüft den Lohn jährlich im Rahmen des Budgets, erstmals auf den **[1. Januar 2028]**, und orientiert sich dabei am Stufenverlauf und an der Teuerungsanpassung des Kantons Basel-Stadt. **[Erreicht der Verein bis zum 30. Juni 2027 mindestens 15 belegte Lernbus-Plätze oder für das folgende Vereinsjahr gesicherte Beiträge von CHF 150'000, so wird der Jahresbruttolohn auf den 1. Juli 2027 auf CHF 87'750 (dreizehn Raten von CHF 6'750) angehoben.]** Ein weitergehender Anspruch auf Anpassung besteht nicht.
 
 **3.4** Allfällige Sonderzahlungen (Gratifikationen, Prämien) sind freiwillig und begründen auch bei wiederholter Ausrichtung keinen Anspruch für die Zukunft (Art. 322d OR).
 
