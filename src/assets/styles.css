@@ -127,7 +127,9 @@ h2.big{ font-size:var(--fs-h2); max-width:18ch; margin-top:1rem; }
 /* menu mode: the panel opens under the header row. The header itself becomes
    the full-height surface, so brand, EN and the (now crossed) button stay put. */
 .site-head:not(.nav-inline) .menu{ order:3; }
+.site-head.menu-open,
 .site-head:not(.nav-inline):has(.menu[open]){ position:fixed; inset:0; overflow:auto; overscroll-behavior:contain; background:var(--bg); }
+html.menu-locked, html.menu-locked body{ overflow:hidden; }
 body:has(.site-head:not(.nav-inline) .menu[open]){ overflow:hidden; }
 .site-head:not(.nav-inline) .nav{ position:absolute; top:100%; left:var(--pad); right:var(--pad); display:flex; flex-direction:column;
   padding:.4rem 0 3rem; counter-reset:navi; }

@@ -46,8 +46,15 @@
   function applyOpenState() {
     var open = menu.open && !inline;
     head.classList.toggle('menu-open', open);
+    /* The panel and the scroll lock key off these classes, so they do not
+       depend on :has() support. The :has() rules stay as the no-JS path. */
+    document.documentElement.classList.toggle('menu-locked', open);
     var blocks = document.querySelectorAll('main, footer');
-    for (var i = 0; i < blocks.length; i++) blocks[i].inert = open;
+    for (var i = 0; i < blocks.length; i++) {
+      blocks[i].inert = open;
+      if (open) blocks[i].setAttribute('aria-hidden', 'true');
+      else blocks[i].removeAttribute('aria-hidden');
+    }
   }
 
   menu.addEventListener('toggle', applyOpenState);
@@ -72,7 +79,9 @@
   var current = null;
   function collectTargets() {
     targets = [];
-    var links = nav.querySelectorAll('a[href^="#"]');
+    /* the call-to-action is hidden in both modes, so it must not be able to
+       become the "current" section and blank out the visible markers */
+    var links = nav.querySelectorAll('a[href^="#"]:not(.navlink-cta)');
     for (var i = 0; i < links.length; i++) {
       var id = links[i].getAttribute('href').slice(1);
       var el = id && id !== 'top' ? document.getElementById(id) : null;

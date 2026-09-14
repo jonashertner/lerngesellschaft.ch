@@ -139,7 +139,9 @@ h2.big + .lead, h2.big + .prose2{ margin-top:2.2rem; }
 /* menu mode: the panel opens under the header row. The header itself becomes
    the full-height surface, so logo, EN dot and the (now crossed) button stay put. */
 .site-head:not(.nav-inline) .menu{ order:2; }
+.site-head.menu-open,
 .site-head:not(.nav-inline):has(.menu[open]){ position:fixed; inset:0; overflow:auto; overscroll-behavior:contain; background:var(--bg); }
+html.menu-locked, html.menu-locked body{ overflow:hidden; }
 body:has(.site-head:not(.nav-inline) .menu[open]){ overflow:hidden; }
 .site-head:not(.nav-inline) .nav{ position:absolute; top:100%; left:var(--pad); right:var(--pad); display:flex; flex-direction:column;
   padding:.4rem 0 3rem; counter-reset:navi; }
@@ -149,7 +151,7 @@ body:has(.site-head:not(.nav-inline) .menu[open]){ overflow:hidden; }
 .site-head:not(.nav-inline) .navlink:first-child{ border-top:1.5px solid var(--hairline); }
 .site-head:not(.nav-inline) .navlink::before{ content:counter(navi, decimal-leading-zero); counter-increment:navi; flex:none;
   display:grid; place-items:center; width:1.9rem; height:1.9rem; border-radius:48% 52% 55% 45% / 55% 48% 52% 45%;
-  font-family:var(--body); font-weight:750; font-size:.72rem; letter-spacing:.08em; color:var(--teal-soft);
+  font-family:var(--body); font-weight:750; font-size:.72rem; letter-spacing:.08em; color:var(--teal-ink);
   transform:rotate(-4deg); transition:background-color .16s ease, color .16s ease; }
 .site-head:not(.nav-inline) .navlink:nth-child(even)::before{ transform:rotate(3deg); border-radius:52% 48% 45% 55% / 48% 55% 45% 52%; }
 .site-head:not(.nav-inline) .navlink:hover::before, .site-head:not(.nav-inline) .navlink:focus-visible::before,
@@ -170,6 +172,8 @@ body:has(.site-head:not(.nav-inline) .menu[open]){ overflow:hidden; }
   background:var(--marker); transform:scaleX(0); transform-origin:left; transition:transform .22s ease; }
 .site-head.nav-inline .navlink:hover::after, .site-head.nav-inline .navlink:focus-visible::after,
 .site-head.nav-inline .navlink[aria-current]::after{ transform:scaleX(1); }
+/* the marker yellow reads as a hover hint; the current section needs a rule that carries */
+.site-head.nav-inline .navlink[aria-current]::after{ background:var(--violet); }
 
 /* fixed header, once scrolled: chalk bar, hairline, smaller logo */
 .site-head .wrap, .brand-logo{ transition:padding .2s ease, height .2s ease; }
@@ -344,7 +348,7 @@ body:has(.site-head:not(.nav-inline) .menu[open]){ overflow:hidden; }
 .tariffs{ width:100%; max-width:62rem; margin-top:clamp(2.2rem, 1.6rem + 2vw, 3.2rem); border-collapse:collapse; border-top:2px solid var(--line); }
 .tariffs th, .tariffs td{ text-align:left; vertical-align:top; padding:1.15rem 0; border-bottom:1.5px solid var(--hairline); }
 .tariffs thead th{ font-family:var(--body); font-weight:750; font-size:var(--fs-eyebrow); letter-spacing:.15em; text-transform:uppercase;
-  color:var(--teal-soft); padding:.9rem 0 .8rem; vertical-align:bottom; }
+  color:var(--teal-ink); padding:.9rem 0 .8rem; vertical-align:bottom; }
 .tariffs thead th span{ display:block; letter-spacing:.02em; text-transform:none; font-weight:600; font-size:.78rem; margin-top:.15rem; }
 .tariffs tbody th{ font-weight:400; padding-right:1.5rem; }
 .tariffs .tname{ display:block; font-family:var(--display); font-weight:800; font-size:clamp(1.2rem, 1.05rem + 0.7vw, 1.6rem); line-height:1.15;
@@ -364,7 +368,7 @@ body:has(.site-head:not(.nav-inline) .menu[open]){ overflow:hidden; }
   .tariffs td{ display:inline-block; margin:.9rem 2.4rem 0 0; white-space:normal; }
   .tariffs td + td{ padding-left:0; }
   .tariffs td::before{ content:attr(data-label); display:block; font-family:var(--body); font-weight:750; font-size:.68rem; letter-spacing:.14em;
-    text-transform:uppercase; color:var(--teal-soft); margin-bottom:.15rem; }
+    text-transform:uppercase; color:var(--teal-ink); margin-bottom:.15rem; }
 }
 
 /* ---- Donation block (concept page): violet punctuation ---- */
@@ -427,6 +431,6 @@ body:has(.site-head:not(.nav-inline) .menu[open]){ overflow:hidden; }
 @media (prefers-reduced-motion:reduce){
   html{ scroll-behavior:auto; }
   .navlink::after, .navlink::before, .menu-ico i, .site-head .wrap, .brand-logo{ transition:none !important; }
-  .btn:hover, .lang:hover, .menu-btn:hover, .menu-btn:focus-visible{ transform:none !important; }
+  .btn:hover, .lang:hover, .lang:focus-visible, .menu-btn:hover, .menu-btn:focus-visible{ transform:none !important; }
   .hero .eyebrow, .hero h1, .hero .lead, .hero-cta, .hero h1 .pop::after{ animation:none !important; }
 }
