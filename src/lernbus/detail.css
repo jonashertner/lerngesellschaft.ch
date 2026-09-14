@@ -1,0 +1,28 @@
+/* The longer reading pages share the parent page's quieter rhythm. */
+.detail-page { --wrap:83rem; --fs-hero:clamp(2.7rem,1.5rem + 4vw,5.5rem); --fs-h2:clamp(2rem,1rem + 3vw,3.7rem); }
+.detail-page .site-head { border-bottom:1px solid var(--hairline); background:var(--bg); }
+.detail-page .site-head .wrap { padding-block:1.2rem; }
+.detail-page .brand-logo { height:3.4rem; }
+.detail-page .brand span { font-size:.75rem; letter-spacing:.02em; text-transform:none; }
+.detail-page .hero { min-height:0 !important; }
+.detail-page .hero-inner { padding-top:11rem; padding-bottom:4rem; }
+.detail-page .hero h1 { max-width:19ch; line-height:1.02; }
+.detail-page .hero .lead { max-width:52ch; }
+.detail-page .hero-scrim { display:none; }
+.detail-page .section { padding-block:4.5rem; }
+.detail-page .section + .section .wrap { border-top:1px solid var(--hairline); padding-top:3rem; }
+.detail-page .detail { max-width:72ch; }
+.detail-page .dsec p { max-width:65ch; }
+.detail-page .btn { border-radius:6px; font-size:1rem; }
+.detail-page .eyebrow { border:0; padding:0; font-size:.8rem; letter-spacing:.13em; }
+.detail-page .example-label { display:block; font-family:var(--body); font-size:.85rem; font-weight:500; margin-bottom:1rem; }
+.detail-page .foot { background:var(--night); }
+.detail-page .morelink { margin-left:.5rem; }
+@media(max-width:760px) {
+  .detail-page .hero-inner { padding-top:10rem; padding-bottom:2rem; }
+  .detail-page .hero h1 { max-width:15ch; }
+  .detail-page .hero h1 .pop { white-space:normal; }
+  .detail-page .section { padding-block:2.5rem; }
+  .detail-page .section + .section .wrap { padding-top:2rem; }
+  .detail-page .brand span { max-width:22ch; line-height:1.4; }
+}

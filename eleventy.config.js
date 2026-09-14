@@ -24,7 +24,7 @@ export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/social-card.svg");
   eleventyConfig.addPassthroughCopy("src/assets");
   eleventyConfig.addPassthroughCopy("src/vorschau");
-  eleventyConfig.addPassthroughCopy("src/lernbus");
+  eleventyConfig.addPassthroughCopy("src/lernbus/**/*.{css,js,json,png,webp,woff2}");
   eleventyConfig.addPassthroughCopy("src/atlas");
 
   eleventyConfig.addTransform("sidenotes", function (content) {

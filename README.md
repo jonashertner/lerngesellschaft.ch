@@ -41,6 +41,18 @@ Open Graph and Twitter metadata.
 Two GitHub Pages targets, fed by a single source repo. See
 `.github/workflows/deploy.yml` (to be wired up when ready).
 
+## Lernbus parent site
+
+The German and English parent pages use `src/_includes/lernbus-home.njk` and
+shared content in `src/_data/lernbus.js`. Styles and small interactive controls
+live in `src/lernbus/home.css` and `home.js`. Run `npm run build` followed by
+`node scripts/check-lernbus.mjs` to verify the generated routes and booking guards.
+
+Public scheduling configuration is in `src/lernbus/booking-config.json`.
+The supplied weekly times are stored there; direct booking stays disabled until
+a real booking page and the calendar owner are connected. See
+`design/2026-09-15-lernbus-redesign.md` for deployment and activation details.
+
 ## Fonts
 
 Self-hosted Bradford LL web fonts in `src/fonts/`. Filenames are not to be

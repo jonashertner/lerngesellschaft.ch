@@ -63,13 +63,14 @@
 
         <div class="dsec" id="datenschutz">
           <h2>Datenschutz in Kürze</h2>
-          <p>Diese Website setzt keine Cookies, misst nichts, bindet keine fremden Dienste ein und lädt nichts von fremden Servern nach. Die Schriften liegen auf unserem eigenen Server. Wer die Seite nur liest, hinterlässt bei uns keine Daten, die wir auswerten könnten.</p>
+          <p>Wir verwenden keine Analyse- oder Werbetracker. Schriften und Abbildungen werden von unserem eigenen Website-Hosting geladen. Eine E-Mail wird erst versandt, wenn Sie sie in Ihrem Mailprogramm abschicken.</p>
+          {% if lernbusBooking.configured %}<p>Für die Terminbuchung verlinken wir auf {{ lernbusBooking.providerName | escape }}. Ein eingebetteter Kalender wird erst geladen, wenn Sie «Termine anzeigen» wählen. Dabei erhält der Buchungsdienst technische Zugriffsdaten, insbesondere Ihre IP-Adresse. Angaben, die Sie im Kalender eingeben, werden beim Buchungsdienst zur Organisation des Gesprächs verarbeitet. Sie können uns stattdessen per E-Mail oder Post kontaktieren.</p>{% endif %}
         </div>
 
         <div class="dsec" id="formulare">
-          <h2>Was die Formulare tun</h2>
-          <p>Auf den Seiten des Lernbusses und der Forscherbühne gibt es Anfrageformulare. Je nach Formular fragen wir nach Ihrem Namen, einer Kontaktmöglichkeit, dem Alter des Kindes, Ihrer Erreichbarkeit und Ihrem Anliegen.</p>
-          <p>Diese Angaben werden <b>nicht an diese Website übermittelt und nirgends darauf gespeichert</b>. Das Formular stellt aus Ihren Eingaben lediglich eine E-Mail zusammen und öffnet damit Ihr eigenes Mailprogramm. Abgeschickt wird die Nachricht erst, wenn Sie es dort tun, und dann auf demselben Weg wie jede andere E-Mail von Ihnen an uns.</p>
+          <h2>Kontakt und Anfragen</h2>
+          <p>Auf der Lernbus-Seite erreichen Sie uns über einen E-Mail-Link. Dieser öffnet Ihr eigenes Mailprogramm. Die Website speichert dabei keine von Ihnen eingegebenen Kontaktdaten.</p>
+          <p>Die Anfrageformulare auf den Seiten der Forscherbühne stellen aus Ihren Angaben ebenfalls lediglich eine E-Mail zusammen. Die Angaben werden nicht an diese Website übermittelt und nicht darauf gespeichert. Versandt wird die Nachricht erst, wenn Sie es in Ihrem Mailprogramm tun.</p>
         </div>
 
         <div class="dsec" id="anfragen">

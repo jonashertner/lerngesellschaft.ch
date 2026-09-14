@@ -1,0 +1,27 @@
+# Lernbus redesign and booking handoff
+
+The working branch is `codex/lernbus-design-booking`. Before implementation, the checkout was fast-forwarded from `727846f` to the actual published source at `8efd046`. This preserves the current 60-minute offer and the four contribution levels. No public GitHub Pages deployment has been triggered.
+
+The design uses the existing Lernbus logo, violet/teal/yellow palette and self-hosted typefaces. A commissioned AI illustration of the learning box provides the main visual; it is labelled as an illustration and makes no claim to show a real room, child or session. The full-size WebP is about 124 KB; the mobile image is about 32 KB.
+
+The DE/EN parent pages share one template and structured content. They now give parents the offer, an explicitly illustrative learning journey, three steps, the complete contribution table, an introductory-conversation entry point and native FAQ disclosures. Reading pages retain their substantive content with a more compact layout. Empty portrait cards were removed; actual team introductions remain an editorial dependency. All Lernbus contact paths use info@lernbus.ch. The concept pages lead into the same conversation route instead of presenting a mailto form as a sent request.
+
+## Booking status
+
+Jonas confirmed **60 minutes** and **info@lernbus.ch**. No scheduling provider or public booking URL exists yet. Jonas subsequently supplied the exact 21 weekly slots: Monday and Thursday at 08:15, 09:30, 10:45, 13:00, 14:15, 15:30 and 16:45; Wednesday at 08:45, 10:00, 11:15, 13:15, 14:30, 16:30 and 17:45. These are stored in booking-config.json, in Europe/Zurich time. Meeting format/location and the mailbox calendar relationship still need confirmation. Microsoft Bookings is available under jh@jonashertner.com, but a directory lookup of info@lernbus.ch returned no separate user and the connected calendar list contains no Lernbus calendar. No new booking mailbox has been created. The site therefore does **not** expose made-up times or claim that a reservation has been completed.
+
+The calendar integration is ready for an approved public booking page. `src/lernbus/booking-config.json` contains only public settings. Keep `enabled: false` until the actual calendar is configured and tested. When enabled, the build validates the provider link and renders a direct booking link that works without JavaScript. The embedded calendar loads only after the parent clicks; the provider handles availability, competing bookings, confirmation, cancellation and rescheduling. Recovery links stay above the frame. An iframe load never counts as a confirmed booking.
+
+Microsoft Bookings fits an existing Microsoft 365 mailbox if its licence and calendar setup support it. Set up a shared booking page, assign the real staff/calendar, create the 60-minute service and configure agreed availability and location. Do not expose the private calendar URL or credentials. Copy the public booking link into `bookingUrl`, the provider-generated iframe source into `embedUrl`, and set `providerName`. Review the provider-specific privacy information before enabling. Then build and verify a real reservation plus cancellation with the responsible person; no external test messages have been sent as part of this implementation.
+
+Official setup references: [service settings](https://learn.microsoft.com/en-us/microsoft-365/bookings/define-service-offerings?view=o365-worldwide), [public page settings](https://learn.microsoft.com/en-us/microsoft-365/bookings/customize-booking-page?view=o365-worldwide), [sharing and embedding](https://learn.microsoft.com/en-us/microsoft-365/bookings/share-shared-bookings-page?view=o365-worldwide).
+
+## Verification
+
+Run `npm run build` and `node scripts/check-lernbus.mjs`. The checks cover generated internal links/fragments/assets, unique IDs, one H1 per page, Swiss spelling, tariff parity, no automatic iframe, readable story content without JavaScript and booking URL validation. Browser checks cover 320/390 px phone layouts and desktop, menu operation, the learning-story tabs, FAQs and the booking contact state. These are targeted checks, not a claim of a complete accessibility certification or measured field Core Web Vitals.
+
+Before a public release, complete the booking setup above. The current domain redirect chain also includes an HTTP hop; fix this in the domain forwarding settings when those controls are available. Real mentor names and approved portraits would add the most valuable remaining trust evidence.
+
+Private design preview: https://lernbus-design-review.voilajonas.chatgpt.site/lernbus/ (owner-only). Preview source/hosting manifest: output/lernbus-site-preview/.openai/hosting.json. This is a separate review deployment and does not change GitHub Pages or the Lernbus domain.
+
+Microsoft Bookings configuration for the supplied times: one staff member, maximum one attendee, 60-minute service, 15-minute increments and zero added buffer. Set seven separate one-hour windows on each of Monday, Wednesday and Thursday, other days closed. The explicit gaps already provide breaks; a buffer would suppress availability inside the exact one-hour windows. An email alias has no independent calendar. A shared booking page has its own scheduling mailbox; use the actual calendar owner for availability and info@lernbus.ch for replies. Do not substitute the signed-in personal calendar without confirmation.
