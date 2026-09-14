@@ -11,7 +11,7 @@
 <meta property="og:locale" content="de_CH" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://lerngesellschaft.ch/" />
-<meta property="og:image" content="https://lerngesellschaft.ch/media/hero-poster.jpg" />
+<meta property="og:image" content="https://lerngesellschaft.ch/assets/media/hero-poster.jpg" />
 <meta property="og:image:alt" content="Kinder beim Experimentieren" />
 <meta name="twitter:card" content="summary_large_image" />
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M16 3c5 0 9 3 9 8 0 3-2 4-2 7s3 3 3 6-4 5-10 5S6 31 6 27s3-3 3-6-2-4-2-7c0-5 4-8 9-8z' fill='%23ff3d8b'/%3E%3C/svg%3E" />
@@ -32,15 +32,22 @@
       <span>Learning Society · Basel</span>
     </a>
     <div class="head-right">
-      <nav class="nav" aria-label="Hauptnavigation">
-        <a href="#ziele" class="navlink">Ziele</a>
-        <a href="#wege" class="navlink">Drei Wege</a>
-      </nav>
+      <details class="menu">
+        <summary class="menu-btn"><span class="menu-ico" aria-hidden="true"><i></i><i></i></span><span class="vh">Menü</span></summary>
+        <nav class="nav" aria-label="Hauptnavigation">
+          <a href="#worum" class="navlink">Worum es geht</a>
+          <a href="#ziele" class="navlink">Ziele</a>
+          <a href="#wege" class="navlink">Drei Wege</a>
+          <a href="#verein" class="navlink">Der Verein</a>
+          <a href="#investieren" class="navlink navlink-cta">Investieren</a>
+        </nav>
+      </details>
       <a href="/vorschau/en/index.html" class="lang" aria-label="In English">EN</a>
       <a href="#investieren" class="btn btn-pink nav-cta">Investieren</a>
     </div>
   </div>
 </header>
+<script src="/assets/nav.js"></script>
 
 <main id="main">
 
@@ -48,7 +55,7 @@
   <section class="hero" id="top">
     <div class="hero-stage" aria-hidden="true">
       <div class="liquid-fallback"></div>
-      <video class="hero-video" autoplay muted loop playsinline preload="metadata" width="640" height="640" poster="./media/hero-poster.jpg">
+      <video class="hero-video" autoplay muted loop playsinline preload="metadata" width="640" height="640" poster="/assets/media/hero-poster.jpg">
         <source src="/assets/media/hero.webm" type="video/webm" />
         <source src="/assets/media/hero.mp4" type="video/mp4" />
       </video>
@@ -68,7 +75,7 @@
   </section>
 
   <!-- AUSGANGSLAGE -->
-  <section class="section">
+  <section class="section" id="worum">
     <div class="accent-blob" style="width:30vw;height:30vw;background:var(--pink);right:-8vw;top:-6vw"></div>
     <div class="wrap">
       <p class="eyebrow reveal" style="--dot:var(--pink)">Worum es geht</p>
@@ -137,7 +144,7 @@
           <div class="gb" style="background:radial-gradient(circle at 40% 40%, var(--violet), var(--cyan))"></div>
           <span class="bar"></span>
           <h3>Lernbus</h3>
-          <p>Präventive Lernbegleitung im Einzel- und Zweiersetting, vom 1. Kindergarten bis zur 3. Primarschule. Frühe Deutschförderung schon ab 3 Jahren.</p>
+          <p>Präventive Frühförderung im Einzel- und Zweiersetting, ab 3 Jahren bis zur 3. Primarschule, einschliesslich früher Deutschförderung.</p>
           <a class="morelink" href="/lernbus/">Mehr zum Lernbus <span>&rarr;</span></a>
         </article>
 

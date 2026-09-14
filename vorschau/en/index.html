@@ -12,7 +12,7 @@
 <meta property="og:locale" content="en" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://lerngesellschaft.ch/vorschau/en/" />
-<meta property="og:image" content="https://lerngesellschaft.ch/vorschau/media/hero-poster.jpg" />
+<meta property="og:image" content="https://lerngesellschaft.ch/assets/media/hero-poster.jpg" />
 <meta property="og:image:alt" content="Children doing experiments" />
 <meta name="twitter:card" content="summary_large_image" />
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M16 3c5 0 9 3 9 8 0 3-2 4-2 7s3 3 3 6-4 5-10 5S6 31 6 27s3-3 3-6-2-4-2-7c0-5 4-8 9-8z' fill='%23ff3d8b'/%3E%3C/svg%3E" />
@@ -33,15 +33,22 @@
       <span>Lerngesellschaft · Basel</span>
     </a>
     <div class="head-right">
-      <nav class="nav" aria-label="Main navigation">
-        <a href="#ziele" class="navlink">Goals</a>
-        <a href="#wege" class="navlink">Three paths</a>
-      </nav>
+      <details class="menu">
+        <summary class="menu-btn"><span class="menu-ico" aria-hidden="true"><i></i><i></i></span><span class="vh">Menu</span></summary>
+        <nav class="nav" aria-label="Main navigation">
+          <a href="#worum" class="navlink">What this is about</a>
+          <a href="#ziele" class="navlink">Goals</a>
+          <a href="#wege" class="navlink">Three paths</a>
+          <a href="#verein" class="navlink">The association</a>
+          <a href="#investieren" class="navlink navlink-cta">Invest</a>
+        </nav>
+      </details>
       <a href="/" class="lang" aria-label="Auf Deutsch">DE</a>
       <a href="#investieren" class="btn btn-pink nav-cta">Invest</a>
     </div>
   </div>
 </header>
+<script src="/assets/nav.js"></script>
 
 <main id="main">
 
@@ -49,7 +56,7 @@
   <section class="hero" id="top">
     <div class="hero-stage" aria-hidden="true">
       <div class="liquid-fallback"></div>
-      <video class="hero-video" autoplay muted loop playsinline preload="metadata" width="640" height="640" poster="../media/hero-poster.jpg">
+      <video class="hero-video" autoplay muted loop playsinline preload="metadata" width="640" height="640" poster="/assets/media/hero-poster.jpg">
         <source src="/assets/media/hero.webm" type="video/webm" />
         <source src="/assets/media/hero.mp4" type="video/mp4" />
       </video>
@@ -69,7 +76,7 @@
   </section>
 
   <!-- WHAT THIS IS ABOUT -->
-  <section class="section">
+  <section class="section" id="worum">
     <div class="accent-blob" style="width:30vw;height:30vw;background:var(--pink);right:-8vw;top:-6vw"></div>
     <div class="wrap">
       <p class="eyebrow reveal" style="--dot:var(--pink)">What this is about</p>
@@ -138,7 +145,7 @@
           <div class="gb" style="background:radial-gradient(circle at 40% 40%, var(--violet), var(--cyan))"></div>
           <span class="bar"></span>
           <h3>The Learning Bus</h3>
-          <p>Preventive learning support with one or two children at a time, from the first year of kindergarten to the third year of primary school. Early German language support from age 3.</p>
+          <p>Preventive early-years support with one or two children at a time, from age 3 to the third year of primary school, including early German language support.</p>
           <a class="morelink" href="/lernbus/en/">More about the Learning Bus <span>&rarr;</span></a>
         </article>
 

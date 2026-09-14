@@ -28,13 +28,18 @@
       <span>Ein Angebot der Lerngesellschaft · Basel</span>
     </a>
     <div class="head-right">
-      <nav class="nav" aria-label="Hauptnavigation">
-        <a href="../index.html" class="navlink">Für Eltern</a>
-      </nav>
+      <details class="menu">
+        <summary class="menu-btn"><span class="menu-ico" aria-hidden="true"><i></i><i></i></span><span class="vh">Menü</span></summary>
+        <nav class="nav" aria-label="Hauptnavigation">
+          <a href="#team" class="navlink">Team</a>
+          <a href="../index.html" class="navlink navlink-up">Für Eltern</a>
+        </nav>
+      </details>
       <a href="en/index.html" class="lang" aria-label="In English">EN</a>
     </div>
   </div>
 </header>
+<script src="../nav.js"></script>
 
 <main id="main">
 
@@ -58,7 +63,7 @@
   </section>
 
   <!-- TEAM -->
-  <section class="section" style="--dot:var(--violet)">
+  <section class="section" id="team" style="--dot:var(--violet)">
     <div class="wrap">
       <p class="eyebrow reveal" style="--dot:var(--violet)">Lernmentorinnen und Lernmentoren</p>
       <h2 class="big reveal">Wir stellen uns in Kürze vor.</h2>

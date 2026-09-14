@@ -16,15 +16,26 @@
   <div class="wrap">
     <a href="index.html" class="brand"><b>Learning Society</b><span>Lerngesellschaft · Basel</span></a>
     <div class="head-right">
-      <nav class="nav" aria-label="Main navigation">
-        <a href="index.html#ziele" class="navlink">Goals</a>
-        <a href="index.html#wege" class="navlink">Three paths</a>
-      </nav>
+      <details class="menu">
+        <summary class="menu-btn"><span class="menu-ico" aria-hidden="true"><i></i><i></i></span><span class="vh">Menu</span></summary>
+        <nav class="nav" aria-label="Main navigation">
+          <a href="#offen" class="navlink">Open to all</a>
+          <a href="#staunen" class="navlink">Shared wonder</a>
+          <a href="#vorbilder" class="navlink">Researchers as models</a>
+          <a href="#irrtuemer" class="navlink">Questions, trials and errors</a>
+          <a href="#zuhause" class="navlink">Science to take home</a>
+          <a href="#beginn" class="navlink">Where science begins</a>
+          <a href="#buchen" class="navlink">Booking request</a>
+          <a href="index.html" class="navlink navlink-up">Overview</a>
+          <a href="index.html#investieren" class="navlink navlink-cta">Invest</a>
+        </nav>
+      </details>
       <a href="/forscherbuehne/" class="lang" aria-label="Auf Deutsch">DE</a>
       <a href="index.html#investieren" class="btn btn-pink nav-cta">Invest</a>
     </div>
   </div>
 </header>
+<script src="/assets/nav.js"></script>
 <main id="main">
   <section class="subhero">
     <div class="accent-blob" style="width:30vw;height:30vw;background:var(--pink);right:-8vw;top:-2vw"></div>
@@ -42,23 +53,23 @@
   <section class="section" style="padding-top:0; --dot:var(--pink-ink)">
     <div class="wrap">
       <div class="detail">
-        <div class="dsec">
+        <div class="dsec" id="offen">
           <h2>Free of charge and open to all</h2>
           <p>The Forscherbühne understands education as an opportunity for everyone. Taking part is therefore free, and open regardless of background, language or social situation. Children and young people are invited to come with their families, their school classes or the people who care for them. Science becomes something experienced together. The Forscherbühne draws on a long tradition of public science communication, as the Royal Institution in London has practised since 1825 with its Christmas Lectures for children, and brings this form of learning to Basel.</p>
         </div>
-        <div class="dsec">
+        <div class="dsec" id="staunen">
           <h2>Shared wonder as the starting point of learning</h2>
           <p>When an experiment produces an unexpected reaction, when something lights up, moves, or visibly changes, wonder arises. Educational research shows that curiosity is an essential engine of lasting learning. Out of wonder come questions, and questions are the starting point for understanding, for discovery, and for independent thought. The Forscherbühne creates the moments in which children want, out of their own motivation, to find out how things connect.</p>
         </div>
-        <div class="dsec">
+        <div class="dsec" id="vorbilder">
           <h2>Researchers as models</h2>
           <p>The experiments are carried out by scientists who share their enthusiasm for research and for finding things out with the children. What matters is not spectacular effects but understanding scientific connections together. Children encounter researchers as people who ask questions, make observations and look for explanations. In this way they gain an authentic insight into scientific thinking and scientific work.</p>
         </div>
-        <div class="dsec">
+        <div class="dsec" id="irrtuemer">
           <h2>Learning through questions, trials and errors</h2>
           <p>Scientific knowledge rarely arrives by a direct route. Children experience that doing research means forming hypotheses, testing ideas, and learning from what fails. Not every hypothesis leads straight to the right answer. It is precisely in this process that persistence, critical thinking and the ability to solve problems develop. The Forscherbühne conveys that mistakes are not obstacles but valuable steps on the way to new knowledge. Young children are not yet frightened of this. They put their hand up even when they are not sure of the answer. That fearlessness is often lost over the school years, and without it nobody produces anything that was not there before.</p>
         </div>
-        <div class="dsec">
+        <div class="dsec" id="zuhause">
           <h2>Science to take home</h2>
           <p>So that the joy of discovery lasts beyond the event, children are given ideas for experiments of their own that can be done with simple everyday materials. In this way inquiry is carried into family life, and children are encouraged to follow their questions independently, well beyond the Forscherbühne.</p>
         </div>
@@ -67,7 +78,7 @@
       <p class="vignette">A girl is sitting in the front row. At the front, two clear liquids are mixed together, and suddenly the solution glows an intense blue. For a moment everything is completely still. The girl looks up at her father in astonishment, then turns her attention back to the experiment and asks quietly: how does that work?</p>
 
       <div class="detail" style="margin-top:clamp(3rem, 2rem + 3vw, 4.5rem)">
-        <div class="dsec">
+        <div class="dsec" id="beginn">
           <h2>This is exactly where science begins</h2>
           <p>Out of wonder comes a question, and out of the question the wish to understand the world better. Together with the research team, the children follow up on what they have observed. They form hypotheses, compare explanations, and discover step by step the scientific connections behind the phenomenon. In this way a surprising experience becomes a lasting process of learning: children experience that knowledge is not only handed to them, but comes into being through observing, asking and experimenting.</p>
         </div>
