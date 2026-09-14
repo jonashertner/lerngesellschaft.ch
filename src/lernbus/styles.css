@@ -102,24 +102,81 @@ h2.big + .lead, h2.big + .prose2{ margin-top:2.2rem; }
 .morelink:hover span{ transform:translateX(4px); }
 .morelink:hover{ text-decoration:underline; text-underline-offset:.25em; text-decoration-thickness:2px; }
 
-/* ---- Header: stripped chrome, logo + tiny tracked links + EN dot ---- */
+/* ---- Header: stripped chrome, logo + tiny tracked links + EN dot.
+   One navigation list per page, mirroring the page's sections. It sits
+   inline in the header when the whole row fits (nav.js adds .nav-inline);
+   otherwise it lives behind the round menu button, and the header stays
+   fixed while scrolling (.nav-fixed), compact once scrolled (.is-scrolled).
+   Without JavaScript: the menu button everywhere, native details/summary. ---- */
 .site-head{ position:absolute; top:0; left:0; right:0; z-index:20; }
-.site-head .wrap{ display:flex; align-items:center; justify-content:space-between; gap:1rem; padding-block:1.6rem; }
-.brand{ line-height:1; display:inline-block; }
+.site-head.nav-fixed{ position:fixed; }
+.site-head .wrap{ position:relative; display:flex; align-items:center; justify-content:space-between; gap:1rem; padding-block:1.6rem; }
+.brand{ line-height:1; display:inline-block; flex:none; }
 .brand b{ font-family:var(--display); font-weight:800; font-size:1.4rem; }
 .brand-logo{ display:block; height:clamp(3.2rem, 2.6rem + 2vw, 4.2rem); width:auto; }
 .brand span{ display:block; font-size:.62rem; letter-spacing:.22em; text-transform:uppercase; color:var(--teal-soft); font-weight:700; margin-top:.5rem; }
-.head-right{ display:flex; align-items:center; gap:1rem; }
-.nav{ display:none; align-items:center; gap:1.4rem; }
-@media (min-width:760px){ .nav{ display:flex; } }
-.navlink{ position:relative; padding:.5rem 0; font-weight:750; font-size:.78rem; letter-spacing:.15em; text-transform:uppercase; color:var(--violet); }
-.navlink::after{ content:""; position:absolute; left:0; right:0; bottom:.15rem; height:2px; border-radius:2px; background:var(--marker); transform:scaleX(0); transform-origin:left; transition:transform .22s ease; }
-.navlink:hover::after, .navlink:focus-visible::after{ transform:scaleX(1); }
-/* language toggle as the single circular control */
+.head-right{ display:flex; align-items:center; gap:1rem; flex:none; }
+.vh{ position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); clip-path:inset(50%); white-space:nowrap; }
+/* language toggle and menu button: the two circular controls */
 .lang{ display:grid; place-items:center; width:44px; height:44px; border-radius:50%;
   background:var(--yellow); color:var(--ink); font-weight:800; font-size:.82rem; letter-spacing:.06em;
   transition:transform .16s ease; }
 .lang:hover, .lang:focus-visible{ transform:rotate(-8deg) scale(1.06); color:var(--ink); }
+.menu{ display:block; }
+.menu-btn{ list-style:none; cursor:pointer; display:grid; place-items:center; width:44px; height:44px; border-radius:50%;
+  background:var(--violet); color:var(--bg); transition:transform .16s ease; -webkit-tap-highlight-color:transparent; }
+.menu-btn::-webkit-details-marker{ display:none; }
+.menu-btn::marker{ content:""; }
+.menu-btn:hover, .menu-btn:focus-visible{ transform:rotate(8deg) scale(1.06); }
+.menu-btn:focus-visible{ border-radius:50%; }
+.menu-ico{ position:relative; display:block; width:18px; height:12px; }
+.menu-ico i{ position:absolute; left:0; right:0; top:0; height:2.5px; border-radius:2px; background:currentColor;
+  transition:transform .22s ease, top .22s ease, bottom .22s ease; }
+.menu-ico i + i{ top:auto; bottom:0; }
+.menu[open] .menu-ico i{ top:50%; transform:translateY(-50%) rotate(45deg); }
+.menu[open] .menu-ico i + i{ top:auto; bottom:50%; transform:translateY(50%) rotate(-45deg); }
+
+/* menu mode: the panel opens under the header row. The header itself becomes
+   the full-height surface, so logo, EN dot and the (now crossed) button stay put. */
+.site-head:not(.nav-inline) .menu{ order:2; }
+.site-head:not(.nav-inline):has(.menu[open]){ position:fixed; inset:0; overflow:auto; overscroll-behavior:contain; background:var(--bg); }
+body:has(.site-head:not(.nav-inline) .menu[open]){ overflow:hidden; }
+.site-head:not(.nav-inline) .nav{ position:absolute; top:100%; left:var(--pad); right:var(--pad); display:flex; flex-direction:column;
+  padding:.4rem 0 3rem; counter-reset:navi; }
+.site-head:not(.nav-inline) .navlink{ display:flex; align-items:baseline; gap:.9rem; padding:.5em 0; border-bottom:1.5px solid var(--hairline);
+  font-family:var(--display); font-weight:750; font-size:clamp(1.5rem, 1.05rem + 2.2vw, 2.3rem); line-height:1.15; letter-spacing:-0.025em;
+  color:var(--violet); text-wrap:balance; }
+.site-head:not(.nav-inline) .navlink:first-child{ border-top:1.5px solid var(--hairline); }
+.site-head:not(.nav-inline) .navlink::before{ content:counter(navi, decimal-leading-zero); counter-increment:navi; flex:none;
+  display:grid; place-items:center; width:1.9rem; height:1.9rem; border-radius:48% 52% 55% 45% / 55% 48% 52% 45%;
+  font-family:var(--body); font-weight:750; font-size:.72rem; letter-spacing:.08em; color:var(--teal-soft);
+  transform:rotate(-4deg); transition:background-color .16s ease, color .16s ease; }
+.site-head:not(.nav-inline) .navlink:nth-child(even)::before{ transform:rotate(3deg); border-radius:52% 48% 45% 55% / 48% 55% 45% 52%; }
+.site-head:not(.nav-inline) .navlink:hover::before, .site-head:not(.nav-inline) .navlink:focus-visible::before,
+.site-head:not(.nav-inline) .navlink[aria-current]::before{ background:var(--marker); color:var(--violet); }
+/* the way up (to the parents page, the overview): no number, an arrow */
+.site-head:not(.nav-inline) .navlink-up{ margin-top:1.4rem; border:0 !important; font-family:var(--body); font-weight:750; font-size:1rem;
+  letter-spacing:.02em; color:var(--teal-ink); }
+.site-head:not(.nav-inline) .navlink-up::before{ content:"\2190"; counter-increment:none; width:auto; height:auto; border-radius:0;
+  transform:none; font-size:1rem; letter-spacing:0; color:inherit; background:none !important; }
+
+/* inline mode (the row fits): the tiny tracked links, on one line */
+.site-head.nav-inline .menu{ display:flex; align-items:center; }
+.site-head.nav-inline .menu-btn{ display:none; }
+.site-head.nav-inline .nav{ display:flex; align-items:center; gap:1rem; }
+.site-head.nav-inline .navlink{ position:relative; padding:.5rem 0; font-weight:750; font-size:.72rem; letter-spacing:.1em;
+  text-transform:uppercase; color:var(--violet); white-space:nowrap; }
+.site-head.nav-inline .navlink::after{ content:""; position:absolute; left:0; right:0; bottom:.15rem; height:2px; border-radius:2px;
+  background:var(--marker); transform:scaleX(0); transform-origin:left; transition:transform .22s ease; }
+.site-head.nav-inline .navlink:hover::after, .site-head.nav-inline .navlink:focus-visible::after,
+.site-head.nav-inline .navlink[aria-current]::after{ transform:scaleX(1); }
+
+/* fixed header, once scrolled: chalk bar, hairline, smaller logo */
+.site-head .wrap, .brand-logo{ transition:padding .2s ease, height .2s ease; }
+.site-head.nav-fixed.is-scrolled{ background:var(--bg); box-shadow:0 1px 0 var(--hairline); }
+.site-head.nav-fixed.is-scrolled .wrap{ padding-block:.8rem; }
+.site-head.nav-fixed.is-scrolled .brand-logo{ height:2.6rem; }
+.site-head.nav-fixed.is-scrolled .brand span{ display:none; }
 
 /* ---- Hero: one sentence as a monument ---- */
 .hero{ position:relative; min-height:max(640px, 98svh); display:flex; align-items:center; overflow:hidden; background:var(--bg); }
@@ -277,16 +334,38 @@ h2.big + .lead, h2.big + .prose2{ margin-top:2.2rem; }
 #zielgruppe .book-card{ background:transparent; border:0; padding:0; max-width:44rem; margin-top:1.8rem; }
 #qualitaet .prose2 .lead{ font-family:var(--display); font-weight:600; color:var(--violet);
   font-size:clamp(1.35rem, 1.05rem + 1.4vw, 2.2rem); line-height:1.3; letter-spacing:-0.015em; max-width:30ch; }
-#kosten .detail{ grid-template-columns:repeat(auto-fit, minmax(min(100%, 20rem), 1fr)); max-width:60rem;
-  gap:clamp(2rem, 1.4rem + 2vw, 3.5rem); margin-top:2.8rem; }
-#kosten .dsec{ border-top:2px solid var(--line); padding-top:1.4rem; }
-#kosten .dsec h2, #kosten .dsec h3{ font-size:clamp(1.6rem, 1.2rem + 1.6vw, 2.5rem); }
-#kosten .dsec h2::before, #kosten .dsec h3::before{ display:none; }
 #fragen .detail{ max-width:70ch; margin-top:1.6rem; gap:0; }
 #fragen .dsec{ border-bottom:1.5px solid var(--hairline); padding-block:2rem; }
 #fragen .dsec h2::before, #fragen .dsec h3::before{ display:none; }
 #fragen .dsec h2, #fragen .dsec h3{ font-size:clamp(1.25rem, 1.1rem + 0.6vw, 1.55rem); }
 #fragen .dsec p{ margin-top:.65rem; }
+
+/* ---- Tariff table (parents page): one row per rate, amounts in display type ---- */
+.tariffs{ width:100%; max-width:62rem; margin-top:clamp(2.2rem, 1.6rem + 2vw, 3.2rem); border-collapse:collapse; border-top:2px solid var(--line); }
+.tariffs th, .tariffs td{ text-align:left; vertical-align:top; padding:1.15rem 0; border-bottom:1.5px solid var(--hairline); }
+.tariffs thead th{ font-family:var(--body); font-weight:750; font-size:var(--fs-eyebrow); letter-spacing:.15em; text-transform:uppercase;
+  color:var(--teal-soft); padding:.9rem 0 .8rem; vertical-align:bottom; }
+.tariffs thead th span{ display:block; letter-spacing:.02em; text-transform:none; font-weight:600; font-size:.78rem; margin-top:.15rem; }
+.tariffs tbody th{ font-weight:400; padding-right:1.5rem; }
+.tariffs .tname{ display:block; font-family:var(--display); font-weight:800; font-size:clamp(1.2rem, 1.05rem + 0.7vw, 1.6rem); line-height:1.15;
+  letter-spacing:-0.02em; color:var(--violet); width:fit-content; }
+.tariffs .ref .tname{ background:linear-gradient(transparent 62%, var(--marker) 62%, var(--marker) 96%, transparent 96%); }
+.tariffs .tdesc{ display:block; margin-top:.4rem; max-width:36ch; font-size:.95rem; line-height:1.5; color:var(--teal-ink); }
+.tariffs td{ font-family:var(--display); font-weight:800; font-size:clamp(1.3rem, 1.1rem + 0.9vw, 1.9rem); line-height:1.15; letter-spacing:-0.02em;
+  color:var(--violet); white-space:nowrap; padding-left:1.25rem; width:1%; }
+.tariffs td + td{ padding-left:2.5rem; }
+.tariffs-note{ margin-top:1.4rem; max-width:52ch; color:var(--teal-ink); font-size:.95rem; }
+@media (max-width:600px){
+  .tariffs, .tariffs tbody, .tariffs tr, .tariffs th, .tariffs td{ display:block; width:auto; }
+  .tariffs thead{ position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); clip-path:inset(50%); }
+  .tariffs tr{ padding:1.1rem 0; border-bottom:1.5px solid var(--hairline); }
+  .tariffs th, .tariffs td{ border:0; padding:0; }
+  .tariffs tbody th{ padding-right:0; }
+  .tariffs td{ display:inline-block; margin:.9rem 2.4rem 0 0; white-space:normal; }
+  .tariffs td + td{ padding-left:0; }
+  .tariffs td::before{ content:attr(data-label); display:block; font-family:var(--body); font-weight:750; font-size:.68rem; letter-spacing:.14em;
+    text-transform:uppercase; color:var(--teal-soft); margin-bottom:.15rem; }
+}
 
 /* ---- Donation block (concept page): violet punctuation ---- */
 .give{ background:var(--violet); color:rgba(251,250,243,.9); border-radius:clamp(24px, 3vw, 36px); overflow:hidden; position:relative; }
@@ -341,13 +420,13 @@ h2.big + .lead, h2.big + .prose2{ margin-top:2.2rem; }
 @media (max-width:560px){ .brand span{ display:none; } }
 @media (max-width:380px){
   .brand-logo{ height:3rem; }
-  .lang{ width:40px; height:40px; }
+  .lang, .menu-btn{ width:40px; height:40px; }
 }
 
 /* ---- Reduced motion ---- */
 @media (prefers-reduced-motion:reduce){
   html{ scroll-behavior:auto; }
-  .navlink::after{ transition:none !important; }
-  .btn:hover, .lang:hover{ transform:none !important; }
+  .navlink::after, .navlink::before, .menu-ico i, .site-head .wrap, .brand-logo{ transition:none !important; }
+  .btn:hover, .lang:hover, .menu-btn:hover, .menu-btn:focus-visible{ transform:none !important; }
   .hero .eyebrow, .hero h1, .hero .lead, .hero-cta, .hero h1 .pop::after{ animation:none !important; }
 }

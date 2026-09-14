@@ -91,32 +91,98 @@ h2.big{ font-size:var(--fs-h2); max-width:18ch; margin-top:1rem; }
 .morelink span{ transition:transform .2s ease; }
 .morelink:hover span{ transform:translateX(4px); }
 
-/* ---- Header / nav ---- */
+/* ---- Header / nav ----
+   One navigation list per page, mirroring the page's sections. It sits
+   inline in the header when the whole row fits (nav.js adds .nav-inline);
+   otherwise it lives behind the round menu button, the header stays fixed
+   while scrolling (.nav-fixed) and turns solid once scrolled (.is-scrolled).
+   Without JavaScript: the menu button everywhere, native details/summary. */
 .site-head{ position:absolute; top:0; left:0; right:0; z-index:20; }
-.site-head .wrap{ display:flex; align-items:center; justify-content:space-between; gap:1rem; padding-block:1.4rem; }
-.brand{ line-height:1; }
+.site-head.nav-fixed{ position:fixed; }
+.site-head .wrap{ position:relative; display:flex; align-items:center; justify-content:space-between; gap:1rem; padding-block:1.4rem; }
+.brand{ line-height:1; flex:none; }
 .brand b{ font-family:var(--display); font-weight:800; font-size:1.4rem; letter-spacing:-0.03em; }
 .brand span{ display:block; font-size:.64rem; letter-spacing:.24em; text-transform:uppercase; color:var(--ink-soft); font-weight:800; margin-top:.3rem; }
-.head-right{ display:flex; align-items:center; gap:.4rem; }
-.nav{ display:none; align-items:center; gap:.2rem; }
-@media (min-width:760px){ .nav{ display:flex; } }
-.navlink{ position:relative; z-index:0; padding:.6rem .95rem; border-radius:999px; font-weight:800; font-size:.96rem; transition:color .2s ease; }
-.navlink::before{ content:""; position:absolute; inset:0; z-index:-1; background:var(--yellow);
-  border-radius:47% 53% 62% 38% / 57% 45% 55% 43%;
-  transform:scale(0) rotate(-12deg); transform-origin:center;
-  transition:transform .42s cubic-bezier(.34,1.56,.64,1); }
-.navlink:nth-of-type(2)::before{ background:var(--cyan); }
-.navlink:hover, .navlink:focus-visible{ color:var(--ink); }
-.navlink:hover::before, .navlink:focus-visible::before{ transform:scale(1) rotate(-3deg); animation:blob 2.6s ease-in-out .12s infinite; }
+.head-right{ display:flex; align-items:center; gap:.4rem; flex:none; }
+.vh{ position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); clip-path:inset(50%); white-space:nowrap; }
 .nav-cta{ padding:.6em 1.2em; font-size:.95rem; min-height:0; }
 .lang{ font-weight:800; font-size:.9rem; letter-spacing:.04em; color:var(--ink-soft); padding:.45rem .55rem; border-radius:999px; }
 .lang:hover, .lang:focus-visible{ color:var(--ink); }
-.video-on .lang{ color:rgba(255,255,255,.92); }
+/* menu button: details/summary as a round ink dot */
+.menu{ display:block; }
+.menu-btn{ list-style:none; cursor:pointer; display:grid; place-items:center; width:44px; height:44px; border-radius:50%; margin-left:.3rem;
+  background:var(--ink); color:var(--bg); transition:transform .18s cubic-bezier(.34,1.56,.64,1), background-color .2s ease, color .2s ease;
+  -webkit-tap-highlight-color:transparent; }
+.menu-btn::-webkit-details-marker{ display:none; }
+.menu-btn::marker{ content:""; }
+.menu-btn:hover, .menu-btn:focus-visible{ transform:rotate(8deg) scale(1.06); }
+.menu-btn:focus-visible{ border-radius:50%; }
+.menu-ico{ position:relative; display:block; width:18px; height:12px; }
+.menu-ico i{ position:absolute; left:0; right:0; top:0; height:2.5px; border-radius:2px; background:currentColor;
+  transition:transform .22s ease, top .22s ease, bottom .22s ease; }
+.menu-ico i + i{ top:auto; bottom:0; }
+.menu[open] .menu-ico i{ top:50%; transform:translateY(-50%) rotate(45deg); }
+.menu[open] .menu-ico i + i{ top:auto; bottom:50%; transform:translateY(50%) rotate(-45deg); }
+
+/* menu mode: the panel opens under the header row. The header itself becomes
+   the full-height surface, so brand, EN and the (now crossed) button stay put. */
+.site-head:not(.nav-inline) .menu{ order:3; }
+.site-head:not(.nav-inline):has(.menu[open]){ position:fixed; inset:0; overflow:auto; overscroll-behavior:contain; background:var(--bg); }
+body:has(.site-head:not(.nav-inline) .menu[open]){ overflow:hidden; }
+.site-head:not(.nav-inline) .nav{ position:absolute; top:100%; left:var(--pad); right:var(--pad); display:flex; flex-direction:column;
+  padding:.4rem 0 3rem; counter-reset:navi; }
+.site-head:not(.nav-inline) .navlink{ display:flex; align-items:baseline; gap:.9rem; padding:.5em 0; border-bottom:2px solid var(--line);
+  font-family:var(--display); font-weight:800; font-size:clamp(1.5rem, 1.05rem + 2.2vw, 2.3rem); line-height:1.12; letter-spacing:-0.022em;
+  color:var(--ink); text-wrap:balance; }
+.site-head:not(.nav-inline) .navlink:first-child{ border-top:2px solid var(--line); }
+.site-head:not(.nav-inline) .navlink::before{ content:counter(navi, decimal-leading-zero); counter-increment:navi; flex:none;
+  display:grid; place-items:center; width:1.9rem; height:1.9rem; border-radius:47% 53% 62% 38% / 57% 45% 55% 43%;
+  font-family:var(--body); font-weight:800; font-size:.72rem; letter-spacing:.08em; color:var(--ink-soft);
+  transition:background-color .16s ease, color .16s ease; }
+.site-head:not(.nav-inline) .navlink:hover::before, .site-head:not(.nav-inline) .navlink:focus-visible::before,
+.site-head:not(.nav-inline) .navlink[aria-current]::before{ background:var(--yellow); color:var(--ink); }
+/* the way up (to the overview): no number, an arrow */
+.site-head:not(.nav-inline) .navlink-up{ margin-top:1.4rem; border:0 !important; font-family:var(--body); font-weight:800; font-size:1rem;
+  letter-spacing:0; color:var(--ink-soft); }
+.site-head:not(.nav-inline) .navlink-up::before{ content:"\2190"; counter-increment:none; width:auto; height:auto; border-radius:0;
+  font-size:1rem; letter-spacing:0; color:inherit; background:none !important; }
+/* the call to action, as a pill at the foot of the panel */
+.site-head:not(.nav-inline) .navlink-cta{ display:inline-flex; align-self:flex-start; margin-top:1.6rem; padding:.85em 1.5em; border:0 !important;
+  border-radius:999px; background:var(--pink); color:var(--ink); font-family:var(--body); font-weight:800; font-size:1.02rem; letter-spacing:0;
+  line-height:1.2; box-shadow:0 12px 30px -14px var(--pink); transition:transform .18s cubic-bezier(.34,1.56,.64,1); }
+.site-head:not(.nav-inline) .navlink-cta::before{ display:none; }
+.site-head:not(.nav-inline) .navlink-cta:hover{ transform:translateY(-3px) rotate(-1.5deg); }
+/* in menu mode the header keeps its pill on tablets; phones find it in the panel */
+.site-head:not(.nav-inline) .nav-cta{ display:none; }
+@media (min-width:600px){ .site-head:not(.nav-inline) .nav-cta{ display:inline-flex; } .site-head:not(.nav-inline) .navlink-cta{ display:none; } }
+
+/* inline mode (the row fits): the bold pills with the blob hover, on one line */
+.site-head.nav-inline .menu{ display:flex; align-items:center; }
+.site-head.nav-inline .menu-btn{ display:none; }
+.site-head.nav-inline .nav{ display:flex; align-items:center; gap:.2rem; }
+.site-head.nav-inline .navlink{ position:relative; z-index:0; padding:.55rem .85rem; border-radius:999px; font-weight:800; font-size:.94rem;
+  white-space:nowrap; transition:color .2s ease; }
+.site-head.nav-inline .navlink::before{ content:""; position:absolute; inset:0; z-index:-1; background:var(--yellow);
+  border-radius:47% 53% 62% 38% / 57% 45% 55% 43%;
+  transform:scale(0) rotate(-12deg); transform-origin:center;
+  transition:transform .42s cubic-bezier(.34,1.56,.64,1); }
+.site-head.nav-inline .navlink:nth-of-type(even)::before{ background:var(--cyan); }
+.site-head.nav-inline .navlink:hover, .site-head.nav-inline .navlink:focus-visible{ color:var(--ink); }
+.site-head.nav-inline .navlink:hover::before, .site-head.nav-inline .navlink:focus-visible::before{ transform:scale(1) rotate(-3deg); animation:blob 2.6s ease-in-out .12s infinite; }
+.site-head.nav-inline .navlink[aria-current]::before{ transform:scale(1) rotate(-3deg); }
+.site-head.nav-inline .navlink-cta{ display:none; }
 @keyframes blob{
   0%,100%{ border-radius:47% 53% 62% 38% / 57% 45% 55% 43%; }
   33%{ border-radius:63% 37% 44% 56% / 43% 59% 41% 57%; }
   66%{ border-radius:38% 62% 56% 44% / 59% 41% 57% 43%; }
 }
+
+/* fixed header, once scrolled: solid bar, hairline, smaller brand */
+.site-head .wrap, .brand b{ transition:padding .2s ease, font-size .2s ease; }
+.site-head.nav-fixed.is-scrolled{ background:var(--bg); box-shadow:0 1px 0 var(--line); }
+.site-head.nav-fixed.is-scrolled .wrap{ padding-block:.75rem; }
+.site-head.nav-fixed.is-scrolled .brand b{ font-size:1.2rem; }
+.site-head.nav-fixed.is-scrolled .brand span{ display:none; }
 
 /* ---- Hero (film) ---- */
 .hero{ position:relative; min-height:max(560px, 100svh); display:flex; align-items:center; overflow:hidden; }
@@ -145,7 +211,10 @@ h2.big{ font-size:var(--fs-h2); max-width:18ch; margin-top:1rem; }
 .video-on .hero h1 .pop::after{ display:none; }
 .video-on .btn-ghost{ color:#fff; box-shadow:inset 0 0 0 2.5px rgba(255,255,255,.88); }
 .video-on .btn-ghost:hover{ background:#fff; color:var(--ink); box-shadow:inset 0 0 0 2.5px #fff; }
-.video-on .brand b, .video-on .brand span, .video-on .navlink{ color:#fff; }
+.video-on .site-head:not(.is-scrolled):not(.menu-open) .brand b, .video-on .site-head:not(.is-scrolled):not(.menu-open) .brand span,
+.video-on .site-head:not(.is-scrolled):not(.menu-open) .lang{ color:#fff; }
+.video-on .site-head.nav-inline .navlink{ color:#fff; }
+.video-on .site-head:not(.is-scrolled):not(.menu-open) .menu-btn{ background:#fff; color:var(--ink); }
 .video-on .hero :focus-visible{ outline-color:#fff; }
 .hero-inner{ position:relative; z-index:3; width:100%; min-width:0; }
 .hero h1{ font-size:var(--fs-hero); max-width:14ch; line-height:0.96; letter-spacing:-0.03em; }
@@ -282,6 +351,7 @@ h2.big{ font-size:var(--fs-h2); max-width:18ch; margin-top:1rem; }
   .brand b{ font-size:1.22rem; }
   .brand span{ letter-spacing:.18em; }
   .nav-cta{ padding:.5em 1em; font-size:.9rem; }
+  .menu-btn{ width:40px; height:40px; }
 }
 
 /* ---- Reduced motion ---- */
@@ -289,6 +359,7 @@ h2.big{ font-size:var(--fs-h2); max-width:18ch; margin-top:1rem; }
   html{ scroll-behavior:auto; }
   .hero-video, .grade{ display:none !important; }
   .navlink:hover::before,.navlink:focus-visible::before{ animation:none !important; }
-  .btn:hover{ transform:none !important; }
+  .navlink::before, .menu-ico i, .site-head .wrap, .brand b{ transition:none !important; }
+  .btn:hover, .menu-btn:hover, .menu-btn:focus-visible, .navlink-cta:hover{ transform:none !important; }
 }
 .soon{ display:inline-block; margin-top:.4rem; font-weight:750; font-size:.78rem; letter-spacing:.14em; text-transform:uppercase; color:var(--ink); opacity:.55; }
