@@ -143,6 +143,8 @@ em { font-style:normal; }
 .booking-disclosure { font-size:.95rem; margin-bottom:1rem; }
 .calendar-frame { margin:1.5rem -1rem; }
 .calendar-frame iframe { display:block; width:100%; min-height:740px; border:0; background:white; }
+.booking-section > .calendar-frame { grid-column:1 / -1; width:100%; margin:0; border:1px solid var(--rule); border-radius:10px; overflow:hidden; background:white; }
+.booking-section > .calendar-frame iframe { min-height:1050px; }
 [data-calendar-help] { margin-top:1rem; }
 .booking-error { font-size:.95rem; color:#913a26; border-left:3px solid currentColor; padding-left:1rem; margin-top:1rem; }
 .weekly-times { margin-top:1.5rem; border-top:1px solid var(--rule); }

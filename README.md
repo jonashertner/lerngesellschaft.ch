@@ -49,9 +49,10 @@ live in `src/lernbus/home.css` and `home.js`. Run `npm run build` followed by
 `node scripts/check-lernbus.mjs` to verify the generated routes and booking guards.
 
 Public scheduling configuration is in `src/lernbus/booking-config.json`.
-The supplied weekly times are stored there; direct booking stays disabled until
-a real booking page and the calendar owner are connected. See
-`design/2026-09-15-lernbus-redesign.md` for deployment and activation details.
+Microsoft Bookings uses jonashertner@lernbus.ch and the supplied 21 weekly
+one-hour slots. Conny Brandes is a team member; public enquiries go to
+info@lernbus.ch. The calendar loads on request and needs HTTPS for embedding.
+See `design/2026-09-15-lernbus-redesign.md` for setup and verification details.
 
 ## Fonts
 

@@ -118,7 +118,7 @@
           <div class="calendar-frame" data-calendar-frame hidden></div>
         </div>
         <p class="booking-error" data-booking-error role="status" hidden>{{ t.calendarUnavailable }}</p>
-        {% if lernbusBooking.weeklySlots.length %}<details class="weekly-times"><summary>{{ t.weeklyHeading }} <span aria-hidden="true">+</span></summary><p class="small">{{ t.weeklyNote }}</p><dl>{% for day in lernbusBooking.weeklySlots %}<div><dt>{{ t.weekdays[day.day] }}</dt><dd>{% for slot in day.slots %}<span>{{ slot }}</span>{% endfor %}</dd></div>{% endfor %}</dl></details>{% endif %}
+        {% if lernbusBooking.weeklySlots.length %}<details class="weekly-times"><summary>{{ t.weeklyHeading }} <span aria-hidden="true">+</span></summary><p class="small">{% if lernbusBooking.configured %}{{ t.weeklyLiveNote }}{% else %}{{ t.weeklyNote }}{% endif %}</p><dl>{% for day in lernbusBooking.weeklySlots %}<div><dt>{{ t.weekdays[day.day] }}</dt><dd>{% for slot in day.slots %}<span>{{ slot }}</span>{% endfor %}</dd></div>{% endfor %}</dl></details>{% endif %}
         <p class="booking-privacy"><a href="{{ t.privacyHref }}">{{ t.privacy }}</a></p>
       </div>
     </section>

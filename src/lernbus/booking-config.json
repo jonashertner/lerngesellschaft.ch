@@ -1,9 +1,10 @@
 {
-  "enabled": false,
-  "bookingUrl": "",
-  "embedUrl": "",
-  "providerName": "",
+  "enabled": true,
+  "bookingUrl": "https://outlook.office.com/book/Lernbus@NETORGFT21038058.onmicrosoft.com/?ismsaljsauthenabled",
+  "embedUrl": "https://outlook.office.com/book/Lernbus@NETORGFT21038058.onmicrosoft.com/?ismsaljsauthenabled",
+  "providerName": "Microsoft Bookings",
   "contactEmail": "info@lernbus.ch",
+  "calendarOwnerEmail": "jonashertner@lernbus.ch",
   "durationMinutes": 60,
   "timeZone": "Europe/Zurich",
   "weeklySlots": {
