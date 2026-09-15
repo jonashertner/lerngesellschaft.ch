@@ -38,6 +38,8 @@
 .source-home .ticks{grid-template-columns:repeat(2,minmax(0,1fr));gap:1.5rem 3rem}
 .source-home .ticks li{font-weight:600;font-size:1.0625rem;padding-left:2rem}
 .source-home .ticks li::before,.source-home .ticks li:nth-child(even)::before{content:'';top:calc((1.4em - 1.7rem)/2);background:var(--yellow) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='m6 12 4 4 8-8' fill='none' stroke='%23205951' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/72% no-repeat;border-radius:50%;transform:none}
+.source-home .team-section{background:var(--bg);border-top:2px solid var(--violet)}
+.source-home .team-section .team-profile{margin-top:clamp(2.5rem,4vw,4rem)}
 .source-home #ablauf{background:var(--mint-paper)}
 .source-home .steps.grid2{grid-template-columns:repeat(2,minmax(0,1fr));max-width:none;gap:1rem 4rem;margin-left:0}
 .source-home .steps .step{padding:1.4rem 0 1.6rem 4.5rem;border-top:2px solid var(--violet);border-bottom:0;min-width:0}

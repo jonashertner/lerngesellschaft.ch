@@ -72,15 +72,23 @@
 .detail-page .site-head.nav-inline .navlink::after{background:var(--violet)}
 .detail-page .foot{color:var(--bg)}
 .detail-page .foot a{color:var(--bg)}
-.detail-page .team-profile{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:clamp(2rem,6vw,6rem);align-items:center}
-.detail-page .team-photo-placeholder{aspect-ratio:4/5;max-height:32rem;display:grid;place-items:center;background:var(--mint-paper);border:2px solid var(--violet);box-shadow:8px 8px 0 var(--yellow);color:var(--forest);font-size:1rem}
-.detail-page .team-profile-copy{min-width:0}
-.detail-page .team-profile h2{font-size:clamp(2.8rem,5vw,5rem);max-width:12ch;margin-top:1rem}
-.detail-page .team-role{font-size:1.4rem;font-weight:700;color:var(--forest);margin-top:1.25rem}
-.detail-page .team-bio-pending{color:var(--teal-soft);margin-top:1.5rem}
-.detail-page .team-profile .morelink{margin:1.25rem 0 0;overflow-wrap:anywhere;display:block;max-width:100%}
+.detail-page .team-profile{display:grid;grid-template-columns:minmax(0,.75fr) minmax(0,1.25fr);gap:clamp(2.5rem,7vw,7rem);align-items:start}
+.detail-page .team-identity,.detail-page .team-profile-copy{min-width:0}
+.detail-page .team-photo-placeholder{position:relative;width:100%;max-width:27rem;aspect-ratio:4/5;display:grid;place-items:center;background:var(--lavender-paper);border:2px solid var(--violet);box-shadow:8px 8px 0 var(--yellow);color:var(--violet)}
+.detail-page .team-initials{font-family:var(--display);font-size:clamp(6rem,11vw,10rem);line-height:1;letter-spacing:-.06em}
+.detail-page .team-photo-label{position:absolute;bottom:1.25rem;left:1rem;right:1rem;text-align:center;font-size:1rem}
+.detail-page .team-name{font-family:var(--display);font-size:clamp(2.5rem,3.5vw,3.8rem);line-height:1.08;letter-spacing:-.025em;max-width:12ch;margin:2rem 0 .7rem;color:var(--violet);text-wrap:balance}
+.detail-page .team-role{font-size:1.25rem;font-weight:700;color:var(--forest);margin:0}
+.detail-page .team-profile .morelink{margin:.75rem 0 0;overflow-wrap:anywhere;display:block;max-width:100%;font-size:1rem}
+.detail-page .team-bio-section{padding-block:2rem;border-top:1px solid var(--hairline)}
+.detail-page .team-bio-section:first-child{padding-top:0;border-top:0}
+.detail-page .team-bio-section:last-child{padding-bottom:0}
+.detail-page .team-bio-heading{font-family:var(--display);font-size:clamp(1.65rem,2.3vw,2.3rem);font-weight:700;line-height:1.15;letter-spacing:-.02em;color:var(--forest);margin:0 0 1.2rem;text-wrap:balance}
+.detail-page .team-bio-section p{font-size:1.0625rem;line-height:1.65;max-width:62ch;margin:0}
+.detail-page .team-bio-section p+p{margin-top:1.15rem}
 @media(max-width:48rem){
- .detail-page .team-profile{grid-template-columns:minmax(0,1fr);gap:2rem}
- .detail-page .team-photo-placeholder{width:100%;max-width:24rem;max-height:24rem}
- .detail-page .team-profile h2{font-size:clamp(2.6rem,9vw,4rem)}
+ .detail-page .team-profile{grid-template-columns:minmax(0,1fr);gap:2.5rem}
+ .detail-page .team-photo-placeholder{max-width:18rem}
+ .detail-page .team-name{font-size:clamp(2.5rem,8vw,3.5rem);max-width:none}
+ .detail-page .team-bio-section{padding-block:1.75rem}
 }

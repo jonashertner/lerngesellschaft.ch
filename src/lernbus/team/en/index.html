@@ -1,3 +1,6 @@
+---
+locale: en
+---
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -66,16 +69,9 @@
   <!-- TEAM -->
   <section class="section" id="team" style="--dot:var(--violet)">
     <div class="wrap">
-      <article class="team-profile" aria-labelledby="conny-name">
-        <div class="team-photo-placeholder"><span>Photo to follow</span></div>
-        <div class="team-profile-copy">
-          <p class="eyebrow">Leadership</p>
-          <h2 class="big" id="conny-name">Conny Brandes</h2>
-          <p class="team-role">Head of Lernbus</p>
-          <p class="team-bio-pending">Biography to follow.</p>
-          <a class="morelink" href="mailto:connybrandes@lernbus.ch">connybrandes@lernbus.ch</a>
-        </div>
-      </article>
+      {% set profileHeading = "h2" %}
+      {% set bioHeading = "h3" %}
+      {% include "lernbus-team.njk" %}
       <p class="lead reveal" style="margin-top:2.6rem; max-width:58ch">Quality is maintained continuously through team meetings, professional exchange, evaluation and further training.</p>
       <div class="reveal" style="margin-top:2rem">
         <a class="morelink" href="../../en/index.html">Back to the parents page <span>&rarr;</span></a>

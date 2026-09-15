@@ -70,3 +70,9 @@ Validation: approved Markdown matches publication text exactly; one H1 and six c
 The hero hand is replaced by a violet paper bird; original image files are retained. See 2026-09-15-hero-edit.md for the exact Imagegen prompt and source/output paths. The web image is 1448 × 1086, with an 800 × 600 responsive derivative. No other image was regenerated.
 
 Final visual corrections requested by Jonas: Fördertarif now uses the same white text and prices as the other tariff rows. Goal checkmarks use a centered SVG inside a circular yellow marker, with inherited alternating shapes and rotations removed. Browser computed styles confirm all six markers are centered and all tariff rows share the same colour; the six-route copy and 152-reference checks pass.
+
+## Conny's biography and public release — 15 September 2026
+
+Jonas supplied Conny Brandes's first-person biography and requested a Team section immediately before Ablauf, plus a photo placeholder. It is gently edited into three sections and six paragraphs, retaining her employment, training and family details. The DE/EN parent pages and existing team pages share one biography data source and profile include; the main navigation now links directly to the new section. The placeholder displays her initials and an explicit photo-to-follow label, without a fabricated portrait. The desktop portrait/biography columns stack below 48rem. The immutable live-copy baseline is retained, with the exact authorized additions recorded separately.
+
+Jonas then explicitly instructed: «then publish to lernbus.ch etc». This authorizes publishing the complete reviewed Lernbus redesign, calendar and team content via the existing public GitHub Pages deployment, in addition to refreshing the private design preview. The association's other pages retain their content, with the shared privacy notice accurately describing the existing email form and booking provider.

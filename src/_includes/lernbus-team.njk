@@ -1,0 +1,22 @@
+{% set member = lernbusTeam[locale] %}
+<article class="team-profile" aria-labelledby="conny-name">
+  <div class="team-identity">
+    <div class="team-photo-placeholder" role="img" aria-label="{{ member.photoDescription }}">
+      <span class="team-initials" aria-hidden="true">CB</span>
+      <span class="team-photo-label" aria-hidden="true">{{ member.photoLabel }}</span>
+    </div>
+    <{{ profileHeading }} class="team-name" id="conny-name">{{ member.name }}</{{ profileHeading }}>
+    <p class="team-role">{{ member.role }}</p>
+    <a class="morelink" href="mailto:connybrandes@lernbus.ch">connybrandes@lernbus.ch</a>
+  </div>
+  <div class="team-profile-copy">
+    {% for section in member.sections %}
+    <div class="team-bio-section">
+      <{{ bioHeading }} class="team-bio-heading">{{ section.title }}</{{ bioHeading }}>
+      {% for paragraph in section.paragraphs %}
+      <p>{{ paragraph }}</p>
+      {% endfor %}
+    </div>
+    {% endfor %}
+  </div>
+</article>

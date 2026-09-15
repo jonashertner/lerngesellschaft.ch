@@ -1,5 +1,5 @@
 {
-  "authorization": "Jonas, 15 September 2026: round tariffs, separate appointment booking and contact, add Conny Brandes as Leiterin with photo/bio to come. Only those changes and their navigation are permitted beyond the immutable live-site baseline. Jonas also authorized the reviewed AGB publication via the task AGBs für Lerngesellschaft entwerfen (verified 15 September 2026): footer links and minimal DE/EN clarification that six months is a shared plan and support is cancellable at any time.",
+  "authorization": "Jonas, 15 September 2026: round tariffs, separate appointment booking and contact, add Conny Brandes as Leiterin with photo/bio to come. Only those changes and their navigation are permitted beyond the immutable live-site baseline. Jonas also authorized the reviewed AGB publication via the task AGBs für Lerngesellschaft entwerfen (verified 15 September 2026): footer links and minimal DE/EN clarification that six months is a shared plan and support is cancellable at any time. Jonas, 15 September 2026: add the supplied first-person Conny biography, gently edited and structured, with a photo placeholder in a Team section immediately before Ablauf. Update the existing team page and English equivalents consistently. Publish the completed site to lernbus.ch and its related public routes.",
   "rounding": "Working choice communicated: CHF 12.50 to CHF 10; CHF 87.50 to CHF 90.",
   "pages": {
     "lernbus/index.html": [
@@ -7,7 +7,13 @@
         "start": 10,
         "end": 23,
         "before": "Zielgruppe Warum Ansatz Ablauf Kosten Qualität Gespräch Fragen Trägerschaft EN Individuelle Frühförderung ,",
-        "after": "Zielgruppe Warum Ansatz Ablauf Kosten Qualität Termin buchen Kontakt Team Fragen Trägerschaft EN Individuelle Frühförderung ,"
+        "after": "Zielgruppe Warum Ansatz Team Ablauf Kosten Qualität Termin buchen Kontakt Fragen Trägerschaft EN Individuelle Frühförderung ,"
+      },
+      {
+        "start": 438,
+        "end": 438,
+        "before": "",
+        "after": "Team CB Foto folgt Conny Brandes Leiterin Lernbus connybrandes @ lernbus . ch Mein beruflicher Weg Seit meinem 16 . Lebensjahr arbeite ich mit Kindern in Kindertagesstätten . Zunächst war ich als Miterzieherin tätig . Anschliessend habe ich 14 Jahre lang selbstständig in Co - Leitung die Kita Schnäggi geführt . Im Laufe meiner beruflichen Tätigkeit habe ich verschiedene Weiterbildungen absolviert , unter anderem als Berufsbildnerin sowie im Bereich der frühen Sprachförderung mit Schwerpunkt Deutsch . Zudem bin ich Mutter von zwei bereits erwachsenen Kindern und einem achtjährigen Kind . Zeit für frühe Förderung Die Bedeutung der frühen Bildung und Förderung wird in unserer Gesellschaft nach wie vor nicht ausreichend anerkannt . In meiner 30 - jährigen Arbeit habe ich festgestellt , dass es vor allem eines braucht , um Kinder gezielt und individuell zu fördern : Zeit . Zeit , in der ein Kind sich ausprobieren darf . Und Zeit , in der ein Erwachsener liebevoll , spielerisch und fachlich fundiert mit dem Kind grundlegende Fähigkeiten übt und stärkt . Individuelle Begleitung Mit dem Lernbus schaffen wir genau diesen Raum und diese Zeit , damit Kinder individuell begleitet und gezielt in ihren Kernkompetenzen gestärkt werden können . Jedes Kind und jeder Mensch ist einzigartig . Es gibt nicht die eine Massnahme , die einem Kind beispielsweise hilft , dranzubleiben , wenn etwas gerade nicht gelingt . Mit Zeit , professionellem Wissen und einer liebevollen Haltung ist es jedoch möglich , gemeinsam mit dem Kind herauszufinden , was es braucht , und dies nachhaltig zu integrieren ."
       },
       {
         "start": 448,
@@ -63,7 +69,13 @@
         "start": 13,
         "end": 26,
         "before": "Approach How it works Fees Quality Conversation Questions Who runs it DE Individual",
-        "after": "Approach How it works Fees Quality Book a time Contact Team Questions Who runs it DE Individual"
+        "after": "Approach Team How it works Fees Quality Book a time Contact Questions Who runs it DE Individual"
+      },
+      {
+        "start": 500,
+        "end": 500,
+        "before": "",
+        "after": "Team CB Photo to follow Conny Brandes Head of Lernbus connybrandes @ lernbus . ch My professional journey I have worked with children in daycare settings since I was 16 . I started as an assistant educator , before spending 14 years running Kita Schnäggi as a self - employed co - director . Throughout my career , I have completed various further training courses , including training as a vocational trainer and in early language development , with a focus on German . I am also a mother of two grown - up children and an eight - year - old child . Time for early development Our society still does not sufficiently recognise the importance of early education and development . In my 30 years of work , I have found that one thing above all is needed to support each child individually and purposefully : time . Time for a child to try things out . And time for an adult to practise and strengthen fundamental abilities with the child in a caring , playful and professionally informed way . Individual support With Lernbus , we create precisely this space and time so that children can receive individual support and strengthen their core competencies . Every child and every person is unique . There is no single approach that will , for example , help a child keep going when something is not working out . With time , professional knowledge and a caring attitude , however , we can discover together with the child what they need and help them integrate it in a lasting way ."
       },
       {
         "start": 520,
@@ -119,7 +131,7 @@
         "start": 30,
         "end": 91,
         "before": "und nach höchsten Ansprüchen ausgewählt . Lernmentorinnen und Lernmentoren Wir stellen uns in Kürze vor . Porträt folgt Name , Hintergrund und Schwerpunkte stellen wir hier bald vor . Porträt folgt Name , Hintergrund und Schwerpunkte stellen wir hier bald vor . Porträt folgt Name , Hintergrund und Schwerpunkte stellen wir hier bald vor . Die Qualität wird laufend durch Teamsitzungen",
-        "after": "und nach höchsten Ansprüchen ausgewählt . Foto folgt Leitung Conny Brandes Leiterin Lernbus Beschreibung folgt . connybrandes @ lernbus . ch Die Qualität wird laufend durch Teamsitzungen"
+        "after": "und nach höchsten Ansprüchen ausgewählt . CB Foto folgt Conny Brandes Leiterin Lernbus connybrandes @ lernbus . ch Mein beruflicher Weg Seit meinem 16 . Lebensjahr arbeite ich mit Kindern in Kindertagesstätten . Zunächst war ich als Miterzieherin tätig . Anschliessend habe ich 14 Jahre lang selbstständig in Co - Leitung die Kita Schnäggi geführt . Im Laufe meiner beruflichen Tätigkeit habe ich verschiedene Weiterbildungen absolviert , unter anderem als Berufsbildnerin sowie im Bereich der frühen Sprachförderung mit Schwerpunkt Deutsch . Zudem bin ich Mutter von zwei bereits erwachsenen Kindern und einem achtjährigen Kind . Zeit für frühe Förderung Die Bedeutung der frühen Bildung und Förderung wird in unserer Gesellschaft nach wie vor nicht ausreichend anerkannt . In meiner 30 - jährigen Arbeit habe ich festgestellt , dass es vor allem eines braucht , um Kinder gezielt und individuell zu fördern : Zeit . Zeit , in der ein Kind sich ausprobieren darf . Und Zeit , in der ein Erwachsener liebevoll , spielerisch und fachlich fundiert mit dem Kind grundlegende Fähigkeiten übt und stärkt . Individuelle Begleitung Mit dem Lernbus schaffen wir genau diesen Raum und diese Zeit , damit Kinder individuell begleitet und gezielt in ihren Kernkompetenzen gestärkt werden können . Jedes Kind und jeder Mensch ist einzigartig . Es gibt nicht die eine Massnahme , die einem Kind beispielsweise hilft , dranzubleiben , wenn etwas gerade nicht gelingt . Mit Zeit , professionellem Wissen und einer liebevollen Haltung ist es jedoch möglich , gemeinsam mit dem Kind herauszufinden , was es braucht , und dies nachhaltig zu integrieren . Die Qualität wird laufend durch Teamsitzungen"
       },
       {
         "start": 124,
@@ -133,7 +145,7 @@
         "start": 32,
         "end": 92,
         "before": "and to the highest standards . Learning mentors We will introduce ourselves here soon . Portrait to follow Name , background and focus will appear here soon . Portrait to follow Name , background and focus will appear here soon . Portrait to follow Name , background and focus will appear here soon . Quality is maintained continuously through team",
-        "after": "and to the highest standards . Photo to follow Leadership Conny Brandes Head of Lernbus Biography to follow . connybrandes @ lernbus . ch Quality is maintained continuously through team"
+        "after": "and to the highest standards . CB Photo to follow Conny Brandes Head of Lernbus connybrandes @ lernbus . ch My professional journey I have worked with children in daycare settings since I was 16 . I started as an assistant educator , before spending 14 years running Kita Schnäggi as a self - employed co - director . Throughout my career , I have completed various further training courses , including training as a vocational trainer and in early language development , with a focus on German . I am also a mother of two grown - up children and an eight - year - old child . Time for early development Our society still does not sufficiently recognise the importance of early education and development . In my 30 years of work , I have found that one thing above all is needed to support each child individually and purposefully : time . Time for a child to try things out . And time for an adult to practise and strengthen fundamental abilities with the child in a caring , playful and professionally informed way . Individual support With Lernbus , we create precisely this space and time so that children can receive individual support and strengthen their core competencies . Every child and every person is unique . There is no single approach that will , for example , help a child keep going when something is not working out . With time , professional knowledge and a caring attitude , however , we can discover together with the child what they need and help them integrate it in a lasting way . Quality is maintained continuously through team"
       },
       {
         "start": 128,

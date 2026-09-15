@@ -40,12 +40,12 @@ locale: en
           <a href="#zielgruppe" class="navlink">For whom</a>
           <a href="#warum" class="navlink">Why</a>
           <a href="#ansatz" class="navlink">Approach</a>
+          <a href="#team" class="navlink">Team</a>
           <a href="#ablauf" class="navlink">How it works</a>
           <a href="#kosten" class="navlink">Fees</a>
           <a href="#qualitaet" class="navlink">Quality</a>
           <a href="#gespraech" class="navlink">Book a time</a>
           <a href="#kontakt" class="navlink">Contact</a>
-          <a href="../team/en/index.html" class="navlink">Team</a>
           <a href="#fragen" class="navlink">Questions</a>
           <a href="#traegerschaft" class="navlink">Who runs it</a>
         </nav>
@@ -160,6 +160,16 @@ locale: en
           <li>Making individual learning progress visible</li>
         </ul>
       </div>
+    </div>
+  </section>
+
+  <!-- TEAM -->
+  <section class="section team-section" id="team" aria-labelledby="team-heading">
+    <div class="wrap">
+      <h2 class="big" id="team-heading">Team</h2>
+      {% set profileHeading = "h3" %}
+      {% set bioHeading = "h4" %}
+      {% include "lernbus-team.njk" %}
     </div>
   </section>
 
