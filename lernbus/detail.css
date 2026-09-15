@@ -1,5 +1,16 @@
 /* Reading pages continue the Lernbus poster identity with a quieter text column. */
-.detail-page{--bg:#fafafa;--yellow:#f4db4b;--marker:#f4db4b;--violet:#493f80;--violet-deep:#38306a;--night:#29233e;--forest:#205951;--forest-deep:#1e4843;--mint-paper:#edf2ee;--lavender-paper:#f0edf6;--ink:#29233e;--teal-ink:#29233e;--teal-soft:#655f73;--hairline:#d4d0da;--line:#b3afbc;--wrap:90rem;--pad:clamp(1.25rem,3.5vw,4.5rem);--fs-hero:clamp(2.8rem,6.7vw,6.8rem);--fs-h2:clamp(2.4rem,4.7vw,4.8rem);font-size:1.0625rem}
+.detail-page{
+ --bg:#fafafa;--surface-soft:#f0edf6;
+ --yellow:#f4db4b;--marker:var(--yellow);
+ --violet:#493f80;--violet-deep:#38306a;
+ --forest:#205951;--forest-deep:#1e4843;
+ --night:#29233e;--ink:var(--night);--teal-ink:var(--ink);--teal-soft:#655f73;
+ --mint-paper:var(--surface-soft);--lavender-paper:var(--surface-soft);
+ --hairline:#d4d0da;--line:#b3afbc;--rule-inverse:rgba(250,250,250,.35);
+ --section-rule:var(--line);--section-space:5rem;
+ --wrap:90rem;--pad:clamp(1.25rem,3.5vw,4.5rem);
+ --fs-hero:clamp(2.8rem,6.7vw,6.8rem);--fs-h2:clamp(2.4rem,4.7vw,4.8rem);font-size:1.0625rem
+}
 .detail-page h1,.detail-page h2,.detail-page h3{letter-spacing:-.025em}
 .detail-page .site-head{border-bottom:2px solid var(--violet);background:var(--bg)}
 .detail-page .site-head .wrap{padding-block:1rem}
@@ -8,22 +19,25 @@
 .detail-page .site-head.nav-inline .navlink{font-size:.875rem;letter-spacing:.025em}
 .detail-page .lang{background:transparent;border:1px solid var(--violet);border-radius:0}
 .detail-page .menu-btn{border-radius:0;box-shadow:3px 3px 0 var(--night)}
-.detail-page .hero{min-height:0!important;background:var(--yellow);border-bottom:2px solid var(--violet)}
+.detail-page .hero{min-height:0!important;background:var(--yellow)}
 .detail-page .hero-inner{padding-top:12rem;padding-bottom:4.5rem}
 .detail-page .hero h1{max-width:22ch;line-height:1.04;text-wrap:balance}
-.detail-page .hero h1 .pop{color:var(--forest);white-space:normal}
+.detail-page .hero h1 .pop{color:var(--violet-deep);white-space:normal}
 .detail-page .hero h1 .pop::after{display:none}
 .detail-page .hero .lead{max-width:54ch;font-size:1.25rem}
 .detail-page .hero-scrim{display:none}
-.detail-page .section{padding-block:5rem;scroll-margin-top:7rem}
-.detail-page .section.tint{background:var(--mint-paper)}
-.detail-page .section + .section:not(.tint){border-top:1px solid var(--hairline)}
+.detail-page .section{padding-block:var(--section-space);scroll-margin-top:7rem}
+.detail-page .section.tint{background:var(--surface-soft)}
+/* Each section owns its top rule; rows use a lighter 1px rule, controls a blue outline. */
+.detail-page main>section+section{border-top:2px solid var(--section-rule)}
 .detail-page h2.big{line-height:1.06;max-width:21ch}
 .detail-page .detail{max-width:76rem;gap:0;grid-template-columns:minmax(0,1fr)}
 .detail-page .detail>*,.detail-page .dsec>*{min-width:0}
 .detail-page .dsec{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:3rem;padding-block:2rem;border-bottom:1px solid var(--hairline)}
 .detail-page .dsec:first-child{padding-top:0}
 .detail-page .dsec:last-child{border-bottom:0;padding-bottom:0}
+.detail-page #fragen .dsec{border-bottom:1px solid var(--hairline)}
+.detail-page #fragen .dsec:last-child{border-bottom:0;padding-bottom:0}
 .detail-page .dsec h2,.detail-page .dsec h3{hyphens:auto;overflow-wrap:anywhere;font-size:clamp(1.7rem,2.6vw,2.6rem);line-height:1.14;max-width:22ch}
 .detail-page .dsec h2::before,.detail-page .dsec h3::before{width:3rem;height:4px;background:var(--violet);border-radius:0;rotate:0}
 .detail-page .dsec p{margin-top:0;max-width:62ch;min-width:0}
@@ -43,6 +57,9 @@
 .detail-page .example-label{display:block;font-family:var(--body);font-size:.875rem;font-weight:500;margin-bottom:1rem}
 .detail-page .foot{background:var(--night);margin-top:0;padding-block:3rem}
 .detail-page .morelink{margin-left:.5rem;min-height:44px;text-decoration:underline;text-underline-offset:4px}
+.detail-page #anmelden{color:var(--bg);--section-rule:var(--rule-inverse);padding-block:var(--section-space)}
+.detail-page #anmelden h2,.detail-page #anmelden .morelink{color:var(--yellow)}
+.detail-page #anmelden .lead,.detail-page #anmelden .book-note{color:var(--bg)}
 .detail-page #team .lead{max-width:60ch}
 @media(max-width:64rem){
  .detail-page .dsec{gap:2rem;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr)}
@@ -52,7 +69,7 @@
  .detail-page .hero-inner{padding-top:10rem;padding-bottom:3rem}
  .detail-page .hero h1{max-width:19ch;hyphens:none}
  .detail-page .hero .lead{font-size:1.125rem}
- .detail-page .section{padding-block:3.5rem}
+ .detail-page{--section-space:3.5rem}
  .detail-page .dsec{grid-template-columns:1fr;gap:1rem;padding-block:2rem}
  .detail-page .dsec p+p{grid-column:auto}
  .detail-page .dsec h2,.detail-page .dsec h3{max-width:none;font-size:1.8rem}
@@ -77,12 +94,12 @@
 .detail-page .team-photo-frame{width:100%;max-width:27rem;border:2px solid var(--violet);box-shadow:8px 8px 0 var(--yellow)}
 .detail-page .team-photo{display:block;width:100%;height:auto}
 .detail-page .team-name{font-family:var(--display);font-size:clamp(2.5rem,3.5vw,3.8rem);line-height:1.08;letter-spacing:-.025em;max-width:12ch;margin:2rem 0 .7rem;color:var(--violet);text-wrap:balance}
-.detail-page .team-role{font-size:1.25rem;font-weight:700;color:var(--forest);margin:0}
+.detail-page .team-role{font-size:1.25rem;font-weight:700;color:var(--violet);margin:0}
 .detail-page .team-profile .morelink{margin:.75rem 0 0;overflow-wrap:anywhere;display:block;max-width:100%;font-size:1rem}
 .detail-page .team-bio-section{padding-block:2rem;border-top:1px solid var(--hairline)}
 .detail-page .team-bio-section:first-child{padding-top:0;border-top:0}
 .detail-page .team-bio-section:last-child{padding-bottom:0}
-.detail-page .team-bio-heading{font-family:var(--display);font-size:clamp(1.65rem,2.3vw,2.3rem);font-weight:700;line-height:1.15;letter-spacing:-.02em;color:var(--forest);margin:0 0 1.2rem;text-wrap:balance}
+.detail-page .team-bio-heading{font-family:var(--display);font-size:clamp(1.65rem,2.3vw,2.3rem);font-weight:700;line-height:1.15;letter-spacing:-.02em;color:var(--violet);margin:0 0 1.2rem;text-wrap:balance}
 .detail-page .team-bio-section p{font-size:1.0625rem;line-height:1.65;max-width:62ch;margin:0}
 .detail-page .team-bio-section p+p{margin-top:1.15rem}
 @media(max-width:48rem){
