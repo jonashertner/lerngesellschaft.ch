@@ -54,16 +54,17 @@
 .source-home .steps .step p{font-size:1.125rem}
 .source-home #kosten{background:var(--violet);color:var(--bg);--hairline:var(--rule-inverse);--line:var(--rule-inverse);--section-rule:var(--rule-inverse)}
 .source-home #kosten .eyebrow,.source-home #kosten h2{color:var(--yellow)}
-.source-home #kosten .lead,.source-home .tariffs-note{color:var(--bg)}
-.source-home .tariffs{max-width:none;margin-top:3rem}
-.source-home .tariffs th,.source-home .tariffs td{padding-block:1.6rem}
-.source-home .tariffs thead th{font-size:.9375rem;color:var(--bg);letter-spacing:.02em;text-transform:none;padding-block:.8rem}
+.source-home #kosten .lead{color:var(--bg)}
+.source-home .tariffs{max-width:none;margin-top:3rem;table-layout:fixed}
+.source-home .tariffs th,.source-home .tariffs td{padding:1.6rem 1.5rem}
+.source-home .tariffs thead th{font-size:.9375rem;color:var(--bg);letter-spacing:.02em;text-transform:none;padding-block:1rem;text-align:right;width:24%}
+.source-home .tariffs thead th:first-child{width:52%;text-align:left;padding-left:0}
 .source-home .tariffs thead th span{font-size:.875rem}
-.source-home .tariffs tbody th{width:52%;padding-right:2rem}
-.source-home .tariffs .tname{color:var(--bg);font-size:1.85rem;background:none}
-.source-home .tariffs .tdesc{color:var(--bg);max-width:42ch;font-size:1rem}
-.source-home .tariffs td{font-size:clamp(1.65rem,2.6vw,2.6rem);color:var(--bg);font-variant-numeric:tabular-nums;padding-left:1rem}
-.source-home .tariffs-note{font-size:1.0625rem;margin-top:2rem}
+.source-home .tariffs tbody th{width:52%;padding-left:0;padding-right:2rem}
+.source-home .tariffs .tname{color:var(--bg);font-size:clamp(1.45rem,2vw,1.8rem);background:none}
+.source-home .tariffs .tdesc{color:var(--bg);max-width:46ch;font-size:1rem;line-height:1.55;margin-top:.65rem}
+.source-home .tariffs td{font-size:clamp(1.5rem,2.2vw,2rem);color:var(--bg);font-variant-numeric:tabular-nums;letter-spacing:-.01em;width:auto;text-align:right;vertical-align:middle}
+.source-home .tariffs thead th+th,.source-home .tariffs td{border-left:1px solid var(--hairline)}
 .source-home #qualitaet{background:var(--surface-soft)}
 .source-home #qualitaet .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:4rem}
 .source-home #qualitaet h2{grid-column:1;grid-row:1/span 2;max-width:19ch;margin:0;hyphens:auto;overflow-wrap:anywhere}
@@ -133,8 +134,16 @@
  .source-home #fragen .dsec{gap:1rem}.source-home #fragen .dsec h2{font-size:1.8rem}.source-home #traegerschaft .wrap{display:block}.source-home #traegerschaft h2{font-size:3rem;margin-block:1.5rem}.source-home #traegerschaft .lead{font-size:1.0625rem}
  .booking-card{padding:1.3rem;box-shadow:4px 4px 0 var(--violet)}.booking-card-heading h3{font-size:1.5rem}.weekly-times dl{grid-template-columns:1fr;gap:1rem}.booking-card .button{width:100%}
 }
-@media(max-width:600px){
- .source-home .tariffs tbody th{width:auto;padding:0}.source-home .tariffs th,.source-home .tariffs td{padding:0}.source-home .tariffs td{font-size:1.8rem;margin:1rem 1.5rem 0 0}.source-home .tariffs td::before{font-size:.875rem;color:var(--bg);letter-spacing:0;text-transform:none;font-weight:500}.source-home .tariffs .tname{font-size:1.65rem}.source-home .tariffs tr{padding:1.5rem 0}.source-home .tariffs .tdesc{font-size:1rem}
+@media(max-width:48rem){
+ .source-home .tariffs,.source-home .tariffs tbody{display:block;width:100%;table-layout:auto}
+ .source-home .tariffs thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%)}
+ .source-home .tariffs tbody tr{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.4rem 0;padding:1.75rem 0;border-bottom:1px solid var(--hairline)}
+ .source-home .tariffs tbody th{display:block;grid-column:1/-1;width:auto;padding:0;border:0}
+ .source-home .tariffs td{display:block;width:auto;padding:0 1rem 0 0;margin:0;border:0;font-size:1.75rem;text-align:left;white-space:nowrap}
+ .source-home .tariffs td+td{padding:0 0 0 1.25rem;border-left:1px solid var(--hairline)}
+ .source-home .tariffs td::before{content:attr(data-label);display:block;min-height:2.7em;margin:0 0 .45rem;font-family:var(--body);font-size:.875rem;line-height:1.35;color:var(--bg);letter-spacing:0;text-transform:none;font-weight:500;white-space:normal}
+ .source-home .tariffs .tname{font-size:1.65rem}
+ .source-home .tariffs .tdesc{max-width:46ch;font-size:1rem}
 }
 @media(prefers-reduced-motion:reduce){.source-art{transform:none}}
 .source-home .contact-section{background:var(--surface-soft)}
