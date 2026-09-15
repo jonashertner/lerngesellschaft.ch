@@ -4,7 +4,7 @@
 .source-home{overflow-x:visible;--section-space:clamp(3.5rem,6vw,6rem);--section-compact:clamp(2.5rem,4vw,4rem)}
 .source-home .hero-inner{padding-top:11rem;padding-bottom:4rem}
 .source-hero-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:3rem 4rem;align-items:center}
-.source-home .hero h1{grid-column:1/-1;max-width:none;font-size:clamp(2.65rem,6.5vw,6.9rem);line-height:1.16;text-wrap:balance;letter-spacing:-.025em}
+.source-home .hero h1{animation:none;grid-column:1/-1;max-width:none;font-size:clamp(2.65rem,6.5vw,6.9rem);line-height:1.16;text-wrap:balance;letter-spacing:-.025em}
 .source-home .hero .lead{font-size:clamp(1.125rem,1.55vw,1.4rem);max-width:36ch;margin-top:0}
 .source-home .hero-booking{margin-top:1.75rem;min-height:52px;justify-content:center}
 /* Five information routes and one distinct action, in the same reading/focus order. */

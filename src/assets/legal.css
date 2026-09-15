@@ -16,7 +16,9 @@
 .legal-content p{max-width:68ch;margin-top:1rem;line-height:1.7}
 .legal-content a{text-decoration:underline;text-underline-offset:4px;color:var(--violet);overflow-wrap:anywhere}
 .legal-page .foot{margin-top:0;background:var(--ink);color:var(--bg)}
+.legal-page .foot .wrap{color:var(--bg)}
 .legal-page .foot a{color:var(--bg)}
+.legal-page .foot a:hover,.legal-page .foot a:focus-visible{color:#f4db4b}
 .legal-page :focus-visible{outline:3px solid var(--violet);outline-offset:4px}
 .legal-page .foot :focus-visible{outline-color:#f4db4b}
 @media print{.legal-head,.legal-page .foot{display:none}.legal-page{font-size:11pt;background:white;color:#000}.legal-content{max-width:none;padding:0}.legal-content h1{font-size:24pt}.legal-content h2{font-size:14pt;break-after:avoid}.legal-content p{max-width:none;orphans:3;widows:3}}
