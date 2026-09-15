@@ -956,6 +956,39 @@
           }
         ]
       }
+    },
+    {
+      "authorization": "Jonas, 15 September 2026: remove the quoted mathematical-task example from the concept page, then proceed. Matching English example removed; following sentence made self-contained.",
+      "pages": {
+        "lernbus/konzept/index.html": [
+          {
+            "start": 1585,
+            "end": 1639,
+            "before": "Ein Mädchen bearbeitet eine mathematische Aufgabe , die ihr einige Wochen zuvor noch unlösbar erschien . Sie denkt nach , verwirft Ansätze , versucht es erneut und findet schliesslich selbstständig einen Lösungsweg . In diesem Moment wird nicht nur ein fachliches Lernziel erreicht : Das Kind erlebt sich selbst als kompetent und handlungsfähig .",
+            "after": ""
+          },
+          {
+            "start": 1643,
+            "end": 1644,
+            "before": "Solche",
+            "after": ""
+          }
+        ],
+        "lernbus/en/konzept/index.html": [
+          {
+            "start": 1648,
+            "end": 1702,
+            "before": "A girl is working on a maths problem that seemed impossible a few weeks ago . She thinks , sets one approach aside , tries again and finally finds her own solution . She has achieved more than a learning objective : she has discovered that she is capable of making things happen .",
+            "after": ""
+          },
+          {
+            "start": 1709,
+            "end": 1711,
+            "before": "like this",
+            "after": "of self - efficacy"
+          }
+        ]
+      }
     }
   ]
 }
