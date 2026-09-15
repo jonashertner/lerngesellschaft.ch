@@ -62,6 +62,9 @@
 .detail-page #anmelden{color:var(--bg);--section-rule:var(--rule-inverse);padding-block:var(--section-space)}
 .detail-page #anmelden h2,.detail-page #anmelden .morelink{color:var(--yellow)}
 .detail-page #anmelden .lead,.detail-page #anmelden .book-note{color:var(--bg)}
+.detail-page #anmelden .btn-ghost{color:var(--bg);border-color:var(--bg)}
+.detail-page #anmelden .btn-ghost:hover,.detail-page #anmelden .btn-ghost:focus-visible{color:var(--violet);background:var(--bg)}
+.detail-page #anmelden .btn-ghost:focus-visible{outline-color:var(--yellow)}
 .detail-page #team .lead{max-width:60ch}
 @media(max-width:64rem){
  .detail-page .dsec{gap:2rem;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr)}
