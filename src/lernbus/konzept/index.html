@@ -23,14 +23,15 @@
 {"@context":"https://schema.org","@type":"EducationalOrganization","name":"Lernbus","areaServed":"Basel","description":"Präventives, pädagogisch fundiertes Förderangebot für Kinder ab 3 Jahren bis zur 3. Primarschule, zunächst einzeln und danach zu zweit. Frühe Deutschförderung ab 3 Jahren. Ein Angebot der Lerngesellschaft.","address":"Münsterplatz 17, 4051 Basel","email":"info@lernbus.ch","parentOrganization":{"@type":"NGO","name":"Lerngesellschaft / Learning Society","url":"https://lerngesellschaft.ch/"}}
 </script>
 <link rel="stylesheet" href="../detail.css?v={{ lernbusAssets.detail }}">
+<link rel="stylesheet" href="../concept.css?v={{ lernbusAssets.concept }}">
 </head>
-<body class="detail-page">
+<body class="detail-page concept-page">
 <a href="#main" class="skip">Zum Inhalt springen</a>
 
 <header class="site-head">
   <div class="wrap">
     <a href="#top" class="brand">
-      <img class="brand-logo" src="../img/logo.webp" alt="Lernbus" width="800" height="344" />
+      <img class="brand-logo" src="../img/logo.webp" srcset="../img/logo-200.webp 200w, ../img/logo-400.webp 400w, ../img/logo.webp 800w" sizes="(max-width: 48rem) 104px, 127px" alt="Lernbus" width="800" height="344" />
       <span>Ein Angebot der Lerngesellschaft · Basel</span>
     </a>
     <div class="head-right">
@@ -71,7 +72,7 @@
       <div class="wrap">
         <p class="eyebrow" style="--dot:var(--violet); margin-bottom:1.1rem">Damit Kinder jetzt gern lernen</p>
         <h1>Lernen im <span class="pop">eigenen Tempo</span>, mit einem <span class="pop">Menschen</span> an der Seite.</h1>
-        <p class="lead">Der Lernbus ist ein präventives, pädagogisch fundiertes Förderangebot für Kinder im frühen Lernalter. Er steht allen Kindern offen, unabhängig davon, was sie mitbringen und woher sie kommen. Wir setzen früh an, um Selbstvertrauen und Lernfreude zu erhalten und zu stärken.</p>
+        <p class="lead">Im Lernbus begleiten pädagogische Fachpersonen Kinder beim Lernen. Wir beginnen früh, damit Selbstvertrauen und Lernfreude wachsen können. Das Angebot steht allen Kindern offen, unabhängig von ihren Fähigkeiten und ihrer Herkunft.</p>
         <div class="hero-cta">
           <a href="/lernbus/#gespraech" class="btn btn-pink">Lektion anfragen</a>
           <a href="#umsetzung" class="btn btn-ghost">So läuft es ab</a>
@@ -80,18 +81,33 @@
     </div>
   </section>
 
+
+  <nav class="concept-contents" aria-label="Auf dieser Seite">
+    <div class="wrap">
+      <p>Auf dieser Seite</p>
+      <ul>
+        <li><a href="#warum">Warum früh beginnen?</a></li>
+        <li><a href="#ansatz">Wie wir begleiten</a></li>
+        <li><a href="#ziele">Unsere Ziele</a></li>
+        <li><a href="#zielgruppe">Für wen?</a></li>
+        <li><a href="#umsetzung">Der Ablauf</a></li>
+        <li><a href="#qualitaet">Wer begleitet?</a></li>
+      </ul>
+    </div>
+  </nav>
+
   <!-- AUF EINEN BLICK -->
   <section class="section" id="blick">
     <div class="wrap">
       <p class="eyebrow reveal" style="--dot:var(--violet)">Auf einen Blick</p>
-      <h2 class="big reveal">Individuelle Frühförderung für eine starke Bildungsbiografie.</h2>
+      <h2 class="big reveal">Früh beginnen. Mit Vertrauen weiterlernen.</h2>
       <div class="lb-facts reveal" style="--dot:var(--violet)">
         <div class="fact"><b>Ab 3 Jahren bis zur 3. Primarschule</b><span>einschliesslich früher Deutschförderung</span></div>
         <div class="fact"><b>60 Minuten</b><span>pro Lektion, in der Regel wöchentlich</span></div>
         <div class="fact"><b>Buchung pro Schulsemester</b><span>Vertrauen und Fortschritt brauchen Zeit</span></div>
         <div class="fact"><b>Zuerst einzeln, dann zu zweit</b><span>erstes Semester einzeln, zweites Halbjahr zu zweit</span></div>
       </div>
-      <p class="lead reveal" style="margin-top:2rem">Im Zentrum steht die nachhaltige Entwicklung einer positiven Beziehung zum Lernen. Damit stärkt der Lernbus Kinder darin, ihren Bildungsweg selbstbewusst, eigenständig und zukunftsorientiert zu gestalten.</p>
+      <p class="lead reveal" style="margin-top:2rem">Kinder sollen gern lernen, selbstständig denken und ihren Fähigkeiten vertrauen. Dafür geben wir ihnen Zeit und eine verlässliche Begleitung.</p>
     </div>
   </section>
 
@@ -99,18 +115,28 @@
   <section class="section" id="warum" style="--dot:var(--violet)">
     <div class="accent-blob" style="width:30vw;height:30vw;background:var(--violet);right:-8vw;top:2vw"></div>
     <div class="wrap">
-      <div class="detail">
+      <p class="eyebrow" style="--dot:var(--violet)">Warum Lernbus</p>
+      <h2 class="big">Ein guter Anfang macht einen Unterschied.</h2>
+      <div class="detail concept-rows">
         <div class="dsec">
-          <h2>Warum es den Lernbus braucht</h2>
-          <p>Unsere Welt verändert sich schnell und stellt bereits heute neue Anforderungen an Kinder. Neben fachlichem Wissen sind künftig besonders Selbstständigkeit, Problemlösungskompetenz, Kreativität und ein konstruktiver Umgang mit Herausforderungen gefragt. Aktuelle schweizweite Erhebungen zu den Grundkompetenzen zeigen, dass bereits in der Primarschule nicht alle Kinder die erwarteten sprachlichen und mathematischen Mindeststandards erreichen: Nach der nationalen Überprüfung der Grundkompetenzen erreicht schon in der zweiten Primarklasse fast jedes vierte Kind die Grundkompetenzen in Mathematik nicht, beim Lesen ist es gut jedes fünfte.</p>
+          <h3>Was Kinder zum Lernen brauchen</h3>
+          <div class="reading-copy">
+            <p>Kinder brauchen sprachliche und mathematische Grundlagen. Ebenso wichtig sind Selbstständigkeit, Kreativität und die Fähigkeit, Probleme zu lösen.</p>
+            <p>Die nationale Überprüfung der Grundkompetenzen zeigt: In der zweiten Primarklasse erreicht fast jedes vierte Kind die Grundkompetenzen in Mathematik nicht, beim Lesen ist es gut jedes fünfte.</p>
+            <p class="concept-source"><a href="https://edk.ch/de/die-edk/news/mm20260521">Quelle: EDK, Überprüfung 2024, Ergebnisse 2026</a></p>
+          </div>
         </div>
         <div class="dsec">
-          <h2>Früh ansetzen, statt spät korrigieren</h2>
-          <p>Besonders betroffen sind Kinder mit erhöhtem Förderbedarf oder eingeschränkten Lernressourcen. Ohne frühe Unterstützung besteht die Gefahr, dass sich Defizite verfestigen und langfristig zu Benachteiligungen führen. Gleichzeitig profitieren alle Kinder vom Angebot, da zukunftsrelevante Kompetenzen gezielt gefördert werden. Der Lernbus setzt hier früh an und stärkt Kinder ganzheitlich, bevor sich negative Lernerfahrungen verfestigen.</p>
+          <h3>Früh unterstützen</h3>
+          <div class="reading-copy">
+            <p>Wir setzen an, bevor sich Schwierigkeiten und negative Lernerfahrungen verfestigen. Das ist besonders wichtig für Kinder, die mehr Unterstützung brauchen oder weniger Lernmöglichkeiten haben. Das Angebot steht aber allen Kindern offen.</p>
+          </div>
         </div>
         <div class="dsec">
-          <h2>Bedingungen schaffen, nicht Leistung erzwingen</h2>
-          <p>Lernen lässt sich nicht anordnen. Wie bei einer Pflanze kann man das Wachsen nicht machen, sondern nur die Bedingungen dafür schaffen: Zeit, Zuwendung, etwas zum Staunen und einen Menschen, der zuschaut und zutraut. Genau darin besteht die Arbeit des Lernbusses.</p>
+          <h3>Raum zum Wachsen</h3>
+          <div class="reading-copy">
+            <p>Lernen lässt sich nicht anordnen. Wie bei einer Pflanze können wir das Wachsen nicht erzwingen, aber gute Bedingungen schaffen: Zeit, Zuwendung, etwas zum Staunen und einen Menschen, der dem Kind etwas zutraut.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -119,36 +145,53 @@
   <!-- PÄDAGOGISCHER ANSATZ -->
   <section class="section tint" id="ansatz" style="--dot:var(--violet)">
     <div class="wrap">
-      <p class="eyebrow reveal" style="--dot:var(--violet)">Pädagogischer Ansatz und Wirkung</p>
-      <h2 class="big reveal">Woran wir mit den Kindern arbeiten.</h2>
+      <p class="eyebrow reveal" style="--dot:var(--violet)">So begleiten wir Kinder</p>
+      <h2 class="big reveal">Zeit, Vertrauen und passende Aufgaben.</h2>
       <div class="detail" style="margin-top:2.2rem">
         <div class="dsec">
-          <h2>Beziehung kommt zuerst</h2>
-          <p>Kinder lernen bei Menschen, nicht bei Programmen. Was ein Kind sich zu fragen traut, hängt davon ab, wie sicher es sich fühlt. Deshalb bleibt über Monate dieselbe Person an seiner Seite: jemand, der seinen Namen kennt, seine Umwege kennt und sich merkt, woran es letzte Woche gearbeitet hat. Diese Verlässlichkeit ist keine nette Zugabe, sondern die Grundlage, auf der alles andere steht.</p>
+          <h3>Eine vertraute Person</h3>
+          <div class="reading-copy">
+            <p>Was ein Kind sich zu fragen und auszuprobieren traut, hängt davon ab, wie sicher es sich fühlt. Deshalb bleibt über Monate dieselbe Person an seiner Seite. Sie kennt seine Interessen, erinnert sich an die letzte Lektion und begleitet auch Umwege.</p>
+          </div>
         </div>
         <div class="dsec">
-          <h2>Breit anfangen, nicht früh festlegen</h2>
-          <p>In diesem Alter geht es nicht darum, eine Begabung zu finden und alles andere wegzulassen. Kinder brauchen zuerst Breite: bauen, rechnen, erzählen, zeichnen, draussen etwas untersuchen. Wer vieles ausprobiert hat, findet später leichter das, was wirklich zu ihm passt, und kann Gelerntes von einem Gebiet auf ein anderes übertragen. Ein früher Vorsprung in einem einzelnen Fach sagt wenig darüber, wie weit ein Kind kommt. Und kein Kind ist unbegabt: Begabungen sehen nur verschieden aus, und die Schule kann nicht alle gleich gut sichtbar machen.</p>
+          <h3>Vieles ausprobieren</h3>
+          <div class="reading-copy">
+            <p>Bauen, rechnen, erzählen, zeichnen, draussen etwas untersuchen: Kinder brauchen vielfältige Erfahrungen. Sie sollen ihre Interessen entdecken und Gelerntes in neuen Situationen anwenden können.</p>
+            <p>Wir legen Kinder nicht früh auf eine einzelne Begabung fest. Jedes Kind hat Stärken, auch solche, die in der Schule weniger sichtbar werden.</p>
+          </div>
         </div>
         <div class="dsec">
-          <h2>Zukunftskompetenzen und Grundlagen zugleich</h2>
-          <p>Der Lernbus orientiert sich an zentralen Zukunftskompetenzen wie emotionaler Intelligenz, Kreativität, Kommunikationsfähigkeit sowie kritischem und vernetztem Denken. Die Kinder lernen, eigenständig zu denken, Zusammenhänge zu erkennen, Lösungswege zu entwickeln und Fehler als Lernchancen zu nutzen. Sie erhalten Strategien, um sich auch weniger spannende Lerninhalte aktiv zu erschliessen und bei Unlust dranzubleiben. Parallel dazu werden Defizite in den sprachlichen und mathematischen Grundkompetenzen gezielt aufgearbeitet und gefestigt.</p>
+          <h3>Grundlagen und eigenes Denken</h3>
+          <div class="reading-copy">
+            <p>Wir stärken sprachliche und mathematische Grundlagen. Zugleich üben Kinder, eigene Ideen zu entwickeln, Zusammenhänge zu erkennen und Lösungen zu finden.</p>
+            <p>Dazu gehören auch Kreativität, der Umgang mit Gefühlen und die Fähigkeit, sich auszudrücken und zuzuhören. Wir helfen Kindern, bei weniger interessanten Aufgaben dranzubleiben und aus Fehlern zu lernen.</p>
+          </div>
         </div>
         <div class="dsec">
-          <h2>Lernen braucht sichtbare Fortschritte</h2>
-          <p>Kinder entwickeln Lernfreude besonders dann, wenn sie erleben, dass ihre eigenen Anstrengungen zu Erfolgen führen. Selbst wahrgenommene Fortschritte stärken das Vertrauen in die eigenen Fähigkeiten, erhöhen die Ausdauer und fördern die Bereitschaft, sich neuen Herausforderungen zu stellen. Forschungsergebnisse der Erasmus-Universität Rotterdam weisen darauf hin, dass Menschen besonders konzentriert und ausdauernd lernen, wenn sie ihren eigenen Fortschritt wahrnehmen. Der Lernbus macht Lernprozesse sichtbar und schafft Erfolgserlebnisse, die nachhaltige Motivation und eine positive Haltung zum Lernen fördern.</p>
+          <h3>Den eigenen Fortschritt erkennen</h3>
+          <div class="reading-copy">
+            <p>Wenn Kinder merken, dass ihre Anstrengung etwas bewirkt, wächst ihr Zutrauen. In ihrer persönlichen Lernkiste sammeln sie Arbeiten und Entdeckungen. So sehen sie, was sie bereits gelernt haben.</p>
+          </div>
         </div>
         <div class="dsec">
-          <h2>Die richtige Herausforderung zur richtigen Zeit</h2>
-          <p>Lernen gelingt dann besonders gut, wenn Aufgaben dem individuellen Entwicklungsstand eines Kindes entsprechen. Deshalb orientiert sich die Begleitung an den Interessen, Stärken und Lernvoraussetzungen des Kindes. Die Förderung erfolgt in der optimalen Lernzone: anspruchsvoll genug, um Entwicklung anzuregen, und zugleich so gestaltet, dass Erfolgserlebnisse möglich bleiben. Fehler werden als wichtiger Bestandteil des Lernprozesses verstanden und als Lerngelegenheiten genutzt. Ein Kind, das keinen Fehler machen darf, versucht irgendwann nichts Neues mehr.</p>
+          <h3>Aufgaben, die zum Kind passen</h3>
+          <div class="reading-copy">
+            <p>Wir wählen Aufgaben nach den Interessen, Stärken und dem Entwicklungsstand des Kindes. Sie sollen herausfordern und zugleich Erfolgserlebnisse ermöglichen. Fehler gehören dazu: Kinder dürfen etwas versuchen, neu überlegen und einen anderen Weg finden.</p>
+          </div>
         </div>
         <div class="dsec">
-          <h2>Frühe Deutschförderung</h2>
-          <p>Sprache bildet die Grundlage für Lernen, soziale Teilhabe und Bildungserfolg. Die frühe Deutschförderung unterstützt Kinder ab drei Jahren dabei, sprachliche Grundlagen aufzubauen, sich sicherer auszudrücken und mit mehr Vertrauen am Unterricht teilzunehmen. Sie geschieht spielerisch, in Geschichten, Liedern und Gesprächen, denn im Spiel lernen kleine Kinder am meisten. Auch hier lernen die Kinder im ersten Semester einzeln und im zweiten Halbjahr zu zweit. Das Angebot stärkt die Kinder in ihrem Selbstvertrauen, ihrer Resilienz und ihrer Bereitschaft zum eigenständigen Lernen.</p>
+          <h3>Deutsch spielerisch lernen</h3>
+          <div class="reading-copy">
+            <p>Ab drei Jahren unterstützen wir Kinder dabei, Deutsch zu lernen, sich sicherer auszudrücken und mit mehr Vertrauen am Unterricht teilzunehmen. Geschichten, Lieder, Gespräche und gemeinsames Spiel geben dafür viele Gelegenheiten.</p>
+            <p>Auch hier lernen die Kinder im ersten Semester einzeln und im zweiten Halbjahr zu zweit.</p>
+          </div>
         </div>
         <div class="dsec">
-          <h2>Ein geschützter Lernraum ohne Bildschirme</h2>
-          <p>Der Lernraum ist vertrauensvoll, geschützt und ressourcenorientiert. Bildschirme haben darin keinen Platz: Ein Bildschirm unterbricht diesen Raum und ersetzt den langsamen Weg zu einer Antwort durch einen schnellen. Gearbeitet wird mit Büchern, Papier und Stiften, mit Lupe, Waage und Ton, und mit dem, was draussen zu finden ist. Der Umweg ist dabei kein Zeitverlust: Was ein Kind sich mühsam erarbeitet hat, bleibt, während das schnell und glatt Aufgenommene oft ebenso schnell wieder weg ist.</p>
+          <h3>Entdecken ohne Bildschirm</h3>
+          <div class="reading-copy">
+            <p>Wir arbeiten mit Büchern, Papier und Stiften, mit Lupe, Waage und Ton sowie mit Dingen, die wir draussen finden. Der Lernraum bleibt ohne Bildschirme. Kinder bekommen Zeit, selbst zu untersuchen, nachzudenken und Antworten zu finden.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -160,13 +203,13 @@
       <p class="eyebrow reveal" style="--dot:var(--violet)">Ziele des Angebots</p>
       <h2 class="big reveal">Worauf die Begleitung hinarbeitet.</h2>
       <ul class="bullets reveal" style="--dot:var(--violet)">
-        <li>Stärkung von <b>Lernkompetenz, Selbstwert und Selbstwirksamkeit</b></li>
-        <li>Förderung von <b>Neugier und intrinsischer Lernmotivation</b></li>
-        <li>Entwicklung von <b>Resilienz</b> und Strategien im Umgang mit Misserfolgen</li>
-        <li>Aufbau eines <b>sicheren, wertschätzenden Lernraums</b></li>
-        <li>Förderung von <b>Kommunikationsfähigkeit</b> und eigenständigem Denken</li>
-        <li>Sichtbarmachung <b>individueller Lernfortschritte</b></li>
-        <li><b>Strategien für wenig interessante Lerninhalte</b></li>
+        <li><b>Lernen lernen, sich selbst wertschätzen</b> und erleben: Ich kann etwas bewirken.</li>
+        <li><b>Neugier</b> wecken und aus eigenem Interesse lernen</li>
+        <li>Mit <b>Rückschlägen umgehen</b> und nach einem Misserfolg weiterprobieren</li>
+        <li>Einen <b>sicheren, wertschätzenden Lernraum</b> schaffen</li>
+        <li><b>Sich ausdrücken, zuhören</b> und eigenständig denken</li>
+        <li><b>Eigene Lernfortschritte</b> erkennen</li>
+        <li>Auch bei <b>weniger interessanten Aufgaben</b> dranzubleiben lernen</li>
         <li><b>Vieles ausprobieren</b>, statt sich früh auf eines festzulegen</li>
       </ul>
     </div>
@@ -179,7 +222,7 @@
       <h2 class="big reveal">Für wen der Lernbus da ist.</h2>
       <ul class="bullets reveal" style="--dot:var(--violet)">
         <li>Kinder <b>ab 3 Jahren bis zur 3. Primarschule</b></li>
-        <li>Besonders geeignet für Kinder, die in ihren <b>Lern- und Zukunftskompetenzen</b> gezielt gestärkt werden sollen</li>
+        <li>Besonders geeignet für Kinder, die beim <b>Lernen und selbstständigen Denken</b> gezielt Unterstützung brauchen</li>
         <li><b>Frühe Deutschförderung ab 3 Jahren</b>, im ersten Semester einzeln und im zweiten Halbjahr zu zweit</li>
         <li>Anmeldung ausschliesslich durch <b>Eltern oder Erziehungsberechtigte</b></li>
       </ul>
@@ -193,31 +236,35 @@
       <p class="eyebrow reveal" style="--dot:var(--violet)">Umsetzung</p>
       <h2 class="big reveal">So läuft es ab.</h2>
       <div class="steps reveal">
-        <div class="step"><span class="dotn">1</span><h3>Kennenlerngespräch</h3><p>Zuerst setzen wir uns mit den Eltern und dem Kind zusammen: Was braucht dieses Kind, was wünschen Sie sich, was ist möglich.</p></div>
-        <div class="step"><span class="dotn">2</span><h3>Die passende Begleitperson</h3><p>Das Kind wird einer Mentorin oder einem Mentor zugeordnet, die zu seinen Interessen und Bedürfnissen passt.</p></div>
-        <div class="step"><span class="dotn">3</span><h3>Die Treffen</h3><p>Die Lektionen dauern 60 Minuten. Im ersten Semester findet die Begleitung einzeln statt, damit das Kind und seine Bezugsperson eine vertrauensvolle Beziehung aufbauen können. Im zweiten Halbjahr finden die Lektionen zu zweit statt. Die Buchung erfolgt jeweils pro Schulsemester. Die Inhalte folgen den Interessen des Kindes und verbinden Spiel, Kreatives, Sprachliches, Mathematisches und Emotionales.</p></div>
+        <div class="step"><span class="dotn">1</span><h3>Kennenlerngespräch</h3><p>Wir sprechen mit Ihnen und Ihrem Kind: Was braucht es, was wünschen Sie sich und wie können wir helfen?</p></div>
+        <div class="step"><span class="dotn">2</span><h3>Die passende Begleitperson</h3><p>Wir wählen eine pädagogische Fachperson aus, die zu den Interessen und Bedürfnissen Ihres Kindes passt.</p></div>
+        <div class="step"><span class="dotn">3</span><h3>Die Treffen</h3><p>Jede Lektion dauert 60 Minuten. Im ersten Semester lernt das Kind einzeln, um Vertrauen zu seiner Bezugsperson aufzubauen. Im zweiten Halbjahr finden die Lektionen zu zweit statt. Sie buchen jeweils ein Schulsemester.</p><p>Die Inhalte folgen den Interessen des Kindes: Spiel, Gestalten, Sprache, Mathematik und der Umgang mit Gefühlen gehören dazu.</p></div>
         <div class="step"><span class="dotn">4</span><h3>Die Lernkiste</h3><p>Ideen, Arbeiten, Fragen und Entdeckungen sammeln sich in einer persönlichen Lernkiste, die den Fortschritt sichtbar macht.</p></div>
-        <div class="step"><span class="dotn">5</span><h3>Regelmässige Elterngespräche</h3><p>Wir bleiben mit den Eltern im Austausch und unterstützen Kind und Eltern bedarfsgerecht, einschliesslich Gesprächsbegleitung. Grundlage sind die dokumentierte Entwicklung des Kindes und die Lernkiste: Beide zeigen, was über die Monate gewachsen ist.</p></div>
+        <div class="step"><span class="dotn">5</span><h3>Regelmässige Elterngespräche</h3><p>Wir besprechen mit Ihnen die Entwicklung Ihres Kindes und schauen gemeinsam in die Lernkiste. Bei Bedarf unterstützen wir Kind und Eltern auch bei weiteren Gesprächen.</p></div>
         <div class="step"><span class="dotn">6</span><h3>Kleingruppen in den Schulferien</h3><p>In den Ferien vertiefen und festigen Kleingruppen, was während des Semesters erarbeitet wurde.</p></div>
       </div>
 
       <div class="detail" style="margin-top:clamp(3rem, 2rem + 3vw, 4.5rem)">
         <div class="dsec">
-          <h2>Vom Münsterplatz ins Quartier</h2>
-          <p>Wir starten am Münsterplatz: ein fester, ruhiger Ort, an dem die Kinder ankommen und zu dem sie gerne zurückkehren. Später kommt der Lernbus dazu und fährt dorthin, wo die Kinder sind, mitten in die Quartiere. Der Weg zum Lernen soll kurz sein.</p>
+          <h3>Vom Münsterplatz ins Quartier</h3>
+          <div class="reading-copy">
+            <p>Wir starten am Münsterplatz: an einem festen, ruhigen Ort, zu dem die Kinder gerne zurückkehren. Später soll der Lernbus in die Quartiere fahren, näher zu den Kindern. Der Weg zum Lernen soll kurz sein.</p>
+          </div>
         </div>
         <div class="dsec">
-          <h2>Lernprozesse sichtbar machen</h2>
-          <p>Im Verlauf der Begleitung dokumentieren die Kinder ihre Ideen, Arbeiten, Fragen und Entdeckungen in einer persönlichen Lernkiste. Dadurch werden individuelle Entwicklungs- und Lernprozesse sichtbar und reflektierbar. Diese Form der Lerndokumentation orientiert sich am ressourcenorientierten Bildungsverständnis der Reggio-Pädagogik. Im Mittelpunkt steht nicht allein das Ergebnis, sondern der Weg dorthin. Kinder erleben, dass ihre Gedanken, Ideen und Lernfortschritte wertvoll sind und wahrgenommen werden. Nichts wird benotet, alles wird festgehalten, und die Lernkiste gehört dem Kind.</p>
+          <h3>Die Lernkiste gehört dem Kind</h3>
+          <div class="reading-copy">
+            <p>Die Lernkiste zeigt den Weg des Kindes, nicht nur fertige Ergebnisse. Wir schauen gemeinsam auf Ideen, Arbeiten und Entdeckungen zurück. Nichts wird benotet.</p>
+            <p>Diese Form der Dokumentation orientiert sich an der Reggio-Pädagogik: Die Stärken und eigenen Gedanken des Kindes stehen im Mittelpunkt.</p>
+          </div>
         </div>
         <div class="dsec">
-          <h2>Buchbar für alle, ermöglicht für viele</h2>
-          <p>Die Beiträge sind gestaffelt und gelten pro Lektion von 60 Minuten, im Zweiersetting pro Kind: Fördertarif, reduzierter Tarif, Kostenwahrheit und ein solidarischer Tarif. Ein Teil der Plätze wird von Menschen ermöglicht, die in Kinder investieren, damit auch Kinder dabei sein können, bei denen das Geld zu Hause knapp ist. Wer in einen Platz investiert, gibt einem Kind Zeit mit einem Menschen, der an es glaubt.</p>
-          <p style="margin-top:.8rem"><a class="morelink" href="../index.html#kosten">Die Tarife im Einzelnen <span>&rarr;</span></a></p>
-        </div>
-        <div class="dsec">
-          <h2>Wenn Selbstwirksamkeit erlebbar wird</h2>
-          <p>Erfahrungen von Selbstwirksamkeit stehen im Zentrum des Lernbusses. Kinder erkennen, dass ihre Anstrengungen Wirkung zeigen, dass Lernen ein Entwicklungsprozess ist und dass Herausforderungen durch Ausdauer, Neugier und eigenes Denken bewältigt werden können. Dadurch entsteht eine positive und nachhaltige Beziehung zum Lernen.</p>
+          <h3>Beiträge nach den Möglichkeiten der Familie</h3>
+          <div class="reading-copy">
+            <p>Für jede Lektion von 60 Minuten gibt es vier Tarife: Fördertarif, reduzierter Tarif, Kostenwahrheit und solidarischer Tarif. Bei Lektionen zu zweit gilt der Beitrag pro Kind.</p>
+            <p>Menschen, die in Kinder investieren, ermöglichen einen Teil der Plätze. So können auch Familien mit wenig Geld teilnehmen.</p>
+            <p><a class="morelink" href="/lernbus/#kosten">Tarife und Einkommensorientierung <span aria-hidden="true">&rarr;</span></a></p>
+          </div>
         </div>
       </div>
     </div>
@@ -230,12 +277,16 @@
       <h2 class="big reveal">Wer mit den Kindern arbeitet.</h2>
       <div class="detail" style="margin-top:2.2rem">
         <div class="dsec">
-          <h2>Unsere Mentorinnen und Mentoren</h2>
-          <p>Die Mentorinnen und Mentoren arbeiten reflektiert, empathisch und fachlich fundiert. Durch ihre pädagogische Ausbildung und Erfahrung können sie an die individuellen Interessen und Bedürfnisse der Kinder anknüpfen.</p>
+          <h3>Pädagogische Ausbildung und Erfahrung</h3>
+          <div class="reading-copy">
+            <p>Unsere Mentorinnen und Mentoren haben eine pädagogische Ausbildung und Erfahrung in der Arbeit mit Kindern. Sie gehen aufmerksam auf die Interessen und Bedürfnisse jedes Kindes ein und reflektieren ihre Arbeit.</p>
+          </div>
         </div>
         <div class="dsec">
-          <h2>Qualität, die überprüft wird</h2>
-          <p>Die Qualität des Angebots wird gesichert und laufend weiterentwickelt.</p>
+          <h3>Das Angebot weiterentwickeln</h3>
+          <div class="reading-copy">
+            <p>Wir überprüfen die Qualität unserer Arbeit und entwickeln das Angebot laufend weiter.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -246,8 +297,8 @@
     <div class="wrap">
       <p class="eyebrow" style="--dot:var(--violet)">Platz anfragen</p>
       <h2 class="big" style="max-width:22ch">Fragen Sie einen Platz an.</h2>
-      <p class="lead" style="margin-top:1.2rem">Der Lernbus startet im Oktober 2026 mit wenigen Plätzen. Anfragen und Anmeldungen erfolgen durch Eltern oder Erziehungsberechtigte. Am Anfang steht ein Kennenlerngespräch. Erzählen Sie uns kurz von Ihrem Kind, wir melden uns innert weniger Tage. Die Beiträge sind gestaffelt und gelten pro Lektion von 60 Minuten, alles Weitere besprechen wir persönlich.</p>
-      <p class="lead" style="margin-top:1rem"><a class="morelink" href="../index.html">Sie sind Mutter oder Vater? Hier steht alles Wichtige kurz <span>&rarr;</span></a></p>
+      <p class="lead" style="margin-top:1.2rem">Der Lernbus startet im Oktober 2026 mit wenigen Plätzen. Als Eltern oder Erziehungsberechtigte können Sie eine Lektion anfragen. Wir melden uns innert weniger Tage für ein Kennenlerngespräch mit Ihnen und Ihrem Kind.</p>
+      <p class="lead" style="margin-top:1rem"><a class="morelink" href="/lernbus/">Zur Übersicht für Eltern mit Tarifen und Kalender <span>&rarr;</span></a></p>
       <div id="anfrage" style="margin-top:2rem;display:flex;flex-wrap:wrap;gap:1rem">
         <a class="btn btn-pink" href="/lernbus/#gespraech">Lektion anfragen</a>
         <a class="btn btn-ghost" href="/lernbus/#kontakt">Eine Frage stellen</a>
