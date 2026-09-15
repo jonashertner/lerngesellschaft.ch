@@ -15,7 +15,7 @@
 .source-home #zielgruppe h2{font-size:clamp(3rem,5.5vw,5.5rem)}
 .source-home .fuerwen{margin-top:2.5rem}
 .source-home .fuerwen li{font-size:clamp(1.4rem,2.1vw,2rem);line-height:1.35;text-wrap:pretty;padding-block:1.2rem}
-.source-home .fuerwen b{background:none;color:var(--forest)}
+.source-home .fuerwen b{background:none;color:inherit}
 .source-home .audience-grid .source-art{width:95%;transform:rotate(3deg);margin-top:2rem}
 .source-home #warum{background:var(--violet);color:var(--bg)}
 .source-home #warum .wrap{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);column-gap:5rem;align-items:start}
