@@ -1,7 +1,7 @@
 /* Design layer over the original wording, with the requested booking/contact changes. */
 /* Page rhythm: yellow opens and closes the story; violet anchors why and fees.
    Paper and pale violet alternate between them, so each section has its own surface. */
-.source-home{overflow-x:visible;--section-space:clamp(4rem,7vw,7rem)}
+.source-home{overflow-x:visible;--section-space:clamp(3.5rem,6vw,6rem);--section-compact:clamp(2.5rem,4vw,4rem)}
 .source-home .hero-inner{padding-top:11rem;padding-bottom:4rem}
 .source-hero-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:3rem 4rem;align-items:center}
 .source-home .hero h1{grid-column:1/-1;max-width:none;font-size:clamp(2.65rem,6.5vw,6.9rem);line-height:1.16;text-wrap:balance;letter-spacing:-.025em}
@@ -26,9 +26,11 @@
 .source-home h2.big{max-width:22ch}
 .source-home .lead{font-size:1.2rem}
 .source-home #zielgruppe{background:var(--bg)}
-.source-home #zielgruppe h2{font-size:clamp(3rem,5.5vw,5.5rem)}
-.source-home .fuerwen{margin-top:2.5rem}
-.source-home .fuerwen li{font-size:clamp(1.4rem,2.1vw,2rem);line-height:1.35;text-wrap:pretty;padding-block:1.2rem}
+.source-home #zielgruppe{padding-block:var(--section-compact)}
+.source-home #zielgruppe .wrap{display:grid;grid-template-columns:minmax(0,.6fr) minmax(0,2.4fr);gap:2rem;align-items:start}
+.source-home #zielgruppe h2{font-size:clamp(1.6rem,2.4vw,2.4rem);margin:0}
+.source-home .fuerwen{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2rem;margin:0}
+.source-home .fuerwen li{font-family:var(--body);font-weight:500;font-size:1.0625rem;line-height:1.55;text-wrap:pretty;padding:0 0 0 1.25rem;border:0;border-left:2px solid var(--violet);min-width:0}
 .source-home .fuerwen b{background:none;color:inherit}
 .source-home #warum{background:var(--violet);color:var(--bg);--hairline:var(--rule-inverse);--section-rule:var(--rule-inverse)}
 .source-home #warum .wrap{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);column-gap:5rem;align-items:start}
@@ -38,35 +40,58 @@
 .source-home #warum .detail{grid-column:2;grid-row:2/span 2;margin:0!important}
 .source-home #warum .dsec{display:block;padding:1.5rem 0 2rem}
 .source-home #warum .dsec:first-child{padding-top:0}
-.source-home #warum .dsec h3{font-size:2rem;max-width:none;color:var(--bg)}
+.source-home #warum .dsec h3{font-size:clamp(1.4rem,2vw,1.8rem);max-width:none;color:var(--bg)}
 .source-home #warum .dsec h3::before{display:none}
 .source-home #warum .dsec p{color:var(--bg);font-size:1.0625rem;margin-top:1rem;max-width:48ch}
 .source-home #ansatz{background:var(--bg)}
-.source-home .pillars{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:3rem 5rem;margin-top:3rem}
+.source-home #ansatz>.wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:0 clamp(2rem,5vw,5rem)}
+.source-home #ansatz h2.big{font-size:clamp(2rem,3.6vw,3.6rem);max-width:26ch}
+.source-home #ansatz>.wrap>.lead{margin-top:0!important;align-self:center;max-width:52ch}
+.source-home #ansatz .pillars,.source-home #ansatz .checksheet{grid-column:1/-1}
+.source-home .pillars{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:2.5rem 5rem;margin-top:3rem}
 .source-home .pillar{border-top:1px solid var(--hairline);padding-top:1.7rem;min-width:0}
 .source-home .pillar .bar{display:none}
-.source-home .pillar h3{font-size:clamp(1.9rem,3.1vw,3rem);margin-top:0;line-height:1.12;max-width:22ch;hyphens:auto;overflow-wrap:anywhere}
+.source-home .pillar h3{font-size:clamp(1.4rem,2.2vw,2rem);margin-top:0;line-height:1.2;max-width:30ch;hyphens:auto;overflow-wrap:anywhere}
 .source-home .pillar p{font-size:1.0625rem;line-height:1.6;flex:none;max-width:49ch}
-.source-home .checksheet{padding:2.5rem 3rem;background:var(--bg);border:2px solid var(--violet);box-shadow:8px 8px 0 var(--violet);margin-top:4rem}
+.source-home .checksheet{display:grid;grid-template-columns:minmax(0,.6fr) minmax(0,2.4fr);gap:2rem;padding:2rem 0 0;background:transparent;border:0;border-top:2px solid var(--violet);box-shadow:none;margin-top:3rem}
+.source-home .checksheet .eyebrow{margin:0}
+.source-home .checksheet .ticks{margin:0}
 .source-home .ticks{grid-template-columns:repeat(2,minmax(0,1fr));gap:1.5rem 3rem}
 .source-home .ticks li{font-weight:600;font-size:1.0625rem;padding-left:2rem}
 .source-home .ticks li::before,.source-home .ticks li:nth-child(even)::before{content:'';top:calc((1.4em - 1.7rem)/2);background:var(--yellow) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='m6 12 4 4 8-8' fill='none' stroke='%23493f80' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/72% no-repeat;border-radius:50%;transform:none}
-.source-home .room-section{background:var(--surface-soft)}
-.room-heading{font-family:var(--display);font-size:clamp(1.8rem,3vw,3rem);line-height:1.15;letter-spacing:-.02em;color:var(--violet);margin:0 0 2rem;text-wrap:balance}
+.source-home .room-section{background:var(--surface-soft);padding-block:var(--section-compact)}
+.room-heading{font-family:var(--display);font-size:clamp(1.5rem,2.5vw,2.4rem);line-height:1.15;letter-spacing:-.02em;color:var(--violet);margin:0 0 2rem;text-wrap:balance}
 .room-photos{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(1rem,2vw,2rem)}
 .room-photos figure{margin:0;min-width:0}
 .room-photos img{display:block;width:100%;height:auto}
 @media(max-width:48rem){.room-photos{grid-template-columns:minmax(0,1fr);gap:1.25rem}}
-.source-home .team-section{background:var(--bg)}
-.source-home .team-section .team-profile{margin-top:clamp(2.5rem,4vw,4rem)}
+.source-home .team-section{background:var(--bg);overflow:visible}
+.source-home .team-section h2.big{font-size:clamp(2rem,3vw,3rem)}
+.source-home .team-section .team-profile{margin-top:2rem;gap:clamp(2rem,5vw,5rem)}
+.source-home .team-section .team-name{font-size:clamp(2rem,3.2vw,3.2rem)}
+.source-home .team-section .team-bio-heading{font-size:clamp(1.35rem,1.8vw,1.75rem)}
+.source-home .team-section .team-bio-section{padding-block:1.5rem}
+.source-home .team-section .team-bio-section:first-child{padding-top:0}
+.source-home .team-section>.wrap>.morelink{display:inline-flex;align-items:center;margin:2rem 0 0}
 .source-home #ablauf{background:var(--surface-soft)}
-.source-home .steps.grid2{grid-template-columns:repeat(2,minmax(0,1fr));max-width:none;gap:1rem 4rem;margin-left:0}
-.source-home .steps .step{padding:1.4rem 0 1.6rem 4.5rem;border-top:1px solid var(--hairline);border-bottom:0;min-width:0}
-.source-home .steps .dotn{top:1.25rem;width:3rem;font-size:3.5rem;color:var(--violet)}
-.source-home .steps .step p{font-size:1.125rem}
+.source-home #ablauf>.wrap{display:grid;grid-template-columns:minmax(0,.7fr) minmax(0,1.3fr);gap:2rem 5rem;align-items:start}
+.source-home #ablauf h2.big{font-size:clamp(2.2rem,4vw,4rem)}
+.source-home .steps.grid2{grid-template-columns:minmax(0,1fr);max-width:none;gap:0;margin:0;padding:0;list-style:none}
+.source-home .steps .step{padding:1.2rem 0 1.2rem 3.5rem;border-top:1px solid var(--hairline);border-bottom:0;min-width:0}
+.source-home .steps .step:first-child{border-top:2px solid var(--violet)}
+.source-home .steps .step:nth-child(-n+2){padding-block:1.6rem}
+.source-home .steps .step:nth-child(-n+2) b{font-size:1.35rem;line-height:1.3}
+.source-home .steps .step:nth-child(-n+2) .dotn{font-size:2.5rem;top:1.5rem}
+.source-home .steps .dotn{top:1.2rem;width:2.5rem;font-size:1.6rem;line-height:1.3;color:var(--violet)}
+.source-home .steps .step p{font-size:1.0625rem}
 .source-home #kosten{background:var(--violet);color:var(--bg);--hairline:var(--rule-inverse);--line:var(--rule-inverse);--section-rule:var(--rule-inverse)}
 .source-home #kosten .eyebrow,.source-home #kosten h2{color:var(--yellow)}
 .source-home #kosten .lead{color:var(--bg)}
+.source-home #kosten>.wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:0 4rem}
+.source-home #kosten .eyebrow{grid-column:1/-1}
+.source-home #kosten h2.big{font-size:clamp(2.6rem,4.5vw,4.5rem)}
+.source-home #kosten .lead{margin-top:0!important;align-self:center}
+.source-home #kosten .tariffs{grid-column:1/-1}
 .source-home .tariffs{max-width:none;margin-top:3rem;table-layout:fixed}
 .source-home .tariffs th,.source-home .tariffs td{padding:1.6rem 1.5rem}
 .source-home .tariffs thead th{font-size:.9375rem;color:var(--bg);letter-spacing:.02em;text-transform:none;padding-block:1rem;text-align:right;width:24%}
@@ -77,9 +102,9 @@
 .source-home .tariffs .tdesc{color:var(--bg);max-width:46ch;font-size:1rem;line-height:1.55;margin-top:.65rem}
 .source-home .tariffs td{font-size:clamp(1.5rem,2.2vw,2rem);color:var(--bg);font-variant-numeric:tabular-nums;letter-spacing:-.01em;width:auto;text-align:right;vertical-align:middle}
 .source-home .tariffs thead th+th,.source-home .tariffs td{border-left:1px solid var(--hairline)}
-.source-home #qualitaet{background:var(--surface-soft)}
+.source-home #qualitaet{background:var(--surface-soft);padding-block:var(--section-compact)}
 .source-home #qualitaet .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:4rem}
-.source-home #qualitaet h2{grid-column:1;grid-row:1/span 2;max-width:19ch;margin:0;hyphens:auto;overflow-wrap:anywhere}
+.source-home #qualitaet h2{grid-column:1;grid-row:1/span 2;font-size:clamp(1.65rem,2.6vw,2.6rem);max-width:28ch;margin:0;hyphens:auto;overflow-wrap:anywhere}
 .source-home #qualitaet .lead{grid-column:2;margin:0!important;font-size:1.125rem}
 .source-home #qualitaet .lead+.lead{margin-top:1.25rem!important}
 .source-home #gespraech{background:var(--bg);color:var(--teal-ink);padding-block:var(--section-space)}
@@ -96,13 +121,12 @@
 .source-home .book-note{color:var(--teal-soft);font-size:.9375rem;max-width:60ch}
 
 .source-home #fragen{background:var(--bg)}
-.source-home #fragen .detail{max-width:none;margin-top:3rem!important}
-.source-home #fragen .dsec h2{font-size:clamp(1.65rem,2.5vw,2.5rem);max-width:24ch}
-.source-home #fragen .dsec p{margin-top:0;max-width:60ch}
-.source-home #traegerschaft{background:var(--yellow);--section-rule:rgba(73,63,128,.3)}
+.source-home #fragen>.wrap{display:grid;grid-template-columns:minmax(0,.7fr) minmax(0,1.3fr);gap:2rem 5rem;align-items:start}
+.source-home #fragen h2.big{font-size:clamp(2rem,3vw,3rem)}
+.source-home #traegerschaft{background:var(--yellow);--section-rule:rgba(73,63,128,.3);padding-block:var(--section-compact)}
 .source-home #traegerschaft .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:1.5rem 4rem}
 .source-home #traegerschaft .eyebrow{grid-column:1/-1}
-.source-home #traegerschaft h2{grid-column:1;grid-row:2/span 2;margin:0;font-size:clamp(3rem,5.3vw,5.6rem)}
+.source-home #traegerschaft h2{grid-column:1;grid-row:2/span 2;margin:0;font-size:clamp(2rem,3.5vw,3.5rem)}
 .source-home #traegerschaft .lead{grid-column:2;margin:0!important;font-size:1.125rem}
 .source-home #traegerschaft .wrap>div{grid-column:2}
 .source-home .foot{background:var(--night)}
@@ -133,17 +157,17 @@
 .booking-error{margin-top:1rem;color:#842a1d}
 @media(max-width:64rem){
  .source-hero-grid{column-gap:2rem}.source-home .hero-inner{padding-top:10rem}.source-home .hero .lead{font-size:1.125rem}
- .source-home #warum .wrap{column-gap:2.5rem}.source-home #warum h2{font-size:3rem}.source-home #warum .dsec h3{font-size:1.8rem}
- .source-home .pillars{gap:2.5rem}.source-home .checksheet{padding:2rem}.source-home .steps.grid2{gap:1rem 2rem}.source-home #qualitaet .wrap{column-gap:2rem}.source-home #qualitaet h2{font-size:3rem}
+ .source-home #warum .wrap{column-gap:2.5rem}.source-home #warum h2{font-size:3rem}
+ .source-home .pillars{gap:2.5rem}.source-home #qualitaet .wrap{column-gap:2rem}
 }
 @media(max-width:48rem){
  .source-home{--section-space:3.5rem}.source-home .hero-inner{padding-top:9rem}.source-home h2.big{font-size:clamp(2.6rem,7vw,3.8rem);hyphens:auto;overflow-wrap:anywhere}.source-home .lead{font-size:1.125rem}
- .source-home .fuerwen li{font-size:1.4rem}
+
  .source-home #warum .wrap{display:block}.source-home #warum h2{font-size:clamp(2.6rem,7vw,3.8rem);max-width:20ch}.source-home #warum .detail{margin-top:2.5rem!important}.source-home #warum .lead{max-width:none!important}
- .source-home .pillars{grid-template-columns:1fr!important;gap:2rem}.source-home .pillar h3{max-width:none;font-size:2rem}.source-home .checksheet{padding:1.5rem;margin-top:3rem;box-shadow:5px 5px 0 var(--violet)}.source-home .ticks{grid-template-columns:1fr;gap:1.2rem}
- .source-home .steps.grid2{grid-template-columns:1fr;gap:.5rem}.source-home .steps .step{padding-left:3.5rem}.source-home .steps .dotn{font-size:2.7rem}.source-home .steps .step p{font-size:1.0625rem}
- .source-home #qualitaet .wrap{display:block}.source-home #qualitaet h2{font-size:2.6rem;max-width:none;margin-bottom:1.5rem}.source-home #qualitaet .lead{font-size:1.0625rem}
- .source-home #fragen .dsec{gap:1rem}.source-home #fragen .dsec h2{font-size:1.8rem}.source-home #traegerschaft .wrap{display:block}.source-home #traegerschaft h2{font-size:3rem;margin-block:1.5rem}.source-home #traegerschaft .lead{font-size:1.0625rem}
+ .source-home .pillars{grid-template-columns:1fr!important;gap:2rem}.source-home .pillar h3{max-width:none;font-size:1.5rem}.source-home .ticks{grid-template-columns:1fr;gap:1.2rem}
+
+ .source-home #qualitaet .wrap{display:block}.source-home #qualitaet h2{max-width:none;margin-bottom:1.5rem}.source-home #qualitaet .lead{font-size:1.0625rem}
+ .source-home #traegerschaft .wrap{display:block}.source-home #traegerschaft h2{margin-block:1.5rem}.source-home #traegerschaft .lead{font-size:1.0625rem}
  .booking-card{padding:1.3rem;box-shadow:4px 4px 0 var(--violet)}.booking-card-heading h3{font-size:1.5rem}.weekly-times dl{grid-template-columns:1fr;gap:1rem}.booking-card .button{width:100%}
 }
 @media(max-width:48rem){
@@ -158,7 +182,8 @@
  .source-home .tariffs .tdesc{max-width:46ch;font-size:1rem}
 }
 @media(prefers-reduced-motion:reduce){.source-art{transform:none}}
-.source-home .contact-section{background:var(--surface-soft)}
+.source-home .contact-section{background:var(--surface-soft);padding-block:var(--section-compact)}
+.source-home .contact-intro h2{font-size:clamp(2rem,3.3vw,3.3rem)}
 .contact-grid{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(2rem,5vw,5rem);align-items:start}
 .contact-grid>*{min-width:0}
 .contact-intro h2{max-width:12ch}
@@ -170,8 +195,39 @@
 .contact-section .btn-ghost:hover{background:var(--violet);color:var(--bg)}
 @media(max-width:64rem){.contact-grid{grid-template-columns:minmax(0,1fr);gap:2rem}.contact-intro .lead{max-width:56ch}.contact-intro h2{max-width:none}}
 @media(max-width:32rem){.contact-section .form-grid{grid-template-columns:minmax(0,1fr)}.contact-section .btn{width:100%;justify-content:center}}
+
+/* Questions read as a compact index; each complete answer remains in native HTML. */
+.source-home .faq-list{min-width:0;border-top:2px solid var(--violet)}
+.source-home .faq-item{border-bottom:1px solid var(--hairline)}
+.source-home .faq-item summary{position:relative;cursor:pointer;list-style:none;padding:1.35rem 2.75rem 1.35rem 0;min-height:56px;color:var(--violet)}
+.source-home .faq-item summary::-webkit-details-marker{display:none}
+.source-home .faq-item summary::before,.source-home .faq-item summary::after{content:'';position:absolute;right:.35rem;top:calc(50% - 1px);width:1rem;height:2px;background:currentColor}
+.source-home .faq-item summary::after{transform:rotate(90deg)}
+.source-home .faq-item[open] summary::after{transform:none}
+.source-home .faq-item summary h3{font-size:clamp(1.125rem,1.7vw,1.5rem);font-weight:700;line-height:1.35;margin:0;letter-spacing:-.015em;text-wrap:pretty}
+.source-home .faq-item summary:hover{text-decoration:underline;text-underline-offset:.2em}
+.source-home .faq-item summary:focus-visible{outline:3px solid var(--violet);outline-offset:3px}
+.source-home .faq-answer{padding:0 2.75rem 1.5rem 0}
+.source-home .faq-answer p{max-width:62ch;margin:0;font-size:1.0625rem;line-height:1.65}
+.source-home .faq-answer p+p{margin-top:1rem!important}
+.source-home .faq-answer .morelink{margin-left:0}
+@media(min-width:64rem) and (min-height:48rem){.source-home .team-identity{position:sticky;top:7rem}}
+@media(max-width:64rem){
+ .source-home #zielgruppe .wrap{grid-template-columns:minmax(0,1fr)}
+ .source-home #ansatz>.wrap,.source-home #ablauf>.wrap,.source-home #fragen>.wrap{column-gap:2.5rem}
+ .source-home .checksheet{grid-template-columns:minmax(0,1fr);gap:1.5rem}
+}
+@media(max-width:48rem){
+ .source-home .fuerwen{grid-template-columns:minmax(0,1fr);gap:1.1rem}
+ .source-home #ansatz>.wrap,.source-home #ablauf>.wrap,.source-home #kosten>.wrap,.source-home #fragen>.wrap{display:block}
+ .source-home #ansatz>.wrap>.lead,.source-home #kosten .lead{margin-top:1.25rem!important}
+ .source-home .steps.grid2,.source-home .faq-list{margin-top:2rem}
+ .source-home .team-section .team-name{max-width:none}
+ .source-home .faq-answer{padding-right:0}
+}
+
 @media print{
- .source-home{--bg:#fff;--surface-soft:#fff;--rule-inverse:#b3afbc;--section-space:1.5rem}
+ .source-home{--bg:#fff;--surface-soft:#fff;--rule-inverse:#b3afbc;--section-space:1.5rem;--section-compact:1.5rem}
  .source-home .site-head,.source-home .booking-section,.source-home .book-card,.source-home .foot-logo{display:none}
  .source-home .hero-inner{padding-top:1rem}
  .source-home .hero,.source-home #warum,.source-home #kosten,.source-home #traegerschaft{background:#fff}
@@ -179,4 +235,9 @@
  .source-home #warum,.source-home #kosten{--bg:var(--ink);--yellow:var(--ink)}
  .source-home .foot,.source-home .foot a{background:#fff;color:var(--ink)}
  .source-art{transform:none;max-width:250px}
+ .source-home .team-identity{position:static}
+ .source-home .faq-item summary::before,.source-home .faq-item summary::after{display:none}
+ .source-home .faq-item{break-inside:avoid}
+ .source-home .faq-item::details-content{content-visibility:visible}
+ .source-home .faq-answer{display:block!important}
 }
