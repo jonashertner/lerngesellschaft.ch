@@ -3,11 +3,11 @@
 export default {
   de: {
     lang: 'de-CH', prefix: './', alternate: 'en/', alternateLabel: 'In English', alternateCode: 'EN',
-    title: 'Lernbus · Kleine Schritte. Grosses Zutrauen.',
+    title: 'Lernbus · Frühförderung, die das Kind stark macht.',
     description: 'Individuelle Frühförderung in Basel. Für Kinder ab 3 Jahren bis zur 3. Primarschule, einzeln oder zu zweit. Mit einer festen Bezugsperson und Beiträgen, die Zugang ermöglichen.',
     skip: 'Zum Inhalt', brand: 'Ein Angebot der Lerngesellschaft', menu: 'Menü', nav: ['Angebot', 'So geht’s', 'Beiträge', 'Fragen'],
     book: 'Kennenlernen', eyebrow: 'Frühförderung in Basel',
-    headline: 'Kleine Schritte.<br>Grosses <em>Zutrauen.</em>',
+    headline: 'Frühförderung,<br>die das Kind <em>stark macht.</em>',
     intro: 'Ein Mensch an der Seite. Raum für Neugier. Wir begleiten Ihr Kind dabei, seine Stärken zu entdecken und mit Freude zu lernen.',
     heroCta: 'Kennenlerngespräch', secondaryCta: 'Den Lernbus entdecken', heroNote: 'Für Kinder ab 3 Jahren bis zur 3. Primarschule.',
     imageAlt: 'Taktile Collage aus Papierformen, Bausteinen, einem blauen Stift und einer geschwungenen Schnur.',
