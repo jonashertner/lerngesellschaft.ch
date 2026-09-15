@@ -1,7 +1,7 @@
 // Only labels for the explicitly requested calendar. All site wording remains in the original pages.
 export default {
   "de": {
-    "bookingHeading": "Kennenlerngespräch vereinbaren",
+    "bookingHeading": "Datum und Uhrzeit auswählen",
     "bookingEmpty": "Die Online-Terminbuchung wird gerade eingerichtet.",
     "bookingFallback": "Bis die Termine freigeschaltet sind, erreichen Sie uns direkt per E-Mail.",
     "bookingEmailSubject": "Kennenlerngespräch Lernbus (60 Minuten)",
@@ -24,7 +24,7 @@ export default {
     "privacy": "Datenschutz"
   },
   "en": {
-    "bookingHeading": "Arrange an introductory conversation",
+    "bookingHeading": "Choose a date and time",
     "bookingEmpty": "Online appointment booking is being set up.",
     "bookingFallback": "Until appointments are available here, you can reach us directly by email.",
     "bookingEmailSubject": "Lernbus introductory conversation (60 minutes)",

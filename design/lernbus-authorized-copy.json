@@ -1,0 +1,74 @@
+{
+  "authorization": "Jonas, 15 September 2026: round tariffs, separate appointment booking and contact, add Conny Brandes as Leiterin with photo/bio to come. Only those changes and their navigation are permitted beyond the immutable live-site baseline.",
+  "rounding": "Working choice communicated: CHF 12.50 to CHF 10; CHF 87.50 to CHF 90.",
+  "pages": {
+    "lernbus/index.html": [
+      {
+        "start": 10,
+        "end": 23,
+        "before": "Zielgruppe Warum Ansatz Ablauf Kosten Qualität Gespräch Fragen Trägerschaft EN Individuelle Frühförderung ,",
+        "after": "Zielgruppe Warum Ansatz Ablauf Kosten Qualität Termin buchen Kontakt Team Fragen Trägerschaft EN Individuelle Frühförderung ,"
+      },
+      {
+        "start": 575,
+        "end": 590,
+        "before": "die in Kinder investieren . CHF 12 . 50 CHF 10 Reduziert Für Familien ,",
+        "after": "die in Kinder investieren . CHF 10 CHF 10 Reduziert Für Familien ,"
+      },
+      {
+        "start": 633,
+        "end": 648,
+        "before": "in Förderplätze . CHF 125 CHF 87 . 50 Wenn das Geld zu Hause knapp",
+        "after": "in Förderplätze . CHF 125 CHF 90 Wenn das Geld zu Hause knapp"
+      },
+      {
+        "start": 720,
+        "end": 862,
+        "before": "gesichert und laufend weiterentwickelt . Kennenlerngespräch Vereinbaren Sie ein Gespräch . Der Lernbus startet im September 2026 mit wenigen Plätzen . Sagen Sie uns kurz , um wen es geht und wann wir Sie erreichen . Wir melden uns innert weniger Tage . Ihr Name E - Mail oder Telefon Alter des Kindes Bitte wählen 3 Jahre 4 Jahre 5 Jahre 6 Jahre 7 Jahre 8 Jahre 9 Jahre Wann erreichen wir Sie am besten ? Worum geht es ? ( optional ) Mein Kind soll Deutsch aufbauen und sicherer sprechen . Bitte informieren Sie mich über ermöglichte Plätze . Gespräch anfragen Unverbindlich . Ihre Anfrage geht als E - Mail direkt an info @ lernbus . ch und wird nirgends sonst gespeichert . Lieber telefonieren ? Schreiben Sie uns eine Zeile , wir rufen zurück . Häufige Fragen Ist das Nachhilfe",
+        "after": "gesichert und laufend weiterentwickelt . Kennenlerngespräch buchen . Wählen Sie einen freien Termin für ein Gespräch von 60 Minuten . Kontakt Eine Frage stellen . Für Fragen zum Lernbus schreiben Sie uns eine Nachricht . Wir melden uns innert weniger Tage . info @ lernbus . ch Ihr Name Ihre E - Mail - Adresse Ihre Nachricht E - Mail vorbereiten Das Formular öffnet Ihr E - Mail - Programm mit Ihrer Nachricht an info @ lernbus . ch . Dort können Sie die Nachricht prüfen und absenden . Häufige Fragen Ist das Nachhilfe"
+      }
+    ],
+    "lernbus/en/index.html": [
+      {
+        "start": 13,
+        "end": 26,
+        "before": "Approach How it works Fees Quality Conversation Questions Who runs it DE Individual",
+        "after": "Approach How it works Fees Quality Book a time Contact Team Questions Who runs it DE Individual"
+      },
+      {
+        "start": 672,
+        "end": 687,
+        "before": "who invest in children . CHF 12 . 50 CHF 10 Reduced For families who",
+        "after": "who invest in children . CHF 10 CHF 10 Reduced For families who"
+      },
+      {
+        "start": 735,
+        "end": 750,
+        "before": "supported places . CHF 125 CHF 87 . 50 If money is tight at home",
+        "after": "supported places . CHF 125 CHF 90 If money is tight at home"
+      },
+      {
+        "start": 828,
+        "end": 986,
+        "before": ", evaluation and further training . Introductory conversation Arrange a conversation . The Learning Bus starts in September 2026 with a small number of places . Tell us briefly who it is for and when we can reach you . We will get back to you within a few days . Your name Email or phone Age of the child Please choose 3 years 4 years 5 years 6 years 7 years 8 years 9 years When can we best reach you ? What is it about ? ( optional ) My child should build up German and speak it more confidently . Please tell me about places made possible by others . Request a conversation No obligation . Your enquiry goes as an email straight to info @ lernbus . ch and is stored nowhere else . Would you rather talk ? Write us a line and we will call back . Frequent questions Is this tutoring",
+        "after": ", evaluation and further training . Book an introductory conversation . Choose an available time for a conversation of 60 minutes . Contact Ask a question . For questions about the Lernbus , send us a message . We will get back to you within a few days . info @ lernbus . ch Your name Your email address Your message Prepare email This form opens your email app with your message to info @ lernbus . ch . You can review and send it there . Frequent questions Is this tutoring"
+      }
+    ],
+    "lernbus/team/index.html": [
+      {
+        "start": 30,
+        "end": 91,
+        "before": "und nach höchsten Ansprüchen ausgewählt . Lernmentorinnen und Lernmentoren Wir stellen uns in Kürze vor . Porträt folgt Name , Hintergrund und Schwerpunkte stellen wir hier bald vor . Porträt folgt Name , Hintergrund und Schwerpunkte stellen wir hier bald vor . Porträt folgt Name , Hintergrund und Schwerpunkte stellen wir hier bald vor . Die Qualität wird laufend durch Teamsitzungen",
+        "after": "und nach höchsten Ansprüchen ausgewählt . Foto folgt Leitung Conny Brandes Leiterin Lernbus Beschreibung folgt . connybrandes @ lernbus . ch Die Qualität wird laufend durch Teamsitzungen"
+      }
+    ],
+    "lernbus/team/en/index.html": [
+      {
+        "start": 32,
+        "end": 92,
+        "before": "and to the highest standards . Learning mentors We will introduce ourselves here soon . Portrait to follow Name , background and focus will appear here soon . Portrait to follow Name , background and focus will appear here soon . Portrait to follow Name , background and focus will appear here soon . Quality is maintained continuously through team",
+        "after": "and to the highest standards . Photo to follow Leadership Conny Brandes Head of Lernbus Biography to follow . connybrandes @ lernbus . ch Quality is maintained continuously through team"
+      }
+    ]
+  }
+}

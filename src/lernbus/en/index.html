@@ -6,7 +6,7 @@ locale: en
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="theme-color" content="#fbfaf3" />
+<meta name="theme-color" content="#faf7ee" />
 <title>Learning Bus · Individual early-years support in Basel</title>
 <meta name="description" content="The Learning Bus supports children from age 3 to the third year of primary school, one or two at a time, always with the same person. Open to every child." />
 <link rel="canonical" href="https://lerngesellschaft.ch/lernbus/en/" />
@@ -43,7 +43,9 @@ locale: en
           <a href="#ablauf" class="navlink">How it works</a>
           <a href="#kosten" class="navlink">Fees</a>
           <a href="#qualitaet" class="navlink">Quality</a>
-          <a href="#gespraech" class="navlink">Conversation</a>
+          <a href="#gespraech" class="navlink">Book a time</a>
+          <a href="#kontakt" class="navlink">Contact</a>
+          <a href="../team/en/index.html" class="navlink">Team</a>
           <a href="#fragen" class="navlink">Questions</a>
           <a href="#traegerschaft" class="navlink">Who runs it</a>
         </nav>
@@ -190,10 +192,10 @@ locale: en
           <tr role="row"><th role="columnheader" scope="col">Rate</th><th role="columnheader" scope="col">One-to-one</th><th role="columnheader" scope="col">In pairs <span>per child</span></th></tr>
         </thead>
         <tbody role="rowgroup">
-          <tr role="row"><th role="rowheader" scope="row"><span class="tname">Supported rate</span><span class="tdesc">For families where money is tight. Made possible by people who invest in children.</span></th><td role="cell" data-label="One-to-one">CHF 12.50</td><td role="cell" data-label="In pairs, per child">CHF 10</td></tr>
+          <tr role="row"><th role="rowheader" scope="row"><span class="tname">Supported rate</span><span class="tdesc">For families where money is tight. Made possible by people who invest in children.</span></th><td role="cell" data-label="One-to-one">CHF 10</td><td role="cell" data-label="In pairs, per child">CHF 10</td></tr>
           <tr role="row"><th role="rowheader" scope="row"><span class="tname">Reduced</span><span class="tdesc">For families who cannot carry the full fee.</span></th><td role="cell" data-label="One-to-one">CHF 75</td><td role="cell" data-label="In pairs, per child">CHF 60</td></tr>
           <tr role="row" class="ref"><th role="rowheader" scope="row"><span class="tname">True cost</span><span class="tdesc">Covers the full cost of a place: the lesson, preparation, talks with parents and quality assurance.</span></th><td role="cell" data-label="One-to-one">CHF 100</td><td role="cell" data-label="In pairs, per child">CHF 75</td></tr>
-          <tr role="row"><th role="rowheader" scope="row"><span class="tname">Solidarity</span><span class="tdesc">More than a place costs. The surplus goes entirely to supported places.</span></th><td role="cell" data-label="One-to-one">CHF 125</td><td role="cell" data-label="In pairs, per child">CHF 87.50</td></tr>
+          <tr role="row"><th role="rowheader" scope="row"><span class="tname">Solidarity</span><span class="tdesc">More than a place costs. The surplus goes entirely to supported places.</span></th><td role="cell" data-label="One-to-one">CHF 125</td><td role="cell" data-label="In pairs, per child">CHF 90</td></tr>
         </tbody>
       </table>
       <p class="tariffs-note reveal">If money is tight at home, simply say so. It is not an obstacle, and it stays between us.</p>
@@ -212,29 +214,30 @@ locale: en
   <!-- ARRANGE A CONVERSATION -->
   <section class="section" id="gespraech">
     <div class="wrap">
-      <p class="eyebrow" style="--dot:var(--violet)">Introductory conversation</p>
-      <h2 class="big" style="max-width:20ch">Arrange a conversation.</h2>
-      <p class="lead" style="margin-top:1.2rem; max-width:56ch">The Learning Bus starts in September 2026 with a small number of places. Tell us briefly who it is for and when we can reach you. We will get back to you within a few days.</p>
+      <h2 class="big">Book an introductory conversation.</h2>
+      <p class="lead" style="margin-top:1.2rem; max-width:56ch">Choose an available time for a conversation of 60 minutes.</p>
       {% include "lernbus-calendar.njk" %}
+    </div>
+  </section>
+
+  <section class="section contact-section" id="kontakt">
+    <div class="wrap contact-grid">
+      <div class="contact-intro">
+        <p class="eyebrow">Contact</p>
+        <h2 class="big">Ask a question.</h2>
+        <p class="lead">For questions about the Lernbus, send us a message. We will get back to you within a few days.</p>
+        <a class="morelink" href="mailto:info@lernbus.ch">info@lernbus.ch</a>
+      </div>
       <div class="book-card">
-        <form id="anfrage">
+        <form id="anfrage" action="mailto:info@lernbus.ch" method="post" enctype="text/plain">
           <div class="form-grid">
             <div class="field"><label for="f-name">Your name</label><input id="f-name" name="name" type="text" autocomplete="name" required /></div>
-            <div class="field"><label for="f-contact">Email or phone</label><input id="f-contact" name="contact" type="text" autocomplete="email" required /></div>
-            <div class="field"><label for="f-age">Age of the child</label>
-              <select id="f-age" name="age" required>
-                <option value="" selected disabled>Please choose</option>
-                <option>3 years</option><option>4 years</option><option>5 years</option><option>6 years</option><option>7 years</option><option>8 years</option><option>9 years</option>
-              </select>
-            </div>
-            <div class="field"><label for="f-when">When can we best reach you?</label><input id="f-when" name="when" type="text" placeholder="e.g. weekdays after 5pm" /></div>
-            <div class="field wide"><label for="f-msg">What is it about? (optional)</label><textarea id="f-msg" name="msg"></textarea></div>
-            <label class="check wide"><input type="checkbox" name="lang" /> My child should build up German and speak it more confidently.</label>
-            <label class="check wide"><input type="checkbox" name="reduced" /> Please tell me about places made possible by others.</label>
+            <div class="field"><label for="f-contact">Your email address</label><input id="f-contact" name="contact" type="email" autocomplete="email" required /></div>
+            <div class="field wide"><label for="f-msg">Your message</label><textarea id="f-msg" name="msg" rows="5" required></textarea></div>
           </div>
-          <div style="margin-top:1.4rem"><button type="submit" class="btn btn-pink">Request a conversation</button></div>
+          <div style="margin-top:1.4rem"><button type="submit" class="btn btn-ghost">Prepare email</button></div>
         </form>
-        <p class="book-note">No obligation. Your enquiry goes as an email straight to info@lernbus.ch and is stored nowhere else. Would you rather talk? Write us a line and we will call back.</p>
+        <p class="book-note">This form opens your email app with your message to info@lernbus.ch. You can review and send it there.</p>
       </div>
     </div>
   </section>
@@ -305,12 +308,8 @@ locale: en
 (function(){var f=document.getElementById('anfrage');if(!f)return;
 f.addEventListener('submit',function(e){e.preventDefault();
 var g=function(n){var el=f.elements[n];return el?el.value.trim():'';};
-var L=['Enquiry: introductory conversation, Learning Bus','','Name: '+g('name'),'Contact: '+g('contact'),'Age of the child: '+g('age')];
-if(g('when'))L.push('Reachable: '+g('when'));
-if(f.elements['lang'].checked)L.push('Early German language support: build up German, speak more confidently.');
-if(f.elements['reduced'].checked)L.push('Please send information on places made possible by others.');
-if(g('msg')){L.push('');L.push(g('msg'));}
-location.href='mailto:info@lernbus.ch?subject='+encodeURIComponent('Learning Bus: introductory conversation')+'&body='+encodeURIComponent(L.join('\n'));});})();
+var lines=['Lernbus enquiry','','Name: '+g('name'),'Email: '+g('contact'),'',g('msg')];
+location.href='mailto:info@lernbus.ch?subject='+encodeURIComponent('Lernbus enquiry')+'&body='+encodeURIComponent(lines.join('\n'));});})();
 </script>
 </body>
 </html>

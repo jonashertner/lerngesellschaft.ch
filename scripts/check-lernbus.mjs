@@ -35,7 +35,7 @@ for (const path of paths) {
   }
   if (['lernbus/index.html', 'lernbus/en/index.html'].includes(path)) {
     assert.equal((html.match(/<td\b/g)||[]).length, 8);
-    for (const amount of ['12.50','10','75','60','100','125','87.50']) assert(new RegExp(`<td[^>]*>CHF ${amount.replace('.', '\\.')}</td>`).test(html));
+    for (const amount of ['10','75','60','100','125','90']) assert(new RegExp(`<td[^>]*>CHF ${amount.replace('.', '\\.')}</td>`).test(html));
     assert(!/<iframe\b/.test(html), 'No third-party calendar loaded before parent chooses');
   }
 }

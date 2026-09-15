@@ -1,4 +1,4 @@
-/* Design layer over the unchanged published Lernbus content. */
+/* Design layer over the original wording, with the requested booking/contact changes. */
 .source-home{overflow-x:visible}
 .source-home .hero-inner{padding-top:11rem;padding-bottom:4rem}
 .source-hero-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:3rem 4rem;align-items:center}
@@ -15,7 +15,7 @@
 .source-home #zielgruppe h2{font-size:clamp(3rem,5.5vw,5.5rem)}
 .source-home .fuerwen{margin-top:2.5rem}
 .source-home .fuerwen li{font-size:clamp(1.4rem,2.1vw,2rem);line-height:1.35;text-wrap:pretty;padding-block:1.2rem}
-.source-home .fuerwen b{background:none;color:#205951}
+.source-home .fuerwen b{background:none;color:var(--forest)}
 .source-home .audience-grid .source-art{width:95%;transform:rotate(3deg);margin-top:2rem}
 .source-home #warum{background:var(--violet);color:var(--bg)}
 .source-home #warum .wrap{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);column-gap:5rem;align-items:start}
@@ -34,17 +34,17 @@
 .source-home .pillar .bar{display:none}
 .source-home .pillar h3{font-size:clamp(1.9rem,3.1vw,3rem);margin-top:0;line-height:1.12;max-width:22ch;hyphens:auto;overflow-wrap:anywhere}
 .source-home .pillar p{font-size:1.0625rem;line-height:1.6;flex:none;max-width:49ch}
-.source-home .checksheet{padding:2.5rem 3rem;background:var(--yellow);border:2px solid var(--violet);box-shadow:8px 8px 0 var(--violet);margin-top:4rem}
+.source-home .checksheet{padding:2.5rem 3rem;background:var(--bg);border:2px solid var(--violet);box-shadow:8px 8px 0 var(--violet);margin-top:4rem}
 .source-home .ticks{grid-template-columns:repeat(2,minmax(0,1fr));gap:1.5rem 3rem}
 .source-home .ticks li{font-weight:600;font-size:1.0625rem;padding-left:2rem}
-.source-home .ticks li::before{background:none;content:'✓';color:#205951;font-family:var(--body);font-size:1.35rem;transform:none}
-.source-home #ablauf{background:#edece1}
+.source-home .ticks li::before{background:var(--yellow);content:'✓';color:var(--forest);font-family:var(--body);font-size:1.35rem;transform:none}
+.source-home #ablauf{background:var(--mint-paper)}
 .source-home .steps.grid2{grid-template-columns:repeat(2,minmax(0,1fr));max-width:none;gap:1rem 4rem;margin-left:0}
 .source-home .steps .step{padding:1.4rem 0 1.6rem 4.5rem;border-top:2px solid var(--violet);border-bottom:0;min-width:0}
-.source-home .steps .dotn{top:1.25rem;width:3rem;font-size:3.5rem;color:#205951}
+.source-home .steps .dotn{top:1.25rem;width:3rem;font-size:3.5rem;color:var(--forest)}
 .source-home .steps .step:nth-child(even) .dotn{color:var(--violet)}
 .source-home .steps .step p{font-size:1.125rem}
-.source-home #kosten{background:#1e4843;color:var(--bg);--hairline:#70928b;--line:#70928b}
+.source-home #kosten{background:var(--forest-deep);color:var(--bg);--hairline:#70928b;--line:#70928b}
 .source-home #kosten .eyebrow,.source-home #kosten h2{color:var(--yellow)}
 .source-home #kosten .lead,.source-home .tariffs-note{color:var(--bg)}
 .source-home .tariffs{max-width:none;margin-top:3rem}
@@ -57,7 +57,7 @@
 .source-home .tariffs td{font-size:clamp(1.65rem,2.6vw,2.6rem);color:var(--bg);font-variant-numeric:tabular-nums;padding-left:1rem}
 .source-home .tariffs tbody tr:first-child .tname,.source-home .tariffs tbody tr:first-child td{color:var(--yellow)}
 .source-home .tariffs-note{font-size:1.0625rem;margin-top:2rem}
-.source-home #qualitaet{background:var(--yellow)}
+.source-home #qualitaet{background:var(--mint-paper)}
 .source-home #qualitaet .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:4rem}
 .source-home #qualitaet h2{grid-column:1;grid-row:1/span 2;max-width:19ch;margin:0;hyphens:auto;overflow-wrap:anywhere}
 .source-home #qualitaet .lead{grid-column:2;margin:0!important;font-size:1.125rem}
@@ -65,35 +65,35 @@
 .source-home #gespraech{background:var(--bg);color:var(--teal-ink)}
 .source-home #gespraech h2,.source-home #gespraech .eyebrow{color:var(--violet)}
 .source-home #gespraech .lead{color:var(--teal-ink)}
-.source-home #gespraech :focus-visible{outline-color:#205951;border-radius:0}
-.source-home #gespraech .book-card{max-width:58rem;margin-top:3.5rem;padding-top:2.5rem;border-top:2px solid var(--violet)}
+.source-home #gespraech :focus-visible{outline-color:var(--forest);border-radius:0}
+
 .source-home .field label{font-size:1rem;letter-spacing:0}
 .source-home .field input,.source-home .field select,.source-home .field textarea{border:1px solid var(--violet);border-radius:0;min-width:0;min-height:48px}
-.source-home .field input:focus-visible,.source-home .field select:focus-visible,.source-home .field textarea:focus-visible{outline-color:#205951}
+.source-home .field input:focus-visible,.source-home .field select:focus-visible,.source-home .field textarea:focus-visible{outline-color:var(--forest)}
 .source-home .check{font-size:1rem}
 .source-home .check input{accent-color:var(--violet);flex-shrink:0}
 .source-home .check.wide{grid-column:1/-1}
-.source-home .book-note{color:#655f73;font-size:.9375rem;max-width:60ch}
-.source-home #gespraech .btn-pink{background:var(--violet);color:var(--bg)}
-.source-home #fragen{background:#edece1}
+.source-home .book-note{color:var(--teal-soft);font-size:.9375rem;max-width:60ch}
+
+.source-home #fragen{background:var(--lavender-paper)}
 .source-home #fragen .detail{max-width:none;margin-top:3rem!important}
 .source-home #fragen .dsec h2{font-size:clamp(1.65rem,2.5vw,2.5rem);max-width:24ch}
 .source-home #fragen .dsec p{margin-top:0;max-width:60ch}
-.source-home #traegerschaft{background:var(--yellow)}
+.source-home #traegerschaft{background:var(--bg);border-top:2px solid var(--violet)}
 .source-home #traegerschaft .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:1.5rem 4rem}
 .source-home #traegerschaft .eyebrow{grid-column:1/-1}
 .source-home #traegerschaft h2{grid-column:1;grid-row:2/span 2;margin:0;font-size:clamp(3rem,5.3vw,5.6rem)}
 .source-home #traegerschaft .lead{grid-column:2;margin:0!important;font-size:1.125rem}
 .source-home #traegerschaft .wrap>div{grid-column:2}
-.source-home .foot{background:var(--violet)}
-/* The only added content is the explicitly requested booking calendar. */
+.source-home .foot{background:var(--night)}
+/* Appointment booking is the primary action; general contact has its own section. */
 .booking-section{margin-top:2.5rem}
 .booking-card{border:2px solid var(--violet);background:var(--yellow);padding:2rem;box-shadow:6px 6px 0 var(--violet);color:var(--teal-ink)}
 .booking-card-heading{display:flex;align-items:center;gap:1rem;margin-bottom:1.3rem}
 .booking-card-heading h3{font-size:1.8rem;min-width:0;hyphens:auto;overflow-wrap:anywhere}
 .calendar-icon{font-size:2.4rem;color:var(--violet)}
-.booking-card .button{display:inline-flex;align-items:center;justify-content:center;gap:1rem;min-height:48px;padding:.9rem 1.2rem;border:2px solid var(--violet);background:var(--violet);color:var(--bg);font:700 1rem var(--body);box-shadow:3px 3px 0 #29233e;cursor:pointer}
-.booking-card .button:hover{background:#29233e}
+.booking-card .button{display:inline-flex;align-items:center;justify-content:center;gap:1rem;min-height:48px;padding:.9rem 1.2rem;border:2px solid var(--violet);background:var(--violet);color:var(--bg);font:700 1rem var(--body);box-shadow:3px 3px 0 var(--night);cursor:pointer}
+.booking-card .button:hover{background:var(--night)}
 .booking-card .text-link{display:inline-flex;align-items:center;gap:1rem;min-height:44px;text-decoration:underline;text-underline-offset:4px;font-weight:650}
 .booking-card .small{font-size:.9375rem;line-height:1.6}
 .booking-disclosure{font-size:1rem;margin-bottom:1rem;max-width:65ch}
@@ -124,10 +124,23 @@
  .source-home .steps.grid2{grid-template-columns:1fr;gap:.5rem}.source-home .steps .step{padding-left:3.5rem}.source-home .steps .dotn{font-size:2.7rem}.source-home .steps .step p{font-size:1.0625rem}
  .source-home #qualitaet .wrap{display:block}.source-home #qualitaet h2{font-size:2.6rem;max-width:none;margin-bottom:1.5rem}.source-home #qualitaet .lead{font-size:1.0625rem}
  .source-home #fragen .dsec{gap:1rem}.source-home #fragen .dsec h2{font-size:1.8rem}.source-home #traegerschaft .wrap{display:block}.source-home #traegerschaft h2{font-size:3rem;margin-block:1.5rem}.source-home #traegerschaft .lead{font-size:1.0625rem}
- .booking-card{padding:1.3rem;box-shadow:4px 4px 0 var(--violet)}.booking-card-heading h3{font-size:1.5rem}.weekly-times dl{grid-template-columns:1fr;gap:1rem}.booking-card .button{width:100%}.source-home #gespraech .book-card{margin-top:3rem}
+ .booking-card{padding:1.3rem;box-shadow:4px 4px 0 var(--violet)}.booking-card-heading h3{font-size:1.5rem}.weekly-times dl{grid-template-columns:1fr;gap:1rem}.booking-card .button{width:100%}
 }
 @media(max-width:600px){
  .source-home .tariffs tbody th{width:auto;padding:0}.source-home .tariffs th,.source-home .tariffs td{padding:0}.source-home .tariffs td{font-size:1.8rem;margin:1rem 1.5rem 0 0}.source-home .tariffs td::before{font-size:.875rem;color:var(--bg);letter-spacing:0;text-transform:none;font-weight:500}.source-home .tariffs .tname{font-size:1.65rem}.source-home .tariffs tr{padding:1.5rem 0}.source-home .tariffs .tdesc{font-size:1rem}
 }
 @media(prefers-reduced-motion:reduce){.source-art{transform:none}}
 @media print{.source-home .site-head,.booking-section,.book-card{display:none}.source-home .hero-inner{padding-top:1rem}.source-home .hero,.source-home #warum,.source-home #kosten,.source-home #qualitaet,.source-home #traegerschaft{background:white;color:#29233e}.source-home #warum h2,.source-home #warum h3,.source-home #warum p,.source-home #kosten h2,.source-home #kosten p,.source-home #kosten td,.source-home #kosten th,.source-home #kosten span{color:#29233e}.source-art{transform:none;max-width:250px}.source-home .section{padding-block:1.5rem}}
+
+.source-home .contact-section{background:var(--lavender-paper);border-top:2px solid var(--violet)}
+.contact-grid{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(2rem,5vw,5rem);align-items:start}
+.contact-grid>*{min-width:0}
+.contact-intro h2{max-width:12ch}
+.contact-intro .lead{margin-top:1.5rem;max-width:32ch}
+.contact-intro .morelink{margin:1.2rem 0 0}
+.contact-section .book-card{margin:0;max-width:none}
+.contact-section .field input,.contact-section .field textarea{background:var(--bg)}
+.contact-section .btn-ghost{background:transparent;color:var(--violet)}
+.contact-section .btn-ghost:hover{background:var(--violet);color:var(--bg)}
+@media(max-width:64rem){.contact-grid{grid-template-columns:minmax(0,1fr);gap:2rem}.contact-intro .lead{max-width:56ch}.contact-intro h2{max-width:none}}
+@media(max-width:32rem){.contact-section .form-grid{grid-template-columns:minmax(0,1fr)}.contact-section .btn{width:100%;justify-content:center}}
