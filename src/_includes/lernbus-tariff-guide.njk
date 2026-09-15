@@ -1,0 +1,35 @@
+{% set guide = lernbusTariffGuide[locale] %}
+<details class="tariff-guide" id="tariforientierung">
+  <summary>
+    <span class="tariff-guide-summary"><span class="tariff-guide-title">{{ guide.heading }}</span><span class="tariff-guide-subtitle">{{ guide.summary }}</span></span>
+    <span class="tariff-guide-toggle" aria-hidden="true"></span>
+  </summary>
+  <div class="tariff-guide-body">
+    <p class="tariff-guide-intro">{{ guide.intro }}</p>
+    <p class="tariff-guide-evidence">{{ guide.evidence }}</p>
+    <table class="income-table" role="table" aria-describedby="income-limits-note">
+      <caption>{{ guide.caption }}</caption>
+      <thead role="rowgroup">
+        <tr role="row">
+          <th scope="col" role="columnheader">{{ guide.household }}</th>
+          {% for rate in guide.rates %}<th scope="col" role="columnheader"><span class="income-band">{{ rate.letter }}</span><span>{{ rate.name }}</span></th>{% endfor %}
+        </tr>
+      </thead>
+      <tbody role="rowgroup">
+        {% for row in lernbusTariffGuide.rows %}
+        <tr role="row">
+          <th scope="row" role="rowheader"><span>{{ row.adults }} {% if row.adults == 1 %}{{ guide.adult }}{% else %}{{ guide.adults }}{% endif %}</span><span>{{ row.children }} {% if row.children == 1 %}{{ guide.child }}{% else %}{{ guide.children }}{% endif %}</span></th>
+          {% for limit in row.limits %}
+          {% set rate = guide.rates[loop.index0] %}
+          <td role="cell"><span class="income-mobile-label" aria-hidden="true">{{ rate.letter }} · {{ rate.name }}</span><span class="income-limit">{% if loop.last %}{{ guide.from }}{% else %}{{ guide.upper }}{% endif %} <strong>{{ limit }}</strong></span></td>
+          {% endfor %}
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <div class="tariff-guide-notes">
+      <p id="income-limits-note">{{ guide.limitsNote }}</p>
+      <p>{{ guide.householdNote }} <a href="#kontakt">{{ guide.contact }}</a></p>
+    </div>
+  </div>
+</details>

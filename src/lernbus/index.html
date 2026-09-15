@@ -24,6 +24,7 @@ locale: de
 <link rel="stylesheet" href="./styles.css?v={{ lernbusAssets.styles }}" />
 <link rel="stylesheet" href="./detail.css?v={{ lernbusAssets.detail }}">
 <link rel="stylesheet" href="./source-home.css?v={{ lernbusAssets['source-home'] }}">
+<link rel="stylesheet" href="./tariff-guide.css?v={{ lernbusAssets.tariffGuide }}">
 <link rel="stylesheet" href="./contact.css?v={{ lernbusAssets.contactCss }}">
 <script src="./booking.js?v={{ lernbusAssets.booking }}" type="module"></script>
 <script src="./contact.js?v={{ lernbusAssets.contact }}" type="module"></script>
@@ -213,6 +214,7 @@ locale: de
           <tr role="row"><th role="rowheader" scope="row"><span class="tname">Solidarisch</span><span class="tdesc">Mehr, als ein Platz kostet. Der Mehrbetrag fliesst vollständig in Förderplätze.</span></th><td role="cell" data-label="Einzellektion">CHF 125</td><td role="cell" data-label="Zweierlektion pro Kind">CHF 90</td></tr>
         </tbody>
       </table>
+      {% include "lernbus-tariff-guide.njk" %}
       <p class="funding-link"><a href="#investieren">Einen Förderplatz ermöglichen <span aria-hidden="true">&rarr;</span></a></p>
     </div>
   </section>

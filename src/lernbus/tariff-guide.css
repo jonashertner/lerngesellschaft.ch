@@ -1,0 +1,63 @@
+/* A quiet, readable income guide within the violet fees section. */
+.tariff-guide{--rule:#d4d0da;grid-column:1/-1;min-width:0;margin-top:2rem;scroll-margin-top:8rem;border:1px solid var(--rule-inverse);border-radius:.75rem;overflow:hidden}
+.tariff-guide>summary{display:flex;align-items:center;justify-content:space-between;gap:1.5rem;padding:1.5rem;list-style:none;cursor:pointer;color:var(--bg)}
+.tariff-guide>summary::-webkit-details-marker{display:none}
+.tariff-guide>summary::marker{content:""}
+.tariff-guide>summary:hover{background:#ffffff0d}
+.tariff-guide>summary:focus-visible{outline:3px solid var(--yellow);outline-offset:-5px}
+.tariff-guide-summary{display:grid;gap:.4rem;min-width:0}
+.tariff-guide-title{font-family:var(--display);font-size:clamp(1.25rem,2vw,1.6rem);font-weight:750;line-height:1.25;text-wrap:balance}
+.tariff-guide-subtitle{font-size:1rem;line-height:1.5}
+.tariff-guide-toggle{position:relative;flex:none;width:2.5rem;height:2.5rem;border:1px solid currentColor;border-radius:50%;color:var(--yellow)}
+.tariff-guide-toggle::before,.tariff-guide-toggle::after{content:"";position:absolute;inset:50% auto auto 50%;width:1rem;height:2px;background:currentColor;transform:translate(-50%,-50%)}
+.tariff-guide-toggle::after{transform:translate(-50%,-50%) rotate(90deg)}
+.tariff-guide[open]{border-color:var(--bg);background:var(--bg);color:var(--teal-ink)}
+.tariff-guide[open]>summary{color:var(--violet);border-bottom:1px solid var(--rule)}
+.tariff-guide[open]>summary:hover{background:var(--surface-soft)}
+.tariff-guide[open]>summary:focus-visible{outline-color:var(--violet)}
+.tariff-guide[open] .tariff-guide-toggle{color:var(--violet)}
+.tariff-guide[open] .tariff-guide-toggle::after{display:none}
+.tariff-guide-body{padding:1.5rem}
+.tariff-guide-intro,.tariff-guide-evidence{max-width:75ch;font-size:1.0625rem;line-height:1.65;margin:0}
+.tariff-guide-evidence{margin-top:.75rem;font-size:1rem;color:var(--teal-soft)}
+.income-table{width:100%;margin-top:2rem;border-collapse:collapse;table-layout:fixed;color:var(--teal-ink)}
+.income-table caption{text-align:left;font-size:1rem;font-weight:650;color:var(--violet);padding-bottom:1rem}
+.income-table th,.income-table td{padding:1rem .75rem;text-align:right;border-bottom:1px solid var(--rule);vertical-align:middle;font-size:1rem;line-height:1.45}
+.income-table thead{background:var(--surface-soft);color:var(--violet)}
+.income-table thead th{font-weight:650;vertical-align:top}
+.income-table th:first-child{width:24%;text-align:left}
+.income-table thead th>span{display:block}
+.income-band{font-family:var(--display);font-size:1.375rem;font-weight:800;margin-bottom:.3rem}
+.income-table tbody th{font-weight:550}
+.income-table tbody th span{display:block}
+.income-table tbody tr:nth-child(even){background:var(--surface-soft)}
+.income-limit{white-space:nowrap;font-variant-numeric:tabular-nums;font-size:.9375rem}
+.income-limit strong{font-size:1.0625rem;font-weight:750;color:var(--violet)}
+.income-mobile-label{display:none}
+.tariff-guide-notes{margin-top:1.25rem;max-width:80ch;font-size:.9375rem;line-height:1.65;color:var(--teal-soft)}
+.tariff-guide-notes p{margin:0}
+.tariff-guide-notes p+p{margin-top:.5rem}
+.tariff-guide-notes a{color:var(--violet);text-decoration:underline;text-underline-offset:.2em}
+.tariff-guide-notes a:focus-visible{outline:3px solid var(--violet);outline-offset:3px}
+@media(max-width:60rem){
+ .tariff-guide>summary,.tariff-guide-body{padding:1.25rem}
+ .income-table,.income-table tbody{display:block}
+ .income-table caption{display:block}
+ .income-table thead{position:absolute;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap}
+ .income-table tbody{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}
+ .income-table tbody tr{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));padding:1rem;gap:1rem;border:1px solid var(--rule);border-radius:.5rem;background:var(--surface-soft)}
+ .income-table tbody th:first-child{grid-column:1/-1;display:block;width:auto;padding:0 0 .75rem;border-bottom:1px solid var(--rule);color:var(--violet);font-weight:700}
+ .income-table tbody th span{display:inline}
+ .income-table tbody th span+span::before{content:", "}
+ .income-table td{display:block;padding:0;border:0;text-align:left;min-width:0}
+ .income-mobile-label{display:block;min-height:2.8em;margin-bottom:.4rem;font-size:.875rem;line-height:1.4;color:var(--teal-soft)}
+ .income-limit{display:block;font-size:.9375rem}
+ .income-limit strong{font-size:1.0625rem}
+}
+@media(max-width:40rem){
+ .tariff-guide>summary{gap:1rem}
+ .tariff-guide-body{padding:1rem}
+ .income-table tbody{grid-template-columns:minmax(0,1fr)}
+ .tariff-guide-intro{font-size:1rem}
+ .tariff-guide-toggle{width:2.25rem;height:2.25rem}
+}

@@ -24,6 +24,7 @@ locale: en
 <link rel="stylesheet" href="../styles.css?v={{ lernbusAssets.styles }}" />
 <link rel="stylesheet" href="../detail.css?v={{ lernbusAssets.detail }}">
 <link rel="stylesheet" href="../source-home.css?v={{ lernbusAssets['source-home'] }}">
+<link rel="stylesheet" href="../tariff-guide.css?v={{ lernbusAssets.tariffGuide }}">
 <link rel="stylesheet" href="../contact.css?v={{ lernbusAssets.contactCss }}">
 <script src="../booking.js?v={{ lernbusAssets.booking }}" type="module"></script>
 <script src="../contact.js?v={{ lernbusAssets.contact }}" type="module"></script>
@@ -213,6 +214,7 @@ locale: en
           <tr role="row"><th role="rowheader" scope="row"><span class="tname">Solidarity rate</span><span class="tdesc">A contribution above the full cost of a place. The extra amount goes entirely towards subsidised places.</span></th><td role="cell" data-label="One-to-one">CHF 125</td><td role="cell" data-label="In pairs, per child">CHF 90</td></tr>
         </tbody>
       </table>
+      {% include "lernbus-tariff-guide.njk" %}
       <p class="funding-link"><a href="#investieren">Help fund a place <span aria-hidden="true">&rarr;</span></a></p>
     </div>
   </section>

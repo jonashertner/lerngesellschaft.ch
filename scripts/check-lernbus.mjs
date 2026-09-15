@@ -35,7 +35,9 @@ for (const path of paths) {
     references++;
   }
   if (['lernbus/index.html', 'lernbus/en/index.html'].includes(path)) {
-    assert.equal((html.match(/<td\b/g)||[]).length, 8);
+    const prices = html.match(/<table class="tariffs\b[\s\S]*?<\/table>/)?.[0];
+    assert(prices, 'The existing lesson prices remain available');
+    assert.equal((prices.match(/<td\b/g)||[]).length, 8);
     for (const amount of ['10','75','60','100','125','90']) assert(new RegExp(`<td[^>]*>CHF ${amount.replace('.', '\\.')}</td>`).test(html));
     assert(!/<iframe\b/.test(html), 'No third-party calendar loaded before parent chooses');
   }

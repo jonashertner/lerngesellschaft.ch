@@ -1,0 +1,58 @@
+{
+  "rows": [
+    { "adults": 1, "children": 1, "limits": ["42'000", "65'000", "101'000", "101'000"] },
+    { "adults": 1, "children": 2, "limits": ["51'000", "80'000", "125'000", "125'000"] },
+    { "adults": 1, "children": 3, "limits": ["61'000", "95'000", "148'000", "148'000"] },
+    { "adults": 1, "children": 4, "limits": ["70'000", "110'000", "172'000", "172'000"] },
+    { "adults": 2, "children": 1, "limits": ["58'000", "90'000", "140'000", "140'000"] },
+    { "adults": 2, "children": 2, "limits": ["67'000", "105'000", "164'000", "164'000"] },
+    { "adults": 2, "children": 3, "limits": ["77'000", "120'000", "187'000", "187'000"] },
+    { "adults": 2, "children": 4, "limits": ["86'000", "135'000", "211'000", "211'000"] }
+  ],
+  "de": {
+    "heading": "Welcher Tarif passt zu uns?",
+    "summary": "Orientierung nach Haushaltsgrösse und Einkommen",
+    "intro": "Sie wählen Ihren Tarif selbst. Vergleichen Sie Ihre Haushaltsgrösse mit dem gemeinsamen Bruttojahreseinkommen aller Erwachsenen im Haushalt – vor Abzügen.",
+    "evidence": "Wir verlangen keine Einkommensbelege. Für den Fördertarif A genügt ein FamilienpassPlus oder eine KulturLegi.",
+    "caption": "Bruttojahreseinkommen des Haushalts in CHF",
+    "household": "Haushalt",
+    "adult": "erwachsene Person",
+    "adults": "Erwachsene",
+    "child": "Kind",
+    "children": "Kinder",
+    "upper": "bis",
+    "from": "ab",
+    "rates": [
+      { "letter": "A", "name": "Fördertarif" },
+      { "letter": "B", "name": "Reduziert" },
+      { "letter": "C", "name": "Kostenwahrheit" },
+      { "letter": "D", "name": "Solidarisch" }
+    ],
+    "limitsNote": "Die Beträge für A bis C sind Obergrenzen. Im Zweifel wählen Sie die tiefere Stufe.",
+    "householdNote": "Für andere Haushaltskonstellationen orientieren Sie sich an der nächstgrösseren Zeile. Passt keine Zeile,",
+    "contact": "kontaktieren Sie uns."
+  },
+  "en": {
+    "heading": "Which rate is right for our family?",
+    "summary": "A guide based on household size and income",
+    "intro": "You choose your own rate. Find your household size and compare it with the combined gross annual income of all adults in your household – before deductions.",
+    "evidence": "We do not ask for proof of income. For subsidised rate A, a FamilienpassPlus or KulturLegi is sufficient.",
+    "caption": "Gross annual household income in CHF",
+    "household": "Household",
+    "adult": "adult",
+    "adults": "adults",
+    "child": "child",
+    "children": "children",
+    "upper": "up to",
+    "from": "from",
+    "rates": [
+      { "letter": "A", "name": "Subsidised rate" },
+      { "letter": "B", "name": "Reduced rate" },
+      { "letter": "C", "name": "Full-cost rate" },
+      { "letter": "D", "name": "Solidarity rate" }
+    ],
+    "limitsNote": "Amounts for A to C are upper limits. If in doubt, choose the lower rate.",
+    "householdNote": "For a different household arrangement, use the next larger household listed. If none fits,",
+    "contact": "please contact us."
+  }
+}
