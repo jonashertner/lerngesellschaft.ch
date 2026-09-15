@@ -37,7 +37,7 @@
 .source-home .checksheet{padding:2.5rem 3rem;background:var(--bg);border:2px solid var(--violet);box-shadow:8px 8px 0 var(--violet);margin-top:4rem}
 .source-home .ticks{grid-template-columns:repeat(2,minmax(0,1fr));gap:1.5rem 3rem}
 .source-home .ticks li{font-weight:600;font-size:1.0625rem;padding-left:2rem}
-.source-home .ticks li::before{background:var(--yellow);content:'✓';color:var(--forest);font-family:var(--body);font-size:1.35rem;transform:none}
+.source-home .ticks li::before,.source-home .ticks li:nth-child(even)::before{content:'';top:calc((1.4em - 1.7rem)/2);background:var(--yellow) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='m6 12 4 4 8-8' fill='none' stroke='%23205951' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/72% no-repeat;border-radius:50%;transform:none}
 .source-home #ablauf{background:var(--mint-paper)}
 .source-home .steps.grid2{grid-template-columns:repeat(2,minmax(0,1fr));max-width:none;gap:1rem 4rem;margin-left:0}
 .source-home .steps .step{padding:1.4rem 0 1.6rem 4.5rem;border-top:2px solid var(--violet);border-bottom:0;min-width:0}
@@ -55,7 +55,6 @@
 .source-home .tariffs .tname{color:var(--bg);font-size:1.85rem;background:none}
 .source-home .tariffs .tdesc{color:var(--bg);max-width:42ch;font-size:1rem}
 .source-home .tariffs td{font-size:clamp(1.65rem,2.6vw,2.6rem);color:var(--bg);font-variant-numeric:tabular-nums;padding-left:1rem}
-.source-home .tariffs tbody tr:first-child .tname,.source-home .tariffs tbody tr:first-child td{color:var(--yellow)}
 .source-home .tariffs-note{font-size:1.0625rem;margin-top:2rem}
 .source-home #qualitaet{background:var(--mint-paper)}
 .source-home #qualitaet .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:4rem}
