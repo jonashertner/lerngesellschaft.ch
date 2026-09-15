@@ -24,6 +24,12 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://lerngesellschaft.ch/agb/</loc>
+    <lastmod>2026-08-21</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  <url>
     <loc>https://lerngesellschaft.ch/impressum/</loc>
     <lastmod>2026-08-21</lastmod>
     <changefreq>yearly</changefreq>
