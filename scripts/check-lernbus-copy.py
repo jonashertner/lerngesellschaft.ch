@@ -31,4 +31,4 @@ for path,source in base['pages'].items():
   changes='\n'.join(difflib.unified_diff(expected,actual,fromfile='live source',tofile=path,n=4))
   raise AssertionError(f'{path}: published wording changed\n{changes[:3500]}')
  print(path+': original wording and authorized changes verified')
-print('All 6 routes retain live-site wording apart from the requested calendar, tariff, contact and team changes.')
+print('All 6 routes retain live-site wording apart from the requested calendar, tariff, contact, team and AGB changes.')

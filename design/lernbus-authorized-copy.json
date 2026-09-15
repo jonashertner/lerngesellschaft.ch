@@ -1,5 +1,5 @@
 {
-  "authorization": "Jonas, 15 September 2026: round tariffs, separate appointment booking and contact, add Conny Brandes as Leiterin with photo/bio to come. Only those changes and their navigation are permitted beyond the immutable live-site baseline.",
+  "authorization": "Jonas, 15 September 2026: round tariffs, separate appointment booking and contact, add Conny Brandes as Leiterin with photo/bio to come. Only those changes and their navigation are permitted beyond the immutable live-site baseline. Jonas also authorized the reviewed AGB publication via the task AGBs für Lerngesellschaft entwerfen (verified 15 September 2026): footer links and minimal DE/EN clarification that six months is a shared plan and support is cancellable at any time.",
   "rounding": "Working choice communicated: CHF 12.50 to CHF 10; CHF 87.50 to CHF 90.",
   "pages": {
     "lernbus/index.html": [
@@ -8,6 +8,12 @@
         "end": 23,
         "before": "Zielgruppe Warum Ansatz Ablauf Kosten Qualität Gespräch Fragen Trägerschaft EN Individuelle Frühförderung ,",
         "after": "Zielgruppe Warum Ansatz Ablauf Kosten Qualität Termin buchen Kontakt Team Fragen Trägerschaft EN Individuelle Frühförderung ,"
+      },
+      {
+        "start": 448,
+        "end": 469,
+        "before": "Individuelle Frühförderung ( 60 Minuten , mindestens 6 Monate , im Einzel - oder Zweiersetting ) 3 Aufbau grundlegender Fähigkeiten :",
+        "after": "Individuelle Frühförderung ( 60 Minuten , im Einzel - oder Zweiersetting ; auf mindestens sechs Monate angelegt , jederzeit kündbar ) 3 Aufbau grundlegender Fähigkeiten :"
       },
       {
         "start": 575,
@@ -26,6 +32,30 @@
         "end": 862,
         "before": "gesichert und laufend weiterentwickelt . Kennenlerngespräch Vereinbaren Sie ein Gespräch . Der Lernbus startet im September 2026 mit wenigen Plätzen . Sagen Sie uns kurz , um wen es geht und wann wir Sie erreichen . Wir melden uns innert weniger Tage . Ihr Name E - Mail oder Telefon Alter des Kindes Bitte wählen 3 Jahre 4 Jahre 5 Jahre 6 Jahre 7 Jahre 8 Jahre 9 Jahre Wann erreichen wir Sie am besten ? Worum geht es ? ( optional ) Mein Kind soll Deutsch aufbauen und sicherer sprechen . Bitte informieren Sie mich über ermöglichte Plätze . Gespräch anfragen Unverbindlich . Ihre Anfrage geht als E - Mail direkt an info @ lernbus . ch und wird nirgends sonst gespeichert . Lieber telefonieren ? Schreiben Sie uns eine Zeile , wir rufen zurück . Häufige Fragen Ist das Nachhilfe",
         "after": "gesichert und laufend weiterentwickelt . Kennenlerngespräch buchen . Wählen Sie einen freien Termin für ein Gespräch von 60 Minuten . Kontakt Eine Frage stellen . Für Fragen zum Lernbus schreiben Sie uns eine Nachricht . Wir melden uns innert weniger Tage . info @ lernbus . ch Ihr Name Ihre E - Mail - Adresse Ihre Nachricht E - Mail vorbereiten Das Formular öffnet Ihr E - Mail - Programm mit Ihrer Nachricht an info @ lernbus . ch . Dort können Sie die Nachricht prüfen und absenden . Häufige Fragen Ist das Nachhilfe"
+      },
+      {
+        "start": 984,
+        "end": 999,
+        "before": "und Wege stattfinden kann . Warum mindestens sechs Monate ? Weil Vertrauen Zeit braucht .",
+        "after": "und Wege stattfinden kann . Warum planen wir mit mindestens sechs Monaten ? Weil Vertrauen Zeit braucht ."
+      },
+      {
+        "start": 1016,
+        "end": 1028,
+        "before": "für das Kind und seinen Lernweg . Wer arbeitet mit meinem Kind",
+        "after": "für das Kind und seinen Lernweg . Die sechs Monate sind eine gemeinsame Planung ; die Begleitung kann jederzeit beendet werden . Wer arbeitet mit meinem Kind"
+      },
+      {
+        "start": 1103,
+        "end": 1121,
+        "before": "im Kennenlerngespräch . In beiden Fällen dauert die Begleitung mindestens sechs Monate . Und in den Schulferien ?",
+        "after": "im Kennenlerngespräch . In beiden Fällen ist die Begleitung auf mindestens sechs Monate angelegt ; sie ist jederzeit kündbar . Und in den Schulferien ?"
+      },
+      {
+        "start": 1201,
+        "end": 1207,
+        "before": "Verein · Start September 2026 Impressum",
+        "after": "Verein · Start September 2026 Impressum AGB"
       }
     ],
     "lernbus/en/index.html": [
@@ -34,6 +64,12 @@
         "end": 26,
         "before": "Approach How it works Fees Quality Conversation Questions Who runs it DE Individual",
         "after": "Approach How it works Fees Quality Book a time Contact Team Questions Who runs it DE Individual"
+      },
+      {
+        "start": 520,
+        "end": 543,
+        "before": "years support ( 60 minutes , at least 6 months , one to one or in pairs ) 3 Building fundamental abilities :",
+        "after": "years support ( 60 minutes , one to one or in pairs ; planned for at least six months , cancellable at any time ) 3 Building fundamental abilities :"
       },
       {
         "start": 672,
@@ -52,6 +88,30 @@
         "end": 986,
         "before": ", evaluation and further training . Introductory conversation Arrange a conversation . The Learning Bus starts in September 2026 with a small number of places . Tell us briefly who it is for and when we can reach you . We will get back to you within a few days . Your name Email or phone Age of the child Please choose 3 years 4 years 5 years 6 years 7 years 8 years 9 years When can we best reach you ? What is it about ? ( optional ) My child should build up German and speak it more confidently . Please tell me about places made possible by others . Request a conversation No obligation . Your enquiry goes as an email straight to info @ lernbus . ch and is stored nowhere else . Would you rather talk ? Write us a line and we will call back . Frequent questions Is this tutoring",
         "after": ", evaluation and further training . Book an introductory conversation . Choose an available time for a conversation of 60 minutes . Contact Ask a question . For questions about the Lernbus , send us a message . We will get back to you within a few days . info @ lernbus . ch Your name Your email address Your message Prepare email This form opens your email app with your message to info @ lernbus . ch . You can review and send it there . Frequent questions Is this tutoring"
+      },
+      {
+        "start": 1114,
+        "end": 1126,
+        "before": "in many different ways . Why at least six months ? Because",
+        "after": "in many different ways . Why do we plan for at least six months ? Because"
+      },
+      {
+        "start": 1151,
+        "end": 1163,
+        "before": "child and their path of learning . Who works with my child",
+        "after": "child and their path of learning . The six months are a shared plan ; the support can be ended at any time . Who works with my child"
+      },
+      {
+        "start": 1248,
+        "end": 1266,
+        "before": ". In both cases the support runs for at least six months . And during the school holidays",
+        "after": ". In both cases the support is planned for at least six months ; it can be ended at any time . And during the school holidays"
+      },
+      {
+        "start": 1361,
+        "end": 1367,
+        "before": "Association · starting September 2026 Imprint",
+        "after": "Association · starting September 2026 Imprint Terms ( German )"
       }
     ],
     "lernbus/team/index.html": [
@@ -60,6 +120,12 @@
         "end": 91,
         "before": "und nach höchsten Ansprüchen ausgewählt . Lernmentorinnen und Lernmentoren Wir stellen uns in Kürze vor . Porträt folgt Name , Hintergrund und Schwerpunkte stellen wir hier bald vor . Porträt folgt Name , Hintergrund und Schwerpunkte stellen wir hier bald vor . Porträt folgt Name , Hintergrund und Schwerpunkte stellen wir hier bald vor . Die Qualität wird laufend durch Teamsitzungen",
         "after": "und nach höchsten Ansprüchen ausgewählt . Foto folgt Leitung Conny Brandes Leiterin Lernbus Beschreibung folgt . connybrandes @ lernbus . ch Die Qualität wird laufend durch Teamsitzungen"
+      },
+      {
+        "start": 124,
+        "end": 130,
+        "before": "Verein · Start September 2026 Impressum",
+        "after": "Verein · Start September 2026 Impressum AGB"
       }
     ],
     "lernbus/team/en/index.html": [
@@ -68,6 +134,52 @@
         "end": 92,
         "before": "and to the highest standards . Learning mentors We will introduce ourselves here soon . Portrait to follow Name , background and focus will appear here soon . Portrait to follow Name , background and focus will appear here soon . Portrait to follow Name , background and focus will appear here soon . Quality is maintained continuously through team",
         "after": "and to the highest standards . Photo to follow Leadership Conny Brandes Head of Lernbus Biography to follow . connybrandes @ lernbus . ch Quality is maintained continuously through team"
+      },
+      {
+        "start": 128,
+        "end": 134,
+        "before": "Association · Starting September 2026 Imprint",
+        "after": "Association · Starting September 2026 Imprint Terms ( German )"
+      }
+    ],
+    "lernbus/konzept/index.html": [
+      {
+        "start": 118,
+        "end": 138,
+        "before": "Lektion , in der Regel wöchentlich Mindestens sechs Monate Vertrauen und Fortschritt brauchen Zeit Einzel - oder Zweiersetting ein Kind",
+        "after": "Lektion , in der Regel wöchentlich Auf mindestens sechs Monate angelegt Vertrauen und Fortschritt brauchen Zeit ; jederzeit kündbar Einzel - oder Zweiersetting ein Kind"
+      },
+      {
+        "start": 1201,
+        "end": 1217,
+        "before": "im Einzel - oder Zweiersetting , über mindestens sechs Monate . Die Inhalte folgen den Interessen",
+        "after": "im Einzel - oder Zweiersetting , auf mindestens sechs Monate angelegt ; jederzeit kündbar . Die Inhalte folgen den Interessen"
+      },
+      {
+        "start": 1967,
+        "end": 1973,
+        "before": "Verein · Start September 2026 Impressum",
+        "after": "Verein · Start September 2026 Impressum AGB"
+      }
+    ],
+    "lernbus/en/konzept/index.html": [
+      {
+        "start": 137,
+        "end": 157,
+        "before": "lesson , as a rule weekly At least six months trust and progress take time One child or two never",
+        "after": "lesson , as a rule weekly Planned for at least six months trust and progress take time ; cancellable at any time One child or two never"
+      },
+      {
+        "start": 1380,
+        "end": 1397,
+        "before": "with one or two children , over at least six months . The content follows the child",
+        "after": "with one or two children , planned for at least six months ; cancellable at any time . The content follows the child"
+      },
+      {
+        "start": 2259,
+        "end": 2265,
+        "before": "Verein · starting September 2026 Imprint",
+        "after": "Verein · starting September 2026 Imprint Terms ( German )"
       }
     ]
   }
