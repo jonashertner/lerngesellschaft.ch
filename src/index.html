@@ -1,4 +1,4 @@
-{% set home = society.de %}
+{% set landing = societyLanding.de %}
 {% set isHome = true %}
 {% set alternateUrl = "/en/" %}
 <!DOCTYPE html>
@@ -7,9 +7,9 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Lerngesellschaft / Learning Society · Basel</title>
-<meta name="description" content="Die Lerngesellschaft fördert die natürliche Neugier und den Lernwillen von Kindern und Jugendlichen in Basel. Drei Wege: Forscherbühne, Lernbus und Gehirn und Gesellschaft." />
+<meta name="description" content="Bildungsangebote für Kinder und Schulen in Basel: Lernbus sowie öffentliche Veranstaltungen für Kinder und Workshops für Schulen in Entwicklung." />
 <meta property="og:title" content="Lerngesellschaft / Learning Society" />
-<meta property="og:description" content="Wir fördern die Neugier und den Lernwillen von Kindern in Basel. Forscherbühne, Lernbus und Gehirn und Gesellschaft." />
+<meta property="og:description" content="Lernbus: individuelle Lernbegleitung in Basel. Öffentliche Veranstaltungen für Kinder und Workshops für Schulen sind in Entwicklung." />
 <meta property="og:locale" content="de_CH" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://lerngesellschaft.ch/" />
@@ -19,19 +19,17 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M16 3c5 0 9 3 9 8 0 3-2 4-2 7s3 3 3 6-4 5-10 5S6 31 6 27s3-3 3-6-2-4-2-7c0-5 4-8 9-8z' fill='%23ff3d8b'/%3E%3C/svg%3E" />
 <link rel="preload" href="/assets/fonts/bricolage-latin.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="preload" href="/assets/fonts/hanken-latin.woff2" as="font" type="font/woff2" crossorigin />
-<link rel="stylesheet" href="/assets/styles.css?v=20260915-hero" />
-<link rel="stylesheet" href="/assets/society.css?v=20260915-redesign" />
+<link rel="stylesheet" href="/assets/society-landing.css?v=20260915-simple" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NGO","name":"Lerngesellschaft / Learning Society","areaServed":"Basel","description":"Verein, der die natürliche Neugier und den Lernwillen von Kindern und Jugendlichen in Basel fördert. Drei Wege: Forscherbühne, Lernbus und Gehirn und Gesellschaft.","address":"Münsterplatz 17, 4051 Basel","email":"team@jonashertner.com"}
+{"@context":"https://schema.org","@type":"NGO","name":"Lerngesellschaft / Learning Society","areaServed":"Basel","description":"Verein in Basel, der Bildungsangebote für Kinder und Schulen entwickelt: Lernbus, öffentliche Veranstaltungen für Kinder und Workshops für Schulen.","address":"Münsterplatz 17, 4051 Basel","email":"team@jonashertner.com"}
 </script>
 <link rel="canonical" href="https://lerngesellschaft.ch/" />
 <link rel="alternate" hreflang="de" href="https://lerngesellschaft.ch/" />
 <link rel="alternate" hreflang="en" href="https://lerngesellschaft.ch/en/" />
 <link rel="alternate" hreflang="x-default" href="https://lerngesellschaft.ch/" />
 </head>
-<body class="hero-film society-home">
+<body class="society-landing">
 <a href="#main" class="skip">Zum Inhalt springen</a>
-{% include "society-header.njk" %}
 {% include "society-home.njk" %}
 </body>
 </html>
