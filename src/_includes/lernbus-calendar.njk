@@ -1,41 +1,54 @@
-{% set t = lernbus[locale] %}
-{% set calendar = lernbusBooking.locales[locale] or lernbusBooking %}
-<div class="booking-section" data-booking-addition>
-  <div class="booking-card" data-booking data-locale="{{ locale }}" data-booking-url="{{ calendar.bookingUrl | escape }}" data-embed-url="{{ calendar.embedUrl | escape }}" data-provider-name="{{ calendar.providerName | escape }}">
-    <div class="booking-card-heading">
-      <h3>{{ t.bookingHeading }}</h3>
-      <p class="booking-meta">{{ t.bookingMeta }}</p>
+{% set requestEnglish = locale == "en" %}
+<div class="lesson-request" data-booking-addition data-lesson-request data-locale="{{ locale | escape }}" data-api="https://lernbus-booking-api.voilajonas.chatgpt.site" data-recipient="{{ lernbusContact.recipient | escape }}" data-time-zone="Europe/Zurich">
+  <div class="lesson-request__heading">
+    <h3>{% if requestEnglish %}Choose a date and time{% else %}Datum und Uhrzeit auswählen{% endif %}</h3>
+    <p>60 {% if requestEnglish %}minutes{% else %}Minuten{% endif %} · Münsterplatz 17, Basel</p>
+  </div>
+  <div class="lesson-request__body">
+    <p class="lesson-request__intro">{% if requestEnglish %}For parents and legal guardians. Reserving a time does not yet enrol your child.{% else %}Für Eltern und Erziehungsberechtigte. Die Reservierung ist noch keine verbindliche Anmeldung.{% endif %}</p>
+    <div data-request-fallback>
+      <p data-request-fallback-text>{% if requestEnglish %}Please enable JavaScript to choose a time here, or send your request by email.{% else %}Aktivieren Sie JavaScript, um hier einen Termin auszuwählen, oder senden Sie Ihre Anfrage per E-Mail.{% endif %}</p>
+      <a class="lesson-request__email" href="mailto:{{ lernbusContact.recipient | escape }}?subject={% if requestEnglish %}Lernbus%3A%20request%20a%20lesson{% else %}Lernbus%3A%20Lektion%20anfragen{% endif %}">{% if requestEnglish %}Request a lesson by email{% else %}Lektion per E-Mail anfragen{% endif %}</a>
     </div>
-    <div class="booking-body">
-      <div data-booking-fallback{% if lernbusBooking.configured %} hidden{% endif %}>
-        <p class="booking-status">{{ t.bookingEmpty }}</p><p>{{ t.bookingFallback }}</p>
-        <a class="button" href="mailto:{{ lernbusContact.recipient | escape }}?subject={{ t.bookingEmailSubject | urlencode }}">{{ t.bookingEmail }}</a>
-        <p class="small">{{ t.bookingHint }}</p>
-      </div>
-      <div data-booking-ready{% if not lernbusBooking.configured %} hidden{% endif %}>
-        <p class="booking-boundary">{{ t.bookingBoundary }}</p>
-        <p class="booking-opening" data-calendar-opening data-first-lesson="{{ lernbusBooking.firstLessonDate }}" hidden>{{ t.calendarOpening }}</p>
-        <div class="calendar-launch" data-calendar-launch hidden>
-          <button class="button" type="button" data-calendar-load aria-controls="lesson-calendar" aria-expanded="false" hidden>{{ t.calendarLoad }}</button>
-          <p class="booking-disclosure">{{ t.calendarPrivacy }}</p>
-        </div>
-        <div class="calendar-tools">
-          <a class="text-link" data-calendar-external href="{{ calendar.bookingUrl | escape }}" target="_blank" rel="noopener noreferrer">{{ t.calendarExternal }} <span aria-hidden="true">↗</span></a>
-          <a class="text-link" href="{{ t.privacyHref }}">{{ t.privacy }}</a>
-          <a class="text-link" href="{{ t.termsHref }}">{{ t.terms }}</a>
-        </div>
-        <p class="calendar-status small" data-calendar-status data-loading="{{ t.calendarLoading }}" data-slow="{{ t.calendarSlow }}" role="status" hidden></p>
-      </div>
-      <p class="booking-error" data-booking-error role="status" hidden>{{ t.calendarUnavailable }}</p>
+    <div data-request-ui hidden>
+      <form data-request-form data-locale="{{ locale | escape }}" aria-describedby="lesson-request-note">
+        <p class="lesson-request__load-status" data-calendar-load-status role="status"></p>
+        <button type="button" class="lesson-request__email" data-calendar-reload hidden>{% if requestEnglish %}Try again{% else %}Erneut versuchen{% endif %}</button>
+        <fieldset class="lesson-request__controls" data-request-controls>
+          <legend class="lesson-request__sr">{% if requestEnglish %}Request a lesson{% else %}Lektion anfragen{% endif %}</legend>
+          <div class="lesson-request__picker">
+            <div class="lesson-request__dates">
+              <p class="lesson-request__step">1 · {% if requestEnglish %}Date{% else %}Datum{% endif %}</p>
+              <div class="lesson-request__navigation">
+                <button type="button" data-request-previous aria-label="{% if requestEnglish %}Previous month{% else %}Vorheriger Monat{% endif %}"><span aria-hidden="true">←</span></button>
+                <h4 id="lesson-request-month" data-request-month aria-live="polite" aria-atomic="true"></h4>
+                <button type="button" data-request-next aria-label="{% if requestEnglish %}Next month{% else %}Nächster Monat{% endif %}"><span aria-hidden="true">→</span></button>
+              </div>
+              <div role="grid" aria-labelledby="lesson-request-month" aria-describedby="lesson-request-keys" data-request-grid></div>
+              <p id="lesson-request-keys" class="lesson-request__sr">{% if requestEnglish %}Use the arrow keys to move between dates. Home and End move to the start and end of the week. Page Up and Page Down change the month. Enter selects a date.{% else %}Mit den Pfeiltasten zwischen Daten wechseln. Pos1 und Ende wechseln zum Wochenanfang und Wochenende. Bild auf und Bild ab wechseln den Monat. Enter wählt ein Datum aus.{% endif %}</p>
+            </div>
+            <fieldset class="lesson-request__time-fieldset">
+              <legend><span class="lesson-request__step">2 · {% if requestEnglish %}Time{% else %}Uhrzeit{% endif %}</span><span class="lesson-request__time-title" data-request-time-title></span></legend>
+              <div class="lesson-request__times" data-request-times></div>
+              <p class="lesson-request__zone">{% if requestEnglish %}Available times · Swiss local time{% else %}Verfügbare Termine · Schweizer Zeit{% endif %}</p>
+            </fieldset>
+          </div>
+          <p class="lesson-request__selection" data-request-summary aria-live="polite" aria-atomic="true"></p>
+          <div class="lesson-request__details">
+            <p class="lesson-request__step">3 · {% if requestEnglish %}Your contact details{% else %}Ihre Kontaktdaten{% endif %}</p>
+            <div class="lesson-request__fields">
+              <label for="lesson-request-name">{% if requestEnglish %}Your name{% else %}Ihr Name{% endif %}<input id="lesson-request-name" name="name" type="text" autocomplete="name" maxlength="120" required /></label>
+              <label for="lesson-request-email">{% if requestEnglish %}Your email address{% else %}Ihre E-Mail-Adresse{% endif %}<input id="lesson-request-email" name="email" type="email" autocomplete="email" maxlength="254" required /></label>
+              <label class="lesson-request__notes" for="lesson-request-notes">{% if requestEnglish %}Notes <span>(optional)</span>{% else %}Bemerkungen <span>(optional)</span>{% endif %}<textarea id="lesson-request-notes" name="notes" rows="3" maxlength="2000"></textarea></label>
+            </div>
+            <div class="lesson-request__sr" aria-hidden="true"><label for="lesson-request-website">Website</label><input id="lesson-request-website" name="website" type="text" tabindex="-1" autocomplete="off" maxlength="200" /></div>
+            <button class="lesson-request__submit" type="submit">{% if requestEnglish %}Reserve this time{% else %}Termin reservieren{% endif %}</button>
+          </div>
+        </fieldset>
+        <p class="lesson-request__status" data-request-status role="status" aria-live="polite" aria-atomic="true" tabindex="-1"></p>
+        <button class="lesson-request__email lesson-request__recovery" type="button" data-booking-recover hidden>{% if requestEnglish %}Check reservation status{% else %}Reservierung prüfen{% endif %}</button>
+      </form>
+      <p class="lesson-request__note" id="lesson-request-note">{% if requestEnglish %}Your reservation is processed securely through Microsoft Bookings. <a href="/imprint/#termine">Privacy</a>{% else %}Ihre Reservierung wird sicher über Microsoft Bookings verarbeitet. <a href="/impressum/#termine">Datenschutz</a>{% endif %} · <a href="mailto:{{ lernbusContact.recipient | escape }}">{% if requestEnglish %}Request by email{% else %}Per E-Mail anfragen{% endif %}</a></p>
     </div>
-    <div class="calendar-frame" id="lesson-calendar" data-calendar-frame hidden></div>
-    <div class="calendar-assistance" data-calendar-assistance hidden>
-      <p class="small">{{ t.calendarHelp }}</p>
-      <div class="calendar-tools">
-        <a class="text-link" href="{{ calendar.bookingUrl | escape }}" target="_blank" rel="noopener noreferrer">{{ t.calendarExternal }} <span aria-hidden="true">↗</span></a>
-        <a class="text-link" href="mailto:{{ lernbusContact.recipient | escape }}?subject={{ t.bookingEmailSubject | urlencode }}">{{ t.bookingEmail }}</a>
-      </div>
-    </div>
-    {% if lernbusBooking.weeklySlots.length %}<details class="weekly-times"><summary>{{ t.weeklyHeading }} <span aria-hidden="true">+</span></summary><p class="small">{% if lernbusBooking.configured %}{{ t.weeklyLiveNote }}{% else %}{{ t.weeklyNote }}{% endif %}</p><dl>{% for day in lernbusBooking.weeklySlots %}<div><dt>{{ t.weekdays[day.day] }}</dt><dd>{% for slot in day.slots %}<span>{{ slot }}</span>{% endfor %}</dd></div>{% endfor %}</dl></details>{% endif %}
   </div>
 </div>

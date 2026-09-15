@@ -15,6 +15,8 @@ export default () => Object.fromEntries(
     ['nav', 'nav.js'],
     ['faq', 'faq.js'],
     ['booking', 'booking.js'],
+    ['lessonBooking', 'lesson-booking.js'],
+    ['lessonBookingCss', 'lesson-booking.css'],
     ['contactCss', 'contact.css'],
     ['portrait', 'img/conny-brandes-portrait.webp'],
     ['portraitSmall', 'img/conny-brandes-portrait-small.webp'],
