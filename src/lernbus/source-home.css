@@ -270,3 +270,13 @@
  .source-home .faq-item::details-content{content-visibility:visible}
  .source-home .faq-answer{display:block!important}
 }
+
+/* Let the provider use the full phone width instead of shrinking below 320px. */
+@media(max-width:32rem){
+ .source-home .calendar-frame{width:calc(100% + var(--pad) + var(--pad) + 4px);margin-inline:calc(-1 * var(--pad) - 2px)}
+}
+
+/* Keep the outer frame stable while fitting the provider's minimum canvas. */
+.source-home .calendar-frame{--calendar-scale:1;--calendar-height:1150px;height:calc(var(--calendar-height) + 1px);overflow:hidden}
+.source-home .calendar-frame iframe{width:calc(100% / var(--calendar-scale));height:calc(var(--calendar-height) / var(--calendar-scale));transform:scale(var(--calendar-scale));transform-origin:top left}
+@media(max-width:48rem){.source-home .calendar-frame{--calendar-height:1550px}}

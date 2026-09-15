@@ -24,6 +24,7 @@ locale: de
 <link rel="stylesheet" href="./styles.css?v={{ lernbusAssets.styles }}" />
 <link rel="stylesheet" href="./detail.css?v={{ lernbusAssets.detail }}">
 <link rel="stylesheet" href="./source-home.css?v={{ lernbusAssets['source-home'] }}">
+<link rel="stylesheet" href="./home-refinement.css?v={{ lernbusAssets.homeRefinement }}">
 <link rel="stylesheet" href="./tariff-guide.css?v={{ lernbusAssets.tariffGuide }}">
 <link rel="stylesheet" href="./contact.css?v={{ lernbusAssets.contactCss }}">
 <script src="./booking.js?v={{ lernbusAssets.booking }}" type="module"></script>
@@ -90,6 +91,12 @@ locale: de
         <li>Für Kinder, die in ihren <b>Lern- und Zukunftskompetenzen</b> gezielt gestärkt werden sollen</li>
         <li><b>Frühe Deutschförderung ab 3 Jahren</b> im ersten Semester einzeln, im zweiten Halbjahr zu zweit</li>
       </ul>
+      <dl class="quick-facts">
+        <div><dt>Ort</dt><dd>Münsterplatz 17, Basel</dd></div>
+        <div><dt>Rhythmus</dt><dd>In der Regel wöchentlich</dd></div>
+        <div><dt>Dauer</dt><dd>60 Minuten</dd></div>
+        <div><dt>Buchung</dt><dd>Pro Schulsemester</dd></div>
+      </dl>
     </div>
   </section>
 
@@ -104,6 +111,9 @@ locale: de
           <h3>Worauf Lernen aufbaut</h3>
           <p>Lernen baut auf vielen grundlegenden Fähigkeiten auf: Wahrnehmung, Aufmerksamkeit, Sprache, mathematische Vorläuferfähigkeiten, Motorik und Selbstregulation.</p>
         </div>
+        <details class="content-disclosure why-disclosure">
+          <summary>Wie wir frühes Lernen begleiten</summary>
+          <div class="disclosure-body">
         <div class="dsec">
           <h3>Im Spiel und ganz nebenbei</h3>
           <p>Diese Grundlagen lassen sich schon früh spielerisch, mit Freude und ohne Druck stärken, oft ganz nebenbei und ohne dass es sich für Kinder nach «Lernen» anfühlt. Ob beim Gestalten, Bewegen, Sortieren, Reimen, Experimentieren oder Spielen: Es gibt unzählige Möglichkeiten, Kinder in ihrer Entwicklung zu begleiten und wichtige Lernvoraussetzungen zu stärken.</p>
@@ -112,6 +122,8 @@ locale: de
           <h3>Ein stabiles Fundament</h3>
           <p>Vorschulförderung bedeutet für uns, nicht Schule immer weiter nach vorne zu verlagern, sondern Kindern ein stabiles Fundament mitzugeben, auf dem späteres Lernen aufbauen kann. Nicht warten, bis Defizite sichtbar werden.</p>
         </div>
+          </div>
+        </details>
       </div>
     </div>
   </section>
@@ -148,8 +160,8 @@ locale: de
           <p>Das Angebot stärkt die Kinder in ihrem Selbstvertrauen, ihrer Resilienz und ihrer Bereitschaft zum eigenständigen Lernen.</p>
         </article>
       </div>
-      <div class="checksheet reveal">
-        <p class="eyebrow">Die Ziele</p>
+      <details class="content-disclosure goals-disclosure">
+        <summary>Die Ziele</summary>
         <ul class="ticks">
           <li>Stärkung von Lernkompetenz, Selbstwert und Selbstwirksamkeit</li>
           <li>Förderung von Neugier und intrinsischer Lernmotivation</li>
@@ -158,7 +170,8 @@ locale: de
           <li>Förderung von Kommunikationsfähigkeit und eigenständigem Denken</li>
           <li>Sichtbarmachung individueller Lernfortschritte</li>
         </ul>
-      </div>
+      </details>
+      <p class="concept-link"><a class="morelink" href="/lernbus/konzept/">Unser Konzept im Detail <span aria-hidden="true">&rarr;</span></a></p>
     </div>
   </section>
 
@@ -174,7 +187,9 @@ locale: de
       <h2 class="big" id="team-heading">Team</h2>
       {% set profileHeading = "h3" %}
       {% set bioHeading = "h4" %}
+      {% set compactProfile = true %}
       {% include "lernbus-team.njk" %}
+      {% set compactProfile = false %}
       <a class="morelink" href="/lernbus/team/#elternstimmen">Elternstimmen zu Conny <span aria-hidden="true">&rarr;</span></a>
     </div>
   </section>
@@ -184,15 +199,22 @@ locale: de
     <div class="accent-blob" style="width:24vw;height:24vw;background:var(--cyan);right:-8vw;bottom:-4vw"></div>
     <div class="wrap">
       <h2 class="big reveal">Ablauf</h2>
-      <ol class="steps grid2 reveal" role="list">
+      <div class="process-content">
+        <ol class="steps grid2" role="list">
         <li class="step"><span class="dotn" aria-hidden="true">1</span><p style="margin-top:0"><b>Kennenlerngespräch</b> mit den Eltern und dem Kind</p></li>
         <li class="step"><span class="dotn" aria-hidden="true">2</span><p style="margin-top:0"><b>Individuelle Frühförderung</b> in Lektionen von 60 Minuten. Im ersten Semester einzeln zum Beziehungsaufbau, im zweiten Halbjahr zu zweit. Buchung pro Schulsemester.</p></li>
-        <li class="step"><span class="dotn" aria-hidden="true">3</span><p style="margin-top:0"><b>Aufbau grundlegender Fähigkeiten</b>: Wahrnehmung, Aufmerksamkeit, Sprache, mathematische Vorläuferfähigkeiten, Motorik und Selbstregulation</p></li>
-        <li class="step"><span class="dotn" aria-hidden="true">4</span><p style="margin-top:0"><b>Vertrauensvoller, geschützter Lernraum</b></p></li>
-        <li class="step"><span class="dotn" aria-hidden="true">5</span><p style="margin-top:0"><b>Lernkiste</b> zur persönlichen Dokumentation von Lernfortschritten</p></li>
-        <li class="step"><span class="dotn" aria-hidden="true">6</span><p style="margin-top:0"><b>Elterngespräche</b> sowie bedarfsgerechte Unterstützung von Kind und Eltern, einschliesslich Gesprächsbegleitung</p></li>
-        <li class="step"><span class="dotn" aria-hidden="true">7</span><p style="margin-top:0"><b>Kleingruppen in den Schulferien</b> zur Festigung und Vertiefung verschiedenster Fähigkeiten</p></li>
-      </ol>
+        </ol>
+        <div class="learning-support">
+          <h3>Zur Begleitung gehören</h3>
+          <ul class="learning-features" role="list">
+        <li class="learning-feature"><p style="margin-top:0"><b>Aufbau grundlegender Fähigkeiten</b>: Wahrnehmung, Aufmerksamkeit, Sprache, mathematische Vorläuferfähigkeiten, Motorik und Selbstregulation</p></li>
+        <li class="learning-feature"><p style="margin-top:0"><b>Vertrauensvoller, geschützter Lernraum</b></p></li>
+        <li class="learning-feature"><p style="margin-top:0"><b>Lernkiste</b> zur persönlichen Dokumentation von Lernfortschritten</p></li>
+        <li class="learning-feature"><p style="margin-top:0"><b>Elterngespräche</b> sowie bedarfsgerechte Unterstützung von Kind und Eltern, einschliesslich Gesprächsbegleitung</p></li>
+        <li class="learning-feature"><p style="margin-top:0"><b>Kleingruppen in den Schulferien</b> zur Festigung und Vertiefung verschiedenster Fähigkeiten</p></li>
+          </ul>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -348,7 +370,7 @@ locale: de
   <div class="wrap">
     <img class="foot-logo" src="img/logo-light.png" alt="" width="800" height="344" loading="lazy" />
     <span>Lernbus · ein Angebot der Lerngesellschaft</span>
-    <span>Münsterplatz 17, 4051 Basel · team@jonashertner.com</span>
+    <span>Münsterplatz 17, 4051 Basel · info@lernbus.ch</span>
     <span>Verein · Start Oktober 2026</span>
     <a href="/impressum/">Impressum</a>
     <a href="/lernbus/agb/">AGB</a>

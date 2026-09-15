@@ -20,7 +20,7 @@
 <link rel="preload" href="../fonts/hanken-latin.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="stylesheet" href="../styles.css?v={{ lernbusAssets.styles }}" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"EducationalOrganization","name":"Lernbus","areaServed":"Basel","description":"Präventives, pädagogisch fundiertes Förderangebot für Kinder ab 3 Jahren bis zur 3. Primarschule, zunächst einzeln und danach zu zweit. Frühe Deutschförderung ab 3 Jahren. Ein Angebot der Lerngesellschaft.","address":"Münsterplatz 17, 4051 Basel","email":"team@jonashertner.com","parentOrganization":{"@type":"NGO","name":"Lerngesellschaft / Learning Society","url":"https://lerngesellschaft.ch/"}}
+{"@context":"https://schema.org","@type":"EducationalOrganization","name":"Lernbus","areaServed":"Basel","description":"Präventives, pädagogisch fundiertes Förderangebot für Kinder ab 3 Jahren bis zur 3. Primarschule, zunächst einzeln und danach zu zweit. Frühe Deutschförderung ab 3 Jahren. Ein Angebot der Lerngesellschaft.","address":"Münsterplatz 17, 4051 Basel","email":"info@lernbus.ch","parentOrganization":{"@type":"NGO","name":"Lerngesellschaft / Learning Society","url":"https://lerngesellschaft.ch/"}}
 </script>
 <link rel="stylesheet" href="../detail.css?v={{ lernbusAssets.detail }}">
 </head>
@@ -44,7 +44,7 @@
           <a href="#zielgruppe" class="navlink">Zielgruppe</a>
           <a href="#umsetzung" class="navlink">Umsetzung</a>
           <a href="#qualitaet" class="navlink">Qualität</a>
-          <a href="#anmelden" class="navlink">Platz anfragen</a>
+          <a href="/lernbus/#gespraech" class="navlink">Lektion anfragen</a>
           <a href="#traegerschaft" class="navlink">Trägerschaft</a>
           <a href="../index.html" class="navlink navlink-up">Übersicht</a>
         </nav>
@@ -73,7 +73,7 @@
         <h1>Lernen im <span class="pop">eigenen Tempo</span>, mit einem <span class="pop">Menschen</span> an der Seite.</h1>
         <p class="lead">Der Lernbus ist ein präventives, pädagogisch fundiertes Förderangebot für Kinder im frühen Lernalter. Er steht allen Kindern offen, unabhängig davon, was sie mitbringen und woher sie kommen. Wir setzen früh an, um Selbstvertrauen und Lernfreude zu erhalten und zu stärken.</p>
         <div class="hero-cta">
-          <a href="#anmelden" class="btn btn-pink">Platz anfragen</a>
+          <a href="/lernbus/#gespraech" class="btn btn-pink">Lektion anfragen</a>
           <a href="#umsetzung" class="btn btn-ghost">So läuft es ab</a>
         </div>
       </div>
@@ -253,25 +253,9 @@
       <h2 class="big" style="max-width:22ch">Fragen Sie einen Platz an.</h2>
       <p class="lead" style="margin-top:1.2rem">Der Lernbus startet im Oktober 2026 mit wenigen Plätzen. Anfragen und Anmeldungen erfolgen durch Eltern oder Erziehungsberechtigte. Am Anfang steht ein Kennenlerngespräch. Erzählen Sie uns kurz von Ihrem Kind, wir melden uns innert weniger Tage. Die Beiträge sind gestaffelt und gelten pro Lektion von 60 Minuten, alles Weitere besprechen wir persönlich.</p>
       <p class="lead" style="margin-top:1rem"><a class="morelink" href="../index.html">Sie sind Mutter oder Vater? Hier steht alles Wichtige kurz <span>&rarr;</span></a></p>
-      <div class="book-card">
-        <form id="anfrage">
-          <div class="form-grid">
-            <div class="field"><label for="f-name">Ihr Name</label><input id="f-name" name="name" type="text" autocomplete="name" required /></div>
-            <div class="field"><label for="f-contact">E-Mail oder Telefon</label><input id="f-contact" name="contact" type="text" autocomplete="email" required /></div>
-            <div class="field"><label for="f-age">Alter des Kindes</label>
-              <select id="f-age" name="age" required>
-                <option value="" selected disabled>Bitte wählen</option>
-                <option>3 Jahre</option><option>4 Jahre</option><option>5 Jahre</option><option>6 Jahre</option><option>7 Jahre</option><option>8 Jahre</option><option>9 Jahre</option>
-              </select>
-            </div>
-            <div class="field"><label for="f-quartier">Quartier (optional)</label><input id="f-quartier" name="quartier" type="text" /></div>
-            <div class="field wide"><label for="f-msg">Nachricht (optional)</label><textarea id="f-msg" name="msg"></textarea></div>
-            <label class="check wide"><input type="checkbox" name="lang" /> Mein Kind soll Deutsch aufbauen und sicherer sprechen.</label>
-            <label class="check wide"><input type="checkbox" name="reduced" /> Ich möchte mehr über ermöglichte Plätze erfahren.</label>
-          </div>
-          <div style="margin-top:1.4rem"><button type="submit" class="btn btn-pink">Anfrage senden</button></div>
-        </form>
-        <p class="book-note">Unverbindlich. Ihre Anfrage geht als E-Mail direkt an info@lernbus.ch und wird nirgends sonst gespeichert.</p>
+      <div id="anfrage" style="margin-top:2rem;display:flex;flex-wrap:wrap;gap:1rem">
+        <a class="btn btn-pink" href="/lernbus/#gespraech">Lektion anfragen</a>
+        <a class="btn btn-ghost" href="/lernbus/#kontakt">Eine Frage stellen</a>
       </div>
     </div>
   </section>
@@ -296,23 +280,12 @@
     <img class="foot-logo" src="../img/logo-light.png" alt="" width="800" height="344" loading="lazy" />
     <span>Lernbus · ein Angebot der Lerngesellschaft</span>
     <a href="https://lerngesellschaft.ch/">lerngesellschaft.ch</a>
-    <span>Münsterplatz 17, 4051 Basel · team@jonashertner.com</span>
+    <span>Münsterplatz 17, 4051 Basel · info@lernbus.ch</span>
     <span>Verein · Start Oktober 2026</span>
     <a href="/impressum/">Impressum</a>
     <a href="/lernbus/agb/">AGB</a>
   </div>
 </footer>
 
-<script>
-(function(){var f=document.getElementById('anfrage');if(!f)return;
-f.addEventListener('submit',function(e){e.preventDefault();
-var g=function(n){var el=f.elements[n];return el?el.value.trim():'';};
-var L=['Anfrage Lernbus','','Name: '+g('name'),'Kontakt: '+g('contact'),'Alter des Kindes: '+g('age')];
-if(g('quartier'))L.push('Quartier: '+g('quartier'));
-if(f.elements['lang'].checked)L.push('Frühe Deutschförderung: Deutsch aufbauen und sicherer sprechen.');
-if(f.elements['reduced'].checked)L.push('Bitte Informationen zu ermöglichten Plätzen.');
-if(g('msg')){L.push('');L.push(g('msg'));}
-location.href='mailto:info@lernbus.ch?subject='+encodeURIComponent('Anfrage Lernbus')+'&body='+encodeURIComponent(L.join('\n'));});})();
-</script>
 </body>
 </html>

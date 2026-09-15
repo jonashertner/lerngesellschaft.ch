@@ -1,0 +1,8 @@
+/* Translated parent testimonials with their original German wording. */
+.detail-page .team-testimonial figure{margin:0}
+.detail-page .team-testimonial-translation-label{font-size:.875rem;line-height:1.5;font-weight:700;color:var(--violet);margin:0 0 .75rem}
+.detail-page .team-testimonial-original{margin-top:1rem}
+.detail-page .team-testimonial-original summary{width:fit-content;max-width:100%;cursor:pointer;color:var(--violet);font-size:.9375rem;font-weight:650;line-height:1.5;padding-block:.625rem}
+.detail-page .team-testimonial-original summary:hover{text-decoration:underline;text-underline-offset:.2em}
+.detail-page .team-testimonial-original summary:focus-visible{outline:3px solid var(--violet);outline-offset:4px;border-radius:0}
+.detail-page .team-testimonial-original blockquote{border-left:2px solid var(--hairline);margin-top:.5rem;padding-left:1rem}

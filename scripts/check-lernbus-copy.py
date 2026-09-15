@@ -27,6 +27,12 @@ for path,source in base['pages'].items():
   start,end=edit['start'],edit['end']
   assert expected[start:end]==tokens(edit['before']), f'{path}: authorized change no longer matches source'
   expected[start:end]=tokens(edit['after'])
+ # Later authorised layout/copy passes are recorded against the preceding checked text.
+ for revision in authorized.get('revisions',[]):
+  for edit in reversed(revision['pages'].get(path,[])):
+   start,end=edit['start'],edit['end']
+   assert expected[start:end]==tokens(edit['before']), f'{path}: revision no longer matches preceding text'
+   expected[start:end]=tokens(edit['after'])
  if actual!=expected:
   changes='\n'.join(difflib.unified_diff(expected,actual,fromfile='live source',tofile=path,n=4))
   raise AssertionError(f'{path}: published wording changed\n{changes[:3500]}')

@@ -14,6 +14,28 @@
     <p class="team-role">{{ member.role }}</p>
     <a class="morelink" href="mailto:connybrandes@lernbus.ch">connybrandes@lernbus.ch</a>
   </div>
+  {% if compactProfile %}
+  <div class="team-profile-copy">
+    <div class="team-bio-section">
+      <{{ bioHeading }} class="team-bio-heading">{{ member.sections[0].title }}</{{ bioHeading }}>
+      <p>{{ member.sections[0].paragraphs[0] }}</p>
+    </div>
+    <details class="content-disclosure team-biography">
+      <summary>{% if locale == "de" %}Mehr über Conny{% else %}More about Conny{% endif %}</summary>
+      <div class="disclosure-body">
+        <div class="team-bio-section"><p>{{ member.sections[0].paragraphs[1] }}</p></div>
+        {% for section in member.sections %}
+        {% if not loop.first %}
+        <div class="team-bio-section">
+          <{{ bioHeading }} class="team-bio-heading">{{ section.title }}</{{ bioHeading }}>
+          {% for paragraph in section.paragraphs %}<p>{{ paragraph }}</p>{% endfor %}
+        </div>
+        {% endif %}
+        {% endfor %}
+      </div>
+    </details>
+  </div>
+  {% else %}
   <div class="team-profile-copy">
     {% for section in member.sections %}
     <div class="team-bio-section">
@@ -24,4 +46,5 @@
     </div>
     {% endfor %}
   </div>
+  {% endif %}
 </article>

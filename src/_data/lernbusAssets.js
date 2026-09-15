@@ -8,6 +8,8 @@ export default () => Object.fromEntries(
     ['detail', 'detail.css'],
     ['source-home', 'source-home.css'],
     ['tariffGuide', 'tariff-guide.css'],
+    ['homeRefinement', 'home-refinement.css'],
+    ['testimonials', 'testimonials.css'],
     ['contact', 'contact.js'],
     ['nav', 'nav.js'],
     ['faq', 'faq.js'],

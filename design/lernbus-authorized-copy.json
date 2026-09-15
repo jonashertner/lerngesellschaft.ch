@@ -548,5 +548,348 @@
         "after": "Association · starting in October 2026 Legal information Terms and conditions"
       }
     ]
-  }
+  },
+  "revisions": [
+    {
+      "authorization": "Jonas: Go ahead, following the 15 September 2026 full Lernbus review. Preserve approved programme/bio/fee content with optional disclosure; show existing practical facts early; separate actual steps from support features; translate testimonials with original quotations retained; unify public contact and enquiry routes. No price, availability or terms change.",
+      "pages": {
+        "lernbus/index.html": [
+          {
+            "start": 97,
+            "end": 97,
+            "before": "",
+            "after": "Ort Münsterplatz 17 , Basel Rhythmus In der Regel wöchentlich Dauer 60 Minuten Buchung Pro Schulsemester"
+          },
+          {
+            "start": 153,
+            "end": 153,
+            "before": "",
+            "after": "Wie wir frühes Lernen begleiten"
+          },
+          {
+            "start": 435,
+            "end": 435,
+            "before": "",
+            "after": "Unser Konzept im Detail →"
+          },
+          {
+            "start": 489,
+            "end": 489,
+            "before": "",
+            "after": "Mehr über Conny"
+          },
+          {
+            "start": 734,
+            "end": 735,
+            "before": "3",
+            "after": "Zur Begleitung gehören"
+          },
+          {
+            "start": 751,
+            "end": 752,
+            "before": "4",
+            "after": ""
+          },
+          {
+            "start": 756,
+            "end": 757,
+            "before": "5",
+            "after": ""
+          },
+          {
+            "start": 763,
+            "end": 764,
+            "before": "6",
+            "after": ""
+          },
+          {
+            "start": 775,
+            "end": 776,
+            "before": "7",
+            "after": ""
+          },
+          {
+            "start": 1820,
+            "end": 1821,
+            "before": "team",
+            "after": "info"
+          },
+          {
+            "start": 1822,
+            "end": 1823,
+            "before": "jonashertner",
+            "after": "lernbus"
+          },
+          {
+            "start": 1824,
+            "end": 1825,
+            "before": "com",
+            "after": "ch"
+          }
+        ],
+        "lernbus/en/index.html": [
+          {
+            "start": 123,
+            "end": 123,
+            "before": "",
+            "after": "Location Münsterplatz 17 , Basel Frequency Usually once a week Duration 60 minutes Booking period One school semester"
+          },
+          {
+            "start": 181,
+            "end": 181,
+            "before": "",
+            "after": "How we support early learning"
+          },
+          {
+            "start": 483,
+            "end": 483,
+            "before": "",
+            "after": "Our approach in detail →"
+          },
+          {
+            "start": 538,
+            "end": 538,
+            "before": "",
+            "after": "More about Conny"
+          },
+          {
+            "start": 799,
+            "end": 800,
+            "before": "3",
+            "after": "What the support includes"
+          },
+          {
+            "start": 820,
+            "end": 821,
+            "before": "4",
+            "after": ""
+          },
+          {
+            "start": 828,
+            "end": 829,
+            "before": "5",
+            "after": ""
+          },
+          {
+            "start": 843,
+            "end": 844,
+            "before": "6",
+            "after": ""
+          },
+          {
+            "start": 862,
+            "end": 863,
+            "before": "7",
+            "after": ""
+          },
+          {
+            "start": 2067,
+            "end": 2068,
+            "before": "team",
+            "after": "info"
+          },
+          {
+            "start": 2069,
+            "end": 2070,
+            "before": "jonashertner",
+            "after": "lernbus"
+          },
+          {
+            "start": 2071,
+            "end": 2072,
+            "before": "com",
+            "after": "ch"
+          }
+        ],
+        "lernbus/konzept/index.html": [
+          {
+            "start": 19,
+            "end": 20,
+            "before": "Platz",
+            "after": "Lektion"
+          },
+          {
+            "start": 88,
+            "end": 89,
+            "before": "Platz",
+            "after": "Lektion"
+          },
+          {
+            "start": 1827,
+            "end": 1902,
+            "before": "Ihr Name E - Mail oder Telefon Alter des Kindes Bitte wählen 3 Jahre 4 Jahre 5 Jahre 6 Jahre 7 Jahre 8 Jahre 9 Jahre Quartier ( optional ) Nachricht ( optional ) Mein Kind soll Deutsch aufbauen und sicherer sprechen . Ich möchte mehr über ermöglichte Plätze erfahren . Anfrage senden Unverbindlich . Ihre Anfrage geht als E - Mail direkt an info @ lernbus . ch und wird nirgends sonst gespeichert .",
+            "after": "Lektion anfragen Eine Frage stellen"
+          },
+          {
+            "start": 1970,
+            "end": 1971,
+            "before": "team",
+            "after": "info"
+          },
+          {
+            "start": 1972,
+            "end": 1973,
+            "before": "jonashertner",
+            "after": "lernbus"
+          },
+          {
+            "start": 1974,
+            "end": 1975,
+            "before": "com",
+            "after": "ch"
+          }
+        ],
+        "lernbus/en/konzept/index.html": [
+          {
+            "start": 26,
+            "end": 27,
+            "before": "place",
+            "after": "lesson"
+          },
+          {
+            "start": 91,
+            "end": 92,
+            "before": "place",
+            "after": "lesson"
+          },
+          {
+            "start": 1906,
+            "end": 1979,
+            "before": "Your name Email address or phone number Child ' s age Please choose 3 years 4 years 5 years 6 years 7 years 8 years 9 years Neighbourhood ( optional ) Message ( optional ) I would like my child to develop their German and speak more confidently . I would like to know more about subsidised places . Send request There is no obligation . This form opens your email app with",
+            "after": "Request"
+          },
+          {
+            "start": 1980,
+            "end": 2004,
+            "before": "message addressed to info @ lernbus . ch . You choose when to send it ; the form does not store your details .",
+            "after": "lesson Ask a question"
+          },
+          {
+            "start": 2075,
+            "end": 2076,
+            "before": "team",
+            "after": "info"
+          },
+          {
+            "start": 2077,
+            "end": 2078,
+            "before": "jonashertner",
+            "after": "lernbus"
+          },
+          {
+            "start": 2079,
+            "end": 2080,
+            "before": "com",
+            "after": "ch"
+          }
+        ],
+        "lernbus/team/index.html": [
+          {
+            "start": 585,
+            "end": 586,
+            "before": "team",
+            "after": "info"
+          },
+          {
+            "start": 587,
+            "end": 588,
+            "before": "jonashertner",
+            "after": "lernbus"
+          },
+          {
+            "start": 589,
+            "end": 590,
+            "before": "com",
+            "after": "ch"
+          }
+        ],
+        "lernbus/team/en/index.html": [
+          {
+            "start": 292,
+            "end": 296,
+            "before": "In their own words",
+            "after": "English translation I have known Conny for years as a nursery manager and as someone closely involved in caring for my children . Time and again"
+          },
+          {
+            "start": 297,
+            "end": 297,
+            "before": "",
+            "after": "I have been impressed by her ability to recognise each child ’ s strengths and weaknesses and support them with a clear long - term perspective , remaining honest without being hurtful . She quietly encourages children to be brave as they grow and develop , and gives them a real sense of support . Through her creativity , she creates a place of calm and security , even"
+          },
+          {
+            "start": 298,
+            "end": 298,
+            "before": "",
+            "after": "small spaces or large groups . She is a great role model for me – authentic , warm - hearted and with a wonderful laugh . Dr . med . Christiane Rosin , Ärztin für Psychosomatik SAPPM Read the"
+          },
+          {
+            "start": 299,
+            "end": 300,
+            "before": ".",
+            "after": "original"
+          },
+          {
+            "start": 409,
+            "end": 410,
+            "before": "Dr",
+            "after": "English translation Whenever you meet Conny , she greets you with a smile"
+          },
+          {
+            "start": 411,
+            "end": 412,
+            "before": "med",
+            "after": "Whether you are a baby , a schoolchild or an adult , you immediately feel at ease in her company"
+          },
+          {
+            "start": 413,
+            "end": 415,
+            "before": "Christiane Rosin",
+            "after": "That has a lot to do with her cheerful"
+          },
+          {
+            "start": 416,
+            "end": 420,
+            "before": "Ärztin für Psychosomatik SAPPM",
+            "after": "open nature . Conny is also very empathetic and quickly senses how the person she is with is feeling . Her creativity shines through in everything she does , from making things by hand to the way she relates to others . Warm - hearted and easy - going ! S . Nussberger Read the German original"
+          },
+          {
+            "start": 496,
+            "end": 497,
+            "before": "S",
+            "after": "English translation Conny cared for both our children through their first years at nursery"
+          },
+          {
+            "start": 498,
+            "end": 499,
+            "before": "Nussberger",
+            "after": "She quickly won their trust by treating them with empathy and respect , and she was always an important person in their lives . We could not have wished for anyone better to support them , and she made it much easier for us to balance family life and our careers ! M . Vogt MLaw Read the German original"
+          },
+          {
+            "start": 551,
+            "end": 555,
+            "before": "M . Vogt MLaw",
+            "after": ""
+          },
+          {
+            "start": 595,
+            "end": 596,
+            "before": "team",
+            "after": "info"
+          },
+          {
+            "start": 597,
+            "end": 598,
+            "before": "jonashertner",
+            "after": "lernbus"
+          },
+          {
+            "start": 599,
+            "end": 600,
+            "before": "com",
+            "after": "ch"
+          }
+        ]
+      }
+    }
+  ]
 }

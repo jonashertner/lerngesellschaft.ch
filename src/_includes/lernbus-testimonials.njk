@@ -1,14 +1,28 @@
 <section class="team-testimonials" id="elternstimmen" aria-labelledby="testimonials-heading">
   <h2 class="team-testimonials-heading" id="testimonials-heading">{% if locale == "de" %}Elternstimmen{% else %}What parents say{% endif %}</h2>
-  {% if locale == "en" %}<p class="team-testimonials-language">In their own words, in German.</p>{% endif %}
   <div class="team-testimonials-list">
     {% for testimonial in lernbusTestimonials.items %}
-    <figure class="team-testimonial" lang="de-CH">
-      <blockquote>
-        {% for paragraph in testimonial.paragraphs %}<p>{{ paragraph | escape }}</p>{% endfor %}
-      </blockquote>
-      <figcaption>{{ testimonial.name | escape }}</figcaption>
-    </figure>
+    <div class="team-testimonial">
+      <figure lang="{% if locale == "en" %}en-GB{% else %}de-CH{% endif %}">
+        {% if locale == "en" %}<p class="team-testimonial-translation-label">English translation</p>{% endif %}
+        <blockquote>
+          {% if locale == "en" %}
+          {% for paragraph in testimonial.englishParagraphs %}<p>{{ paragraph | escape }}</p>{% endfor %}
+          {% else %}
+          {% for paragraph in testimonial.paragraphs %}<p>{{ paragraph | escape }}</p>{% endfor %}
+          {% endif %}
+        </blockquote>
+        <figcaption lang="de-CH">{{ testimonial.name | escape }}</figcaption>
+      </figure>
+      {% if locale == "en" %}
+      <details class="team-testimonial-original">
+        <summary>Read the German original</summary>
+        <blockquote lang="de-CH">
+          {% for paragraph in testimonial.paragraphs %}<p>{{ paragraph | escape }}</p>{% endfor %}
+        </blockquote>
+      </details>
+      {% endif %}
+    </div>
     {% endfor %}
   </div>
 </section>
