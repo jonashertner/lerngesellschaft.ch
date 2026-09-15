@@ -23,7 +23,7 @@ Wir begleiten die Kinder sorgfältig und entsprechend ihren Bedürfnissen. Einen
 
 Bitte teilen Sie uns Absagen möglichst 24 Stunden vorher mit. Sagen wir einen Termin ab, vereinbaren wir mit Ihnen einen Ersatztermin oder erstatten den dafür bezahlten Beitrag.
 
-Die Lernbegleitung kann von beiden Seiten jederzeit beendet werden; eine E-Mail genügt. Beim Lernbus streben wir eine Begleitung von mindestens sechs Monaten an. Dies ist eine gemeinsame Planung und schränkt das Kündigungsrecht nicht ein.
+Beim Lernbus werden die Lektionen jeweils für ein Schulsemester gebucht. Beginn und Ende des vereinbarten Semesters sowie die Lektionstermine halten wir in der Buchungsbestätigung fest. Zwingende gesetzliche Rechte zur vorzeitigen Beendigung, insbesondere nach Art. 404 OR, bleiben vorbehalten. Eine Mitteilung zur Beendigung ist per E-Mail möglich.
 
 Bei einer Beendigung rechnen wir die bereits erbrachten Leistungen ab und erstatten nicht verbrauchte Vorauszahlungen. Erfolgt die Beendigung zu einem besonders ungünstigen Zeitpunkt, kann nach den gesetzlichen Voraussetzungen Ersatz des dadurch entstandenen Schadens geschuldet sein.
 
