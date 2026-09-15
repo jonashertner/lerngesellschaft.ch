@@ -5,6 +5,7 @@
 .detail-page .site-head .wrap{padding-block:1rem}
 .detail-page .brand-logo{height:3.4rem}
 .detail-page .brand span{font-size:.75rem;letter-spacing:.02em;text-transform:none;line-height:1.4}
+.detail-page .site-head.nav-inline .navlink{font-size:.875rem;letter-spacing:.025em}
 .detail-page .lang{background:transparent;border:1px solid var(--violet);border-radius:0}
 .detail-page .menu-btn{border-radius:0;box-shadow:3px 3px 0 #29233e}
 .detail-page .hero{min-height:0!important;background:var(--yellow);border-bottom:2px solid var(--violet)}

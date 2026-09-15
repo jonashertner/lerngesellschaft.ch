@@ -1,0 +1,21 @@
+{% set t = lernbus[locale] %}
+<div class="booking-section" data-booking-addition>
+<div class="booking-card" data-booking data-locale="{{ locale }}" data-booking-url="{{ lernbusBooking.bookingUrl | escape }}" data-embed-url="{{ lernbusBooking.embedUrl | escape }}" data-provider-name="{{ lernbusBooking.providerName | escape }}">
+        <div class="booking-card-heading"><span class="calendar-icon" aria-hidden="true">▦</span><h3>{{ t.bookingHeading }}</h3></div>
+        <div class="booking-unconfigured" data-booking-fallback{% if lernbusBooking.configured %} hidden{% endif %}>
+          <p class="booking-status">{{ t.bookingEmpty }}</p><p>{{ t.bookingFallback }}</p>
+          <a class="button" href="mailto:info@lernbus.ch?subject={{ t.bookingEmailSubject | urlencode }}">{{ t.bookingEmail }} <span aria-hidden="true">↗</span></a>
+          <p class="small">{{ t.bookingHint }}</p>
+        </div>
+        <div data-booking-ready{% if not lernbusBooking.configured %} hidden{% endif %}>
+          <p class="booking-disclosure">{{ t.calendarPrivacy }}</p>
+          <button class="button" type="button" data-calendar-load hidden>{{ t.calendarLoad }} <span aria-hidden="true">↗</span></button>
+          <p class="small" data-calendar-help>{{ t.calendarHelp }}</p>
+          <a class="text-link" data-calendar-external href="{{ lernbusBooking.bookingUrl | escape }}" target="_blank" rel="noopener noreferrer">{{ t.calendarExternal }} <span aria-hidden="true">↗</span></a>
+          <div class="calendar-frame" data-calendar-frame hidden></div>
+        </div>
+        <p class="booking-error" data-booking-error role="status" hidden>{{ t.calendarUnavailable }}</p>
+        {% if lernbusBooking.weeklySlots.length %}<details class="weekly-times"><summary>{{ t.weeklyHeading }} <span aria-hidden="true">+</span></summary><p class="small">{% if lernbusBooking.configured %}{{ t.weeklyLiveNote }}{% else %}{{ t.weeklyNote }}{% endif %}</p><dl>{% for day in lernbusBooking.weeklySlots %}<div><dt>{{ t.weekdays[day.day] }}</dt><dd>{% for slot in day.slots %}<span>{{ slot }}</span>{% endfor %}</dd></div>{% endfor %}</dl></details>{% endif %}
+        <p class="booking-privacy"><a href="{{ t.privacyHref }}">{{ t.privacy }}</a></p>
+      </div>
+</div>

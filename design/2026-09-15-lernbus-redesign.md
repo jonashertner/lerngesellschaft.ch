@@ -1,10 +1,14 @@
-# Lernbus redesign and booking handoff
+# Lernbus design and booking handoff
 
-The working branch is `codex/lernbus-design-booking`. Before implementation, the checkout was fast-forwarded from `727846f` to the actual published source at `8efd046`. This preserves the current 60-minute offer and the four contribution levels. No public GitHub Pages deployment has been triggered.
+## Current content contract — explicit correction from Jonas, 15 September
 
-The design uses the existing Lernbus logo, violet/teal/yellow palette and self-hosted typefaces. The second visual iteration uses oversized poster typography and original tactile collages made from paper shapes, blocks, a pencil and thread. The images are labelled as illustrations and make no claim to show a real room, child or session.
+Keep the current text as on **lernbus.ch**, not the rewritten preview copy. Change design/layout and add the booking calendar only. This supersedes the earlier copy decisions and headline approximations in the conversation. All visible wording on the DE/EN parent, concept and team routes has been restored from the current public source. Live pages were fetched on 15 September and match Git 8efd046; parent HTML matches byte-for-byte, and the four reading pages match in visible text. The live German headline is «Individuelle Frühförderung, die Kinder stark macht.»
 
-The DE/EN parent pages share one template and structured content. They now give parents the offer, an explicitly illustrative learning journey, three steps, the complete contribution table, an introductory-conversation entry point and native FAQ disclosures. Reading pages retain their substantive content with a more compact layout. Empty portrait cards were removed; actual team introductions remain an editorial dependency. All Lernbus contact paths use info@lernbus.ch. The concept pages lead into the same conversation route instead of presenting a mailto form as a sent request.
+The original paragraphs, lists, seven-step Ablauf, complete tariffs, seven FAQs, contact forms, team placeholders and footer wording are retained. New prose and the invented learning-story example have been removed. The only added visible copy belongs to the expressly requested booking calendar. Original forms still open a draft in the visitor's email application as on the live site. No original contact or registration form has been submitted.
+
+All six original HTML pages are now the content source. `detail.css` and `source-home.css` supply the visual treatment: poster typography, yellow/violet/teal spreads, editorial rows, responsive tables and original paper-collage assets. The former rewritten homepage template and its unused CSS/JS have been removed. `src/_data/lernbus.js` now contains only calendar labels. Existing route metadata corrections are preserved.
+
+`design/lernbus-live-copy.json` records the verified source URLs, HTML hashes and body wording. `python3 scripts/check-lernbus-copy.py` compares every rendered word and punctuation mark against that baseline, excluding only the element marked `data-booking-addition`. It passes for all six routes. Do not update the baseline to accommodate new authored copy.
 
 ## Booking status
 
@@ -28,25 +32,10 @@ The optional logo upload did not complete: Chrome's extension requires Allow acc
 
 Official setup references: [service settings](https://learn.microsoft.com/en-us/microsoft-365/bookings/define-service-offerings?view=o365-worldwide), [public page settings](https://learn.microsoft.com/en-us/microsoft-365/bookings/customize-booking-page?view=o365-worldwide), [sharing and embedding](https://learn.microsoft.com/en-us/microsoft-365/bookings/share-shared-bookings-page?view=o365-worldwide).
 
-## Verification
+## Verification and publication
 
-Run `npm run build` and `node scripts/check-lernbus.mjs`. The checks cover generated internal links/fragments/assets, unique IDs, one H1 per page, Swiss spelling, tariff parity, no automatic iframe, readable story content without JavaScript and booking URL validation. Browser checks cover 320/390 px phone layouts and desktop, menu operation, the learning-story tabs, FAQs and the booking contact state. On 15 September, all seven Monday, Wednesday and Thursday start times were verified in the published parent calendar, with other weekdays unavailable. The embedded HTTPS calendar and time selection were also checked; email delivery, reservation and cancellation were not exercised. These are targeted checks, not a claim of a complete accessibility certification or measured field Core Web Vitals.
+Run `npm run build`, `node scripts/check-lernbus.mjs` and `python3 scripts/check-lernbus-copy.py`. The route check covers one H1, unique IDs, Swiss spelling, 142 local links/assets, exact tariff amounts and calendar URL/opt-in guards. The copy check covers all original visible wording, including forms and footer.
 
-The current domain redirect chain also includes an HTTP hop; fix this in the domain forwarding settings when those controls are available. Real mentor names and approved portraits would add the most valuable remaining trust evidence.
+The restored DE/EN parent pages were checked at 320, 390, 768, 820, 1024, 1440 and 1920 px without horizontal overflow. The four restored reading pages were checked at 320 px without overflow. Phone and desktop compositions were visually reviewed. The provider calendar must be verified on HTTPS: Microsoft refuses its iframe on HTTP localhost.
 
-Private design preview: https://lernbus-design-review.voilajonas.chatgpt.site/lernbus/ (owner-only). Preview source/hosting manifest: output/lernbus-site-preview/.openai/hosting.json. This is a separate review deployment and does not change GitHub Pages or the Lernbus domain.
-
-## Expressive design iteration — 15 September
-
-Jonas requested a more distinctive, less clean design while keeping the existing text largely intact. The visual direction is a Swiss learning atelier: large poster headlines, tactile original collage, coloured spreads, editorial offer rows, a learning-notebook interaction and staggered numbered steps. The concept and team pages share the palette and typography, with a two-column reading grid that stacks on phones. The only changes to structured parent-page copy are image descriptions and illustration labels; headings, substantive text, prices and booking settings remain unchanged.
-
-Research references used for design principles, not copied assets:
-- [Art UK's Superpower of Looking, Pentagram](https://www.pentagram.com/work/the-superpower-of-looking): curiosity made visible through framing and discovery.
-- [Luzerner Theater, Studio Feixen](https://www.studiofeixen.ch/luzerner-theater/): Swiss poster scale, expressive alignment and disciplined practical information.
-- [St Christopher School, Pentagram](https://www.pentagram.com/work/st-christopher-school): tactile arts and crafts warmth suitable for progressive early education.
-
-Two original AI-generated raster assets were generated once each and converted to responsive WebP sources: discovery-collage (1448/800 px) and experiment-collage (1000/550 px). Generation prompts are in design/2026-09-15-collage-prompts.md. The browser selects size variants; the story illustration is lazy loaded. No stock child or fabricated team portrait is used.
-
-This iteration was visually checked on phone, tablet and desktop. DOM bounds were checked across 320, 390, 768, 820, 1024, 1440 and 1920 px for German and across the corresponding phone/tablet/desktop range for English. No horizontal overflow remains in the parent pages. All four concept/team routes were checked at 320 px; long German reading headings were fixed to wrap within their columns. Menu open/close and Escape, story click/arrow-key selection, and weekly availability disclosure were exercised. Tariffs retain semantic table headers while stacking into labelled rows on small phones. All six route/link/configuration checks pass.
-
-Private preview version 5 deployed successfully at https://lernbus-design-review.voilajonas.chatgpt.site/lernbus/?v=5. Preview source commit: 37202a93ec26782cbf35f63d2217bbf937e0af34. Site changes are committed on codex/lernbus-design-booking at 03895aa. The live HTTPS calendar loaded correctly in the new layout on desktop and a 390 px phone. Date/time selection, no customer staff picker, and the optional Bemerkungen field remain present as configured. No booking was submitted. Main text colour pairs tested at 5.49:1 or better, including body, secondary text and large coloured numbers.
+Private review site: https://lernbus-design-review.voilajonas.chatgpt.site/lernbus/ . Manifest and sanitized deployment checkout: output/lernbus-site-preview/.openai/hosting.json. Preserve owner-only access. The source branch is codex/lernbus-design-booking. No main-branch/GitHub Pages or Lernbus domain deployment has been made.
