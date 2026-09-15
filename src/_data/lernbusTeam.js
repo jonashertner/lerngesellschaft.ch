@@ -33,24 +33,24 @@ export default {
     photoDescription: "Conny Brandes, Head of Lernbus",
     sections: [
       {
-        title: "My professional journey",
+        title: "My background",
         paragraphs: [
-          "I have worked with children in daycare settings since I was 16. I started as an assistant educator, before spending 14 years running Kita Schnäggi as a self-employed co-director.",
-          "Throughout my career, I have completed various further training courses, including training as a vocational trainer and in early language development, with a focus on German. I am also a mother of two grown-up children and an eight-year-old child."
+          "I have worked with children in nurseries since I was 16. I began as a nursery practitioner, then spent 14 years running Kita Schnäggi as a self-employed co-director.",
+          "My professional development has included training to supervise apprentices and to support early language development, with a focus on German. I am also the mother of two grown-up children and an eight-year-old."
         ]
       },
       {
-        title: "Time for early development",
+        title: "Making time for early learning",
         paragraphs: [
-          "Our society still does not sufficiently recognise the importance of early education and development. In my 30 years of work, I have found that one thing above all is needed to support each child individually and purposefully: time.",
-          "Time for a child to try things out. And time for an adult to practise and strengthen fundamental abilities with the child in a caring, playful and professionally informed way."
+          "Our society still gives too little recognition to the importance of early education and support. In 30 years of working with children, I have found that one thing matters above all when helping each child develop their individual abilities: time.",
+          "Time for a child to try things out. And time for an adult to help them practise and strengthen fundamental skills, through play, with warmth and professional knowledge."
         ]
       },
       {
         title: "Individual support",
         paragraphs: [
-          "With Lernbus, we create precisely this space and time so that children can receive individual support and strengthen their core competencies.",
-          "Every child and every person is unique. There is no single approach that will, for example, help a child keep going when something is not working out. With time, professional knowledge and a caring attitude, however, we can discover together with the child what they need and help them integrate it in a lasting way."
+          "At Lernbus, we create that space and time, giving children individual support to strengthen their core skills.",
+          "Every child, like every person, is unique. No single approach will help every child persevere when something is not working out. But with time, professional knowledge and a caring approach, we can work with each child to discover what they need and help them make it part of how they learn."
         ]
       }
     ]

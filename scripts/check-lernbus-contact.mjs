@@ -62,7 +62,7 @@ test('HTTP rejection preserves inputs and re-enables the form for retry', async 
   await submit(event());
   assert.deepEqual(values(ui.fields), original);
   assert.equal(ui.status.dataset.state, 'error');
-  assert.match(ui.status.textContent, /entries have been kept/);
+  assert.match(ui.status.textContent, /Everything you entered is still in the form/);
   assert.equal(ui.button.disabled, false);
   assert.equal(ui.attributes['aria-busy'], undefined);
   assert.ok(['name', 'email', 'message'].every(name => !ui.fields[name].readOnly));
@@ -134,7 +134,7 @@ test('a pending request gates duplicate submissions and clears only editable mes
   assert.equal(ui.fields.language.value, 'en');
   assert.equal(ui.fields._subject.value, 'Lernbus enquiry');
   assert.equal(ui.status.dataset.state, 'success');
-  assert.match(ui.status.textContent, /accepted for transmission/);
+  assert.match(ui.status.textContent, /message has been submitted/);
   assert.doesNotMatch(ui.status.textContent, /delivered|inbox/i);
   assert.equal(ui.button.disabled, false);
   assert.equal(ui.button.textContent, 'Send message');
@@ -151,7 +151,7 @@ test('timeout aborts the request, preserves input and does not claim acceptance'
   assert.equal(signal.aborted, true);
   assert.deepEqual(values(ui.fields), original);
   assert.equal(ui.status.dataset.state, 'error');
-  assert.match(ui.status.textContent, /could not yet confirm/);
+  assert.match(ui.status.textContent, /cannot yet confirm/);
   assert.equal(ui.button.disabled, false);
 });
 

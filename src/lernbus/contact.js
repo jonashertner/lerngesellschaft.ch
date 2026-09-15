@@ -13,10 +13,10 @@ const messages = {
     nameRequired: 'Please enter your name.',
     messageRequired: 'Please write a message.',
     sending: 'Sending message …',
-    success: 'Thank you. Your message has been accepted for transmission. We will get back to you within a few days.',
-    error: 'We could not confirm your message. Your entries have been kept. Please try again or email info@lernbus.ch.',
-    timeout: 'We could not yet confirm transmission. Your entries have been kept. Please try again later or email info@lernbus.ch.',
-    rate: 'Too many messages were requested in a short time. Please wait a few minutes and try again. Your entries have been kept.',
+    success: 'Thank you. Your message has been submitted. We will get back to you within a few days.',
+    error: 'We could not confirm that your message was sent. Everything you entered is still in the form. Please try again or email info@lernbus.ch.',
+    timeout: 'Sending is taking longer than expected, and we cannot yet confirm that your message was sent. Everything you entered is still in the form. Please try again later or email info@lernbus.ch.',
+    rate: 'Too many messages have been submitted in a short time. Please wait a few minutes and try again. Everything you entered is still in the form.',
     unavailable: 'The form is temporarily unavailable. Please email info@lernbus.ch.'
   }
 };
