@@ -1,0 +1,45 @@
+/* Give the parent journey a clear foreground, with the full text one step away. */
+.source-home{--section-space:clamp(2.75rem,5vw,5rem)}
+.quick-facts{grid-column:1/-1;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1.25rem;margin:0;padding-top:1.75rem;border-top:1px solid var(--hairline)}
+.quick-facts div{min-width:0}
+.quick-facts dt{font-size:.875rem;line-height:1.5;color:var(--teal-soft);margin-bottom:.3rem}
+.quick-facts dd{font-size:1rem;font-weight:700;line-height:1.5;margin:0;color:var(--violet)}
+.content-disclosure{min-width:0;border-top:1px solid var(--hairline)}
+.content-disclosure>summary{position:relative;display:flex;align-items:center;justify-content:space-between;gap:1.25rem;list-style:none;cursor:pointer;padding:1.1rem 0;font-size:1.0625rem;font-weight:750;line-height:1.4;color:var(--violet)}
+.content-disclosure>summary::-webkit-details-marker{display:none}
+.content-disclosure>summary::marker{content:""}
+.content-disclosure>summary::after{content:"";flex:none;width:1rem;height:1rem;margin-inline:.25rem;background:linear-gradient(currentColor,currentColor) center/100% 2px no-repeat,linear-gradient(currentColor,currentColor) center/2px 100% no-repeat}
+.content-disclosure[open]>summary::after{background-size:100% 2px,0 0}
+.content-disclosure>summary:hover{text-decoration:underline;text-underline-offset:.25em}
+.content-disclosure>summary:focus-visible{outline:3px solid currentColor;outline-offset:4px}
+.disclosure-body{padding:.5rem 0 1rem}
+.source-home #warum .why-disclosure{margin-top:1rem}
+.source-home #warum .why-disclosure>summary{color:var(--yellow)}
+.source-home #warum .detail>.dsec{padding-bottom:.5rem}
+.source-home .goals-disclosure{grid-column:1/-1;margin-top:2rem;border-top:2px solid var(--violet)}
+.source-home .goals-disclosure .ticks{margin:.5rem 0 1rem;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem 3rem}
+.source-home .concept-link{grid-column:1/-1;margin:1rem 0 0}
+.source-home .team-biography{margin-top:1rem}
+.source-home .team-biography .team-bio-section{padding-block:1.25rem}
+.source-home .team-biography .team-bio-section:first-child{padding-top:0}
+.source-home .process-content{min-width:0}
+.source-home .learning-support{margin-top:2rem}
+.source-home .learning-support h3{font-family:var(--display);font-size:1.3rem;font-weight:750;line-height:1.3;color:var(--violet);margin:0 0 1rem}
+.source-home .learning-features{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.25rem 2rem;padding:0;margin:0;list-style:none}
+.source-home .learning-feature{border-top:1px solid var(--hairline);padding-top:1rem;min-width:0}
+.source-home .learning-feature p{font-size:1.0625rem;line-height:1.6;margin:0}
+.source-home .learning-feature b{font-weight:750}
+@media(max-width:64rem){.quick-facts{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:48rem){
+ .source-home #warum h2{font-size:clamp(2.2rem,8vw,3rem)}
+ .source-home .goals-disclosure .ticks,.source-home .learning-features{grid-template-columns:minmax(0,1fr)}
+ .source-home .learning-features{gap:.85rem}
+ .source-home .learning-support{margin-top:1.5rem}
+ .source-home .team-section .team-profile{gap:1.75rem}
+ .source-home .team-section>.wrap>.morelink{margin-top:1.25rem}
+}
+@media print{
+ .content-disclosure::details-content{content-visibility:visible}
+ .content-disclosure .disclosure-body,.content-disclosure .ticks{display:block!important}
+ .content-disclosure>summary::after{display:none}
+}

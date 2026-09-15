@@ -63,6 +63,18 @@ export function mountBooking(root) {
       const slow = setTimeout(() => { status.textContent = status.dataset.slow; }, 12000);
       frame.addEventListener('load', () => { clearTimeout(slow); status.hidden = true; }, { once: true });
       frameHost.append(frame);
+      // The provider time grid needs 350px. Fit its canvas without touching cross-origin content.
+      const fitCalendar = () => {
+        const width = frameHost.clientWidth;
+        if (width) frameHost.style.setProperty('--calendar-scale', String(Math.min(1, width / 350)));
+      };
+      fitCalendar();
+      if (typeof ResizeObserver !== 'undefined') {
+        const resize = new ResizeObserver(fitCalendar);
+        resize.observe(frameHost);
+      } else {
+        window.addEventListener('resize', fitCalendar);
+      }
       // A cross-origin load event does not prove successful rendering or a booking.
       // Direct opening and email remain available above/below the frame for recovery.
       root.querySelector('[data-calendar-launch]').hidden = true;
