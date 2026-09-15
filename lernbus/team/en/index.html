@@ -71,10 +71,13 @@
       
 <article class="team-profile" aria-labelledby="conny-name">
   <div class="team-identity">
-    <div class="team-photo-placeholder" role="img" aria-label="Photo placeholder for Conny Brandes">
-      <span class="team-initials" aria-hidden="true">CB</span>
-      <span class="team-photo-label" aria-hidden="true">Photo to follow</span>
-    </div>
+    <img class="team-photo"
+      src="/lernbus/img/conny-brandes.webp"
+      srcset="/lernbus/img/conny-brandes-small.webp 900w, /lernbus/img/conny-brandes.webp 1800w"
+      sizes="(max-width: 48rem) 34rem, (max-width: 80rem) 60vw, 51rem"
+      width="1800" height="1200"
+      alt="Conny Brandes, Head of Lernbus"
+      loading="lazy" decoding="async" />
     <h2 class="team-name" id="conny-name">Conny Brandes</h2>
     <p class="team-role">Head of Lernbus</p>
     <a class="morelink" href="mailto:connybrandes@lernbus.ch">connybrandes@lernbus.ch</a>
