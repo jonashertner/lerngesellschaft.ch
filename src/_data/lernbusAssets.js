@@ -9,6 +9,7 @@ export default () => Object.fromEntries(
     ['source-home', 'source-home.css'],
     ['contact', 'contact.js'],
     ['nav', 'nav.js'],
+    ['faq', 'faq.js'],
     ['contactCss', 'contact.css'],
     ['portrait', 'img/conny-brandes-portrait.webp'],
     ['portraitSmall', 'img/conny-brandes-portrait-small.webp'],
