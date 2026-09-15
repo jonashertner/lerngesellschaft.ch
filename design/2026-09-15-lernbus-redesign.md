@@ -76,3 +76,11 @@ Final visual corrections requested by Jonas: Fördertarif now uses the same whit
 Jonas supplied Conny Brandes's first-person biography and requested a Team section immediately before Ablauf, plus a photo placeholder. It is gently edited into three sections and six paragraphs, retaining her employment, training and family details. The DE/EN parent pages and existing team pages share one biography data source and profile include; the main navigation now links directly to the new section. The placeholder displays her initials and an explicit photo-to-follow label, without a fabricated portrait. The desktop portrait/biography columns stack below 48rem. The immutable live-copy baseline is retained, with the exact authorized additions recorded separately.
 
 Jonas then explicitly instructed: «then publish to lernbus.ch etc». This authorizes publishing the complete reviewed Lernbus redesign, calendar and team content via the existing public GitHub Pages deployment, in addition to refreshing the private design preview. The association's other pages retain their content, with the shared privacy notice accurately describing the existing email form and booking provider.
+
+## Editorial refinements and lesson booking — 15 September 2026
+
+Jonas requested removing the repeated short cancellation phrases and the funded-places item from Zielgruppe, replacing Lernmentor with Mentor, and supplying shorter wording about pedagogical training and quality assurance. These changes apply to the DE/EN parent and concept pages and the team terminology. The AGB and the single explanation of the shared six-month plan in the FAQ remain as approved.
+
+The calendar now refers to booking a lesson: heading, iframe title, fallback email subject and weekly-times label. The 60-minute duration, weekly availability and existing anchor remain. Jonas's latest exact lead takes precedence: «Wählen Sie einen freien Termin für ein Gespräch.» The matching English lead is shortened too. Original references to an introductory conversation in the pedagogical process and tariff explanations remain.
+
+The corresponding Microsoft Bookings service update requires renewed sign-in to jonashertner@lernbus.ch. At this checkpoint the site source is validated and the provider still shows Kennenlerngespräch Lernbus; the provider change and publication are being coordinated before release.
