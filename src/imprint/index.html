@@ -24,71 +24,43 @@
   <header class="legal-intro">
     <a class="legal-back" href="{{ landing.root }}"><span aria-hidden="true">←</span> {{ landing.backLabel }}</a>
     <h1>Imprint &amp; privacy</h1>
-    <p class="legal-lead">And how we handle the information you send through our forms.</p>
   </header>
   <div class="legal-sections">
     <section class="legal-section" id="verantwortlich">
-      <h2>Responsible for this website</h2>
+      <h2>Website operator</h2>
       <div class="legal-copy">
-          <p>Lerngesellschaft / Learning Society<br />
-             Münsterplatz 17<br />
-             4051 Basel<br />
-             Switzerland</p>
-          <p>Association under art. 60 ff. of the Swiss Civil Code, not entered in the commercial register.<br />
-             Represented by Jonas Hertner.</p>
-          <p>Contact: <a href="mailto:team@jonashertner.com">team@jonashertner.com</a></p>
+        <p>Lerngesellschaft / Learning Society<br>Association represented by Jonas Hertner<br>Münsterplatz 17, 4051 Basel, Switzerland<br><a href="mailto:team@jonashertner.com">team@jonashertner.com</a></p>
       </div>
     </section>
-
     <section class="legal-section" id="datenschutz">
-      <h2>Privacy at a glance</h2>
+      <h2>Website</h2>
       <div class="legal-copy">
-          <p>We do not use analytics or advertising trackers. Fonts and images are loaded from our own website hosting. Details entered in the Lernbus contact form are transmitted only when you choose “Send message”.</p>
-          {% if lernbusBooking.configured %}<p>To request a lesson, we link to {{ lernbusBooking.providerName | escape }}. The embedded calendar loads only when you select “View available times”. The booking provider then receives technical access data, including your IP address. Information entered into the calendar is processed by that provider to manage your lesson request. You can contact us by email or post instead.</p>{% endif %}
+        <span class="legacy-anchor" id="hosting" aria-hidden="true"></span>
+        <p>No analytics or advertising trackers. Fonts and images are hosted locally. GitHub Pages (GitHub, Inc., USA) processes technical data such as IP address, time and page requested to deliver the website.</p>
       </div>
     </section>
-
     <section class="legal-section" id="formulare">
-      <h2>Contact and enquiries</h2>
+      <h2>Enquiries</h2>
       <div class="legal-copy">
-          <p>The contact forms on the German and English Lernbus main pages send your message over an encrypted HTTPS connection to Formspree (Formspree, Inc., United States). Formspree processes your name, email address and message, forwards the enquiry to {{ lernbusContact.recipient | escape }} and temporarily retains it in a submission archive. Technical information such as your IP address is also processed to provide and protect the service. Processing takes place in the United States, among other locations. For details, see <a href="https://formspree.io/legal/privacy-policy/">Formspree’s privacy policy</a>.</p>
-          <p>You can contact us directly by email or post instead. Email links and the enquiry forms on the Forscherbühne pages open your own email application. Those messages are sent only when you send them yourself.</p>
+        <span class="legacy-anchor" id="anfragen" aria-hidden="true"></span>
+        <p>We use your details only to handle your enquiry. Access is limited to the people responsible within the association.</p>
+        <p><strong>Contact form:</strong> Formspree processes your name, email, message and technical data in the USA to deliver messages and protect the service. After you select “Send message”, your enquiry is forwarded to {{ lernbusContact.recipient | escape }} and temporarily stored in a submission archive. <a href="https://formspree.io/legal/privacy-policy/">Formspree privacy policy</a>.</p>
+        <p><strong>Email:</strong> Processed and stored through Microsoft 365 (Microsoft Corporation), including in the USA.</p>
+        <p>You can also contact us directly by email or post. Email links and Forscherbühne enquiries open your email application; you send the message yourself.</p>
       </div>
     </section>
-
-    <section class="legal-section" id="anfragen">
-      <h2>Who gets to see your enquiry</h2>
+    {% if lernbusBooking.configured %}<section class="legal-section" id="termine">
+      <h2>Bookings</h2>
       <div class="legal-copy">
-          <p>We use Microsoft 365 (Microsoft Corporation) for email. Your emails are processed and stored there, including outside Switzerland and in the United States. You can write to us by post at the address above if you prefer.</p>
-          <p>Enquiries are read only by people in the association who are dealing with them. We pass them on to nobody and use them for nothing other than your enquiry.</p>
+        <p>The embedded {{ lernbusBooking.providerName | escape }} calendar loads only after you select “View available times”. Microsoft processes your IP address and the details you enter to handle your lesson request, including in the USA.</p>
       </div>
-    </section>
-
+    </section>{% endif %}
     <section class="legal-section" id="aufbewahrung">
-      <h2>How long we keep them</h2>
+      <h2>Retention &amp; rights</h2>
       <div class="legal-copy">
-          <p>We keep your enquiry in our mailbox while we deal with it, then delete it. If it leads to an ongoing engagement, we retain the correspondence for the duration of that engagement.</p>
-      </div>
-    </section>
-
-    <section class="legal-section" id="hosting">
-      <h2>Hosting</h2>
-      <div class="legal-copy">
-          <p>This website is hosted by GitHub Pages (GitHub, Inc., United States). As with any web server, the host processes technical access data, including your IP address, the time of your visit and the page requested. We do not analyse or have access to this data.</p>
-      </div>
-    </section>
-
-    <section class="legal-section" id="rechte">
-      <h2>Your rights</h2>
-      <div class="legal-copy">
-          <p>You can ask what data we hold about you and request its correction or deletion at any time. Email <a href="mailto:team@jonashertner.com">team@jonashertner.com</a> to make a request. If you are not satisfied with our response, you can contact the Swiss Federal Data Protection and Information Commissioner.</p>
-      </div>
-    </section>
-
-    <section class="legal-section" id="texte">
-      <h2>Images and text</h2>
-      <div class="legal-copy">
-          <p>The text and designs on this website belong to Lerngesellschaft. Please ask if you would like to use them. We almost always say yes.</p>
+        <span class="legacy-anchor" id="rechte" aria-hidden="true"></span>
+        <p>Enquiries in our mailbox are deleted once handled. If we work together, correspondence is retained until that engagement ends.</p>
+        <p>Request access, correction or deletion at <a href="mailto:team@jonashertner.com">team@jonashertner.com</a>. Complaints: <a href="https://www.edoeb.admin.ch/en">Federal Data Protection and Information Commissioner</a>.</p>
       </div>
     </section>
   </div>
