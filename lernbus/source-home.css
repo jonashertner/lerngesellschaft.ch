@@ -127,6 +127,24 @@
 .source-home #traegerschaft .lead{grid-column:2;margin:0!important;font-size:1.125rem}
 .source-home #traegerschaft .wrap>div{grid-column:2}
 .source-home .foot{background:var(--night)}
+/* A quiet link from family fees leads to a distinct invitation for donors. */
+.source-home .funding-link{grid-column:1/-1;margin:1.5rem 0 0;font-size:1rem}
+.source-home .funding-link a{display:inline-flex;align-items:center;gap:.75rem;min-height:44px;color:var(--bg);text-decoration:underline;text-underline-offset:.25em}
+.source-home .funding-link a:hover{color:var(--yellow)}
+.source-home .funding-link a:focus-visible{outline:3px solid var(--yellow);outline-offset:5px}
+.source-home .support-section{background:var(--bg);color:var(--violet)}
+.support-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:2rem clamp(2rem,5vw,5rem);align-items:start}
+.support-grid>*{min-width:0}
+.support-heading .eyebrow{color:var(--violet);--dot:var(--pink-ink);margin-bottom:1.25rem}
+.support-heading h2{font-family:var(--display);font-size:clamp(2.5rem,4.5vw,4.5rem);line-height:1.12;letter-spacing:-.025em;color:var(--violet);max-width:15ch;text-wrap:balance;hyphens:auto;overflow-wrap:anywhere;margin:0}
+.support-content{border-top:2px solid var(--violet);padding-top:1.5rem}
+.support-copy{font-size:1.2rem;line-height:1.65;color:var(--teal-ink);max-width:45ch;margin:0}
+.source-home .support-cta{display:inline-flex;align-items:center;justify-content:center;gap:1rem;background:var(--violet);color:var(--yellow);border:2px solid var(--violet);margin-top:1.75rem;min-height:52px;font-family:var(--body);font-size:1rem;line-height:1.4;letter-spacing:0;text-transform:none;text-align:center;font-weight:750}
+.source-home .support-cta:hover{background:var(--violet-deep);border-color:var(--violet-deep);color:var(--yellow)}
+.source-home .support-cta:focus-visible{outline:3px solid var(--violet);outline-offset:5px}
+.support-tax-note{font-size:.9375rem;line-height:1.6;color:var(--teal-soft);max-width:52ch;margin:1.25rem 0 0}
+@media(max-width:48rem){.support-grid{grid-template-columns:minmax(0,1fr);gap:2rem}.support-heading h2{font-size:clamp(2.5rem,8vw,3.8rem);max-width:18ch}.support-copy{font-size:1.125rem;max-width:none}}
+@media(max-width:32rem){.source-home .support-cta{width:100%}}
 /* Appointment booking is the primary action; general contact has its own section. */
 .booking-section{margin-top:2.5rem}
 .booking-card{border:2px solid var(--violet);background:var(--bg);color:var(--teal-ink);--hairline:rgba(73,63,128,.3);min-width:0}
