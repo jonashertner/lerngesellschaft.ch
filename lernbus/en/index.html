@@ -24,7 +24,8 @@
 <link rel="stylesheet" href="../home-refinement.css?v=497b2f6ca348">
 <link rel="stylesheet" href="../tariff-guide.css?v=c07ede71a4c8">
 <link rel="stylesheet" href="../contact.css?v=531df7ca1fcc">
-<script src="../booking.js?v=55a86adfbe05" type="module"></script>
+<link rel="stylesheet" href="../lesson-booking.css?v=e212ce9c56d1">
+<script src="../lesson-booking.js?v=91589e78b43e" type="module"></script>
 <script src="../contact.js?v=a202b2972263" type="module"></script>
 </head>
 <body class="detail-page source-home locale-en">
@@ -467,44 +468,57 @@
       <h2 class="big">Request a lesson</h2>
       <p class="lead" style="margin-top:1.2rem; max-width:56ch">Choose a lesson date and time that suits you. We will then contact you to arrange an introductory meeting.</p>
       
-
-<div class="booking-section" data-booking-addition>
-  <div class="booking-card" data-booking data-locale="en" data-booking-url="https://bookings.cloud.microsoft/book/Lernbus@NETORGFT21038058.onmicrosoft.com/s/onEw8mdH50SLKmrUcJhpsg2?ismsaljsauthenabled" data-embed-url="https://bookings.cloud.microsoft/book/Lernbus@NETORGFT21038058.onmicrosoft.com/s/onEw8mdH50SLKmrUcJhpsg2?ismsaljsauthenabled" data-provider-name="Microsoft Bookings">
-    <div class="booking-card-heading">
-      <h3>Choose a date and time</h3>
-      <p class="booking-meta">60 minutes · Münsterplatz 17, Basel</p>
+<div class="lesson-request" data-booking-addition data-lesson-request data-locale="en" data-api="https://lernbus-booking-api.voilajonas.chatgpt.site" data-recipient="jonashertner@lernbus.ch" data-time-zone="Europe/Zurich">
+  <div class="lesson-request__heading">
+    <h3>Choose a date and time</h3>
+    <p>60 minutes · Münsterplatz 17, Basel</p>
+  </div>
+  <div class="lesson-request__body">
+    <p class="lesson-request__intro">For parents and legal guardians. Reserving a time does not yet enrol your child.</p>
+    <div data-request-fallback>
+      <p data-request-fallback-text>Please enable JavaScript to choose a time here, or send your request by email.</p>
+      <a class="lesson-request__email" href="mailto:jonashertner@lernbus.ch?subject=Lernbus%3A%20request%20a%20lesson">Request a lesson by email</a>
     </div>
-    <div class="booking-body">
-      <div data-booking-fallback hidden>
-        <p class="booking-status">Online appointment booking is being set up.</p><p>Until appointments are available here, you can reach us directly by email.</p>
-        <a class="button" href="mailto:jonashertner@lernbus.ch?subject=Lernbus%3A%20request%20a%20lesson%20(60%20minutes)">Request a lesson by email</a>
-        <p class="small">Please suggest two or three suitable times. Your appointment is confirmed once we have agreed it together.</p>
-      </div>
-      <div data-booking-ready>
-        <p class="booking-boundary">For parents and legal guardians. Booking reserves your time; it does not yet enrol your child.</p>
-        <p class="booking-opening" data-calendar-opening data-first-lesson="2026-10-12" hidden>Lessons start on 12 October 2026. Go to October in the calendar.</p>
-        <div class="calendar-launch" data-calendar-launch hidden>
-          <button class="button" type="button" data-calendar-load aria-controls="lesson-calendar" aria-expanded="false" hidden>View available times</button>
-          <p class="booking-disclosure">Selecting “View available times” loads the Microsoft Bookings calendar.</p>
-        </div>
-        <div class="calendar-tools">
-          <a class="text-link" data-calendar-external href="https://bookings.cloud.microsoft/book/Lernbus@NETORGFT21038058.onmicrosoft.com/s/onEw8mdH50SLKmrUcJhpsg2?ismsaljsauthenabled" target="_blank" rel="noopener noreferrer">Open calendar in a new tab <span aria-hidden="true">↗</span></a>
-          <a class="text-link" href="/imprint/#datenschutz">Privacy</a>
-          <a class="text-link" href="/lernbus/en/terms/">Lernbus terms and conditions</a>
-        </div>
-        <p class="calendar-status small" data-calendar-status data-loading="Loading the calendar…" data-slow="The calendar is taking a little longer. You can also open it directly." role="status" hidden></p>
-      </div>
-      <p class="booking-error" data-booking-error role="status" hidden>The calendar is currently unavailable. Please try again or contact us by email.</p>
+    <div data-request-ui hidden>
+      <form data-request-form data-locale="en" aria-describedby="lesson-request-note">
+        <p class="lesson-request__load-status" data-calendar-load-status role="status"></p>
+        <button type="button" class="lesson-request__email" data-calendar-reload hidden>Try again</button>
+        <fieldset class="lesson-request__controls" data-request-controls>
+          <legend class="lesson-request__sr">Request a lesson</legend>
+          <div class="lesson-request__picker">
+            <div class="lesson-request__dates">
+              <p class="lesson-request__step">1 · Date</p>
+              <div class="lesson-request__navigation">
+                <button type="button" data-request-previous aria-label="Previous month"><span aria-hidden="true">←</span></button>
+                <h4 id="lesson-request-month" data-request-month aria-live="polite" aria-atomic="true"></h4>
+                <button type="button" data-request-next aria-label="Next month"><span aria-hidden="true">→</span></button>
+              </div>
+              <div role="grid" aria-labelledby="lesson-request-month" aria-describedby="lesson-request-keys" data-request-grid></div>
+              <p id="lesson-request-keys" class="lesson-request__sr">Use the arrow keys to move between dates. Home and End move to the start and end of the week. Page Up and Page Down change the month. Enter selects a date.</p>
+            </div>
+            <fieldset class="lesson-request__time-fieldset">
+              <legend><span class="lesson-request__step">2 · Time</span><span class="lesson-request__time-title" data-request-time-title></span></legend>
+              <div class="lesson-request__times" data-request-times></div>
+              <p class="lesson-request__zone">Available times · Swiss local time</p>
+            </fieldset>
+          </div>
+          <p class="lesson-request__selection" data-request-summary aria-live="polite" aria-atomic="true"></p>
+          <div class="lesson-request__details">
+            <p class="lesson-request__step">3 · Your contact details</p>
+            <div class="lesson-request__fields">
+              <label for="lesson-request-name">Your name<input id="lesson-request-name" name="name" type="text" autocomplete="name" maxlength="120" required /></label>
+              <label for="lesson-request-email">Your email address<input id="lesson-request-email" name="email" type="email" autocomplete="email" maxlength="254" required /></label>
+              <label class="lesson-request__notes" for="lesson-request-notes">Notes <span>(optional)</span><textarea id="lesson-request-notes" name="notes" rows="3" maxlength="2000"></textarea></label>
+            </div>
+            <div class="lesson-request__sr" aria-hidden="true"><label for="lesson-request-website">Website</label><input id="lesson-request-website" name="website" type="text" tabindex="-1" autocomplete="off" maxlength="200" /></div>
+            <button class="lesson-request__submit" type="submit">Reserve this time</button>
+          </div>
+        </fieldset>
+        <p class="lesson-request__status" data-request-status role="status" aria-live="polite" aria-atomic="true" tabindex="-1"></p>
+        <button class="lesson-request__email lesson-request__recovery" type="button" data-booking-recover hidden>Check reservation status</button>
+      </form>
+      <p class="lesson-request__note" id="lesson-request-note">Your reservation is processed securely through Microsoft Bookings. <a href="/imprint/#termine">Privacy</a> · <a href="mailto:jonashertner@lernbus.ch">Request by email</a></p>
     </div>
-    <div class="calendar-frame" id="lesson-calendar" data-calendar-frame hidden></div>
-    <div class="calendar-assistance" data-calendar-assistance hidden>
-      <p class="small">If the calendar does not appear, open it directly or email us.</p>
-      <div class="calendar-tools">
-        <a class="text-link" href="https://bookings.cloud.microsoft/book/Lernbus@NETORGFT21038058.onmicrosoft.com/s/onEw8mdH50SLKmrUcJhpsg2?ismsaljsauthenabled" target="_blank" rel="noopener noreferrer">Open calendar in a new tab <span aria-hidden="true">↗</span></a>
-        <a class="text-link" href="mailto:jonashertner@lernbus.ch?subject=Lernbus%3A%20request%20a%20lesson%20(60%20minutes)">Request a lesson by email</a>
-      </div>
-    </div>
-    <details class="weekly-times"><summary>Our lesson times <span aria-hidden="true">+</span></summary><p class="small">Each lesson lasts one hour. All times are local to Switzerland. The calendar shows current availability.</p><dl><div><dt>Monday</dt><dd><span>08:15–09:15</span><span>09:30–10:30</span><span>10:45–11:45</span><span>13:00–14:00</span><span>14:15–15:15</span><span>15:30–16:30</span><span>16:45–17:45</span></dd></div><div><dt>Wednesday</dt><dd><span>08:45–09:45</span><span>10:00–11:00</span><span>11:15–12:15</span><span>13:15–14:15</span><span>14:30–15:30</span><span>16:30–17:30</span><span>17:45–18:45</span></dd></div><div><dt>Thursday</dt><dd><span>08:15–09:15</span><span>09:30–10:30</span><span>10:45–11:45</span><span>13:00–14:00</span><span>14:15–15:15</span><span>15:30–16:30</span><span>16:45–17:45</span></dd></div></dl></details>
   </div>
 </div>
 
