@@ -1,0 +1,14 @@
+<section class="team-testimonials" id="elternstimmen" aria-labelledby="testimonials-heading">
+  <h2 class="team-testimonials-heading" id="testimonials-heading">{% if locale == "de" %}Elternstimmen{% else %}What parents say{% endif %}</h2>
+  {% if locale == "en" %}<p class="team-testimonials-language">In their own words, in German.</p>{% endif %}
+  <div class="team-testimonials-list">
+    {% for testimonial in lernbusTestimonials.items %}
+    <figure class="team-testimonial" lang="de-CH">
+      <blockquote>
+        {% for paragraph in testimonial.paragraphs %}<p>{{ paragraph | escape }}</p>{% endfor %}
+      </blockquote>
+      <figcaption>{{ testimonial.name | escape }}</figcaption>
+    </figure>
+    {% endfor %}
+  </div>
+</section>

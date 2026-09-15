@@ -107,6 +107,16 @@
 .detail-page .team-bio-heading{font-family:var(--display);font-size:clamp(1.65rem,2.3vw,2.3rem);font-weight:700;line-height:1.15;letter-spacing:-.02em;color:var(--violet);margin:0 0 1.2rem;text-wrap:balance}
 .detail-page .team-bio-section p{font-size:1.0625rem;line-height:1.65;max-width:62ch;margin:0}
 .detail-page .team-bio-section p+p{margin-top:1.15rem}
+.detail-page .team-testimonials{margin-top:clamp(3.5rem,8vw,7rem);padding-top:clamp(2rem,5vw,4rem);border-top:2px solid var(--violet);scroll-margin-top:7rem}
+.detail-page .team-testimonials-heading{font-family:var(--display);font-size:clamp(2.1rem,4vw,3.5rem);line-height:1.1;letter-spacing:-.025em;color:var(--violet);margin:0 0 1.5rem;text-wrap:balance}
+.detail-page .team-testimonials-language{font-size:1rem;line-height:1.6;margin:0 0 1.5rem}
+.detail-page .team-testimonials-list{max-width:72ch}
+.detail-page .team-testimonial{margin:0;padding:2rem 0;border-bottom:1px solid var(--hairline)}
+.detail-page .team-testimonial:first-child{padding-top:0}
+.detail-page .team-testimonial blockquote{margin:0;padding:0;border:0;color:var(--ink)}
+.detail-page .team-testimonial blockquote p{font-size:1.0625rem;line-height:1.75;margin:0;max-width:none;overflow-wrap:break-word}
+.detail-page .team-testimonial blockquote p+p{margin-top:1rem}
+.detail-page .team-testimonial figcaption{font-size:1rem;line-height:1.5;font-weight:700;color:var(--violet);margin-top:1.25rem}
 @media(max-width:48rem){
  .detail-page .team-profile{grid-template-columns:minmax(0,1fr);gap:2.5rem}
  .detail-page .team-photo-frame{max-width:18rem}
