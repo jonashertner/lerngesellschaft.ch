@@ -1,0 +1,188 @@
+/* Society redesign: a cinematic opening and an editorial rhythm. */
+.society-home, .society-page {
+  --bg:#faf8f3; --bg-2:#efebe4; --ink:#242031; --ink-soft:#615967;
+  --violet:#6544a3; --pink-ink:#784051; --line:#d7d0d7;
+  --wrap:82rem; --pad:clamp(1.25rem,4.4vw,4.5rem);
+}
+.society-home h1,.society-home h2,.society-home h3,
+.society-page h1,.society-page h2,.society-page h3 {font-weight:650;letter-spacing:-.045em;}
+.society-home .site-head .wrap,.society-page .site-head .wrap {padding-block:1.5rem;}
+.society-home .brand b,.society-page .brand b {font-weight:650;letter-spacing:-.045em;font-size:1.5rem;}
+.society-home .brand span,.society-page .brand span {font-weight:550;letter-spacing:.12em;font-size:.68rem;}
+.society-home .btn,.society-page .btn {border-radius:3px;box-shadow:none;transform:none;transition:background-color .2s,color .2s;font-weight:650;font-size:1rem;}
+.society-home .btn:hover,.society-page .btn:hover {transform:none;box-shadow:none;}
+.society-home .btn-pink,.society-page .btn-pink {background:var(--ink);color:#fff;}
+.society-home .hero .btn-pink {background:#f4d575;color:#242031;}
+.society-home .hero .btn-pink:hover {background:#ffe69b;}
+.society-home .hero .btn-ghost {box-shadow:none;border:1px solid #ffffffb3;background:#21162f66;}
+.society-home .hero .btn-ghost:hover {background:#fff;color:#242031;}
+.society-home .site-head .navlink::before,.society-page .site-head .navlink::before {display:none;}
+.society-home .site-head.nav-inline .navlink,.society-page .site-head.nav-inline .navlink {font-weight:550;border-radius:2px;}
+.society-home .site-head.nav-inline .navlink:hover,.society-home .site-head.nav-inline .navlink:focus-visible,
+.society-home .site-head.nav-inline .navlink[aria-current] {background:#fff;color:#242031;}
+.society-page .site-head.nav-inline .navlink:hover,.society-page .site-head.nav-inline .navlink:focus-visible,
+.society-page .site-head.nav-inline .navlink[aria-current] {background:var(--ink);color:#fff;}
+.society-home .site-head .nav-cta {background:#f4d575;color:#242031;}
+.society-home .site-head.nav-fixed.is-scrolled .nav-cta {background:var(--ink);color:#fff;}
+.society-home .hero {min-height:max(44rem,94svh);align-items:center;padding-block:9rem 7.5rem;}
+.society-home .hero-video {filter:saturate(.8) contrast(1.04);object-position:65% 40%;}
+.society-home .liquid-fallback {background-position:65% 40%;}
+.society-home .grade {opacity:.16;}
+.society-home .hero-scrim {background:linear-gradient(90deg,rgba(17,13,26,.87),rgba(17,13,26,.57) 53%,rgba(17,13,26,.2)),linear-gradient(180deg,rgba(17,13,26,.6),transparent 25%,transparent 65%,rgba(17,13,26,.6));}
+.society-home .hero-kicker {color:#f4d575;text-transform:uppercase;letter-spacing:.14em;font-size:.8rem;font-weight:650;margin-bottom:1.5rem;}
+.society-home .hero h1 {font-size:clamp(3.25rem,6.8vw,6.1rem);line-height:1.01;max-width:14ch;letter-spacing:-.05em;}
+.society-home .hero h1 span {color:#f4d575;}
+.society-home .hero .lead {max-width:38ch;font-size:clamp(1.1rem,1.6vw,1.3rem);line-height:1.5;margin-top:1.6rem;}
+.society-home .hero-cta {margin-top:1.9rem;gap:.8rem;}
+.society-home .film-toggle {border-radius:3px;background:#18121de6;}
+.society-home .hero-controls {bottom:1.7rem;}
+.society-home .hero-place {margin-right:auto;color:#fff;font-size:.85rem;letter-spacing:.02em;align-self:center;}
+.society-home [id],.society-page [id] {scroll-margin-top:7rem;}
+.society-home .society-section {padding-block:clamp(3.5rem,7vw,6.5rem);}
+.society-home .section-label {font-size:.8rem;font-weight:650;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:1rem;}
+.society-home .society-section h2 {font-size:clamp(2.25rem,4.2vw,4.25rem);line-height:1.05;}
+.society-home .section-opening {display:grid;grid-template-columns:1.2fr 1fr;gap:3rem;align-items:end;margin-bottom:3rem;}
+.society-home .section-intro {font-size:clamp(1.05rem,1.5vw,1.2rem);line-height:1.6;max-width:44ch;}
+.society-home .programme-list {border-top:1px solid var(--ink);}
+.society-home .programme {display:grid;grid-template-columns:1fr 1.15fr .82fr;gap:2.5rem;padding:2rem 0;border-bottom:1px solid var(--line);}
+.society-home .programme-featured {border-bottom-color:var(--ink);}
+.society-home .programme-name {display:flex;gap:1.25rem;align-items:baseline;}
+.society-home .programme-number {color:var(--ink-soft);font-size:.8rem;font-weight:600;flex:none;}
+.society-home .programme h3 {font-size:clamp(1.65rem,2.4vw,2.15rem);line-height:1.12;}
+.society-home .programme h3 a:hover {color:var(--violet);}
+.society-home .programme-audience {font-weight:650;font-size:.9rem;margin-bottom:.8rem;}
+.society-home .programme-description>p:not(.programme-audience) {font-size:1rem;line-height:1.6;}
+.society-home .programme-description .programme-facts {margin-top:1rem;font-size:.85rem!important;color:var(--ink-soft);}
+.society-home .programme-next {display:flex;flex-direction:column;justify-content:space-between;align-items:flex-start;gap:1.5rem;}
+.society-home .programme-status {font-size:.875rem;color:var(--ink-soft);line-height:1.4;}
+.society-home .programme-featured .programme-status {color:var(--violet);font-weight:650;}
+.society-home .editorial-link {display:inline-flex;align-items:center;justify-content:space-between;gap:1.2rem;padding-block:.65rem;border-bottom:1px solid currentColor;font-weight:600;font-size:.95rem;line-height:1.4;min-height:44px;}
+.society-home .editorial-link span {font-family:var(--body);font-size:1.2rem;flex:none;}
+.society-home .editorial-link:hover {color:var(--violet);}
+.society-home .practice {background:var(--bg-2);}
+.society-home .practice-layout {display:grid;grid-template-columns:1.12fr 1fr;gap:clamp(2rem,6vw,6rem);align-items:start;}
+.society-home figure {margin:0;}
+.society-home .room-figure img {width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:45% 50%;}
+.society-home figcaption {padding-top:.8rem;font-size:.8rem;color:var(--ink-soft);line-height:1.5;}
+.society-home .practice-copy>.section-intro {margin-top:1.5rem;}
+.society-home .principle-list {margin-block:2rem;display:grid;gap:1.15rem;}
+.society-home .principle-list h3 {font:650 1.05rem/1.4 var(--body);letter-spacing:0;margin-bottom:.35rem;}
+.society-home .principle-list p {font-size:1rem;color:var(--ink-soft);max-width:43ch;}
+.society-home .people-layout {display:grid;grid-template-columns:1.4fr 1fr;gap:clamp(2.5rem,6vw,6rem);}
+.society-home .person-profile {display:grid;grid-template-columns:1fr 1fr;gap:1.75rem;align-items:start;}
+.society-home .person-profile img {width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:50% 35%;}
+.society-home .person-role {font-size:.85rem;color:var(--ink-soft);margin-bottom:.6rem;}
+.society-home .people-layout h3 {font-size:1.9rem;line-height:1.15;margin-bottom:1rem;}
+.society-home .person-profile .editorial-link {margin-top:1rem;}
+.society-home .person-profile p:not(.person-role),.society-home .association-copy p {font-size:1rem;line-height:1.65;}
+.society-home .association-copy>p+p {margin-top:1rem;}
+.society-home .association-contact {margin-top:2rem;padding-top:1.3rem;border-top:1px solid var(--line);}
+.society-home .association-contact p {font-size:.85rem;}
+.society-home .investment {background:#30223e;color:#fff;}
+.society-home .investment .section-label {color:#f4d575;}
+.society-home .investment-layout {display:grid;grid-template-columns:1.2fr 1fr;gap:clamp(3rem,10vw,10rem);}
+.society-home .investment .section-intro {margin-block:1.5rem 2rem;color:#f0eaf3;}
+.society-home .investment .btn-yellow {background:#f4d575;color:#242031;}
+.society-home .investment .btn-yellow:hover {background:#ffe69b;}
+.society-home .investment-amount {font:550 clamp(3.5rem,6vw,5.5rem)/1.1 var(--display);letter-spacing:-.06em;color:#f4d575;margin-bottom:1rem;}
+.society-home .investment-detail h3 {font:600 1.1rem/1.4 var(--body);letter-spacing:0;max-width:28ch;margin-bottom:.7rem;}
+.society-home .investment-detail>p:not(.investment-amount) {font-size:1rem;line-height:1.6;color:#f0eaf3;}
+.society-home .investment-detail .tax-note {font-size:.875rem!important;padding-top:1.5rem;margin-top:2rem;border-top:1px solid #716179;}
+.society-home .investment :focus-visible {outline-color:#f4d575;}
+.society-home .society-footer,.society-page .society-footer {background:var(--bg);border:0;padding-block:3rem;}
+.society-home .society-footer .wrap,.society-page .society-footer .wrap {display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:2rem;font-size:.875rem;align-items:start;}
+.society-home .footer-name,.society-page .footer-name {display:inline-block;font:650 1.5rem/1.2 var(--display);letter-spacing:-.035em;margin-bottom:.7rem;}
+.society-home .footer-brand p,.society-page .footer-brand p {font-size:.875rem;max-width:26ch;}
+.society-home .footer-contact,.society-page .footer-contact,.society-home .society-footer nav,.society-page .society-footer nav {display:flex;flex-direction:column;align-items:flex-start;gap:.65rem;}
+.society-home .society-footer a,.society-page .society-footer a {text-decoration:none;overflow-wrap:anywhere;}
+.society-home .society-footer a:hover,.society-page .society-footer a:hover {text-decoration:underline;text-underline-offset:4px;}
+.society-home .society-footer nav a,.society-page .society-footer nav a {padding-block:.25rem;}
+.society-page .accent-blob {display:none;}
+.society-page .subhero {padding-top:9rem;padding-bottom:3.5rem;}
+.society-page .subhero h1 {font-size:clamp(2.6rem,5.7vw,5.2rem);max-width:17ch;}
+.society-page .subhero .lead {max-width:56ch;font-size:clamp(1.1rem,1.8vw,1.35rem);line-height:1.6;}
+.society-page .eyebrow::before {display:none;}
+.society-page .eyebrow {font-weight:600;letter-spacing:.09em;}
+.society-page .back {font-weight:550;font-size:.875rem;color:var(--ink-soft);}
+.society-page .detail {max-width:68rem;margin:0;}
+.society-page .dsec {display:grid;grid-template-columns:minmax(13rem,1fr) minmax(0,2fr);column-gap:4rem;border-top:1px solid var(--line);padding-top:2rem;margin-top:2rem;}
+.society-page .dsec h2 {grid-column:1;grid-row:1/20;font-size:clamp(1.5rem,2.4vw,2rem);line-height:1.18;max-width:20ch;}
+.society-page .dsec p {grid-column:2;max-width:65ch;font-size:1.1rem;line-height:1.75;}
+.society-page .dsec p+p {margin-top:1rem;}
+.society-page .vignette {background:var(--bg-2);border-left:3px solid var(--violet);border-radius:0;font:500 clamp(1.25rem,2vw,1.65rem)/1.5 var(--display);padding:2rem;margin-block:3rem;max-width:68rem;}
+.society-page .vignette-label {display:block;font:600 .8rem/1.5 var(--body);letter-spacing:.08em;text-transform:uppercase;margin-bottom:.75rem;color:var(--ink-soft);}
+.society-page .refs {max-width:68rem;border-top:1px solid var(--ink);padding-top:2rem;}
+.society-page .refs li {font-size:1rem;line-height:1.6;}
+.society-page .programme-notice {margin-top:1.5rem;padding:1.2rem 1.5rem;border-left:3px solid var(--violet);background:var(--bg-2);max-width:55rem;}
+.society-page .programme-notice strong {display:block;font-weight:650;margin-bottom:.25rem;}
+.society-page .programme-notice p {font-size:1rem;line-height:1.5;}
+.society-page .programme-summary {display:flex;flex-wrap:wrap;gap:1.5rem 3rem;margin-top:2rem;padding-top:1.25rem;border-top:1px solid var(--line);}
+.society-page .programme-summary dt {font-size:.8rem;color:var(--ink-soft);margin-bottom:.3rem;}
+.society-page .programme-summary dd {margin:0;font-size:1rem;font-weight:600;}
+.society-page .section-index {display:flex;flex-wrap:wrap;gap:.5rem 1.5rem;max-width:68rem;margin:0 0 3rem;padding:1.2rem 0;border-block:1px solid var(--line);}
+.society-page .section-index a {padding-block:.5rem;font-size:.9rem;text-decoration:underline;text-underline-offset:4px;}
+.society-page .btn-ghost {border:1px solid var(--ink);background:transparent;color:var(--ink);box-shadow:none;}
+.society-page .btn-ghost:hover {background:var(--ink);color:#fff;}
+.society-page .booking {border-radius:0;background:var(--bg-2);box-shadow:none;}
+.society-page .booking input,.society-page .booking select,.society-page .booking textarea {border-radius:2px;font-size:1rem;}
+.society-page .booking button:disabled {opacity:.6;cursor:not-allowed;}
+.society-page .book-card {border-radius:0;background:var(--bg-2);box-shadow:none;}
+.society-page .book-card fieldset {border:0;margin:0;padding:0;min-width:0;}
+.society-page .book-card input,.society-page .book-card select,.society-page .book-card textarea {border-radius:2px;font-size:1rem;}
+.society-page .book-card .book-note {font-size:.9rem;max-width:65ch;}
+.society-page .book-note a {text-decoration:underline;text-underline-offset:3px;}
+.society-page .book-card button:disabled {opacity:.6;cursor:not-allowed;}
+.society-home .site-head:not(.nav-inline):has(.menu[open]) .brand b,
+.society-home .site-head:not(.nav-inline):has(.menu[open]) .brand span,
+.society-home .site-head:not(.nav-inline):has(.menu[open]) .lang {color:var(--ink);}
+.society-home .site-head:not(.nav-inline):has(.menu[open]) .menu-btn {background:var(--ink);color:#fff;}
+.society-home .site-head:not(.menu-open):not(.is-scrolled) {background:linear-gradient(180deg,#110d1aa6,transparent);}
+.society-home .site-head:not(.menu-open):not(.is-scrolled) :focus-visible {outline-color:#f4d575;}
+.society-home .site-head:not(.nav-inline):has(.menu[open]) {background:var(--bg);}
+.society-home .site-head:not(.nav-inline):has(.menu[open]) :focus-visible {outline-color:var(--violet);}
+@media(max-width:1000px){
+  .society-home .programme {grid-template-columns:1fr 1.4fr;gap:1rem 2.5rem;}
+  .society-home .programme-next {grid-column:2;flex-direction:row;align-items:center;flex-wrap:wrap;gap:.7rem;}
+  .society-home .people-layout {grid-template-columns:1fr;gap:3rem;}
+  .society-home .person-profile {grid-template-columns:1fr 1.5fr;max-width:44rem;}
+  .society-home .association-copy {max-width:44rem;}
+}
+@media(max-width:800px){
+  .society-home .section-opening,.society-home .practice-layout,.society-home .investment-layout {grid-template-columns:1fr;gap:2rem;}
+  .society-home .section-opening {margin-bottom:2rem;}
+  .society-home .practice-copy {order:-1;}
+  .society-home .room-figure img {aspect-ratio:3/2;}
+  .society-page .dsec {grid-template-columns:1fr;gap:1rem;}
+  .society-page .dsec h2 {grid-column:auto;grid-row:auto;max-width:30ch;}
+  .society-page .dsec p {grid-column:auto;font-size:1.05rem;}
+}
+@media(max-width:550px){
+  .society-home .programme {grid-template-columns:1fr;gap:1.25rem;padding-block:1.8rem;}
+  .society-home .programme-next {grid-column:1;}
+  .society-home .programme-name {gap:.8rem;}
+  .society-home .programme h3 {font-size:1.9rem;}
+  .society-home .person-profile {grid-template-columns:1fr;gap:1.4rem;}
+  .society-home .person-profile img {aspect-ratio:6/5;max-width:28rem;}
+  .society-home .society-footer .wrap,.society-page .society-footer .wrap {grid-template-columns:1fr;gap:2rem;}
+  .society-home .hero-place {max-width:9rem;font-size:.8rem;}
+  .society-home .film-toggle {font-size:.8rem;padding-inline:.7rem;}
+  .society-home .hero-controls {gap:1rem;}
+  .society-page .subhero {padding-top:8rem;}
+  .society-page .vignette {padding:1.5rem;}
+}
+.society-home .menu-btn,.society-page .menu-btn {border-radius:3px;}
+.society-home .menu-btn,.society-page .menu-btn {min-width:44px;min-height:44px;}
+.society-home .lang,.society-page .lang {display:inline-flex;align-items:center;justify-content:center;min-width:44px;min-height:44px;}
+.society-page .field label {font-size:.875rem;font-weight:600;}
+.society-home .menu-btn:hover,.society-page .menu-btn:hover {transform:none;}
+.society-home .site-head:not(.nav-inline) .navlink,.society-page .site-head:not(.nav-inline) .navlink {font-weight:600;}
+.society-home .site-head:not(.nav-inline) .navlink-cta,.society-page .site-head:not(.nav-inline) .navlink-cta {border-radius:3px;box-shadow:none;background:var(--ink);color:#fff;}
+@media(max-width:600px){
+  .society-home .hero {min-height:max(43rem,94svh);padding-block:8rem 6.5rem;}
+  .society-home .hero h1 {font-size:clamp(2.6rem,9.9vw,3.7rem);}
+  .society-home .hero-kicker {font-size:.75rem;letter-spacing:.09em;}
+  .society-home .brand b,.society-page .brand b {font-size:1.24rem;}
+  .society-home .brand span,.society-page .brand span {font-size:.6rem;}
+  .society-home .site-head .wrap,.society-page .site-head .wrap {padding-block:1.2rem;gap:.5rem;}
+}
+@media(prefers-reduced-motion:reduce){.society-home *,.society-page *{scroll-behavior:auto!important;animation:none!important;transition:none!important;}}

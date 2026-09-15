@@ -1,3 +1,6 @@
+{% set home = society.de %}
+{% set isHome = false %}
+{% set alternateUrl = "/en/approach/" %}
 <!DOCTYPE html>
 <html lang="de">
 <head>
@@ -7,37 +10,16 @@
 <meta name="description" content="Unser Ansatz: Kinder lernen am besten, wenn sie spüren, dass sie vorankommen, und wenn ein Mensch da ist, der sie kennt und ihnen etwas zutraut." />
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M16 3c5 0 9 3 9 8 0 3-2 4-2 7s3 3 3 6-4 5-10 5S6 31 6 27s3-3 3-6-2-4-2-7c0-5 4-8 9-8z' fill='%23ff3d8b'/%3E%3C/svg%3E" />
 <link rel="preload" href="/assets/fonts/bricolage-latin.woff2" as="font" type="font/woff2" crossorigin />
-<link rel="stylesheet" href="/assets/styles.css" />
+<link rel="stylesheet" href="/assets/styles.css?v=20260915-hero" />
+<link rel="stylesheet" href="/assets/society.css?v=20260915-redesign" />
 <link rel="canonical" href="https://lerngesellschaft.ch/ansatz/" />
 <link rel="alternate" hreflang="de" href="https://lerngesellschaft.ch/ansatz/" />
 <link rel="alternate" hreflang="en" href="https://lerngesellschaft.ch/en/approach/" />
 <link rel="alternate" hreflang="x-default" href="https://lerngesellschaft.ch/ansatz/" />
 </head>
-<body>
+<body class="society-page">
 <a href="#main" class="skip">Zum Inhalt springen</a>
-<header class="site-head">
-  <div class="wrap">
-    <a href="/" class="brand"><b>Lerngesellschaft</b><span>Learning Society · Basel</span></a>
-    <div class="head-right">
-      <details class="menu">
-        <summary class="menu-btn"><span class="menu-ico" aria-hidden="true"><i></i><i></i></span><span class="vh">Menü</span></summary>
-        <nav class="nav" aria-label="Hauptnavigation">
-          <a href="#dranbleiben" class="navlink">Dranbleiben</a>
-          <a href="#schwierigkeit" class="navlink">Gerade noch zu schaffen</a>
-          <a href="#mensch" class="navlink">Ein Mensch, der bleibt</a>
-          <a href="#maschine" class="navlink">Was menschliche Begleitung ausmacht</a>
-          <a href="#wege" class="navlink">Drei Wege, ein Ziel</a>
-          <a href="#quellen" class="navlink">Quellen</a>
-          <a href="/" class="navlink navlink-up">Übersicht</a>
-          <a href="/#investieren" class="navlink navlink-cta">Investieren</a>
-        </nav>
-      </details>
-      <a href="/en/approach/" class="lang" aria-label="In English">EN</a>
-      <a href="/#investieren" class="btn btn-pink nav-cta">Investieren</a>
-    </div>
-  </div>
-</header>
-<script src="/assets/nav.js"></script>
+{% include "society-header.njk" %}
 <main id="main">
   <section class="subhero">
     <div class="accent-blob" style="width:30vw;height:30vw;background:var(--pink);right:-8vw;top:-2vw"></div>
@@ -50,6 +32,7 @@
   </section>
   <section class="section" style="padding-top:0; --dot:var(--pink-ink)">
     <div class="wrap">
+      <nav class="section-index" aria-label="Auf dieser Seite"><a href="#dranbleiben">Dranbleiben</a><a href="#schwierigkeit">Gerade noch zu schaffen</a><a href="#mensch">Ein Mensch, der bleibt</a><a href="#maschine">Was menschliche Begleitung ausmacht</a><a href="#wege">Drei Wege, ein Ziel</a><a href="#quellen">Quellen</a></nav>
       <div class="detail">
         <div class="dsec" id="dranbleiben">
           <h2>Ein Kind bleibt dran, wenn es spürt, dass es besser wird</h2>
@@ -95,14 +78,6 @@
     </div>
   </section>
 </main>
-<footer class="foot">
-  <div class="wrap">
-    <span>Lerngesellschaft / Learning Society · Basel</span>
-    <span>Münsterplatz 17, 4051 Basel · team@jonashertner.com</span>
-    <span>Verein · Start Oktober 2026</span>
-    <a href="/impressum/">Impressum</a>
-    <a href="/agb/">AGB</a>
-  </div>
-</footer>
+{% include "society-footer.njk" %}
 </body>
 </html>

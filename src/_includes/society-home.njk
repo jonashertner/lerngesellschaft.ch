@@ -1,0 +1,61 @@
+<main id="main">
+  <section class="hero" id="top">
+    <div class="hero-stage" aria-hidden="true">
+      <div class="liquid-fallback"></div>
+      <video id="hero-video" class="hero-video" muted loop playsinline preload="none" width="640" height="640" poster="/assets/media/hero-poster.jpg"><source src="/assets/media/hero.webm" type="video/webm"><source src="/assets/media/hero.mp4" type="video/mp4"></video>
+      <div class="grade"></div>
+    </div>
+    <div class="hero-scrim" aria-hidden="true"></div>
+    <div class="hero-inner"><div class="wrap">
+      <p class="hero-kicker">{{ home.heroKicker }}</p>
+      <h1>{{ home.heroTitle | safe }}</h1>
+      <p class="lead">{{ home.heroIntro }}</p>
+      <div class="hero-cta"><a href="#wege" class="btn btn-pink">{{ home.heroAction }}</a><a href="#investieren" class="btn btn-ghost">{{ home.investAction }}</a></div>
+    </div></div>
+    <div class="hero-controls wrap"><span class="hero-place">{{ home.heroLocation }}</span><button class="film-toggle" type="button" aria-controls="hero-video" data-pause-label="{{ home.pauseLabel }}" data-play-label="{{ home.playLabel }}" data-pending-label="{{ home.pendingLabel }}" hidden><span class="film-toggle-icon" aria-hidden="true">▶</span><span class="film-toggle-label">{{ home.playLabel }}</span></button></div>
+  </section>
+
+  <section class="society-section programmes" id="wege">
+    <div class="wrap">
+      <div class="section-opening"><div><p class="section-label">{{ home.offersEyebrow }}</p><h2>{{ home.offersTitle | safe }}</h2></div><p class="section-intro">{{ home.offersIntro }}</p></div>
+      <div class="programme-list">
+        {% for programme in home.programmes %}
+        <article class="programme{% if programme.active %} programme-featured{% endif %}" id="{{ programme.id }}">
+          <div class="programme-name"><span class="programme-number" aria-hidden="true">{{ programme.number }}</span><h3><a href="{{ programme.url }}">{{ programme.name }}</a></h3></div>
+          <div class="programme-description"><p class="programme-audience">{{ programme.audience }}</p><p>{{ programme.description }}</p><p class="programme-facts">{{ programme.facts }}</p></div>
+          <div class="programme-next"><p class="programme-status">{{ programme.status }}</p><a class="editorial-link" href="{{ programme.url }}">{{ programme.action }} <span aria-hidden="true">↗</span></a></div>
+        </article>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <section class="society-section practice" id="worum">
+    <div class="wrap practice-layout">
+      <figure class="room-figure"><img src="/lernbus/img/lernraum-fenster.webp" srcset="/lernbus/img/lernraum-fenster-small.webp 800w, /lernbus/img/lernraum-fenster.webp 1536w" sizes="(min-width: 900px) 48vw, 100vw" width="1536" height="1024" loading="lazy" decoding="async" alt="{{ home.roomAlt }}"><figcaption>{{ home.roomCaption }}</figcaption></figure>
+      <div class="practice-copy"><p class="section-label">{{ home.practiceEyebrow }}</p><h2>{{ home.practiceTitle | safe }}</h2><p class="section-intro">{{ home.practiceIntro }}</p>
+        <div class="principle-list" id="ziele">{% for principle in home.principles %}<div><h3>{{ principle.title }}</h3><p>{{ principle.text }}</p></div>{% endfor %}</div>
+        <a class="editorial-link" href="{{ home.approachUrl }}">{{ home.approachAction }} <span aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="society-section association" id="verein">
+    <div class="wrap">
+      <div class="section-opening"><div><p class="section-label">{{ home.peopleEyebrow }}</p><h2>{{ home.peopleTitle | safe }}</h2></div></div>
+      <div class="people-layout">
+        <article class="person-profile"><img src="/lernbus/img/conny-brandes-portrait.webp" srcset="/lernbus/img/conny-brandes-portrait-small.webp 600w, /lernbus/img/conny-brandes-portrait.webp 1200w" sizes="(min-width: 900px) 22vw, (min-width: 500px) 35vw, 100vw" width="1200" height="932" loading="lazy" decoding="async" alt="Conny Brandes"><div><p class="person-role">{{ home.personRole }}</p><h3>Conny Brandes</h3><p>{{ home.personText }}</p><a class="editorial-link" href="{{ home.teamUrl }}">{{ home.personAction }} <span aria-hidden="true">↗</span></a></div></article>
+        <div class="association-copy"><h3>{{ home.associationTitle }}</h3><p>{{ home.associationText }}</p><p>{{ home.boardText }}</p><div class="association-contact"><p>{{ home.contactName }}</p><a class="editorial-link" href="mailto:team@jonashertner.com">{{ home.contactAction }} <span aria-hidden="true">↗</span></a></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="society-section investment" id="investieren">
+    <div class="wrap investment-layout">
+      <div><p class="section-label">{{ home.fundingEyebrow }}</p><h2>{{ home.fundingTitle | safe }}</h2><p class="section-intro">{{ home.fundingIntro }}</p><a class="btn btn-yellow" href="mailto:team@jonashertner.com?subject={{ home.fundingSubject | urlencode }}">{{ home.fundingAction }}</a></div>
+      <div class="investment-detail"><p class="investment-amount">{{ home.fundingAmount }}</p><h3>{{ home.fundingUnit }}</h3><p>{{ home.fundingExplanation }}</p><p class="tax-note">{{ home.taxNote }}</p></div>
+    </div>
+  </section>
+</main>
+{% include "society-footer.njk" %}
+<script src="/assets/hero-video.js?v=20260915-hero"></script>

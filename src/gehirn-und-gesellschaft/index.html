@@ -1,3 +1,6 @@
+{% set home = society.de %}
+{% set isHome = false %}
+{% set alternateUrl = "/en/brain-and-society/" %}
 <!DOCTYPE html>
 <html lang="de">
 <head>
@@ -8,38 +11,16 @@
 <meta name="robots" content="noindex" />
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M16 3c5 0 9 3 9 8 0 3-2 4-2 7s3 3 3 6-4 5-10 5S6 31 6 27s3-3 3-6-2-4-2-7c0-5 4-8 9-8z' fill='%23ff3d8b'/%3E%3C/svg%3E" />
 <link rel="preload" href="/assets/fonts/bricolage-latin.woff2" as="font" type="font/woff2" crossorigin />
-<link rel="stylesheet" href="/assets/styles.css" />
+<link rel="stylesheet" href="/assets/styles.css?v=20260915-hero" />
+<link rel="stylesheet" href="/assets/society.css?v=20260915-redesign" />
 <link rel="canonical" href="https://lerngesellschaft.ch/gehirn-und-gesellschaft/" />
 <link rel="alternate" hreflang="de" href="https://lerngesellschaft.ch/gehirn-und-gesellschaft/" />
 <link rel="alternate" hreflang="en" href="https://lerngesellschaft.ch/en/brain-and-society/" />
 <link rel="alternate" hreflang="x-default" href="https://lerngesellschaft.ch/gehirn-und-gesellschaft/" />
 </head>
-<body>
+<body class="society-page">
 <a href="#main" class="skip">Zum Inhalt springen</a>
-<header class="site-head">
-  <div class="wrap">
-    <a href="/" class="brand"><b>Lerngesellschaft</b><span>Learning Society · Basel</span></a>
-    <div class="head-right">
-      <details class="menu">
-        <summary class="menu-btn"><span class="menu-ico" aria-hidden="true"><i></i><i></i></span><span class="vh">Menü</span></summary>
-        <nav class="nav" aria-label="Hauptnavigation">
-          <a href="#worum" class="navlink">Worum es geht</a>
-          <a href="#lernen" class="navlink">Wie Lernen funktioniert</a>
-          <a href="#miteinander" class="navlink">Ein gutes Miteinander</a>
-          <a href="#maschine" class="navlink">Mensch und Maschine</a>
-          <a href="#zukunft" class="navlink">Kompetenzen für die Zukunft</a>
-          <a href="#verstehen" class="navlink">Verstehen statt übernehmen</a>
-          <a href="#buchen" class="navlink">Für Schulen</a>
-          <a href="/" class="navlink navlink-up">Übersicht</a>
-          <a href="/#investieren" class="navlink navlink-cta">Investieren</a>
-        </nav>
-      </details>
-      <a href="/en/brain-and-society/" class="lang" aria-label="In English">EN</a>
-      <a href="/#investieren" class="btn btn-pink nav-cta">Investieren</a>
-    </div>
-  </div>
-</header>
-<script src="/assets/nav.js"></script>
+{% include "society-header.njk" %}
 <main id="main">
   <section class="subhero">
     <div class="accent-blob" style="width:30vw;height:30vw;background:var(--tang);right:-8vw;top:-2vw"></div>
@@ -47,11 +28,14 @@
       <a class="back" href="/"><span>&larr;</span> Zurück zur Übersicht</a>
       <p class="eyebrow" style="--dot:var(--orange-ink)">Ein Weg · Gehirn und Gesellschaft</p>
       <h1>Gehirn und Gesellschaft</h1>
-      <p class="lead">Verstehen, wie Lernen und Zusammenleben gelingen. Wir kommen direkt in die Primarschule und arbeiten mit ganzen Klassen. In altersgerechten und interaktiven Lektionen erhalten Kinder Einblick in aktuelle Erkenntnisse der Lern-, Entwicklungs- und Gehirnforschung.</p>
+      <p class="lead">Verstehen, wie Lernen und Zusammenleben gelingen. Geplant sind Besuche in der Primarschule, bei denen wir mit ganzen Klassen arbeiten. In altersgerechten und interaktiven Lektionen erhalten Kinder Einblick in aktuelle Erkenntnisse der Lern-, Entwicklungs- und Gehirnforschung.</p>
+      <div class="programme-notice"><strong>In Vorbereitung</strong><p>Diese Seite beschreibt das geplante Angebot. Termine und Durchführung sind noch in Planung. Sie können uns bereits Ihr Interesse mitteilen.</p></div>
+      <dl class="programme-summary"><div><dt>Für wen</dt><dd>Primarschulklassen</dd></div><div><dt>Format</dt><dd>Interaktive Lektionen</dd></div><div><dt>Ort</dt><dd>In der Schule</dd></div></dl>
     </div>
   </section>
   <section class="section" style="padding-top:0; --dot:var(--orange-ink)">
     <div class="wrap">
+      <nav class="section-index" aria-label="Auf dieser Seite"><a href="#worum">Worum es geht</a><a href="#lernen">Wie Lernen funktioniert</a><a href="#miteinander">Ein gutes Miteinander</a><a href="#maschine">Mensch und Maschine</a><a href="#zukunft">Kompetenzen für die Zukunft</a><a href="#verstehen">Verstehen statt übernehmen</a><a href="#buchen">Für Schulen</a></nav>
       <div class="detail">
         <div class="dsec" id="worum">
           <h2>Worum es geht</h2>
@@ -75,7 +59,7 @@
         </div>
       </div>
 
-      <p class="vignette">Ein Junge arbeitet an einer Textaufgabe und lässt sich von einer künstlichen Intelligenz einen Lösungsvorschlag erklären. Die Antwort klingt überzeugend, enthält jedoch einen Denkfehler. Gemeinsam mit der Klasse wird die Lösung Schritt für Schritt betrachtet und überprüft. Dabei entdecken die Kinder, dass nicht jede Antwort automatisch richtig ist, auch dann nicht, wenn sie sehr sicher klingt.</p>
+      <p class="vignette"><span class="vignette-label">Ein mögliches Beispiel</span>Ein Junge arbeitet an einer Textaufgabe und lässt sich von einer künstlichen Intelligenz einen Lösungsvorschlag erklären. Die Antwort klingt überzeugend, enthält jedoch einen Denkfehler. Gemeinsam mit der Klasse wird die Lösung Schritt für Schritt betrachtet und überprüft. Dabei entdecken die Kinder, dass nicht jede Antwort automatisch richtig ist, auch dann nicht, wenn sie sehr sicher klingt.</p>
 
       <div class="detail" style="margin-top:clamp(3rem, 2rem + 3vw, 4.5rem)">
         <div class="dsec" id="verstehen">
@@ -86,8 +70,8 @@
 
       <div id="buchen" style="margin-top:clamp(3.2rem, 2.2rem + 3vw, 5rem)">
         <p class="eyebrow" style="--dot:var(--orange-ink)">Für Schulen</p>
-        <h2 class="big" style="max-width:22ch">Lektionen für Ihre Klasse.</h2>
-        <p class="lead" style="margin-top:1.2rem">Primarschulen in Basel können Gehirn und Gesellschaft für einzelne Klassen oder für eine ganze Stufe anfragen. Schreiben Sie uns kurz, um welche Klasse es geht, wir melden uns innert weniger Tage.</p>
+        <h2 class="big" style="max-width:22ch">Interesse für Ihre Klasse?</h2>
+        <p class="lead" style="margin-top:1.2rem">Das Angebot ist in Vorbereitung. Primarschulen in Basel können bereits ihr Interesse für einzelne Klassen oder eine ganze Stufe mitteilen. Schreiben Sie uns, welche Fragen und Themen Ihre Klasse beschäftigen.</p>
         <div style="margin-top:1.6rem; display:flex; flex-wrap:wrap; gap:.9rem">
           <a href="mailto:team@jonashertner.com?subject=Anfrage%20Gehirn%20und%20Gesellschaft" class="btn btn-pink">Anfrage per E-Mail</a>
           <a href="/#investieren" class="btn btn-ghost">Jetzt investieren</a>
@@ -96,15 +80,6 @@
     </div>
   </section>
 </main>
-<footer class="foot">
-  <div class="wrap">
-    <span>Lerngesellschaft / Learning Society · Basel</span>
-    <a href="/ansatz/">So arbeiten wir</a>
-    <span>Münsterplatz 17, 4051 Basel · team@jonashertner.com</span>
-    <span>Verein · Start Oktober 2026</span>
-    <a href="/impressum/">Impressum</a>
-    <a href="/agb/">AGB</a>
-  </div>
-</footer>
+{% include "society-footer.njk" %}
 </body>
 </html>

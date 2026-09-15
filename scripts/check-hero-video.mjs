@@ -2,13 +2,16 @@ import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import test from 'node:test';
 import vm from 'node:vm';
+import { resolve } from 'node:path';
 
 const source = readFileSync(new URL('../src/assets/hero-video.js', import.meta.url), 'utf8');
 
 // Small controllable media/DOM surface: play promises and queued media events
 // are separate so a late result cannot silently undo a visitor's newer choice.
 function fixture({ reduced = false, language = 'de' } = {}) {
-  const html = readFileSync(new URL(language === 'de' ? '../src/index.html' : '../src/en/index.html', import.meta.url), 'utf8');
+  // Homepage controls now come from a shared bilingual Nunjucks template.
+  // Exercise the rendered labels that visitors receive; run the build first.
+  const html = readFileSync(resolve(process.env.SOCIETY_BUILD_DIR || '_site', language === 'de' ? 'index.html' : 'en/index.html'), 'utf8');
   const buttonMarkup = html.match(/<button\b[^>]*class="film-toggle"[^>]*>/)?.[0];
   assert(buttonMarkup, 'The real homepage includes the movie control.');
   const labels = Object.fromEntries(['play', 'pause', 'pending'].map(kind => {

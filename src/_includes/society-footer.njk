@@ -1,0 +1,7 @@
+<footer class="foot society-footer">
+  <div class="wrap">
+    <div class="footer-brand"><a class="footer-name" href="{{ home.root }}">{{ home.name }}</a><p>{{ home.footerLine }}</p></div>
+    <div class="footer-contact"><span>Münsterplatz 17<br>4051 Basel</span><a href="mailto:team@jonashertner.com">team@jonashertner.com</a></div>
+    <nav aria-label="{% if home.language == 'de' %}Weitere Informationen{% else %}Further information{% endif %}"><a href="{{ home.approachUrl }}">{{ home.approachAction }}</a><a href="{{ home.essayUrl }}">{{ home.essayLabel }}</a><a href="{{ home.imprintUrl }}">{{ home.imprintLabel }}</a><a href="/agb/">{{ home.termsLabel }}</a></nav>
+  </div>
+</footer>

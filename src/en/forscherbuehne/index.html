@@ -1,3 +1,6 @@
+{% set home = society.en %}
+{% set isHome = false %}
+{% set alternateUrl = "/forscherbuehne/" %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,38 +11,16 @@
 <meta name="robots" content="noindex" />
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M16 3c5 0 9 3 9 8 0 3-2 4-2 7s3 3 3 6-4 5-10 5S6 31 6 27s3-3 3-6-2-4-2-7c0-5 4-8 9-8z' fill='%23ff3d8b'/%3E%3C/svg%3E" />
 <link rel="preload" href="/assets/fonts/bricolage-latin.woff2" as="font" type="font/woff2" crossorigin />
-<link rel="stylesheet" href="/assets/styles.css" />
+<link rel="stylesheet" href="/assets/styles.css?v=20260915-hero" />
+<link rel="stylesheet" href="/assets/society.css?v=20260915-redesign" />
 <link rel="canonical" href="https://lerngesellschaft.ch/en/forscherbuehne/" />
 <link rel="alternate" hreflang="de" href="https://lerngesellschaft.ch/forscherbuehne/" />
 <link rel="alternate" hreflang="en" href="https://lerngesellschaft.ch/en/forscherbuehne/" />
 <link rel="alternate" hreflang="x-default" href="https://lerngesellschaft.ch/forscherbuehne/" />
 </head>
-<body>
+<body class="society-page">
 <a href="#main" class="skip">Skip to content</a>
-<header class="site-head">
-  <div class="wrap">
-    <a href="/en/" class="brand"><b>Learning Society</b><span>Lerngesellschaft · Basel</span></a>
-    <div class="head-right">
-      <details class="menu">
-        <summary class="menu-btn"><span class="menu-ico" aria-hidden="true"><i></i><i></i></span><span class="vh">Menu</span></summary>
-        <nav class="nav" aria-label="Main navigation">
-          <a href="#offen" class="navlink">Open to all</a>
-          <a href="#staunen" class="navlink">Shared wonder</a>
-          <a href="#vorbilder" class="navlink">Researchers as models</a>
-          <a href="#irrtuemer" class="navlink">Questions, trials and errors</a>
-          <a href="#zuhause" class="navlink">Science to take home</a>
-          <a href="#beginn" class="navlink">Where science begins</a>
-          <a href="#buchen" class="navlink">Booking request</a>
-          <a href="/en/" class="navlink navlink-up">Overview</a>
-          <a href="/en/#investieren" class="navlink navlink-cta">Invest</a>
-        </nav>
-      </details>
-      <a href="/forscherbuehne/" class="lang" aria-label="Auf Deutsch">DE</a>
-      <a href="/en/#investieren" class="btn btn-pink nav-cta">Invest</a>
-    </div>
-  </div>
-</header>
-<script src="/assets/nav.js"></script>
+{% include "society-header.njk" %}
 <main id="main">
   <section class="subhero">
     <div class="accent-blob" style="width:30vw;height:30vw;background:var(--pink);right:-8vw;top:-2vw"></div>
@@ -48,14 +29,17 @@
       <p class="eyebrow" style="--dot:var(--pink-ink)">One path · Forscherbühne</p>
       <h1>Forscherbühne</h1>
       <p class="lead">Science to wonder at and to think along with. On the Forscherbühne, our researchers' stage, children and young people experience science directly and authentically: researchers perform real experiments live in front of an audience and make scientific phenomena vivid and understandable.</p>
+      <div class="programme-notice"><strong>In development</strong><p>This page describes the planned programme. Dates and delivery are still being developed. You are welcome to express your interest.</p></div>
+      <dl class="programme-summary"><div><dt>For</dt><dd>Children and young people</dd></div><div><dt>Location</dt><dd>Basel</dd></div><div><dt>Participation</dt><dd>Planned to be free</dd></div></dl>
       <div style="margin-top:1.9rem; display:flex; flex-wrap:wrap; gap:.9rem">
-        <a href="#buchen" class="btn btn-pink">Make a booking request</a>
+        <a href="#buchen" class="btn btn-pink">Express interest</a>
         <a href="/en/#investieren" class="btn btn-ghost">Invest now</a>
       </div>
     </div>
   </section>
   <section class="section" style="padding-top:0; --dot:var(--pink-ink)">
     <div class="wrap">
+      <nav class="section-index" aria-label="On this page"><a href="#offen">Open to all</a><a href="#staunen">Shared wonder</a><a href="#vorbilder">Researchers as models</a><a href="#irrtuemer">Questions, trials and errors</a><a href="#zuhause">Science to take home</a><a href="#beginn">Where science begins</a><a href="#buchen">Express interest</a></nav>
       <div class="detail">
         <div class="dsec" id="offen">
           <h2>Free of charge and open to all</h2>
@@ -79,7 +63,7 @@
         </div>
       </div>
 
-      <p class="vignette">A girl is sitting in the front row. At the front, two clear liquids are mixed together, and suddenly the solution glows an intense blue. For a moment everything is completely still. The girl looks up at her father in astonishment, then turns her attention back to the experiment and asks quietly: how does that work?</p>
+      <p class="vignette"><span class="vignette-label">An illustrative example</span>A girl is sitting in the front row. At the front, two clear liquids are mixed together, and suddenly the solution glows an intense blue. For a moment everything is completely still. The girl looks up at her father in astonishment, then turns her attention back to the experiment and asks quietly: how does that work?</p>
 
       <div class="detail" style="margin-top:clamp(3rem, 2rem + 3vw, 4.5rem)">
         <div class="dsec" id="beginn">
@@ -89,11 +73,11 @@
       </div>
 
       <div id="buchen" style="margin-top:clamp(3.2rem, 2.2rem + 3vw, 5rem)">
-        <p class="eyebrow" style="--dot:var(--pink-ink)">Booking request</p>
-        <h2 class="big" style="max-width:22ch">Bring the Forscherbühne to you.</h2>
-        <p class="lead" style="margin-top:1.2rem">School classes, libraries, neighbourhood centres and families can request the Forscherbühne. Taking part is free. Tell us briefly who it is for and when, and we will be in touch within a few days.</p>
+        <p class="eyebrow" style="--dot:var(--pink-ink)">Express interest</p>
+        <h2 class="big" style="max-width:22ch">Interested in the Forscherbühne?</h2>
+        <p class="lead" style="margin-top:1.2rem">School classes, libraries, neighbourhood centres and families can express their interest. The programme is in development and dates are not yet confirmed. Tell us who you have in mind.</p>
         <div class="book-card">
-          <form id="anfrage">
+          <form id="anfrage"><fieldset disabled><legend class="vh">Expression of interest</legend>
             <div class="form-grid">
               <div class="field"><label for="f-name">Your name</label><input id="f-name" name="name" type="text" autocomplete="name" required /></div>
               <div class="field"><label for="f-contact">Email or phone</label><input id="f-contact" name="contact" type="text" autocomplete="email" required /></div>
@@ -108,9 +92,9 @@
               <div class="field"><label for="f-when">Preferred period (optional)</label><input id="f-when" name="when" type="text" placeholder="e.g. spring 2027" /></div>
               <div class="field wide"><label for="f-msg">Message (optional)</label><textarea id="f-msg" name="msg"></textarea></div>
             </div>
-            <div style="margin-top:1.4rem"><button type="submit" class="btn btn-pink">Send request</button></div>
-          </form>
-          <p class="book-note">No obligation. Your request goes as an email directly to team@jonashertner.com and is not stored anywhere else.</p>
+            <div style="margin-top:1.4rem"><button type="submit" class="btn btn-pink">Prepare email</button></div>
+          </fieldset></form><noscript><p>Please contact us directly by email.</p></noscript>
+          <p class="book-note">The button opens a draft in your email application. You send the message from there. You can also write directly to <a href="mailto:team@jonashertner.com">team@jonashertner.com</a>.</p>
         </div>
       </div>
 
@@ -120,27 +104,18 @@
     </div>
   </section>
 </main>
-<footer class="foot">
-  <div class="wrap">
-    <span>Learning Society / Lerngesellschaft · Basel</span>
-    <a href="/en/approach/">How we work</a>
-    <span>Münsterplatz 17, 4051 Basel · team@jonashertner.com</span>
-    <span>Verein · starting October 2026</span>
-    <a href="/imprint/">Imprint</a>
-    <a href="/agb/">Terms (German)</a>
-  </div>
-</footer>
+{% include "society-footer.njk" %}
 <script>
 (function(){var f=document.getElementById('anfrage');if(!f)return;
 f.addEventListener('submit',function(e){e.preventDefault();
 var g=function(n){var el=f.elements[n];return el?el.value.trim():'';};
-var L=['Forscherbühne booking request','','Name: '+g('name'),'Contact: '+g('contact')];
+var L=['Forscherbühne expression of interest','','Name: '+g('name'),'Contact: '+g('contact')];
 if(g('org'))L.push('School or organisation: '+g('org'));
 L.push('Who it is for: '+g('group'));
 L.push('Number of children: '+g('count'));
 if(g('when'))L.push('Preferred period: '+g('when'));
 if(g('msg')){L.push('');L.push(g('msg'));}
-location.href='mailto:team@jonashertner.com?subject='+encodeURIComponent('Forscherbühne booking request')+'&body='+encodeURIComponent(L.join('\n'));});})();
+location.href='mailto:team@jonashertner.com?subject='+encodeURIComponent('Forscherbühne expression of interest')+'&body='+encodeURIComponent(L.join('\n'));});f.querySelector('fieldset').disabled=false;})();
 </script>
 </body>
 </html>

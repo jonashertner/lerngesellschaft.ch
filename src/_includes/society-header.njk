@@ -1,0 +1,19 @@
+<header class="site-head">
+  <div class="wrap">
+    <a href="{{ home.root }}" class="brand"><b>{{ home.name }}</b><span>{{ home.subtitle }}</span></a>
+    <div class="head-right">
+      <details class="menu">
+        <summary class="menu-btn"><span class="menu-ico" aria-hidden="true"><i></i><i></i></span><span class="vh">{{ home.menu }}</span></summary>
+        <nav class="nav" aria-label="{{ home.navLabel }}">
+          <a href="{% if isHome %}#wege{% else %}{{ home.root }}#wege{% endif %}" class="navlink">{{ home.offersLabel }}</a>
+          <a href="{{ home.approachUrl }}" class="navlink">{{ home.approachLabel }}</a>
+          <a href="{% if isHome %}#verein{% else %}{{ home.root }}#verein{% endif %}" class="navlink">{{ home.peopleLabel }}</a>
+          <a href="{% if isHome %}#investieren{% else %}{{ home.root }}#investieren{% endif %}" class="navlink navlink-cta">{{ home.investLabel }}</a>
+        </nav>
+      </details>
+      <a href="{{ alternateUrl }}" class="lang" aria-label="{% if home.language == 'de' %}In English{% else %}Auf Deutsch{% endif %}">{% if home.language == 'de' %}EN{% else %}DE{% endif %}</a>
+      <a href="{% if isHome %}#investieren{% else %}{{ home.root }}#investieren{% endif %}" class="btn btn-pink nav-cta">{{ home.investLabel }}</a>
+    </div>
+  </div>
+</header>
+<script src="/assets/nav.js"></script>
