@@ -31,6 +31,7 @@
 
   function layout() {
     var wasOpen = !inline && menu.open;
+    var focused = document.activeElement;
     head.classList.add('nav-inline');
     head.classList.remove('nav-fixed');
     menu.open = true;
@@ -41,6 +42,8 @@
       menu.open = wasOpen;
     }
     applyOpenState();
+    if (inline && focused === summary) nav.querySelector('a').focus();
+    else if (!inline && !menu.open && nav.contains(focused) && summary) summary.focus();
   }
 
   function applyOpenState() {
@@ -70,7 +73,19 @@
     if (inline) return;
     var t = e.target;
     while (t && t !== nav && t.tagName !== 'A') t = t.parentNode;
-    if (t && t.tagName === 'A') menu.open = false;
+    if (t && t.tagName === 'A') {
+      menu.open = false;
+      applyOpenState();
+      var href = t.getAttribute('href');
+      var destination = href && href.charAt(0) === '#' ? document.getElementById(href.slice(1)) : null;
+      if (destination) {
+        if (!destination.hasAttribute('tabindex')) {
+          destination.setAttribute('tabindex', '-1');
+          destination.addEventListener('blur', function () { this.removeAttribute('tabindex'); }, { once: true });
+        }
+        destination.focus({ preventScroll: true });
+      }
+    }
   });
 
   /* Current section: the last one whose top has passed the marker line

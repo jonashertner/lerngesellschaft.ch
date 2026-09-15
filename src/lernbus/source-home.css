@@ -6,6 +6,18 @@
 .source-hero-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:3rem 4rem;align-items:center}
 .source-home .hero h1{grid-column:1/-1;max-width:none;font-size:clamp(2.65rem,6.5vw,6.9rem);line-height:1.16;text-wrap:balance;letter-spacing:-.025em}
 .source-home .hero .lead{font-size:clamp(1.125rem,1.55vw,1.4rem);max-width:36ch;margin-top:0}
+.source-home .hero-booking{margin-top:1.75rem;min-height:52px;justify-content:center}
+/* Five information routes and one distinct action, in the same reading/focus order. */
+.source-home .site-head.nav-inline .navlink{text-transform:none;letter-spacing:0;font-size:1rem;min-height:44px;display:flex;align-items:center}
+.source-home .site-head .nav-booking{background:var(--violet);color:var(--yellow);border:2px solid var(--violet);padding:.75rem 1rem;line-height:1.3;font-family:var(--body);font-size:1rem;letter-spacing:0;font-weight:750;text-align:center;justify-content:center}
+.source-home .site-head .nav-booking:hover{background:var(--violet-deep)}
+.source-home .site-head .nav-booking::after{display:none}
+.source-home .site-head:not(.nav-inline) .nav{padding-top:1rem;gap:0}
+.source-home .site-head:not(.nav-inline) .navlink::before{display:none}
+.source-home .site-head:not(.nav-inline) .navlink{min-height:52px;padding:.6em 0}
+.source-home .site-head:not(.nav-inline) .nav-booking{padding:1rem;margin-bottom:1rem;font-size:1.125rem;align-items:center}
+.source-home .site-head:not(.nav-inline) .navlink[aria-current]:not(.nav-booking){text-decoration:underline;text-underline-offset:.2em;text-decoration-thickness:2px}
+@media(max-width:32rem){.source-home .hero-booking{width:100%}}
 .source-art{margin:0;min-width:0;transform:rotate(-2deg)}
 .source-art img{width:100%;height:auto;border:8px solid var(--bg);box-shadow:8px 8px 0 #493f8033}
 .source-hero-grid .source-art img{aspect-ratio:1.4;object-fit:cover}
