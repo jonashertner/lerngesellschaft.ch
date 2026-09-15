@@ -8,3 +8,17 @@
 @media(max-width:900px){.pillars{grid-template-columns:1fr;gap:1.75rem;padding-block:2.5rem}.pillar{border-left:0;border-top:1px solid var(--line);padding:1.75rem 0 0}.pillar:first-of-type{padding-top:0}.hero-content h1{font-size:clamp(3rem,7vw,4.5rem)}.landing-footer{flex-direction:column;gap:.65rem}.landing-footer>p{max-width:65ch}}
 @media(max-width:640px){.landing-header{padding-block:.85rem}.landing-brand{flex-wrap:wrap;gap:.2rem .7rem;max-width:calc(100% - 4rem);overflow-wrap:anywhere}.landing-brand span{font-size:.875rem}.landing-hero{padding-block:3rem 5.25rem}.hero-content h1{font-size:clamp(2.6rem,8.5vw,3.4rem);line-height:1.06;letter-spacing:-.04em}.hero-intro{font-size:1.1rem;margin-top:1.3rem;max-width:37ch}.hero-action{gap:.85rem;margin-top:1.6rem;align-items:flex-start;flex-direction:column}.action-note{max-width:none}.hero-shade{background:linear-gradient(90deg,rgba(25,17,33,.86),rgba(25,17,33,.62))}.hero-controls{bottom:.75rem}.film-toggle{font-size:.875rem}.pillars{grid-template-columns:1fr;gap:1.75rem;padding-block:2.25rem}.pillar{border-left:0;border-top:1px solid var(--line);padding:1.75rem 0 0}.pillar:first-of-type{padding-top:0}.pillar h2{font-size:1.7rem;max-width:28ch;text-wrap:initial}.pillar-lernbus h2{font-size:2.25rem}.development-label{margin-bottom:.6rem}.pillar-name{margin-top:.6rem}.landing-footer{padding-block:1.25rem 1.75rem}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animation:none!important}}
+
+/* The imprint shares the landing page's header, type and footer. */
+.legal-intro{padding-block:clamp(2.5rem,5vw,5rem) 3rem;max-width:65rem}
+.legal-back{display:inline-flex;align-items:center;gap:.75rem;min-height:44px;font-size:.875rem;color:var(--muted);margin-bottom:1.5rem}
+.legal-intro h1{font:650 clamp(2.5rem,5.5vw,4.8rem)/1.08 Bricolage,Arial,sans-serif;letter-spacing:-.045em;max-width:19ch;overflow-wrap:anywhere;text-wrap:balance}
+.legal-lead{margin-top:1.5rem;max-width:48ch;font-size:clamp(1.1rem,1.6vw,1.25rem);line-height:1.55;color:var(--muted)}
+.legal-sections{max-width:75rem;padding-bottom:3rem}
+.legal-section{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.65fr);column-gap:clamp(2rem,5vw,5rem);border-top:1px solid var(--line);padding-block:2rem}
+.legal-section h2{font:600 clamp(1.4rem,2.2vw,1.85rem)/1.2 Bricolage,Arial,sans-serif;letter-spacing:-.025em;max-width:24ch;overflow-wrap:anywhere}
+.legal-copy{min-width:0;max-width:68ch;font-size:1.0625rem;line-height:1.7;overflow-wrap:anywhere}
+.legal-copy p+p{margin-top:1rem}
+.legal-copy a{text-decoration:underline;text-underline-offset:.2em}
+@media(max-width:800px){.legal-intro{padding-block:2rem 2.25rem}.legal-section{grid-template-columns:1fr;row-gap:1rem;padding-block:1.75rem}.legal-section h2{max-width:30ch}.legal-sections{padding-bottom:1.5rem}}
+@media print{.society-legal-page .landing-header,.society-legal-page .landing-footer,.legal-back,.skip{display:none}.landing-legal{max-width:none;padding:0}.legal-intro{padding-block:0 1.5rem}.legal-intro h1{font-size:24pt}.legal-section{display:block;padding-block:1rem}.legal-section h2{font-size:14pt;break-after:avoid;margin-bottom:.6rem}.legal-copy{font-size:11pt;max-width:none}.legal-copy p{orphans:3;widows:3}}

@@ -1,0 +1,5 @@
+<footer class="landing-footer wrap" id="verein">
+  <span class="legacy-anchor" id="investieren" aria-hidden="true"></span>
+  <p>{{ landing.about }}</p>
+  <nav aria-label="{{ landing.footerLabel }}">{% if isLandingLegal %}<a href="{{ landing.root }}">{{ landing.backLabel }}</a>{% else %}<a href="{{ landing.imprintUrl }}">{{ landing.imprint }}</a>{% endif %}</nav>
+</footer>

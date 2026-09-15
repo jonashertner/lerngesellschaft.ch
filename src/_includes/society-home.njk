@@ -1,7 +1,4 @@
-<header class="landing-header wrap">
-  <a class="landing-brand" href="{{ landing.root }}">{{ landing.name }}<span>{{ landing.place }}</span></a>
-  <a class="language-link" href="{{ landing.alternate }}" lang="{% if landing.language == 'de' %}en{% else %}de{% endif %}" aria-label="{{ landing.alternateLabel }}">{{ landing.alternateText }}</a>
-</header>
+{% include "society-landing-header.njk" %}
 <main id="main">
   <section class="landing-hero" id="top" aria-labelledby="purpose-title">
     <div class="hero-stage" aria-hidden="true">
@@ -36,9 +33,5 @@
     </article>
   </section>
 </main>
-<footer class="landing-footer wrap" id="verein">
-  <span class="legacy-anchor" id="investieren" aria-hidden="true"></span>
-  <p>{{ landing.about }}</p>
-  <nav aria-label="{{ landing.footerLabel }}"><a href="mailto:team@jonashertner.com">{{ landing.contact }}</a><a href="{{ landing.imprintUrl }}">{{ landing.imprint }}</a></nav>
-</footer>
+{% include "society-landing-footer.njk" %}
 <script src="/assets/hero-video.js?v=20260915-hero"></script>

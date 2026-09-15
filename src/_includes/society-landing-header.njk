@@ -1,0 +1,4 @@
+<header class="landing-header wrap">
+  <a class="landing-brand" href="{{ landing.root }}">{{ landing.name }}<span>{{ landing.place }}</span></a>
+  <a class="language-link" href="{{ landingAlternate or landing.alternate }}" lang="{% if landing.language == 'de' %}en{% else %}de{% endif %}" aria-label="{{ landing.alternateLabel }}">{{ landing.alternateText }}</a>
+</header>
