@@ -1,0 +1,22 @@
+/* Readable terms in the existing association typography. */
+.legal-page{--bg:#fafafa;--ink:#29233e;--ink-soft:#655f73;--violet:#493f80;--line:#d4d0da;font-size:1.0625rem;background:var(--bg);overflow-x:visible}
+.legal-head{border-bottom:2px solid var(--violet);padding-block:1.2rem}
+.legal-head .wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+.legal-head .brand{min-width:0;max-width:100%}
+.legal-head .brand b{overflow-wrap:anywhere;color:var(--violet)}
+.legal-head .brand span{letter-spacing:.02em;font-size:.8125rem}
+.legal-head nav{display:flex;gap:1.5rem;flex-wrap:wrap;color:var(--violet);font-weight:700}
+.legal-head nav a{display:inline-flex;align-items:center;min-height:44px;text-decoration:underline;text-underline-offset:4px}
+.legal-content{max-width:64rem;padding-block:clamp(2.5rem,5vw,5rem)}
+.legal-content h1{font-size:clamp(2rem,4vw,3.3rem);line-height:1.1;max-width:none;color:var(--violet);hyphens:none;overflow-wrap:anywhere;margin-bottom:1.25rem}
+.legal-content h1+p{color:var(--ink-soft);font-size:1rem}
+.legal-content h2{font-size:clamp(1.35rem,2.5vw,1.75rem);line-height:1.25;color:var(--violet);margin-top:2.5rem;padding-top:1.6rem;border-top:1px solid var(--line);hyphens:auto;overflow-wrap:anywhere}
+.legal-content p{max-width:68ch;margin-top:1rem;line-height:1.7}
+.legal-content a{text-decoration:underline;text-underline-offset:4px;color:var(--violet);overflow-wrap:anywhere}
+.legal-page .foot{margin-top:0;background:var(--ink);color:var(--bg)}
+.legal-page .foot a{color:var(--bg)}
+.legal-page :focus-visible{outline:3px solid var(--violet);outline-offset:4px}
+.legal-page .foot :focus-visible{outline-color:#f4db4b}
+@media print{.legal-head,.legal-page .foot{display:none}.legal-page{font-size:11pt;background:white;color:#000}.legal-content{max-width:none;padding:0}.legal-content h1{font-size:24pt}.legal-content h2{font-size:14pt;break-after:avoid}.legal-content p{max-width:none;orphans:3;widows:3}}
+
+@media(max-width:48rem){.legal-content h1{hyphens:auto}}
