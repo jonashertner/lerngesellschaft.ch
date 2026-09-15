@@ -11,6 +11,8 @@
 .legal-content h1{font-size:clamp(2rem,4vw,3.3rem);line-height:1.1;max-width:none;color:var(--violet);hyphens:none;overflow-wrap:anywhere;margin-bottom:1.25rem}
 .legal-content h1+p{color:var(--ink-soft);font-size:1rem}
 .legal-content h2{font-size:clamp(1.35rem,2.5vw,1.75rem);line-height:1.25;color:var(--violet);margin-top:2.5rem;padding-top:1.6rem;border-top:1px solid var(--line);hyphens:auto;overflow-wrap:anywhere}
+.legal-content h3{font-size:1.1875rem;line-height:1.35;max-width:60ch;margin-top:2rem;break-after:avoid}
+.legal-content h2+h3{margin-top:1.25rem}
 .legal-content p{max-width:68ch;margin-top:1rem;line-height:1.7}
 .legal-content a{text-decoration:underline;text-underline-offset:4px;color:var(--violet);overflow-wrap:anywhere}
 .legal-page .foot{margin-top:0;background:var(--ink);color:var(--bg)}
