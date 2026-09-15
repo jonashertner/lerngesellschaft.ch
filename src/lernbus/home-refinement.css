@@ -23,19 +23,14 @@
 .source-home .team-biography{margin-top:1rem}
 .source-home .team-biography .team-bio-section{padding-block:1.25rem}
 .source-home .team-biography .team-bio-section:first-child{padding-top:0}
-.source-home .process-content{min-width:0}
-.source-home .learning-support{margin-top:2rem}
-.source-home .learning-support h3{font-family:var(--display);font-size:1.3rem;font-weight:750;line-height:1.3;color:var(--violet);margin:0 0 1rem}
-.source-home .learning-features{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.25rem 2rem;padding:0;margin:0;list-style:none}
-.source-home .learning-feature{border-top:1px solid var(--hairline);padding-top:1rem;min-width:0}
-.source-home .learning-feature p{font-size:1.0625rem;line-height:1.6;margin:0}
-.source-home .learning-feature b{font-weight:750}
+.source-home .process-overview{min-width:0;list-style:none;margin:0;padding:0;border-top:2px solid var(--violet)}
+.source-home .process-overview li{padding-block:1.25rem;border-bottom:1px solid var(--hairline)}
+.source-home .process-overview p{font-size:1.0625rem;line-height:1.6;margin:0}
+.source-home .process-overview b{font-weight:750}
 @media(max-width:64rem){.quick-facts{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:48rem){
  .source-home #warum h2{font-size:clamp(2.2rem,8vw,3rem)}
- .source-home .goals-list .ticks,.source-home .learning-features{grid-template-columns:minmax(0,1fr)}
- .source-home .learning-features{gap:.85rem}
- .source-home .learning-support{margin-top:1.5rem}
+ .source-home .goals-list .ticks{grid-template-columns:minmax(0,1fr)}
  .source-home .team-section .team-profile{gap:1.75rem}
  .source-home .team-section>.wrap>.morelink{margin-top:1.25rem}
 }

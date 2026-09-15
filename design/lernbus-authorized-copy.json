@@ -911,6 +911,51 @@
           }
         ]
       }
+    },
+    {
+      "authorization": "Jonas, 15 September 2026: Ablauf is strange with just steps 1 and 2 and then a different layout. Unify all seven existing paragraphs, removing numbers and the added support subheading.",
+      "pages": {
+        "lernbus/index.html": [
+          {
+            "start": 727,
+            "end": 728,
+            "before": "1",
+            "after": ""
+          },
+          {
+            "start": 735,
+            "end": 736,
+            "before": "2",
+            "after": ""
+          },
+          {
+            "start": 761,
+            "end": 764,
+            "before": "Zur Begleitung gehören",
+            "after": ""
+          }
+        ],
+        "lernbus/en/index.html": [
+          {
+            "start": 780,
+            "end": 781,
+            "before": "1",
+            "after": ""
+          },
+          {
+            "start": 789,
+            "end": 790,
+            "before": "2",
+            "after": ""
+          },
+          {
+            "start": 830,
+            "end": 834,
+            "before": "What the support includes",
+            "after": ""
+          }
+        ]
+      }
     }
   ]
 }
