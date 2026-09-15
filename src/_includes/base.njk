@@ -20,10 +20,10 @@
   </script>
 
   <link rel="canonical" href="{{ site.urls[lang] }}{{ page.url }}">
-  <link rel="alternate" hreflang="de" href="{{ site.urls.de }}/de/">
-  <link rel="alternate" hreflang="en" href="{{ site.urls.en }}/en/">
-  <link rel="alternate" hreflang="x-default" href="{{ site.urls.de }}/de/">
-  <link rel="alternate" type="text/markdown" title="Markdown source" href="/{{ lang }}/paper.md">
+  <link rel="alternate" hreflang="de" href="{{ site.urls.de }}{{ site.essayPaths.de }}">
+  <link rel="alternate" hreflang="en" href="{{ site.urls.de }}{{ site.essayPaths.en }}">
+  <link rel="alternate" hreflang="x-default" href="{{ site.urls.de }}{{ site.essayPaths.de }}">
+  <link rel="alternate" type="text/markdown" title="Markdown source" href="{{ site.essayPaths[lang] }}paper.md">
   <meta property="og:type" content="article">
   <meta property="og:locale" content="{% if lang == 'de' %}de_CH{% else %}en_US{% endif %}">
   <meta property="og:locale:alternate" content="{% if lang == 'de' %}en_US{% else %}de_CH{% endif %}">
@@ -85,6 +85,17 @@
   <a class="skip" href="#document">{% if lang == 'de' %}Zum Inhalt{% else %}Skip to content{% endif %}</a>
 
   <main class="document" id="document">
+    <aside class="archive-note" aria-label="{% if lang == 'de' %}Einordnung des Essays{% else %}About this essay{% endif %}">
+      {% if lang == 'de' %}
+      <strong>Essay · 2026</strong>
+      <p>Jonas Hertners Manifest über relationales Lernen aus der Zürcher Lernbegleitung. Der Text bleibt als eigenständiger Essay erhalten.</p>
+      <a href="/">Zum heutigen Angebot der Lerngesellschaft in Basel</a>
+      {% else %}
+      <strong>Essay · 2026</strong>
+      <p>Jonas Hertner’s manifesto on relational learning, written in the context of tutoring in Zurich. It is preserved here as a standalone essay.</p>
+      <a href="/en/">Explore Learning Society’s current work in Basel</a>
+      {% endif %}
+    </aside>
     {{ content | safe }}
 
     <footer class="colophon" role="contentinfo">
@@ -96,10 +107,11 @@
         {% endif %}
       </p>
       <p class="colophon-alt">
-        <a href="/{{ lang }}/print/">{% if lang == 'de' %}Als PDF lesen{% else %}Read as PDF{% endif %}</a>
+        <a href="{{ site.essayPaths[lang] }}print/">{% if lang == 'de' %}Als PDF lesen{% else %}Read as PDF{% endif %}</a>
         <span aria-hidden="true"> · </span>
-        <a href="/{% if lang == 'de' %}en{% else %}de{% endif %}/">{% if lang == 'de' %}Read in English{% else %}Auf Deutsch lesen{% endif %}</a>
+        <a href="{% if lang == 'de' %}{{ site.essayPaths.en }}{% else %}{{ site.essayPaths.de }}{% endif %}">{% if lang == 'de' %}Read in English{% else %}Auf Deutsch lesen{% endif %}</a>
       </p>
+      <p><a href="{{ site.homePaths[lang] }}">{% if lang == 'de' %}Lerngesellschaft in Basel{% else %}Learning Society in Basel{% endif %}</a></p>
       <p><a href="/agb/">{% if lang == 'de' %}AGB{% else %}Terms (German){% endif %}</a></p>
     </footer>
   </main>

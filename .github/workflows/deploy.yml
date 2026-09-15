@@ -38,6 +38,6 @@ jobs:
           publish_dir: ./_site_de
           cname: lerngesellschaft.ch
 
-      # learningsociety.ch is a permanent redirect to lerngesellschaft.ch/en/
+      # learningsociety.ch redirects to the current Basel homepage at lerngesellschaft.ch/en/
       # (configured manually on the gh-pages branch of that repo). No deploy
-      # step needed here; the EN content lives at lerngesellschaft.ch/en/.
+      # step needed here. Historical essays live under /essays/relational-learning/.

@@ -4,7 +4,7 @@ lang: en
 title: Learning Society
 subtitle: A manifesto for relational learning
 description: PDF edition · A manifesto for relational learning.
-permalink: /en/print/
+permalink: /essays/relational-learning/en/print/
 eleventyExcludeFromCollections: true
 ---
 

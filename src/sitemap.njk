@@ -8,16 +8,22 @@ eleventyExcludeFromCollections: true
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 {%- set pages = [
   { loc: "/",              prio: "1.0", freq: "monthly" },
+  { loc: "/en/",           prio: "1.0", freq: "monthly" },
   { loc: "/lernbus/",      prio: "0.9", freq: "monthly" },
+  { loc: "/lernbus/en/",   prio: "0.9", freq: "monthly" },
   { loc: "/ansatz/",       prio: "0.7", freq: "monthly" },
+  { loc: "/en/approach/",  prio: "0.7", freq: "monthly" },
+  { loc: "/lernbus/konzept/", prio: "0.7", freq: "monthly" },
+  { loc: "/lernbus/en/konzept/", prio: "0.7", freq: "monthly" },
   { loc: "/lernbus/team/", prio: "0.5", freq: "monthly" },
+  { loc: "/lernbus/team/en/", prio: "0.5", freq: "monthly" },
   { loc: "/agb/",          prio: "0.2", freq: "yearly"  },
-  { loc: "/impressum/",    prio: "0.2", freq: "yearly"  }
+  { loc: "/impressum/",    prio: "0.2", freq: "yearly"  },
+  { loc: "/imprint/",      prio: "0.2", freq: "yearly"  }
 ] %}
 {%- for p in pages %}
   <url>
     <loc>{{ site.urls.de }}{{ p.loc }}</loc>
-    <lastmod>{{ site.modified }}</lastmod>
     <changefreq>{{ p.freq }}</changefreq>
     <priority>{{ p.prio }}</priority>
   </url>

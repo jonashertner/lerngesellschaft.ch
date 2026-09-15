@@ -3,6 +3,7 @@ export default {
   author: "Jonas Hertner",
   authorUrl: "https://jonashertner.com",
   year: "2026",
+  // Historical essay dates; current association routes use their own metadata.
   published: "2026-04-26",
   modified: "2026-08-21",
   brand: {
@@ -15,7 +16,12 @@ export default {
   },
   urls: {
     de: "https://lerngesellschaft.ch",
-    en: "https://learningsociety.ch",
+    en: "https://lerngesellschaft.ch",
+  },
+  homePaths: { de: "/", en: "/en/" },
+  essayPaths: {
+    de: "/essays/relational-learning/de/",
+    en: "/essays/relational-learning/en/",
   },
   description: {
     de: "Lerngesellschaft · Ein Manifest für relationales Lernen. Individuelle Begleitung von Schülerinnen und Schülern in Zürich. Von Jonas Hertner.",

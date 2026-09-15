@@ -602,3 +602,15 @@ body.is-loaded .cover-altlang {
   .colophon-alt { display: none; }
   a { text-decoration: none; color: inherit; }
 }
+
+/* Context for the preserved essay, separate from the current Basel offer. */
+.archive-note {
+  margin: 0 0 2rem;
+  padding: 1rem 0;
+  border-block: 1px solid #ddd7d2;
+  font-family: system-ui, sans-serif;
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+.archive-note p { margin: 0.4rem 0; text-indent: 0; }
+.archive-note a { text-decoration: underline; text-underline-offset: 0.2em; }

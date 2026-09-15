@@ -7,13 +7,14 @@
   <meta name="description" content="{{ description or site.tagline[lang] }}">
   <meta name="author" content="{{ site.author }}">
   <meta name="robots" content="noindex">
+  <link rel="canonical" href="{{ site.urls.de }}{{ site.essayPaths[lang] }}print/">
   <link rel="preload" as="font" type="font/woff2" href="/fonts/BradfordLLWeb-Book.woff2" crossorigin>
   <link rel="preload" as="font" type="font/woff2" href="/fonts/BradfordLLWeb-BookItalic.woff2" crossorigin>
   <link rel="stylesheet" href="/css/print.css">
 </head>
 <body lang="{{ lang }}">
 
-  <a class="back-to-web" href="/{{ lang }}/">← {% if lang == 'de' %}Zurück zur Webseite{% else %}Back to web{% endif %}</a>
+  <a class="back-to-web" href="{{ site.essayPaths[lang] }}">← {% if lang == 'de' %}Zurück zur Webseite{% else %}Back to web{% endif %}</a>
   <button class="print-trigger" type="button" onclick="window.print()">{% if lang == 'de' %}Als PDF speichern{% else %}Save as PDF{% endif %}</button>
 
   {# Cover (recto) #}
