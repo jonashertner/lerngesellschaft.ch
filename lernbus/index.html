@@ -18,8 +18,10 @@
 <link rel="preload" href="./fonts/hanken-latin.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="stylesheet" href="./styles.css?v=c11bbeb07f29" />
 <link rel="stylesheet" href="./detail.css?v=4d6901ea7301">
-<link rel="stylesheet" href="./source-home.css?v=4f3170cd84e5">
+<link rel="stylesheet" href="./source-home.css?v=077637c4fe2c">
+<link rel="stylesheet" href="./contact.css?v=531df7ca1fcc">
 <script src="./booking.js" type="module"></script>
+<script src="./contact.js?v=8a85a91d22b0" type="module"></script>
 </head>
 <body class="detail-page source-home locale-de">
 <a href="#main" class="skip">Zum Inhalt springen</a>
@@ -164,17 +166,17 @@
   <h2 class="room-heading" id="room-heading">Ein Blick in unseren Lernraum.</h2>
   <div class="room-photos">
     <figure>
-      <img src="/lernbus/img/lernraum-spielecke.webp"
-        srcset="/lernbus/img/lernraum-spielecke-small.webp 800w, /lernbus/img/lernraum-spielecke.webp 1600w"
+      <img src="/lernbus/img/lernraum-spielecke.webp?v=b4c2cebf4fcb"
+        srcset="/lernbus/img/lernraum-spielecke-small.webp?v=b8546da3cf8a 800w, /lernbus/img/lernraum-spielecke.webp?v=b4c2cebf4fcb 1536w"
         sizes="(max-width: 768px) 90vw, (max-width: 1422px) 44vw, 624px"
-        width="1600" height="1067" loading="lazy" decoding="async"
+        width="1536" height="1024" loading="lazy" decoding="async"
         alt="Lernbus-Raum mit Holztäfer, einer Spielhöhle aus Stoff, Büchern und einem runden Tisch mit Kinderstühlen.">
     </figure>
     <figure>
-      <img src="/lernbus/img/lernraum-fenster.webp"
-        srcset="/lernbus/img/lernraum-fenster-small.webp 800w, /lernbus/img/lernraum-fenster.webp 1600w"
+      <img src="/lernbus/img/lernraum-fenster.webp?v=5691cf891ac8"
+        srcset="/lernbus/img/lernraum-fenster-small.webp?v=e362c3631738 800w, /lernbus/img/lernraum-fenster.webp?v=5691cf891ac8 1536w"
         sizes="(max-width: 768px) 90vw, (max-width: 1422px) 44vw, 624px"
-        width="1600" height="1067" loading="lazy" decoding="async"
+        width="1536" height="1024" loading="lazy" decoding="async"
         alt="Zwei grosse Fenster im Lernbus-Raum, davor ein Spieltisch und eine gepolsterte Bank mit Stofftieren.">
     </figure>
   </div>
@@ -194,8 +196,8 @@
   <div class="team-identity">
     <div class="team-photo-frame">
       <img class="team-photo"
-        src="/lernbus/img/conny-brandes-portrait.webp"
-        srcset="/lernbus/img/conny-brandes-portrait-small.webp 600w, /lernbus/img/conny-brandes-portrait.webp 1200w"
+        src="/lernbus/img/conny-brandes-portrait.webp?v=6f2f6df03c88"
+        srcset="/lernbus/img/conny-brandes-portrait-small.webp?v=8ddacd91d5a4 600w, /lernbus/img/conny-brandes-portrait.webp?v=6f2f6df03c88 1200w"
         sizes="(max-width: 48rem) 18rem, (max-width: 80rem) 32vw, 27rem"
         width="1200" height="932"
         alt="Conny Brandes, Leiterin Lernbus"
@@ -318,15 +320,19 @@
         <a class="morelink" href="mailto:info@lernbus.ch">info@lernbus.ch</a>
       </div>
       <div class="book-card">
-        <form id="anfrage" action="mailto:info@lernbus.ch" method="post" enctype="text/plain">
+        <form id="anfrage" action="https://formspree.io/f/maeyrgjk" method="post" data-direct-contact data-locale="de" aria-describedby="contact-note">
           <div class="form-grid">
-            <div class="field"><label for="f-name">Ihr Name</label><input id="f-name" name="name" type="text" autocomplete="name" required /></div>
-            <div class="field"><label for="f-contact">Ihre E-Mail-Adresse</label><input id="f-contact" name="contact" type="email" autocomplete="email" required /></div>
-            <div class="field wide"><label for="f-msg">Ihre Nachricht</label><textarea id="f-msg" name="msg" rows="5" required></textarea></div>
+            <div class="field"><label for="f-name">Ihr Name</label><input id="f-name" name="name" type="text" autocomplete="name" maxlength="120" required /></div>
+            <div class="field"><label for="f-contact">Ihre E-Mail-Adresse</label><input id="f-contact" name="email" type="email" autocomplete="email" maxlength="254" required /></div>
+            <div class="field wide"><label for="f-msg">Ihre Nachricht</label><textarea id="f-msg" name="message" rows="5" maxlength="5000" required></textarea></div>
           </div>
-          <div style="margin-top:1.4rem"><button type="submit" class="btn btn-ghost">E-Mail vorbereiten</button></div>
+          <div class="contact-trap" aria-hidden="true"><label for="f-website">Website</label><input id="f-website" name="_gotcha" type="text" tabindex="-1" autocomplete="off" maxlength="200" /></div>
+          <input type="hidden" name="_subject" value="Kontakt Lernbus" />
+          <input type="hidden" name="language" value="de" />
+          <div style="margin-top:1.4rem"><button type="submit" class="btn btn-ghost">Nachricht senden</button></div>
         </form>
-        <p class="book-note">Das Formular öffnet Ihr E-Mail-Programm mit Ihrer Nachricht an info@lernbus.ch. Dort können Sie die Nachricht prüfen und absenden.</p>
+        <p class="book-note" id="contact-note">Ihre Nachricht wird direkt an info@lernbus.ch übermittelt. <a class="contact-privacy" href="/impressum/#formulare">Datenschutz zum Kontaktformular</a></p>
+        <p class="contact-status" data-contact-status role="status" aria-live="polite" aria-atomic="true"></p>
       </div>
     </div>
   </section>
@@ -403,12 +409,5 @@
   </div>
 </footer>
 
-<script>
-(function(){var f=document.getElementById('anfrage');if(!f)return;
-f.addEventListener('submit',function(e){e.preventDefault();
-var g=function(n){var el=f.elements[n];return el?el.value.trim():'';};
-var lines=['Kontakt Lernbus','','Name: '+g('name'),'E-Mail: '+g('contact'),'',g('msg')];
-location.href='mailto:info@lernbus.ch?subject='+encodeURIComponent('Kontakt Lernbus')+'&body='+encodeURIComponent(lines.join('\n'));});})();
-</script>
 </body>
 </html>

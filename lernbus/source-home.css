@@ -1,4 +1,6 @@
 /* Design layer over the original wording, with the requested booking/contact changes. */
+/* Page rhythm: yellow opens and closes the story; violet anchors why and fees.
+   Paper and pale violet alternate between them, so each section has its own surface. */
 .source-home{overflow-x:visible;--section-space:clamp(4rem,7vw,7rem)}
 .source-home .hero-inner{padding-top:11rem;padding-bottom:4rem}
 .source-hero-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:3rem 4rem;align-items:center}
@@ -11,6 +13,7 @@
 .source-home .section{padding-block:var(--section-space)}
 .source-home h2.big{max-width:22ch}
 .source-home .lead{font-size:1.2rem}
+.source-home #zielgruppe{background:var(--bg)}
 .source-home #zielgruppe h2{font-size:clamp(3rem,5.5vw,5.5rem)}
 .source-home .fuerwen{margin-top:2.5rem}
 .source-home .fuerwen li{font-size:clamp(1.4rem,2.1vw,2rem);line-height:1.35;text-wrap:pretty;padding-block:1.2rem}
@@ -36,7 +39,7 @@
 .source-home .ticks{grid-template-columns:repeat(2,minmax(0,1fr));gap:1.5rem 3rem}
 .source-home .ticks li{font-weight:600;font-size:1.0625rem;padding-left:2rem}
 .source-home .ticks li::before,.source-home .ticks li:nth-child(even)::before{content:'';top:calc((1.4em - 1.7rem)/2);background:var(--yellow) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='m6 12 4 4 8-8' fill='none' stroke='%23493f80' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/72% no-repeat;border-radius:50%;transform:none}
-.source-home .room-section{background:var(--bg)}
+.source-home .room-section{background:var(--surface-soft)}
 .room-heading{font-family:var(--display);font-size:clamp(1.8rem,3vw,3rem);line-height:1.15;letter-spacing:-.02em;color:var(--violet);margin:0 0 2rem;text-wrap:balance}
 .room-photos{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(1rem,2vw,2rem)}
 .room-photos figure{margin:0;min-width:0}
@@ -61,7 +64,7 @@
 .source-home .tariffs .tdesc{color:var(--bg);max-width:42ch;font-size:1rem}
 .source-home .tariffs td{font-size:clamp(1.65rem,2.6vw,2.6rem);color:var(--bg);font-variant-numeric:tabular-nums;padding-left:1rem}
 .source-home .tariffs-note{font-size:1.0625rem;margin-top:2rem}
-.source-home #qualitaet{background:var(--bg)}
+.source-home #qualitaet{background:var(--surface-soft)}
 .source-home #qualitaet .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:4rem}
 .source-home #qualitaet h2{grid-column:1;grid-row:1/span 2;max-width:19ch;margin:0;hyphens:auto;overflow-wrap:anywhere}
 .source-home #qualitaet .lead{grid-column:2;margin:0!important;font-size:1.125rem}
@@ -79,11 +82,11 @@
 .source-home .check.wide{grid-column:1/-1}
 .source-home .book-note{color:var(--teal-soft);font-size:.9375rem;max-width:60ch}
 
-.source-home #fragen{background:var(--surface-soft)}
+.source-home #fragen{background:var(--bg)}
 .source-home #fragen .detail{max-width:none;margin-top:3rem!important}
 .source-home #fragen .dsec h2{font-size:clamp(1.65rem,2.5vw,2.5rem);max-width:24ch}
 .source-home #fragen .dsec p{margin-top:0;max-width:60ch}
-.source-home #traegerschaft{background:var(--bg)}
+.source-home #traegerschaft{background:var(--yellow);--section-rule:rgba(73,63,128,.3)}
 .source-home #traegerschaft .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:1.5rem 4rem}
 .source-home #traegerschaft .eyebrow{grid-column:1/-1}
 .source-home #traegerschaft h2{grid-column:1;grid-row:2/span 2;margin:0;font-size:clamp(3rem,5.3vw,5.6rem)}
@@ -134,9 +137,7 @@
  .source-home .tariffs tbody th{width:auto;padding:0}.source-home .tariffs th,.source-home .tariffs td{padding:0}.source-home .tariffs td{font-size:1.8rem;margin:1rem 1.5rem 0 0}.source-home .tariffs td::before{font-size:.875rem;color:var(--bg);letter-spacing:0;text-transform:none;font-weight:500}.source-home .tariffs .tname{font-size:1.65rem}.source-home .tariffs tr{padding:1.5rem 0}.source-home .tariffs .tdesc{font-size:1rem}
 }
 @media(prefers-reduced-motion:reduce){.source-art{transform:none}}
-@media print{.source-home{--rule-inverse:#b3afbc;--section-space:1.5rem}.source-home .site-head,.booking-section,.book-card{display:none}.source-home .hero-inner{padding-top:1rem}.source-home .hero,.source-home #warum,.source-home #kosten,.source-home #qualitaet,.source-home #traegerschaft{background:white;color:#29233e}.source-home #warum h2,.source-home #warum h3,.source-home #warum p,.source-home #kosten h2,.source-home #kosten p,.source-home #kosten td,.source-home #kosten th,.source-home #kosten span{color:#29233e}.source-art{transform:none;max-width:250px}}
-
-.source-home .contact-section{background:var(--bg)}
+.source-home .contact-section{background:var(--surface-soft)}
 .contact-grid{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(2rem,5vw,5rem);align-items:start}
 .contact-grid>*{min-width:0}
 .contact-intro h2{max-width:12ch}
@@ -148,3 +149,13 @@
 .contact-section .btn-ghost:hover{background:var(--violet);color:var(--bg)}
 @media(max-width:64rem){.contact-grid{grid-template-columns:minmax(0,1fr);gap:2rem}.contact-intro .lead{max-width:56ch}.contact-intro h2{max-width:none}}
 @media(max-width:32rem){.contact-section .form-grid{grid-template-columns:minmax(0,1fr)}.contact-section .btn{width:100%;justify-content:center}}
+@media print{
+ .source-home{--bg:#fff;--surface-soft:#fff;--rule-inverse:#b3afbc;--section-space:1.5rem}
+ .source-home .site-head,.source-home .booking-section,.source-home .book-card,.source-home .foot-logo{display:none}
+ .source-home .hero-inner{padding-top:1rem}
+ .source-home .hero,.source-home #warum,.source-home #kosten,.source-home #traegerschaft{background:#fff}
+ /* Set inverse section text tokens locally, including nested copy and table labels. */
+ .source-home #warum,.source-home #kosten{--bg:var(--ink);--yellow:var(--ink)}
+ .source-home .foot,.source-home .foot a{background:#fff;color:var(--ink)}
+ .source-art{transform:none;max-width:250px}
+}
