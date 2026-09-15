@@ -1,12 +1,24 @@
 import { createHash } from 'node:crypto';
 import { readFileSync } from 'node:fs';
 
-// Change stylesheet URLs whenever their contents change, including for returning visitors.
+// Change asset URLs whenever their contents change, including for returning visitors.
 export default () => Object.fromEntries(
-  ['styles', 'detail', 'source-home'].map(name => [
-    name,
+  [
+    ['styles', 'styles.css'],
+    ['detail', 'detail.css'],
+    ['source-home', 'source-home.css'],
+    ['contact', 'contact.js'],
+    ['contactCss', 'contact.css'],
+    ['portrait', 'img/conny-brandes-portrait.webp'],
+    ['portraitSmall', 'img/conny-brandes-portrait-small.webp'],
+    ['roomPlay', 'img/lernraum-spielecke.webp'],
+    ['roomPlaySmall', 'img/lernraum-spielecke-small.webp'],
+    ['roomWindows', 'img/lernraum-fenster.webp'],
+    ['roomWindowsSmall', 'img/lernraum-fenster-small.webp']
+  ].map(([key, filename]) => [
+    key,
     createHash('sha256')
-      .update(readFileSync(new URL(`../lernbus/${name}.css`, import.meta.url)))
+      .update(readFileSync(new URL(`../lernbus/${filename}`, import.meta.url)))
       .digest('hex').slice(0, 12)
   ])
 );

@@ -22,7 +22,9 @@ locale: en
 <link rel="stylesheet" href="../styles.css?v={{ lernbusAssets.styles }}" />
 <link rel="stylesheet" href="../detail.css?v={{ lernbusAssets.detail }}">
 <link rel="stylesheet" href="../source-home.css?v={{ lernbusAssets['source-home'] }}">
+<link rel="stylesheet" href="../contact.css?v={{ lernbusAssets.contactCss }}">
 <script src="../booking.js" type="module"></script>
+<script src="../contact.js?v={{ lernbusAssets.contact }}" type="module"></script>
 </head>
 <body class="detail-page source-home locale-en">
 <a href="#main" class="skip">Skip to content</a>
@@ -234,15 +236,19 @@ locale: en
         <a class="morelink" href="mailto:info@lernbus.ch">info@lernbus.ch</a>
       </div>
       <div class="book-card">
-        <form id="anfrage" action="mailto:info@lernbus.ch" method="post" enctype="text/plain">
+        <form id="anfrage" action="{{ lernbusContact.endpoint }}" method="post" data-direct-contact data-locale="en" aria-describedby="contact-note">
           <div class="form-grid">
-            <div class="field"><label for="f-name">Your name</label><input id="f-name" name="name" type="text" autocomplete="name" required /></div>
-            <div class="field"><label for="f-contact">Your email address</label><input id="f-contact" name="contact" type="email" autocomplete="email" required /></div>
-            <div class="field wide"><label for="f-msg">Your message</label><textarea id="f-msg" name="msg" rows="5" required></textarea></div>
+            <div class="field"><label for="f-name">Your name</label><input id="f-name" name="name" type="text" autocomplete="name" maxlength="120" required /></div>
+            <div class="field"><label for="f-contact">Your email address</label><input id="f-contact" name="email" type="email" autocomplete="email" maxlength="254" required /></div>
+            <div class="field wide"><label for="f-msg">Your message</label><textarea id="f-msg" name="message" rows="5" maxlength="5000" required></textarea></div>
           </div>
-          <div style="margin-top:1.4rem"><button type="submit" class="btn btn-ghost">Prepare email</button></div>
+          <div class="contact-trap" aria-hidden="true"><label for="f-website">Website</label><input id="f-website" name="_gotcha" type="text" tabindex="-1" autocomplete="off" maxlength="200" /></div>
+          <input type="hidden" name="_subject" value="Lernbus enquiry" />
+          <input type="hidden" name="language" value="en" />
+          <div style="margin-top:1.4rem"><button type="submit" class="btn btn-ghost">Send message</button></div>
         </form>
-        <p class="book-note">This form opens your email app with your message to info@lernbus.ch. You can review and send it there.</p>
+        <p class="book-note" id="contact-note">Your message will be transmitted directly to info@lernbus.ch. <a class="contact-privacy" href="/imprint/#formulare">Contact form privacy information</a></p>
+        <p class="contact-status" data-contact-status role="status" aria-live="polite" aria-atomic="true"></p>
       </div>
     </div>
   </section>
@@ -319,12 +325,5 @@ locale: en
   </div>
 </footer>
 
-<script>
-(function(){var f=document.getElementById('anfrage');if(!f)return;
-f.addEventListener('submit',function(e){e.preventDefault();
-var g=function(n){var el=f.elements[n];return el?el.value.trim():'';};
-var lines=['Lernbus enquiry','','Name: '+g('name'),'Email: '+g('contact'),'',g('msg')];
-location.href='mailto:info@lernbus.ch?subject='+encodeURIComponent('Lernbus enquiry')+'&body='+encodeURIComponent(lines.join('\n'));});})();
-</script>
 </body>
 </html>

@@ -64,14 +64,14 @@
 
         <div class="dsec" id="datenschutz">
           <h2>Privacy at a glance</h2>
-          <p>We do not use analytics or advertising trackers. Fonts and images are loaded from our own website hosting. An email is sent only when you send it from your email application.</p>
+          <p>We do not use analytics or advertising trackers. Fonts and images are loaded from our own website hosting. Details entered in the Lernbus contact form are transmitted only when you choose “Send message”.</p>
           {% if lernbusBooking.configured %}<p>For appointment booking, we link to {{ lernbusBooking.providerName | escape }}. An embedded calendar loads only when you select “Show appointments”. The booking provider then receives technical access data, including your IP address. Information entered into the calendar is processed by that provider to organise the conversation. You can contact us by email or post instead.</p>{% endif %}
         </div>
 
         <div class="dsec" id="formulare">
           <h2>Contact and enquiries</h2>
-          <p>The Lernbus page offers a contact form and an email link. Both open your own email application; the form prepares your message there. The website does not store contact details you enter. The message is sent only when you send it from your email application.</p>
-          <p>Enquiry forms on the Forscherbühne pages also only assemble an email from your entries. Those entries are not transmitted to or stored on this website. The message is sent only when you send it from your email application.</p>
+          <p>The contact forms on the German and English Lernbus main pages send your message over an encrypted HTTPS connection to Formspree (Formspree, Inc., United States). Formspree processes your name, email address and message, forwards the enquiry to info@lernbus.ch and temporarily retains it in a submission archive. Technical information such as your IP address is also processed to provide and protect the service. Processing takes place in the United States, among other locations. For details, see <a href="https://formspree.io/legal/privacy-policy/">Formspree’s privacy policy</a>.</p>
+          <p>You can contact us directly by email or post instead. Email links and the enquiry forms on the Lernbus concept page and Forscherbühne pages still open your own email application. Those messages are sent only when you send them yourself.</p>
         </div>
 
         <div class="dsec" id="anfragen">
