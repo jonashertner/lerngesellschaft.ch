@@ -12,5 +12,10 @@ export default function () {
   if (!config.enabled) return { configured: false, bookingUrl: '', embedUrl: '', providerName: '', weeklySlots };
   const settings = bookingSettings(config);
   if (!settings) throw new Error('Lernbus booking is enabled but its public calendar configuration is invalid.');
-  return { configured: true, ...settings, weeklySlots };
+  const locales = Object.fromEntries(Object.entries(config.locales || {}).map(([locale, urls]) => {
+    const localized = bookingSettings({ ...config, ...urls });
+    if (!localized) throw new Error(`Invalid Lernbus calendar configuration for ${locale}.`);
+    return [locale, localized];
+  }));
+  return { configured: true, ...settings, locales, weeklySlots, firstLessonDate: config.firstLessonDate || '' };
 }
