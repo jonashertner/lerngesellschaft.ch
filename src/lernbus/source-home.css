@@ -7,8 +7,7 @@
 .source-art{margin:0;min-width:0;transform:rotate(-2deg)}
 .source-art img{width:100%;height:auto;border:8px solid var(--bg);box-shadow:8px 8px 0 #493f8033}
 .source-hero-grid .source-art img{aspect-ratio:1.4;object-fit:cover}
-.audience-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:5rem;align-items:center}
-@media(max-width:48rem){.source-hero-grid,.audience-grid{grid-template-columns:1fr;gap:2rem}.source-home .hero-inner{padding-top:9rem;padding-bottom:3rem}.source-home .hero h1{font-size:clamp(2.65rem,8vw,4rem)}.source-home .hero .lead{max-width:none}.source-art{width:95%;justify-self:center}.audience-grid .source-art{max-width:360px}}
+@media(max-width:48rem){.source-hero-grid{grid-template-columns:1fr;gap:2rem}.source-home .hero-inner{padding-top:9rem;padding-bottom:3rem}.source-home .hero h1{font-size:clamp(2.65rem,8vw,4rem)}.source-home .hero .lead{max-width:none}.source-art{width:95%;justify-self:center}}
 .source-home .section{padding-block:clamp(4rem,7vw,7rem)}
 .source-home h2.big{max-width:22ch}
 .source-home .lead{font-size:1.2rem}
@@ -16,7 +15,6 @@
 .source-home .fuerwen{margin-top:2.5rem}
 .source-home .fuerwen li{font-size:clamp(1.4rem,2.1vw,2rem);line-height:1.35;text-wrap:pretty;padding-block:1.2rem}
 .source-home .fuerwen b{background:none;color:inherit}
-.source-home .audience-grid .source-art{width:95%;transform:rotate(3deg);margin-top:2rem}
 .source-home #warum{background:var(--violet);color:var(--bg)}
 .source-home #warum .wrap{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);column-gap:5rem;align-items:start}
 .source-home #warum .eyebrow{grid-column:1/-1;color:var(--yellow);margin-bottom:1rem}
@@ -119,13 +117,13 @@
 .booking-privacy{font-size:.9375rem;margin-top:1rem;text-decoration:underline;text-underline-offset:4px}
 .booking-error{margin-top:1rem;color:#842a1d}
 @media(max-width:64rem){
- .source-hero-grid{column-gap:2rem}.source-home .hero-inner{padding-top:10rem}.source-home .hero .lead{font-size:1.125rem}.audience-grid{gap:2.5rem}
+ .source-hero-grid{column-gap:2rem}.source-home .hero-inner{padding-top:10rem}.source-home .hero .lead{font-size:1.125rem}
  .source-home #warum .wrap{column-gap:2.5rem}.source-home #warum h2{font-size:3rem}.source-home #warum .dsec h3{font-size:1.8rem}
  .source-home .pillars{gap:2.5rem}.source-home .checksheet{padding:2rem}.source-home .steps.grid2{gap:1rem 2rem}.source-home #qualitaet .wrap{column-gap:2rem}.source-home #qualitaet h2{font-size:3rem}
 }
 @media(max-width:48rem){
  .source-home .hero-inner{padding-top:9rem}.source-home .section{padding-block:3.5rem}.source-home h2.big{font-size:clamp(2.6rem,7vw,3.8rem);hyphens:auto;overflow-wrap:anywhere}.source-home .lead{font-size:1.125rem}
- .source-home .audience-grid .source-art{margin:0}.source-home .fuerwen li{font-size:1.4rem}
+ .source-home .fuerwen li{font-size:1.4rem}
  .source-home #warum .wrap{display:block}.source-home #warum h2{font-size:clamp(2.6rem,7vw,3.8rem);max-width:20ch}.source-home #warum .detail{margin-top:2.5rem!important}.source-home #warum .lead{max-width:none!important}
  .source-home .pillars{grid-template-columns:1fr!important;gap:2rem}.source-home .pillar h3{max-width:none;font-size:2rem}.source-home .checksheet{padding:1.5rem;margin-top:3rem;box-shadow:5px 5px 0 var(--violet)}.source-home .ticks{grid-template-columns:1fr;gap:1.2rem}
  .source-home .steps.grid2{grid-template-columns:1fr;gap:.5rem}.source-home .steps .step{padding-left:3.5rem}.source-home .steps .dotn{font-size:2.7rem}.source-home .steps .step p{font-size:1.0625rem}
