@@ -1,22 +1,34 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="{{ lang or 'de' }}">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="theme-color" content="#fafafa" />
 <title>{{ title }}</title>
-<meta name="description" content="Allgemeine Geschäftsbedingungen für die Bildungsangebote der Lerngesellschaft. Fassung vom 15. September 2026." />
-<link rel="canonical" href="https://lerngesellschaft.ch/agb/" />
+<meta name="description" content="{{ description | escape }}" />
+<link rel="canonical" href="https://lerngesellschaft.ch{{ page.url }}" />
+{% if alternateUrl %}
+<link rel="alternate" hreflang="de-CH" href="https://lerngesellschaft.ch/lernbus/agb/" />
+<link rel="alternate" hreflang="en" href="https://lerngesellschaft.ch/lernbus/en/terms/" />
+{% endif %}
 <link rel="preload" href="/assets/fonts/bricolage-latin.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="stylesheet" href="/assets/styles.css" />
 <link rel="stylesheet" href="/assets/legal.css" />
 </head>
 <body class="legal-page">
-<a href="#main" class="skip">Zum Inhalt springen</a>
+<a href="#main" class="skip">{% if lang == 'en' %}Skip to content{% else %}Zum Inhalt springen{% endif %}</a>
 <header class="legal-head">
   <div class="wrap">
+    {% if legalProgramme == 'lernbus' %}
+    <a href="{% if lang == 'en' %}/lernbus/en/{% else %}/lernbus/{% endif %}" class="brand"><b>Lernbus</b><span>Lerngesellschaft · Basel</span></a>
+    <nav aria-label="{% if lang == 'en' %}Main navigation{% else %}Hauptnavigation{% endif %}">
+      <a href="{% if lang == 'en' %}/lernbus/en/{% else %}/lernbus/{% endif %}">{% if lang == 'en' %}Back to Lernbus{% else %}Zurück zum Lernbus{% endif %}</a>
+      <a href="{{ alternateUrl }}" lang="{% if lang == 'en' %}de{% else %}en{% endif %}">{% if lang == 'en' %}Deutsch{% else %}English{% endif %}</a>
+    </nav>
+    {% else %}
     <a href="/" class="brand"><b>Lerngesellschaft</b><span>Learning Society · Basel</span></a>
     <nav aria-label="Hauptnavigation"><a href="/">Übersicht</a><a href="/lernbus/">Lernbus</a></nav>
+    {% endif %}
   </div>
 </header>
 <main id="main" class="legal-content wrap">
@@ -25,9 +37,9 @@
 <footer class="foot">
   <div class="wrap">
     <span>Lerngesellschaft / Learning Society · Basel</span>
-    <span>Münsterplatz 17, 4051 Basel · team@jonashertner.com</span>
-    <a href="/impressum/">Impressum</a>
-    <a href="/agb/" aria-current="page">AGB</a>
+    <span>Münsterplatz 17, 4051 Basel · {% if legalProgramme == 'lernbus' %}info@lernbus.ch{% else %}team@jonashertner.com{% endif %}</span>
+    <a href="{% if lang == 'en' %}/imprint/{% else %}/impressum/{% endif %}">{% if lang == 'en' %}Legal information{% else %}Impressum{% endif %}</a>
+    <a href="{{ page.url }}" aria-current="page">{% if lang == 'en' %}Terms and conditions{% else %}AGB{% endif %}</a>
   </div>
 </footer>
 </body>

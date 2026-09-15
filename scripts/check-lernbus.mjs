@@ -13,7 +13,7 @@ assert.equal(bookingSettings(config).bookingUrl, config.bookingUrl);
 for (const url of ['javascript:alert(1)', 'http://cal.com/test', 'https://cal.com.evil.test/', 'https://secret@cal.com/test', '/relative']) assert.equal(publicBookingUrl(url), null);
 
 // Check generated routes, fragments, asset references, and language/price parity.
-const paths = ['lernbus/index.html', 'lernbus/en/index.html', 'lernbus/konzept/index.html', 'lernbus/en/konzept/index.html', 'lernbus/team/index.html', 'lernbus/team/en/index.html'];
+const paths = ['lernbus/index.html', 'lernbus/en/index.html', 'lernbus/konzept/index.html', 'lernbus/en/konzept/index.html', 'lernbus/team/index.html', 'lernbus/team/en/index.html', 'lernbus/agb/index.html', 'lernbus/en/terms/index.html', 'agb/index.html'];
 let references = 0;
 for (const path of paths) {
   const full = resolve('_site', path);

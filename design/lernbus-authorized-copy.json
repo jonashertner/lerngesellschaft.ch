@@ -1,5 +1,5 @@
 {
-  "authorization": "Jonas, 15 September 2026: round tariffs, separate appointment booking and contact, add Conny Brandes as Leiterin with photo/bio to come. Only those changes and their navigation are permitted beyond the immutable live-site baseline. Jonas also authorized the reviewed AGB publication via the task AGBs für Lerngesellschaft entwerfen (verified 15 September 2026): footer links and minimal DE/EN clarification that six months is a shared plan and support is cancellable at any time. Jonas, 15 September 2026: add the supplied first-person Conny biography, gently edited and structured, with a photo placeholder in a Team section immediately before Ablauf. Update the existing team page and English equivalents consistently. Publish the completed site to lernbus.ch and its related public routes. Jonas, 15 September 2026: remove the repeated short cancellation clauses (Ablauf and individual/pair FAQ, corresponding concept wording), remove the funded-places bullet from Zielgruppe, change the booking calendar to lessons, use Mentor instead of Lernmentor, replace the pedagogical-background sentence and shorten the quality sentence to his supplied wording. His final requested booking lead is exactly Wählen Sie einen freien Termin für ein Gespräch. Apply corresponding English edits; retain the AGB and the single shared-planning FAQ explanation. Jonas reaffirmed that the calendar must book a lesson rather than an introductory conversation. Navigation, heading, lead, iframe label, fallback subject and weekly labels are now prepared consistently for lessons. Publishing this pending switch requires the matching Microsoft Bookings service update; renewed account authentication is still needed. Latest steering during the successful provider update: title exactly Lektion anfragen; lead exactly Wählen Sie den Termin, der Ihnen passt für die Lektion. Wir kontaktieren Sie dann für ein Kennenlerngespräch. Use the same title/description for the existing Bookings service, and matching English wording on the site. The service was saved successfully with the same one-hour duration; the authentication blocker is resolved. Jonas, 15 September 2026: move Rahmenbedingungen und Qualitätssicherung to the end, immediately before Ein Angebot der Lerngesellschaft; preserve the complete section wording and align navigation order on the German and English parent pages. Jonas, 15 September 2026, in Lernbus-Fotos einbinden: use the supplied portrait of Conny in her profile and the two room photos on the site. Remove the CB/photo-to-follow placeholders on DE/EN parent and team pages and label the room gallery Ein Blick in unseren Lernraum. / A look inside our learning space. Jonas, 15 September 2026: send contact-form messages directly to info@lernbus.ch, replacing the mailto form action with protected direct submission. After asking Codex to choose a suitable provider, Jonas completed Formspree account registration. Authorize the DE/EN send-button labels, direct-transmission and privacy notice, and nonvisual Website honeypot label. Formspree form maeyrgjk is configured; delivery verification remains pending. Jonas, 15 September 2026: change the launch/start date to October 2026 across the site, including German and English pages, footers, concept introductions and social metadata. Historical document/version dates remain unchanged. Jonas, 15 September 2026: improve the contribution table layout and remove the paragraph beginning Wenn das Geld zu Hause knapp ist (and its English equivalent). Preserve tariff names, descriptions and all prices. Jonas, 15 September 2026: lessons are booked per school semester rather than as a six-month plan advertised as cancellable at any time. Apply this to AGB and corresponding DE/EN parent and concept wording. Mandatory statutory termination rights remain reserved; do not create automatic renewal, a notice period or an unconditional full-semester payment penalty. Jonas, 15 September 2026: work through the final quality review one step at a time. Step 1: add the existing lesson-request action to the hero and prioritize/simplify the primary navigation while preserving all section content. Jonas, 15 September 2026: ensure the highest-quality English version of the site. Authorised editorial revision of all three English Lernbus routes, Conny biography and English interface/status copy: natural British English, faithful German meaning, consistent brand names, corrected language navigation. No new programme claims, changed prices, altered eligibility or changed semester terms. Exact English token changes are recorded below; the live source baseline and German wording remain unchanged. Jonas, 15 September 2026: set up the Lernbus team page with the supplied Elternstimmen for Conny and begin implementation. Add all three original German statements to both dedicated team routes with their supplied attributions, identify German originals on the English page, and link from the parent-page Conny profiles. Source DOCX remains unchanged; no substantive quote editing or translation. Jonas, 15 September 2026: accepted the proposed Investieren closing section after Lerngesellschaft, an anchor from the tariff table, a donation-specific email contact to info@lernbus.ch, and visible notice that Lerngesellschaft is not currently tax-exempt and cannot guarantee tax deductibility. Include equivalent English content. No payment details or fixed donation impact amounts were requested. Jonas, 15 September 2026: frame the closing invitation as an investment rather than a donation and explain briefly. Use investment wording for the heading, body, contact label and email subject in DE/EN; clarify the educational purpose without financial return. Retain the tax-status notice using contribution terminology. Jonas, 15 September 2026: replace the no-financial-return sentence with a brief expression of education as a multiplying investment whose benefits extend through children’s lives and the society they shape. Use equivalent English wording, retain the tax-status note.",
+  "authorization": "Jonas, 15 September 2026: round tariffs, separate appointment booking and contact, add Conny Brandes as Leiterin with photo/bio to come. Only those changes and their navigation are permitted beyond the immutable live-site baseline. Jonas also authorized the reviewed AGB publication via the task AGBs für Lerngesellschaft entwerfen (verified 15 September 2026): footer links and minimal DE/EN clarification that six months is a shared plan and support is cancellable at any time. Jonas, 15 September 2026: add the supplied first-person Conny biography, gently edited and structured, with a photo placeholder in a Team section immediately before Ablauf. Update the existing team page and English equivalents consistently. Publish the completed site to lernbus.ch and its related public routes. Jonas, 15 September 2026: remove the repeated short cancellation clauses (Ablauf and individual/pair FAQ, corresponding concept wording), remove the funded-places bullet from Zielgruppe, change the booking calendar to lessons, use Mentor instead of Lernmentor, replace the pedagogical-background sentence and shorten the quality sentence to his supplied wording. His final requested booking lead is exactly Wählen Sie einen freien Termin für ein Gespräch. Apply corresponding English edits; retain the AGB and the single shared-planning FAQ explanation. Jonas reaffirmed that the calendar must book a lesson rather than an introductory conversation. Navigation, heading, lead, iframe label, fallback subject and weekly labels are now prepared consistently for lessons. Publishing this pending switch requires the matching Microsoft Bookings service update; renewed account authentication is still needed. Latest steering during the successful provider update: title exactly Lektion anfragen; lead exactly Wählen Sie den Termin, der Ihnen passt für die Lektion. Wir kontaktieren Sie dann für ein Kennenlerngespräch. Use the same title/description for the existing Bookings service, and matching English wording on the site. The service was saved successfully with the same one-hour duration; the authentication blocker is resolved. Jonas, 15 September 2026: move Rahmenbedingungen und Qualitätssicherung to the end, immediately before Ein Angebot der Lerngesellschaft; preserve the complete section wording and align navigation order on the German and English parent pages. Jonas, 15 September 2026, in Lernbus-Fotos einbinden: use the supplied portrait of Conny in her profile and the two room photos on the site. Remove the CB/photo-to-follow placeholders on DE/EN parent and team pages and label the room gallery Ein Blick in unseren Lernraum. / A look inside our learning space. Jonas, 15 September 2026: send contact-form messages directly to info@lernbus.ch, replacing the mailto form action with protected direct submission. After asking Codex to choose a suitable provider, Jonas completed Formspree account registration. Authorize the DE/EN send-button labels, direct-transmission and privacy notice, and nonvisual Website honeypot label. Formspree form maeyrgjk is configured; delivery verification remains pending. Jonas, 15 September 2026: change the launch/start date to October 2026 across the site, including German and English pages, footers, concept introductions and social metadata. Historical document/version dates remain unchanged. Jonas, 15 September 2026: improve the contribution table layout and remove the paragraph beginning Wenn das Geld zu Hause knapp ist (and its English equivalent). Preserve tariff names, descriptions and all prices. Jonas, 15 September 2026: lessons are booked per school semester rather than as a six-month plan advertised as cancellable at any time. Apply this to AGB and corresponding DE/EN parent and concept wording. Mandatory statutory termination rights remain reserved; do not create automatic renewal, a notice period or an unconditional full-semester payment penalty. Jonas, 15 September 2026: work through the final quality review one step at a time. Step 1: add the existing lesson-request action to the hero and prioritize/simplify the primary navigation while preserving all section content. Jonas, 15 September 2026: ensure the highest-quality English version of the site. Authorised editorial revision of all three English Lernbus routes, Conny biography and English interface/status copy: natural British English, faithful German meaning, consistent brand names, corrected language navigation. No new programme claims, changed prices, altered eligibility or changed semester terms. Exact English token changes are recorded below; the live source baseline and German wording remain unchanged. Jonas, 15 September 2026: set up the Lernbus team page with the supplied Elternstimmen for Conny and begin implementation. Add all three original German statements to both dedicated team routes with their supplied attributions, identify German originals on the English page, and link from the parent-page Conny profiles. Source DOCX remains unchanged; no substantive quote editing or translation. Jonas, 15 September 2026: accepted the proposed Investieren closing section after Lerngesellschaft, an anchor from the tariff table, a donation-specific email contact to info@lernbus.ch, and visible notice that Lerngesellschaft is not currently tax-exempt and cannot guarantee tax deductibility. Include equivalent English content. No payment details or fixed donation impact amounts were requested. Jonas, 15 September 2026: frame the closing invitation as an investment rather than a donation and explain briefly. Use investment wording for the heading, body, contact label and email subject in DE/EN; clarify the educational purpose without financial return. Retain the tax-status notice using contribution terminology. Jonas, 15 September 2026: replace the no-financial-return sentence with a brief expression of education as a multiplying investment whose benefits extend through children’s lives and the society they shape. Use equivalent English wording, retain the tax-status note. Jonas, 15 September 2026, forwarding Conny’s feedback: correct mentor qualifications to a pedagogical background; first semester individually to build the relationship and second half-year in pairs; distinguish Lernbus terms from other programmes and allow enrolment only by parents or legal guardians. Apply consistently to German and English home, concept and team copy, metadata and enquiry forms. Remove school/organisation role and free-choice lesson-format fields. Provide dedicated German and English Lernbus terms, link them from all Lernbus footers and the calendar, and clearly exclude Lernbus from the general terms. Semester bookings and mandatory statutory protections remain unchanged; continuation in the next semester is agreed separately.",
   "rounding": "Working choice communicated: CHF 12.50 to CHF 10; CHF 87.50 to CHF 90.",
   "pages": {
     "lernbus/index.html": [
@@ -13,7 +13,7 @@
         "start": 90,
         "end": 104,
         "before": "Einzel - und Zweiersetting Ermöglichte Plätze zur Förderung der Chancengleichheit Warum der Lernbus Lernen",
-        "after": "Einzel - und Zweiersetting Warum der Lernbus Lernen"
+        "after": "ersten Semester einzeln , im zweiten Halbjahr zu zweit Warum der Lernbus Lernen"
       },
       {
         "start": 434,
@@ -25,7 +25,7 @@
         "start": 450,
         "end": 467,
         "before": "( 60 Minuten , mindestens 6 Monate , im Einzel - oder Zweiersetting ) 3 Aufbau grundlegender",
-        "after": "( 60 Minuten , im Einzel - oder Zweiersetting ; Buchung pro Schulsemester ) 3 Aufbau grundlegender"
+        "after": "in Lektionen von 60 Minuten . Im ersten Semester einzeln zum Beziehungsaufbau , im zweiten Halbjahr zu zweit . Buchung pro Schulsemester . 3 Aufbau grundlegender"
       },
       {
         "start": 577,
@@ -49,13 +49,37 @@
         "start": 1019,
         "end": 1036,
         "before": "und seinen Lernweg . Wer arbeitet mit meinem Kind ? Lernmentorinnen und Lernmentoren mit unterschiedlichen fachlichen Hintergründen",
-        "after": "und seinen Lernweg . Die Lektionen werden pro Schulsemester gebucht . Wer arbeitet mit meinem Kind ? Mentorinnen und Mentoren mit unterschiedlichen fachlichen Hintergründen"
+        "after": "und seinen Lernweg . Die Lektionen werden pro Schulsemester gebucht . Wer arbeitet mit meinem Kind ? Mentorinnen und Mentoren mit pädagogischer Ausbildung und Erfahrung in der Arbeit mit Kindern"
       },
       {
-        "start": 1105,
+        "start": 1070,
+        "end": 1073,
+        "before": "Beides ist möglich",
+        "after": "Im ersten Semester findet die Begleitung einzeln statt"
+      },
+      {
+        "start": 1074,
+        "end": 1079,
+        "before": "Manche Kinder arbeiten konzentrierter allein",
+        "after": "So haben Ihr Kind und seine Bezugsperson Zeit"
+      },
+      {
+        "start": 1080,
+        "end": 1082,
+        "before": "andere blühen",
+        "after": "eine vertrauensvolle Beziehung aufzubauen . Im zweiten Halbjahr finden die Lektionen"
+      },
+      {
+        "start": 1084,
+        "end": 1093,
+        "before": "auf , weil Erklären und Zuhören selbst Lernen sind",
+        "after": "statt"
+      },
+      {
+        "start": 1094,
         "end": 1119,
-        "before": ". In beiden Fällen dauert die Begleitung mindestens sechs Monate . Und in den",
-        "after": ". Einzel - und Zweierlektionen werden jeweils pro Schulsemester gebucht . Und in den"
+        "before": "Was für Ihr Kind passt , entscheiden wir gemeinsam im Kennenlerngespräch . In beiden Fällen dauert die Begleitung mindestens sechs Monate . Und in den",
+        "after": "Die Buchung erfolgt jeweils pro Schulsemester . Und in den"
       },
       {
         "start": 1142,
@@ -90,10 +114,16 @@
         "after": "Children who would benefit from targeted support with their learning skills and skills for the future Early German language"
       },
       {
+        "start": 113,
+        "end": 114,
+        "before": "or",
+        "after": "in the first semester and"
+      },
+      {
         "start": 116,
         "end": 157,
         "before": "Places made possible to promote equal opportunity Why the Learning Bus Learning does not begin with letters and numbers . That is why we do not wait to look until a child is already struggling with reading , writing or arithmetic",
-        "after": "Why Lernbus Learning begins before letters and numbers . That is why we look at what children need before they begin to struggle with reading , writing or maths"
+        "after": "in the second Why Lernbus Learning begins before letters and numbers . That is why we look at what children need before they begin to struggle with reading , writing or maths"
       },
       {
         "start": 186,
@@ -133,9 +163,9 @@
       },
       {
         "start": 519,
-        "end": 537,
-        "before": "- years support ( 60 minutes , at least 6 months , one to one or in pairs",
-        "after": "learning support ( 60 - minute lessons , one to one or in pairs ; booked for a school semester"
+        "end": 538,
+        "before": "- years support ( 60 minutes , at least 6 months , one to one or in pairs )",
+        "after": "learning support in 60 - minute lessons . One to one in the first semester to build a trusting relationship , then in pairs in the second semester . Booked for one school semester at a time ."
       },
       {
         "start": 561,
@@ -195,19 +225,31 @@
         "start": 1030,
         "end": 1207,
         "before": "have problems ? No . The Learning Bus is open to every child , whatever they bring with them and wherever they come from . We deliberately begin early , to preserve and strengthen confidence and the joy of learning . Is this not too early ? Young children learn through play and within a secure relationship , and that is exactly where we begin . The point is that learning stays joined to joy from the start , and that it can happen in many different ways . Why at least six months ? Because trust takes time . The effect does not come from any single exercise , but from a reliable relationship and a genuine enthusiasm for the child and their path of learning . Who works with my child ? Learning mentors from a range of professional backgrounds . They are selected carefully and to the highest standards . Quality is maintained continuously through team meetings , professional exchange , evaluation and further training . Meet the team → One child or two",
-        "after": "be struggling ? No . Lernbus is open to every child , whatever their starting point or background . We begin early to preserve and strengthen their confidence and enjoyment of learning . Is it too early to start ? Young children learn through play and through secure relationships . That is where we begin : helping them enjoy learning from the outset , in many different ways . Why book for a school semester ? Because trust takes time . Progress comes from a reliable relationship and enthusiasm for each child and their learning , rather than from any single exercise . Lessons are booked for a school semester at a time . Who works with my child ? Our mentors come from a range of professional backgrounds and are carefully selected to meet the highest standards . Regular team meetings , shared professional learning , evaluation and continuing professional development help us maintain quality . Meet the team → One - to - one lessons or lessons in pairs"
+        "after": "be struggling ? No . Lernbus is open to every child , whatever their starting point or background . We begin early to preserve and strengthen their confidence and enjoyment of learning . Is it too early to start ? Young children learn through play and through secure relationships . That is where we begin : helping them enjoy learning from the outset , in many different ways . Why book for a school semester ? Because trust takes time . Progress comes from a reliable relationship and enthusiasm for each child and their learning , rather than from any single exercise . Lessons are booked for a school semester at a time . Who works with my child ? Our mentors have training in education and experience of working with children . They are carefully selected to meet the highest standards . Regular team meetings , shared professional learning , evaluation and continuing professional development help us maintain quality . Meet the team → One - to - one lessons or lessons in pairs"
       },
       {
-        "start": 1216,
+        "start": 1208,
+        "end": 1209,
+        "before": "Both",
+        "after": "In the first semester , lessons"
+      },
+      {
+        "start": 1210,
+        "end": 1211,
+        "before": "possible",
+        "after": "one to one"
+      },
+      {
+        "start": 1212,
         "end": 1350,
-        "before": "alone , others come alive with a second child there , because explaining and listening are themselves ways of learning . What suits your child we decide together in the introductory conversation . In both cases the support runs for at least six months . And during the school holidays ? In the holidays there are small groups for children the Lernbus supports . They deepen and consolidate what was worked on during the term . Who is behind it A programme of the Learning Society . The Learning Society is an association based in Basel . It fosters the natural curiosity and the will to learn of children and young people . The board works on a voluntary basis . To the Learning Society Learning Bus · a programme of the Learning Society",
-        "after": "on their own ; others thrive alongside another child , because explaining and listening are also ways of learning . We decide together at the introductory meeting what suits your child . Both one - to - one lessons and lessons in pairs are booked for a school semester at a time . And during the school holidays ? During the school holidays , small groups help children who attend Lernbus build on and consolidate what they have learnt during the school semester . Professional standards and quality assurance Our mentors bring empathy , reflective practice and professional expertise to their work . Their educational training and experience enable them to respond to each child ' s interests and needs . We maintain and continually improve the quality of the programme . Who is behind it A programme of Lerngesellschaft . Lerngesellschaft ( Learning Society ) is an association based in Basel . It nurtures the natural curiosity and desire to learn of children and young people . Its board members serve on a voluntary basis . Visit Lerngesellschaft Invest Invest in children ' s futures . Investing in children means giving them time , individual support and room to learn . Your contribution helps fund subsidised places for families who cannot afford the full fee . An investment in children ' s education pays dividends many times over : in their own lives and in the society they help shape . Talk to us about investing → Lerngesellschaft is not currently tax - exempt . We therefore cannot guarantee that your contribution will be tax - deductible . Lernbus · a programme of Lerngesellschaft"
+        "before": "Some children concentrate better alone , others come alive with a second child there , because explaining and listening are themselves ways of learning . What suits your child we decide together in the introductory conversation . In both cases the support runs for at least six months . And during the school holidays ? In the holidays there are small groups for children the Lernbus supports . They deepen and consolidate what was worked on during the term . Who is behind it A programme of the Learning Society . The Learning Society is an association based in Basel . It fosters the natural curiosity and the will to learn of children and young people . The board works on a voluntary basis . To the Learning Society Learning Bus · a programme of the Learning Society",
+        "after": "This gives your child and their mentor time to build a trusting relationship . In the second semester , lessons take place in pairs . You book one school semester at a time . And during the school holidays ? During the school holidays , small groups help children who attend Lernbus build on and consolidate what they have learnt during the school semester . Professional standards and quality assurance Our mentors bring empathy , reflective practice and professional expertise to their work . Their educational training and experience enable them to respond to each child ' s interests and needs . We maintain and continually improve the quality of the programme . Who is behind it A programme of Lerngesellschaft . Lerngesellschaft ( Learning Society ) is an association based in Basel . It nurtures the natural curiosity and desire to learn of children and young people . Its board members serve on a voluntary basis . Visit Lerngesellschaft Invest Invest in children ' s futures . Investing in children means giving them time , individual support and room to learn . Your contribution helps fund subsidised places for families who cannot afford the full fee . An investment in children ' s education pays dividends many times over : in their own lives and in the society they help shape . Talk to us about investing → Lerngesellschaft is not currently tax - exempt . We therefore cannot guarantee that your contribution will be tax - deductible . Lernbus · a programme of Lerngesellschaft"
       },
       {
         "start": 1364,
         "end": 1367,
         "before": "September 2026 Imprint",
-        "after": "in October 2026 Legal information Terms and conditions ( German )"
+        "after": "in October 2026 Legal information Terms and conditions"
       }
     ],
     "lernbus/team/index.html": [
@@ -215,7 +257,7 @@
         "start": 17,
         "end": 28,
         "before": "hinter dem Lernbus . Lernmentorinnen und Lernmentoren mit unterschiedlichen fachlichen Hintergründen",
-        "after": "hinter dem Lernbus . Mentorinnen und Mentoren mit unterschiedlichen fachlichen Hintergründen"
+        "after": "hinter dem Lernbus . Mentorinnen und Mentoren mit pädagogischer Ausbildung und Erfahrung in der Arbeit mit Kindern"
       },
       {
         "start": 32,
@@ -235,27 +277,57 @@
         "start": 18,
         "end": 106,
         "before": "the Lernbus . Learning mentors from a range of professional backgrounds , selected carefully and to the highest standards . Learning mentors We will introduce ourselves here soon . Portrait to follow Name , background and focus will appear here soon . Portrait to follow Name , background and focus will appear here soon . Portrait to follow Name , background and focus will appear here soon . Quality is maintained continuously through team meetings , professional exchange , evaluation and further training . Back to the parents",
-        "after": "Lernbus . Mentors from a range of professional backgrounds , carefully selected to meet the highest standards . Conny Brandes Head of Lernbus connybrandes @ lernbus . ch My background I have worked with children in nurseries since I was 16 . I began as a nursery practitioner , then spent 14 years running Kita Schnäggi as a self - employed co - director . My professional development has included training to supervise apprentices and to support early language development , with a focus on German . I am also the mother of two grown - up children and an eight - year - old . Making time for early learning Our society still gives too little recognition to the importance of early education and support . In 30 years of working with children , I have found that one thing matters above all when helping each child develop their individual abilities : time . Time for a child to try things out . And time for an adult to help them practise and strengthen fundamental skills , through play , with warmth and professional knowledge . Individual support At Lernbus , we create that space and time , giving children individual support to strengthen their core skills . Every child , like every person , is unique . No single approach will help every child persevere when something is not working out . But with time , professional knowledge and a caring approach , we can work with each child to discover what they need and help them make it part of how they learn . What parents say In their own words , in German . Ich kenne Conny seit Jahren als Kitaleitung und nahe Betreuungsperson für meine Kinder . Ich war immer wieder beeindruckt , wie sie es schafft die Stärken und Schwächen jedes Kindes zu erkennen und wie sie Sie mit einem klaren Langzeitfokus begleitet , ohne dabei die Ehrlichkeit zu verlieren oder zu verletzen . Sie ermutigt Kinder implizit , für die eigene Entwicklung mutig zu sein , und stärkt ihnen dabei spürbar den Rücken . Mit ihrer Kreativität schafft sie selbst in kleinen Räumen oder grossen Gruppen einen Ort der Ruhe und Geborgenheit . Sie ist für mich ein grosses Vorbild – authentisch , warmherzig und mit einem herrlichen Lachen . Dr . med . Christiane Rosin , Ärztin für Psychosomatik SAPPM Wenn man Conny begegnet , empfängt sie einen stets mit einem Lachen . Egal ob Baby , Schulkind oder Erwachsener – in ihrer Gegenwart fühlt man sich sofort wohl . Das liegt nicht zuletzt an ihrer fröhlichen und offenen Art . Conny ist ausserdem sehr empathisch und spürt schnell , wie es ihrem Gegenüber geht . Ihre Kreativität zeigt sich auf allen Ebenen – sei es handwerklich oder im zwischenmenschlichen Umgang . Herzlich und unkompliziert ! S . Nussberger Conny begleitete unsere beiden Kinder durch die ersten Kita - Jahre . Einfühlsam und auf Augenhöhe gewann sie ihr Vertrauen innert kürzester Zeit und war ihnen immer eine wichtige Bezugsperson . Wir hätten uns niemand Besseres für diese Begleitung wünschen können und erleichterte uns den Spagat zwischen Familie und Karriere sehr ! M . Vogt MLaw Regular team meetings , shared professional learning , evaluation and continuing professional development help us maintain quality . Back to the parent information"
+        "after": "Lernbus . Mentors with training in education and experience of working with children , carefully selected to meet the highest standards . Conny Brandes Head of Lernbus connybrandes @ lernbus . ch My background I have worked with children in nurseries since I was 16 . I began as a nursery practitioner , then spent 14 years running Kita Schnäggi as a self - employed co - director . My professional development has included training to supervise apprentices and to support early language development , with a focus on German . I am also the mother of two grown - up children and an eight - year - old . Making time for early learning Our society still gives too little recognition to the importance of early education and support . In 30 years of working with children , I have found that one thing matters above all when helping each child develop their individual abilities : time . Time for a child to try things out . And time for an adult to help them practise and strengthen fundamental skills , through play , with warmth and professional knowledge . Individual support At Lernbus , we create that space and time , giving children individual support to strengthen their core skills . Every child , like every person , is unique . No single approach will help every child persevere when something is not working out . But with time , professional knowledge and a caring approach , we can work with each child to discover what they need and help them make it part of how they learn . What parents say In their own words , in German . Ich kenne Conny seit Jahren als Kitaleitung und nahe Betreuungsperson für meine Kinder . Ich war immer wieder beeindruckt , wie sie es schafft die Stärken und Schwächen jedes Kindes zu erkennen und wie sie Sie mit einem klaren Langzeitfokus begleitet , ohne dabei die Ehrlichkeit zu verlieren oder zu verletzen . Sie ermutigt Kinder implizit , für die eigene Entwicklung mutig zu sein , und stärkt ihnen dabei spürbar den Rücken . Mit ihrer Kreativität schafft sie selbst in kleinen Räumen oder grossen Gruppen einen Ort der Ruhe und Geborgenheit . Sie ist für mich ein grosses Vorbild – authentisch , warmherzig und mit einem herrlichen Lachen . Dr . med . Christiane Rosin , Ärztin für Psychosomatik SAPPM Wenn man Conny begegnet , empfängt sie einen stets mit einem Lachen . Egal ob Baby , Schulkind oder Erwachsener – in ihrer Gegenwart fühlt man sich sofort wohl . Das liegt nicht zuletzt an ihrer fröhlichen und offenen Art . Conny ist ausserdem sehr empathisch und spürt schnell , wie es ihrem Gegenüber geht . Ihre Kreativität zeigt sich auf allen Ebenen – sei es handwerklich oder im zwischenmenschlichen Umgang . Herzlich und unkompliziert ! S . Nussberger Conny begleitete unsere beiden Kinder durch die ersten Kita - Jahre . Einfühlsam und auf Augenhöhe gewann sie ihr Vertrauen innert kürzester Zeit und war ihnen immer eine wichtige Bezugsperson . Wir hätten uns niemand Besseres für diese Begleitung wünschen können und erleichterte uns den Spagat zwischen Familie und Karriere sehr ! M . Vogt MLaw Regular team meetings , shared professional learning , evaluation and continuing professional development help us maintain quality . Back to the parent information"
       },
       {
         "start": 130,
         "end": 134,
         "before": "Starting September 2026 Imprint",
-        "after": "starting in October 2026 Legal information Terms and conditions ( German )"
+        "after": "starting in October 2026 Legal information Terms and conditions"
       }
     ],
     "lernbus/konzept/index.html": [
       {
         "start": 119,
-        "end": 132,
-        "before": ", in der Regel wöchentlich Mindestens sechs Monate Vertrauen und Fortschritt brauchen Zeit",
-        "after": ", in der Regel wöchentlich Buchung pro Schulsemester Vertrauen und Fortschritt brauchen Zeit"
+        "end": 140,
+        "before": ", in der Regel wöchentlich Mindestens sechs Monate Vertrauen und Fortschritt brauchen Zeit Einzel - oder Zweiersetting ein Kind oder zwei",
+        "after": ", in der Regel wöchentlich Buchung pro Schulsemester Vertrauen und Fortschritt brauchen Zeit Zuerst einzeln"
+      },
+      {
+        "start": 141,
+        "end": 144,
+        "before": "nie eine Klasse",
+        "after": "dann zu zweit erstes Semester einzeln , zweites Halbjahr zu zweit"
+      },
+      {
+        "start": 899,
+        "end": 902,
+        "before": "Sie findet ebenfalls",
+        "after": "Auch hier lernen die Kinder"
+      },
+      {
+        "start": 903,
+        "end": 905,
+        "before": "Einzel -",
+        "after": "ersten Semester einzeln"
+      },
+      {
+        "start": 906,
+        "end": 908,
+        "before": "Zweiersetting statt",
+        "after": "im zweiten Halbjahr zu zweit"
       },
       {
         "start": 1120,
-        "end": 1136,
-        "before": "im Einzel - und Zweiersetting Ermöglichte Plätze zur Förderung der Chancengleichheit Zugang über Schulen , Kindergärten",
-        "after": "im Einzel - und Zweiersetting Zugang über Schulen , Kindergärten"
+        "end": 1139,
+        "before": "im Einzel - und Zweiersetting Ermöglichte Plätze zur Förderung der Chancengleichheit Zugang über Schulen , Kindergärten , Kitas und",
+        "after": "im ersten Semester einzeln und im zweiten Halbjahr zu zweit Anmeldung ausschliesslich durch"
+      },
+      {
+        "start": 1140,
+        "end": 1140,
+        "before": "",
+        "after": "oder Erziehungsberechtigte"
       },
       {
         "start": 1177,
@@ -267,7 +339,7 @@
         "start": 1199,
         "end": 1216,
         "before": "60 Minuten im Einzel - oder Zweiersetting , über mindestens sechs Monate . Die Inhalte folgen den",
-        "after": "60 Minuten im Einzel - oder Zweiersetting . Die Buchung erfolgt pro Schulsemester . Die Inhalte folgen den"
+        "after": "Die Lektionen dauern 60 Minuten . Im ersten Semester findet die Begleitung einzeln statt , damit das Kind und seine Bezugsperson eine vertrauensvolle Beziehung aufbauen können . Im zweiten Halbjahr finden die Lektionen zu zweit statt . Die Buchung erfolgt jeweils pro Schulsemester . Die Inhalte folgen den"
       },
       {
         "start": 1661,
@@ -282,10 +354,52 @@
         "after": "Die Qualität des Angebots wird gesichert und laufend weiterentwickelt ."
       },
       {
+        "start": 1732,
+        "end": 1733,
+        "before": "Melden",
+        "after": "Fragen"
+      },
+      {
+        "start": 1734,
+        "end": 1736,
+        "before": "Ihr Kind",
+        "after": "einen Platz"
+      },
+      {
         "start": 1738,
         "end": 1744,
         "before": "Der Lernbus startet im September 2026",
         "after": "Der Lernbus startet im Oktober 2026"
+      },
+      {
+        "start": 1748,
+        "end": 1748,
+        "before": "",
+        "after": "Anfragen und Anmeldungen erfolgen durch Eltern oder Erziehungsberechtigte ."
+      },
+      {
+        "start": 1754,
+        "end": 1755,
+        "before": "Sagen",
+        "after": "Erzählen"
+      },
+      {
+        "start": 1758,
+        "end": 1763,
+        "before": ", für wen Sie anfragen",
+        "after": "von Ihrem Kind"
+      },
+      {
+        "start": 1808,
+        "end": 1819,
+        "before": "Sie fragen an als Bitte wählen Eltern Schule Kindergarten Kita Anderes",
+        "after": ""
+      },
+      {
+        "start": 1838,
+        "end": 1845,
+        "before": "Wunschsetting Bitte wählen Einzelsetting Zweiersetting Noch offen",
+        "after": ""
       },
       {
         "start": 1968,
@@ -314,10 +428,10 @@
         "after": "usually once a week Booked for a school semester"
       },
       {
-        "start": 160,
+        "start": 153,
         "end": 622,
-        "before": "At the centre is the lasting development of a positive relationship to learning . In this way the Learning Bus strengthens children to shape their own educational path with confidence , independence , and an eye on what is ahead . Why the Learning Bus is needed Our world is changing fast , and it already asks new things of children . Alongside subject knowledge , what will count most is independence , the ability to solve problems , creativity , and a constructive way of meeting difficulty . National assessments of basic competences show that not all children reach the expected minimum standards in language and mathematics even in primary school : according to Switzerland ' s national assessment , already in the second year of primary school almost one child in four does not reach basic competence in mathematics , and in reading it is just over one in five . Beginning early rather than correcting late Children with a greater need for support , or with fewer resources for learning at home , are affected most . Without early support , gaps risk hardening into lasting disadvantage . At the same time all children benefit from the programme , because the capacities that will matter are deliberately built . The Learning Bus begins early and strengthens children as a whole , before difficult experiences of learning set in . Creating the conditions , not forcing the result Learning cannot be ordered into being . As with a plant , you cannot make the growing happen ; you can only create the conditions for it : time , attention , something worth wondering at , and a person who watches and believes the child can . That is precisely the work of the Learning Bus . Approach and effect What we work on with the children . The relationship comes first Children learn from people , not from programmes . What a child dares to ask depends on how safe it feels . That is why the same person stays at its side for months : someone who knows its name , knows its detours , and remembers what it was working on last week . This reliability is not a pleasant extra . It is the ground everything else stands on . Starting broad , not narrowing early At this age the point is not to find one talent and drop everything else . Children need breadth first : building , counting , telling , drawing , examining something outdoors . A child who has tried many things finds it easier later to find what really fits , and can carry what it has learnt from one field into another . An early lead in a single subject says",
-        "after": "Our focus is on building a lasting , positive relationship with learning . Lernbus helps children shape their education with confidence , independence and a sense of direction for the future . Why Lernbus is needed Our world is changing rapidly , placing new demands on children even today . Alongside subject knowledge , independence , problem - solving , creativity and the ability to respond constructively to challenges will become increasingly important . National assessments show that some children are already falling short of the expected minimum standards in language and mathematics at primary school . In Switzerland ' s national assessment of basic skills , almost one in four children in the second year of primary school did not meet the basic standard in mathematics ; in reading , the figure was just over one in five . Early support , before difficulties take hold Children who need additional support or have fewer learning resources are particularly affected . Without early support , gaps can become entrenched and lead to lasting disadvantage . The programme also benefits children more broadly by helping them develop skills for the future . Lernbus starts early and supports the whole child , before negative experiences of learning take hold . Creating the conditions for learning Learning cannot happen on command . Just as with a plant , we cannot force growth ; we can create the conditions it needs : time , care , something that sparks wonder , and someone who pays attention and believes in the child . That is the work of Lernbus . Our educational approach What we help children develop . The relationship comes first Children learn through relationships with people , not programmes alone . The questions a child feels able to ask depend on how safe they feel . That is why the same person stays by their side over the months : someone who knows their name , understands how they learn and remembers what they were working on last week . That continuity is the foundation for everything else . Room to explore before specialising At this age , children need opportunities to explore , rather than being steered towards a single talent . They need variety : building , counting , telling stories , drawing and investigating things outdoors . Trying different activities helps children discover what suits them and apply what they have learnt in new contexts . An early advantage in one subject tells us"
+        "before": "child or two never a whole class At the centre is the lasting development of a positive relationship to learning . In this way the Learning Bus strengthens children to shape their own educational path with confidence , independence , and an eye on what is ahead . Why the Learning Bus is needed Our world is changing fast , and it already asks new things of children . Alongside subject knowledge , what will count most is independence , the ability to solve problems , creativity , and a constructive way of meeting difficulty . National assessments of basic competences show that not all children reach the expected minimum standards in language and mathematics even in primary school : according to Switzerland ' s national assessment , already in the second year of primary school almost one child in four does not reach basic competence in mathematics , and in reading it is just over one in five . Beginning early rather than correcting late Children with a greater need for support , or with fewer resources for learning at home , are affected most . Without early support , gaps risk hardening into lasting disadvantage . At the same time all children benefit from the programme , because the capacities that will matter are deliberately built . The Learning Bus begins early and strengthens children as a whole , before difficult experiences of learning set in . Creating the conditions , not forcing the result Learning cannot be ordered into being . As with a plant , you cannot make the growing happen ; you can only create the conditions for it : time , attention , something worth wondering at , and a person who watches and believes the child can . That is precisely the work of the Learning Bus . Approach and effect What we work on with the children . The relationship comes first Children learn from people , not from programmes . What a child dares to ask depends on how safe it feels . That is why the same person stays at its side for months : someone who knows its name , knows its detours , and remembers what it was working on last week . This reliability is not a pleasant extra . It is the ground everything else stands on . Starting broad , not narrowing early At this age the point is not to find one talent and drop everything else . Children need breadth first : building , counting , telling , drawing , examining something outdoors . A child who has tried many things finds it easier later to find what really fits , and can carry what it has learnt from one field into another . An early lead in a single subject says",
+        "after": "to one , then in pairs one to one in the first semester , in pairs in the second Our focus is on building a lasting , positive relationship with learning . Lernbus helps children shape their education with confidence , independence and a sense of direction for the future . Why Lernbus is needed Our world is changing rapidly , placing new demands on children even today . Alongside subject knowledge , independence , problem - solving , creativity and the ability to respond constructively to challenges will become increasingly important . National assessments show that some children are already falling short of the expected minimum standards in language and mathematics at primary school . In Switzerland ' s national assessment of basic skills , almost one in four children in the second year of primary school did not meet the basic standard in mathematics ; in reading , the figure was just over one in five . Early support , before difficulties take hold Children who need additional support or have fewer learning resources are particularly affected . Without early support , gaps can become entrenched and lead to lasting disadvantage . The programme also benefits children more broadly by helping them develop skills for the future . Lernbus starts early and supports the whole child , before negative experiences of learning take hold . Creating the conditions for learning Learning cannot happen on command . Just as with a plant , we cannot force growth ; we can create the conditions it needs : time , care , something that sparks wonder , and someone who pays attention and believes in the child . That is the work of Lernbus . Our educational approach What we help children develop . The relationship comes first Children learn through relationships with people , not programmes alone . The questions a child feels able to ask depend on how safe they feel . That is why the same person stays by their side over the months : someone who knows their name , understands how they learn and remembers what they were working on last week . That continuity is the foundation for everything else . Room to explore before specialising At this age , children need opportunities to explore , rather than being steered towards a single talent . They need variety : building , counting , telling stories , drawing and investigating things outdoors . Trying different activities helps children discover what suits them and apply what they have learnt in new contexts . An early advantage in one subject tells us"
       },
       {
         "start": 631,
@@ -335,7 +449,7 @@
         "start": 977,
         "end": 1158,
         "before": "to build the foundations of language , to express themselves with more assurance , and to take part in lessons with more confidence . It happens playfully , in stories , songs and conversations , because play is how young children learn most . It too takes place with one or two children at a time . The programme strengthens children in their confidence , their resilience , and their readiness to learn independently . A protected space , without screens The learning space is trusting , protected , and built on what the child already brings . Screens have no place in it : a screen interrupts this space and replaces the slow way to an answer with a quick one . The work is done with books , paper and pencils , with a magnifying glass , scales and clay , and with whatever can be found outdoors . The long way round is not lost time : what a child has worked out with effort stays , while what went down quickly and smoothly is often gone again",
-        "after": "build language skills , express themselves more confidently and feel more assured in class . They learn through play , stories , songs and conversations , because young children learn most through play . Lessons take place one to one or in pairs . The programme builds children ' s confidence , resilience and readiness to learn independently . A safe learning space , without screens We create a safe , trusting learning environment that builds on each child ' s strengths . Screens have no place here : they interrupt this space and replace the gradual process of finding an answer with a quick response . Instead , we use books , paper and pencils , magnifying glasses , scales and clay , and things we find outdoors . Taking the longer route is not wasted time . What children work out through their own effort stays with them ; what comes quickly and easily can disappear"
+        "after": "build language skills , express themselves more confidently and feel more assured in class . They learn through play , stories , songs and conversations , because young children learn most through play . Here too , lessons are one to one in the first semester and in pairs in the second . The programme builds children ' s confidence , resilience and readiness to learn independently . A safe learning space , without screens We create a safe , trusting learning environment that builds on each child ' s strengths . Screens have no place here : they interrupt this space and replace the gradual process of finding an answer with a quick response . Instead , we use books , paper and pencils , magnifying glasses , scales and clay , and things we find outdoors . Taking the longer route is not wasted time . What children work out through their own effort stays with them ; what comes quickly and easily can disappear"
       },
       {
         "start": 1167,
@@ -368,10 +482,22 @@
         "after": "who would benefit from focused support with learning skills and skills for the future"
       },
       {
-        "start": 1290,
+        "start": 1282,
+        "end": 1283,
+        "before": "with",
+        "after": ""
+      },
+      {
+        "start": 1284,
+        "end": 1284,
+        "before": "",
+        "after": "to one in the first semester and in pairs in the second Children can only be enrolled by a parent"
+      },
+      {
+        "start": 1285,
         "end": 1485,
-        "before": "Places made possible , so that opportunity does not depend on income Access through schools , kindergartens , day - care centres and parents How it works From first conversation to the learning box . 1 A first conversation We sit down with the parents and the child : what does this child need , what do you hope for , what is possible . 2 The right mentor The child is matched with a learning mentor who fits their interests and their needs . 3 The sessions 60 minutes with one or two children , over at least six months . The content follows the child ' s interests and brings together play , the creative , the linguistic , the mathematical and the emotional . 4 The learning box Ideas , work , questions and discoveries collect in a personal Lernkiste that makes progress visible . 5 Regular talks with parents We stay in touch with the parents and support child and parents as needed , including accompaniment to meetings where that helps . These talks rest on the child ' s documented development and the Lernkiste : both show what has grown",
-        "after": "Enquiries from schools , kindergartens , childcare centres and parents How it works From the first meeting to the learning box . 1 An introductory meeting We meet with you and your child to discuss what your child needs , what you hope for and how we can help . 2 The right mentor We match your child with a mentor suited to their interests and needs . 3 The sessions Each lesson lasts 60 minutes and takes place one to one or in pairs . Lessons are booked for a school semester . Activities follow the child ' s interests , combining play with creative , language , mathematical and emotional development . 4 The learning box Each child collects their ideas , work , questions and discoveries in a personal learning box , or Lernkiste , making their progress visible . 5 Regular meetings with parents We stay in touch with parents and offer support to both child and family as needed , including attending meetings with them where helpful . Our conversations draw on the child ' s documented development and learning box , which show their progress"
+        "before": "two children at a time Places made possible , so that opportunity does not depend on income Access through schools , kindergartens , day - care centres and parents How it works From first conversation to the learning box . 1 A first conversation We sit down with the parents and the child : what does this child need , what do you hope for , what is possible . 2 The right mentor The child is matched with a learning mentor who fits their interests and their needs . 3 The sessions 60 minutes with one or two children , over at least six months . The content follows the child ' s interests and brings together play , the creative , the linguistic , the mathematical and the emotional . 4 The learning box Ideas , work , questions and discoveries collect in a personal Lernkiste that makes progress visible . 5 Regular talks with parents We stay in touch with the parents and support child and parents as needed , including accompaniment to meetings where that helps . These talks rest on the child ' s documented development and the Lernkiste : both show what has grown",
+        "after": "legal guardian How it works From the first meeting to the learning box . 1 An introductory meeting We meet with you and your child to discuss what your child needs , what you hope for and how we can help . 2 The right mentor We match your child with a mentor suited to their interests and needs . 3 The sessions Each lesson lasts 60 minutes . In the first semester , lessons are one to one , giving your child and their mentor time to build a trusting relationship . In the second semester , lessons take place in pairs . You book one school semester at a time . Activities follow the child ' s interests , combining play with creative , language , mathematical and emotional development . 4 The learning box Each child collects their ideas , work , questions and discoveries in a personal learning box , or Lernkiste , making their progress visible . 5 Regular meetings with parents We stay in touch with parents and offer support to both child and family as needed , including attending meetings with them where helpful . Our conversations draw on the child ' s documented development and learning box , which show their progress"
       },
       {
         "start": 1496,
@@ -386,16 +512,22 @@
         "after": "We offer four rates for each 60 - minute lesson : subsidised , reduced , full - cost and solidarity . For lessons in pairs , the fee is per child . Some places are funded by people who invest in children , helping families take part when money is tight . Funding a place gives a child time with someone who believes in them . View the fees → A girl is working on a maths problem that seemed impossible a few weeks ago . She thinks , sets one approach aside , tries again and finally finds her own solution . She has achieved more than a learning objective : she has discovered that she is capable of making things happen . When self - efficacy becomes real Experiences like this are at the heart of Lernbus . Children discover that their efforts make a difference , that learning develops over time and that they can meet challenges through persistence , curiosity and independent thought . This builds a lasting , positive relationship with learning . Professional standards and quality assurance Who works with the children . Our mentors Our mentors bring empathy , reflective practice and professional expertise to their work . Their educational training and experience enable them to respond to each child ' s interests and needs . Ongoing quality review We maintain and continually improve the quality of the programme"
       },
       {
-        "start": 1997,
-        "end": 2085,
-        "before": "The Learning Bus starts in September 2026 with a small number of places . It begins with a first conversation . Tell us briefly who you are asking for , and we will be in touch within a few days . Fees are tiered and apply per 60 - minute lesson ; everything else we discuss in person . Are you a parent ? Everything that matters , in short → Your name Email or phone You are asking as Please choose Parent School Kindergarten Day - care",
-        "after": "Lernbus starts in October 2026 with a limited number of places . We begin with an introductory meeting . Tell us briefly who your enquiry is for , and we will get back to you within a few days . We offer a range of fees for each 60 - minute lesson and discuss the details with you in person . For parents : the essentials at a glance → Your name Email address or phone number I am enquiring as a Please choose Parent School Kindergarten Childcare"
+        "start": 1992,
+        "end": 1996,
+        "before": "Sign your child up",
+        "after": "Enquire about a place"
       },
       {
-        "start": 2108,
-        "end": 2117,
-        "before": "setting Please choose One child Two children Not decided",
-        "after": "lesson format Please choose One - to - one lessons Lessons in pairs Not sure"
+        "start": 1997,
+        "end": 2087,
+        "before": "The Learning Bus starts in September 2026 with a small number of places . It begins with a first conversation . Tell us briefly who you are asking for , and we will be in touch within a few days . Fees are tiered and apply per 60 - minute lesson ; everything else we discuss in person . Are you a parent ? Everything that matters , in short → Your name Email or phone You are asking as Please choose Parent School Kindergarten Day - care centre Other",
+        "after": "Lernbus starts in October 2026 with a limited number of places . Requests for places and enrolment must come from a parent or legal guardian . We begin with an introductory meeting . Tell us a little about your child , and we will get back to you within a few days . We offer a range of fees for each 60 - minute lesson and discuss the details with you in person . For parents : the essentials at a glance → Your name Email address or phone number"
+      },
+      {
+        "start": 2107,
+        "end": 2118,
+        "before": "Preferred setting Please choose One child Two children Not decided yet",
+        "after": ""
       },
       {
         "start": 2126,
@@ -413,7 +545,7 @@
         "start": 2259,
         "end": 2265,
         "before": "Verein · starting September 2026 Imprint",
-        "after": "Association · starting in October 2026 Legal information Terms and conditions ( German )"
+        "after": "Association · starting in October 2026 Legal information Terms and conditions"
       }
     ]
   }

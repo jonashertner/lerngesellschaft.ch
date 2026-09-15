@@ -2,14 +2,19 @@
 layout: agb.njk
 title: AGB · Lerngesellschaft
 permalink: /agb/
+description: Allgemeine Geschäftsbedingungen für die weiteren Bildungsangebote der Lerngesellschaft. Für Lernbus gelten eigene AGB.
 ---
 # Allgemeine Geschäftsbedingungen der Lerngesellschaft
 
 *Fassung vom 15. September 2026*
 
+**Für den Lernbus gelten die [eigenen AGB für Eltern und Erziehungsberechtigte](/lernbus/agb/).** Sie sind auch [auf Englisch verfügbar](/lernbus/en/terms/).
+
+Die nachstehenden Bedingungen gelten für die weiteren Bildungsangebote der Lerngesellschaft.
+
 ## 1. Anmeldung und Vereinbarung
 
-Diese AGB gelten für die Bildungsangebote des Vereins Lerngesellschaft / Learning Society, Münsterplatz 17, 4051 Basel. Individuelle Vereinbarungen gehen vor. Wir stellen Ihnen diese AGB vor Vertragsabschluss zur Verfügung und vereinbaren sie mit Ihnen.
+Diese AGB gelten für die Bildungsangebote des Vereins Lerngesellschaft / Learning Society, Münsterplatz 17, 4051 Basel, mit Ausnahme des Lernbusses. Individuelle Vereinbarungen gehen vor. Wir stellen Ihnen diese AGB vor Vertragsabschluss zur Verfügung und vereinbaren sie mit Ihnen.
 
 Für Kinder schliesst eine erziehungsberechtigte Person oder die buchende Schule oder Organisation den Vertrag mit uns. Die Buchung wird verbindlich, sobald wir die Anmeldung zu den vereinbarten Bedingungen bestätigen. Eine Anfrage oder ein Kennenlerngespräch ist noch keine Anmeldung zur Lernbegleitung.
 
@@ -23,7 +28,7 @@ Wir begleiten die Kinder sorgfältig und entsprechend ihren Bedürfnissen. Einen
 
 Bitte teilen Sie uns Absagen möglichst 24 Stunden vorher mit. Sagen wir einen Termin ab, vereinbaren wir mit Ihnen einen Ersatztermin oder erstatten den dafür bezahlten Beitrag.
 
-Beim Lernbus werden die Lektionen jeweils für ein Schulsemester gebucht. Beginn und Ende des vereinbarten Semesters sowie die Lektionstermine halten wir in der Buchungsbestätigung fest. Zwingende gesetzliche Rechte zur vorzeitigen Beendigung, insbesondere nach Art. 404 OR, bleiben vorbehalten. Eine Mitteilung zur Beendigung ist per E-Mail möglich.
+Zwingende gesetzliche Rechte zur vorzeitigen Beendigung, insbesondere nach Art. 404 OR, bleiben vorbehalten. Eine Mitteilung zur Beendigung ist per E-Mail möglich.
 
 Bei einer Beendigung rechnen wir die bereits erbrachten Leistungen ab und erstatten nicht verbrauchte Vorauszahlungen. Erfolgt die Beendigung zu einem besonders ungünstigen Zeitpunkt, kann nach den gesetzlichen Voraussetzungen Ersatz des dadurch entstandenen Schadens geschuldet sein.
 

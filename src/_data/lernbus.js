@@ -3,7 +3,7 @@ export default {
   "de": {
     "bookingHeading": "Datum und Uhrzeit auswählen",
     "bookingMeta": "60 Minuten · Münsterplatz 17, Basel",
-    "bookingBoundary": "Die Anfrage ist noch keine verbindliche Anmeldung.",
+    "bookingBoundary": "Für Eltern und Erziehungsberechtigte. Die Anfrage ist noch keine verbindliche Anmeldung.",
     "calendarOpening": "Lektionsstart: 12. Oktober 2026. Wechseln Sie im Kalender zu Oktober.",
     "calendarLoading": "Der Kalender wird geladen …",
     "calendarSlow": "Der Kalender braucht etwas länger. Sie können ihn auch direkt öffnen.",
@@ -26,12 +26,14 @@ export default {
       "thursday": "Donnerstag"
     },
     "privacyHref": "/impressum/#datenschutz",
-    "privacy": "Datenschutz"
+    "privacy": "Datenschutz",
+    "termsHref": "/lernbus/agb/",
+    "terms": "AGB Lernbus"
   },
   "en": {
     "bookingHeading": "Choose a date and time",
     "bookingMeta": "60 minutes · Münsterplatz 17, Basel",
-    "bookingBoundary": "Your request does not yet enrol your child.",
+    "bookingBoundary": "For parents and legal guardians. Your request does not yet enrol your child.",
     "calendarOpening": "Lessons start on 12 October 2026. Go to October in the calendar.",
     "calendarLoading": "Loading the calendar…",
     "calendarSlow": "The calendar is taking a little longer. You can also open it directly.",
@@ -54,6 +56,8 @@ export default {
       "thursday": "Thursday"
     },
     "privacyHref": "/imprint/#datenschutz",
-    "privacy": "Privacy"
+    "privacy": "Privacy",
+    "termsHref": "/lernbus/en/terms/",
+    "terms": "Lernbus terms and conditions"
   }
 };
