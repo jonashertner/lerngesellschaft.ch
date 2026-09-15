@@ -65,8 +65,9 @@ export function mountBooking(root) {
       frameHost.append(frame);
       // A cross-origin load event does not prove successful rendering or a booking.
       // Direct opening and email remain available above/below the frame for recovery.
-      frame.focus();
       root.querySelector('[data-calendar-launch]').hidden = true;
+      frame.focus({ preventScroll: true });
+      frameHost.scrollIntoView({ block: 'start', behavior: 'instant' });
     }, { once: true });
   } catch {
     fallback.hidden = false;
