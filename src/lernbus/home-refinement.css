@@ -16,8 +16,9 @@
 .source-home #warum .why-disclosure{margin-top:1rem}
 .source-home #warum .why-disclosure>summary{color:var(--yellow)}
 .source-home #warum .detail>.dsec{padding-bottom:.5rem}
-.source-home .goals-disclosure{grid-column:1/-1;margin-top:2rem;border-top:2px solid var(--violet)}
-.source-home .goals-disclosure .ticks{margin:.5rem 0 1rem;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem 3rem}
+.source-home .goals-list{grid-column:1/-1;margin-top:2rem;border-top:2px solid var(--violet)}
+.source-home .goals-list h3{font-family:var(--display);font-size:1.5rem;font-weight:750;line-height:1.3;color:var(--violet);margin:1.5rem 0 1.25rem}
+.source-home .goals-list .ticks{margin:.5rem 0 1rem;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem 3rem}
 .source-home .concept-link{grid-column:1/-1;margin:1rem 0 0}
 .source-home .team-biography{margin-top:1rem}
 .source-home .team-biography .team-bio-section{padding-block:1.25rem}
@@ -32,7 +33,7 @@
 @media(max-width:64rem){.quick-facts{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:48rem){
  .source-home #warum h2{font-size:clamp(2.2rem,8vw,3rem)}
- .source-home .goals-disclosure .ticks,.source-home .learning-features{grid-template-columns:minmax(0,1fr)}
+ .source-home .goals-list .ticks,.source-home .learning-features{grid-template-columns:minmax(0,1fr)}
  .source-home .learning-features{gap:.85rem}
  .source-home .learning-support{margin-top:1.5rem}
  .source-home .team-section .team-profile{gap:1.75rem}

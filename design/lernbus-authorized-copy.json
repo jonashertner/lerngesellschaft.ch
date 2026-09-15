@@ -890,6 +890,27 @@
           }
         ]
       }
+    },
+    {
+      "authorization": "Jonas, 15 September 2026: Die Ziele should not be folded; the concept link should make clear that it leads to a separate page.",
+      "pages": {
+        "lernbus/index.html": [
+          {
+            "start": 456,
+            "end": 460,
+            "before": "Unser Konzept im Detail",
+            "after": "Zur Konzeptseite"
+          }
+        ],
+        "lernbus/en/index.html": [
+          {
+            "start": 506,
+            "end": 510,
+            "before": "Our approach in detail",
+            "after": "Visit our approach page"
+          }
+        ]
+      }
     }
   ]
 }
