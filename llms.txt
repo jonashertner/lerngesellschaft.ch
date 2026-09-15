@@ -1,21 +1,36 @@
 # Lerngesellschaft / Learning Society
 
-> A manifesto for relational learning, by Jonas Hertner. The thesis: one-to-one tutoring, done rightly, protects a child's curiosity, tests understanding through explanation, and gives what mass schooling cannot reliably provide: sustained relational attention. Published as a bilingual white paper at lerngesellschaft.ch (German, canonical) and learningsociety.ch (English).
+> A Basel association supporting children's curiosity and learning through personal accompaniment, public science and classroom activities. Its three programmes are Lernbus, Forscherbühne and Gehirn und Gesellschaft. The current German and English websites share one canonical domain, lerngesellschaft.ch. learningsociety.ch redirects to the English homepage.
 
-## Author
+## Current association
 
-Jonas Hertner, Zurich, Switzerland. Tutor and litigator.
 Contact: team@jonashertner.com
-Web: https://jonashertner.com
+Address: Münsterplatz 17, 4051 Basel, Switzerland.
 
-## Documents
+- [German homepage](https://lerngesellschaft.ch/)
+- [English homepage](https://lerngesellschaft.ch/en/)
+- [Approach, German](https://lerngesellschaft.ch/ansatz/)
+- [Approach, English](https://lerngesellschaft.ch/en/approach/)
+- [Lernbus, German](https://lerngesellschaft.ch/lernbus/)
+- [Lernbus, English](https://lerngesellschaft.ch/lernbus/en/)
+- [Lernbus team, German](https://lerngesellschaft.ch/lernbus/team/)
+- [Lernbus team, English](https://lerngesellschaft.ch/lernbus/team/en/)
+- [Legal information, German](https://lerngesellschaft.ch/impressum/)
+- [Legal information, English](https://lerngesellschaft.ch/imprint/)
+- [Terms and conditions, German](https://lerngesellschaft.ch/agb/)
 
-- [White paper, German (HTML)](https://lerngesellschaft.ch/de/): Bradford-set web edition with sidenotes.
-- [White paper, English (HTML)](https://learningsociety.ch/en/): Parallel composition (not a translation).
-- [White paper, German (PDF preview)](https://lerngesellschaft.ch/de/print/): A5 book preview, paginated via Paged.js. Save-as-PDF in the browser.
-- [White paper, English (PDF preview)](https://learningsociety.ch/en/print/): Same.
-- [White paper, German (raw Markdown)](https://lerngesellschaft.ch/de/paper.md): Plain Markdown source, preferred for LLM ingestion.
-- [White paper, English (raw Markdown)](https://learningsociety.ch/en/paper.md): Same.
+The current programme details and status are described on these pages. Forscherbühne and Gehirn und Gesellschaft are in preparation.
+
+## Preserved essay: relational learning
+
+Jonas Hertner's 2026 manifesto grew out of tutoring in Zurich. It is preserved as a dated, standalone essay; it is not the current Basel programme description. The historical author, place and essay text remain unchanged.
+
+- [Essay, German](https://lerngesellschaft.ch/essays/relational-learning/de/): Web edition with sidenotes.
+- [Essay, English](https://lerngesellschaft.ch/essays/relational-learning/en/): Parallel composition.
+- [German print edition](https://lerngesellschaft.ch/essays/relational-learning/de/print/): A5 book preview; save as PDF in the browser.
+- [English print edition](https://lerngesellschaft.ch/essays/relational-learning/en/print/): Same.
+- [German Markdown](https://lerngesellschaft.ch/essays/relational-learning/de/paper.md): Plain Markdown source.
+- [English Markdown](https://lerngesellschaft.ch/essays/relational-learning/en/paper.md): Same.
 
 ## Structure of the white paper
 
@@ -47,4 +62,3 @@ The text of the white paper is © Jonas Hertner, 2026. Quotation with attributio
 ## Optional
 
 - [Sitemap (XML)](https://lerngesellschaft.ch/sitemap.xml)
-- [Sitemap (XML, EN domain)](https://learningsociety.ch/sitemap.xml)
