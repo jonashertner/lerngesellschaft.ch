@@ -2,7 +2,7 @@
 
 The working branch is `codex/lernbus-design-booking`. Before implementation, the checkout was fast-forwarded from `727846f` to the actual published source at `8efd046`. This preserves the current 60-minute offer and the four contribution levels. No public GitHub Pages deployment has been triggered.
 
-The design uses the existing Lernbus logo, violet/teal/yellow palette and self-hosted typefaces. A commissioned AI illustration of the learning box provides the main visual; it is labelled as an illustration and makes no claim to show a real room, child or session. The full-size WebP is about 124 KB; the mobile image is about 32 KB.
+The design uses the existing Lernbus logo, violet/teal/yellow palette and self-hosted typefaces. The second visual iteration uses oversized poster typography and original tactile collages made from paper shapes, blocks, a pencil and thread. The images are labelled as illustrations and make no claim to show a real room, child or session.
 
 The DE/EN parent pages share one template and structured content. They now give parents the offer, an explicitly illustrative learning journey, three steps, the complete contribution table, an introductory-conversation entry point and native FAQ disclosures. Reading pages retain their substantive content with a more compact layout. Empty portrait cards were removed; actual team introductions remain an editorial dependency. All Lernbus contact paths use info@lernbus.ch. The concept pages lead into the same conversation route instead of presenting a mailto form as a sent request.
 
@@ -35,3 +35,16 @@ Run `npm run build` and `node scripts/check-lernbus.mjs`. The checks cover gener
 The current domain redirect chain also includes an HTTP hop; fix this in the domain forwarding settings when those controls are available. Real mentor names and approved portraits would add the most valuable remaining trust evidence.
 
 Private design preview: https://lernbus-design-review.voilajonas.chatgpt.site/lernbus/ (owner-only). Preview source/hosting manifest: output/lernbus-site-preview/.openai/hosting.json. This is a separate review deployment and does not change GitHub Pages or the Lernbus domain.
+
+## Expressive design iteration — 15 September
+
+Jonas requested a more distinctive, less clean design while keeping the existing text largely intact. The visual direction is a Swiss learning atelier: large poster headlines, tactile original collage, coloured spreads, editorial offer rows, a learning-notebook interaction and staggered numbered steps. The concept and team pages share the palette and typography, with a two-column reading grid that stacks on phones. The only changes to structured parent-page copy are image descriptions and illustration labels; headings, substantive text, prices and booking settings remain unchanged.
+
+Research references used for design principles, not copied assets:
+- [Art UK's Superpower of Looking, Pentagram](https://www.pentagram.com/work/the-superpower-of-looking): curiosity made visible through framing and discovery.
+- [Luzerner Theater, Studio Feixen](https://www.studiofeixen.ch/luzerner-theater/): Swiss poster scale, expressive alignment and disciplined practical information.
+- [St Christopher School, Pentagram](https://www.pentagram.com/work/st-christopher-school): tactile arts and crafts warmth suitable for progressive early education.
+
+Two original AI-generated raster assets were generated once each and converted to responsive WebP sources: discovery-collage (1448/800 px) and experiment-collage (1000/550 px). Generation prompts are in design/2026-09-15-collage-prompts.md. The browser selects size variants; the story illustration is lazy loaded. No stock child or fabricated team portrait is used.
+
+This iteration was visually checked on phone, tablet and desktop. DOM bounds were checked across 320, 390, 768, 820, 1024, 1440 and 1920 px for German and across the corresponding phone/tablet/desktop range for English. No horizontal overflow remains in the parent pages. All four concept/team routes were checked at 320 px; long German reading headings were fixed to wrap within their columns. Menu open/close and Escape, story click/arrow-key selection, and weekly availability disclosure were exercised. Tariffs retain semantic table headers while stacking into labelled rows on small phones. All six route/link/configuration checks pass.

@@ -14,7 +14,7 @@
     document.addEventListener('click', event => {
       if (menu.open && !menu.contains(event.target)) menu.open = false;
     });
-    matchMedia('(min-width: 901px)').addEventListener('change', event => {
+    matchMedia('(min-width: 64.001rem)').addEventListener('change', event => {
       if (event.matches) menu.open = false;
     });
   }

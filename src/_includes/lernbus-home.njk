@@ -23,7 +23,7 @@
   <script src="{{ t.prefix }}home.js" defer></script>
   <script src="{{ t.prefix }}booking.js" type="module"></script>
 </head>
-<body id="top">
+<body id="top" class="locale-{{ locale }}">
   <a class="skip-link" href="#main">{{ t.skip }}</a>
   <header class="header">
     <div class="shell header-inner">
@@ -45,24 +45,28 @@
     </div>
   </header>
   <main id="main">
-    <section class="hero shell" aria-labelledby="hero-title">
-      <div class="hero-copy">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="shell hero-grid">
+      <div class="hero-heading">
         <p class="kicker"><span class="short-line" aria-hidden="true"></span>{{ t.eyebrow }}</p>
-        <h1 id="hero-title">{{ t.headline | safe }}</h1>
+        <h1 id="hero-title"><span>{{ t.headline | replace("<br>", "</span><span>") | safe }}</span></h1>
+      </div>
+      <div class="hero-copy">
         <p class="hero-intro">{{ t.intro }}</p>
         <div class="hero-actions"><a class="button" href="#gespraech">{{ t.heroCta }} <span aria-hidden="true">↗</span></a><a class="text-link" href="#ansatz">{{ t.secondaryCta }} <span aria-hidden="true">↓</span></a></div>
         <p class="hero-note">{{ t.heroNote }}</p>
       </div>
       <figure class="hero-art">
-        <img src="{{ t.prefix }}img/learning-box.webp" width="1254" height="1254" alt="{{ t.imageAlt }}" fetchpriority="high" sizes="(max-width: 760px) 90vw, 48vw" srcset="{{ t.prefix }}img/learning-box-small.webp 700w, {{ t.prefix }}img/learning-box.webp 1254w">
+        <img src="{{ t.prefix }}img/discovery-collage.webp" width="1448" height="1086" alt="{{ t.imageAlt }}" fetchpriority="high" sizes="(max-width: 768px) 90vw, (min-width: 1600px) 780px, 55vw" srcset="{{ t.prefix }}img/discovery-collage-small.webp 800w, {{ t.prefix }}img/discovery-collage.webp 1448w">
         <figcaption><span class="figure-index">↗</span><span>{{ t.imageCaption }}<small>{{ t.imageLabel }}</small></span></figcaption>
       </figure>
+      </div>
     </section>
     <section class="facts shell" id="zielgruppe" aria-label="{% if locale == 'de' %}Auf einen Blick{% else %}At a glance{% endif %}">
       {% for fact in t.facts %}<div><strong>{{ fact[0] }}</strong><span>{{ fact[1] }}</span></div>{% endfor %}
     </section>
 
-    <section class="section shell" id="ansatz">
+    <section class="section shell offer-section" id="ansatz">
       <div class="section-heading"><div><p class="kicker">{{ t.offerLabel }}</p><h2>{{ t.offerTitle | safe }}</h2></div><p class="intro">{{ t.offerIntro }}</p></div>
       <div class="offer-grid">{% for offer in t.offers %}<article class="offer"><span class="offer-number" aria-hidden="true">0{{ loop.index }}</span><h3>{{ offer[0] }}</h3><p>{{ offer[1] }}</p></article>{% endfor %}</div>
       <div class="offer-footer"><p>{{ t.offerFoot }}</p><a class="text-link" href="{{ t.prefix }}{{ t.approachHref }}">{{ t.approachLink }} <span aria-hidden="true">↗</span></a></div>
@@ -70,7 +74,7 @@
 
     <section class="experience" id="warum">
       <div class="shell experience-grid">
-        <div class="experience-heading"><p class="kicker">{{ t.experienceLabel }}</p><h2>{{ t.experienceTitle | safe }}</h2><p>{{ t.experienceIntro }}</p><img src="{{ t.prefix }}img/plane.png" alt="" width="248" height="130" loading="lazy"></div>
+        <div class="experience-heading"><p class="kicker">{{ t.experienceLabel }}</p><h2>{{ t.experienceTitle | safe }}</h2><p>{{ t.experienceIntro }}</p><figure class="story-art"><img src="{{ t.prefix }}img/experiment-collage.webp" srcset="{{ t.prefix }}img/experiment-collage-small.webp 550w, {{ t.prefix }}img/experiment-collage.webp 1000w" sizes="(max-width: 768px) 80vw, 38vw" alt="{{ t.storyImageAlt }}" width="1000" height="1000" loading="lazy"><figcaption>{{ t.illustrationLabel }}</figcaption></figure></div>
         <div class="learning-story" data-story>
           <div class="story-tabs" role="tablist" hidden aria-label="{% if locale == 'de' %}Beispiel eines Lernwegs{% else %}An example learning journey{% endif %}">
             {% for example in t.examples %}<button type="button" role="tab" id="story-tab-{{ loop.index }}" aria-controls="story-panel-{{ loop.index }}" aria-selected="{% if loop.first %}true{% else %}false{% endif %}" tabindex="{% if loop.first %}0{% else %}-1{% endif %}"><span>0{{ loop.index }}</span>{{ example[0] }}</button>{% endfor %}
@@ -83,19 +87,19 @@
       </div>
     </section>
 
-    <section class="section shell" id="ablauf">
+    <section class="section shell steps-section" id="ablauf">
       <div class="section-heading"><div><p class="kicker">{{ t.stepsLabel }}</p><h2>{{ t.stepsTitle | safe }}</h2></div><a class="text-link" href="#gespraech">{{ t.heroCta }} <span aria-hidden="true">↗</span></a></div>
-      <ol class="steps">{% for step in t.steps %}<li><span class="step-count" aria-hidden="true">{{ loop.index }}</span><h3>{{ step[0] }}</h3><p>{{ step[1] }}</p></li>{% endfor %}</ol>
+      <ol class="steps">{% for step in t.steps %}<li><span class="step-count" aria-hidden="true">0{{ loop.index }}</span><h3>{{ step[0] }}</h3><p>{{ step[1] }}</p></li>{% endfor %}</ol>
       <aside class="quality" id="qualitaet"><h3>{{ t.qualityTitle }}</h3><div><p>{{ t.quality }}</p><a class="text-link" href="{{ t.prefix }}team/{% if locale == 'en' %}en/{% endif %}">{{ t.qualityLink }} <span aria-hidden="true">↗</span></a></div></aside>
     </section>
 
     <section class="costs" id="kosten">
       <div class="shell">
         <div class="section-heading"><div><p class="kicker">{{ t.costLabel }}</p><h2>{{ t.costTitle }}</h2></div><p class="intro">{{ t.costIntro }}</p></div>
-        <table class="price-table">
+        <table class="price-table" role="table">
           <caption>{{ t.tariffUnit }}</caption>
           <thead><tr>{% for h in t.tariffHeaders %}<th scope="col">{{ h }}</th>{% endfor %}</tr></thead>
-          <tbody>{% for tariff in t.tariffs %}<tr><th scope="row"><strong>{{ tariff[0] }}</strong><span>{{ tariff[1] }}</span></th><td>{{ tariff[2] }}</td><td>{{ tariff[3] }}</td></tr>{% endfor %}</tbody>
+          <tbody>{% for tariff in t.tariffs %}<tr><th scope="row"><strong>{{ tariff[0] }}</strong><span>{{ tariff[1] }}</span></th><td data-label="{{ t.tariffHeaders[1] }}">{{ tariff[2] }}</td><td data-label="{{ t.tariffHeaders[2] }}">{{ tariff[3] }}</td></tr>{% endfor %}</tbody>
         </table>
         <div class="support-note"><div><h3>{{ t.supportTitle }}</h3><p>{{ t.support }}</p></div><a class="button button-light" href="#gespraech">{{ t.costCta }} <span aria-hidden="true">↗</span></a></div>
       </div>
