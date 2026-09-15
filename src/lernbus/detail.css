@@ -21,8 +21,9 @@
 .detail-page .menu-btn{border-radius:0;box-shadow:3px 3px 0 var(--night)}
 .detail-page .hero{min-height:0!important;background:var(--yellow)}
 .detail-page .hero-inner{padding-top:12rem;padding-bottom:4.5rem}
-.detail-page .hero h1{max-width:22ch;line-height:1.04;text-wrap:balance}
-.detail-page .hero h1 .pop{color:var(--violet-deep);white-space:normal}
+.detail-page .hero h1{max-width:22ch;line-height:1.16;text-wrap:balance}
+/* A visible reversal of the brand pair, rather than a second nearly identical violet. */
+.detail-page .hero h1 .pop{color:var(--yellow);background:var(--violet);padding:.015em .11em .06em;white-space:normal;-webkit-box-decoration-break:clone;box-decoration-break:clone}
 .detail-page .hero h1 .pop::after{display:none}
 .detail-page .hero .lead{max-width:54ch;font-size:1.25rem}
 .detail-page .hero-scrim{display:none}
@@ -44,6 +45,7 @@
 .detail-page .dsec p+p{grid-column:2}
 .detail-page .btn{border-radius:0;border:2px solid var(--violet);font-size:1rem;box-shadow:4px 4px 0 var(--night)}
 .detail-page .btn-ghost{box-shadow:none}
+.detail-page .btn-pink,.detail-page .menu-btn{color:var(--yellow)}
 .detail-page .eyebrow{border:0;padding:0;font-size:.875rem;letter-spacing:.07em}
 .detail-page .eyebrow::before{content:'';display:inline-block;width:2rem;height:3px;background:currentColor;vertical-align:middle;margin-right:.75rem}
 .detail-page .fact{border-top:2px solid var(--violet)}
@@ -81,6 +83,9 @@
  .detail-page .step .dotn{font-size:2.25rem}
  .detail-page .vignette{padding:1.2rem}
  .detail-page .morelink{margin-left:0}
+}
+@media print{
+ .detail-page .hero h1 .pop{color:var(--violet);background:none;padding:0;text-decoration:underline;text-underline-offset:.1em;text-decoration-thickness:.05em}
 }
 @media(prefers-reduced-motion:reduce){.detail-page *{animation:none!important;transition:none!important}}
 

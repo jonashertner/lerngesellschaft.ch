@@ -1,5 +1,5 @@
 {
-  "authorization": "Jonas, 15 September 2026: round tariffs, separate appointment booking and contact, add Conny Brandes as Leiterin with photo/bio to come. Only those changes and their navigation are permitted beyond the immutable live-site baseline. Jonas also authorized the reviewed AGB publication via the task AGBs für Lerngesellschaft entwerfen (verified 15 September 2026): footer links and minimal DE/EN clarification that six months is a shared plan and support is cancellable at any time. Jonas, 15 September 2026: add the supplied first-person Conny biography, gently edited and structured, with a photo placeholder in a Team section immediately before Ablauf. Update the existing team page and English equivalents consistently. Publish the completed site to lernbus.ch and its related public routes. Jonas, 15 September 2026: remove the repeated short cancellation clauses (Ablauf and individual/pair FAQ, corresponding concept wording), remove the funded-places bullet from Zielgruppe, change the booking calendar to lessons, use Mentor instead of Lernmentor, replace the pedagogical-background sentence and shorten the quality sentence to his supplied wording. His final requested booking lead is exactly Wählen Sie einen freien Termin für ein Gespräch. Apply corresponding English edits; retain the AGB and the single shared-planning FAQ explanation. Jonas reaffirmed that the calendar must book a lesson rather than an introductory conversation. Navigation, heading, lead, iframe label, fallback subject and weekly labels are now prepared consistently for lessons. Publishing this pending switch requires the matching Microsoft Bookings service update; renewed account authentication is still needed. Latest steering during the successful provider update: title exactly Lektion anfragen; lead exactly Wählen Sie den Termin, der Ihnen passt für die Lektion. Wir kontaktieren Sie dann für ein Kennenlerngespräch. Use the same title/description for the existing Bookings service, and matching English wording on the site. The service was saved successfully with the same one-hour duration; the authentication blocker is resolved. Jonas, 15 September 2026: move Rahmenbedingungen und Qualitätssicherung to the end, immediately before Ein Angebot der Lerngesellschaft; preserve the complete section wording and align navigation order on the German and English parent pages. Jonas, 15 September 2026, in Lernbus-Fotos einbinden: use the supplied portrait of Conny in her profile and the two room photos on the site. Remove the CB/photo-to-follow placeholders on DE/EN parent and team pages and label the room gallery Ein Blick in unseren Lernraum. / A look inside our learning space. Jonas, 15 September 2026: send contact-form messages directly to info@lernbus.ch, replacing the mailto form action with protected direct submission. After asking Codex to choose a suitable provider, Jonas completed Formspree account registration. Authorize the DE/EN send-button labels, direct-transmission and privacy notice, and nonvisual Website honeypot label. Formspree form maeyrgjk is configured; delivery verification remains pending.",
+  "authorization": "Jonas, 15 September 2026: round tariffs, separate appointment booking and contact, add Conny Brandes as Leiterin with photo/bio to come. Only those changes and their navigation are permitted beyond the immutable live-site baseline. Jonas also authorized the reviewed AGB publication via the task AGBs für Lerngesellschaft entwerfen (verified 15 September 2026): footer links and minimal DE/EN clarification that six months is a shared plan and support is cancellable at any time. Jonas, 15 September 2026: add the supplied first-person Conny biography, gently edited and structured, with a photo placeholder in a Team section immediately before Ablauf. Update the existing team page and English equivalents consistently. Publish the completed site to lernbus.ch and its related public routes. Jonas, 15 September 2026: remove the repeated short cancellation clauses (Ablauf and individual/pair FAQ, corresponding concept wording), remove the funded-places bullet from Zielgruppe, change the booking calendar to lessons, use Mentor instead of Lernmentor, replace the pedagogical-background sentence and shorten the quality sentence to his supplied wording. His final requested booking lead is exactly Wählen Sie einen freien Termin für ein Gespräch. Apply corresponding English edits; retain the AGB and the single shared-planning FAQ explanation. Jonas reaffirmed that the calendar must book a lesson rather than an introductory conversation. Navigation, heading, lead, iframe label, fallback subject and weekly labels are now prepared consistently for lessons. Publishing this pending switch requires the matching Microsoft Bookings service update; renewed account authentication is still needed. Latest steering during the successful provider update: title exactly Lektion anfragen; lead exactly Wählen Sie den Termin, der Ihnen passt für die Lektion. Wir kontaktieren Sie dann für ein Kennenlerngespräch. Use the same title/description for the existing Bookings service, and matching English wording on the site. The service was saved successfully with the same one-hour duration; the authentication blocker is resolved. Jonas, 15 September 2026: move Rahmenbedingungen und Qualitätssicherung to the end, immediately before Ein Angebot der Lerngesellschaft; preserve the complete section wording and align navigation order on the German and English parent pages. Jonas, 15 September 2026, in Lernbus-Fotos einbinden: use the supplied portrait of Conny in her profile and the two room photos on the site. Remove the CB/photo-to-follow placeholders on DE/EN parent and team pages and label the room gallery Ein Blick in unseren Lernraum. / A look inside our learning space. Jonas, 15 September 2026: send contact-form messages directly to info@lernbus.ch, replacing the mailto form action with protected direct submission. After asking Codex to choose a suitable provider, Jonas completed Formspree account registration. Authorize the DE/EN send-button labels, direct-transmission and privacy notice, and nonvisual Website honeypot label. Formspree form maeyrgjk is configured; delivery verification remains pending. Jonas, 15 September 2026: change the launch/start date to October 2026 across the site, including German and English pages, footers, concept introductions and social metadata. Historical document/version dates remain unchanged.",
   "rounding": "Working choice communicated: CHF 12.50 to CHF 10; CHF 87.50 to CHF 90.",
   "pages": {
     "lernbus/index.html": [
@@ -73,7 +73,7 @@
         "start": 1203,
         "end": 1207,
         "before": "Start September 2026 Impressum",
-        "after": "Start September 2026 Impressum AGB"
+        "after": "Start Oktober 2026 Impressum AGB"
       }
     ],
     "lernbus/en/index.html": [
@@ -153,7 +153,7 @@
         "start": 1363,
         "end": 1367,
         "before": "starting September 2026 Imprint",
-        "after": "starting September 2026 Imprint Terms ( German )"
+        "after": "starting October 2026 Imprint Terms ( German )"
       }
     ],
     "lernbus/team/index.html": [
@@ -173,7 +173,7 @@
         "start": 126,
         "end": 130,
         "before": "Start September 2026 Impressum",
-        "after": "Start September 2026 Impressum AGB"
+        "after": "Start Oktober 2026 Impressum AGB"
       }
     ],
     "lernbus/team/en/index.html": [
@@ -193,7 +193,7 @@
         "start": 130,
         "end": 134,
         "before": "Starting September 2026 Imprint",
-        "after": "Starting September 2026 Imprint Terms ( German )"
+        "after": "Starting October 2026 Imprint Terms ( German )"
       }
     ],
     "lernbus/konzept/index.html": [
@@ -234,10 +234,16 @@
         "after": "Die Qualität des Angebots wird gesichert und laufend weiterentwickelt ."
       },
       {
+        "start": 1738,
+        "end": 1744,
+        "before": "Der Lernbus startet im September 2026",
+        "after": "Der Lernbus startet im Oktober 2026"
+      },
+      {
         "start": 1968,
         "end": 1973,
         "before": "· Start September 2026 Impressum",
-        "after": "· Start September 2026 Impressum AGB"
+        "after": "· Start Oktober 2026 Impressum AGB"
       }
     ],
     "lernbus/en/konzept/index.html": [
@@ -284,10 +290,16 @@
         "after": "is secured and continually developed . Request a place Sign"
       },
       {
+        "start": 1997,
+        "end": 2004,
+        "before": "The Learning Bus starts in September 2026",
+        "after": "The Learning Bus starts in October 2026"
+      },
+      {
         "start": 2260,
         "end": 2265,
         "before": "· starting September 2026 Imprint",
-        "after": "· starting September 2026 Imprint Terms ( German )"
+        "after": "· starting October 2026 Imprint Terms ( German )"
       }
     ]
   }
