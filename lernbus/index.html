@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="theme-color" content="#fbfaf3" />
+<meta name="theme-color" content="#fafafa" />
 <title>Lernbus · Individuelle Frühförderung in Basel</title>
 <meta name="description" content="Der Lernbus begleitet Kinder ab 3 Jahren bis zur 3. Primarschule, einzeln oder zu zweit, immer mit derselben Bezugsperson. Offen für alle Kinder." />
 <link rel="canonical" href="https://lerngesellschaft.ch/lernbus/" />
@@ -17,8 +17,11 @@
 <link rel="preload" href="./fonts/bricolage-latin.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="preload" href="./fonts/hanken-latin.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="stylesheet" href="./styles.css" />
+<link rel="stylesheet" href="./detail.css">
+<link rel="stylesheet" href="./source-home.css">
+<script src="./booking.js" type="module"></script>
 </head>
-<body>
+<body class="detail-page source-home locale-de">
 <a href="#main" class="skip">Zum Inhalt springen</a>
 
 <header class="site-head">
@@ -34,10 +37,12 @@
           <a href="#zielgruppe" class="navlink">Zielgruppe</a>
           <a href="#warum" class="navlink">Warum</a>
           <a href="#ansatz" class="navlink">Ansatz</a>
+          <a href="#team" class="navlink">Team</a>
           <a href="#ablauf" class="navlink">Ablauf</a>
           <a href="#kosten" class="navlink">Kosten</a>
           <a href="#qualitaet" class="navlink">Qualität</a>
-          <a href="#gespraech" class="navlink">Gespräch</a>
+          <a href="#gespraech" class="navlink">Termin buchen</a>
+          <a href="#kontakt" class="navlink">Kontakt</a>
           <a href="#fragen" class="navlink">Fragen</a>
           <a href="#traegerschaft" class="navlink">Trägerschaft</a>
         </nav>
@@ -61,10 +66,13 @@
     </div>
     <div class="hero-scrim" aria-hidden="true"></div>
     <div class="hero-inner">
-      <div class="wrap">
+      <div class="wrap source-hero-grid">
         <h1>Individuelle Frühförderung, die Kinder <span class="pop">stark</span> macht.</h1>
+        <div class="source-hero-copy">
         <p class="lead">Der Lernbus ist ein präventives, pädagogisch fundiertes Förderangebot für Kinder im frühen Lernalter.</p>
         <p class="lead" style="margin-top:1rem">Der Lernbus stärkt Kinder darin, ihre persönliche Entwicklung selbstbewusst, eigenständig und zukunftsorientiert zu gestalten.</p>
+        </div>
+        <figure class="source-art"><img src="./img/discovery-collage-bird.webp" srcset="./img/discovery-collage-bird-small.webp 800w, ./img/discovery-collage-bird.webp 1448w" sizes="(max-width: 768px) 90vw, 54vw" width="1448" height="1086" alt="Illustration aus Papierformen, Bausteinen, Stift und Schnur." fetchpriority="high"></figure>
       </div>
     </div>
   </section>
@@ -73,12 +81,13 @@
   <section class="section" id="zielgruppe" style="--dot:var(--violet)">
     <div class="wrap">
       <h2 class="big reveal">Zielgruppe</h2>
-      <ul class="fuerwen reveal">
+<div class="audience-grid">      <ul class="fuerwen reveal">
         <li>Kinder <b>ab 3 Jahren bis zur 3. Primarschule</b></li>
         <li>Für Kinder, die in ihren <b>Lern- und Zukunftskompetenzen</b> gezielt gestärkt werden sollen</li>
         <li><b>Frühe Deutschförderung ab 3 Jahren</b> im Einzel- und Zweiersetting</li>
         <li><b>Ermöglichte Plätze</b> zur Förderung der Chancengleichheit</li>
       </ul>
+<figure class="source-art"><img src="./img/experiment-collage.webp" srcset="./img/experiment-collage-small.webp 550w, ./img/experiment-collage.webp 1000w" sizes="(max-width: 768px) 75vw, 34vw" width="1000" height="1000" loading="lazy" alt="Illustration eines Turms aus Bausteinen."></figure></div>
     </div>
   </section>
 
@@ -151,6 +160,58 @@
     </div>
   </section>
 
+  <!-- TEAM -->
+  <section class="section team-section" id="team" aria-labelledby="team-heading">
+    <div class="wrap">
+      <h2 class="big" id="team-heading">Team</h2>
+      
+      
+      
+<article class="team-profile" aria-labelledby="conny-name">
+  <div class="team-identity">
+    <div class="team-photo-placeholder" role="img" aria-label="Foto-Platzhalter für Conny Brandes">
+      <span class="team-initials" aria-hidden="true">CB</span>
+      <span class="team-photo-label" aria-hidden="true">Foto folgt</span>
+    </div>
+    <h3 class="team-name" id="conny-name">Conny Brandes</h3>
+    <p class="team-role">Leiterin Lernbus</p>
+    <a class="morelink" href="mailto:connybrandes@lernbus.ch">connybrandes@lernbus.ch</a>
+  </div>
+  <div class="team-profile-copy">
+    
+    <div class="team-bio-section">
+      <h4 class="team-bio-heading">Mein beruflicher Weg</h4>
+      
+      <p>Seit meinem 16. Lebensjahr arbeite ich mit Kindern in Kindertagesstätten. Zunächst war ich als Miterzieherin tätig. Anschliessend habe ich 14 Jahre lang selbstständig in Co-Leitung die Kita Schnäggi geführt.</p>
+      
+      <p>Im Laufe meiner beruflichen Tätigkeit habe ich verschiedene Weiterbildungen absolviert, unter anderem als Berufsbildnerin sowie im Bereich der frühen Sprachförderung mit Schwerpunkt Deutsch. Zudem bin ich Mutter von zwei bereits erwachsenen Kindern und einem achtjährigen Kind.</p>
+      
+    </div>
+    
+    <div class="team-bio-section">
+      <h4 class="team-bio-heading">Zeit für frühe Förderung</h4>
+      
+      <p>Die Bedeutung der frühen Bildung und Förderung wird in unserer Gesellschaft nach wie vor nicht ausreichend anerkannt. In meiner 30-jährigen Arbeit habe ich festgestellt, dass es vor allem eines braucht, um Kinder gezielt und individuell zu fördern: Zeit.</p>
+      
+      <p>Zeit, in der ein Kind sich ausprobieren darf. Und Zeit, in der ein Erwachsener liebevoll, spielerisch und fachlich fundiert mit dem Kind grundlegende Fähigkeiten übt und stärkt.</p>
+      
+    </div>
+    
+    <div class="team-bio-section">
+      <h4 class="team-bio-heading">Individuelle Begleitung</h4>
+      
+      <p>Mit dem Lernbus schaffen wir genau diesen Raum und diese Zeit, damit Kinder individuell begleitet und gezielt in ihren Kernkompetenzen gestärkt werden können.</p>
+      
+      <p>Jedes Kind und jeder Mensch ist einzigartig. Es gibt nicht die eine Massnahme, die einem Kind beispielsweise hilft, dranzubleiben, wenn etwas gerade nicht gelingt. Mit Zeit, professionellem Wissen und einer liebevollen Haltung ist es jedoch möglich, gemeinsam mit dem Kind herauszufinden, was es braucht, und dies nachhaltig zu integrieren.</p>
+      
+    </div>
+    
+  </div>
+</article>
+
+    </div>
+  </section>
+
   <!-- ABLAUF -->
   <section class="section" id="ablauf" style="--dot:var(--violet)">
     <div class="accent-blob" style="width:24vw;height:24vw;background:var(--cyan);right:-8vw;bottom:-4vw"></div>
@@ -180,10 +241,10 @@
           <tr role="row"><th role="columnheader" scope="col">Tarif</th><th role="columnheader" scope="col">Einzellektion</th><th role="columnheader" scope="col">Zweierlektion <span>pro Kind</span></th></tr>
         </thead>
         <tbody role="rowgroup">
-          <tr role="row"><th role="rowheader" scope="row"><span class="tname">Fördertarif</span><span class="tdesc">Für Familien, bei denen das Geld knapp ist. Ermöglicht durch Menschen, die in Kinder investieren.</span></th><td role="cell" data-label="Einzellektion">CHF 12.50</td><td role="cell" data-label="Zweierlektion pro Kind">CHF 10</td></tr>
+          <tr role="row"><th role="rowheader" scope="row"><span class="tname">Fördertarif</span><span class="tdesc">Für Familien, bei denen das Geld knapp ist. Ermöglicht durch Menschen, die in Kinder investieren.</span></th><td role="cell" data-label="Einzellektion">CHF 10</td><td role="cell" data-label="Zweierlektion pro Kind">CHF 10</td></tr>
           <tr role="row"><th role="rowheader" scope="row"><span class="tname">Reduziert</span><span class="tdesc">Für Familien, die den vollen Beitrag nicht tragen können.</span></th><td role="cell" data-label="Einzellektion">CHF 75</td><td role="cell" data-label="Zweierlektion pro Kind">CHF 60</td></tr>
           <tr role="row" class="ref"><th role="rowheader" scope="row"><span class="tname">Kostenwahrheit</span><span class="tdesc">Deckt die Vollkosten eines Platzes: Lektion, Vorbereitung, Elterngespräche und Qualitätssicherung.</span></th><td role="cell" data-label="Einzellektion">CHF 100</td><td role="cell" data-label="Zweierlektion pro Kind">CHF 75</td></tr>
-          <tr role="row"><th role="rowheader" scope="row"><span class="tname">Solidarisch</span><span class="tdesc">Mehr, als ein Platz kostet. Der Mehrbetrag fliesst vollständig in Förderplätze.</span></th><td role="cell" data-label="Einzellektion">CHF 125</td><td role="cell" data-label="Zweierlektion pro Kind">CHF 87.50</td></tr>
+          <tr role="row"><th role="rowheader" scope="row"><span class="tname">Solidarisch</span><span class="tdesc">Mehr, als ein Platz kostet. Der Mehrbetrag fliesst vollständig in Förderplätze.</span></th><td role="cell" data-label="Einzellektion">CHF 125</td><td role="cell" data-label="Zweierlektion pro Kind">CHF 90</td></tr>
         </tbody>
       </table>
       <p class="tariffs-note reveal">Wenn das Geld zu Hause knapp ist, sagen Sie es einfach. Das ist kein Hindernis, und es bleibt unter uns.</p>
@@ -202,28 +263,51 @@
   <!-- GESPRÄCH VEREINBAREN -->
   <section class="section" id="gespraech">
     <div class="wrap">
-      <p class="eyebrow" style="--dot:var(--violet)">Kennenlerngespräch</p>
-      <h2 class="big" style="max-width:20ch">Vereinbaren Sie ein Gespräch.</h2>
-      <p class="lead" style="margin-top:1.2rem; max-width:56ch">Der Lernbus startet im September 2026 mit wenigen Plätzen. Sagen Sie uns kurz, um wen es geht und wann wir Sie erreichen. Wir melden uns innert weniger Tage.</p>
+      <h2 class="big">Kennenlerngespräch buchen.</h2>
+      <p class="lead" style="margin-top:1.2rem; max-width:56ch">Wählen Sie einen freien Termin für ein Gespräch von 60 Minuten.</p>
+      
+<div class="booking-section" data-booking-addition>
+<div class="booking-card" data-booking data-locale="de" data-booking-url="https://outlook.office.com/book/Lernbus@NETORGFT21038058.onmicrosoft.com/?ismsaljsauthenabled" data-embed-url="https://outlook.office.com/book/Lernbus@NETORGFT21038058.onmicrosoft.com/?ismsaljsauthenabled" data-provider-name="Microsoft Bookings">
+        <div class="booking-card-heading"><span class="calendar-icon" aria-hidden="true">▦</span><h3>Datum und Uhrzeit auswählen</h3></div>
+        <div class="booking-unconfigured" data-booking-fallback hidden>
+          <p class="booking-status">Die Online-Terminbuchung wird gerade eingerichtet.</p><p>Bis die Termine freigeschaltet sind, erreichen Sie uns direkt per E-Mail.</p>
+          <a class="button" href="mailto:info@lernbus.ch?subject=Kennenlerngespr%C3%A4ch%20Lernbus%20(60%20Minuten)">Termin per E-Mail vereinbaren <span aria-hidden="true">↗</span></a>
+          <p class="small">Nennen Sie uns gerne zwei oder drei passende Zeiten. Der Termin steht, sobald wir ihn gemeinsam bestätigt haben.</p>
+        </div>
+        <div data-booking-ready>
+          <p class="booking-disclosure">Der Buchungskalender wird erst auf Ihren Wunsch geladen. Dabei wird eine Verbindung zum Buchungsdienst hergestellt.</p>
+          <button class="button" type="button" data-calendar-load hidden>Termine anzeigen <span aria-hidden="true">↗</span></button>
+          <p class="small" data-calendar-help>Falls der Kalender nicht angezeigt wird, öffnen Sie ihn direkt oder schreiben Sie uns.</p>
+          <a class="text-link" data-calendar-external href="https://outlook.office.com/book/Lernbus@NETORGFT21038058.onmicrosoft.com/?ismsaljsauthenabled" target="_blank" rel="noopener noreferrer">Kalender in einem neuen Tab öffnen <span aria-hidden="true">↗</span></a>
+          <div class="calendar-frame" data-calendar-frame hidden></div>
+        </div>
+        <p class="booking-error" data-booking-error role="status" hidden>Der Kalender ist gerade nicht erreichbar. Bitte versuchen Sie es erneut oder kontaktieren Sie uns per E-Mail.</p>
+        <details class="weekly-times"><summary>Unsere Gesprächszeiten <span aria-hidden="true">+</span></summary><p class="small">Jeweils eine Stunde, Schweizer Zeit. Der Buchungskalender zeigt die aktuell freien Termine und bestätigt Ihre Buchung.</p><dl><div><dt>Montag</dt><dd><span>08:15–09:15</span><span>09:30–10:30</span><span>10:45–11:45</span><span>13:00–14:00</span><span>14:15–15:15</span><span>15:30–16:30</span><span>16:45–17:45</span></dd></div><div><dt>Mittwoch</dt><dd><span>08:45–09:45</span><span>10:00–11:00</span><span>11:15–12:15</span><span>13:15–14:15</span><span>14:30–15:30</span><span>16:30–17:30</span><span>17:45–18:45</span></dd></div><div><dt>Donnerstag</dt><dd><span>08:15–09:15</span><span>09:30–10:30</span><span>10:45–11:45</span><span>13:00–14:00</span><span>14:15–15:15</span><span>15:30–16:30</span><span>16:45–17:45</span></dd></div></dl></details>
+        <p class="booking-privacy"><a href="/impressum/#datenschutz">Datenschutz</a></p>
+      </div>
+</div>
+
+    </div>
+  </section>
+
+  <section class="section contact-section" id="kontakt">
+    <div class="wrap contact-grid">
+      <div class="contact-intro">
+        <p class="eyebrow">Kontakt</p>
+        <h2 class="big">Eine Frage stellen.</h2>
+        <p class="lead">Für Fragen zum Lernbus schreiben Sie uns eine Nachricht. Wir melden uns innert weniger Tage.</p>
+        <a class="morelink" href="mailto:info@lernbus.ch">info@lernbus.ch</a>
+      </div>
       <div class="book-card">
-        <form id="anfrage">
+        <form id="anfrage" action="mailto:info@lernbus.ch" method="post" enctype="text/plain">
           <div class="form-grid">
             <div class="field"><label for="f-name">Ihr Name</label><input id="f-name" name="name" type="text" autocomplete="name" required /></div>
-            <div class="field"><label for="f-contact">E-Mail oder Telefon</label><input id="f-contact" name="contact" type="text" autocomplete="email" required /></div>
-            <div class="field"><label for="f-age">Alter des Kindes</label>
-              <select id="f-age" name="age" required>
-                <option value="" selected disabled>Bitte wählen</option>
-                <option>3 Jahre</option><option>4 Jahre</option><option>5 Jahre</option><option>6 Jahre</option><option>7 Jahre</option><option>8 Jahre</option><option>9 Jahre</option>
-              </select>
-            </div>
-            <div class="field"><label for="f-when">Wann erreichen wir Sie am besten?</label><input id="f-when" name="when" type="text" placeholder="z. B. werktags ab 17 Uhr" /></div>
-            <div class="field wide"><label for="f-msg">Worum geht es? (optional)</label><textarea id="f-msg" name="msg"></textarea></div>
-            <label class="check wide"><input type="checkbox" name="lang" /> Mein Kind soll Deutsch aufbauen und sicherer sprechen.</label>
-            <label class="check wide"><input type="checkbox" name="reduced" /> Bitte informieren Sie mich über ermöglichte Plätze.</label>
+            <div class="field"><label for="f-contact">Ihre E-Mail-Adresse</label><input id="f-contact" name="contact" type="email" autocomplete="email" required /></div>
+            <div class="field wide"><label for="f-msg">Ihre Nachricht</label><textarea id="f-msg" name="msg" rows="5" required></textarea></div>
           </div>
-          <div style="margin-top:1.4rem"><button type="submit" class="btn btn-pink">Gespräch anfragen</button></div>
+          <div style="margin-top:1.4rem"><button type="submit" class="btn btn-ghost">E-Mail vorbereiten</button></div>
         </form>
-        <p class="book-note">Unverbindlich. Ihre Anfrage geht als E-Mail direkt an info@lernbus.ch und wird nirgends sonst gespeichert. Lieber telefonieren? Schreiben Sie uns eine Zeile, wir rufen zurück.</p>
+        <p class="book-note">Das Formular öffnet Ihr E-Mail-Programm mit Ihrer Nachricht an info@lernbus.ch. Dort können Sie die Nachricht prüfen und absenden.</p>
       </div>
     </div>
   </section>
@@ -295,12 +379,8 @@
 (function(){var f=document.getElementById('anfrage');if(!f)return;
 f.addEventListener('submit',function(e){e.preventDefault();
 var g=function(n){var el=f.elements[n];return el?el.value.trim():'';};
-var L=['Anfrage Kennenlerngespräch Lernbus','','Name: '+g('name'),'Kontakt: '+g('contact'),'Alter des Kindes: '+g('age')];
-if(g('when'))L.push('Erreichbar: '+g('when'));
-if(f.elements['lang'].checked)L.push('Frühe Deutschförderung: Deutsch aufbauen und sicherer sprechen.');
-if(f.elements['reduced'].checked)L.push('Bitte Informationen zu ermöglichten Plätzen.');
-if(g('msg')){L.push('');L.push(g('msg'));}
-location.href='mailto:info@lernbus.ch?subject='+encodeURIComponent('Kennenlerngespräch Lernbus')+'&body='+encodeURIComponent(L.join('\n'));});})();
+var lines=['Kontakt Lernbus','','Name: '+g('name'),'E-Mail: '+g('contact'),'',g('msg')];
+location.href='mailto:info@lernbus.ch?subject='+encodeURIComponent('Kontakt Lernbus')+'&body='+encodeURIComponent(lines.join('\n'));});})();
 </script>
 </body>
 </html>
