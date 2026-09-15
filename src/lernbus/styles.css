@@ -259,8 +259,8 @@ body:has(.site-head:not(.nav-inline) .menu[open]){ overflow:hidden; }
 .fuerwen{ list-style:none; margin:clamp(2rem, 1.4rem + 2vw, 3rem) 0 0; padding:0; max-width:62rem; }
 .fuerwen li{ font-family:var(--display); font-weight:700; color:var(--violet);
   font-size:clamp(1.5rem, 1rem + 2.3vw, 3rem); line-height:1.2; letter-spacing:-0.022em;
-  padding:.9em 0; border-bottom:1.5px solid var(--hairline); text-wrap:balance; }
-.fuerwen li:first-child{ border-top:1.5px solid var(--hairline); }
+  padding:.9em 0; border-bottom:1px solid var(--hairline); text-wrap:balance; }
+.fuerwen li:first-child{ border-top:1px solid var(--hairline); }
 .fuerwen b{ color:var(--violet); font-weight:800;
   background:linear-gradient(transparent 62%, var(--marker) 62%, var(--marker) 96%, transparent 96%); }
 
@@ -278,7 +278,7 @@ body:has(.site-head:not(.nav-inline) .menu[open]){ overflow:hidden; }
 .step p{ margin-top:.35rem; color:var(--teal-ink); }
 .steps.grid2{ max-width:none; display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%, 26rem), 1fr));
   gap:.6rem clamp(3rem, 2rem + 3.5vw, 6rem); }
-.steps.grid2 .step{ padding-bottom:1.7rem; border-bottom:1.5px solid var(--hairline); }
+.steps.grid2 .step{ padding-bottom:1.7rem; border-bottom:1px solid var(--hairline); }
 .steps.grid2 .step::before{ display:none; }
 
 /* ---- Detail blocks / FAQ / cost ---- */
@@ -306,7 +306,7 @@ body:has(.site-head:not(.nav-inline) .menu[open]){ overflow:hidden; }
 /* bullets: divided rows with a marker dash */
 .bullets{ margin:1.8rem 0 0; padding:0; list-style:none; display:grid; gap:0 clamp(2rem, 1.4rem + 2vw, 3.5rem);
   grid-template-columns:repeat(auto-fit, minmax(min(100%, 20rem), 1fr)); max-width:64rem; }
-.bullets li{ position:relative; padding:.9rem 0 .9rem 1.7rem; color:var(--teal-ink); line-height:1.55; border-bottom:1.5px solid var(--hairline); }
+.bullets li{ position:relative; padding:.9rem 0 .9rem 1.7rem; color:var(--teal-ink); line-height:1.55; border-bottom:1px solid var(--hairline); }
 .bullets li::before{ content:""; position:absolute; left:0; top:1.45em; width:.9rem; height:.35rem; border-radius:2px; background:var(--marker); rotate:-2deg; }
 .bullets li b{ color:var(--violet); }
 
@@ -346,7 +346,7 @@ body:has(.site-head:not(.nav-inline) .menu[open]){ overflow:hidden; }
 
 /* ---- Tariff table (parents page): one row per rate, amounts in display type ---- */
 .tariffs{ width:100%; max-width:62rem; margin-top:clamp(2.2rem, 1.6rem + 2vw, 3.2rem); border-collapse:collapse; border-top:2px solid var(--line); }
-.tariffs th, .tariffs td{ text-align:left; vertical-align:top; padding:1.15rem 0; border-bottom:1.5px solid var(--hairline); }
+.tariffs th, .tariffs td{ text-align:left; vertical-align:top; padding:1.15rem 0; border-bottom:1px solid var(--hairline); }
 .tariffs thead th{ font-family:var(--body); font-weight:750; font-size:var(--fs-eyebrow); letter-spacing:.15em; text-transform:uppercase;
   color:var(--teal-ink); padding:.9rem 0 .8rem; vertical-align:bottom; }
 .tariffs thead th span{ display:block; letter-spacing:.02em; text-transform:none; font-weight:600; font-size:.78rem; margin-top:.15rem; }
@@ -362,7 +362,7 @@ body:has(.site-head:not(.nav-inline) .menu[open]){ overflow:hidden; }
 @media (max-width:600px){
   .tariffs, .tariffs tbody, .tariffs tr, .tariffs th, .tariffs td{ display:block; width:auto; }
   .tariffs thead{ position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); clip-path:inset(50%); }
-  .tariffs tr{ padding:1.1rem 0; border-bottom:1.5px solid var(--hairline); }
+  .tariffs tr{ padding:1.1rem 0; border-bottom:1px solid var(--hairline); }
   .tariffs th, .tariffs td{ border:0; padding:0; }
   .tariffs tbody th{ padding-right:0; }
   .tariffs td{ display:inline-block; margin:.9rem 2.4rem 0 0; white-space:normal; }
