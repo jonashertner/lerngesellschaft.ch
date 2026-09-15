@@ -47,7 +47,7 @@ export function mountBooking(root) {
       // Give the provider room for its date picker and form on every screen size.
       root.closest('.booking-section').append(frameHost);
       const frame = document.createElement('iframe');
-      frame.title = root.dataset.locale === 'de' ? `Lektion buchen · ${settings.providerName}` : `Book a lesson · ${settings.providerName}`;
+      frame.title = root.dataset.locale === 'de' ? `Lektion anfragen · ${settings.providerName}` : `Request a lesson · ${settings.providerName}`;
       frame.src = settings.embedUrl;
       frame.referrerPolicy = 'no-referrer';
       frameHost.append(frame);
