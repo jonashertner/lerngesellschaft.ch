@@ -80,9 +80,13 @@ export async function sendContactMessage(endpoint, payload, {
   }
 }
 
+const contactBinding = Symbol.for('lernbus.contact.binding');
+
 export function bindContactForm(form, options = {}) {
+  if (form[contactBinding]) return form[contactBinding];
   const locale = form.dataset.locale === 'en' ? 'en' : 'de';
-  const copy = messages[locale];
+  const recipient = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.dataset.contactEmail || '') ? form.dataset.contactEmail : 'info@lernbus.ch';
+  const copy = Object.fromEntries(Object.entries(messages[locale]).map(([key, value]) => [key, value.replaceAll('info@lernbus.ch', recipient)]));
   const button = form.querySelector('button[type="submit"]');
   const status = form.parentElement.querySelector('[data-contact-status]');
   const inputs = ['name', 'email', 'message'].map(name => form.elements.namedItem(name));
@@ -146,6 +150,7 @@ export function bindContactForm(form, options = {}) {
       inputs.forEach((input, index) => { input.readOnly = previousReadOnly[index]; });
     }
   };
+  form[contactBinding] = submit;
   form.addEventListener('submit', submit);
   return submit;
 }
