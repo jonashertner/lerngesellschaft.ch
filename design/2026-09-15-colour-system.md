@@ -24,5 +24,6 @@
 - Abschnittsregeln und Abstände über berechnete Browser-Stile geprüft; Desktop-Ablauf/Buchung und mobiles Team/Konzept visuell geprüft.
 - Der Eltern-Link im dunklen Anmeldeabschnitt der Konzeptseite ist jetzt gelb auf Indigo statt Indigo auf Indigo.
 - Druckregeln und gemeinsame Team-Stile im Quelltext geprüft.
+- Die öffentliche Browserkontrolle zeigte nach der Veröffentlichung zwischengespeicherte alte CSS-Dateien. Alle sechs aktiven Lernbus-Seiten erhalten deshalb automatisch aus dem jeweiligen CSS-Inhalt erzeugte Versionsparameter. So laden wiederkehrende Besucher nach einem Seiten-Reload die aktuelle Gestaltung.
 
 Wichtige Textkontraste: Indigo/Papier beziehungsweise Papier/Indigo 8.72:1 und Indigo/Gelb 6.54:1. Das ist eine gezielte Farbprüfung, keine vollständige Barrierefreiheitsprüfung. Massstab: [W3C: Textkontrast](https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html). Dekorative Trennlinien sind keine Bedienelemente; siehe [W3C: Nicht-Text-Kontrast](https://www.w3.org/WAI/WCAG22/Understanding/non-text-contrast.html).

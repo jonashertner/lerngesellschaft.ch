@@ -25,7 +25,8 @@ for (const path of paths) {
   for (const match of html.matchAll(/\b(?:href|src)="([^"]+)"/g)) {
     const value = match[1];
     if (/^(https?:|mailto:|data:)/.test(value)) continue;
-    const [url, hash] = value.split('#');
+    const [reference, hash] = value.split('#');
+    const url = reference.split('?')[0];
     let target = url.startsWith('/') ? resolve('_site', '.' + url) : resolve(dirname(full), url || '.');
     if (!url) target = full;
     else if (url.endsWith('/') || !/\.[a-z0-9]+$/i.test(url)) target = resolve(target, 'index.html');
