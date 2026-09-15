@@ -29,6 +29,7 @@
 .source-home .process-overview b{font-weight:750}
 @media(max-width:64rem){.quick-facts{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:48rem){
+ .source-home .process-overview{margin-top:2rem}
  .source-home #warum h2{font-size:clamp(2.2rem,8vw,3rem)}
  .source-home .goals-list .ticks{grid-template-columns:minmax(0,1fr)}
  .source-home .team-section .team-profile{gap:1.75rem}
