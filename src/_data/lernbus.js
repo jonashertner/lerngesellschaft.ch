@@ -3,7 +3,7 @@ export default {
   "de": {
     "bookingHeading": "Datum und Uhrzeit auswählen",
     "bookingMeta": "60 Minuten · Münsterplatz 17, Basel",
-    "bookingBoundary": "Für Eltern und Erziehungsberechtigte. Die Anfrage ist noch keine verbindliche Anmeldung.",
+    "bookingBoundary": "Für Eltern und Erziehungsberechtigte. Die Buchung reserviert den Termin, ist aber noch keine verbindliche Anmeldung.",
     "calendarOpening": "Lektionsstart: 12. Oktober 2026. Wechseln Sie im Kalender zu Oktober.",
     "calendarLoading": "Der Kalender wird geladen …",
     "calendarSlow": "Der Kalender braucht etwas länger. Sie können ihn auch direkt öffnen.",
@@ -12,8 +12,8 @@ export default {
     "bookingEmailSubject": "Lernbus: Lektion anfragen (60 Minuten)",
     "bookingEmail": "Lektion per E-Mail anfragen",
     "bookingHint": "Nennen Sie uns gerne zwei oder drei passende Zeiten. Der Termin steht, sobald wir ihn gemeinsam bestätigt haben.",
-    "calendarPrivacy": "Mit «Termine anzeigen» laden Sie den Kalender von Microsoft Bookings.",
-    "calendarLoad": "Termine anzeigen",
+    "calendarPrivacy": "Mit «Freie Termine anzeigen» laden Sie den Kalender von Microsoft Bookings.",
+    "calendarLoad": "Freie Termine anzeigen",
     "calendarHelp": "Falls der Kalender nicht angezeigt wird, öffnen Sie ihn direkt oder schreiben Sie uns.",
     "calendarExternal": "Kalender in einem neuen Tab öffnen",
     "calendarUnavailable": "Der Kalender ist gerade nicht erreichbar. Bitte versuchen Sie es erneut oder kontaktieren Sie uns per E-Mail.",
@@ -33,7 +33,7 @@ export default {
   "en": {
     "bookingHeading": "Choose a date and time",
     "bookingMeta": "60 minutes · Münsterplatz 17, Basel",
-    "bookingBoundary": "For parents and legal guardians. Your request does not yet enrol your child.",
+    "bookingBoundary": "For parents and legal guardians. Booking reserves your time; it does not yet enrol your child.",
     "calendarOpening": "Lessons start on 12 October 2026. Go to October in the calendar.",
     "calendarLoading": "Loading the calendar…",
     "calendarSlow": "The calendar is taking a little longer. You can also open it directly.",

@@ -9,7 +9,7 @@
     <div class="booking-body">
       <div data-booking-fallback{% if lernbusBooking.configured %} hidden{% endif %}>
         <p class="booking-status">{{ t.bookingEmpty }}</p><p>{{ t.bookingFallback }}</p>
-        <a class="button" href="mailto:info@lernbus.ch?subject={{ t.bookingEmailSubject | urlencode }}">{{ t.bookingEmail }}</a>
+        <a class="button" href="mailto:{{ lernbusContact.recipient | escape }}?subject={{ t.bookingEmailSubject | urlencode }}">{{ t.bookingEmail }}</a>
         <p class="small">{{ t.bookingHint }}</p>
       </div>
       <div data-booking-ready{% if not lernbusBooking.configured %} hidden{% endif %}>
@@ -33,7 +33,7 @@
       <p class="small">{{ t.calendarHelp }}</p>
       <div class="calendar-tools">
         <a class="text-link" href="{{ calendar.bookingUrl | escape }}" target="_blank" rel="noopener noreferrer">{{ t.calendarExternal }} <span aria-hidden="true">↗</span></a>
-        <a class="text-link" href="mailto:info@lernbus.ch?subject={{ t.bookingEmailSubject | urlencode }}">{{ t.bookingEmail }}</a>
+        <a class="text-link" href="mailto:{{ lernbusContact.recipient | escape }}?subject={{ t.bookingEmailSubject | urlencode }}">{{ t.bookingEmail }}</a>
       </div>
     </div>
     {% if lernbusBooking.weeklySlots.length %}<details class="weekly-times"><summary>{{ t.weeklyHeading }} <span aria-hidden="true">+</span></summary><p class="small">{% if lernbusBooking.configured %}{{ t.weeklyLiveNote }}{% else %}{{ t.weeklyNote }}{% endif %}</p><dl>{% for day in lernbusBooking.weeklySlots %}<div><dt>{{ t.weekdays[day.day] }}</dt><dd>{% for slot in day.slots %}<span>{{ slot }}</span>{% endfor %}</dd></div>{% endfor %}</dl></details>{% endif %}
