@@ -989,6 +989,1845 @@
           }
         ]
       }
+    },
+    {
+      "authorization": "Jonas, 15 September 2026: fix the concept page's long paragraphs and abstract educational language, alongside booking integration and technical quality. Make DE/EN easier to read while preserving mission and programme rules. Shorten repetition, make headings concrete, preserve all eight visible goals, add contents navigation and direct EDK citation, remove detached Erasmus attribution and categorical screen-effect claims while preserving the screen-free teaching practice. Responsive image improvements do not change wording.",
+      "pages": {
+        "lernbus/konzept/index.html": [
+          {
+            "start": 41,
+            "end": 42,
+            "before": "Der",
+            "after": "Im"
+          },
+          {
+            "start": 43,
+            "end": 46,
+            "before": "ist ein präventives",
+            "after": "begleiten pädagogische Fachpersonen Kinder beim Lernen . Wir beginnen früh"
+          },
+          {
+            "start": 47,
+            "end": 55,
+            "before": "pädagogisch fundiertes Förderangebot für Kinder im frühen Lernalter",
+            "after": "damit Selbstvertrauen und Lernfreude wachsen können"
+          },
+          {
+            "start": 56,
+            "end": 57,
+            "before": "Er",
+            "after": "Das Angebot"
+          },
+          {
+            "start": 63,
+            "end": 68,
+            "before": "davon , was sie mitbringen",
+            "after": "von ihren Fähigkeiten"
+          },
+          {
+            "start": 69,
+            "end": 87,
+            "before": "woher sie kommen . Wir setzen früh an , um Selbstvertrauen und Lernfreude zu erhalten und zu stärken",
+            "after": "ihrer Herkunft"
+          },
+          {
+            "start": 95,
+            "end": 95,
+            "before": "",
+            "after": "dieser Seite Warum früh beginnen ? Wie wir begleiten Unsere Ziele Für wen ? Der Ablauf Wer begleitet ? Auf"
+          },
+          {
+            "start": 97,
+            "end": 103,
+            "before": "Individuelle Frühförderung für eine starke Bildungsbiografie",
+            "after": "Früh beginnen . Mit Vertrauen weiterlernen"
+          },
+          {
+            "start": 146,
+            "end": 155,
+            "before": "Im Zentrum steht die nachhaltige Entwicklung einer positiven Beziehung",
+            "after": "Kinder sollen gern lernen , selbstständig denken und ihren Fähigkeiten vertrauen . Dafür geben wir ihnen Zeit und eine verlässliche Begleitung . Warum Lernbus Ein guter Anfang macht einen Unterschied . Was Kinder"
+          },
+          {
+            "start": 157,
+            "end": 157,
+            "before": "",
+            "after": "brauchen Kinder brauchen sprachliche und mathematische Grundlagen"
+          },
+          {
+            "start": 158,
+            "end": 197,
+            "before": "Damit stärkt der Lernbus Kinder darin , ihren Bildungsweg selbstbewusst , eigenständig und zukunftsorientiert zu gestalten . Warum es den Lernbus braucht Unsere Welt verändert sich schnell und stellt bereits heute neue Anforderungen an Kinder . Neben fachlichem Wissen",
+            "after": "Ebenso wichtig"
+          },
+          {
+            "start": 198,
+            "end": 200,
+            "before": "künftig besonders",
+            "after": ""
+          },
+          {
+            "start": 201,
+            "end": 203,
+            "before": ", Problemlösungskompetenz",
+            "after": ""
+          },
+          {
+            "start": 206,
+            "end": 212,
+            "before": "ein konstruktiver Umgang mit Herausforderungen gefragt",
+            "after": "die Fähigkeit , Probleme zu lösen"
+          },
+          {
+            "start": 213,
+            "end": 240,
+            "before": "Aktuelle schweizweite Erhebungen zu den Grundkompetenzen zeigen , dass bereits in der Primarschule nicht alle Kinder die erwarteten sprachlichen und mathematischen Mindeststandards erreichen : Nach der nationalen",
+            "after": "Die nationale"
+          },
+          {
+            "start": 243,
+            "end": 246,
+            "before": "erreicht schon in",
+            "after": "zeigt : In"
+          },
+          {
+            "start": 249,
+            "end": 249,
+            "before": "",
+            "after": "erreicht"
+          },
+          {
+            "start": 267,
+            "end": 267,
+            "before": "",
+            "after": "Quelle : EDK , Überprüfung 2024 , Ergebnisse 2026"
+          },
+          {
+            "start": 268,
+            "end": 320,
+            "before": "ansetzen , statt spät korrigieren Besonders betroffen sind Kinder mit erhöhtem Förderbedarf oder eingeschränkten Lernressourcen . Ohne frühe Unterstützung besteht die Gefahr , dass sich Defizite verfestigen und langfristig zu Benachteiligungen führen . Gleichzeitig profitieren alle Kinder vom Angebot , da zukunftsrelevante Kompetenzen gezielt gefördert werden . Der Lernbus setzt hier früh",
+            "after": "unterstützen Wir setzen"
+          },
+          {
+            "start": 321,
+            "end": 325,
+            "before": "und stärkt Kinder ganzheitlich",
+            "after": ""
+          },
+          {
+            "start": 328,
+            "end": 328,
+            "before": "",
+            "after": "Schwierigkeiten und"
+          },
+          {
+            "start": 332,
+            "end": 334,
+            "before": "Bedingungen schaffen",
+            "after": "Das ist besonders wichtig für Kinder"
+          },
+          {
+            "start": 335,
+            "end": 338,
+            "before": "nicht Leistung erzwingen",
+            "after": "die mehr Unterstützung brauchen oder weniger Lernmöglichkeiten haben . Das Angebot steht aber allen Kindern offen . Raum zum Wachsen"
+          },
+          {
+            "start": 348,
+            "end": 350,
+            "before": "kann man",
+            "after": "können wir"
+          },
+          {
+            "start": 353,
+            "end": 354,
+            "before": "machen",
+            "after": "erzwingen"
+          },
+          {
+            "start": 355,
+            "end": 358,
+            "before": "sondern nur die",
+            "after": "aber gute"
+          },
+          {
+            "start": 359,
+            "end": 360,
+            "before": "dafür",
+            "after": ""
+          },
+          {
+            "start": 374,
+            "end": 376,
+            "before": "zuschaut und",
+            "after": "dem Kind etwas"
+          },
+          {
+            "start": 378,
+            "end": 385,
+            "before": "Genau darin besteht die Arbeit des Lernbusses",
+            "after": "So begleiten wir Kinder Zeit , Vertrauen und passende Aufgaben"
+          },
+          {
+            "start": 386,
+            "end": 409,
+            "before": "Pädagogischer Ansatz und Wirkung Woran wir mit den Kindern arbeiten . Beziehung kommt zuerst Kinder lernen bei Menschen , nicht bei Programmen .",
+            "after": "Eine vertraute Person"
+          },
+          {
+            "start": 415,
+            "end": 415,
+            "before": "",
+            "after": "und auszuprobieren"
+          },
+          {
+            "start": 436,
+            "end": 438,
+            "before": ": jemand",
+            "after": ". Sie kennt seine Interessen"
+          },
+          {
+            "start": 439,
+            "end": 445,
+            "before": "der seinen Namen kennt , seine",
+            "after": "erinnert sich an die letzte Lektion und begleitet auch"
+          },
+          {
+            "start": 446,
+            "end": 457,
+            "before": "kennt und sich merkt , woran es letzte Woche gearbeitet hat",
+            "after": ""
+          },
+          {
+            "start": 458,
+            "end": 504,
+            "before": "Diese Verlässlichkeit ist keine nette Zugabe , sondern die Grundlage , auf der alles andere steht . Breit anfangen , nicht früh festlegen In diesem Alter geht es nicht darum , eine Begabung zu finden und alles andere wegzulassen . Kinder brauchen zuerst Breite : bauen",
+            "after": "Vieles ausprobieren Bauen"
+          },
+          {
+            "start": 514,
+            "end": 514,
+            "before": "",
+            "after": ": Kinder brauchen vielfältige Erfahrungen"
+          },
+          {
+            "start": 515,
+            "end": 518,
+            "before": "Wer vieles ausprobiert",
+            "after": "Sie sollen ihre Interessen entdecken und Gelerntes in neuen Situationen anwenden können . Wir legen Kinder nicht früh auf eine einzelne Begabung fest . Jedes Kind"
+          },
+          {
+            "start": 519,
+            "end": 519,
+            "before": "",
+            "after": "Stärken"
+          },
+          {
+            "start": 520,
+            "end": 524,
+            "before": "findet später leichter das",
+            "after": "auch solche"
+          },
+          {
+            "start": 525,
+            "end": 527,
+            "before": "was wirklich",
+            "after": "die in der Schule weniger sichtbar werden . Grundlagen und eigenes Denken Wir stärken sprachliche und mathematische Grundlagen . Zugleich üben Kinder , eigene Ideen"
+          },
+          {
+            "start": 528,
+            "end": 613,
+            "before": "ihm passt , und kann Gelerntes von einem Gebiet auf ein anderes übertragen . Ein früher Vorsprung in einem einzelnen Fach sagt wenig darüber , wie weit ein Kind kommt . Und kein Kind ist unbegabt : Begabungen sehen nur verschieden aus , und die Schule kann nicht alle gleich gut sichtbar machen . Zukunftskompetenzen und Grundlagen zugleich Der Lernbus orientiert sich an zentralen Zukunftskompetenzen wie emotionaler Intelligenz , Kreativität , Kommunikationsfähigkeit sowie kritischem und vernetztem Denken . Die Kinder lernen , eigenständig zu denken",
+            "after": "entwickeln"
+          },
+          {
+            "start": 617,
+            "end": 617,
+            "before": "",
+            "after": "und Lösungen zu finden . Dazu gehören auch Kreativität"
+          },
+          {
+            "start": 618,
+            "end": 619,
+            "before": "Lösungswege",
+            "after": "der Umgang mit Gefühlen und die Fähigkeit , sich auszudrücken und zuzuhören . Wir helfen Kindern , bei weniger interessanten Aufgaben dranzubleiben und aus Fehlern"
+          },
+          {
+            "start": 620,
+            "end": 627,
+            "before": "entwickeln und Fehler als Lernchancen zu nutzen",
+            "after": "lernen"
+          },
+          {
+            "start": 628,
+            "end": 665,
+            "before": "Sie erhalten Strategien , um sich auch weniger spannende Lerninhalte aktiv zu erschliessen und bei Unlust dranzubleiben . Parallel dazu werden Defizite in den sprachlichen und mathematischen Grundkompetenzen gezielt aufgearbeitet und gefestigt . Lernen braucht sichtbare Fortschritte",
+            "after": "Den eigenen Fortschritt erkennen Wenn"
+          },
+          {
+            "start": 666,
+            "end": 674,
+            "before": "entwickeln Lernfreude besonders dann , wenn sie erleben",
+            "after": "merken"
+          },
+          {
+            "start": 677,
+            "end": 682,
+            "before": "eigenen Anstrengungen zu Erfolgen führen",
+            "after": "Anstrengung etwas bewirkt , wächst ihr Zutrauen"
+          },
+          {
+            "start": 683,
+            "end": 693,
+            "before": "Selbst wahrgenommene Fortschritte stärken das Vertrauen in die eigenen Fähigkeiten",
+            "after": "In ihrer persönlichen Lernkiste sammeln sie Arbeiten und Entdeckungen . So sehen sie"
+          },
+          {
+            "start": 694,
+            "end": 707,
+            "before": "erhöhen die Ausdauer und fördern die Bereitschaft , sich neuen Herausforderungen zu stellen",
+            "after": "was sie bereits gelernt haben"
+          },
+          {
+            "start": 708,
+            "end": 741,
+            "before": "Forschungsergebnisse der Erasmus - Universität Rotterdam weisen darauf hin , dass Menschen besonders konzentriert und ausdauernd lernen , wenn sie ihren eigenen Fortschritt wahrnehmen . Der Lernbus macht Lernprozesse sichtbar und schafft Erfolgserlebnisse",
+            "after": "Aufgaben"
+          },
+          {
+            "start": 743,
+            "end": 749,
+            "before": "nachhaltige Motivation und eine positive Haltung",
+            "after": ""
+          },
+          {
+            "start": 750,
+            "end": 766,
+            "before": "Lernen fördern . Die richtige Herausforderung zur richtigen Zeit Lernen gelingt dann besonders gut , wenn",
+            "after": "Kind passen Wir wählen"
+          },
+          {
+            "start": 767,
+            "end": 780,
+            "before": "dem individuellen Entwicklungsstand eines Kindes entsprechen . Deshalb orientiert sich die Begleitung an",
+            "after": "nach"
+          },
+          {
+            "start": 785,
+            "end": 786,
+            "before": "Lernvoraussetzungen",
+            "after": "dem Entwicklungsstand"
+          },
+          {
+            "start": 789,
+            "end": 804,
+            "before": "Die Förderung erfolgt in der optimalen Lernzone : anspruchsvoll genug , um Entwicklung anzuregen ,",
+            "after": "Sie sollen herausfordern"
+          },
+          {
+            "start": 806,
+            "end": 810,
+            "before": "so gestaltet , dass",
+            "after": ""
+          },
+          {
+            "start": 811,
+            "end": 813,
+            "before": "möglich bleiben",
+            "after": "ermöglichen"
+          },
+          {
+            "start": 815,
+            "end": 822,
+            "before": "werden als wichtiger Bestandteil des Lernprozesses verstanden",
+            "after": "gehören dazu : Kinder dürfen etwas versuchen , neu überlegen"
+          },
+          {
+            "start": 823,
+            "end": 826,
+            "before": "als Lerngelegenheiten genutzt",
+            "after": "einen anderen Weg finden"
+          },
+          {
+            "start": 827,
+            "end": 862,
+            "before": "Ein Kind , das keinen Fehler machen darf , versucht irgendwann nichts Neues mehr . Frühe Deutschförderung Sprache bildet die Grundlage für Lernen , soziale Teilhabe und Bildungserfolg . Die frühe Deutschförderung unterstützt Kinder ab",
+            "after": "Deutsch spielerisch lernen Ab"
+          },
+          {
+            "start": 864,
+            "end": 864,
+            "before": "",
+            "after": "unterstützen wir Kinder"
+          },
+          {
+            "start": 866,
+            "end": 869,
+            "before": "sprachliche Grundlagen aufzubauen",
+            "after": "Deutsch zu lernen"
+          },
+          {
+            "start": 881,
+            "end": 886,
+            "before": "Sie geschieht spielerisch , in",
+            "after": ""
+          },
+          {
+            "start": 888,
+            "end": 889,
+            "before": "Liedern",
+            "after": "Lieder , Gespräche"
+          },
+          {
+            "start": 890,
+            "end": 894,
+            "before": "Gesprächen , denn im",
+            "after": "gemeinsames"
+          },
+          {
+            "start": 895,
+            "end": 900,
+            "before": "lernen kleine Kinder am meisten",
+            "after": "geben dafür viele Gelegenheiten"
+          },
+          {
+            "start": 917,
+            "end": 938,
+            "before": "Das Angebot stärkt die Kinder in ihrem Selbstvertrauen , ihrer Resilienz und ihrer Bereitschaft zum eigenständigen Lernen . Ein geschützter Lernraum",
+            "after": "Entdecken"
+          },
+          {
+            "start": 939,
+            "end": 956,
+            "before": "Bildschirme Der Lernraum ist vertrauensvoll , geschützt und ressourcenorientiert . Bildschirme haben darin keinen Platz : Ein",
+            "after": ""
+          },
+          {
+            "start": 957,
+            "end": 974,
+            "before": "unterbricht diesen Raum und ersetzt den langsamen Weg zu einer Antwort durch einen schnellen . Gearbeitet wird",
+            "after": "Wir arbeiten"
+          },
+          {
+            "start": 987,
+            "end": 987,
+            "before": "",
+            "after": "sowie mit Dingen"
+          },
+          {
+            "start": 988,
+            "end": 988,
+            "before": "",
+            "after": "die wir draussen finden . Der Lernraum bleibt ohne Bildschirme . Kinder bekommen Zeit , selbst zu untersuchen , nachzudenken"
+          },
+          {
+            "start": 989,
+            "end": 994,
+            "before": "mit dem , was draussen",
+            "after": "Antworten"
+          },
+          {
+            "start": 996,
+            "end": 1027,
+            "before": "ist . Der Umweg ist dabei kein Zeitverlust : Was ein Kind sich mühsam erarbeitet hat , bleibt , während das schnell und glatt Aufgenommene oft ebenso schnell wieder weg ist",
+            "after": ""
+          },
+          {
+            "start": 1036,
+            "end": 1039,
+            "before": "Stärkung von Lernkompetenz",
+            "after": "Lernen lernen"
+          },
+          {
+            "start": 1040,
+            "end": 1041,
+            "before": "Selbstwert",
+            "after": "sich selbst wertschätzen"
+          },
+          {
+            "start": 1042,
+            "end": 1045,
+            "before": "Selbstwirksamkeit Förderung von",
+            "after": "erleben : Ich kann etwas bewirken ."
+          },
+          {
+            "start": 1046,
+            "end": 1046,
+            "before": "",
+            "after": "wecken"
+          },
+          {
+            "start": 1047,
+            "end": 1052,
+            "before": "intrinsischer Lernmotivation Entwicklung von Resilienz",
+            "after": "aus eigenem Interesse lernen Mit Rückschlägen umgehen"
+          },
+          {
+            "start": 1053,
+            "end": 1060,
+            "before": "Strategien im Umgang mit Misserfolgen Aufbau eines",
+            "after": "nach einem Misserfolg weiterprobieren Einen"
+          },
+          {
+            "start": 1063,
+            "end": 1067,
+            "before": "Lernraums Förderung von Kommunikationsfähigkeit",
+            "after": "Lernraum schaffen Sich ausdrücken , zuhören"
+          },
+          {
+            "start": 1068,
+            "end": 1072,
+            "before": "eigenständigem Denken Sichtbarmachung individueller",
+            "after": "eigenständig denken Eigene"
+          },
+          {
+            "start": 1073,
+            "end": 1078,
+            "before": "Strategien für wenig interessante Lerninhalte",
+            "after": "erkennen Auch bei weniger interessanten Aufgaben dranzubleiben lernen"
+          },
+          {
+            "start": 1112,
+            "end": 1116,
+            "before": "in ihren Lern -",
+            "after": "beim Lernen"
+          },
+          {
+            "start": 1117,
+            "end": 1118,
+            "before": "Zukunftskompetenzen",
+            "after": "selbstständigen Denken"
+          },
+          {
+            "start": 1119,
+            "end": 1122,
+            "before": "gestärkt werden sollen",
+            "after": "Unterstützung brauchen"
+          },
+          {
+            "start": 1152,
+            "end": 1156,
+            "before": "Zuerst setzen wir uns",
+            "after": "Wir sprechen"
+          },
+          {
+            "start": 1157,
+            "end": 1159,
+            "before": "den Eltern",
+            "after": "Ihnen"
+          },
+          {
+            "start": 1160,
+            "end": 1161,
+            "before": "dem",
+            "after": "Ihrem"
+          },
+          {
+            "start": 1162,
+            "end": 1163,
+            "before": "zusammen",
+            "after": ""
+          },
+          {
+            "start": 1166,
+            "end": 1168,
+            "before": "dieses Kind",
+            "after": "es"
+          },
+          {
+            "start": 1173,
+            "end": 1178,
+            "before": ", was ist möglich .",
+            "after": "und wie können wir helfen ?"
+          },
+          {
+            "start": 1182,
+            "end": 1191,
+            "before": "Das Kind wird einer Mentorin oder einem Mentor zugeordnet",
+            "after": "Wir wählen eine pädagogische Fachperson aus"
+          },
+          {
+            "start": 1194,
+            "end": 1195,
+            "before": "seinen",
+            "after": "den"
+          },
+          {
+            "start": 1198,
+            "end": 1198,
+            "before": "",
+            "after": "Ihres Kindes"
+          },
+          {
+            "start": 1203,
+            "end": 1206,
+            "before": "Die Lektionen dauern",
+            "after": "Jede Lektion dauert"
+          },
+          {
+            "start": 1212,
+            "end": 1219,
+            "before": "findet die Begleitung einzeln statt , damit",
+            "after": "lernt"
+          },
+          {
+            "start": 1221,
+            "end": 1223,
+            "before": "und seine",
+            "after": "einzeln , um Vertrauen zu seiner"
+          },
+          {
+            "start": 1224,
+            "end": 1229,
+            "before": "eine vertrauensvolle Beziehung aufbauen können",
+            "after": "aufzubauen"
+          },
+          {
+            "start": 1240,
+            "end": 1243,
+            "before": "Die Buchung erfolgt",
+            "after": "Sie buchen"
+          },
+          {
+            "start": 1244,
+            "end": 1245,
+            "before": "pro",
+            "after": "ein"
+          },
+          {
+            "start": 1254,
+            "end": 1256,
+            "before": "und verbinden",
+            "after": ":"
+          },
+          {
+            "start": 1258,
+            "end": 1259,
+            "before": "Kreatives",
+            "after": "Gestalten"
+          },
+          {
+            "start": 1260,
+            "end": 1261,
+            "before": "Sprachliches",
+            "after": "Sprache"
+          },
+          {
+            "start": 1262,
+            "end": 1263,
+            "before": "Mathematisches",
+            "after": "Mathematik"
+          },
+          {
+            "start": 1264,
+            "end": 1265,
+            "before": "Emotionales",
+            "after": "der Umgang mit Gefühlen gehören dazu"
+          },
+          {
+            "start": 1293,
+            "end": 1294,
+            "before": "bleiben",
+            "after": "besprechen"
+          },
+          {
+            "start": 1295,
+            "end": 1299,
+            "before": "den Eltern im Austausch",
+            "after": "Ihnen die Entwicklung Ihres Kindes"
+          },
+          {
+            "start": 1300,
+            "end": 1300,
+            "before": "",
+            "after": "schauen gemeinsam in die Lernkiste . Bei Bedarf"
+          },
+          {
+            "start": 1301,
+            "end": 1301,
+            "before": "",
+            "after": "wir"
+          },
+          {
+            "start": 1304,
+            "end": 1329,
+            "before": "bedarfsgerecht , einschliesslich Gesprächsbegleitung . Grundlage sind die dokumentierte Entwicklung des Kindes und die Lernkiste : Beide zeigen , was über die Monate gewachsen ist",
+            "after": "auch bei weiteren Gesprächen"
+          },
+          {
+            "start": 1359,
+            "end": 1361,
+            "before": "ein fester",
+            "after": "an einem festen"
+          },
+          {
+            "start": 1362,
+            "end": 1363,
+            "before": "ruhiger",
+            "after": "ruhigen"
+          },
+          {
+            "start": 1365,
+            "end": 1366,
+            "before": "an",
+            "after": "zu"
+          },
+          {
+            "start": 1369,
+            "end": 1374,
+            "before": "ankommen und zu dem sie",
+            "after": ""
+          },
+          {
+            "start": 1378,
+            "end": 1379,
+            "before": "kommt",
+            "after": "soll"
+          },
+          {
+            "start": 1381,
+            "end": 1392,
+            "before": "dazu und fährt dorthin , wo die Kinder sind , mitten",
+            "after": ""
+          },
+          {
+            "start": 1395,
+            "end": 1395,
+            "before": "",
+            "after": "fahren , näher zu den Kindern"
+          },
+          {
+            "start": 1404,
+            "end": 1415,
+            "before": "Lernprozesse sichtbar machen Im Verlauf der Begleitung dokumentieren die Kinder ihre",
+            "after": "Die Lernkiste gehört dem Kind Die Lernkiste zeigt den Weg des Kindes , nicht nur fertige Ergebnisse . Wir schauen gemeinsam auf"
+          },
+          {
+            "start": 1418,
+            "end": 1420,
+            "before": ", Fragen",
+            "after": ""
+          },
+          {
+            "start": 1422,
+            "end": 1426,
+            "before": "in einer persönlichen Lernkiste",
+            "after": "zurück"
+          },
+          {
+            "start": 1427,
+            "end": 1437,
+            "before": "Dadurch werden individuelle Entwicklungs - und Lernprozesse sichtbar und reflektierbar",
+            "after": "Nichts wird benotet"
+          },
+          {
+            "start": 1441,
+            "end": 1442,
+            "before": "Lerndokumentation",
+            "after": "Dokumentation"
+          },
+          {
+            "start": 1444,
+            "end": 1447,
+            "before": "am ressourcenorientierten Bildungsverständnis",
+            "after": "an"
+          },
+          {
+            "start": 1451,
+            "end": 1451,
+            "before": "",
+            "after": ": Die Stärken und eigenen Gedanken des Kindes stehen im Mittelpunkt"
+          },
+          {
+            "start": 1452,
+            "end": 1461,
+            "before": "Im Mittelpunkt steht nicht allein das Ergebnis , sondern",
+            "after": "Beiträge nach den Möglichkeiten"
+          },
+          {
+            "start": 1462,
+            "end": 1510,
+            "before": "Weg dorthin . Kinder erleben , dass ihre Gedanken , Ideen und Lernfortschritte wertvoll sind und wahrgenommen werden . Nichts wird benotet , alles wird festgehalten , und die Lernkiste gehört dem Kind . Buchbar für alle , ermöglicht für viele Die Beiträge sind gestaffelt und gelten pro",
+            "after": "Familie Für jede"
+          },
+          {
+            "start": 1514,
+            "end": 1519,
+            "before": ", im Zweiersetting pro Kind",
+            "after": "gibt es vier Tarife"
+          },
+          {
+            "start": 1527,
+            "end": 1528,
+            "before": "ein",
+            "after": ""
+          },
+          {
+            "start": 1531,
+            "end": 1533,
+            "before": "Ein Teil",
+            "after": "Bei Lektionen zu zweit gilt"
+          },
+          {
+            "start": 1534,
+            "end": 1537,
+            "before": "Plätze wird von",
+            "after": "Beitrag pro Kind ."
+          },
+          {
+            "start": 1538,
+            "end": 1539,
+            "before": "ermöglicht",
+            "after": ""
+          },
+          {
+            "start": 1545,
+            "end": 1546,
+            "before": "damit",
+            "after": "ermöglichen einen Teil der Plätze . So können"
+          },
+          {
+            "start": 1547,
+            "end": 1555,
+            "before": "Kinder dabei sein können , bei denen das",
+            "after": "Familien mit wenig"
+          },
+          {
+            "start": 1556,
+            "end": 1560,
+            "before": "zu Hause knapp ist",
+            "after": "teilnehmen"
+          },
+          {
+            "start": 1561,
+            "end": 1581,
+            "before": "Wer in einen Platz investiert , gibt einem Kind Zeit mit einem Menschen , der an es glaubt . Die",
+            "after": ""
+          },
+          {
+            "start": 1582,
+            "end": 1584,
+            "before": "im Einzelnen",
+            "after": "und Einkommensorientierung"
+          },
+          {
+            "start": 1585,
+            "end": 1636,
+            "before": "Wenn Selbstwirksamkeit erlebbar wird Erfahrungen von Selbstwirksamkeit stehen im Zentrum des Lernbusses . Kinder erkennen , dass ihre Anstrengungen Wirkung zeigen , dass Lernen ein Entwicklungsprozess ist und dass Herausforderungen durch Ausdauer , Neugier und eigenes Denken bewältigt werden können . Dadurch entsteht eine positive und nachhaltige Beziehung zum Lernen .",
+            "after": ""
+          },
+          {
+            "start": 1645,
+            "end": 1645,
+            "before": "",
+            "after": "Pädagogische Ausbildung und Erfahrung"
+          },
+          {
+            "start": 1649,
+            "end": 1663,
+            "before": "Die Mentorinnen und Mentoren arbeiten reflektiert , empathisch und fachlich fundiert . Durch ihre",
+            "after": "haben eine"
+          },
+          {
+            "start": 1667,
+            "end": 1670,
+            "before": "können sie an",
+            "after": "in der Arbeit mit Kindern . Sie gehen aufmerksam auf"
+          },
+          {
+            "start": 1671,
+            "end": 1672,
+            "before": "individuellen",
+            "after": ""
+          },
+          {
+            "start": 1675,
+            "end": 1678,
+            "before": "der Kinder anknüpfen",
+            "after": "jedes Kindes ein und reflektieren ihre Arbeit"
+          },
+          {
+            "start": 1679,
+            "end": 1679,
+            "before": "",
+            "after": "Das Angebot weiterentwickeln Wir überprüfen die"
+          },
+          {
+            "start": 1680,
+            "end": 1690,
+            "before": ", die überprüft wird Die Qualität des Angebots wird gesichert",
+            "after": "unserer Arbeit"
+          },
+          {
+            "start": 1691,
+            "end": 1691,
+            "before": "",
+            "after": "entwickeln das Angebot"
+          },
+          {
+            "start": 1692,
+            "end": 1693,
+            "before": "weiterentwickelt",
+            "after": "weiter"
+          },
+          {
+            "start": 1712,
+            "end": 1717,
+            "before": "Anfragen und Anmeldungen erfolgen durch",
+            "after": "Als"
+          },
+          {
+            "start": 1720,
+            "end": 1720,
+            "before": "",
+            "after": "können Sie eine Lektion anfragen"
+          },
+          {
+            "start": 1721,
+            "end": 1736,
+            "before": "Am Anfang steht ein Kennenlerngespräch . Erzählen Sie uns kurz von Ihrem Kind , wir",
+            "after": "Wir"
+          },
+          {
+            "start": 1741,
+            "end": 1741,
+            "before": "",
+            "after": "für ein Kennenlerngespräch mit Ihnen und Ihrem Kind"
+          },
+          {
+            "start": 1742,
+            "end": 1746,
+            "before": "Die Beiträge sind gestaffelt",
+            "after": "Zur Übersicht für Eltern mit Tarifen"
+          },
+          {
+            "start": 1747,
+            "end": 1771,
+            "before": "gelten pro Lektion von 60 Minuten , alles Weitere besprechen wir persönlich . Sie sind Mutter oder Vater ? Hier steht alles Wichtige kurz",
+            "after": "Kalender"
+          }
+        ],
+        "lernbus/en/konzept/index.html": [
+          {
+            "start": 51,
+            "end": 51,
+            "before": "",
+            "after": "At"
+          },
+          {
+            "start": 52,
+            "end": 57,
+            "before": "is an educational programme offering",
+            "after": ", trained educators help children learn . We start"
+          },
+          {
+            "start": 59,
+            "end": 63,
+            "before": "preventive support for children",
+            "after": "giving confidence and curiosity room to grow"
+          },
+          {
+            "start": 64,
+            "end": 65,
+            "before": "It",
+            "after": "The programme"
+          },
+          {
+            "start": 77,
+            "end": 89,
+            "before": "We start early to nurture their confidence and enjoyment of learning .",
+            "after": ""
+          },
+          {
+            "start": 95,
+            "end": 95,
+            "before": "",
+            "after": "On this page Why start early ? How we support children Our goals Who it is for How it works Who supports your child ?"
+          },
+          {
+            "start": 98,
+            "end": 99,
+            "before": "Individual",
+            "after": "An"
+          },
+          {
+            "start": 100,
+            "end": 100,
+            "before": "",
+            "after": "start . Confidence to keep"
+          },
+          {
+            "start": 101,
+            "end": 107,
+            "before": "support for a strong educational foundation",
+            "after": ""
+          },
+          {
+            "start": 162,
+            "end": 165,
+            "before": "Our focus is",
+            "after": "We want children to enjoy learning , think for themselves and trust their abilities . We give them time and someone they can rely"
+          },
+          {
+            "start": 166,
+            "end": 193,
+            "before": "building a lasting , positive relationship with learning . Lernbus helps children shape their education with confidence , independence and a sense of direction for the future",
+            "after": ""
+          },
+          {
+            "start": 196,
+            "end": 208,
+            "before": "is needed Our world is changing rapidly , placing new demands on",
+            "after": "A good start makes a difference . What"
+          },
+          {
+            "start": 209,
+            "end": 211,
+            "before": "even today",
+            "after": "need to learn Children need foundations in language and mathematics"
+          },
+          {
+            "start": 212,
+            "end": 221,
+            "before": "Alongside subject knowledge , independence , problem - solving",
+            "after": "Independence"
+          },
+          {
+            "start": 227,
+            "end": 235,
+            "before": "respond constructively to challenges will become increasingly important",
+            "after": "solve problems matter too"
+          },
+          {
+            "start": 236,
+            "end": 260,
+            "before": "National assessments show that some children are already falling short of the expected minimum standards in language and mathematics at primary school . In",
+            "after": ""
+          },
+          {
+            "start": 268,
+            "end": 269,
+            "before": ",",
+            "after": "found that"
+          },
+          {
+            "start": 289,
+            "end": 291,
+            "before": "; in",
+            "after": ". In"
+          },
+          {
+            "start": 302,
+            "end": 303,
+            "before": "Early",
+            "after": "Source : EDK , 2024 assessment , results published in 2026 ( in German ) Support from the start We offer"
+          },
+          {
+            "start": 304,
+            "end": 305,
+            "before": ",",
+            "after": ""
+          },
+          {
+            "start": 307,
+            "end": 331,
+            "before": "take hold Children who need additional support or have fewer learning resources are particularly affected . Without early support , gaps can become entrenched",
+            "after": ""
+          },
+          {
+            "start": 332,
+            "end": 363,
+            "before": "lead to lasting disadvantage . The programme also benefits children more broadly by helping them develop skills for the future . Lernbus starts early and supports the whole child , before",
+            "after": ""
+          },
+          {
+            "start": 370,
+            "end": 373,
+            "before": "Creating the conditions",
+            "after": "This is especially important"
+          },
+          {
+            "start": 374,
+            "end": 375,
+            "before": "learning",
+            "after": "children who need more help or have fewer opportunities to learn . The programme is open to all children . Room to grow"
+          },
+          {
+            "start": 381,
+            "end": 383,
+            "before": "Just as",
+            "after": "As"
+          },
+          {
+            "start": 391,
+            "end": 392,
+            "before": ";",
+            "after": ", but"
+          },
+          {
+            "start": 396,
+            "end": 396,
+            "before": "",
+            "after": "right"
+          },
+          {
+            "start": 397,
+            "end": 399,
+            "before": "it needs",
+            "after": ""
+          },
+          {
+            "start": 412,
+            "end": 415,
+            "before": "pays attention and",
+            "after": ""
+          },
+          {
+            "start": 420,
+            "end": 422,
+            "before": "That is",
+            "after": "How we support children Time , trust and"
+          },
+          {
+            "start": 423,
+            "end": 426,
+            "before": "work of Lernbus",
+            "after": "right activities"
+          },
+          {
+            "start": 427,
+            "end": 430,
+            "before": "Our educational approach",
+            "after": "Someone they know and trust"
+          },
+          {
+            "start": 431,
+            "end": 453,
+            "before": "we help children develop . The relationship comes first Children learn through relationships with people , not programmes alone . The questions",
+            "after": ""
+          },
+          {
+            "start": 459,
+            "end": 460,
+            "before": "depend",
+            "after": "or try depends"
+          },
+          {
+            "start": 479,
+            "end": 482,
+            "before": ": someone who",
+            "after": ". Their mentor"
+          },
+          {
+            "start": 484,
+            "end": 485,
+            "before": "name",
+            "after": "interests"
+          },
+          {
+            "start": 486,
+            "end": 490,
+            "before": "understands how they learn",
+            "after": "remembers the last lesson"
+          },
+          {
+            "start": 491,
+            "end": 499,
+            "before": "remembers what they were working on last week",
+            "after": "gives them room to find their own way"
+          },
+          {
+            "start": 500,
+            "end": 510,
+            "before": "That continuity is the foundation for everything else . Room",
+            "after": "Many ways"
+          },
+          {
+            "start": 512,
+            "end": 538,
+            "before": "before specialising At this age , children need opportunities to explore , rather than being steered towards a single talent . They need variety : building",
+            "after": "Building"
+          },
+          {
+            "start": 549,
+            "end": 549,
+            "before": "",
+            "after": ": children need varied experiences"
+          },
+          {
+            "start": 550,
+            "end": 555,
+            "before": "Trying different activities helps children",
+            "after": "We help them"
+          },
+          {
+            "start": 556,
+            "end": 559,
+            "before": "what suits them",
+            "after": "their interests"
+          },
+          {
+            "start": 560,
+            "end": 561,
+            "before": "apply",
+            "after": "use"
+          },
+          {
+            "start": 567,
+            "end": 568,
+            "before": "contexts",
+            "after": "situations"
+          },
+          {
+            "start": 569,
+            "end": 570,
+            "before": "An",
+            "after": "We do not steer children towards a single talent at an"
+          },
+          {
+            "start": 571,
+            "end": 585,
+            "before": "advantage in one subject tells us little about how far a child will go",
+            "after": "age"
+          },
+          {
+            "start": 589,
+            "end": 595,
+            "before": "talents ; they take different forms",
+            "after": "strengths"
+          },
+          {
+            "start": 596,
+            "end": 597,
+            "before": "and",
+            "after": "including some that may be less visible at"
+          },
+          {
+            "start": 598,
+            "end": 605,
+            "before": "does not reveal them all equally well",
+            "after": ""
+          },
+          {
+            "start": 607,
+            "end": 609,
+            "before": "for learning",
+            "after": ""
+          },
+          {
+            "start": 610,
+            "end": 631,
+            "before": "skills for the future Lernbus focuses on key skills for the future : emotional intelligence , creativity , communication , critical",
+            "after": "independent"
+          },
+          {
+            "start": 632,
+            "end": 684,
+            "before": "and the ability to make connections . Children learn to think independently , recognise relationships between ideas , find solutions and use mistakes as opportunities to learn . They develop strategies for engaging with less interesting material and keeping going when they feel reluctant . Alongside this , we address gaps in",
+            "after": "We strengthen"
+          },
+          {
+            "start": 688,
+            "end": 692,
+            "before": "and strengthen those foundations",
+            "after": ""
+          },
+          {
+            "start": 693,
+            "end": 694,
+            "before": "Progress",
+            "after": "At the same time ,"
+          },
+          {
+            "start": 695,
+            "end": 706,
+            "before": "can see Children develop a love of learning when they see",
+            "after": "practise developing"
+          },
+          {
+            "start": 708,
+            "end": 710,
+            "before": "efforts lead",
+            "after": "ideas , making connections and finding solutions . They also explore creativity , learn about feelings , and practise expressing themselves and listening"
+          },
+          {
+            "start": 711,
+            "end": 712,
+            "before": "success",
+            "after": "others"
+          },
+          {
+            "start": 713,
+            "end": 714,
+            "before": "Recognising",
+            "after": "We help them persevere with less interesting tasks and learn from mistakes . Seeing"
+          },
+          {
+            "start": 715,
+            "end": 715,
+            "before": "",
+            "after": "own"
+          },
+          {
+            "start": 716,
+            "end": 717,
+            "before": "builds",
+            "after": "When children see that their effort makes a difference , their"
+          },
+          {
+            "start": 718,
+            "end": 718,
+            "before": "",
+            "after": "grows . They collect work and discoveries"
+          },
+          {
+            "start": 719,
+            "end": 721,
+            "before": "their abilities",
+            "after": "a personal learning box"
+          },
+          {
+            "start": 722,
+            "end": 748,
+            "before": "encourages persistence and helps them feel ready for new challenges . Research from Erasmus University Rotterdam suggests that people learn with particular focus and persistence when",
+            "after": "or Lernkiste , so"
+          },
+          {
+            "start": 751,
+            "end": 754,
+            "before": "their own progress",
+            "after": "how much they have learnt"
+          },
+          {
+            "start": 755,
+            "end": 764,
+            "before": "Lernbus makes learning visible and creates experiences of success",
+            "after": "A challenge"
+          },
+          {
+            "start": 765,
+            "end": 793,
+            "before": "support lasting motivation and a positive attitude towards learning . The right challenge at the right time Children learn best when tasks match their stage of development .",
+            "after": "fits"
+          },
+          {
+            "start": 794,
+            "end": 797,
+            "before": "therefore build on",
+            "after": "choose activities around"
+          },
+          {
+            "start": 805,
+            "end": 807,
+            "before": "existing skills",
+            "after": "stage of development"
+          },
+          {
+            "start": 808,
+            "end": 809,
+            "before": "Activities",
+            "after": "They should"
+          },
+          {
+            "start": 810,
+            "end": 811,
+            "before": "enough",
+            "after": "a"
+          },
+          {
+            "start": 812,
+            "end": 815,
+            "before": "to encourage development",
+            "after": ""
+          },
+          {
+            "start": 823,
+            "end": 825,
+            "before": "an important",
+            "after": ""
+          },
+          {
+            "start": 827,
+            "end": 828,
+            "before": "learning",
+            "after": "this : children can try something , think again"
+          },
+          {
+            "start": 829,
+            "end": 834,
+            "before": "an opportunity to understand more",
+            "after": "find another way"
+          },
+          {
+            "start": 835,
+            "end": 851,
+            "before": "A child who is never allowed to make mistakes eventually stops trying new things . Early",
+            "after": "Learning"
+          },
+          {
+            "start": 852,
+            "end": 857,
+            "before": "language support Language underpins learning",
+            "after": "through play From age three"
+          },
+          {
+            "start": 858,
+            "end": 865,
+            "before": "participation and success in education . Early",
+            "after": "we help children learn"
+          },
+          {
+            "start": 866,
+            "end": 878,
+            "before": "language support helps children from the age of three build language skills",
+            "after": ""
+          },
+          {
+            "start": 886,
+            "end": 887,
+            "before": "assured",
+            "after": "at ease"
+          },
+          {
+            "start": 890,
+            "end": 896,
+            "before": "They learn through play , stories",
+            "after": "Stories"
+          },
+          {
+            "start": 898,
+            "end": 898,
+            "before": "",
+            "after": ", conversations"
+          },
+          {
+            "start": 899,
+            "end": 907,
+            "before": "conversations , because young children learn most through",
+            "after": ""
+          },
+          {
+            "start": 908,
+            "end": 908,
+            "before": "",
+            "after": "create plenty of opportunities to practise"
+          },
+          {
+            "start": 928,
+            "end": 948,
+            "before": "The programme builds children ' s confidence , resilience and readiness to learn independently . A safe learning space ,",
+            "after": "Exploring"
+          },
+          {
+            "start": 951,
+            "end": 986,
+            "before": "create a safe , trusting learning environment that builds on each child ' s strengths . Screens have no place here : they interrupt this space and replace the gradual process of finding an answer",
+            "after": "work"
+          },
+          {
+            "start": 987,
+            "end": 995,
+            "before": "a quick response . Instead , we use",
+            "after": ""
+          },
+          {
+            "start": 1014,
+            "end": 1018,
+            "before": "Taking the longer route",
+            "after": "Our learning space"
+          },
+          {
+            "start": 1019,
+            "end": 1021,
+            "before": "not wasted",
+            "after": "free of screens . Children have"
+          },
+          {
+            "start": 1022,
+            "end": 1038,
+            "before": ". What children work out through their own effort stays with them ; what comes quickly",
+            "after": "to investigate , think"
+          },
+          {
+            "start": 1039,
+            "end": 1045,
+            "before": "easily can disappear just as quickly",
+            "after": "find answers for themselves"
+          },
+          {
+            "start": 1056,
+            "end": 1057,
+            "before": "Strengthening",
+            "after": "Build"
+          },
+          {
+            "start": 1059,
+            "end": 1060,
+            "before": ",",
+            "after": "and"
+          },
+          {
+            "start": 1063,
+            "end": 1063,
+            "before": "",
+            "after": ","
+          },
+          {
+            "start": 1064,
+            "end": 1068,
+            "before": "self - efficacy Encouraging",
+            "after": "see that their actions make a difference . Encourage"
+          },
+          {
+            "start": 1070,
+            "end": 1076,
+            "before": "intrinsic motivation Developing resilience and ways",
+            "after": "learning out"
+          },
+          {
+            "start": 1077,
+            "end": 1078,
+            "before": "dealing",
+            "after": "personal interest Learn to cope"
+          },
+          {
+            "start": 1080,
+            "end": 1081,
+            "before": "Building",
+            "after": "and try again Create"
+          },
+          {
+            "start": 1089,
+            "end": 1092,
+            "before": "Developing communication skills",
+            "after": "Express ideas , listen"
+          },
+          {
+            "start": 1093,
+            "end": 1097,
+            "before": "independent thinking Making individual",
+            "after": "think independently Recognise their own"
+          },
+          {
+            "start": 1098,
+            "end": 1103,
+            "before": "visible Teaching strategies for engaging",
+            "after": "Find ways to keep going"
+          },
+          {
+            "start": 1106,
+            "end": 1108,
+            "before": "material Trying",
+            "after": "tasks Try"
+          },
+          {
+            "start": 1141,
+            "end": 1144,
+            "before": "would benefit from",
+            "after": "need"
+          },
+          {
+            "start": 1148,
+            "end": 1149,
+            "before": "skills",
+            "after": ""
+          },
+          {
+            "start": 1150,
+            "end": 1154,
+            "before": "skills for the future",
+            "after": "independent thinking"
+          },
+          {
+            "start": 1231,
+            "end": 1232,
+            "before": "match",
+            "after": "choose a trained educator whose approach suits"
+          },
+          {
+            "start": 1234,
+            "end": 1240,
+            "before": "with a mentor suited to their",
+            "after": "' s"
+          },
+          {
+            "start": 1267,
+            "end": 1270,
+            "before": "and their mentor",
+            "after": ""
+          },
+          {
+            "start": 1273,
+            "end": 1276,
+            "before": "a trusting relationship",
+            "after": "trust with their mentor"
+          },
+          {
+            "start": 1299,
+            "end": 1300,
+            "before": "the",
+            "after": "your"
+          },
+          {
+            "start": 1304,
+            "end": 1304,
+            "before": "",
+            "after": "and include play"
+          },
+          {
+            "start": 1305,
+            "end": 1308,
+            "before": "combining play with",
+            "after": ""
+          },
+          {
+            "start": 1309,
+            "end": 1309,
+            "before": "",
+            "after": "work"
+          },
+          {
+            "start": 1312,
+            "end": 1313,
+            "before": "mathematical",
+            "after": "mathematics"
+          },
+          {
+            "start": 1314,
+            "end": 1316,
+            "before": "emotional development",
+            "after": "learning about feelings"
+          },
+          {
+            "start": 1352,
+            "end": 1381,
+            "before": "stay in touch with parents and offer support to both child and family as needed , including attending meetings with them where helpful . Our conversations draw on the",
+            "after": "discuss your"
+          },
+          {
+            "start": 1384,
+            "end": 1385,
+            "before": "documented",
+            "after": ""
+          },
+          {
+            "start": 1386,
+            "end": 1386,
+            "before": "",
+            "after": "with you"
+          },
+          {
+            "start": 1387,
+            "end": 1387,
+            "before": "",
+            "after": "look through their"
+          },
+          {
+            "start": 1389,
+            "end": 1389,
+            "before": "",
+            "after": "together . Where needed"
+          },
+          {
+            "start": 1390,
+            "end": 1397,
+            "before": "which show their progress over the months",
+            "after": "we also support children and parents in other meetings"
+          },
+          {
+            "start": 1440,
+            "end": 1441,
+            "before": "base",
+            "after": ", familiar place"
+          },
+          {
+            "start": 1443,
+            "end": 1447,
+            "before": "can settle in and",
+            "after": ""
+          },
+          {
+            "start": 1454,
+            "end": 1454,
+            "before": "",
+            "after": "we plan for"
+          },
+          {
+            "start": 1457,
+            "end": 1458,
+            "before": "will",
+            "after": "to"
+          },
+          {
+            "start": 1467,
+            "end": 1468,
+            "before": "where",
+            "after": ""
+          },
+          {
+            "start": 1469,
+            "end": 1470,
+            "before": "live",
+            "after": ""
+          },
+          {
+            "start": 1478,
+            "end": 1479,
+            "before": "Making",
+            "after": "The"
+          },
+          {
+            "start": 1480,
+            "end": 1564,
+            "before": "visible Children document their ideas , work , questions and discoveries in their own learning box , or Lernkiste . It makes their learning and development visible and gives them a way to reflect on it . This approach draws on the strengths - based educational philosophy of Reggio Emilia . The process matters as much as the result . Children see that their thoughts , ideas and progress are valued and noticed . Nothing is graded , everything is documented , and the",
+            "after": ""
+          },
+          {
+            "start": 1569,
+            "end": 1569,
+            "before": "",
+            "after": "The learning box records the child ' s journey , not just finished work"
+          },
+          {
+            "start": 1570,
+            "end": 1573,
+            "before": "Open to all",
+            "after": "We look back together at ideas"
+          },
+          {
+            "start": 1574,
+            "end": 1578,
+            "before": "made possible for many",
+            "after": "activities and discoveries . Nothing is graded . This way of documenting learning draws on the Reggio Emilia approach , which puts the child ' s strengths and ideas at the centre . Fees that reflect family circumstances"
+          },
+          {
+            "start": 1610,
+            "end": 1616,
+            "before": "Some places are funded by people",
+            "after": "People"
+          },
+          {
+            "start": 1620,
+            "end": 1620,
+            "before": "",
+            "after": "fund some of our places"
+          },
+          {
+            "start": 1623,
+            "end": 1623,
+            "before": "",
+            "after": "with limited means"
+          },
+          {
+            "start": 1625,
+            "end": 1629,
+            "before": "when money is tight",
+            "after": ""
+          },
+          {
+            "start": 1630,
+            "end": 1647,
+            "before": "Funding a place gives a child time with someone who believes in them . View the fees",
+            "after": "Fees and income guide"
+          },
+          {
+            "start": 1648,
+            "end": 1704,
+            "before": "When self - efficacy becomes real Experiences of self - efficacy are at the heart of Lernbus . Children discover that their efforts make a difference , that learning develops over time and that they can meet challenges through persistence , curiosity and independent thought . This builds a lasting , positive relationship with learning .",
+            "after": ""
+          },
+          {
+            "start": 1715,
+            "end": 1715,
+            "before": "",
+            "after": "Training and experience in education"
+          },
+          {
+            "start": 1717,
+            "end": 1732,
+            "before": "Our mentors bring empathy , reflective practice and professional expertise to their work . Their",
+            "after": "have"
+          },
+          {
+            "start": 1736,
+            "end": 1739,
+            "before": "enable them to",
+            "after": "working with children . They"
+          },
+          {
+            "start": 1740,
+            "end": 1740,
+            "before": "",
+            "after": "thoughtfully"
+          },
+          {
+            "start": 1748,
+            "end": 1748,
+            "before": "",
+            "after": "and reflect on their own practice"
+          },
+          {
+            "start": 1749,
+            "end": 1751,
+            "before": "Ongoing quality",
+            "after": "Continuing to improve We"
+          },
+          {
+            "start": 1752,
+            "end": 1757,
+            "before": "We maintain and continually improve",
+            "after": ""
+          },
+          {
+            "start": 1760,
+            "end": 1760,
+            "before": "",
+            "after": "our work and continue to develop"
+          },
+          {
+            "start": 1783,
+            "end": 1786,
+            "before": "Requests for places",
+            "after": "Parents"
+          },
+          {
+            "start": 1787,
+            "end": 1791,
+            "before": "enrolment must come from",
+            "after": "legal guardians can request"
+          },
+          {
+            "start": 1792,
+            "end": 1796,
+            "before": "parent or legal guardian",
+            "after": "lesson"
+          },
+          {
+            "start": 1798,
+            "end": 1814,
+            "before": "begin with an introductory meeting . Tell us a little about your child , and we",
+            "after": ""
+          },
+          {
+            "start": 1823,
+            "end": 1840,
+            "before": ". We offer a range of fees for each 60 - minute lesson and discuss the details",
+            "after": "to arrange an introductory meeting"
+          },
+          {
+            "start": 1842,
+            "end": 1844,
+            "before": "in person",
+            "after": "and your child"
+          },
+          {
+            "start": 1845,
+            "end": 1853,
+            "before": "For parents : the essentials at a glance",
+            "after": "Parent overview , fees and calendar"
+          }
+        ]
+      }
     }
   ]
 }
