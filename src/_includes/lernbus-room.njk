@@ -1,0 +1,19 @@
+<div class="room-gallery">
+  <h2 class="room-heading" id="room-heading">{% if locale == "en" %}A look inside our learning space.{% else %}Ein Blick in unseren Lernraum.{% endif %}</h2>
+  <div class="room-photos">
+    <figure>
+      <img src="/lernbus/img/lernraum-spielecke.webp"
+        srcset="/lernbus/img/lernraum-spielecke-small.webp 800w, /lernbus/img/lernraum-spielecke.webp 1600w"
+        sizes="(max-width: 768px) 90vw, (max-width: 1422px) 44vw, 624px"
+        width="1600" height="1067" loading="lazy" decoding="async"
+        alt="{% if locale == 'en' %}Wood-panelled Lernbus room with a fabric play den, books and a round table with children's chairs.{% else %}Lernbus-Raum mit Holztäfer, einer Spielhöhle aus Stoff, Büchern und einem runden Tisch mit Kinderstühlen.{% endif %}">
+    </figure>
+    <figure>
+      <img src="/lernbus/img/lernraum-fenster.webp"
+        srcset="/lernbus/img/lernraum-fenster-small.webp 800w, /lernbus/img/lernraum-fenster.webp 1600w"
+        sizes="(max-width: 768px) 90vw, (max-width: 1422px) 44vw, 624px"
+        width="1600" height="1067" loading="lazy" decoding="async"
+        alt="{% if locale == 'en' %}Two large windows in the Lernbus room, with a play table and a padded bench with soft toys.{% else %}Zwei grosse Fenster im Lernbus-Raum, davor ein Spieltisch und eine gepolsterte Bank mit Stofftieren.{% endif %}">
+    </figure>
+  </div>
+</div>

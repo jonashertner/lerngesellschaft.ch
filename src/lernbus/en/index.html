@@ -43,10 +43,10 @@ locale: en
           <a href="#team" class="navlink">Team</a>
           <a href="#ablauf" class="navlink">How it works</a>
           <a href="#kosten" class="navlink">Fees</a>
-          <a href="#qualitaet" class="navlink">Quality</a>
           <a href="#gespraech" class="navlink">Request a lesson</a>
           <a href="#kontakt" class="navlink">Contact</a>
           <a href="#fragen" class="navlink">Questions</a>
+          <a href="#qualitaet" class="navlink">Quality</a>
           <a href="#traegerschaft" class="navlink">Who runs it</a>
         </nav>
       </details>
@@ -162,6 +162,12 @@ locale: en
     </div>
   </section>
 
+  <section class="section room-section" aria-labelledby="room-heading">
+    <div class="wrap">
+      {% include "lernbus-room.njk" %}
+    </div>
+  </section>
+
   <!-- TEAM -->
   <section class="section team-section" id="team" aria-labelledby="team-heading">
     <div class="wrap">
@@ -208,15 +214,6 @@ locale: en
         </tbody>
       </table>
       <p class="tariffs-note reveal">If money is tight at home, simply say so. It is not an obstacle, and it stays between us.</p>
-    </div>
-  </section>
-
-  <!-- FRAMEWORK AND QUALITY ASSURANCE -->
-  <section class="section tint" id="qualitaet" style="--dot:var(--violet)">
-    <div class="wrap">
-      <h2 class="big reveal">Framework and quality assurance</h2>
-      <p class="lead reveal" style="margin-top:1.4rem; max-width:58ch">Our mentors work reflectively, empathetically and with solid professional grounding. Their pedagogical training and experience enable them to build on the children's individual interests and needs.</p>
-      <p class="lead reveal" style="margin-top:1.2rem; max-width:58ch">The quality of the programme is safeguarded and continuously developed.</p>
     </div>
   </section>
 
@@ -286,6 +283,15 @@ locale: en
           <p>In the holidays there are small groups for children the Lernbus supports. They deepen and consolidate what was worked on during the term.</p>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- FRAMEWORK AND QUALITY ASSURANCE -->
+  <section class="section tint" id="qualitaet" style="--dot:var(--violet)">
+    <div class="wrap">
+      <h2 class="big reveal">Framework and quality assurance</h2>
+      <p class="lead reveal" style="margin-top:1.4rem; max-width:58ch">Our mentors work reflectively, empathetically and with solid professional grounding. Their pedagogical training and experience enable them to build on the children's individual interests and needs.</p>
+      <p class="lead reveal" style="margin-top:1.2rem; max-width:58ch">The quality of the programme is safeguarded and continuously developed.</p>
     </div>
   </section>
 

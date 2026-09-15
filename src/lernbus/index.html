@@ -43,10 +43,10 @@ locale: de
           <a href="#team" class="navlink">Team</a>
           <a href="#ablauf" class="navlink">Ablauf</a>
           <a href="#kosten" class="navlink">Kosten</a>
-          <a href="#qualitaet" class="navlink">Qualität</a>
           <a href="#gespraech" class="navlink">Lektion anfragen</a>
           <a href="#kontakt" class="navlink">Kontakt</a>
           <a href="#fragen" class="navlink">Fragen</a>
+          <a href="#qualitaet" class="navlink">Qualität</a>
           <a href="#traegerschaft" class="navlink">Trägerschaft</a>
         </nav>
       </details>
@@ -162,6 +162,12 @@ locale: de
     </div>
   </section>
 
+  <section class="section room-section" aria-labelledby="room-heading">
+    <div class="wrap">
+      {% include "lernbus-room.njk" %}
+    </div>
+  </section>
+
   <!-- TEAM -->
   <section class="section team-section" id="team" aria-labelledby="team-heading">
     <div class="wrap">
@@ -208,15 +214,6 @@ locale: de
         </tbody>
       </table>
       <p class="tariffs-note reveal">Wenn das Geld zu Hause knapp ist, sagen Sie es einfach. Das ist kein Hindernis, und es bleibt unter uns.</p>
-    </div>
-  </section>
-
-  <!-- RAHMENBEDINGUNGEN UND QUALITÄTSSICHERUNG -->
-  <section class="section tint" id="qualitaet" style="--dot:var(--violet)">
-    <div class="wrap">
-      <h2 class="big reveal">Rahmenbedingungen und Qualitätssicherung</h2>
-      <p class="lead reveal" style="margin-top:1.4rem; max-width:58ch">Die Mentorinnen und Mentoren arbeiten reflektiert, empathisch und fachlich fundiert. Durch ihre pädagogische Ausbildung und Erfahrung können sie an die individuellen Interessen und Bedürfnisse der Kinder anknüpfen.</p>
-      <p class="lead reveal" style="margin-top:1.2rem; max-width:58ch">Die Qualität des Angebots wird gesichert und laufend weiterentwickelt.</p>
     </div>
   </section>
 
@@ -286,6 +283,15 @@ locale: de
           <p>In den Ferien gibt es Kleingruppen für Kinder, die der Lernbus begleitet. Sie vertiefen und festigen, was während des Semesters erarbeitet wurde.</p>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- RAHMENBEDINGUNGEN UND QUALITÄTSSICHERUNG -->
+  <section class="section tint" id="qualitaet" style="--dot:var(--violet)">
+    <div class="wrap">
+      <h2 class="big reveal">Rahmenbedingungen und Qualitätssicherung</h2>
+      <p class="lead reveal" style="margin-top:1.4rem; max-width:58ch">Die Mentorinnen und Mentoren arbeiten reflektiert, empathisch und fachlich fundiert. Durch ihre pädagogische Ausbildung und Erfahrung können sie an die individuellen Interessen und Bedürfnisse der Kinder anknüpfen.</p>
+      <p class="lead reveal" style="margin-top:1.2rem; max-width:58ch">Die Qualität des Angebots wird gesichert und laufend weiterentwickelt.</p>
     </div>
   </section>
 

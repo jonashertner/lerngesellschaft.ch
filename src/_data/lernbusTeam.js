@@ -2,8 +2,7 @@ export default {
   de: {
     name: "Conny Brandes",
     role: "Leiterin Lernbus",
-    photoLabel: "Foto folgt",
-    photoDescription: "Foto-Platzhalter für Conny Brandes",
+    photoDescription: "Conny Brandes, Leiterin Lernbus",
     sections: [
       {
         title: "Mein beruflicher Weg",
@@ -31,8 +30,7 @@ export default {
   en: {
     name: "Conny Brandes",
     role: "Head of Lernbus",
-    photoLabel: "Photo to follow",
-    photoDescription: "Photo placeholder for Conny Brandes",
+    photoDescription: "Conny Brandes, Head of Lernbus",
     sections: [
       {
         title: "My professional journey",

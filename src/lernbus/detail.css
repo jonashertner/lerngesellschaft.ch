@@ -74,9 +74,7 @@
 .detail-page .foot a{color:var(--bg)}
 .detail-page .team-profile{display:grid;grid-template-columns:minmax(0,.75fr) minmax(0,1.25fr);gap:clamp(2.5rem,7vw,7rem);align-items:start}
 .detail-page .team-identity,.detail-page .team-profile-copy{min-width:0}
-.detail-page .team-photo-placeholder{position:relative;width:100%;max-width:27rem;aspect-ratio:4/5;display:grid;place-items:center;background:var(--lavender-paper);border:2px solid var(--violet);box-shadow:8px 8px 0 var(--yellow);color:var(--violet)}
-.detail-page .team-initials{font-family:var(--display);font-size:clamp(6rem,11vw,10rem);line-height:1;letter-spacing:-.06em}
-.detail-page .team-photo-label{position:absolute;bottom:1.25rem;left:1rem;right:1rem;text-align:center;font-size:1rem}
+.detail-page .team-photo{display:block;width:100%;max-width:27rem;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:40% 50%;border:2px solid var(--violet);box-shadow:8px 8px 0 var(--yellow)}
 .detail-page .team-name{font-family:var(--display);font-size:clamp(2.5rem,3.5vw,3.8rem);line-height:1.08;letter-spacing:-.025em;max-width:12ch;margin:2rem 0 .7rem;color:var(--violet);text-wrap:balance}
 .detail-page .team-role{font-size:1.25rem;font-weight:700;color:var(--forest);margin:0}
 .detail-page .team-profile .morelink{margin:.75rem 0 0;overflow-wrap:anywhere;display:block;max-width:100%;font-size:1rem}
@@ -88,7 +86,7 @@
 .detail-page .team-bio-section p+p{margin-top:1.15rem}
 @media(max-width:48rem){
  .detail-page .team-profile{grid-template-columns:minmax(0,1fr);gap:2.5rem}
- .detail-page .team-photo-placeholder{max-width:18rem}
+ .detail-page .team-photo{max-width:18rem}
  .detail-page .team-name{font-size:clamp(2.5rem,8vw,3.5rem);max-width:none}
  .detail-page .team-bio-section{padding-block:1.75rem}
 }

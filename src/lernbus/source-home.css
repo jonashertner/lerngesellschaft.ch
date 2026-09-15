@@ -38,6 +38,12 @@
 .source-home .ticks{grid-template-columns:repeat(2,minmax(0,1fr));gap:1.5rem 3rem}
 .source-home .ticks li{font-weight:600;font-size:1.0625rem;padding-left:2rem}
 .source-home .ticks li::before,.source-home .ticks li:nth-child(even)::before{content:'';top:calc((1.4em - 1.7rem)/2);background:var(--yellow) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='m6 12 4 4 8-8' fill='none' stroke='%23205951' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/72% no-repeat;border-radius:50%;transform:none}
+.source-home .room-section{padding-top:0;background:var(--bg)}
+.room-heading{font-family:var(--display);font-size:clamp(1.8rem,3vw,3rem);line-height:1.15;letter-spacing:-.02em;color:var(--forest);margin:0 0 2rem;text-wrap:balance}
+.room-photos{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(1rem,2vw,2rem)}
+.room-photos figure{margin:0;min-width:0}
+.room-photos img{display:block;width:100%;height:auto}
+@media(max-width:48rem){.room-photos{grid-template-columns:minmax(0,1fr);gap:1.25rem}}
 .source-home .team-section{background:var(--bg);border-top:2px solid var(--violet)}
 .source-home .team-section .team-profile{margin-top:clamp(2.5rem,4vw,4rem)}
 .source-home #ablauf{background:var(--mint-paper)}
