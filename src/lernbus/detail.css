@@ -1,5 +1,5 @@
 /* Reading pages continue the Lernbus poster identity with a quieter text column. */
-.detail-page{--bg:#faf7ee;--yellow:#f4db4b;--marker:#f4db4b;--violet:#493f80;--violet-deep:#38306a;--night:#29233e;--forest:#205951;--forest-deep:#1e4843;--mint-paper:#e7efea;--lavender-paper:#ece8f3;--teal-ink:#29233e;--teal-soft:#655f73;--hairline:#c5c1b5;--line:#aaa697;--wrap:90rem;--pad:clamp(1.25rem,3.5vw,4.5rem);--fs-hero:clamp(2.8rem,6.7vw,6.8rem);--fs-h2:clamp(2.4rem,4.7vw,4.8rem);font-size:1.0625rem}
+.detail-page{--bg:#fafafa;--yellow:#f4db4b;--marker:#f4db4b;--violet:#493f80;--violet-deep:#38306a;--night:#29233e;--forest:#205951;--forest-deep:#1e4843;--mint-paper:#edf2ee;--lavender-paper:#f0edf6;--ink:#29233e;--teal-ink:#29233e;--teal-soft:#655f73;--hairline:#d4d0da;--line:#b3afbc;--wrap:90rem;--pad:clamp(1.25rem,3.5vw,4.5rem);--fs-hero:clamp(2.8rem,6.7vw,6.8rem);--fs-h2:clamp(2.4rem,4.7vw,4.8rem);font-size:1.0625rem}
 .detail-page h1,.detail-page h2,.detail-page h3{letter-spacing:-.025em}
 .detail-page .site-head{border-bottom:2px solid var(--violet);background:var(--bg)}
 .detail-page .site-head .wrap{padding-block:1rem}
@@ -67,7 +67,8 @@
 }
 @media(prefers-reduced-motion:reduce){.detail-page *{animation:none!important;transition:none!important}}
 
-/* Colour has a role: sunflower invites action, violet identifies, forest grounds. */
+/* Neutral canvas lets the existing artwork carry warmth; colour carries identity and action. */
+.detail-page::selection,.detail-page ::selection{background:var(--marker);color:var(--ink)}
 .detail-page .site-head.nav-inline .navlink::after{background:var(--violet)}
 .detail-page .foot{color:var(--bg)}
 .detail-page .foot a{color:var(--bg)}
