@@ -249,10 +249,10 @@ locale: en
         <p class="eyebrow">Contact</p>
         <h2 class="big">Ask a question.</h2>
         <p class="lead">If you have a question about Lernbus, send us a message. We will get back to you within a few days.</p>
-        <a class="morelink" href="mailto:info@lernbus.ch">info@lernbus.ch</a>
+        <a class="morelink" href="mailto:{{ lernbusContact.recipient }}">{{ lernbusContact.recipient }}</a>
       </div>
       <div class="book-card">
-        <form id="anfrage" action="{{ lernbusContact.endpoint }}" method="post" data-direct-contact data-locale="en" aria-describedby="contact-note">
+        <form id="anfrage" action="{{ lernbusContact.endpoint }}" method="post" data-direct-contact data-contact-email="{{ lernbusContact.recipient }}" data-locale="en" aria-describedby="contact-note">
           <div class="form-grid">
             <div class="field"><label for="f-name">Your name</label><input id="f-name" name="name" type="text" autocomplete="name" maxlength="120" required /></div>
             <div class="field"><label for="f-contact">Your email address</label><input id="f-contact" name="email" type="email" autocomplete="email" maxlength="254" required /></div>
@@ -263,7 +263,7 @@ locale: en
           <input type="hidden" name="language" value="en" />
           <div style="margin-top:1.4rem"><button type="submit" class="btn btn-ghost">Send message</button></div>
         </form>
-        <p class="book-note" id="contact-note">Your message will be sent directly to info@lernbus.ch. <a class="contact-privacy" href="/imprint/#formulare">Contact form privacy information</a></p>
+        <p class="book-note" id="contact-note">Your message will be sent directly to {{ lernbusContact.recipient }}. <a class="contact-privacy" href="/imprint/#formulare">Contact form privacy information</a></p>
         <p class="contact-status" data-contact-status role="status" aria-live="polite" aria-atomic="true"></p>
       </div>
     </div>

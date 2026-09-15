@@ -2828,6 +2828,39 @@
           }
         ]
       }
+    },
+    {
+      "authorization": "Jonas, 15 September 2026: use jonashertner@lernbus.ch temporarily for contact-form delivery while the info inbox password is unavailable. Formspree address verified and notification recipient switched; contact address, transmission note, fallback and DE/EN disclosures follow the verified configuration.",
+      "pages": {
+        "lernbus/index.html": [
+          {
+            "start": 1335,
+            "end": 1336,
+            "before": "info",
+            "after": "jonashertner"
+          },
+          {
+            "start": 1358,
+            "end": 1359,
+            "before": "info",
+            "after": "jonashertner"
+          }
+        ],
+        "lernbus/en/index.html": [
+          {
+            "start": 1566,
+            "end": 1567,
+            "before": "info",
+            "after": "jonashertner"
+          },
+          {
+            "start": 1588,
+            "end": 1589,
+            "before": "info",
+            "after": "jonashertner"
+          }
+        ]
+      }
     }
   ]
 }

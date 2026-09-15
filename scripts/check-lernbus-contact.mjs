@@ -229,3 +229,18 @@ test('both templates retain a native HTTPS POST shape, Formspree fields and an a
     assert.doesNotMatch(html, /type="submit"[^>]*disabled/);
   }
 });
+
+
+test('contact fallback follows the configured recipient and duplicate mounting sends once', async () => {
+  const ui = fixture();
+  ui.form.dataset.contactEmail = 'jonashertner@lernbus.ch';
+  let calls = 0;
+  const first = bindContactForm(ui.form, { fetchImpl: async () => { calls++; return { ok: false, status: 503 }; } });
+  const second = bindContactForm(ui.form, { fetchImpl: async () => { throw new Error('duplicate binding'); } });
+  assert.equal(first, second);
+  await ui.form.submit(event());
+  assert.equal(calls, 1);
+  assert.match(ui.status.textContent, /jonashertner@lernbus\.ch/);
+  assert.doesNotMatch(ui.status.textContent, /info@lernbus\.ch/);
+  assert.equal(ui.fields.message.value, ' A test question. ');
+});
