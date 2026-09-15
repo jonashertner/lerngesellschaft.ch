@@ -74,9 +74,8 @@
 .detail-page .foot a{color:var(--bg)}
 .detail-page .team-profile{display:grid;grid-template-columns:minmax(0,.75fr) minmax(0,1.25fr);gap:clamp(2.5rem,7vw,7rem);align-items:start}
 .detail-page .team-identity,.detail-page .team-profile-copy{min-width:0}
-.detail-page .team-photo-frame{position:relative;width:100%;max-width:27rem;aspect-ratio:4/5;overflow:hidden;border:2px solid var(--violet);box-shadow:8px 8px 0 var(--yellow)}
-/* Frame the original photograph around the head and shoulders, above the arms. */
-.detail-page .team-photo{position:absolute;display:block;width:320%;max-width:none;height:auto;left:-80%;top:0}
+.detail-page .team-photo-frame{width:100%;max-width:27rem;border:2px solid var(--violet);box-shadow:8px 8px 0 var(--yellow)}
+.detail-page .team-photo{display:block;width:100%;height:auto}
 .detail-page .team-name{font-family:var(--display);font-size:clamp(2.5rem,3.5vw,3.8rem);line-height:1.08;letter-spacing:-.025em;max-width:12ch;margin:2rem 0 .7rem;color:var(--violet);text-wrap:balance}
 .detail-page .team-role{font-size:1.25rem;font-weight:700;color:var(--forest);margin:0}
 .detail-page .team-profile .morelink{margin:.75rem 0 0;overflow-wrap:anywhere;display:block;max-width:100%;font-size:1rem}
