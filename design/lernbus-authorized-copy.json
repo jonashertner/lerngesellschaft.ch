@@ -3017,6 +3017,60 @@
           }
         ]
       }
+    },
+    {
+      "date": "2026-09-16",
+      "authorization": "User requested an illustrated footer inspired by four supplied visual references, then a light background for bird and child contrast and instructed proceed. Reorder existing footer copy only; preserve all main wording.",
+      "pages": {
+        "lernbus/index.html": [
+          {
+            "start": 1840,
+            "end": 1870,
+            "before": "Lektion anfragen Lernbus · ein Angebot der Lerngesellschaft Münsterplatz 17 4051 Basel info @ lernbus . ch Konzept Team Kosten Verein · Start Oktober 2026 Impressum AGB Nach oben ↑",
+            "after": "Lernbus · ein Angebot der Lerngesellschaft Lektion anfragen Münsterplatz 17 4051 Basel info @ lernbus . ch Konzept Team Kosten Verein · Start Oktober 2026 Impressum AGB Nach oben ↑"
+          }
+        ],
+        "lernbus/en/index.html": [
+          {
+            "start": 2091,
+            "end": 2128,
+            "before": "Request a lesson Lernbus · a programme of Lerngesellschaft Münsterplatz 17 4051 Basel info @ lernbus . ch Our approach Team Fees Association · starting in October 2026 Legal information Terms and conditions Back to top ↑",
+            "after": "Lernbus · a programme of Lerngesellschaft Request a lesson Münsterplatz 17 4051 Basel info @ lernbus . ch Our approach Team Fees Association · starting in October 2026 Legal information Terms and conditions Back to top ↑"
+          }
+        ],
+        "lernbus/konzept/index.html": [
+          {
+            "start": 1353,
+            "end": 1383,
+            "before": "Lektion anfragen Lernbus · ein Angebot der Lerngesellschaft Münsterplatz 17 4051 Basel info @ lernbus . ch Konzept Team Kosten Verein · Start Oktober 2026 Impressum AGB Nach oben ↑",
+            "after": "Lernbus · ein Angebot der Lerngesellschaft Lektion anfragen Münsterplatz 17 4051 Basel info @ lernbus . ch Konzept Team Kosten Verein · Start Oktober 2026 Impressum AGB Nach oben ↑"
+          }
+        ],
+        "lernbus/en/konzept/index.html": [
+          {
+            "start": 1515,
+            "end": 1552,
+            "before": "Request a lesson Lernbus · a programme of Lerngesellschaft Münsterplatz 17 4051 Basel info @ lernbus . ch Our approach Team Fees Association · starting in October 2026 Legal information Terms and conditions Back to top ↑",
+            "after": "Lernbus · a programme of Lerngesellschaft Request a lesson Münsterplatz 17 4051 Basel info @ lernbus . ch Our approach Team Fees Association · starting in October 2026 Legal information Terms and conditions Back to top ↑"
+          }
+        ],
+        "lernbus/team/index.html": [
+          {
+            "start": 570,
+            "end": 600,
+            "before": "Lektion anfragen Lernbus · ein Angebot der Lerngesellschaft Münsterplatz 17 4051 Basel info @ lernbus . ch Konzept Team Kosten Verein · Start Oktober 2026 Impressum AGB Nach oben ↑",
+            "after": "Lernbus · ein Angebot der Lerngesellschaft Lektion anfragen Münsterplatz 17 4051 Basel info @ lernbus . ch Konzept Team Kosten Verein · Start Oktober 2026 Impressum AGB Nach oben ↑"
+          }
+        ],
+        "lernbus/team/en/index.html": [
+          {
+            "start": 869,
+            "end": 906,
+            "before": "Request a lesson Lernbus · a programme of Lerngesellschaft Münsterplatz 17 4051 Basel info @ lernbus . ch Our approach Team Fees Association · starting in October 2026 Legal information Terms and conditions Back to top ↑",
+            "after": "Lernbus · a programme of Lerngesellschaft Request a lesson Münsterplatz 17 4051 Basel info @ lernbus . ch Our approach Team Fees Association · starting in October 2026 Legal information Terms and conditions Back to top ↑"
+          }
+        ]
+      }
     }
   ]
 }
