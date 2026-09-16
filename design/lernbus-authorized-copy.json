@@ -2861,6 +2861,43 @@
           }
         ]
       }
+    },
+    {
+      "authorization": "Jonas, 16 September 2026, relaying Conny: once a week always at the same time; remove usually; add the parenthetical exception for Basel-Stadt school holidays. Applied consistently to German and English home and concept facts.",
+      "pages": {
+        "lernbus/index.html": [
+          {
+            "start": 103,
+            "end": 107,
+            "before": "In der Regel wöchentlich",
+            "after": "Einmal wöchentlich, immer zur gleichen Zeit (ausser in den Schulferien Basel-Stadt)"
+          }
+        ],
+        "lernbus/en/index.html": [
+          {
+            "start": 129,
+            "end": 133,
+            "before": "Usually once a week",
+            "after": "Once a week at the same time (except during Basel-Stadt school holidays)"
+          }
+        ],
+        "lernbus/konzept/index.html": [
+          {
+            "start": 125,
+            "end": 132,
+            "before": "pro Lektion, in der Regel wöchentlich",
+            "after": "pro Lektion, einmal wöchentlich, immer zur gleichen Zeit (ausser in den Schulferien Basel-Stadt)"
+          }
+        ],
+        "lernbus/en/konzept/index.html": [
+          {
+            "start": 146,
+            "end": 153,
+            "before": "per lesson, usually once a week",
+            "after": "per lesson, once a week at the same time (except during Basel-Stadt school holidays)"
+          }
+        ]
+      }
     }
   ]
 }
