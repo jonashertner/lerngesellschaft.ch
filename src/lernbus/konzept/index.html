@@ -25,6 +25,7 @@
 <link rel="stylesheet" href="../detail.css?v={{ lernbusAssets.detail }}">
 <link rel="stylesheet" href="../concept.css?v={{ lernbusAssets.concept }}">
 <link rel="stylesheet" href="../navigation.css?v={{ lernbusAssets.navigation }}">
+<link rel="stylesheet" href="../footer.css?v={{ lernbusAssets.footer }}">
 </head>
 <body class="detail-page concept-page">
 <a href="#main" class="skip">Zum Inhalt springen</a>
@@ -322,17 +323,8 @@
 
 </main>
 
-<footer class="foot">
-  <div class="wrap">
-    <img class="foot-logo" src="../img/logo-light.webp" alt="" width="800" height="344" loading="lazy" />
-    <span>Lernbus · ein Angebot der Lerngesellschaft</span>
-    <a href="https://lerngesellschaft.ch/">lerngesellschaft.ch</a>
-    <span>Münsterplatz 17, 4051 Basel · info@lernbus.ch</span>
-    <span>Verein · Start Oktober 2026</span>
-    <a href="/impressum/">Impressum</a>
-    <a href="/lernbus/agb/">AGB</a>
-  </div>
-</footer>
+{% set footerEnglish = false %}
+{% include "lernbus-footer.njk" %}
 
 </body>
 </html>

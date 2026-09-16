@@ -44,6 +44,7 @@ locale: de
 <script src="./lesson-booking.js?v={{ lernbusAssets.lessonBooking }}" type="module"></script>
 <script src="./contact.js?v={{ lernbusAssets.contact }}" type="module"></script>
 <link rel="stylesheet" href="./navigation.css?v={{ lernbusAssets.navigation }}">
+<link rel="stylesheet" href="./footer.css?v={{ lernbusAssets.footer }}">
 </head>
 <body class="detail-page source-home locale-de">
 <a href="#main" class="skip">Zum Inhalt springen</a>
@@ -374,16 +375,8 @@ locale: de
 
 </main>
 
-<footer class="foot">
-  <div class="wrap">
-    <img class="foot-logo" src="img/logo-light.webp" alt="" width="800" height="344" loading="lazy" />
-    <span>Lernbus · ein Angebot der Lerngesellschaft</span>
-    <span>Münsterplatz 17, 4051 Basel · info@lernbus.ch</span>
-    <span>Verein · Start Oktober 2026</span>
-    <a href="/impressum/">Impressum</a>
-    <a href="/lernbus/agb/">AGB</a>
-  </div>
-</footer>
+{% set footerEnglish = false %}
+{% include "lernbus-footer.njk" %}
 
 <script src="./faq.js?v={{ lernbusAssets.faq }}" type="module"></script>
 </body>

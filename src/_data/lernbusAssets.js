@@ -14,6 +14,7 @@ export default () => Object.fromEntries(
     ['contact', 'contact.js'],
     ['nav', 'nav.js'],
     ['navigation', 'navigation.css'],
+    ['footer', 'footer.css'],
     ['faq', 'faq.js'],
     ['booking', 'booking.js'],
     ['lessonBooking', 'lesson-booking.js'],
