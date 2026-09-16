@@ -4,7 +4,8 @@
 .source-home{overflow-x:visible;--section-space:clamp(3.5rem,6vw,6rem);--section-compact:clamp(2.5rem,4vw,4rem)}
 .source-home .hero-inner{padding-top:11rem;padding-bottom:4rem}
 .source-hero-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:3rem 4rem;align-items:center}
-.source-home .hero h1{animation:none;grid-column:1/-1;max-width:none;font-size:clamp(2.65rem,6.5vw,6.9rem);line-height:1.16;text-wrap:balance;letter-spacing:-.025em}
+.source-hero-grid>*{min-width:0}
+.source-home .hero h1{animation:none;grid-column:1/-1;max-width:none;font-size:clamp(2.65rem,6.5vw,6.9rem);line-height:1.16;text-wrap:balance;letter-spacing:-.025em;overflow-wrap:anywhere;hyphens:auto}
 .source-home .hero .lead{font-size:clamp(1.125rem,1.55vw,1.4rem);max-width:36ch;margin-top:0}
 .source-home .hero-booking{margin-top:1.75rem;min-height:52px;justify-content:center}
 /* Five information routes and one distinct action, in the same reading/focus order. */
@@ -164,7 +165,7 @@
 .source-home #gespraech>.wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:0 4rem}
 .source-home #gespraech h2.big{font-size:clamp(2.6rem,4.5vw,4.5rem)}
 .source-home #gespraech>.wrap>.lead{margin-top:0!important;align-self:center}
-.source-home #gespraech .booking-section{grid-column:1/-1}
+.source-home #gespraech>.wrap>.lesson-request{grid-column:1/-1;margin-top:clamp(2rem,3vw,3rem)}
 .booking-card-heading h3{font-size:1.8rem;min-width:0;hyphens:auto;overflow-wrap:anywhere}
 .booking-card .button{display:inline-flex;align-items:center;justify-content:center;gap:1rem;min-height:48px;padding:.9rem 1.2rem;border:2px solid var(--violet);background:var(--violet);color:var(--yellow);font:700 1rem var(--body);cursor:pointer}
 .booking-card .button:hover{background:var(--violet-deep)}
