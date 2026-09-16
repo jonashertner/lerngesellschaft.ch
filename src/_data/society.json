@@ -106,7 +106,8 @@
     "fundingExplanation": "Eine Lektion dauert 60 Minuten. Der Betrag deckt auch Vorbereitung, Elterngespräche und Qualitätssicherung.",
     "fundingAction": "Über eine Investition sprechen",
     "fundingSubject": "Investition Lerngesellschaft",
-    "taxNote": "Die Lerngesellschaft ist derzeit nicht steuerbefreit. Eine steuerliche Abzugsfähigkeit Ihres Beitrags können wir deshalb nicht zusichern.",
+    "associationStatus": "Gemeinnütziger Verein mit Sitz in Basel.",
+    "taxNote": "Die Lerngesellschaft ist im Kanton Basel-Stadt steuerbefreit.",
     "footerLine": "Neugier begleiten. Möglichkeiten eröffnen."
   },
   "en": {
@@ -216,7 +217,8 @@
     "fundingExplanation": "Each lesson lasts 60 minutes. The full cost also covers preparation, parent meetings and quality assurance.",
     "fundingAction": "Discuss an investment",
     "fundingSubject": "Investment Learning Society",
-    "taxNote": "Lerngesellschaft is not currently tax-exempt. We therefore cannot guarantee that your contribution will be tax-deductible.",
+    "associationStatus": "A non-profit association based in Basel.",
+    "taxNote": "Lerngesellschaft is tax-exempt in the canton of Basel-Stadt.",
     "footerLine": "Nurturing curiosity. Opening possibilities."
   }
 }

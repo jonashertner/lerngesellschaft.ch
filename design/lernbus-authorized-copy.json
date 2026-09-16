@@ -3071,6 +3071,58 @@
           }
         ]
       }
+    },
+    {
+      "date": "2026-09-16",
+      "authority": "Jonas confirms Basel-Stadt tax exemption and requests website update, then prefers gemeinnütziger Verein in the general descriptions.",
+      "pages": {
+        "lernbus/index.html": [
+          {
+            "start": 1732,
+            "end": 1732,
+            "before": "",
+            "after": "gemeinnütziger"
+          },
+          {
+            "start": 1825,
+            "end": 1827,
+            "before": "derzeit nicht",
+            "after": "im Kanton Basel - Stadt"
+          },
+          {
+            "start": 1828,
+            "end": 1839,
+            "before": ". Eine steuerliche Abzugsfähigkeit Ihres Beitrags können wir deshalb nicht zusichern",
+            "after": ""
+          }
+        ],
+        "lernbus/en/index.html": [
+          {
+            "start": 1973,
+            "end": 1974,
+            "before": "an",
+            "after": "a non - profit"
+          },
+          {
+            "start": 2072,
+            "end": 2074,
+            "before": "not currently",
+            "after": ""
+          },
+          {
+            "start": 2077,
+            "end": 2088,
+            "before": ". We therefore cannot guarantee that your contribution will be tax",
+            "after": "in the canton of Basel"
+          },
+          {
+            "start": 2089,
+            "end": 2090,
+            "before": "deductible",
+            "after": "Stadt"
+          }
+        ]
+      }
     }
   ]
 }
