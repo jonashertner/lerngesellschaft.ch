@@ -107,7 +107,7 @@
     "fundingAction": "Über eine Investition sprechen",
     "fundingSubject": "Investition Lerngesellschaft",
     "associationStatus": "Gemeinnütziger Verein.",
-    "taxNote": "Die Lerngesellschaft ist im Kanton Basel-Stadt steuerbefreit.",
+    "taxNote": "Die Lerngesellschaft ist als gemeinnütziger Verein im Kanton Basel-Stadt steuerbefreit.",
     "footerLine": "Neugier begleiten. Möglichkeiten eröffnen."
   },
   "en": {
@@ -218,7 +218,7 @@
     "fundingAction": "Discuss an investment",
     "fundingSubject": "Investment Learning Society",
     "associationStatus": "A non-profit association.",
-    "taxNote": "Lerngesellschaft is tax-exempt in the canton of Basel-Stadt.",
+    "taxNote": "As a non-profit association, Lerngesellschaft is tax-exempt in the canton of Basel-Stadt.",
     "footerLine": "Nurturing curiosity. Opening possibilities."
   }
 }

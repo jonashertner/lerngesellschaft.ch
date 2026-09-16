@@ -3173,6 +3173,28 @@
           }
         ]
       }
+    },
+    {
+      "date": "2026-09-16",
+      "authority": "Jonas asks investment sections to say the association is tax-exempt as a gemeinnütziger Verein.",
+      "pages": {
+        "lernbus/index.html": [
+          {
+            "start": 1822,
+            "end": 1822,
+            "before": "",
+            "after": "als gemeinnütziger Verein"
+          }
+        ],
+        "lernbus/en/index.html": [
+          {
+            "start": 2070,
+            "end": 2070,
+            "before": "",
+            "after": "As a non - profit association ,"
+          }
+        ]
+      }
     }
   ]
 }
