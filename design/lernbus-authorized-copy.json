@@ -2931,6 +2931,39 @@
           }
         ]
       }
+    },
+    {
+      "authorization": "Jonas, 16 September 2026: refine the sticky navigation on all screen sizes. Move the existing booking action after the five information links in both visual and keyboard reading order. All labels and page content unchanged.",
+      "pages": {
+        "lernbus/index.html": [
+          {
+            "start": 10,
+            "end": 12,
+            "before": "Lektion anfragen",
+            "after": ""
+          },
+          {
+            "start": 17,
+            "end": 17,
+            "before": "",
+            "after": "Lektion anfragen"
+          }
+        ],
+        "lernbus/en/index.html": [
+          {
+            "start": 10,
+            "end": 13,
+            "before": "Request a lesson",
+            "after": ""
+          },
+          {
+            "start": 23,
+            "end": 23,
+            "before": "",
+            "after": "Request a lesson"
+          }
+        ]
+      }
     }
   ]
 }

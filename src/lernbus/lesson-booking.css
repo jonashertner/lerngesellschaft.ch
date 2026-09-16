@@ -36,7 +36,7 @@
 .lesson-request__zone{margin:1rem 0 0;font-size:.875rem;line-height:1.5;color:#5e5772}
 .lesson-request__selection{padding:.9rem 1rem;margin:1.5rem 0 0;background:#f5f3e1;border-left:3px solid var(--marker,#e7e276);font-size:1rem;line-height:1.5;font-weight:650}
 .lesson-request__selection:empty{display:none}
-.lesson-request__details{margin-top:1.75rem;padding-top:1.5rem;border-top:1px solid #d6d1e0}
+.lesson-request__details{margin-top:1.75rem;padding-top:1.5rem;border-top:1px solid var(--hairline,#d4d0da)}
 .lesson-request__fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem 1.25rem}
 .lesson-request__fields label{display:block;font-size:1rem;font-weight:650;line-height:1.5;color:var(--violet,#493f80)}
 .lesson-request__fields label span{font-weight:450;font-size:.875rem}
@@ -60,7 +60,7 @@
  .lesson-request__controls{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr);grid-template-areas:"picker details" "selection details";column-gap:2rem;align-items:start}
  .lesson-request__picker{grid-area:picker;gap:2rem}
  .lesson-request__selection{grid-area:selection}
- .lesson-request__details{grid-area:details;margin:0;padding:0 0 0 2rem;border-top:0;border-left:1px solid #d6d1e0}
+ .lesson-request__details{grid-area:details;margin:0;padding:0 0 0 2rem;border-top:0;border-left:1px solid var(--hairline,#d4d0da)}
  .lesson-request__fields{grid-template-columns:minmax(0,1fr)}
  .lesson-request__submit{width:100%;justify-content:center}
 }

@@ -13,6 +13,7 @@ export default () => Object.fromEntries(
     ['testimonials', 'testimonials.css'],
     ['contact', 'contact.js'],
     ['nav', 'nav.js'],
+    ['navigation', 'navigation.css'],
     ['faq', 'faq.js'],
     ['booking', 'booking.js'],
     ['lessonBooking', 'lesson-booking.js'],

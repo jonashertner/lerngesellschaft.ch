@@ -1,0 +1,157 @@
+/* A quiet, persistent reading companion in the Lernbus colours. */
+html { scroll-padding-top: var(--lernbus-header-height, 5.25rem); }
+.detail-page .site-head {
+  position: fixed;
+  inset: 0 0 auto;
+  border-bottom: 1px solid rgba(73, 63, 128, .22);
+  background: #fafafa;
+  z-index: 40;
+  transition: box-shadow .2s ease, background-color .2s ease;
+}
+.detail-page .site-head.nav-fixed.is-scrolled {
+  background: rgba(250, 250, 250, .97);
+  box-shadow: 0 4px 20px rgba(41, 35, 62, .07);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+}
+.detail-page .site-head .wrap,
+.detail-page .site-head.nav-fixed.is-scrolled .wrap {
+  gap: 2rem;
+  padding-block: .875rem;
+  min-height: calc(56px + 1.75rem);
+  transition: none;
+}
+.detail-page .site-head .brand { width: 7.558rem; max-width: 30vw; }
+.detail-page .site-head .brand-logo,
+.detail-page .site-head.nav-fixed.is-scrolled .brand-logo {
+  height: auto;
+  width: 100%;
+  transition: none;
+}
+.detail-page .site-head .brand span { display: none; }
+.detail-page .site-head .head-right { gap: 1.5rem; }
+.detail-page .site-head .lang {
+  border: 0;
+  border-left: 1px solid var(--hairline);
+  border-radius: 0;
+  width: 3.75rem;
+  min-height: 44px;
+  padding-left: .75rem;
+  font-size: .875rem;
+  letter-spacing: .025em;
+  color: var(--violet);
+  transform: none;
+  transition: background-color .15s ease;
+}
+.detail-page .site-head .lang:hover { background: var(--surface-soft); }
+.detail-page .site-head.nav-inline .nav { gap: clamp(.5rem, 1.2vw, 1.25rem); }
+.detail-page .site-head.nav-inline .navlink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: .625rem .35rem;
+  font-family: var(--body);
+  font-size: 1rem;
+  font-weight: 650;
+  line-height: 1.3;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--violet);
+}
+.detail-page .site-head.nav-inline .navlink::after {
+  inset: auto .35rem .2rem;
+  height: 3px;
+  background: var(--yellow);
+  border-radius: 0;
+  transform-origin: center;
+}
+.detail-page .site-head.nav-inline .navlink[aria-current] { font-weight: 650; }
+.detail-page .site-head.nav-inline .navlink[aria-current]::after { background: var(--violet); }
+.detail-page .site-head .nav .nav-booking {
+  background: var(--violet);
+  color: var(--yellow);
+  border: 1px solid var(--violet);
+  border-radius: 4px;
+  padding: .75rem 1.125rem;
+  font-family: var(--body);
+  font-size: 1rem;
+  line-height: 1.3;
+  font-weight: 750;
+  letter-spacing: 0;
+  margin: 0;
+  transition: background-color .15s ease, box-shadow .15s ease;
+}
+.detail-page .site-head .nav .nav-booking::after { display: none; }
+.detail-page .site-head .nav .nav-booking:hover { background: var(--violet-deep); }
+.detail-page .site-head .nav .nav-booking[aria-current] { box-shadow: inset 0 -3px var(--yellow); }
+.detail-page .site-head .menu-btn {
+  border-radius: 4px;
+  box-shadow: none;
+  transform: none;
+  transition: background-color .15s ease;
+}
+.detail-page .site-head .menu-btn:hover { background: var(--violet-deep); }
+.detail-page .site-head.menu-open,
+.detail-page .site-head:not(.nav-inline):has(.menu[open]) {
+  inset: 0;
+  background: var(--bg);
+  box-shadow: none;
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+}
+.detail-page .site-head:not(.nav-inline) .nav {
+  gap: 0;
+  padding-top: 1rem;
+  padding-bottom: max(2rem, env(safe-area-inset-bottom));
+}
+.detail-page .site-head:not(.nav-inline) .navlink {
+  min-height: 56px;
+  padding: .65em 0;
+  align-items: center;
+  font-size: clamp(1.375rem, 1rem + 2vw, 2rem);
+  border-top: 0;
+  border-bottom: 1px solid var(--hairline);
+}
+.detail-page .site-head:not(.nav-inline) .navlink::before { display: none; }
+.detail-page .site-head:not(.nav-inline) .navlink[aria-current]:not(.nav-booking) {
+  text-decoration: underline;
+  text-decoration-color: var(--violet);
+  text-decoration-thickness: 2px;
+  text-underline-offset: .25em;
+}
+.detail-page .site-head:not(.nav-inline) .nav .nav-booking {
+  margin-top: 1.25rem;
+  padding: 1rem;
+  font-size: 1.125rem;
+  justify-content: center;
+}
+/* Anchor and keyboard destinations remain clear of the measured header. */
+.detail-page main [id], .detail-page main {
+  scroll-margin-top: 1.25rem;
+}
+.detail-page .hero-inner {
+  padding-top: calc(var(--lernbus-header-height, 5.25rem) + clamp(2.5rem, 4vw, 4rem));
+}
+.detail-page .skip { position: fixed; }
+@media (max-width: 48rem) {
+  .detail-page .site-head .wrap,
+  .detail-page .site-head.nav-fixed.is-scrolled .wrap {
+    gap: 1rem;
+    min-height: calc(48px + 1.5rem);
+    padding-block: .75rem;
+  }
+  .detail-page .site-head .brand { width: 6.395rem; }
+  .detail-page .site-head .brand-logo,
+  .detail-page .site-head.nav-fixed.is-scrolled .brand-logo { height: auto; }
+  .detail-page .site-head .head-right { gap: .625rem; }
+  .detail-page .site-head .lang { width: 44px; padding: 0; border: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .detail-page .site-head, .detail-page .site-head * { transition: none !important; }
+}
+@media print {
+  html { scroll-padding-top: 0; }
+  .detail-page .site-head, .detail-page .skip { display: none; }
+  .detail-page .hero-inner { padding-top: 1rem; }
+}
