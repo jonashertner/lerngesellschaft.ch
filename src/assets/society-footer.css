@@ -1,0 +1,54 @@
+/* A quiet Basel-inspired print closes the simple bilingual landing page. */
+.society-end {
+  display:block;
+  padding:0;
+  overflow:hidden;
+  background:#fff;
+  border-top:1px solid #dcd7df;
+  color:#282030;
+}
+.society-end-content {
+  position:relative;
+  z-index:1;
+  display:grid;
+  grid-template-columns:minmax(0,1fr) auto;
+  align-items:start;
+  gap:2rem 4rem;
+  padding-top:clamp(2.25rem,4vw,4rem);
+}
+.society-end-identity {min-width:0;max-width:34rem;}
+.society-end-name {
+  display:flex;
+  align-items:baseline;
+  flex-wrap:wrap;
+  gap:.3rem .85rem;
+  width:fit-content;
+  max-width:100%;
+  min-height:44px;
+  font:650 clamp(1.5rem,2.1vw,1.85rem)/1.2 Bricolage,Arial,sans-serif;
+  letter-spacing:-.045em;
+}
+.society-end-name span {font:500 .875rem/1.4 Hanken,Arial,sans-serif;letter-spacing:0;color:#635b68;}
+.society-end-identity p {margin-top:.65rem;max-width:48ch;font-size:1rem;line-height:1.6;color:#635b68;}
+.society-end nav {min-width:0;padding-top:.1rem;}
+.society-end nav a {max-width:100%;font-size:.875rem;text-decoration:underline;text-underline-offset:.25em;text-decoration-thickness:1px;}
+.society-end-art {
+  position:relative;
+  margin-top:-1.5rem;
+  height:clamp(14rem,30vw,30rem);
+  pointer-events:none;
+  user-select:none;
+  -webkit-mask-image:linear-gradient(to bottom,transparent,#000 24%);
+  mask-image:linear-gradient(to bottom,transparent,#000 24%);
+}
+.society-end-art img {display:block;width:100%;height:100%;object-fit:cover;object-position:center bottom;}
+@media(max-width:640px){
+  .society-end-content {grid-template-columns:minmax(0,1fr);gap:1rem;}
+  .society-end-identity p {max-width:40ch;}
+  .society-end-art {margin-top:0;}
+  .society-end-art img {object-position:25% bottom;}
+}
+@media print{
+  .society-end-art {display:none;}
+  .society-end-content {padding-block:1rem;}
+}

@@ -1,5 +1,13 @@
-<footer class="landing-footer wrap" id="verein">
+<footer class="landing-footer society-end" id="verein">
   <span class="legacy-anchor" id="investieren" aria-hidden="true"></span>
-  <p>{{ landing.about }}</p>
-  <nav aria-label="{{ landing.footerLabel }}">{% if isLandingLegal %}<a href="{{ landing.root }}">{{ landing.backLabel }}</a>{% else %}<a href="{{ landing.imprintUrl }}">{{ landing.imprint }}</a>{% endif %}</nav>
+  <div class="society-end-content wrap">
+    <div class="society-end-identity">
+      <a class="society-end-name" href="{{ landing.root }}">{{ landing.name }}<span>{{ landing.place }}</span></a>
+      <p>{{ landing.about }}</p>
+    </div>
+    <nav aria-label="{{ landing.footerLabel }}">{% if isLandingLegal %}<a href="{{ landing.root }}">{{ landing.backLabel }}</a>{% else %}<a href="{{ landing.imprintUrl }}">{{ landing.imprint }}</a>{% endif %}</nav>
+  </div>
+  <div class="society-end-art" aria-hidden="true">
+    <img src="/assets/media/society-rhine-engraving.webp" alt="" width="2172" height="724" loading="lazy" decoding="async" />
+  </div>
 </footer>
