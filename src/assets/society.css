@@ -2,7 +2,7 @@
 .society-home, .society-page {
   --bg:#faf8f3; --bg-2:#efebe4; --ink:#242031; --ink-soft:#615967;
   --violet:#6544a3; --pink-ink:#784051; --line:#d7d0d7;
-  --wrap:82rem; --pad:clamp(1.25rem,4.4vw,4.5rem);
+  --wrap:82rem; --pad:clamp(20px,4.4vw,4.5rem);
 }
 .society-home h1,.society-home h2,.society-home h3,
 .society-page h1,.society-page h2,.society-page h3 {font-weight:650;letter-spacing:-.045em;}
@@ -128,7 +128,7 @@
 .society-page .booking button:disabled {opacity:.6;cursor:not-allowed;}
 .society-page .book-card {border-radius:0;background:var(--bg-2);box-shadow:none;}
 .society-page .book-card fieldset {border:0;margin:0;padding:0;min-width:0;}
-.society-page .book-card input,.society-page .book-card select,.society-page .book-card textarea {border-radius:2px;font-size:1rem;}
+.society-page .book-card input,.society-page .book-card select,.society-page .book-card textarea {min-width:0;border-color:var(--ink-soft);border-radius:2px;font-size:1rem;}
 .society-page .book-card .book-note {font-size:.9rem;max-width:65ch;}
 .society-page .book-note a {text-decoration:underline;text-underline-offset:3px;}
 .society-page .book-card button:disabled {opacity:.6;cursor:not-allowed;}
@@ -186,3 +186,16 @@
   .society-home .site-head .wrap,.society-page .site-head .wrap {padding-block:1.2rem;gap:.5rem;}
 }
 @media(prefers-reduced-motion:reduce){.society-home *,.society-page *{scroll-behavior:auto!important;animation:none!important;transition:none!important;}}
+
+/* Supporting pages remain readable with enlarged text and narrow viewports. */
+.society-page {overflow-wrap:anywhere;}
+.society-page h1,.society-page h2,.society-page h3 {overflow-wrap:anywhere;}
+.society-page .site-head:not(.nav-inline) .wrap {flex-wrap:wrap;}
+.society-page .site-head:not(.nav-inline) .brand {max-width:100%;}
+.society-page .site-head:not(.nav-inline) .head-right {margin-left:auto;}
+.society-page .detail,.society-page .dsec,.society-page .field {min-width:0;}
+.society-page .btn {max-width:100%;white-space:normal;}
+@media(max-width:550px){
+  .society-page .book-card {padding:clamp(16px,4vw,1.6rem);}
+  .society-page .book-card .btn {padding-inline:.75em;}
+}
