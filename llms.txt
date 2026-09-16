@@ -1,6 +1,6 @@
 # Lerngesellschaft / Learning Society
 
-> A Basel association supporting children's curiosity and learning through personal accompaniment, public science and classroom activities. Its three programmes are Lernbus, Forscherbühne and Gehirn und Gesellschaft. The current German and English websites share one canonical domain, lerngesellschaft.ch. learningsociety.ch redirects to the English homepage.
+> A non-profit association supporting children's curiosity and learning through personal accompaniment, public science and classroom activities. Its three programmes are Lernbus, Forscherbühne and Gehirn und Gesellschaft. The current German and English websites share one canonical domain, lerngesellschaft.ch. learningsociety.ch redirects to the English homepage.
 
 ## Current association
 
