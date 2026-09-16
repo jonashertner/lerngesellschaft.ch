@@ -5,7 +5,7 @@
     <p>60 {% if requestEnglish %}minutes{% else %}Minuten{% endif %} · Münsterplatz 17, Basel</p>
   </div>
   <div class="lesson-request__body">
-    <p class="lesson-request__intro">{% if requestEnglish %}For parents and legal guardians. Reserving a time does not yet enrol your child.{% else %}Für Eltern und Erziehungsberechtigte. Die Reservierung ist noch keine verbindliche Anmeldung.{% endif %}</p>
+    <p class="lesson-request__intro">{% if requestEnglish %}For parents and legal guardians. Reserving a time does not yet enrol your child. We agree the regular weekly time and semester enrolment after the introductory meeting.{% else %}Für Eltern und Erziehungsberechtigte. Die Reservierung ist noch keine verbindliche Anmeldung. Den festen wöchentlichen Termin und die Semesteranmeldung vereinbaren wir nach dem Kennenlerngespräch.{% endif %}</p>
     <div data-request-fallback>
       <p data-request-fallback-text>{% if requestEnglish %}Please enable JavaScript to choose a time here, or send your request by email.{% else %}Aktivieren Sie JavaScript, um hier einen Termin auszuwählen, oder senden Sie Ihre Anfrage per E-Mail.{% endif %}</p>
       <a class="lesson-request__email" href="mailto:{{ lernbusContact.recipient | escape }}?subject={% if requestEnglish %}Lernbus%3A%20request%20a%20lesson{% else %}Lernbus%3A%20Lektion%20anfragen{% endif %}">{% if requestEnglish %}Request a lesson by email{% else %}Lektion per E-Mail anfragen{% endif %}</a>

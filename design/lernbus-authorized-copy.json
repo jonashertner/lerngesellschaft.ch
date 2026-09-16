@@ -2898,6 +2898,39 @@
           }
         ]
       }
+    },
+    {
+      "authorization": "Jonas, 16 September 2026: implement improvements 1–3; unify parent enquiries at info@lernbus.ch after provider recipient change and delivery verification. Clarify post-reservation semester handover; school holiday exclusion. Existing calendar-only copy remains outside baseline check.",
+      "pages": {
+        "lernbus/index.html": [
+          {
+            "start": 1347,
+            "end": 1348,
+            "before": "jonashertner",
+            "after": "info"
+          },
+          {
+            "start": 1370,
+            "end": 1371,
+            "before": "jonashertner",
+            "after": "info"
+          }
+        ],
+        "lernbus/en/index.html": [
+          {
+            "start": 1578,
+            "end": 1579,
+            "before": "jonashertner",
+            "after": "info"
+          },
+          {
+            "start": 1600,
+            "end": 1601,
+            "before": "jonashertner",
+            "after": "info"
+          }
+        ]
+      }
     }
   ]
 }
