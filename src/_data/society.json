@@ -94,7 +94,7 @@
     "personText": "Conny Brandes arbeitet seit 30 Jahren mit Kindern. Sie bringt Erfahrung aus der Kita-Leitung und der frühen Deutschförderung mit.",
     "personAction": "Conny kennenlernen",
     "associationTitle": "In Basel zu Hause.",
-    "associationText": "Die Lerngesellschaft ist ein Verein mit Sitz in Basel. Getragen wird sie von Menschen aus Pädagogik, Naturwissenschaften und Recht, die in Basel zu Hause sind.",
+    "associationText": "Die Lerngesellschaft ist ein gemeinnütziger Verein. Getragen wird sie von Menschen aus Pädagogik, Naturwissenschaften und Recht, die in Basel zu Hause sind.",
     "boardText": "Der Vorstand arbeitet ehrenamtlich.",
     "contactName": "Kontakt zum Verein: Jonas Hertner",
     "contactAction": "Eine E-Mail schreiben",
@@ -106,7 +106,7 @@
     "fundingExplanation": "Eine Lektion dauert 60 Minuten. Der Betrag deckt auch Vorbereitung, Elterngespräche und Qualitätssicherung.",
     "fundingAction": "Über eine Investition sprechen",
     "fundingSubject": "Investition Lerngesellschaft",
-    "associationStatus": "Gemeinnütziger Verein mit Sitz in Basel.",
+    "associationStatus": "Gemeinnütziger Verein.",
     "taxNote": "Die Lerngesellschaft ist im Kanton Basel-Stadt steuerbefreit.",
     "footerLine": "Neugier begleiten. Möglichkeiten eröffnen."
   },
@@ -205,7 +205,7 @@
     "personText": "Conny Brandes has worked with children for 30 years. Her experience includes co-leading a daycare centre and early German language support.",
     "personAction": "Meet Conny",
     "associationTitle": "At home in Basel.",
-    "associationText": "Learning Society is an association based in Basel. It brings together people from education, natural sciences and law who are at home here.",
+    "associationText": "Learning Society is a non-profit association. It brings together people from education, natural sciences and law who are at home here.",
     "boardText": "The board gives its time voluntarily.",
     "contactName": "Association contact: Jonas Hertner",
     "contactAction": "Write an email",
@@ -217,7 +217,7 @@
     "fundingExplanation": "Each lesson lasts 60 minutes. The full cost also covers preparation, parent meetings and quality assurance.",
     "fundingAction": "Discuss an investment",
     "fundingSubject": "Investment Learning Society",
-    "associationStatus": "A non-profit association based in Basel.",
+    "associationStatus": "A non-profit association.",
     "taxNote": "Lerngesellschaft is tax-exempt in the canton of Basel-Stadt.",
     "footerLine": "Nurturing curiosity. Opening possibilities."
   }

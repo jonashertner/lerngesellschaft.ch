@@ -3123,6 +3123,56 @@
           }
         ]
       }
+    },
+    {
+      "date": "2026-09-16",
+      "authority": "Jonas asks to omit aus Basel from the general association description; corresponding DE/EN qualifiers removed.",
+      "pages": {
+        "lernbus/index.html": [
+          {
+            "start": 1734,
+            "end": 1738,
+            "before": "mit Sitz in Basel",
+            "after": ""
+          }
+        ],
+        "lernbus/en/index.html": [
+          {
+            "start": 1978,
+            "end": 1981,
+            "before": "based in Basel",
+            "after": ""
+          }
+        ],
+        "lernbus/konzept/index.html": [
+          {
+            "start": 1313,
+            "end": 1313,
+            "before": "",
+            "after": "gemeinnütziger"
+          },
+          {
+            "start": 1314,
+            "end": 1318,
+            "before": "mit Sitz in Basel",
+            "after": ""
+          }
+        ],
+        "lernbus/en/konzept/index.html": [
+          {
+            "start": 1475,
+            "end": 1476,
+            "before": "an",
+            "after": "a non - profit"
+          },
+          {
+            "start": 1477,
+            "end": 1480,
+            "before": "based in Basel",
+            "after": ""
+          }
+        ]
+      }
     }
   ]
 }
