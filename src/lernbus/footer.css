@@ -20,8 +20,8 @@
 .footer-identity { grid-area: identity; }
 .footer-brand { display: block; width: clamp(10rem, 14vw, 13rem); max-width: 100%; margin-bottom: 1.5rem; }
 .footer-brand img { display: block; width: 100%; height: auto; }
-.footer-identity p { max-width: 30ch; }
-.footer-designed .footer-identity p a { display: inline-flex; align-items: center; min-height: 44px; }
+.footer-attribution { display: grid; justify-items: start; max-width: 30ch; margin: 0; gap: 0; line-height: 1.5; text-wrap: normal; }
+.footer-designed .footer-attribution a { display: flex; align-items: flex-start; min-height: 44px; }
 .footer-designed .wrap .footer-booking {
   grid-area: booking;
   display: flex;
@@ -74,7 +74,7 @@
 .footer-designed a:focus-visible { outline: 3px solid var(--violet); outline-offset: 5px; border-radius: 4px; }
 .footer-designed :is(.footer-links, .footer-identity, .footer-legal) a:hover { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: .25em; }
 /* Crop only the decorative layer; focus outlines and enlarged text stay free. */
-.footer-landscape { overflow: hidden; pointer-events: none; aspect-ratio: 3 / 1; margin-top: 0; }
+.footer-landscape { position: relative; overflow: hidden; pointer-events: none; aspect-ratio: 3 / 1; margin-top: 0; }
 .footer-landscape picture { display: block; height: 100%; }
 .footer-landscape img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center bottom; }
 .footer-base { display: flex; flex-wrap: wrap; align-items: center; gap: .75rem 2rem; padding-block: 2.5rem 1rem; font-size: .875rem; line-height: 1.5; }
@@ -85,7 +85,7 @@
 .footer-top span { font-size: 1.25rem; }
 @media (max-width: 56rem) {
   .footer-content { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); grid-template-areas: "identity identity" "booking booking" "contact links"; gap: 2rem; }
-  .footer-identity { display: flex; align-items: center; gap: 2rem; }
+  .footer-identity { display: flex; flex-wrap: wrap; align-items: center; gap: 1.25rem 2rem; }
   .footer-brand { margin-bottom: 0; flex: none; width: 10rem; }
   .footer-base > p { flex-basis: 100%; }
   .footer-designed .footer-top { margin-left: auto; }
@@ -110,4 +110,25 @@
   .footer-brand, .footer-booking, .footer-links, .footer-legal, .footer-top, .footer-landscape { display: none !important; }
   .footer-designed .footer-content { display: block; }
   .detail-page .footer-designed .wrap a { color: black; }
+}
+
+/* Brief paper-cutout movement; the original artwork remains the default. */
+.footer-motion { position: absolute; inset: 0; width: 100%; height: 100%; visibility: hidden; }
+.footer-bird { transform-origin: 1120px 245px; }
+.footer-child { transform-origin: 1650px 488px; }
+@media (min-width: 64rem) and (prefers-reduced-motion: no-preference) {
+  .footer-landscape.is-moving > picture { visibility: hidden; }
+  .footer-landscape.is-moving > .footer-motion { visibility: visible; }
+  .is-moving .footer-bird { animation: footer-bird-lift 4.2s ease-in-out both; }
+  .is-moving .footer-child { animation: footer-child-nod 4.2s ease-in-out both; }
+}
+@keyframes footer-bird-lift {
+  0%, 100% { transform: translate(0, 0) rotate(0); }
+  35% { transform: translate(12px, -16px) rotate(-3deg); }
+  65% { transform: translate(18px, -10px) rotate(1deg); }
+}
+@keyframes footer-child-nod {
+  0%, 20%, 100% { transform: rotate(0); }
+  48% { transform: rotate(4deg); }
+  72% { transform: rotate(1deg); }
 }
