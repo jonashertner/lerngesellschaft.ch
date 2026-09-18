@@ -38,7 +38,7 @@
 <link rel="stylesheet" href="../tariff-guide.css?v=c07ede71a4c8">
 <link rel="stylesheet" href="../contact.css?v=531df7ca1fcc">
 <link rel="stylesheet" href="../lesson-booking.css?v=b6ee2afb3cc2">
-<script src="../lesson-booking.js?v=4d8a7b8e74fa" type="module"></script>
+<script src="../lesson-booking.js?v=a609b52d2703" type="module"></script>
 <script src="../contact.js?v=a202b2972263" type="module"></script>
 <link rel="stylesheet" href="../navigation.css?v=c372ced3d440">
 <link rel="stylesheet" href="../footer.css?v=ca8844728670">
@@ -473,6 +473,7 @@
   </div>
 </details>
 
+      <p class="lead reveal" style="margin-top:1.4rem; max-width:58ch">No child should have to miss out on Lernbus for financial reasons. We will work with you in a personal conversation to find a suitable solution.</p>
       <p class="funding-link"><a href="#investieren">Help fund a place <span aria-hidden="true">&rarr;</span></a></p>
     </div>
   </section>
@@ -519,12 +520,16 @@
           </div>
           <p class="lesson-request__selection" data-request-summary aria-live="polite" aria-atomic="true"></p>
           <div class="lesson-request__details">
-            <p class="lesson-request__step">3 · Your contact details</p>
+            <p class="lesson-request__step">3 · You and your child</p>
             <div class="lesson-request__fields">
               <label for="lesson-request-name">Your name<input id="lesson-request-name" name="name" type="text" autocomplete="name" maxlength="120" required /></label>
               <label for="lesson-request-email">Your email address<input id="lesson-request-email" name="email" type="email" autocomplete="email" maxlength="254" required /></label>
+              <label for="lesson-request-phone">Your phone number<input id="lesson-request-phone" name="phone" type="tel" autocomplete="tel" maxlength="40" required /></label>
+              <label for="lesson-request-child-name">Your child’s name<input id="lesson-request-child-name" name="childName" type="text" autocomplete="off" maxlength="120" required /></label>
+              <label for="lesson-request-birth-date">Your child’s date of birth<input id="lesson-request-birth-date" name="birthDate" type="date" min="1900-01-01" autocomplete="off" aria-describedby="lesson-request-age" required /><span id="lesson-request-age" data-child-age aria-live="polite">Their age is calculated automatically.</span></label>
               <label class="lesson-request__notes" for="lesson-request-notes">Notes <span>(optional)</span><textarea id="lesson-request-notes" name="notes" rows="3" maxlength="2000"></textarea></label>
             </div>
+            <p class="lesson-request__note">All fields except notes are required. We use your email address to confirm your reservation and contact you.</p>
             <div class="lesson-request__sr" aria-hidden="true"><label for="lesson-request-website">Website</label><input id="lesson-request-website" name="website" type="text" tabindex="-1" autocomplete="off" maxlength="200" /></div>
             <button class="lesson-request__submit" type="submit">Reserve this time</button>
           </div>

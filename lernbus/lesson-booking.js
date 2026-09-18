@@ -1,12 +1,18 @@
 const ZONE='Europe/Zurich',DAY=86400000;
 const copy={
- de:{loading:'Freie Termine werden geladen …',empty:'In diesem Monat sind keine freien Termine verfügbar. Wählen Sie einen anderen Monat oder schreiben Sie uns.',unavailable:'Die Verfügbarkeit ist gerade nicht erreichbar. Bitte versuchen Sie es erneut oder schreiben Sie uns.',choose:'Uhrzeit auswählen',none:'Wählen Sie einen verfügbaren Tag.',unavailableDay:'nicht verfügbar',selection:'Ihr Termin',sending:'Termin wird reserviert …',invalid:'Bitte wählen Sie Datum und Uhrzeit und geben Sie Ihren Namen und Ihre E-Mail-Adresse ein.',expired:'Die Verfügbarkeit hat sich geändert. Bitte wählen Sie einen freien Termin aus.',pending:'Die Reservierung wird noch bestätigt. Bitte reservieren Sie keinen weiteren Termin. Prüfen Sie den Status hier erneut.',confirmed:label=>`Ihr Termin am ${label} ist reserviert. Wir kontaktieren Sie für ein Kennenlerngespräch. Danach vereinbaren wir den festen wöchentlichen Termin und bestätigen die Anmeldung für das Schulsemester.`,failed:'Der Termin wurde nicht reserviert. Ihre Eingaben bleiben erhalten. Bitte versuchen Sie es erneut.',cancelled:'Diese Reservierung wurde storniert. Für einen neuen Termin kontaktieren Sie uns bitte.',rate:'Bitte warten Sie einige Minuten und versuchen Sie es erneut.',submit:'Termin reservieren',name:'Bitte geben Sie Ihren Namen ein.'},
- en:{loading:'Loading available times…',empty:'There are no available times this month. Please choose another month or email us.',unavailable:'Availability is temporarily unavailable. Please try again or email us.',choose:'Choose a time',none:'Choose an available day.',unavailableDay:'unavailable',selection:'Your time',sending:'Reserving your time…',invalid:'Please choose a date and time and enter your name and email address.',expired:'Availability has changed. Please choose an available time.',pending:'Your reservation is still being confirmed. Please do not make another reservation. Check its status here again.',confirmed:label=>`Your time on ${label} is reserved. We will contact you to arrange an introductory meeting. Afterwards, we will agree your regular weekly time and confirm your child’s enrolment for the school semester.`,failed:'Your time was not reserved. Your entries are still in the form. Please try again.',cancelled:'This reservation has been cancelled. Please contact us to arrange a new time.',rate:'Please wait a few minutes before trying again.',submit:'Reserve this time',name:'Please enter your name.'}
+ de:{loading:'Freie Termine werden geladen …',empty:'In diesem Monat sind keine freien Termine verfügbar. Wählen Sie einen anderen Monat oder schreiben Sie uns.',unavailable:'Die Verfügbarkeit ist gerade nicht erreichbar. Bitte versuchen Sie es erneut oder schreiben Sie uns.',choose:'Uhrzeit auswählen',none:'Wählen Sie einen verfügbaren Tag.',unavailableDay:'nicht verfügbar',selection:'Ihr Termin',sending:'Termin wird reserviert …',invalid:'Bitte wählen Sie Datum und Uhrzeit und vervollständigen Sie Ihre Kontaktdaten und die Angaben zu Ihrem Kind.',expired:'Die Verfügbarkeit hat sich geändert. Bitte wählen Sie einen freien Termin aus.',pending:'Die Reservierung wird noch bestätigt. Bitte reservieren Sie keinen weiteren Termin. Prüfen Sie den Status hier erneut.',confirmed:label=>`Ihr Termin am ${label} ist reserviert. Wir kontaktieren Sie für ein Kennenlerngespräch. Danach vereinbaren wir den festen wöchentlichen Termin und bestätigen die Anmeldung für das Schulsemester.`,failed:'Der Termin wurde nicht reserviert. Ihre Eingaben bleiben erhalten. Bitte versuchen Sie es erneut.',cancelled:'Diese Reservierung wurde storniert. Für einen neuen Termin kontaktieren Sie uns bitte.',rate:'Bitte warten Sie einige Minuten und versuchen Sie es erneut.',submit:'Termin reservieren',name:'Bitte geben Sie Ihren Namen ein.'},
+ en:{loading:'Loading available times…',empty:'There are no available times this month. Please choose another month or email us.',unavailable:'Availability is temporarily unavailable. Please try again or email us.',choose:'Choose a time',none:'Choose an available day.',unavailableDay:'unavailable',selection:'Your time',sending:'Reserving your time…',invalid:'Please choose a date and time and complete your contact details and your child’s details.',expired:'Availability has changed. Please choose an available time.',pending:'Your reservation is still being confirmed. Please do not make another reservation. Check its status here again.',confirmed:label=>`Your time on ${label} is reserved. We will contact you to arrange an introductory meeting. Afterwards, we will agree your regular weekly time and confirm your child’s enrolment for the school semester.`,failed:'Your time was not reserved. Your entries are still in the form. Please try again.',cancelled:'This reservation has been cancelled. Please contact us to arrange a new time.',rate:'Please wait a few minutes before trying again.',submit:'Reserve this time',name:'Please enter your name.'}
 };
 const day=value=>new Intl.DateTimeFormat('sv-SE',{timeZone:ZONE,year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date(value));
 const dateEpoch=date=>Date.parse(date+'T12:00:00Z');
 const dateISO=value=>new Date(value).toISOString().slice(0,10);
 function monthShift(month,n){const d=new Date(month+'-01T12:00:00Z');d.setUTCMonth(d.getUTCMonth()+n);return dateISO(d).slice(0,7);}
+export function childAge(birthDate,today=day(Date.now())){
+ if(typeof birthDate!=='string'||!/^\d{4}-\d{2}-\d{2}$/.test(birthDate)||birthDate<'1900-01-01'||birthDate>today)return null;
+ const parsed=Date.parse(birthDate+'T12:00:00Z');
+ if(!Number.isFinite(parsed)||dateISO(parsed)!==birthDate)return null;
+ return Number(today.slice(0,4))-Number(birthDate.slice(0,4))-(today.slice(5)<birthDate.slice(5)?1:0);
+}
 export function calendarKeyDate(date,key,shift=false){
  const d=dateEpoch(date),index=(new Date(d).getUTCDay()+6)%7,delta={ArrowLeft:-1,ArrowRight:1,ArrowUp:-7,ArrowDown:7,Home:-index,End:6-index};
  if(key in delta)return dateISO(d+delta[key]*DAY);
@@ -31,6 +37,16 @@ export function mountCalendar(root,{api=root.dataset.api,fetcher=apiFetch}={}){
  const el=(tag,text,attrs={})=>{const node=document.createElement(tag);if(text)node.textContent=text;for(const [k,v]of Object.entries(attrs))node.setAttribute(k,String(v));return node;};
  let data=null,selectedDate='',selected=null,focused='',generation=0,controller,operation=null,sending=false,done=false;
  const storageKey='lernbus.reservation.v1';
+ const birthDate=form.elements.namedItem('birthDate'),ageOutput=q('[data-child-age]');
+ const ageHint=ageOutput.textContent;
+ const updateAge=()=>{
+  birthDate.max=day(Date.now());const age=childAge(birthDate.value);
+  birthDate.setCustomValidity(birthDate.value&&age===null?(locale==='de'?'Bitte geben Sie ein gültiges Geburtsdatum ein.':'Please enter a valid date of birth.'):'');
+  ageOutput.textContent=age===null?ageHint:(locale==='de'?`Alter heute: ${age} ${age===1?'Jahr':'Jahre'}`:`Age today: ${age} ${age===1?'year':'years'}`);
+ };
+ birthDate.addEventListener('input',updateAge);updateAge();
+ const phone=form.elements.namedItem('phone'),childName=form.elements.namedItem('childName');
+
  const save=()=>{try{operation?sessionStorage.setItem(storageKey,JSON.stringify(operation)):sessionStorage.removeItem(storageKey);}catch{}};
  const announce=(message,state='pending',focus=false)=>{status.textContent=message;status.dataset.state=state;if(focus)status.focus();};
  const daysSlots=date=>(data?.slots||[]).filter(s=>day(s.start)===date);
@@ -104,12 +120,17 @@ export function mountCalendar(root,{api=root.dataset.api,fetcher=apiFetch}={}){
  form.addEventListener('submit',event=>{
   event.preventDefault();if(operation||sending||done)return;
   const name=form.elements.namedItem('name');name.setCustomValidity(name.value.trim()?'':t.name);
+  childName.setCustomValidity(childName.value.trim()?'':(locale==='de'?'Bitte geben Sie den Namen Ihres Kindes ein.':'Please enter your child’s name.'));
+  const digits=phone.value.replace(/\D/g,'');
+  phone.setCustomValidity(/^[+0-9() .\/-]+$/.test(phone.value.trim())&&digits.length>=7&&digits.length<=15?'':(locale==='de'?'Bitte geben Sie eine gültige Telefonnummer ein.':'Please enter a valid phone number.'));
+  updateAge();
   if(!form.reportValidity())return;
   if(!selected){announce(t.invalid,'error',true);return;}
-  operation={id:crypto.randomUUID(),start:selected.start,end:selected.end,payload:{locale,slotToken:selected.slotToken,parent:{name:name.value.trim(),email:form.elements.namedItem('email').value.trim()},notes:form.elements.namedItem('notes').value.trim(),website:form.elements.namedItem('website')?.value||''}};
+  operation={id:crypto.randomUUID(),start:selected.start,end:selected.end,payload:{locale,slotToken:selected.slotToken,parent:{name:name.value.trim(),email:form.elements.namedItem('email').value.trim(),phone:phone.value.trim()},child:{name:childName.value.trim(),birthDate:birthDate.value},notes:form.elements.namedItem('notes').value.trim(),website:form.elements.namedItem('website')?.value||''}};
   save();send();
  });
  form.elements.namedItem('name').addEventListener('input',event=>event.target.setCustomValidity(''));
+ for(const field of [phone,childName])field.addEventListener('input',()=>field.setCustomValidity(''));
  recover.addEventListener('click',send);reload.addEventListener('click',()=>load(data?.month));
  previous.addEventListener('click',()=>{const month=monthShift(data.month,-1);load(month,month+'-01');});next.addEventListener('click',()=>{const month=monthShift(data.month,1);load(month,month+'-01');});
  grid.addEventListener('focusin',event=>{const b=event.target.closest('[data-request-date]');if(b){focused=b.dataset.requestDate;grid.querySelectorAll('[data-request-date]').forEach(x=>x.tabIndex=x===b?0:-1);}});
@@ -118,7 +139,8 @@ export function mountCalendar(root,{api=root.dataset.api,fetcher=apiFetch}={}){
  q('[data-request-ui]').hidden=false;q('[data-request-fallback]').hidden=true;
  try{const stored=JSON.parse(sessionStorage.getItem(storageKey));if(stored?.id&&stored.payload&&stored.start&&stored.end){
   operation=stored;
-  for(const [name,value]of Object.entries({name:stored.payload.parent?.name,email:stored.payload.parent?.email,notes:stored.payload.notes}))if(typeof value==='string')form.elements.namedItem(name).value=value;
+  for(const [name,value]of Object.entries({name:stored.payload.parent?.name,email:stored.payload.parent?.email,phone:stored.payload.parent?.phone,childName:stored.payload.child?.name,birthDate:stored.payload.child?.birthDate,notes:stored.payload.notes}))if(typeof value==='string')form.elements.namedItem(name).value=value;
+  updateAge();
  }}catch{}
  if(operation){controls.disabled=true;controls.hidden=true;announce(t.pending+' '+t.selection+': '+label(operation));recover.hidden=false;}else load();
  return {reload:()=>load(data?.month)};
