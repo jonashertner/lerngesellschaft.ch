@@ -1,6 +1,6 @@
 /* A quiet, readable income guide within the violet fees section. */
-.tariff-guide{--rule:#d4d0da;grid-column:1/-1;min-width:0;margin-top:2rem;scroll-margin-top:8rem;border:1px solid var(--rule-inverse);border-radius:.75rem;overflow:hidden}
-.tariff-guide>summary{display:flex;align-items:center;justify-content:space-between;gap:1.5rem;padding:1.5rem;list-style:none;cursor:pointer;color:var(--bg)}
+.tariff-guide{--rule:#d4d0da;--guide-gutter:clamp(1rem,2.5vw,1.5rem);grid-column:1/-1;min-width:0;margin-top:2rem;scroll-margin-top:8rem;border:1px solid var(--rule-inverse);border-radius:.75rem;overflow:hidden}
+.tariff-guide>summary{display:flex;align-items:center;justify-content:space-between;gap:1.5rem;padding:var(--guide-gutter);list-style:none;cursor:pointer;color:var(--bg)}
 .tariff-guide>summary::-webkit-details-marker{display:none}
 .tariff-guide>summary::marker{content:""}
 .tariff-guide>summary:hover{background:#ffffff0d}
@@ -17,7 +17,11 @@
 .tariff-guide[open]>summary:focus-visible{outline-color:var(--violet)}
 .tariff-guide[open] .tariff-guide-toggle{color:var(--violet)}
 .tariff-guide[open] .tariff-guide-toggle::after{display:none}
-.tariff-guide-body{padding:1.5rem}
+.tariff-guide-body{padding:var(--guide-gutter)}
+.tariff-guide-support{margin:0 0 1.5rem;padding:0 0 1.5rem;border-bottom:1px solid var(--rule);font-size:1.0625rem;line-height:1.65}
+.tariff-guide-support strong,.tariff-guide-support span{display:block;max-width:75ch}
+.tariff-guide-support strong{color:var(--violet);font-size:1.125rem;font-weight:750;line-height:1.5;text-wrap:pretty}
+.tariff-guide-support span{margin-top:.4rem}
 .tariff-guide-intro,.tariff-guide-evidence{max-width:75ch;font-size:1.0625rem;line-height:1.65;margin:0}
 .tariff-guide-evidence{margin-top:.75rem;font-size:1rem;color:var(--teal-soft)}
 .income-table{width:100%;margin-top:2rem;border-collapse:collapse;table-layout:fixed;color:var(--teal-ink)}
@@ -40,7 +44,6 @@
 .tariff-guide-notes a{color:var(--violet);text-decoration:underline;text-underline-offset:.2em}
 .tariff-guide-notes a:focus-visible{outline:3px solid var(--violet);outline-offset:3px}
 @media(max-width:60rem){
- .tariff-guide>summary,.tariff-guide-body{padding:1.25rem}
  .income-table,.income-table tbody{display:block}
  .income-table caption{display:block}
  .income-table thead{position:absolute;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap}
@@ -56,7 +59,6 @@
 }
 @media(max-width:40rem){
  .tariff-guide>summary{gap:1rem}
- .tariff-guide-body{padding:1rem}
  .income-table tbody{grid-template-columns:minmax(0,1fr)}
  .tariff-guide-intro{font-size:1rem}
  .tariff-guide-toggle{width:2.25rem;height:2.25rem}

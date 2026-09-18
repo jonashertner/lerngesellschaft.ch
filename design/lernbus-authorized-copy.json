@@ -3217,6 +3217,40 @@
           }
         ]
       }
+    },
+    {
+      "date": "2026-09-18",
+      "authority": "Jonas requests moving the unchanged financial-access message inside the collapsed tariff guide and aligning its design. LG-DIR-TARIFF-FOLD-20260918.",
+      "pages": {
+        "lernbus/index.html": [
+          {
+            "start": 951,
+            "end": 951,
+            "before": "",
+            "after": "Kein Kind soll aus finanziellen Gründen auf den Lernbus verzichten müssen . Gemeinsam suchen wir im persönlichen Gespräch eine passende Lösung ."
+          },
+          {
+            "start": 1298,
+            "end": 1320,
+            "before": ". Kein Kind soll aus finanziellen Gründen auf den Lernbus verzichten müssen . Gemeinsam suchen wir im persönlichen Gespräch eine passende Lösung",
+            "after": ""
+          }
+        ],
+        "lernbus/en/index.html": [
+          {
+            "start": 1082,
+            "end": 1082,
+            "before": "",
+            "after": "No child should have to miss out on Lernbus for financial reasons . We will work with you in a personal conversation to find a suitable solution ."
+          },
+          {
+            "start": 1519,
+            "end": 1547,
+            "before": ". No child should have to miss out on Lernbus for financial reasons . We will work with you in a personal conversation to find a suitable solution",
+            "after": ""
+          }
+        ]
+      }
     }
   ]
 }

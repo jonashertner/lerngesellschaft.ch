@@ -12,6 +12,8 @@
   "de": {
     "heading": "Welcher Tarif passt zu uns?",
     "summary": "Orientierung nach Haushaltsgrösse und Einkommen",
+    "supportLead": "Kein Kind soll aus finanziellen Gründen auf den Lernbus verzichten müssen.",
+    "supportText": "Gemeinsam suchen wir im persönlichen Gespräch eine passende Lösung.",
     "intro": "Sie wählen Ihren Tarif selbst. Vergleichen Sie Ihre Haushaltsgrösse mit dem gemeinsamen Bruttojahreseinkommen aller Erwachsenen im Haushalt – vor Abzügen.",
     "evidence": "Wir verlangen keine Einkommensbelege. Für den Fördertarif A genügt ein FamilienpassPlus oder eine KulturLegi.",
     "caption": "Bruttojahreseinkommen des Haushalts in CHF",
@@ -35,6 +37,8 @@
   "en": {
     "heading": "Which rate is right for our family?",
     "summary": "A guide based on household size and income",
+    "supportLead": "No child should have to miss out on Lernbus for financial reasons.",
+    "supportText": "We will work with you in a personal conversation to find a suitable solution.",
     "intro": "You choose your own rate. Find your household size and compare it with the combined gross annual income of all adults in your household – before deductions.",
     "evidence": "We do not ask for proof of income. For subsidised rate A, a FamilienpassPlus or KulturLegi is sufficient.",
     "caption": "Gross annual household income in CHF",
