@@ -3195,6 +3195,28 @@
           }
         ]
       }
+    },
+    {
+      "date": "2026-09-18",
+      "authority": "Jonas relays Conny’s request: no child should be excluded for financial reasons; discuss a suitable solution personally. LG-DIR-CONNY-BOOKING-20260918.",
+      "pages": {
+        "lernbus/index.html": [
+          {
+            "start": 1299,
+            "end": 1299,
+            "before": "",
+            "after": "Kein Kind soll aus finanziellen Gründen auf den Lernbus verzichten müssen. Gemeinsam suchen wir im persönlichen Gespräch eine passende Lösung."
+          }
+        ],
+        "lernbus/en/index.html": [
+          {
+            "start": 1520,
+            "end": 1520,
+            "before": "",
+            "after": "No child should have to miss out on Lernbus for financial reasons. We will work with you in a personal conversation to find a suitable solution."
+          }
+        ]
+      }
     }
   ]
 }
