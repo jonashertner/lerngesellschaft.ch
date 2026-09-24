@@ -7,6 +7,7 @@ export default () => Object.fromEntries(
     ['styles', 'styles.css'],
     ['detail', 'detail.css'],
     ['concept', 'concept.css'],
+    ['research', 'research.css'],
     ['source-home', 'source-home.css'],
     ['tariffGuide', 'tariff-guide.css'],
     ['homeRefinement', 'home-refinement.css'],

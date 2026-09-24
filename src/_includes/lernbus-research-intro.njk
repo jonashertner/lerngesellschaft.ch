@@ -1,0 +1,8 @@
+<section class="section" id="forschung" aria-labelledby="research-heading">
+  <div class="wrap">
+    <p class="eyebrow">{{ 'Research' if researchEnglish else 'Forschung' }}</p>
+    <h2 class="big" id="research-heading">{{ 'What helps children learn?' if researchEnglish else 'Was hilft Kindern beim Lernen?' }}</h2>
+    <p class="lead" style="margin-top:1.4rem">{% if researchEnglish %}Research on guided play, shared reading and targeted support offers useful guidance for Lernbus. We explain what was studied, what helped and what remains uncertain — including session frequency and group size. Lernbus itself has not yet been evaluated for effectiveness.{% else %}Forschung zu angeleitetem Spiel, gemeinsamem Lesen und gezielter Förderung gibt Lernbus wichtige Anhaltspunkte. Wir erklären, was untersucht wurde, was half und was offenbleibt – auch zu Häufigkeit und Gruppengrösse. Die Wirksamkeit von Lernbus selbst wurde noch nicht untersucht.{% endif %}</p>
+    <p style="margin-top:1.5rem"><a class="morelink" style="margin-left:0" href="{{ '/lernbus/en/research/' if researchEnglish else '/lernbus/forschung/' }}">{{ 'Explore the research' if researchEnglish else 'Zur Forschung' }} <span aria-hidden="true">→</span></a></p>
+  </div>
+</section>
