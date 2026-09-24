@@ -1,0 +1,40 @@
+/* Quiet reading layout, using the existing Lernbus type, colours and navigation. */
+.research-page .research-hero .hero-inner{padding-bottom:3.5rem}
+.research-page .research-hero h1{max-width:17ch;margin-block:1.25rem 1.75rem}
+.research-page .research-hero .lead{max-width:58ch}
+.research-scope{max-width:66ch;margin-top:1.25rem}
+.research-date{margin-top:2rem;font-size:.875rem}
+.research-intro{max-width:66ch}
+.research-intro h2{margin-block:1rem 1.5rem}
+.research-topics{display:flex;flex-wrap:wrap;gap:.25rem 1.5rem;margin-block:2rem 3rem}
+.research-topics a{display:inline-flex;align-items:center;min-height:44px}
+.research-page main a{color:var(--violet);text-decoration:underline;text-underline-offset:.2em}
+.research-page main a:hover{text-decoration-thickness:2px}
+.research-page a:focus-visible{outline:3px solid var(--violet);outline-offset:4px}
+.research-study{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.5fr);gap:clamp(2rem,5vw,6rem);padding-block:3rem;border-top:1px solid var(--line);scroll-margin-top:calc(var(--lernbus-header-height, 7rem) + 1.5rem)}
+.research-study-heading h3{font-size:clamp(1.7rem,2.7vw,2.6rem);line-height:1.13;max-width:22ch;margin-top:1rem}
+.research-study-copy{max-width:65ch;min-width:0}
+.research-study-copy>p+p{margin-top:1rem}
+.research-meaning{border-left:3px solid var(--violet);padding-left:1.2rem}
+.research-sources{list-style:none;padding:0;margin:1.5rem 0 0;font-size:.875rem;line-height:1.5}
+.research-sources li+li{margin-top:.8rem}
+.research-sources a{font-weight:700}
+.research-sources span{display:block;margin-top:.15rem;overflow-wrap:anywhere}
+.research-questions{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2.5rem;margin-block:3rem}
+.research-questions h3{font-size:1.6rem;line-height:1.2;margin-bottom:1rem;max-width:24ch}
+.research-selection{max-width:75ch;font-size:.9375rem;margin-bottom:1.5rem}
+.research-page #einordnung .morelink{margin-left:0}
+@media(max-width:55rem){
+  .research-study{grid-template-columns:minmax(0,1fr);gap:1.5rem;padding-block:2.25rem}
+  .research-study-heading h3{max-width:28ch}
+  .research-questions{grid-template-columns:minmax(0,1fr);max-width:65ch;gap:2rem}
+  .research-questions h3{max-width:none}
+}
+@media print{
+  .research-page .research-hero .hero-inner{padding-top:1rem}
+  .research-topics,.research-page .site-head,.research-page .foot{display:none}
+  .research-study{display:block;break-inside:avoid;padding-block:1.5rem}
+  .research-study-heading{margin-bottom:1rem}
+  .research-questions{display:block}
+  .research-questions>div{margin-block:1.5rem}
+}
