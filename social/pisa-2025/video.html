@@ -1,0 +1,403 @@
+<!doctype html>
+<html lang="de-CH">
+<head>
+<meta charset="utf-8">
+<title>PISA 2025 · Schweiz – Lerngesellschaft (LinkedIn-Video)</title>
+<!--
+  Vertical LinkedIn video, 1080 × 1920. Every frame is a pure function of
+  time: render.mjs calls window.render(t) and captures the page. Open this
+  file in a browser and add #t=12.5 to the URL to inspect one moment.
+  Essential content stays between y = 300 and y = 1620, so a centred 4:5
+  crop keeps it intact.
+-->
+<style>
+@font-face{font-family:Bricolage;src:url('../../src/assets/fonts/bricolage-latin.woff2') format('woff2');font-weight:200 800}
+@font-face{font-family:Hanken;src:url('../../src/assets/fonts/hanken-latin.woff2') format('woff2');font-weight:100 900}
+:root{--bg:#221b29;--ink:#282030;--white:#fbf9fc;--muted:#b9afc3;--dim:#8a8095;--yellow:#f4d575;--pink:#ff6a9e;--lilac:#a99bd3;--line:rgba(255,255,255,.16);--side:84px}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1080px;height:1920px;overflow:hidden;background:var(--bg)}
+body{position:relative;font:500 40px/1.3 Hanken,Arial,sans-serif;color:var(--white);-webkit-font-smoothing:antialiased;font-optical-sizing:auto}
+#stage{position:absolute;inset:0;overflow:hidden;background:radial-gradient(130% 75% at 50% 40%,#2d2435 0%,#221b29 58%,#1b1521 100%)}
+#yellow{position:absolute;inset:0;background:var(--yellow);clip-path:inset(100% 0 0 0)}
+.scene{position:absolute;inset:0;display:none}
+.a{position:absolute;left:var(--side);right:var(--side)}
+[data-in]{opacity:0;will-change:transform,opacity}
+.w,.blk{display:inline-block}
+.blk{display:block}
+.nw{white-space:nowrap}
+.disp{font-family:Bricolage,Arial,sans-serif;font-weight:700;letter-spacing:-.04em;line-height:1.02}
+.num{font-family:Bricolage,Arial,sans-serif;font-variant-numeric:tabular-nums;font-feature-settings:"tnum" 1;letter-spacing:-.03em}
+.src{top:1742px;font:500 26px/1.4 Hanken,Arial,sans-serif;color:var(--dim)}
+
+/* Header, progress */
+#hdr{top:118px;display:flex;justify-content:space-between;align-items:baseline;color:var(--white)}
+#hdr .brand{display:flex;align-items:baseline;gap:16px}
+#hdr .word{font:650 44px/1 Bricolage,Arial,sans-serif;letter-spacing:-.045em}
+#hdr .place{font:500 26px/1 Hanken,Arial,sans-serif;opacity:.72}
+#hdr .tag{font:600 26px/1 Hanken,Arial,sans-serif;opacity:.72;display:flex;align-items:center;gap:12px}
+#hdr .dot{width:14px;height:14px;border-radius:50%;background:var(--yellow);display:inline-block;transform:translateY(-1px)}
+#bar{position:absolute;left:0;top:0;height:8px;width:0;background:var(--yellow)}
+
+/* S1 */
+.kicker{font:700 34px/1 Hanken,Arial,sans-serif;letter-spacing:.09em;text-transform:uppercase;color:var(--yellow)}
+.h1{font-size:136px;line-height:.98;letter-spacing:-.035em}
+.h1 .w{margin-right:.2em}
+.mark{position:relative;color:var(--yellow)}
+.mark i{position:absolute;left:0;right:.06em;bottom:-.1em;height:.11em;background:var(--yellow);transform-origin:left center;transform:scaleX(0)}
+.lede{font:500 50px/1.3 Hanken,Arial,sans-serif;color:var(--muted)}
+
+/* S2 */
+.h2{font-size:92px}
+.h2 .soft{color:var(--muted)}
+.label{font:700 34px/1 Hanken,Arial,sans-serif;letter-spacing:.09em;text-transform:uppercase;color:var(--yellow)}
+.big{display:flex;align-items:baseline;gap:22px;margin-top:6px}
+.big .num{font-size:300px;font-weight:780;line-height:.9}
+.big .unit{font:600 50px/1 Hanken,Arial,sans-serif;color:var(--muted)}
+.cmp{font:500 48px/1.2 Hanken,Arial,sans-serif;color:var(--muted);margin-top:26px}
+.cmp b{font:750 48px/1 Bricolage,Arial,sans-serif;color:var(--lilac);letter-spacing:-.02em}
+.rule{height:2px;background:var(--line);margin:44px 0 38px}
+.say{font:650 60px/1.12 Bricolage,Arial,sans-serif;letter-spacing:-.03em}
+
+/* S3 chart */
+.h3{font-size:100px}
+.ctitle{font:600 34px/1.2 Hanken,Arial,sans-serif;color:var(--muted)}
+svg text{font-family:Bricolage,Arial,sans-serif}
+.ylab{font-weight:720;font-size:46px;letter-spacing:-.02em;fill:var(--white)}
+.xlab{font-family:Hanken,Arial,sans-serif;font-weight:600;font-size:32px;fill:var(--muted)}
+.olab{font-family:Hanken,Arial,sans-serif;font-weight:600;font-size:30px;fill:var(--lilac)}
+.pill{font-family:Hanken,Arial,sans-serif;font-weight:750;font-size:34px;fill:var(--ink)}
+
+/* S4 */
+.minus{font-size:380px;font-weight:800;line-height:.86;color:var(--pink)}
+.h4{font:680 66px/1.08 Bricolage,Arial,sans-serif;letter-spacing:-.035em}
+.body{font:500 50px/1.3 Hanken,Arial,sans-serif;color:var(--white)}
+.body.m{color:var(--muted)}
+.barlab{font:650 34px/1.2 Hanken,Arial,sans-serif}
+.barrow{height:52px;position:relative;margin-top:14px}
+.barrow i{position:absolute;left:0;top:0;bottom:0;transform-origin:left center;transform:scaleX(0)}
+
+/* S5 */
+.h5{font-size:84px}
+.sub{font:500 44px/1.3 Hanken,Arial,sans-serif;color:var(--muted)}
+.counter{display:flex;justify-content:space-between;align-items:baseline}
+.counter .yr{font:720 64px/1 Bricolage,Arial,sans-serif;letter-spacing:-.02em;color:var(--muted)}
+.counter .pc{font-size:150px;font-weight:800;line-height:.9;color:var(--pink)}
+#waffle{position:absolute;left:229px;width:622px;height:622px;display:grid;grid-template-columns:repeat(10,46px);grid-auto-rows:46px;gap:18px}
+#waffle b{display:block;border-radius:50%;background:rgba(255,255,255,.14)}
+.tag5{display:inline-flex;align-items:center;gap:18px;padding:14px 26px;border-radius:999px;background:rgba(255,106,158,.16);border:2px solid var(--pink);font:650 40px/1 Hanken,Arial,sans-serif}
+.tag5 b{font:780 44px/1 Bricolage,Arial,sans-serif;color:var(--pink);letter-spacing:-.02em}
+
+/* S6 */
+.why{font-size:160px;color:var(--yellow)}
+.items{display:flex;flex-direction:column;gap:46px}
+.item{display:flex;align-items:center;gap:34px}
+.item svg{flex:0 0 96px;height:96px}
+.item .t{font:650 60px/1.08 Bricolage,Arial,sans-serif;letter-spacing:-.03em}
+.item .s{font:500 40px/1.25 Hanken,Arial,sans-serif;color:var(--muted);margin-top:8px}
+.ki{font:600 52px/1.24 Hanken,Arial,sans-serif}
+.ki em{font-style:normal;color:var(--yellow)}
+
+/* S7 */
+.h7{font-size:132px;color:var(--ink);line-height:.98}
+.body7{font:500 58px/1.28 Hanken,Arial,sans-serif;color:var(--ink)}
+.hl7{font:720 86px/1.18 Bricolage,Arial,sans-serif;letter-spacing:-.035em;color:var(--yellow)}
+.hl7 span{background:var(--ink);padding:0 .14em;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+
+/* S8 */
+.wm{font:700 128px/1 Bricolage,Arial,sans-serif;letter-spacing:-.05em}
+.wm-place{font:500 46px/1 Hanken,Arial,sans-serif;color:var(--muted)}
+.tagline{font:620 70px/1.1 Bricolage,Arial,sans-serif;letter-spacing:-.035em;color:var(--yellow)}
+.url{display:inline-flex;align-items:center;gap:36px;padding:26px 34px;background:var(--yellow);color:var(--ink);font:750 46px/1 Hanken,Arial,sans-serif;border-radius:3px}
+.about{font:500 38px/1.35 Hanken,Arial,sans-serif;color:var(--muted)}
+.fine{font:500 27px/1.45 Hanken,Arial,sans-serif;color:var(--dim)}
+</style>
+</head>
+<body>
+<div id="stage">
+  <div id="yellow"></div>
+
+  <!-- S1 · Hook -->
+  <section class="scene" id="s1" data-start="0" data-end="4.6" data-out="4.1">
+    <p class="a kicker" style="top:600px" data-in="0.25">Neue PISA-Resultate</p>
+    <h1 class="a disp h1" style="top:680px"><span class="w" data-in="0.45">Werden</span><span class="w" data-in="0.6">unsere</span><span class="w" data-in="0.75">Jugendlichen</span><span class="w mark" data-in="0.9">dümmer?<i id="mark1"></i></span></h1>
+    <p class="a lede" style="top:1196px" data-in="2.1">Was die Zahlen für die Schweiz zeigen.</p>
+  </section>
+
+  <!-- S2 · Measures skills, not intelligence; maths strength -->
+  <section class="scene" id="s2" data-start="4.6" data-end="12" data-out="11.5">
+    <h2 class="a disp h2" style="top:380px"><span class="blk" data-in="4.75">PISA misst nicht Intelligenz,</span><span class="blk soft" data-in="5.35">sondern was <span class="nw">15-Jährige</span> können.</span></h2>
+    <div class="a" style="top:856px">
+      <p class="label" data-in="6.35">Mathematik, Schweiz</p>
+      <p class="big"><span class="num" id="c499" data-in="6.4">0</span><span class="unit" data-in="6.7">Punkte</span></p>
+      <p class="cmp" data-in="7.6">OECD-Durchschnitt: <b>463</b></p>
+      <div class="rule" data-in="8.4" data-dy="0"></div>
+      <p class="say" data-in="8.6">Nur drei OECD-Länder schneiden besser ab.</p>
+    </div>
+    <p class="a src" data-in="4.9" data-dy="0">Quellen: OECD, PISA 2025; SBFI/EDK, 8.9.2026</p>
+  </section>
+
+  <!-- S3 · Reading trend -->
+  <section class="scene" id="s3" data-start="12" data-end="22.2" data-out="21.7">
+    <h2 class="a disp h3" style="top:352px"><span class="blk" data-in="12.15">Doch beim Lesen</span><span class="blk" data-in="12.5">geht es abwärts.</span></h2>
+    <p class="a ctitle" style="top:622px" data-in="13" data-dy="20">Lesekompetenz Schweiz, in PISA-Punkten</p>
+    <svg class="a" id="chart" style="top:700px" width="912" height="820" viewBox="0 0 912 820" overflow="visible">
+      <line x1="0" y1="742" x2="912" y2="742" stroke="rgba(255,255,255,.22)" stroke-width="2" data-in="13.1" data-dy="0"/>
+      <g id="xlabels" data-in="13.2" data-dy="0"></g>
+      <path id="p1" fill="none" stroke="#fbf9fc" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+      <path id="p2" fill="none" stroke="#ff6a9e" stroke-width="9" stroke-linecap="round"/>
+      <g id="pts"></g>
+      <g data-in="17.3" data-dy="0">
+        <circle id="oecdDot" r="13" fill="none" stroke="#a99bd3" stroke-width="5"/>
+        <text id="oecdLab" class="olab" text-anchor="end">OECD-Durchschnitt 2025: 461</text>
+      </g>
+      <g data-in="18" data-dy="16">
+        <line id="pillLine" stroke="#ff6a9e" stroke-width="3" stroke-dasharray="2 9" stroke-linecap="round"/>
+        <rect id="pillBox" rx="30" fill="#ff6a9e"/>
+        <text id="pillText" class="pill" text-anchor="middle">So tief wie noch nie</text>
+      </g>
+    </svg>
+    <p class="a src" data-in="12.3" data-dy="0">Quelle: OECD, PISA 2015, 2018, 2022 und 2025</p>
+  </section>
+
+  <!-- S4 · Roughly one school year -->
+  <section class="scene" id="s4" data-start="22.2" data-end="30.6" data-out="30.1">
+    <p class="a num minus" id="c22" style="top:392px" data-in="22.3" data-dy="30">0</p>
+    <p class="a h4" style="top:748px" data-in="22.9">Punkte beim Lesen seit 2015</p>
+    <p class="a body" style="top:870px" data-in="24">Nach einer Faustregel der OECD entsprechen rund 20&#8239;Punkte einem Schuljahr.</p>
+    <div class="a" style="top:1136px">
+      <p class="barlab" style="color:var(--pink)" data-in="25.3" data-dy="20">Rückgang seit 2015: 22&#8239;Punkte</p>
+      <div class="barrow"><i id="barA" style="width:836px;background:var(--pink)"></i></div>
+      <p class="barlab" style="margin-top:30px" data-in="25.8" data-dy="20">Ein Schuljahr (Faustregel): 20&#8239;Punkte</p>
+      <div class="barrow"><i id="barB" style="width:760px;border:4px solid var(--white)"></i></div>
+    </div>
+    <p class="a body m" style="top:1478px;font-size:44px" data-in="27.6">Auch in Mathematik: minus 22&#8239;Punkte,<br>von 521 auf 499.</p>
+    <p class="a src" data-in="22.4" data-dy="0">Quelle: OECD, PISA 2025 (Band I); eigene Darstellung</p>
+  </section>
+
+  <!-- S5 · Weak readers -->
+  <section class="scene" id="s5" data-start="30.6" data-end="43" data-out="42.5">
+    <h2 class="a disp h5" style="top:318px"><span class="blk" data-in="30.75">Mehr als ein Viertel</span><span class="blk" data-in="31.0">der <span class="nw">15-Jährigen</span> liest</span><span class="blk" data-in="31.25">zu schwach,</span></h2>
+    <p class="a sub" style="top:594px" data-in="31.7">um die Hauptaussage eines mittellangen Textes selbstständig zu erfassen.</p>
+    <div class="a counter" style="top:748px" data-in="32.2" data-dy="20"><span class="yr" id="yr">2015</span><span class="num pc" id="pct">0,0&#8239;%</span></div>
+    <div id="waffle" style="top:914px"></div>
+    <p class="a" style="top:1560px;text-align:center" data-in="39.2" data-dy="24"><span class="tag5">Bei den Knaben: <b>34,2&#8239;%</b></span></p>
+    <p class="a src" data-in="30.9" data-dy="0">Quellen: PISA 2025, Ergebnisse Schweiz (SBFI/EDK); SRF, 8.9.2026. Leseschwach&#8239;=&#8239;unter Kompetenzniveau&#8239;2.</p>
+  </section>
+
+  <!-- S6 · Why -->
+  <section class="scene" id="s6" data-start="43" data-end="55" data-out="54.5">
+    <h2 class="a disp why" style="top:340px" data-in="43.15">Warum?</h2>
+    <p class="a sub" style="top:540px" data-in="43.9">Laut OECD gehen schwächere Leseleistungen einher mit:</p>
+    <div class="a items" style="top:708px"><div class="item" data-in="45">
+      <svg viewBox="0 0 96 96" fill="none" stroke="#f4d575" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"><rect x="27" y="8" width="42" height="80" rx="9"/><path d="M42 75h12"/></svg>
+      <div><p class="t">mehr Bildschirmzeit</p></div>
+    </div>
+    <div class="item" data-in="46.2">
+      <svg viewBox="0 0 96 96" fill="none" stroke="#f4d575" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"><path d="M48 26c-8-6-21-8-36-6v58c15-2 28 0 36 6 8-6 21-8 36-6V20c-15-2-28 0-36 6z"/><path d="M48 26v58"/></svg>
+      <div><p class="t">weniger Lesen zum Vergnügen</p></div>
+    </div>
+    <div class="item" data-in="47.4">
+      <svg viewBox="0 0 96 96" fill="none" stroke="#f4d575" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 24l32 24-32 24z"/><path d="M50 24l32 24-32 24z"/></svg>
+      <div><p class="t">mehr «hastigem Lesen»</p><p class="s">Texte überfliegen, schnell falsch antworten</p></div>
+    </div>
+    </div>
+    <div class="a" style="top:1262px;height:2px;background:var(--line)" data-in="49.2" data-dy="0"></div>
+    <p class="a ki" style="top:1308px" data-in="49.5"><em>Und:</em> Jugendliche in der Schweiz nutzen KI für die Schule häufiger als im OECD-Durchschnitt.</p>
+    <p class="a src" data-in="43.3" data-dy="0">Quellen: OECD, Mathias Cormann, 8.9.2026; SBFI/EDK, 8.9.2026</p>
+  </section>
+
+  <!-- S7 · Reading starts early -->
+  <section class="scene" id="s7" data-start="55" data-end="64" data-out="63.1">
+    <h2 class="a disp h7" style="top:452px"><span class="blk" data-in="55.8">Lesen beginnt</span><span class="blk" data-in="56.15">nicht mit 15.</span></h2>
+    <p class="a body7" style="top:788px" data-in="57.4">Es beginnt mit Sprache:<br>mit Gesprächen, Geschichten<br>und Fragen.</p>
+    <p class="a hl7" style="top:1100px" data-in="59.4"><span>Und mit einem Gegenüber, das zuhört.</span></p>
+  </section>
+
+  <!-- S8 · End card -->
+  <section class="scene" id="s8" data-start="64" data-end="999" data-out="999">
+    <p class="a wm" style="top:560px" data-in="64.25">Lerngesellschaft</p>
+    <p class="a wm-place" style="top:708px" data-in="64.5">Basel</p>
+    <p class="a tagline" style="top:830px" data-in="64.9">Neugier begleiten.<br>Möglichkeiten eröffnen.</p>
+    <p class="a" style="top:1050px" data-in="65.5"><span class="url">lerngesellschaft.ch<svg width="34" height="34" viewBox="0 0 34 34" fill="none" stroke="currentColor" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 26L26 8M12 8h14v14"/></svg></span></p>
+    <p class="a about" style="top:1200px" data-in="65.9">Gemeinnütziger Verein. Bildungsangebote für Kinder und Schulen in Basel.</p>
+    <p class="a fine" style="top:1476px" data-in="66.4" data-dy="0">Quellen: OECD, PISA 2025 Results (Band I), 8.9.2026 · SBFI/EDK, Medienmitteilung vom 8.9.2026 · SRF, 8.9.2026 · Faustregel 20&#8239;Punkte pro Schuljahr: OECD.</p>
+  </section>
+
+  <header id="hdr" class="a">
+    <div class="brand"><span class="word">Lerngesellschaft</span><span class="place">Basel</span></div>
+    <div class="tag"><i class="dot"></i>PISA 2025 · Schweiz</div>
+  </header>
+  <div id="bar"></div>
+</div>
+
+<script>
+const VIDEO = { duration: 71, fps: 30 };
+window.VIDEO = VIDEO;
+
+const clamp = (x, a = 0, b = 1) => Math.min(b, Math.max(a, x));
+const eOut = x => 1 - Math.pow(1 - x, 3);
+const eIn = x => x * x * x;
+const eIO = x => (x < 0.5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2);
+const P = (t, start, dur) => clamp((t - start) / dur);
+const fmt = (v, dec = 0) => v.toFixed(dec).replace('.', ',');
+const $ = id => document.getElementById(id);
+const NS = 'http://www.w3.org/2000/svg';
+const svgEl = (name, attrs, parent) => {
+  const el = document.createElementNS(NS, name);
+  for (const [k, v] of Object.entries(attrs)) el.setAttribute(k, v);
+  parent.appendChild(el);
+  return el;
+};
+
+// Scene windows and entrance/exit timings come from data attributes.
+const scenes = [...document.querySelectorAll('.scene')].map(el => ({
+  el, start: +el.dataset.start, end: +el.dataset.end,
+}));
+const anim = [...document.querySelectorAll('[data-in]')].map(el => {
+  const scene = el.closest('.scene');
+  return {
+    el,
+    tin: +el.dataset.in,
+    tout: el.dataset.out !== undefined ? +el.dataset.out : scene ? +scene.dataset.out : Infinity,
+    dy: el.dataset.dy !== undefined ? +el.dataset.dy : 44,
+    dur: el.dataset.dur !== undefined ? +el.dataset.dur : 0.7,
+  };
+});
+
+// S3 chart geometry: Swiss reading scores, x proportional to the survey year.
+const READING = [[2015, 492], [2018, 484], [2022, 483], [2025, 470]];
+const X = year => 60 + ((year - 2015) / 10) * 792;
+const Y = score => 80 + ((500 - score) / 45) * 640;
+const chart = $('chart');
+const pts = READING.map(([year, score]) => ({ year, score, x: X(year), y: Y(score) }));
+$('p1').setAttribute('d', `M${pts[0].x},${pts[0].y} L${pts[1].x},${pts[1].y} L${pts[2].x},${pts[2].y}`);
+$('p2').setAttribute('d', `M${pts[2].x},${pts[2].y} L${pts[3].x},${pts[3].y}`);
+const L1 = Math.hypot(pts[1].x - pts[0].x, pts[1].y - pts[0].y);
+const L2 = L1 + Math.hypot(pts[2].x - pts[1].x, pts[2].y - pts[1].y);
+const L3 = Math.hypot(pts[3].x - pts[2].x, pts[3].y - pts[2].y);
+for (const [id, len] of [['p1', L2], ['p2', L3]]) {
+  $(id).style.strokeDasharray = `${len} ${len}`;
+  $(id).style.strokeDashoffset = len;
+}
+const xg = $('xlabels');
+for (const p of pts) svgEl('text', { x: p.x, y: 796, class: 'xlab', 'text-anchor': 'middle' }, xg).textContent = p.year;
+const pg = $('pts');
+pts.forEach((p, i) => {
+  const last = i === pts.length - 1;
+  p.g = svgEl('g', {}, pg);
+  p.dot = svgEl('circle', { cx: p.x, cy: p.y, r: last ? 15 : 12, fill: last ? '#ff6a9e' : '#221b29', stroke: last ? '#ff6a9e' : '#fbf9fc', 'stroke-width': 6 }, p.g);
+  p.lab = svgEl('text', { x: p.x, y: p.y - (last ? 40 : 34), class: 'ylab', 'text-anchor': 'middle' }, p.g);
+  p.lab.textContent = p.score;
+  if (last) { p.lab.style.fill = '#ff6a9e'; p.lab.style.fontSize = '68px'; }
+  p.dot.style.transformOrigin = `${p.x}px ${p.y}px`;
+});
+const oy = Y(461);
+$('oecdDot').setAttribute('cx', pts[3].x); $('oecdDot').setAttribute('cy', oy);
+$('oecdLab').setAttribute('x', pts[3].x - 34); $('oecdLab').setAttribute('y', oy + 11);
+// Annotation pill sits below the falling segment, pointing at the 2025 value.
+const pillW = 356, pillH = 62, pillX = 330, pillY = pts[3].y - pillH / 2;
+$('pillBox').setAttribute('x', pillX); $('pillBox').setAttribute('y', pillY);
+$('pillBox').setAttribute('width', pillW); $('pillBox').setAttribute('height', pillH);
+$('pillText').setAttribute('x', pillX + pillW / 2); $('pillText').setAttribute('y', pillY + 43);
+$('pillLine').setAttribute('x1', pillX + pillW + 14); $('pillLine').setAttribute('y1', pts[3].y);
+$('pillLine').setAttribute('x2', pts[3].x - 30); $('pillLine').setAttribute('y2', pts[3].y);
+
+// S5 waffle: 100 dots, filled row by row.
+const waffle = $('waffle');
+const dots = Array.from({ length: 100 }, () => waffle.appendChild(document.createElement('b')));
+const WAFFLE_STAGES = [
+  { year: '2015', start: 33.0, dur: 1.1, from: 0, to: 19.9 },
+  { year: '2022', start: 35.2, dur: 0.9, from: 19.9, to: 24.7 },
+  { year: '2025', start: 37.0, dur: 0.9, from: 24.7, to: 28.8 },
+];
+
+const WHITE = [251, 249, 252], INK = [40, 32, 48];
+const mix = (a, b, k) => `rgb(${a.map((v, i) => Math.round(v + (b[i] - v) * k)).join(',')})`;
+
+function render(t) {
+  for (const s of scenes) s.el.style.display = t >= s.start && t < s.end ? 'block' : 'none';
+
+  for (const a of anim) {
+    const i = eOut(P(t, a.tin, a.dur));
+    const o = eIn(P(t, a.tout, 0.5));
+    a.el.style.opacity = (i * (1 - o)).toFixed(4);
+    a.el.style.transform = `translate3d(0,${((1 - i) * a.dy - o * 30).toFixed(2)}px,0)`;
+  }
+
+  // S1: underline under «dümmer?»
+  $('mark1').style.transform = `scaleX(${eIO(P(t, 1.45, 0.5)).toFixed(4)})`;
+
+  // S2: maths score counter
+  $('c499').textContent = Math.round(499 * eIO(P(t, 6.45, 1.4)));
+
+  // S3: line drawing, points pop as the line reaches them
+  const d1 = eIO(P(t, 13.4, 2.2)) * L2;
+  const d2 = eIO(P(t, 15.65, 1.0)) * L3;
+  $('p1').style.strokeDashoffset = (L2 - d1).toFixed(2);
+  $('p2').style.strokeDashoffset = (L3 - d2).toFixed(2);
+  // A round cap on an undrawn path would still paint a dot.
+  $('p1').style.opacity = d1 > 0.5 ? 1 : 0;
+  $('p2').style.opacity = d2 > 0.5 ? 1 : 0;
+  const reach = [P(t, 13.35, 0.3), clamp((d1 - L1) / 60), clamp((d1 - L2 + 1) / 1) * P(t, 15.4, 0.3), P(t, 16.55, 0.35)];
+  pts.forEach((p, i) => {
+    const k = eOut(reach[i]);
+    p.g.style.opacity = k.toFixed(4);
+    p.dot.style.transform = `scale(${(0.4 + 0.6 * k).toFixed(4)})`;
+  });
+  const pulse = t > 16.9 && t < 21.7 ? 1 + 0.12 * Math.sin((t - 16.9) * 5.2) : 1;
+  pts[3].dot.setAttribute('r', (15 * pulse).toFixed(2));
+
+  // S4: minus counter and bars
+  const n = Math.round(22 * eIO(P(t, 22.45, 1.2)));
+  $('c22').textContent = n === 0 ? '0' : '−' + n;
+  $('barA').style.transform = `scaleX(${eIO(P(t, 25.4, 1.0)).toFixed(4)})`;
+  $('barB').style.transform = `scaleX(${eIO(P(t, 25.9, 1.0)).toFixed(4)})`;
+
+  // S5: waffle and share of weak readers
+  let share = 0, year = '2015', flip = 1;
+  for (const s of WAFFLE_STAGES) {
+    if (t >= s.start) { share = s.from + (s.to - s.from) * eIO(P(t, s.start, s.dur)); year = s.year; flip = eOut(P(t, s.start, 0.4)); }
+  }
+  $('pct').textContent = fmt(share, 1) + ' %';
+  $('yr').textContent = year;
+  $('yr').style.opacity = (0.35 + 0.65 * flip).toFixed(3);
+  const lit = Math.round(share);
+  const dotsIn = P(t, 32.1, 0.9);
+  dots.forEach((dot, i) => {
+    const row = Math.floor(i / 10), col = i % 10;
+    const k = eOut(clamp(dotsIn * 1.8 - (row + col) * 0.045));
+    const out = eIn(P(t, 42.5, 0.5));
+    dot.style.opacity = (k * (1 - out)).toFixed(3);
+    dot.style.transform = `scale(${(0.5 + 0.5 * k).toFixed(3)})`;
+    dot.style.background = i < lit ? '#ff6a9e' : 'rgba(255,255,255,.14)';
+  });
+
+  // S7: yellow field wipes up from the bottom, then clears upwards
+  const yIn = eIO(P(t, 55.0, 0.7));
+  const yOut = eIO(P(t, 63.4, 0.6));
+  $('yellow').style.clipPath = `inset(${((1 - yIn) * 100).toFixed(3)}% 0 ${(yOut * 100).toFixed(3)}% 0)`;
+  const onYellow = clamp(P(t, 55.3, 0.4) - P(t, 63.4, 0.3));
+
+  // Header and progress bar
+  const hdr = $('hdr');
+  hdr.style.opacity = (eOut(P(t, 0.05, 0.5)) * (1 - eIn(P(t, 63.5, 0.4)))).toFixed(4);
+  hdr.style.color = mix(WHITE, INK, onYellow);
+  hdr.querySelector('.dot').style.background = onYellow > 0.5 ? '#282030' : '#f4d575';
+  const bar = $('bar');
+  bar.style.width = `${((t / VIDEO.duration) * 1080).toFixed(2)}px`;
+  bar.style.background = onYellow > 0.5 ? '#282030' : '#f4d575';
+}
+window.render = render;
+
+window.ready = Promise.all([
+  document.fonts.load('700 100px Bricolage'),
+  document.fonts.load('500 40px Hanken'),
+]).then(() => document.fonts.ready);
+
+// For manual inspection in a browser: video.html#t=12.5
+const fromHash = () => render(parseFloat((location.hash.match(/t=([\d.]+)/) || [])[1] || '3'));
+window.addEventListener('hashchange', fromHash);
+window.ready.then(fromHash);
+</script>
+</body>
+</html>

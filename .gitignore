@@ -5,3 +5,4 @@ _site
 *.log
 output/lernbus-site-preview/
 output/lernbus-site-preview.tar.gz
+social/**/stills/
