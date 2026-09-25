@@ -3400,6 +3400,83 @@
           }
         ]
       }
+    },
+    {
+      "authorization": "Jonas, 25 September 2026: remove the research section until it has been improved. Remove DE/EN pages, introductions, footer links and sitemap entries. Preserve the prior factual FAQ corrections. Draft archived privately.",
+      "pages": {
+        "lernbus/index.html": [
+          {
+            "start": 470,
+            "end": 524,
+            "before": "→ Forschung Was hilft Kindern beim Lernen ? Forschung zu angeleitetem Spiel , gemeinsamem Lesen und gezielter Förderung gibt Lernbus wichtige Anhaltspunkte . Wir erklären , was untersucht wurde , was half und was offenbleibt – auch zu Häufigkeit und Gruppengrösse . Die Wirksamkeit von Lernbus selbst wurde noch nicht untersucht . Zur Forschung",
+            "after": ""
+          },
+          {
+            "start": 1913,
+            "end": 1914,
+            "before": "Forschung",
+            "after": ""
+          }
+        ],
+        "lernbus/en/index.html": [
+          {
+            "start": 522,
+            "end": 578,
+            "before": "→ Research What helps children learn ? Research on guided play , shared reading and targeted support offers useful guidance for Lernbus . We explain what was studied , what helped and what remains uncertain — including session frequency and group size . Lernbus itself has not yet been evaluated for effectiveness . Explore the research",
+            "after": ""
+          },
+          {
+            "start": 2190,
+            "end": 2191,
+            "before": "Research",
+            "after": ""
+          }
+        ],
+        "lernbus/team/index.html": [
+          {
+            "start": 588,
+            "end": 589,
+            "before": "Forschung",
+            "after": ""
+          }
+        ],
+        "lernbus/team/en/index.html": [
+          {
+            "start": 889,
+            "end": 890,
+            "before": "Research",
+            "after": ""
+          }
+        ],
+        "lernbus/konzept/index.html": [
+          {
+            "start": 707,
+            "end": 761,
+            "before": "Forschung Was hilft Kindern beim Lernen ? Forschung zu angeleitetem Spiel , gemeinsamem Lesen und gezielter Förderung gibt Lernbus wichtige Anhaltspunkte . Wir erklären , was untersucht wurde , was half und was offenbleibt – auch zu Häufigkeit und Gruppengrösse . Die Wirksamkeit von Lernbus selbst wurde noch nicht untersucht . Zur Forschung →",
+            "after": ""
+          },
+          {
+            "start": 1422,
+            "end": 1423,
+            "before": "Forschung",
+            "after": ""
+          }
+        ],
+        "lernbus/en/konzept/index.html": [
+          {
+            "start": 789,
+            "end": 845,
+            "before": "Research What helps children learn ? Research on guided play , shared reading and targeted support offers useful guidance for Lernbus . We explain what was studied , what helped and what remains uncertain — including session frequency and group size . Lernbus itself has not yet been evaluated for effectiveness . Explore the research →",
+            "after": ""
+          },
+          {
+            "start": 1591,
+            "end": 1592,
+            "before": "Research",
+            "after": ""
+          }
+        ]
+      }
     }
   ]
 }
