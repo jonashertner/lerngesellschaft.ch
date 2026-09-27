@@ -1,11 +1,21 @@
 # PISA 2025 · Schweiz: LinkedIn video
 
-An 87-second vertical video (1080 × 1920, 30 fps, H.264) for the Lerngesellschaft
-LinkedIn page. It follows the structure of The Economist's short "Are teenagers
-getting dumber?" (24 September 2026, 2:24), retold in German with Swiss data.
-It is our own work: no Economist footage, script, charts or design are used.
-The imagery comes from our own website: the Lernbus room, the learning-box
-illustration and the Rhine panorama.
+Two cuts of the same story for the Lerngesellschaft LinkedIn page, both
+vertical (1080 × 1920, 30 fps, H.264), in German with Swiss data. They follow
+The Economist's short "Are teenagers getting dumber?" (24 September 2026, 2:24).
+Both are our own work: no Economist footage, script, charts, logo or fonts are
+used.
+
+1. **Magazine-style cut** (`video-economist.html`, `pisa-2025-lesen-economist-9x16.mp4`,
+   101 s). Same visual language as the original: footage with lower-third
+   captions, charts on grey paper with a red tag, blue-ink drawings on graph
+   paper, a roundel at start and end. See the section below.
+2. **Brand cut** (`video.html`, `pisa-2025-lesen-9x16.mp4`, 87 s), in the
+   Lerngesellschaft colours and typefaces.
+
+The rest of this section describes the brand cut. The imagery comes from our
+own website: the Lernbus room, the learning-box illustration and the Rhine
+panorama.
 
 - `pisa-2025-lesen-9x16.mp4` is the upload file. It has no voice or music, so
   it works for LinkedIn's muted autoplay; all information is on screen, and a
@@ -136,3 +146,75 @@ scene timing:
 > Lesen beginnt aber nicht mit 15. Es beginnt mit Sprache – mit Gesprächen, Geschichten und Fragen. Und mit einem Gegenüber, das zuhört.
 >
 > Lerngesellschaft. Neugier begleiten. Möglichkeiten eröffnen.
+
+## Magazine-style cut
+
+`video-economist.html` rebuilds the story in the visual language of the
+original. Everything is our own: the script, the charts and illustrations, and
+the branding (a Lerngesellschaft roundel at the start, roundel and wordmark at
+the end).
+
+- **Footage**: the homepage film behind the title, graded like archive film
+  and labelled «Symbolbild», then slow camera moves over the two Lernbus room
+  photos. `render.mjs` extracts the film frames into `.cache/` (git-ignored).
+- **Charts**: grey paper, red tag, bold title, gridlines, "Quelle" line, lines
+  in navy, light blue and red; a dumbbell chart for the neighbours and a dot
+  chart for maths.
+- **Illustrations**: blue ink on graph paper, drawn stroke by stroke: an open
+  book under a rain cloud (weak readers), a phone with notifications (screen
+  time), a reader seen from above with a marked answer sheet (hasty readers), a
+  chat prompt and an AI reply.
+- **Captions**: the whole story runs as short lower-third captions, as in the
+  original when it plays muted. The caption text is the voiceover script if
+  someone records one later.
+- **Fonts**: Source Serif 4, Libre Franklin, Roboto Condensed and Caveat, all
+  SIL Open Font License (licences in `fonts/`), plus Bricolage for our wordmark.
+
+`cover-economist.jpg` is the thumbnail for this cut. The film grain changes
+every frame, so the renderer captures JPEG frames and encodes at CRF 25
+(about 16 MB); at 100 % zoom that is indistinguishable from CRF 17 (97 MB).
+
+```sh
+node social/pisa-2025/render.mjs --page=video-economist.html
+```
+
+**Legal note.** A visual style is not protected by copyright, but copying a
+distinctive get-up can create a risk of confusion under Art. 3 Abs. 1 lit. d
+UWG. The cut therefore uses no Economist name, logo, fonts or footage, opens
+and closes on our own mark, and the post names the Economist as the
+inspiration.
+
+**Homepage film.** The film looks AI-generated and its source is not
+documented in the repository. It appears only as a labelled «Symbolbild».
+Confirm the licence before posting; if it is AI-generated, «Symbolbild
+(KI-generiert)» is the more transparent label.
+
+### Captions (timecodes in seconds)
+
+| Time | Scene | Caption |
+|---|---|---|
+| 0–3.6 | Film (archive grade), title «Werden unsere Jugendlichen dümmer?» | Werden unsere Jugendlichen dümmer? |
+| 3.6–7.8 | Film | Die neue PISA-Studie der OECD · misst, was 15-Jährige können: |
+| 7.8–23 | Chart: Schweiz, durchschnittliche PISA-Punkte 2015–2025 | in Mathematik, Naturwissenschaften und Lesen. · In der Schweiz sinken die Resultate · in Mathematik und beim Lesen. · Beim Lesen erreichen 15-Jährige · nur noch 470 Punkte – · so wenig wie nie zuvor. · Minus 22 Punkte seit 2015. · Laut OECD rund ein Schuljahr. |
+| 23–26.2 | Lernbus room, picture books | Und im Vergleich mit den Nachbarn? |
+| 26.2–37 | Dumbbell: Lesen 2015/2025, DE/CH/AT, OECD-Schnitt 461 | Das sind die Resultate von 2015. · Und so sehen sie 2025 aus. · Deutschland verliert 44 Punkte, · Österreich 18. · Im OECD-Durchschnitt: minus 28. |
+| 37–41 | Lernbus room | Doch es geht nicht nur um Durchschnitte. · Immer mehr lesen zu schwach. |
+| 41–53.4 | Graph paper: 19,9 % → 28,8 %, Knaben 34,2 % | 2015 konnten 19,9 Prozent · die Hauptaussage eines mittellangen Textes · nicht selbstständig erfassen. · 2025 sind es 28,8 Prozent. · Bei den Knaben · sogar 34,2 Prozent. |
+| 53.4–61 | Graph paper: phone, "3,4 Stunden pro Werktag Freizeit am Bildschirm (OECD-Schnitt)" | Warum? · Laut OECD gehen schwächere Leseleistungen · mit mehr Bildschirmzeit · und weniger Lesen zum Vergnügen einher. |
+| 61–70 | Graph paper: reader from above, "2018: 6,6 % · 2025: 11,4 % OECD-Schnitt", marked answer sheet | Im OECD-Schnitt hat sich zudem · der Anteil «hastiger Leser» fast verdoppelt. · Sie überfliegen Texte · und antworten schnell – · aber falsch. |
+| 70–75 | Graph paper: «Fass mir den Text zusammen.», AI reply | Jugendliche in der Schweiz nutzen KI für die Schule · häufiger als im OECD-Durchschnitt. |
+| 75–77.4 | Lernbus window | Es gibt auch gute Nachrichten: |
+| 77.4–85 | Dot chart: Mathematik 2025, CH 499 · AT 477 · DE 464 · OECD 463 | In Mathematik bleibt die Schweiz stark. · Nur drei OECD-Länder schneiden besser ab. · Doch auch hier: minus 22 Punkte seit 2015. |
+| 85–97.2 | Lernbus room, three shots | PISA-Punkte sagen nicht alles · über einen Menschen. · Aber Lesen beginnt nicht mit 15. · Es beginnt mit Sprache: · mit Gesprächen, Geschichten und Fragen – · und mit einem Gegenüber, das zuhört. |
+| 97.2–101 | Roundel, Lerngesellschaft, lerngesellschaft.ch | — |
+
+### Additional sources for this cut
+
+| Claim | Source |
+|---|---|
+| Switzerland 2018: maths 515, reading 484, science 495 | LCH, 3.12.2019: <https://www.lch.ch/aktuell/detail/pisa-ergebnisse-2018/>; NZZ: <https://www.nzz.ch/schweiz/schweiz-pisa-ld.1525965> |
+| Switzerland 2022: maths 508, reading 483, science 503 | EDK, 5.12.2023: <https://edk.ch/de/die-edk/news/mm05122023>; LCH: <https://www.lch.ch/aktuell/detail/pisa-2022-hervorragende-leistungen-und-wege-zur-verbesserung> |
+| Switzerland 2015: science 506 | IQS: <https://www.iqs.gv.at/pisa-2015>; NZZ: <https://www.nzz.ch/schweiz/von-singapur-bis-frankreich-die-gewinner-und-verlierer-von-pisa-2015-ld.132867> |
+| Hasty readers 6.6 % (2018) to 11.4 % (2025), OECD average | OECD, PISA 2025 Results Vol. I, executive summary: <https://www.oecd.org/en/publications/pisa-2025-results-volume-i_73451bc5-en/full-report/executive-summary_3701b0ef.html> |
+| 3.4 hours per weekday of leisure screen time, OECD average | Reuters via U.S. News, 8.9.2026: <https://www.usnews.com/news/world/articles/2026-09-08/teen-reading-slumps-to-worst-this-century-due-to-surge-in-screen-time> |
+| Maths 2025: Austria 477, Germany 464 | IQS/APA via Schule.at (above); OECD country note Germany (above) |

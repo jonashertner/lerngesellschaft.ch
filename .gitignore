@@ -6,3 +6,4 @@ _site
 output/lernbus-site-preview/
 output/lernbus-site-preview.tar.gz
 social/**/stills/
+social/**/.cache/
