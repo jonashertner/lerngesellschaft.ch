@@ -35,9 +35,9 @@
         "id": "lernbus",
         "number": "01",
         "name": "Lernbus",
-        "audience": "Für Kinder ab 3 Jahren bis zur 3. Primarklasse",
-        "description": "Ein verlässliches Gegenüber. Zeit zum Ausprobieren. Individuelle Lernbegleitung und frühe Deutschförderung – im eigenen Tempo des Kindes.",
-        "facts": "Münsterplatz 17 · einzeln, später zu zweit",
+        "audience": "Für Kinder ab drei Jahren bis zum Ende der dritten Primarklasse",
+        "description": "Langfristige, verlässliche Lernbegleitung und frühe Deutschförderung. Wir stärken Lerngrundlagen, festigen Schulstoff und verbinden Familie, Kindergarten und Schule.",
+        "facts": "Münsterplatz 17 · wöchentlich einzeln oder in einer Kleingruppe",
         "status": "Geplanter Start: Oktober 2026",
         "url": "/lernbus/",
         "action": "Den Lernbus kennenlernen",
@@ -76,7 +76,7 @@
     "principles": [
       {
         "title": "Eine Beziehung, die trägt.",
-        "text": "Im Lernbus begleitet dieselbe Person das Kind über ein Semester. Vertrauen hat Zeit zu wachsen."
+        "text": "Im Lernbus begleiten wir Kinder langfristig und verlässlich. Vertrauen hat Zeit zu wachsen."
       },
       {
         "title": "Eine Frage, die weiterführt.",
@@ -146,9 +146,9 @@
         "id": "lernbus",
         "number": "01",
         "name": "Lernbus",
-        "audience": "For children from age 3 to the third year of primary school",
-        "description": "A familiar mentor. Time to try things out. Individual learning support and early German language development, at each child's own pace.",
-        "facts": "Münsterplatz 17 · individually, later in pairs",
+        "audience": "For children from age three to the end of their third year of primary school",
+        "description": "Consistent, long-term learning support and early German language development. We strengthen foundations, consolidate school learning and connect families, kindergarten and school.",
+        "facts": "Münsterplatz 17 · weekly, individually or in a small group",
         "status": "Planned opening: October 2026",
         "url": "/lernbus/en/",
         "action": "Discover Lernbus",
@@ -187,7 +187,7 @@
     "principles": [
       {
         "title": "A relationship they can rely on.",
-        "text": "At Lernbus, the same person supports a child throughout the semester. Trust has time to grow."
+        "text": "At Lernbus, children receive consistent support over the long term. Trust has time to grow."
       },
       {
         "title": "A question worth following.",

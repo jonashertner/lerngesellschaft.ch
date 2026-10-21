@@ -9,7 +9,7 @@ alternateUrl: /lernbus/agb/
 ---
 # Terms and conditions for Lernbus
 
-*Version dated 15 September 2026*
+*Version dated 21 October 2026*
 
 These terms apply exclusively to Lernbus. The [Lerngesellschaft terms and conditions (in German)](/agb/) apply to its other educational programmes.
 
@@ -17,13 +17,13 @@ These terms apply exclusively to Lernbus. The [Lerngesellschaft terms and condit
 
 Lernbus is a programme of the association Lerngesellschaft / Learning Society, Münsterplatz 17, 4051 Basel. A parent or legal guardian enters into the agreement with us for the child. Schools and organisations cannot enrol children in Lernbus.
 
-We provide these terms before the agreement is concluded and agree them with you. Any individual agreement takes precedence. Your booking becomes binding when we confirm enrolment on the agreed terms. Requesting a time through the calendar or attending an introductory meeting does not yet constitute binding enrolment in Lernbus.
+We provide these terms before the agreement is concluded and agree them with you. Any individual agreement takes precedence. Your booking becomes binding when we confirm enrolment on the agreed terms. An enquiry through the contact form or an introductory meeting does not yet constitute binding enrolment in Lernbus.
 
 Existing bookings remain subject to the terms already agreed. Changes apply only if we agree them with you.
 
 ## 2. Lessons and booking period
 
-Each lesson lasts 60 minutes. In the first semester, lessons are one to one, giving your child and their mentor time to build a trusting relationship. In the second semester, lessons take place in pairs.
+Each lesson lasts 60 minutes and takes place weekly, individually or in a small group. We record the agreed format in the booking confirmation.
 
 You book one school semester at a time. We set out the start and end of the agreed semester and the lesson dates in the booking confirmation. Continuing into the next semester is agreed separately.
 
@@ -31,7 +31,7 @@ We work with care and respond to each child's needs. We cannot promise a particu
 
 ## 3. Fees
 
-We agree the content, scope, dates and fee before lessons begin. Fees are per 60-minute lesson; for lessons in pairs, the fee is per child. We discuss the appropriate rate with you at the introductory meeting.
+We agree the content, scope, dates and fee before lessons begin. Fees are per month and per child. There are six monthly payments from January to June and five from August to December. We discuss the appropriate rate with you at the introductory meeting.
 
 Prices are in Swiss francs and include any applicable taxes and agreed additional costs. Invoices are payable within 30 days of receipt.
 

@@ -1,0 +1,56 @@
+[
+  {
+    "date": "2026-10-23",
+    "start": "09:00",
+    "end": "11:00",
+    "de": "Freitag, 23. Oktober",
+    "en": "Friday, 23 October",
+    "startISO": "2026-10-23T09:00:00+02:00",
+    "endISO": "2026-10-23T11:00:00+02:00"
+  },
+  {
+    "date": "2026-10-26",
+    "start": "16:00",
+    "end": "18:00",
+    "de": "Montag, 26. Oktober",
+    "en": "Monday, 26 October",
+    "startISO": "2026-10-26T16:00:00+01:00",
+    "endISO": "2026-10-26T18:00:00+01:00"
+  },
+  {
+    "date": "2026-11-20",
+    "start": "09:00",
+    "end": "11:00",
+    "de": "Freitag, 20. November",
+    "en": "Friday, 20 November",
+    "startISO": "2026-11-20T09:00:00+01:00",
+    "endISO": "2026-11-20T11:00:00+01:00"
+  },
+  {
+    "date": "2026-11-23",
+    "start": "16:00",
+    "end": "18:00",
+    "de": "Montag, 23. November",
+    "en": "Monday, 23 November",
+    "startISO": "2026-11-23T16:00:00+01:00",
+    "endISO": "2026-11-23T18:00:00+01:00"
+  },
+  {
+    "date": "2026-12-11",
+    "start": "09:00",
+    "end": "11:00",
+    "de": "Freitag, 11. Dezember",
+    "en": "Friday, 11 December",
+    "startISO": "2026-12-11T09:00:00+01:00",
+    "endISO": "2026-12-11T11:00:00+01:00"
+  },
+  {
+    "date": "2026-12-14",
+    "start": "16:00",
+    "end": "18:00",
+    "de": "Montag, 14. Dezember",
+    "en": "Monday, 14 December",
+    "startISO": "2026-12-14T16:00:00+01:00",
+    "endISO": "2026-12-14T18:00:00+01:00"
+  }
+]

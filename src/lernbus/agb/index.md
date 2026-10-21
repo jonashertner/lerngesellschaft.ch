@@ -9,7 +9,7 @@ alternateUrl: /lernbus/en/terms/
 ---
 # Allgemeine Geschäftsbedingungen für Lernbus
 
-*Fassung vom 15. September 2026*
+*Fassung vom 21. Oktober 2026*
 
 Diese Bedingungen gelten ausschliesslich für den Lernbus. Für die weiteren Bildungsangebote gelten die [AGB der Lerngesellschaft](/agb/).
 
@@ -17,13 +17,13 @@ Diese Bedingungen gelten ausschliesslich für den Lernbus. Für die weiteren Bil
 
 Lernbus ist ein Angebot des Vereins Lerngesellschaft / Learning Society, Münsterplatz 17, 4051 Basel. Den Vertrag mit uns schliesst ein Elternteil oder eine andere erziehungsberechtigte Person für das Kind. Schulen und Organisationen können keine Kinder für den Lernbus anmelden.
 
-Wir stellen Ihnen diese AGB vor Vertragsabschluss zur Verfügung und vereinbaren sie mit Ihnen. Individuelle Vereinbarungen gehen vor. Die Buchung wird verbindlich, sobald wir die Anmeldung zu den vereinbarten Bedingungen bestätigen. Eine Terminanfrage über den Kalender oder ein Kennenlerngespräch ist noch keine verbindliche Anmeldung zum Lernbus.
+Wir stellen Ihnen diese AGB vor Vertragsabschluss zur Verfügung und vereinbaren sie mit Ihnen. Individuelle Vereinbarungen gehen vor. Die Buchung wird verbindlich, sobald wir die Anmeldung zu den vereinbarten Bedingungen bestätigen. Eine Anfrage über das Kontaktformular oder ein Kennenlerngespräch ist noch keine verbindliche Anmeldung zum Lernbus.
 
 Für bereits abgeschlossene Buchungen bleiben die vereinbarten Bedingungen massgebend. Änderungen gelten nur, wenn wir sie mit Ihnen vereinbaren.
 
 ## 2. Lektionen und Buchungsdauer
 
-Die Lektionen dauern 60 Minuten. Im ersten Semester findet die Begleitung einzeln statt, damit das Kind und seine Bezugsperson eine vertrauensvolle Beziehung aufbauen können. Im zweiten Halbjahr finden die Lektionen zu zweit statt.
+Die Lektionen dauern 60 Minuten und finden wöchentlich einzeln oder in einer Kleingruppe statt. Die vereinbarte Form halten wir in der Buchungsbestätigung fest.
 
 Die Buchung erfolgt jeweils für ein Schulsemester. Beginn und Ende des vereinbarten Semesters sowie die Lektionstermine halten wir in der Buchungsbestätigung fest. Die Fortsetzung im nächsten Semester wird gesondert vereinbart.
 
@@ -31,7 +31,7 @@ Wir begleiten die Kinder sorgfältig und entsprechend ihren Bedürfnissen. Einen
 
 ## 3. Beiträge
 
-Inhalt, Umfang, Termine und Beitrag vereinbaren wir vor Beginn. Die Beiträge gelten pro Lektion von 60 Minuten, bei Zweierlektionen pro Kind. Den passenden Tarif besprechen wir im Kennenlerngespräch.
+Inhalt, Umfang, Termine und Beitrag vereinbaren wir vor Beginn. Die Beiträge gelten pro Monat und Kind. Von Januar bis Juni sind sechs Monatsbeiträge zu bezahlen, von August bis Dezember fünf. Den passenden Tarif besprechen wir im Kennenlerngespräch.
 
 Die Preise verstehen sich in Schweizer Franken einschliesslich allfälliger Steuern und vereinbarter Nebenkosten. Rechnungen sind innert 30 Tagen nach Erhalt zu bezahlen.
 

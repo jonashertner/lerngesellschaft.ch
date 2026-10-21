@@ -3477,6 +3477,456 @@
           }
         ]
       }
+    },
+    {
+      "date": "2026-10-21",
+      "authorization": "Jonas, in chat 01a15e1c-7af8-7861-bb29-1d70de7c9441 on 21 October 2026, requested the cost schedule in his supplied image: monthly per-child contributions for individual, paired and preparatory-semester sessions (40/35/30; 240/170/100; 320/250/200; 400/300/250 CHF), six payments January–June and five August–December. He specified separate preparation for kindergarten and school and answered 4 children per group. He then supplied the five German copy blocks beginning Wir beginnen dort, wo ein Kind steht., and asked to adapt the page wherever relevant; his later instruction make a sensible proposal given the overall object and purpose permits coherent parent-facing organisation and corresponding English wording. These changes replace the fixed first-semester-individual/second-semester-paired sequence with weekly individual OR small-group sessions; clarify support from age three through the END of the third primary year; and foreground long-term support, family/kindergarten/school cooperation, foundations, targeted practice and learning strategies. Jonas also instructed: let’s replace the booking calendar with a simple, beautiful, maximally useful practical contact form; require contact details (email, phone), age of kid, how many kids. He requested a section Aktuelles / Termine and the button wording Lernstunde anfragen leading to the contact form. His see dates in chat and termine aktuelles messages supplied 03_Offene_Tueren_Instagram.jpg: Offene Türen im Herbst / Kennenlernstunden, 23 October 09:00–11:00, 26 October 16:00–18:00, 20 November 09:00–11:00, 23 November 16:00–18:00, 11 December 09:00–11:00 and 14 December 16:00–18:00, all 2026 at Münsterplatz 17, 4051 Basel; informal visits with children, trying materials and asking questions. The equivalent DE/EN copy, form labels and notices, event/calendar-download wording, relevant concept refinements and shared enquiry CTA labels are recorded as exact token changes below. Existing biographies, quotations, historical research source references and income-guide figures remain unchanged.",
+      "scope": "Local preparation and review only. These instructions do NOT constitute approval to publish this version or send any external communication. The refund policy remains for separate review, as Jonas expressly instructed. This single cumulative revision is applied to the preceding authorised expected tokens; the original live baseline and all earlier revisions are immutable.",
+      "source": {
+        "chat_id": "01a15e1c-7af8-7861-bb29-1d70de7c9441",
+        "event_flyer": "/srv/matters/_infra/codex-ubuntu/attachments/4bf00801-72e1-494f-b1f9-0624bf73167f/03_Offene_Tueren_Instagram.jpg",
+        "event_flyer_sha256": "c1a2b60d7195be827e4084f3adda01e4b140b37e5499f52da05bf72dc8ee9c92"
+      },
+      "pages": {
+        "lernbus/index.html": [
+          {
+            "start": 11,
+            "end": 100,
+            "before": "Team Ablauf Kosten Kontakt Lektion anfragen EN Individuelle Frühförderung , die Kinder stark macht . Der Lernbus ist ein präventives , pädagogisch fundiertes Förderangebot für Kinder im frühen Lernalter . Der Lernbus stärkt Kinder darin , ihre persönliche Entwicklung selbstbewusst , eigenständig und zukunftsorientiert zu gestalten . Zielgruppe Kinder ab 3 Jahren bis zur 3 . Primarschule Für Kinder , die in ihren Lern - und Zukunftskompetenzen gezielt gestärkt werden sollen Frühe Deutschförderung ab 3 Jahren im ersten Semester einzeln , im zweiten Halbjahr zu zweit Ort Münsterplatz 17",
+            "after": "Team Ablauf Kosten Aktuelles / Termine Lernstunde anfragen EN Wir beginnen dort , wo ein Kind steht . Der Lernbus begleitet Kinder ab drei Jahren bis zum Ende der dritten Primarklasse . Wir knüpfen an ihre Stärken , Interessen und Bedürfnisse an . Wir begleiten sie langfristig und verlässlich . Wir stärken ihre Lerngrundlagen und festigen , was sie in der Schule lernen . Dabei verbinden wir Familie , Kindergarten und Schule . Lernstunde anfragen Zielgruppe Kinder ab drei Jahren bis zum Ende der dritten Primarklasse Für Kinder , die beim Lernen und selbstständigen Arbeiten gestärkt werden sollen Frühe Deutschförderung ab drei Jahren , einzeln oder in einer Kleingruppe Ort Münsterplatz 17"
+          },
+          {
+            "start": 122,
+            "end": 473,
+            "before": "Buchung Pro Schulsemester Warum der Lernbus Lernen beginnt nicht erst mit Buchstaben und Zahlen . Deshalb schauen wir nicht erst hin , wenn ein Kind beim Lesen , Schreiben oder Rechnen bereits Schwierigkeiten hat . Worauf Lernen aufbaut Lernen baut auf vielen grundlegenden Fähigkeiten auf : Wahrnehmung , Aufmerksamkeit , Sprache , mathematische Vorläuferfähigkeiten , Motorik und Selbstregulation . Wie wir frühes Lernen begleiten Im Spiel und ganz nebenbei Diese Grundlagen lassen sich schon früh spielerisch , mit Freude und ohne Druck stärken , oft ganz nebenbei und ohne dass es sich für Kinder nach « Lernen » anfühlt . Ob beim Gestalten , Bewegen , Sortieren , Reimen , Experimentieren oder Spielen : Es gibt unzählige Möglichkeiten , Kinder in ihrer Entwicklung zu begleiten und wichtige Lernvoraussetzungen zu stärken . Ein stabiles Fundament Vorschulförderung bedeutet für uns , nicht Schule immer weiter nach vorne zu verlagern , sondern Kindern ein stabiles Fundament mitzugeben , auf dem späteres Lernen aufbauen kann . Nicht warten , bis Defizite sichtbar werden . Pädagogischer Ansatz und Ziele des Angebots Der Lernbus orientiert sich an zentralen Kompetenzen wie emotionaler Intelligenz , Kreativität , Kommunikationsfähigkeit sowie kritischem und vernetztem Denken . Eigenständig denken Die Kinder lernen , eigenständig zu denken , Zusammenhänge zu erkennen , Lösungswege zu entwickeln und Fehler als Lernchancen zu nutzen . Dranbleiben Sie erhalten Strategien , um sich auch nicht sofort spannende Lerninhalte aktiv zu erschliessen und bei Unlust dranzubleiben . Grundkompetenzen und frühe Deutschförderung Parallel dazu können auch Defizite in den sprachlichen und mathematischen Grundkompetenzen gezielt aufgearbeitet und gefestigt werden . Die frühe Deutschförderung unterstützt Kinder ab 3 Jahren dabei , sprachliche Grundlagen aufzubauen , sich sicherer auszudrücken und mit mehr Vertrauen am Unterricht teilzunehmen . Selbstvertrauen und Resilienz Das Angebot stärkt die Kinder in ihrem Selbstvertrauen , ihrer Resilienz und ihrer Bereitschaft zum eigenständigen Lernen . Die Ziele Stärkung von Lernkompetenz , Selbstwert und Selbstwirksamkeit Förderung von Neugier und intrinsischer Lernmotivation Entwicklung von Resilienz und Strategien im Umgang mit Misserfolgen Aufbau eines sicheren , wertschätzenden Lernraums Förderung von Kommunikationsfähigkeit und eigenständigem Denken Sichtbarmachung individueller Lernfortschritte Zur Konzeptseite → Ein Blick",
+            "after": "Buchung Pro Schulsemester Herbst 2026 Aktuelles / Termine Offene Türen im Herbst . Kommen Sie mit Ihrem Kind vorbei , entdecken Sie gemeinsam den Lernbus und probieren Sie die Spielmaterialien aus . Dabei bleibt Zeit für Ihre Fragen und ein persönliches Gespräch . Unverbindlich entdecken und kennenlernen . Münsterplatz 17 · 4051 Basel Termine im Kalender speichern ↓ Kennenlernstunden Freitag , 23 . Oktober 09 : 00 – 11 : 00 Uhr Montag , 26 . Oktober 16 : 00 – 18 : 00 Uhr Freitag , 20 . November 09 : 00 – 11 : 00 Uhr Montag , 23 . November 16 : 00 – 18 : 00 Uhr Freitag , 11 . Dezember 09 : 00 – 11 : 00 Uhr Montag , 14 . Dezember 16 : 00 – 18 : 00 Uhr Alle Zeiten gelten für Basel . Lernbegleitung Langfristige Begleitung . Wir begleiten Kinder über längere Zeit . Sie besuchen jede Woche eine Lernstunde , einzeln oder in einer Kleingruppe . So geben wir ihnen auch bei Übergängen Halt , zum Beispiel beim Eintritt in den Kindergarten oder in die Schule . Weil wir die Kinder gut kennen , sehen wir , wie sie sich entwickeln , und passen unsere Unterstützung laufend an . Das Ziel : Die Kinder festigen ihre Grundkompetenzen dauerhaft und lernen Schritt für Schritt , selbstständig zu arbeiten . Eine Brücke zwischen Kind , Familie und Schule . Der Lernbus verbindet das Kind , seine Eltern , den Kindergarten und die Schule . Bei Bedarf beziehen wir weitere Bezugspersonen oder Fachstellen ein . Wir tauschen uns eng mit den Eltern aus und stimmen uns mit ihnen ab . So bringen wir die Erfahrungen und Beobachtungen aller Beteiligten zusammen . Gemeinsam klären wir Ziele und verbinden die Förderung mit dem Alltag des Kindes . So helfen die Wege , die wir gemeinsam finden , auch zu Hause und in der Schule weiter . Lernen braucht viele Grundlagen . Deshalb fördern wir Bewegung und Wahrnehmung , Sprache , Aufmerksamkeit sowie emotionale und soziale Fähigkeiten . Gleichzeitig bauen wir Grundkompetenzen in Mathematik , Lesen und Schreiben auf und festigen sie durch gezieltes Üben . Dabei verbinden wir Spielen und Entdecken mit Aufgaben , die zum Kind passen . Wir zeigen Kindern , was ihnen beim Lernen hilft . Gemeinsam entwickeln wir Lernstrategien : Aufgaben in kleine Schritte aufteilen , verschiedene Lösungswege ausprobieren , Hilfe nutzen und das eigene Vorgehen überprüfen . Die Kinder erfahren : Was ich noch nicht kann , kann ich lernen – durch Üben , gute Strategien und Unterstützung . Wir nehmen Gefühle ernst , schaffen klare Abläufe und sind auch dann für die Kinder da , wenn Lernen anstrengend ist . So stärken wir Selbstvertrauen , Lernfreude und Selbstständigkeit . So setzen wir unsere Begleitung um → Ein Blick"
+          },
+          {
+            "start": 743,
+            "end": 790,
+            "before": "und dem Kind Individuelle Frühförderung in Lektionen von 60 Minuten . Im ersten Semester einzeln zum Beziehungsaufbau , im zweiten Halbjahr zu zweit . Buchung pro Schulsemester . Aufbau grundlegender Fähigkeiten : Wahrnehmung , Aufmerksamkeit , Sprache , mathematische Vorläuferfähigkeiten , Motorik und Selbstregulation Vertrauensvoller , geschützter",
+            "after": "und dem Kind Wöchentliche Lernbegleitung in Lernstunden von 60 Minuten , einzeln oder in einer Kleingruppe . Buchung pro Schulsemester . Aufbau und Festigung von Grundkompetenzen : Bewegung und Wahrnehmung , Sprache , Aufmerksamkeit sowie Mathematik , Lesen und Schreiben Vertrauensvoller , geschützter"
+          },
+          {
+            "start": 824,
+            "end": 839,
+            "before": "Beiträge gelten pro Lektion von 60 Minuten , im Zweiersetting pro Kind . Welcher Tarif",
+            "after": "Beiträge gelten pro Monat und Kind . Von Januar bis Juni sind sechs Monatsbeiträge zu bezahlen , von August bis Dezember fünf . Welcher Tarif"
+          },
+          {
+            "start": 843,
+            "end": 865,
+            "before": "im Kennenlerngespräch . Beiträge pro Lektion von 60 Minuten , im Zweiersetting pro Kind Tarif Einzellektion Zweierlektion pro Kind Fördertarif Für Familien",
+            "after": "im Kennenlerngespräch . Monatliche Beiträge pro Kind in Schweizer Franken : sechs Monatsbeiträge von Januar bis Juni , fünf von August bis Dezember Tarif Einzel monatlich Zweier monatlich Vorbereitungs ­ semester monatlich Fördertarif Für Familien"
+          },
+          {
+            "start": 880,
+            "end": 889,
+            "before": "investieren . CHF 10 CHF 10 Reduziert Für Familien",
+            "after": "investieren . CHF 40 CHF 35 CHF 30 Reduziert Für Familien"
+          },
+          {
+            "start": 896,
+            "end": 905,
+            "before": "können . CHF 75 CHF 60 Kostenwahrheit Deckt die",
+            "after": "können . CHF 240 CHF 170 CHF 100 Kostenwahrheit Deckt die"
+          },
+          {
+            "start": 915,
+            "end": 924,
+            "before": "Qualitätssicherung . CHF 100 CHF 75 Solidarisch Mehr ,",
+            "after": "Qualitätssicherung . CHF 320 CHF 250 CHF 200 Solidarisch Mehr ,"
+          },
+          {
+            "start": 934,
+            "end": 943,
+            "before": "Förderplätze . CHF 125 CHF 90 Welcher Tarif passt",
+            "after": "Förderplätze . CHF 400 CHF 300 CHF 250 Vorbereitungssemester : Es gibt separate Gruppen zur Vorbereitung auf den Kindergarten und auf die Schule . Jede Gruppe umfasst vier Kinder . Welcher Tarif passt"
+          },
+          {
+            "start": 1322,
+            "end": 1364,
+            "before": "Förderplatz ermöglichen → Lektion anfragen Wählen Sie den Termin , der Ihnen passt für die Lektion . Wir kontaktieren Sie dann für ein Kennenlerngespräch . Kontakt Eine Frage stellen . Für Fragen zum Lernbus schreiben Sie uns eine Nachricht . Wir melden",
+            "after": "Förderplatz ermöglichen → Kontakt Lernstunde anfragen Erzählen Sie uns kurz von Ihrer Familie . Wir melden"
+          },
+          {
+            "start": 1365,
+            "end": 1392,
+            "before": "innert weniger Tage . info @ lernbus . ch Ihr Name Ihre E - Mail - Adresse Ihre Nachricht Website Nachricht senden Ihre Nachricht wird direkt an",
+            "after": "innert weniger Tage , um Ihre Fragen und die nächsten Schritte zu besprechen . Ihre Anfrage ist noch keine verbindliche Buchung . info @ lernbus . ch Alle Angaben ausser der Nachricht sind erforderlich . Name eines Elternteils oder einer erziehungsberechtigten Person E - Mail - Adresse Telefonnummer Anzahl Kinder Alter jedes Kindes in Jahren Geben Sie für jedes Kind ein Alter an , getrennt durch einen Strichpunkt , zum Beispiel : 3 ; 6 , 5 . Alter der Kinder In Jahren ; auch Angaben wie 3 , 5 sind möglich . Ihre Nachricht ( optional ) Website Lernstunde anfragen Ihre Anfrage wird direkt an"
+          },
+          {
+            "start": 1405,
+            "end": 1417,
+            "before": "das Nachhilfe ? Nicht im üblichen Sinn . Wir arbeiten an Lücken",
+            "after": "das Nachhilfe ? Wir festigen auch , was Ihr Kind in der Schule lernt , und arbeiten an Lücken"
+          },
+          {
+            "start": 1421,
+            "end": 1433,
+            "before": "sind . Zugleich möchten wir Ihr Kind dabei unterstützen , gern und",
+            "after": "sind . Zugleich stärken wir die Grundlagen für das Lernen . So unterstützen wir Ihr Kind dabei , gern und"
+          },
+          {
+            "start": 1610,
+            "end": 1651,
+            "before": "→ Einzeln oder zu zweit ? Im ersten Semester findet die Begleitung einzeln statt . So haben Ihr Kind und seine Bezugsperson Zeit , eine vertrauensvolle Beziehung aufzubauen . Im zweiten Halbjahr finden die Lektionen zu zweit statt . Die Buchung",
+            "after": "→ Einzeln oder in einer Gruppe ? Ihr Kind besucht jede Woche eine Lernstunde , einzeln oder in einer Kleingruppe . Welche Form passt , besprechen wir gemeinsam . Im Vorbereitungssemester gibt es separate Gruppen für den Eintritt in den Kindergarten und in die Schule , mit je vier Kindern . Die Buchung"
+          },
+          {
+            "start": 1844,
+            "end": 1851,
+            "before": "Angebot der Lerngesellschaft Lektion anfragen Münsterplatz 17",
+            "after": "Angebot der Lerngesellschaft Lernstunde anfragen Münsterplatz 17"
+          }
+        ],
+        "lernbus/en/index.html": [
+          {
+            "start": 16,
+            "end": 74,
+            "before": "it works Fees Contact Request a lesson DE Individual early learning support that helps children grow strong . Lernbus is an early learning programme grounded in sound educational principles . It supports children before difficulties arise . Lernbus helps children shape their own development with confidence , independence and a focus on the future . Who it is",
+            "after": "it works Fees News / Dates Request a learning session DE We meet each child where they are . Lernbus supports children from age three to the end of their third year of primary school . We build on their strengths , interests and needs . We provide consistent support over the long term . We strengthen the foundations for learning and consolidate what children learn at school . In doing so , we connect families , kindergarten and school . Request a learning session Who it is"
+          },
+          {
+            "start": 75,
+            "end": 84,
+            "before": "Children from age 3 to the third year of",
+            "after": "Children from age three to the end of their third year of"
+          },
+          {
+            "start": 88,
+            "end": 126,
+            "before": "would benefit from targeted support with their learning skills and skills for the future Early German language support from age 3 , one to one in the first semester and in pairs in the second Location Münsterplatz 17",
+            "after": "would benefit from support with learning and working independently Early German language support from age three , individually or in a small group Location Münsterplatz 17"
+          },
+          {
+            "start": 150,
+            "end": 525,
+            "before": "One school semester Why Lernbus Learning begins before letters and numbers . That is why we look at what children need before they begin to struggle with reading , writing or maths . What learning builds on Learning builds on many fundamental abilities : perception , attention , language , early mathematical skills , motor skills and self - regulation . How we support early learning Learning through play Children can build these foundations early , through play , with enjoyment and without pressure . Often , it happens naturally , without feeling like ‘ learning ’ . Whether they are making things , moving , sorting , rhyming , experimenting or playing , there are countless ways to support their development and strengthen the foundations for learning . A stable foundation For us , early learning support means giving children a secure foundation for later learning , rather than bringing formal schooling forward . We do not wait for gaps to become visible . Our approach and goals Lernbus focuses on core skills such as emotional intelligence , creativity , communication , critical thinking and the ability to make connections . Thinking for themselves Children learn to think for themselves , recognise connections , find their own ways to solve problems and learn from mistakes . Learning to persevere They learn strategies for engaging with topics that may not immediately interest them and for keeping going when they feel reluctant . Core skills and early German language support At the same time , we can address gaps in basic language and maths skills and strengthen these foundations . Early German language support helps children from age three build language foundations , become more confident in expressing themselves and feel more at ease taking part in lessons . Confidence and resilience The programme strengthens children ' s self - confidence , their resilience and their readiness to learn independently . The goals Strengthening learning skills , self - worth and self - efficacy Fostering curiosity and intrinsic motivation to learn Building resilience and strategies for dealing with setbacks Creating a safe learning environment where children feel valued Fostering communication skills and independent thinking Making individual learning progress visible Visit our approach page → A look",
+            "after": "One school semester Autumn 2026 News / Dates Open doors this autumn . Come along with your child , discover Lernbus together and try out the play materials . There will be time for your questions and a personal conversation . Get to know us , without obligation . Münsterplatz 17 · 4051 Basel Save dates to your calendar ↓ Introductory sessions Friday , 23 October 09 : 00 – 11 : 00 Monday , 26 October 16 : 00 – 18 : 00 Friday , 20 November 09 : 00 – 11 : 00 Monday , 23 November 16 : 00 – 18 : 00 Friday , 11 December 09 : 00 – 11 : 00 Monday , 14 December 16 : 00 – 18 : 00 All times are local to Basel . Learning support Long - term support . We support children over an extended period . They attend one learning session each week , either individually or in a small group . This gives them stability through transitions , such as starting kindergarten or primary school . Because we know the children well , we can follow their development and continually adapt our support . Our aim is to help children build lasting core skills and learn , step by step , to work independently . A bridge between child , family and school . Lernbus connects each child with their parents , kindergarten and school . Where needed , we involve other important people in the child ’ s life or specialist services . We work closely with parents and coordinate our support with them . This brings together the experiences and observations of everyone involved . Together , we clarify goals and connect our support with the child ’ s everyday life . The approaches we develop together can then help at home and at school too . Learning rests on many foundations . That is why we foster movement and perception , language , attention , and emotional and social skills . At the same time , we develop core skills in mathematics , reading and writing , and consolidate them through focused practice . We combine play and discovery with tasks suited to each child . We show children what helps them learn . Together , we develop learning strategies : breaking tasks into small steps , trying different ways to solve a problem , making use of help and reviewing how they approached a task . Children discover that they can learn what they cannot do yet , through practice , good strategies and support . We take their feelings seriously , establish clear routines and stay alongside them when learning is hard . In this way , we strengthen their confidence , enjoyment of learning and independence . How we put our approach into practice → A look"
+          },
+          {
+            "start": 797,
+            "end": 833,
+            "before": "and the child Individual early learning support in 60 - minute lessons . One to one in the first semester to build a trusting relationship , then in pairs in the second semester . Booked for",
+            "after": "and the child Weekly learning support in 60 - minute sessions , individually or in a small group . Booked for"
+          },
+          {
+            "start": 838,
+            "end": 863,
+            "before": "time . Building fundamental abilities : perception , attention , language , early mathematical skills , motor skills and self - regulation A safe learning",
+            "after": "time . Building and consolidating core skills : movement and perception , language , attention , mathematics , reading and writing A safe learning"
+          },
+          {
+            "start": 919,
+            "end": 940,
+            "before": "Fees are per 60 - minute lesson . For lessons in pairs , the fee is per child . We discuss",
+            "after": "Fees are per month and per child . There are six monthly payments from January to June and five from August to December . We discuss"
+          },
+          {
+            "start": 947,
+            "end": 980,
+            "before": "introductory meeting . Fees per 60 - minute lesson ; for lessons in pairs , the fee is per child Rate One - to - one In pairs per child Subsidised rate For",
+            "after": "introductory meeting . Monthly fees per child in Swiss francs : six monthly payments from January to June and five from August to December Rate One - to - one monthly In pairs monthly Preparatory semester monthly Subsidised rate For"
+          },
+          {
+            "start": 993,
+            "end": 1002,
+            "before": "children . CHF 10 CHF 10 Reduced rate For",
+            "after": "children . CHF 40 CHF 35 CHF 30 Reduced rate For"
+          },
+          {
+            "start": 1008,
+            "end": 1017,
+            "before": "fee . CHF 75 CHF 60 Full - cost",
+            "after": "fee . CHF 240 CHF 170 CHF 100 Full - cost"
+          },
+          {
+            "start": 1035,
+            "end": 1044,
+            "before": "assurance . CHF 100 CHF 75 Solidarity rate A",
+            "after": "assurance . CHF 320 CHF 250 CHF 200 Solidarity rate A"
+          },
+          {
+            "start": 1060,
+            "end": 1069,
+            "before": "places . CHF 125 CHF 90 Which rate is",
+            "after": "places . CHF 400 CHF 300 CHF 250 Preparatory semester : Separate groups prepare children for kindergarten or for school . Each group has four children . Which rate is"
+          },
+          {
+            "start": 1550,
+            "end": 1597,
+            "before": "a place → Request a lesson Choose a lesson date and time that suits you . We will then contact you to arrange an introductory meeting . Contact Ask a question . If you have a question about Lernbus , send us a message . We will",
+            "after": "a place → Get in touch Request a learning session Tell us a little about your family . We will"
+          },
+          {
+            "start": 1602,
+            "end": 1628,
+            "before": "a few days . info @ lernbus . ch Your name Your email address Your message Website Send message Your message will be sent directly to",
+            "after": "a few days to discuss your questions and the next steps . Your enquiry is not a binding booking . info @ lernbus . ch All fields are required except your message . Parent or guardian ’ s name Email address Phone number Number of children Age of each child , in years Enter one age for every child , separated by a semicolon , for example : 3 ; 6 . 5 . Age of each child In years ; you can also enter an age such as 3 . 5 . Your message ( optional ) Website Request a learning session Your enquiry is sent directly to"
+          },
+          {
+            "start": 1634,
+            "end": 1641,
+            "before": "Contact form privacy information Frequently asked questions",
+            "after": "Contact form privacy Frequently asked questions"
+          },
+          {
+            "start": 1642,
+            "end": 1676,
+            "before": "this tutoring ? Not in the usual sense . We address gaps in learning where needed . We also aim to help your child enjoy learning and become an independent learner . Does my",
+            "after": "this tutoring ? We also consolidate what your child learns at school and work on gaps where they exist . At the same time , we strengthen the foundations for learning . This helps your child enjoy learning and work independently . Does my"
+          },
+          {
+            "start": 1844,
+            "end": 1896,
+            "before": "the team → One - to - one lessons or lessons in pairs ? In the first semester , lessons are one to one . This gives your child and their mentor time to build a trusting relationship . In the second semester , lessons take place in pairs . You book",
+            "after": "the team → Individual sessions or a small group ? Your child attends one learning session each week , individually or in a small group . We discuss together which format suits them . The preparatory semester has separate groups for starting kindergarten and starting school , with four children in each group . You book"
+          },
+          {
+            "start": 2119,
+            "end": 2126,
+            "before": "Lerngesellschaft Request a lesson Münsterplatz 17 4051",
+            "after": "Lerngesellschaft Request a learning session Münsterplatz 17 4051"
+          }
+        ],
+        "lernbus/konzept/index.html": [
+          {
+            "start": 16,
+            "end": 32,
+            "before": "Zielgruppe Umsetzung Qualität Lektion anfragen Trägerschaft Übersicht EN Damit Kinder jetzt gern lernen Lernen im eigenen",
+            "after": "Zielgruppe Umsetzung Qualität Lernstunde anfragen Trägerschaft Übersicht EN Langfristig und verlässlich begleiten Lernen im eigenen"
+          },
+          {
+            "start": 44,
+            "end": 63,
+            "before": "pädagogische Fachpersonen Kinder beim Lernen . Wir beginnen früh , damit Selbstvertrauen und Lernfreude wachsen können . Das Angebot",
+            "after": "pädagogische Fachpersonen Kinder über längere Zeit . Wir verbinden Spielen und Entdecken mit gezieltem Üben und stimmen die Unterstützung mit den Eltern ab . Das Angebot"
+          },
+          {
+            "start": 73,
+            "end": 80,
+            "before": "ihrer Herkunft . Lektion anfragen So läuft",
+            "after": "ihrer Herkunft . Lernstunde anfragen So läuft"
+          },
+          {
+            "start": 110,
+            "end": 123,
+            "before": "weiterlernen . Ab 3 Jahren bis zur 3 . Primarschule einschliesslich früher Deutschförderung",
+            "after": "weiterlernen . Ab drei Jahren bis zum Ende der dritten Primarklasse einschliesslich früher Deutschförderung"
+          },
+          {
+            "start": 149,
+            "end": 169,
+            "before": "Fortschritt brauchen Zeit Zuerst einzeln , dann zu zweit erstes Semester einzeln , zweites Halbjahr zu zweit Kinder sollen gern",
+            "after": "Fortschritt brauchen Zeit Einzeln oder in einer Kleingruppe Einzel - und Zweierlektionen ; Vorbereitungsgruppen mit je vier Kindern Kinder sollen gern"
+          },
+          {
+            "start": 463,
+            "end": 524,
+            "before": "eigenes Denken Wir stärken sprachliche und mathematische Grundlagen . Zugleich üben Kinder , eigene Ideen zu entwickeln , Zusammenhänge zu erkennen und Lösungen zu finden . Dazu gehören auch Kreativität , der Umgang mit Gefühlen und die Fähigkeit , sich auszudrücken und zuzuhören . Wir helfen Kindern , bei weniger interessanten Aufgaben dranzubleiben und aus Fehlern zu lernen . Den eigenen",
+            "after": "eigenes Denken Wir fördern Bewegung und Wahrnehmung , Sprache , Aufmerksamkeit sowie emotionale und soziale Fähigkeiten . Grundkompetenzen in Mathematik , Lesen und Schreiben bauen wir auf und festigen sie durch gezieltes Üben . Dabei üben die Kinder auch , Aufgaben in kleine Schritte aufzuteilen , verschiedene Lösungswege auszuprobieren , Hilfe zu nutzen und ihr Vorgehen zu überprüfen . Klare Abläufe und verlässliche Unterstützung helfen ihnen , auch bei anstrengenden Aufgaben weiterzulernen . Den eigenen"
+          },
+          {
+            "start": 642,
+            "end": 662,
+            "before": "Gelegenheiten . Auch hier lernen die Kinder im ersten Semester einzeln und im zweiten Halbjahr zu zweit . Entdecken ohne",
+            "after": "Gelegenheiten . Auch die Deutschförderung findet einzeln oder in einer Kleingruppe statt . Entdecken ohne"
+          },
+          {
+            "start": 785,
+            "end": 798,
+            "before": ". Kinder ab 3 Jahren bis zur 3 . Primarschule Besonders geeignet für",
+            "after": ". Kinder ab drei Jahren bis zum Ende der dritten Primarklasse Besonders geeignet für"
+          },
+          {
+            "start": 809,
+            "end": 828,
+            "before": "Frühe Deutschförderung ab 3 Jahren , im ersten Semester einzeln und im zweiten Halbjahr zu zweit Anmeldung ausschliesslich durch",
+            "after": "Frühe Deutschförderung ab drei Jahren , einzeln oder in einer Kleingruppe Anmeldung ausschliesslich durch"
+          },
+          {
+            "start": 883,
+            "end": 918,
+            "before": "Die Treffen Jede Lektion dauert 60 Minuten . Im ersten Semester lernt das Kind einzeln , um Vertrauen zu seiner Bezugsperson aufzubauen . Im zweiten Halbjahr finden die Lektionen zu zweit statt . Sie buchen",
+            "after": "Die Treffen Jede Woche besucht das Kind eine Lernstunde von 60 Minuten , einzeln oder in einer Kleingruppe . Sie buchen"
+          },
+          {
+            "start": 919,
+            "end": 947,
+            "before": "ein Schulsemester . Die Inhalte folgen den Interessen des Kindes : Spiel , Gestalten , Sprache , Mathematik und der Umgang mit Gefühlen gehören dazu . 4 Die",
+            "after": "ein Schulsemester . Im Vorbereitungssemester gibt es separate Gruppen für den Eintritt in den Kindergarten und in die Schule , mit je vier Kindern . Die Inhalte richten sich nach den Stärken , Interessen und Bedürfnissen des Kindes . Wir verbinden Spiel und Entdecken mit passenden Aufgaben und festigen , was das Kind in der Schule lernt . 4 Die"
+          },
+          {
+            "start": 976,
+            "end": 1000,
+            "before": "Entwicklung Ihres Kindes und schauen gemeinsam in die Lernkiste . Bei Bedarf unterstützen wir Kind und Eltern auch bei weiteren Gesprächen . 6 Kleingruppen",
+            "after": "Entwicklung Ihres Kindes , klären gemeinsame Ziele und schauen in die Lernkiste . In Abstimmung mit Ihnen beziehen wir Kindergarten , Schule und bei Bedarf weitere Bezugspersonen oder Fachstellen ein . So verbinden wir die Förderung mit dem Alltag Ihres Kindes . 6 Kleingruppen"
+          },
+          {
+            "start": 1122,
+            "end": 1137,
+            "before": "Möglichkeiten der Familie Für jede Lektion von 60 Minuten gibt es vier Tarife : Fördertarif",
+            "after": "Möglichkeiten der Familie Es gibt vier monatliche Tarife : Fördertarif"
+          },
+          {
+            "start": 1143,
+            "end": 1158,
+            "before": "solidarischer Tarif . Bei Lektionen zu zweit gilt der Beitrag pro Kind . Menschen ,",
+            "after": "solidarischer Tarif . Die Beiträge gelten pro Kind : sechs Monatsbeiträge von Januar bis Juni und fünf von August bis Dezember . Menschen ,"
+          },
+          {
+            "start": 1248,
+            "end": 1281,
+            "before": "Platz an . Der Lernbus startet im Oktober 2026 mit wenigen Plätzen . Als Eltern oder Erziehungsberechtigte können Sie eine Lektion anfragen . Wir melden uns innert weniger Tage für ein Kennenlerngespräch mit",
+            "after": "Platz an . Als Eltern oder Erziehungsberechtigte können Sie über das Kontaktformular eine Lernstunde anfragen . Wir melden uns bei Ihnen , um Ihr Anliegen und ein Kennenlerngespräch mit"
+          },
+          {
+            "start": 1282,
+            "end": 1288,
+            "before": "und Ihrem Kind . Zur Übersicht",
+            "after": "und Ihrem Kind zu besprechen . Zur Übersicht"
+          },
+          {
+            "start": 1290,
+            "end": 1303,
+            "before": "mit Tarifen und Kalender → Lektion anfragen Eine Frage stellen Trägerschaft Der Lernbus",
+            "after": "mit Tarifen und Kontaktformular → Lernstunde anfragen Trägerschaft Der Lernbus"
+          },
+          {
+            "start": 1353,
+            "end": 1360,
+            "before": "Angebot der Lerngesellschaft Lektion anfragen Münsterplatz 17",
+            "after": "Angebot der Lerngesellschaft Lernstunde anfragen Münsterplatz 17"
+          }
+        ],
+        "lernbus/en/konzept/index.html": [
+          {
+            "start": 23,
+            "end": 42,
+            "before": "Quality Request a lesson Who runs it Overview DE Helping children enjoy learning from the start Learning at their",
+            "after": "Quality Request a learning session Who runs it Overview DE Consistent support over the long term Learning at their"
+          },
+          {
+            "start": 53,
+            "end": 74,
+            "before": ", trained educators help children learn . We start early , giving confidence and curiosity room to grow . The programme",
+            "after": ", trained educators support children over an extended period . We combine play and discovery with focused practice , coordinating our support with parents . The programme"
+          },
+          {
+            "start": 85,
+            "end": 92,
+            "before": ". Request a lesson How it works",
+            "after": ". Request a learning session How it works"
+          },
+          {
+            "start": 128,
+            "end": 137,
+            "before": ". From age 3 to the third year of",
+            "after": ". From age three to the end of their third year of"
+          },
+          {
+            "start": 172,
+            "end": 198,
+            "before": "progress take time One to one , then in pairs one to one in the first semester , in pairs in the second We want children",
+            "after": "progress take time Individually or in a small group individual and paired sessions ; preparatory groups of four children We want children"
+          },
+          {
+            "start": 535,
+            "end": 595,
+            "before": "independent thinking We strengthen language and mathematical skills . At the same time , children practise developing their own ideas , making connections and finding solutions . They also explore creativity , learn about feelings , and practise expressing themselves and listening to others . We help them persevere with less interesting tasks and learn from mistakes . Seeing their",
+            "after": "independent thinking We foster movement and perception , language , attention , and emotional and social skills . We develop core skills in mathematics , reading and writing , and consolidate them through focused practice . Children also practise breaking tasks into small steps , trying different ways to solve a problem , using help and reviewing their approach . Clear routines and consistent support help them keep learning when tasks are demanding . Seeing their"
+          },
+          {
+            "start": 721,
+            "end": 745,
+            "before": "to practise . Here too , lessons are one to one in the first semester and in pairs in the second . Exploring without",
+            "after": "to practise . German language support also takes place individually or in a small group . Exploring without"
+          },
+          {
+            "start": 879,
+            "end": 888,
+            "before": "Children from age 3 to the third year of",
+            "after": "Children from age three to the end of their third year of"
+          },
+          {
+            "start": 906,
+            "end": 927,
+            "before": "support from age 3 , one to one in the first semester and in pairs in the second Children can only",
+            "after": "support from age three , individually or in a small group Children can only"
+          },
+          {
+            "start": 995,
+            "end": 1039,
+            "before": "3 The sessions Each lesson lasts 60 minutes . In the first semester , lessons are one to one , giving your child time to build trust with their mentor . In the second semester , lessons take place in pairs . You book",
+            "after": "3 The sessions Your child attends one 60 - minute learning session each week , individually or in a small group . You book"
+          },
+          {
+            "start": 1043,
+            "end": 1070,
+            "before": "a time . Activities follow your child ' s interests and include play , creative work , language , mathematics and learning about feelings . 4 The",
+            "after": "a time . The preparatory semester offers separate groups for starting kindergarten and primary school , with four children in each group . Activities reflect your child ' s strengths , interests and needs . We combine play and discovery with suitable tasks and consolidate what your child learns at school . 4 The"
+          },
+          {
+            "start": 1108,
+            "end": 1114,
+            "before": "development with you and look through",
+            "after": "development with you , agree shared goals and look through"
+          },
+          {
+            "start": 1116,
+            "end": 1134,
+            "before": "box together . Where needed , we also support children and parents in other meetings . 6 Small",
+            "after": "box together . In consultation with you , we involve kindergarten , school and , where needed , other important people in your child ' s life or specialist services . This connects our support with your child ' s everyday life . 6 Small"
+          },
+          {
+            "start": 1278,
+            "end": 1291,
+            "before": "We offer four rates for each 60 - minute lesson : subsidised ,",
+            "after": "We offer four monthly rates : subsidised ,"
+          },
+          {
+            "start": 1296,
+            "end": 1312,
+            "before": "and solidarity . For lessons in pairs , the fee is per child . People who",
+            "after": "and solidarity . Fees are per child , with six monthly payments from January to June and five from August to December . People who"
+          },
+          {
+            "start": 1401,
+            "end": 1440,
+            "before": "a place . Lernbus starts in October 2026 with a limited number of places . Parents and legal guardians can request a lesson . We will get back to you within a few days to arrange an introductory meeting",
+            "after": "a place . Parents and legal guardians can use the contact form to request a learning session . We will get in touch to discuss your enquiry and an introductory meeting"
+          },
+          {
+            "start": 1448,
+            "end": 1462,
+            "before": ", fees and calendar → Request a lesson Ask a question Who runs it",
+            "after": ", fees and contact form → Request a learning session Who runs it"
+          },
+          {
+            "start": 1520,
+            "end": 1527,
+            "before": "Lerngesellschaft Request a lesson Münsterplatz 17 4051",
+            "after": "Lerngesellschaft Request a learning session Münsterplatz 17 4051"
+          }
+        ],
+        "lernbus/team/index.html": [
+          {
+            "start": 573,
+            "end": 580,
+            "before": "Angebot der Lerngesellschaft Lektion anfragen Münsterplatz 17",
+            "after": "Angebot der Lerngesellschaft Lernstunde anfragen Münsterplatz 17"
+          }
+        ],
+        "lernbus/team/en/index.html": [
+          {
+            "start": 874,
+            "end": 881,
+            "before": "Lerngesellschaft Request a lesson Münsterplatz 17 4051",
+            "after": "Lerngesellschaft Request a learning session Münsterplatz 17 4051"
+          }
+        ]
+      }
     }
   ]
 }
