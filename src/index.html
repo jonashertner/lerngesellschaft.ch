@@ -1,5 +1,6 @@
 {% set landing = societyLanding.de %}
 {% set isHome = true %}
+{% set experience = societyExperience.de %}
 {% set alternateUrl = "/en/" %}
 <!DOCTYPE html>
 <html lang="de">
@@ -13,14 +14,18 @@
 <meta property="og:locale" content="de_CH" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://lerngesellschaft.ch/" />
-<meta property="og:image" content="https://lerngesellschaft.ch/assets/media/hero-poster.jpg" />
-<meta property="og:image:alt" content="Kinder beim Experimentieren" />
+<meta property="og:image" content="https://lerngesellschaft.ch/assets/media/learning-world.webp" />
+<meta property="og:image:alt" content="Leuchtende Welt aus feinen Lichtfäden" />
 <meta name="twitter:card" content="summary_large_image" />
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M16 3c5 0 9 3 9 8 0 3-2 4-2 7s3 3 3 6-4 5-10 5S6 31 6 27s3-3 3-6-2-4-2-7c0-5 4-8 9-8z' fill='%23ff3d8b'/%3E%3C/svg%3E" />
-<link rel="preload" href="/assets/fonts/bricolage-latin.woff2" as="font" type="font/woff2" crossorigin />
+<meta name="twitter:title" content="Lerngesellschaft / Learning Society" />
+<meta name="twitter:description" content="Lernbus: langfristige Lernbegleitung in Basel. Öffentliche Veranstaltungen für Kinder und Workshops für Schulen sind in Entwicklung." />
+<meta name="twitter:image" content="https://lerngesellschaft.ch/assets/media/learning-world.webp" />
+<meta name="twitter:image:alt" content="Leuchtende Welt aus feinen Lichtfäden" />
+<link rel="icon" href="/assets/society-favicon.svg" type="image/svg+xml" />
+<link rel="preload" href="/fonts/BradfordLLWeb-Book.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="preload" href="/assets/fonts/hanken-latin.woff2" as="font" type="font/woff2" crossorigin />
-<link rel="stylesheet" href="/assets/society-landing.css?v=20260916-responsive" />
-<link rel="stylesheet" href="/assets/society-footer.css?v=20260916-landscape" />
+<link rel="stylesheet" href="/assets/society-immersive.css?v=20261021-1" />
+
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"NGO","name":"Lerngesellschaft / Learning Society","areaServed":"Basel","description":"Gemeinnütziger Verein, der Bildungsangebote für Kinder und Schulen entwickelt: Lernbus, öffentliche Veranstaltungen für Kinder und Workshops für Schulen.","address":"Münsterplatz 17, 4051 Basel","email":"team@jonashertner.com"}
 </script>
@@ -29,8 +34,8 @@
 <link rel="alternate" hreflang="en" href="https://lerngesellschaft.ch/en/" />
 <link rel="alternate" hreflang="x-default" href="https://lerngesellschaft.ch/" />
 </head>
-<body class="society-landing">
+<body class="society-immersive">
 <a href="#main" class="skip">Zum Inhalt springen</a>
-{% include "society-home.njk" %}
+{% include "society-immersive.njk" %}
 </body>
 </html>
