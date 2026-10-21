@@ -1,24 +1,43 @@
 name: deploy
 
 on:
+  push:
+    branches: [main]
   workflow_dispatch:
 
 permissions:
-  contents: read
-  pages: write
+  contents: write
 
 jobs:
-  publish-approved-site:
+  build-and-deploy:
     runs-on: ubuntu-latest
-    timeout-minutes: 5
     steps:
-      - name: Verify approved publication branch and request Pages build
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - run: npm ci
+      - run: npm run build
+
+      - name: Prepare DE deploy (lerngesellschaft.ch)
         run: |
-          set -eu
-          pages_sha="$(gh api "repos/${GITHUB_REPOSITORY}/git/ref/heads/gh-pages" --jq '.object.sha')"
-          test "$pages_sha" = "2765d4ad992298f00c0491231ef1d816fcca00cb"
-          pages_source="$(gh api "repos/${GITHUB_REPOSITORY}/pages" --jq '.source | .branch + ":" + .path')"
-          test "$pages_source" = "gh-pages:/"
-          gh api --method POST "repos/${GITHUB_REPOSITORY}/pages/builds"
+          rm -rf _site_de
+          cp -r _site _site_de
+          echo "lerngesellschaft.ch" > _site_de/CNAME
+          # Root is the Verein homepage (src/index.html). The hold page is retired.
+
+
+      - name: Deploy DE → gh-pages of this repo
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: ./_site_de
+          cname: lerngesellschaft.ch
+
+      # learningsociety.ch redirects to the current Basel homepage at lerngesellschaft.ch/en/
+      # (configured manually on the gh-pages branch of that repo). No deploy
+      # step needed here. Historical essays live under /essays/relational-learning/.
