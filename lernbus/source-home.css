@@ -39,6 +39,24 @@
 .source-home #warum h2{grid-column:1;grid-row:2;color:var(--yellow);font-size:clamp(2.7rem,4.5vw,4.6rem);margin:0;max-width:18ch}
 .source-home #warum .lead{grid-column:1;grid-row:3;color:var(--bg);max-width:34ch!important;font-size:1.125rem}
 .source-home #warum .detail{grid-column:2;grid-row:2/span 2;margin:0!important}
+.source-home #warum .learning-copy{color:var(--bg);font-size:1.2rem;line-height:1.65;max-width:52ch;margin:0}
+.source-home .news-section{background:var(--surface-soft);padding-block:var(--section-compact)}
+.news-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:2rem 5rem;align-items:start}
+.source-home .news-section h2{font-size:clamp(1.8rem,3vw,3rem);margin:0}
+.news-section .eyebrow{margin-bottom:1rem}
+.news-intro h3{font-family:var(--display);font-size:1.5rem;margin:1.5rem 0 .75rem;color:var(--violet)}
+.news-intro p:not(.eyebrow){font-size:1.0625rem;line-height:1.65;max-width:47ch}
+.news-intro .news-location{margin-top:1.25rem}
+.news-intro .morelink{margin-top:1.25rem}
+.news-dates{background:var(--bg);border-top:3px solid var(--violet);padding:1.5rem 2rem}
+.news-dates h3{font-family:var(--display);font-size:1.375rem;color:var(--violet);margin:0 0 1rem}
+.event-list{list-style:none;padding:0;margin:0}
+.event-list li{display:flex;justify-content:space-between;gap:.5rem 1.5rem;flex-wrap:wrap;padding:1rem 0;border-top:1px solid var(--hairline);font-size:1.0625rem;line-height:1.5}
+.event-list time{font-weight:700;color:var(--violet)}
+.event-list span{white-space:nowrap;font-variant-numeric:tabular-nums}
+.event-timezone{font-size:.875rem;line-height:1.5;margin:1rem 0 0;color:var(--teal-soft)}
+@media(max-width:48rem){.news-grid{grid-template-columns:minmax(0,1fr);gap:1.5rem}}
+@media(max-width:32rem){.news-dates{padding:1.25rem}.event-list li{display:grid;gap:.2rem}}
 .source-home #warum .dsec{display:block;padding:1.5rem 0 2rem}
 .source-home #warum .dsec:first-child{padding-top:0}
 .source-home #warum .dsec h3{font-size:clamp(1.4rem,2vw,1.8rem);max-width:none;color:var(--bg)}
@@ -90,12 +108,15 @@
 .source-home #kosten h2.big{font-size:clamp(2.6rem,4.5vw,4.5rem)}
 .source-home #kosten .lead{margin-top:0!important;align-self:center}
 .source-home #kosten .tariffs{grid-column:1/-1}
+.source-home #kosten .tariffs-note{grid-column:1/-1;max-width:75ch;margin-top:1.5rem;color:var(--bg);font-size:1.0625rem;line-height:1.6}
+.source-home #kosten .tariffs-note strong{color:inherit}
 .source-home .tariffs{max-width:none;margin-top:3rem;table-layout:fixed}
 .source-home .tariffs th,.source-home .tariffs td{padding:1.6rem 1.5rem}
-.source-home .tariffs thead th{font-size:.9375rem;color:var(--bg);letter-spacing:.02em;text-transform:none;padding-block:1rem;text-align:right;width:24%}
-.source-home .tariffs thead th:first-child{width:52%;text-align:left;padding-left:0}
+.source-home .tariffs thead th{font-size:.9375rem;color:var(--bg);letter-spacing:.02em;text-transform:none;padding-block:1rem;text-align:right;width:20%}
+.source-home .tariffs thead th:first-child{width:40%;text-align:left;padding-left:0}
 .source-home .tariffs thead th span{font-size:.875rem}
-.source-home .tariffs tbody th{width:52%;padding-left:0;padding-right:2rem}
+.source-home .tariffs thead th{overflow-wrap:anywhere}
+.source-home .tariffs tbody th{width:40%;padding-left:0;padding-right:2rem}
 .source-home .tariffs .tname{color:var(--bg);font-size:clamp(1.45rem,2vw,1.8rem);background:none}
 .source-home .tariffs .tdesc{color:var(--bg);max-width:46ch;font-size:1rem;line-height:1.55;margin-top:.65rem}
 .source-home .tariffs td{font-size:clamp(1.5rem,2.2vw,2rem);color:var(--bg);font-variant-numeric:tabular-nums;letter-spacing:-.01em;width:auto;text-align:right;vertical-align:middle}
@@ -203,13 +224,18 @@
 @media(max-width:48rem){
  .source-home .tariffs,.source-home .tariffs tbody{display:block;width:100%;table-layout:auto}
  .source-home .tariffs thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%)}
- .source-home .tariffs tbody tr{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.4rem 0;padding:1.75rem 0;border-bottom:1px solid var(--hairline)}
+ .source-home .tariffs tbody tr{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.4rem 0;padding:1.75rem 0;border-bottom:1px solid var(--hairline)}
  .source-home .tariffs tbody th{display:block;grid-column:1/-1;width:auto;padding:0;border:0}
- .source-home .tariffs td{display:block;width:auto;padding:0 1rem 0 0;margin:0;border:0;font-size:1.75rem;text-align:left;white-space:nowrap}
- .source-home .tariffs td+td{padding:0 0 0 1.25rem;border-left:1px solid var(--hairline)}
- .source-home .tariffs td::before{content:attr(data-label);display:block;min-height:2.7em;margin:0 0 .45rem;font-family:var(--body);font-size:.875rem;line-height:1.35;color:var(--bg);letter-spacing:0;text-transform:none;font-weight:500;white-space:normal}
+ .source-home .tariffs td{display:block;min-width:0;width:auto;padding:0 .65rem 0 0;margin:0;border:0;font-size:clamp(1.15rem,3.8vw,1.75rem);text-align:left;white-space:nowrap}
+ .source-home .tariffs td+td{padding:0 .4rem 0 .65rem;border-left:1px solid var(--hairline)}
+ .source-home .tariffs td::before{content:attr(data-label);display:block;min-height:4.05em;margin:0 0 .45rem;font-family:var(--body);font-size:.8125rem;line-height:1.35;color:var(--bg);letter-spacing:0;text-transform:none;font-weight:500;white-space:normal;overflow-wrap:anywhere}
  .source-home .tariffs .tname{font-size:1.65rem}
  .source-home .tariffs .tdesc{max-width:46ch;font-size:1rem}
+}
+@media(max-width:30rem){
+ .source-home .tariffs tbody tr{grid-template-columns:minmax(0,1fr);gap:1rem}
+ .source-home .tariffs td,.source-home .tariffs td+td{display:flex;align-items:baseline;justify-content:space-between;gap:1rem;padding:0;border:0;font-size:1.4rem}
+ .source-home .tariffs td::before{min-height:0;max-width:65%;margin:0;font-size:.9375rem}
 }
 @media(prefers-reduced-motion:reduce){.source-art{transform:none}}
 .source-home .contact-section{background:var(--surface-soft);padding-block:var(--section-compact)}
