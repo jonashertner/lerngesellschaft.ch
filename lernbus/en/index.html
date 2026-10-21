@@ -33,13 +33,13 @@
 <link rel="preload" href="/assets/fonts/bricolage-latin.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="preload" href="/assets/fonts/hanken-latin.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="stylesheet" href="../styles.css?v=49764be4092f" />
-<link rel="stylesheet" href="../detail.css?v=5d22c5c2a9cc">
-<link rel="stylesheet" href="../source-home.css?v=3a6ce4f2e359">
-<link rel="stylesheet" href="../home-refinement.css?v=90755e2558bc">
-<link rel="stylesheet" href="../tariff-guide.css?v=8aec82f95373">
-<link rel="stylesheet" href="../contact.css?v=fee16c14c0b3">
+<link rel="stylesheet" href="../detail.css?v=c7ba60c432d6">
+<link rel="stylesheet" href="../source-home.css?v=7f1495441a76">
+<link rel="stylesheet" href="../home-refinement.css?v=e171108809f2">
+<link rel="stylesheet" href="../tariff-guide.css?v=cb305386bf49">
+<link rel="stylesheet" href="../contact.css?v=41912f1515c0">
 <script src="../contact.js?v=cfe31135e070" type="module"></script>
-<link rel="stylesheet" href="../navigation.css?v=485e71328a27">
+<link rel="stylesheet" href="../navigation.css?v=c14506d0d664">
 <link rel="stylesheet" href="../footer.css?v=95a1c4a3cd54">
 </head>
 <body class="detail-page source-home locale-en">
@@ -83,6 +83,7 @@
     <div class="hero-scrim" aria-hidden="true"></div>
     <div class="hero-inner">
       <div class="wrap source-hero-grid">
+        <p class="eyebrow hero-context">Learning support in Basel</p>
         <h1>We meet each child where they are.</h1>
         <div class="source-hero-copy">
         <p class="lead">Lernbus supports children from age three to the end of their third year of primary school. We build on their strengths, interests and needs. We provide consistent support over the long term. We strengthen the foundations for learning and consolidate what children learn at school. In doing so, we connect families, kindergarten and school.</p>
@@ -192,7 +193,7 @@
   <!-- TEAM -->
   <section class="section team-section" id="team" aria-labelledby="team-heading">
     <div class="wrap">
-      <h2 class="big" id="team-heading">Team</h2>
+      <h2 class="big" id="team-heading">People who care about your child</h2>
       
       
       
@@ -254,6 +255,14 @@
     <div class="accent-blob" style="width:24vw;height:24vw;background:var(--cyan);right:-8vw;bottom:-4vw"></div>
     <div class="wrap">
       <h2 class="big reveal">How it works</h2>
+      <ol class="process-steps" role="list">
+        <li><h3>Getting to know each other</h3><p>We meet you and your child for an introductory conversation.</p></li>
+        <li><h3>Planning together</h3><p>We discuss the format and rate that suit your family. You book one school semester at a time.</p></li>
+        <li><h3>Learning each week</h3><p>Your child attends a 60-minute learning session each week, individually or in a small group. We stay in touch with you.</p></li>
+      </ol>
+      <details class="content-disclosure">
+        <summary>What the support includes</summary>
+        <div class="disclosure-body">
       <ul class="process-overview" role="list">
         <li><p><b>Introductory meeting</b> with the parents and the child</p></li>
         <li><p><b>Weekly learning support</b> in 60-minute sessions, individually or in a small group. Booked for one school semester at a time.</p></li>
@@ -263,6 +272,8 @@
         <li><p><b>Parent meetings</b> and support tailored to the needs of children and parents, including accompanying them to meetings</p></li>
         <li><p><b>Small groups during school holidays</b> to strengthen and develop a wide range of skills</p></li>
       </ul>
+        </div>
+      </details>
     </div>
   </section>
 
@@ -272,6 +283,7 @@
       <p class="eyebrow reveal" style="--dot:var(--violet)">Fees</p>
       <h2 class="big reveal">What does it cost?</h2>
       <p class="lead reveal" style="margin-top:1.4rem; max-width:58ch">Fees are per month and per child. There are six monthly payments from January to June and five from August to December. We discuss the appropriate rate with you at the introductory meeting.</p>
+      <p class="tariffs-note reveal"><strong>Preparatory semester:</strong> Separate groups prepare children for kindergarten or for school. Each group has four children.</p>
       <table class="tariffs reveal" role="table">
         <caption class="vh">Monthly fees per child in Swiss francs: six monthly payments from January to June and five from August to December</caption>
         <thead role="rowgroup">
@@ -284,7 +296,6 @@
           <tr role="row"><th role="rowheader" scope="row"><span class="tname">Solidarity rate</span><span class="tdesc">A contribution above the full cost of a place. The extra amount goes entirely towards subsidised places.</span></th><td role="cell" data-label="One-to-one · monthly">CHF 400</td><td role="cell" data-label="In pairs · monthly">CHF 300</td><td role="cell" data-label="Preparatory semester · monthly">CHF 250</td></tr>
         </tbody>
       </table>
-      <p class="tariffs-note reveal"><strong>Preparatory semester:</strong> Separate groups prepare children for kindergarten or for school. Each group has four children.</p>
       
 <details class="tariff-guide" id="tariforientierung">
   <summary>
@@ -463,7 +474,6 @@
       <p class="eyebrow">Get in touch</p>
       <h2 class="big">Request a learning session</h2>
       <p class="lead">We will get back to you within a few days to discuss your questions and the next steps.</p>
-      <p class="contact-next">Your enquiry is not a binding booking.</p>
       <a class="morelink" href="mailto:info@lernbus.ch">info@lernbus.ch</a>
     </div>
     <div class="book-card contact-card">
@@ -489,6 +499,7 @@
         <div class="contact-trap" aria-hidden="true"><label for="f-website">Website</label><input id="f-website" name="_gotcha" type="text" tabindex="-1" autocomplete="off" maxlength="200" /></div>
         <input type="hidden" name="_subject" value="Lernbus: request a learning session" />
         <input type="hidden" name="language" value="en" />
+        <p class="contact-next">Your enquiry is not a binding booking.</p>
         <div class="contact-submit"><button type="submit" class="btn btn-pink">Request a learning session</button></div>
       </form>
       <p class="book-note" id="contact-note">Your enquiry is sent directly to info@lernbus.ch. <a class="contact-privacy" href="/imprint/#formulare">Contact form privacy</a></p>
@@ -527,10 +538,13 @@
           <p>Booking for a school semester gives us time to get to know each other and keep working on suitable tasks. We combine a reliable relationship with targeted support. Lessons are booked for a school semester at a time.</p>
           </div>
         </details>
-        <details class="faq-item">
+        <details class="faq-item" id="qualitaet">
           <summary><h3>Who works with my child?</h3></summary>
           <div class="faq-answer">
           <p>Our mentors have training in education and experience of working with children. They are carefully selected. Regular team meetings, shared professional learning, evaluation and continuing professional development help us maintain quality.</p>
+          <h4>Professional standards and quality assurance</h4>
+          <p>Our mentors bring empathy, reflective practice and professional expertise to their work. Their educational training and experience enable them to respond to each child's interests and needs.</p>
+          <p>We maintain and continually improve the quality of the programme.</p>
           <p style="margin-top:.8rem"><a class="morelink" href="../team/en/index.html">Meet the team <span>&rarr;</span></a></p>
           </div>
         </details>
@@ -547,15 +561,6 @@
           </div>
         </details>
       </div>
-    </div>
-  </section>
-
-  <!-- FRAMEWORK AND QUALITY ASSURANCE -->
-  <section class="section tint" id="qualitaet" style="--dot:var(--violet)">
-    <div class="wrap">
-      <h2 class="big reveal">Professional standards and quality assurance</h2>
-      <p class="lead reveal" style="margin-top:1.4rem; max-width:58ch">Our mentors bring empathy, reflective practice and professional expertise to their work. Their educational training and experience enable them to respond to each child's interests and needs.</p>
-      <p class="lead reveal" style="margin-top:1.2rem; max-width:58ch">We maintain and continually improve the quality of the programme.</p>
     </div>
   </section>
 
@@ -632,6 +637,6 @@
 </footer>
 
 
-<script src="../faq.js?v=517226182155" type="module"></script>
+<script src="../faq.js?v=23fb1198de83" type="module"></script>
 </body>
 </html>

@@ -4,12 +4,12 @@ html { scroll-padding-top: var(--lernbus-header-height, 5.25rem); }
   position: fixed;
   inset: 0 0 auto;
   border-bottom: 1px solid rgba(73, 63, 128, .22);
-  background: #fafafa;
+  background: var(--bg);
   z-index: 40;
   transition: box-shadow .2s ease, background-color .2s ease;
 }
 .detail-page .site-head.nav-fixed.is-scrolled {
-  background: rgba(250, 250, 250, .97);
+  background: rgba(252, 251, 247, .97);
   box-shadow: 0 4px 20px rgba(41, 35, 62, .07);
   -webkit-backdrop-filter: blur(12px);
   backdrop-filter: blur(12px);
@@ -70,7 +70,7 @@ html { scroll-padding-top: var(--lernbus-header-height, 5.25rem); }
 .detail-page .site-head.nav-inline .navlink[aria-current]::after { background: var(--violet); }
 .detail-page .site-head .nav .nav-booking {
   background: var(--violet);
-  color: var(--yellow);
+  color: var(--bg);
   border: 1px solid var(--violet);
   border-radius: 4px;
   padding: .75rem 1.125rem;
@@ -91,7 +91,7 @@ html { scroll-padding-top: var(--lernbus-header-height, 5.25rem); }
   transform: none;
   transition: background-color .15s ease;
 }
-.detail-page .site-head .menu-btn:hover { background: var(--violet-deep); }
+.detail-page .site-head .menu-btn:hover { background: var(--surface-soft); }
 .detail-page .site-head.menu-open,
 .detail-page .site-head:not(.nav-inline):has(.menu[open]) {
   inset: 0;

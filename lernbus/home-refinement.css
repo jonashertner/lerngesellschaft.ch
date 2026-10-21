@@ -21,7 +21,7 @@
 .content-disclosure>summary:focus-visible{outline:3px solid currentColor;outline-offset:4px;border-radius:4px}
 .disclosure-body{padding:.5rem 0 1rem}
 .source-home #warum .why-disclosure{margin-top:1rem}
-.source-home #warum .why-disclosure>summary{color:var(--yellow)}
+.source-home #warum .why-disclosure>summary{color:var(--violet)}
 .source-home #warum .detail>.dsec{padding-bottom:.5rem;border-bottom:0}
 .source-home .tariffs{border-top-width:1px}
 .source-home .goals-list{grid-column:1/-1;margin-top:2rem;border-top:2px solid var(--violet)}
@@ -49,7 +49,7 @@
 .source-home .hero h1{hyphens:manual}
 /* Keep the first field close to the invitation on a narrow screen. */
 .source-home .contact-intro .lead{margin-top:1.25rem}
-.source-home .contact-next{margin:1rem 0 0}
+.source-home .contact-next{margin:1.5rem 0 0;font-size:.9375rem;color:var(--teal-ink)}
 .source-home .contact-intro .morelink{margin:.5rem 0 0}
 .source-home .contact-ages{border-radius:0;border-color:var(--line)}
 @media(max-width:64rem){.source-home .contact-grid{row-gap:1.5rem}}
@@ -58,4 +58,35 @@
  .content-disclosure::details-content{content-visibility:visible}
  .content-disclosure .disclosure-body,.content-disclosure .ticks{display:block!important}
  .content-disclosure>summary::after{display:none}
+}
+
+/* Visitor journey: three distinct steps, with supporting detail one level down. */
+.source-home .hero-context{color:var(--forest);font-size:.8125rem;letter-spacing:.06em}
+.source-home .hero-context::before{display:none}
+.source-home .process-steps{list-style:none;margin:0;padding:0;counter-reset:journey}
+.source-home .process-steps li{counter-increment:journey;position:relative;padding:0 0 1.75rem 3rem;margin-bottom:1.75rem;border-bottom:1px solid var(--hairline)}
+.source-home .process-steps li::before{content:counter(journey,decimal-leading-zero);position:absolute;inset:0 auto auto 0;color:var(--forest);font-size:.875rem;font-weight:650;line-height:1.8}
+.source-home .process-steps h3{font-size:clamp(1.35rem,2vw,1.65rem);line-height:1.3;margin:0 0 .65rem}
+.source-home .process-steps p{font-size:1.0625rem;line-height:1.65;max-width:55ch}
+.source-home #ablauf .content-disclosure{grid-column:2;margin-top:0}
+.source-home .tariffs{margin-top:1.75rem}
+.source-home .tariffs th,.source-home .tariffs td{padding-block:1.25rem}
+.source-home .tariffs-note{padding-left:1rem;border-left:2px solid #a9c8ba}
+.source-home .news-dates{background:transparent;padding-top:1.25rem;border-top:1px solid var(--line)}
+.source-home .fuerwen li{border-left:1px solid #c9c2d8}
+.source-home #ansatz h2.big{font-size:clamp(1.9rem,3.2vw,3rem);line-height:1.13}
+.source-home #qualitaet{scroll-margin-top:7rem}
+@media(max-width:48rem){
+ .source-home #ablauf .process-steps{margin-top:1.75rem}
+ .source-home #ablauf .content-disclosure{margin-top:1rem}
+ .source-home #warum .detail{margin-top:1.5rem!important}
+ .source-home #warum .learning-copy{font-size:1.0625rem}
+ .source-home .source-art{margin-top:1rem}
+ .source-home .tariffs tbody tr{padding-block:1.35rem;gap:.75rem}
+ .source-home .tariffs .tname{font-size:1.45rem}
+ .source-home .tariffs th,.source-home .tariffs td{padding-block:0}
+ .source-home .news-dates{padding-inline:0}
+}
+@media print{
+ .source-home #warum,.source-home #kosten{--bg:#fff;--yellow:var(--ink);background:#fff;color:var(--ink)}
 }
