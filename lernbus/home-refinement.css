@@ -43,7 +43,17 @@
  .source-home .team-section .team-profile{gap:1.75rem}
  .source-home .team-section>.wrap>.morelink{margin-top:1.25rem}
 }
-@media(max-width:26rem){.source-home :is(p,li,dd,.tname,.btn){hyphens:auto}}
+/* Ragged-right reading copy needs whole words, including at phone widths.
+   Authored soft hyphens remain available for long compound labels. */
+.source-home :is(p,li,dd,.tname,.btn){hyphens:manual}
+.source-home .hero h1{hyphens:manual}
+/* Keep the first field close to the invitation on a narrow screen. */
+.source-home .contact-intro .lead{margin-top:1.25rem}
+.source-home .contact-next{margin:1rem 0 0}
+.source-home .contact-intro .morelink{margin:.5rem 0 0}
+.source-home .contact-ages{border-radius:0;border-color:var(--line)}
+@media(max-width:64rem){.source-home .contact-grid{row-gap:1.5rem}}
+
 @media print{
  .content-disclosure::details-content{content-visibility:visible}
  .content-disclosure .disclosure-body,.content-disclosure .ticks{display:block!important}

@@ -1,0 +1,79 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Lernbus//Offene Tueren 2026//DE
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Lernbus – Open doors in autumn 2026
+BEGIN:VEVENT
+UID:lernbus-offene-tueren-2026-10-23@lernbus.ch
+DTSTAMP:20261021T120000Z
+DTSTART:20261023T070000Z
+DTEND:20261023T090000Z
+SUMMARY:Lernbus – Open doors
+LOCATION:Münsterplatz 17\, 4051 Basel
+DESCRIPTION:Discover Lernbus with your child\, try out the play materials a
+ nd ask questions\, with no obligation.\nhttps://lerngesellschaft.ch/lernbu
+ s/en/#aktuelles
+URL:https://lerngesellschaft.ch/lernbus/en/#aktuelles
+END:VEVENT
+BEGIN:VEVENT
+UID:lernbus-offene-tueren-2026-10-26@lernbus.ch
+DTSTAMP:20261021T120000Z
+DTSTART:20261026T150000Z
+DTEND:20261026T170000Z
+SUMMARY:Lernbus – Open doors
+LOCATION:Münsterplatz 17\, 4051 Basel
+DESCRIPTION:Discover Lernbus with your child\, try out the play materials a
+ nd ask questions\, with no obligation.\nhttps://lerngesellschaft.ch/lernbu
+ s/en/#aktuelles
+URL:https://lerngesellschaft.ch/lernbus/en/#aktuelles
+END:VEVENT
+BEGIN:VEVENT
+UID:lernbus-offene-tueren-2026-11-20@lernbus.ch
+DTSTAMP:20261021T120000Z
+DTSTART:20261120T080000Z
+DTEND:20261120T100000Z
+SUMMARY:Lernbus – Open doors
+LOCATION:Münsterplatz 17\, 4051 Basel
+DESCRIPTION:Discover Lernbus with your child\, try out the play materials a
+ nd ask questions\, with no obligation.\nhttps://lerngesellschaft.ch/lernbu
+ s/en/#aktuelles
+URL:https://lerngesellschaft.ch/lernbus/en/#aktuelles
+END:VEVENT
+BEGIN:VEVENT
+UID:lernbus-offene-tueren-2026-11-23@lernbus.ch
+DTSTAMP:20261021T120000Z
+DTSTART:20261123T150000Z
+DTEND:20261123T170000Z
+SUMMARY:Lernbus – Open doors
+LOCATION:Münsterplatz 17\, 4051 Basel
+DESCRIPTION:Discover Lernbus with your child\, try out the play materials a
+ nd ask questions\, with no obligation.\nhttps://lerngesellschaft.ch/lernbu
+ s/en/#aktuelles
+URL:https://lerngesellschaft.ch/lernbus/en/#aktuelles
+END:VEVENT
+BEGIN:VEVENT
+UID:lernbus-offene-tueren-2026-12-11@lernbus.ch
+DTSTAMP:20261021T120000Z
+DTSTART:20261211T080000Z
+DTEND:20261211T100000Z
+SUMMARY:Lernbus – Open doors
+LOCATION:Münsterplatz 17\, 4051 Basel
+DESCRIPTION:Discover Lernbus with your child\, try out the play materials a
+ nd ask questions\, with no obligation.\nhttps://lerngesellschaft.ch/lernbu
+ s/en/#aktuelles
+URL:https://lerngesellschaft.ch/lernbus/en/#aktuelles
+END:VEVENT
+BEGIN:VEVENT
+UID:lernbus-offene-tueren-2026-12-14@lernbus.ch
+DTSTAMP:20261021T120000Z
+DTSTART:20261214T150000Z
+DTEND:20261214T170000Z
+SUMMARY:Lernbus – Open doors
+LOCATION:Münsterplatz 17\, 4051 Basel
+DESCRIPTION:Discover Lernbus with your child\, try out the play materials a
+ nd ask questions\, with no obligation.\nhttps://lerngesellschaft.ch/lernbu
+ s/en/#aktuelles
+URL:https://lerngesellschaft.ch/lernbus/en/#aktuelles
+END:VEVENT
+END:VCALENDAR

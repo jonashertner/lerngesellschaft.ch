@@ -193,15 +193,13 @@ export function bindContactForm(form, options = {}) {
     field('name').setCustomValidity(value('name') ? '' : copy.nameRequired);
     field('phone').setCustomValidity(value('phone').replace(/\D/g, '').length >= 6 ? '' : copy.phoneRequired);
     field('children_count').setCustomValidity(validCount(value('children_count')) ? '' : copy.countRequired);
+    // Restore/autofill can change the count without an input event. Reconcile
+    // first, so only the active children are required and every new age is checked.
+    if (validCount(value('children_count')) && ages.inputs.length !== Number(value('children_count'))) ages.sync();
     ages.inputs.forEach(input => {
       input.setCustomValidity(validAge(input.value.trim()) ? '' : copy.ageRequired);
     });
     if (!form.reportValidity()) return;
-    // A browser-restored count or autofill may not have dispatched an input event.
-    if (ages.inputs.length !== Number(value('children_count'))) {
-      ages.sync();
-      if (!form.reportValidity()) return;
-    }
     const payload = {
       name: value('name'),
       email: value('email'),
@@ -239,6 +237,9 @@ export function bindContactForm(form, options = {}) {
   };
   form[contactBinding] = submit;
   form.addEventListener('submit', submit);
+  // Let the handler reconcile age fields before native validation. The required
+  // no-JavaScript fallback still uses the browser's normal submit validation.
+  form.noValidate = true;
   return submit;
 }
 

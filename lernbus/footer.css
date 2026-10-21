@@ -78,16 +78,14 @@
 .footer-landscape picture { display: block; height: 100%; }
 .footer-landscape img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center bottom; }
 .footer-base { display: flex; flex-wrap: wrap; align-items: center; gap: .75rem 2rem; padding-block: 2.5rem 1rem; font-size: .875rem; line-height: 1.5; }
-.footer-base > p { flex: 1 1 auto; }
 .footer-legal { display: flex; flex-wrap: wrap; gap: .5rem 1.5rem; }
 .footer-designed .footer-base a { display: inline-flex; align-items: center; min-height: 44px; font-weight: 500; }
-.footer-designed .footer-top { gap: .75rem; margin-left: 1rem; white-space: nowrap; }
+.footer-designed .footer-top { gap: .75rem; margin-left: auto; white-space: nowrap; }
 .footer-top span { font-size: 1.25rem; }
 @media (max-width: 56rem) {
   .footer-content { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); grid-template-areas: "identity identity" "booking booking" "contact links"; gap: 2rem; }
   .footer-identity { display: flex; flex-wrap: wrap; align-items: center; gap: 1.25rem 2rem; }
   .footer-brand { margin-bottom: 0; flex: none; width: 10rem; }
-  .footer-base > p { flex-basis: 100%; }
   .footer-designed .footer-top { margin-left: auto; }
 }
 @media (max-width: 36rem) {

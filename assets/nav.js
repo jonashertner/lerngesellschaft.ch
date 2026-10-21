@@ -4,7 +4,7 @@
    button (native details/summary), the header stays fixed while scrolling
    (.nav-fixed) and turns compact once scrolled (.is-scrolled). The link
    for the section currently in view carries aria-current. No dependencies;
-   without JavaScript the menu button still works everywhere. */
+   without JavaScript the native menu expands in the normal document flow. */
 (function () {
   'use strict';
   var head = document.querySelector('.site-head');
@@ -16,6 +16,7 @@
   var nav = head.querySelector('.nav');
   if (!wrap || !brand || !right || !menu || !nav) return;
   var summary = menu.querySelector('summary');
+  if (!summary) return;
   var inline = false;
   var scrolled = false;
 
@@ -31,6 +32,7 @@
 
   function layout() {
     var wasOpen = !inline && menu.open;
+    var focused = document.activeElement;
     head.classList.add('nav-inline');
     head.classList.remove('nav-fixed');
     menu.open = true;
@@ -41,13 +43,14 @@
       menu.open = wasOpen;
     }
     applyOpenState();
+    if (inline && focused === summary) nav.querySelector('a').focus();
+    else if (!inline && !menu.open && nav.contains(focused)) summary.focus();
   }
 
   function applyOpenState() {
-    var open = menu.open && !inline;
+    var open = head.classList.contains('nav-enhanced') && menu.open && !inline;
     head.classList.toggle('menu-open', open);
-    /* The panel and the scroll lock key off these classes, so they do not
-       depend on :has() support. The :has() rules stay as the no-JS path. */
+    /* Only the enhanced menu is modal. Native details stays in normal flow. */
     document.documentElement.classList.toggle('menu-locked', open);
     var blocks = document.querySelectorAll('main, footer');
     for (var i = 0; i < blocks.length; i++) {
@@ -64,13 +67,34 @@
       menu.open = false;
       if (summary) summary.focus();
     }
+    if (e.key === 'Tab' && head.classList.contains('nav-enhanced') && !inline && menu.open) {
+      var items = Array.prototype.slice.call(head.querySelectorAll('a[href], summary'))
+        .filter(function (el) { return el.getClientRects().length; });
+      var first = items[0], last = items[items.length - 1];
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault(); last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault(); first.focus();
+      }
+    }
   });
 
-  nav.addEventListener('click', function (e) {
-    if (inline) return;
+  head.addEventListener('click', function (e) {
     var t = e.target;
-    while (t && t !== nav && t.tagName !== 'A') t = t.parentNode;
-    if (t && t.tagName === 'A') menu.open = false;
+    while (t && t !== head && t.tagName !== 'A') t = t.parentNode;
+    if (t && t.tagName === 'A') {
+      if (!inline) menu.open = false;
+      applyOpenState();
+      var href = t.getAttribute('href');
+      var destination = href && href.charAt(0) === '#' ? document.getElementById(href.slice(1)) : null;
+      if (destination) {
+        if (!destination.hasAttribute('tabindex')) {
+          destination.setAttribute('tabindex', '-1');
+          destination.addEventListener('blur', function () { this.removeAttribute('tabindex'); }, { once: true });
+        }
+        destination.focus({ preventScroll: true });
+      }
+    }
   });
 
   /* Current section: the last one whose top has passed the marker line
@@ -116,7 +140,17 @@
     spy();
   }
 
-  layout();
+  head.classList.add('nav-enhanced');
+  try {
+    layout();
+  } catch (error) {
+    // An incomplete enhancement must leave the native menu and page usable.
+    head.classList.remove('nav-enhanced', 'nav-inline', 'nav-fixed', 'menu-open');
+    inline = false;
+    menu.open = false;
+    applyOpenState();
+    return;
+  }
   window.addEventListener('resize', layout);
   window.addEventListener('scroll', onScroll, { passive: true });
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(layout);

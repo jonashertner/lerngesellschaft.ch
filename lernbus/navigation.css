@@ -32,7 +32,6 @@ html { scroll-padding-top: var(--lernbus-header-height, 5.25rem); }
 .detail-page .site-head .head-right { gap: 1.5rem; }
 .detail-page .site-head .lang {
   border: 0;
-  border-left: 1px solid var(--hairline);
   border-radius: 0;
   width: 3.75rem;
   min-height: 44px;
@@ -43,6 +42,7 @@ html { scroll-padding-top: var(--lernbus-header-height, 5.25rem); }
   transform: none;
   transition: background-color .15s ease;
 }
+.detail-page .site-head.nav-inline .lang { border-left: 1px solid var(--hairline); }
 .detail-page .site-head .lang:hover { background: var(--surface-soft); }
 .detail-page .site-head.nav-inline .nav { gap: clamp(.5rem, 1.2vw, 1.25rem); }
 .detail-page .site-head.nav-inline .navlink {
@@ -134,6 +134,29 @@ html { scroll-padding-top: var(--lernbus-header-height, 5.25rem); }
   padding-top: calc(var(--lernbus-header-height, 5.25rem) + clamp(2.5rem, 4vw, 4rem));
 }
 .detail-page .skip { position: fixed; }
+/* Native details cannot close itself after an anchor link. Keep the fallback
+   in normal flow, with no scroll lock or content hidden behind an overlay. */
+.detail-page .site-head:not(.nav-enhanced),
+.detail-page .site-head:not(.nav-enhanced):has(.menu[open]) {
+  position: relative;
+  inset: auto;
+  overflow: visible;
+  overscroll-behavior: auto;
+}
+body:has(.site-head:not(.nav-enhanced) .menu[open]) { overflow: visible; }
+html:has(.site-head:not(.nav-enhanced)) { scroll-padding-top: 1.25rem; }
+.detail-page .site-head:not(.nav-enhanced):has(.menu[open]) .wrap {
+  flex-direction: column;
+  align-items: stretch;
+}
+.detail-page .site-head:not(.nav-enhanced):has(.menu[open]) .head-right {
+  align-items: flex-start;
+}
+.detail-page .site-head:not(.nav-enhanced) .menu { flex: 1; min-width: 0; }
+.detail-page .site-head:not(.nav-enhanced) .nav { position: static; }
+.detail-page .site-head:not(.nav-enhanced) ~ main .hero-inner {
+  padding-top: clamp(2.5rem, 4vw, 4rem);
+}
 @media (max-width: 48rem) {
   .detail-page .site-head .wrap,
   .detail-page .site-head.nav-fixed.is-scrolled .wrap {
@@ -145,7 +168,8 @@ html { scroll-padding-top: var(--lernbus-header-height, 5.25rem); }
   .detail-page .site-head .brand-logo,
   .detail-page .site-head.nav-fixed.is-scrolled .brand-logo { height: auto; }
   .detail-page .site-head .head-right { gap: .625rem; }
-  .detail-page .site-head .lang { width: 44px; padding: 0; border: 0; }
+  .detail-page .site-head .lang,
+  .detail-page .site-head.nav-inline .lang { width: 44px; padding: 0; border: 0; }
 }
 @media (prefers-reduced-motion: reduce) {
   .detail-page .site-head, .detail-page .site-head * { transition: none !important; }

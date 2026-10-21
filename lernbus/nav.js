@@ -4,7 +4,7 @@
    button (native details/summary). Reading pages keep the header fixed in
    both layouts, with a quiet shadow once scrolled (.is-scrolled). The link
    for the section currently in view carries aria-current. No dependencies;
-   without JavaScript the menu button still works everywhere. */
+   without JavaScript the native menu expands in the page's normal flow. */
 (function () {
   'use strict';
   var head = document.querySelector('.site-head');
@@ -16,6 +16,7 @@
   var nav = head.querySelector('.nav');
   if (!wrap || !brand || !right || !menu || !nav) return;
   var summary = menu.querySelector('summary');
+  if (!summary) return;
   var inline = false;
   var scrolled = false;
   var persistent = document.body.classList.contains('detail-page');
@@ -53,10 +54,10 @@
   }
 
   function applyOpenState() {
-    var open = menu.open && !inline;
+    var open = head.classList.contains('nav-enhanced') && menu.open && !inline;
     head.classList.toggle('menu-open', open);
-    /* The panel and the scroll lock key off these classes, so they do not
-       depend on :has() support. The :has() rules stay as the no-JS path. */
+    /* Only the enhanced menu is modal. Native details remains in the document
+       flow without JavaScript, so anchor links cannot leave an overlay open. */
     document.documentElement.classList.toggle('menu-locked', open);
     var blocks = document.querySelectorAll('main, footer');
     for (var i = 0; i < blocks.length; i++) {
@@ -73,7 +74,7 @@
       menu.open = false;
       if (summary) summary.focus();
     }
-    if (e.key === 'Tab' && !inline && menu.open) {
+    if (e.key === 'Tab' && head.classList.contains('nav-enhanced') && !inline && menu.open) {
       var items = Array.prototype.slice.call(head.querySelectorAll('a[href], summary'))
         .filter(function (el) { return el.getClientRects().length; });
       var first = items[0], last = items[items.length - 1];
@@ -85,9 +86,9 @@
     }
   });
 
-  nav.addEventListener('click', function (e) {
+  head.addEventListener('click', function (e) {
     var t = e.target;
-    while (t && t !== nav && t.tagName !== 'A') t = t.parentNode;
+    while (t && t !== head && t.tagName !== 'A') t = t.parentNode;
     if (t && t.tagName === 'A') {
       if (!inline) menu.open = false;
       applyOpenState();
@@ -144,7 +145,17 @@
     spy();
   }
 
-  layout();
+  head.classList.add('nav-enhanced');
+  try {
+    layout();
+  } catch (error) {
+    // An incomplete enhancement must leave the native menu and page usable.
+    head.classList.remove('nav-enhanced', 'nav-inline', 'nav-fixed', 'menu-open');
+    inline = false;
+    menu.open = false;
+    applyOpenState();
+    return;
+  }
   window.addEventListener('resize', layout);
   window.addEventListener('scroll', onScroll, { passive: true });
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(layout);

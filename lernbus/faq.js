@@ -1,12 +1,12 @@
-// Include every answer in print, then restore the reader's chosen open state.
-const questions = [...document.querySelectorAll('.faq-item')];
+// Print the complete information, then restore the reader's chosen open state.
+const disclosures = [...document.querySelectorAll('.faq-item, .content-disclosure, .tariff-guide')];
 let closedBeforePrint = null;
 window.addEventListener('beforeprint', () => {
   if (closedBeforePrint !== null) return;
-  closedBeforePrint = questions.filter(question => !question.open);
-  closedBeforePrint.forEach(question => { question.open = true; });
+  closedBeforePrint = disclosures.filter(disclosure => !disclosure.open);
+  closedBeforePrint.forEach(disclosure => { disclosure.open = true; });
 });
 window.addEventListener('afterprint', () => {
-  closedBeforePrint?.forEach(question => { question.open = false; });
+  closedBeforePrint?.forEach(disclosure => { disclosure.open = false; });
   closedBeforePrint = null;
 });

@@ -21,9 +21,9 @@
 .detail-page .menu-btn{border-radius:0;box-shadow:3px 3px 0 var(--night)}
 .detail-page .hero{min-height:0!important;background:var(--yellow)}
 .detail-page .hero-inner{padding-top:12rem;padding-bottom:4.5rem}
-.detail-page .hero h1{max-width:22ch;line-height:1.16;text-wrap:balance}
+.detail-page .hero h1{max-width:22ch;line-height:1.35;text-wrap:balance}
 /* A visible reversal of the brand pair, rather than a second nearly identical violet. */
-.detail-page .hero h1 .pop{color:var(--yellow);background:var(--violet);padding:.015em .11em .06em;white-space:normal;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.detail-page .hero h1 .pop{color:var(--yellow);background:var(--violet);padding:0 .11em .025em;white-space:normal;-webkit-box-decoration-break:clone;box-decoration-break:clone}
 .detail-page .hero h1 .pop::after{display:none}
 .detail-page .hero .lead{max-width:54ch;font-size:1.25rem}
 .detail-page .hero-scrim{display:none}
