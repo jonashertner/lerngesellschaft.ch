@@ -5,7 +5,12 @@
       <a class="society-end-name" href="{{ landing.root }}">{{ landing.name }}<span>{{ landing.place }}</span></a>
       <p>{{ landing.about }}</p>
     </div>
-    <nav aria-label="{{ landing.footerLabel }}">{% if isLandingLegal %}<a href="{{ landing.root }}">{{ landing.backLabel }}</a>{% else %}<a href="{{ landing.imprintUrl }}">{{ landing.imprint }}</a>{% endif %}</nav>
+    <nav aria-label="{{ landing.footerLabel }}">
+      {% if isLandingLegal %}<a href="{{ landing.root }}">{{ landing.backLabel }}</a>{% endif %}
+      <a href="{{ landing.approachUrl }}"{% if page.url == landing.approachUrl %} aria-current="page"{% endif %}>{{ landing.approachLabel }}</a>
+      <a href="/agb/" lang="de"{% if page.url == '/agb/' %} aria-current="page"{% endif %}>{{ landing.termsLabel }}</a>
+      <a href="{{ landing.imprintUrl }}"{% if page.url == landing.imprintUrl %} aria-current="page"{% endif %}>{{ landing.imprint }}</a>
+    </nav>
   </div>
   <div class="society-end-art" aria-hidden="true">
     <img src="/assets/media/society-rhine-old-town.webp" alt="" width="2171" height="724" loading="lazy" decoding="async" />

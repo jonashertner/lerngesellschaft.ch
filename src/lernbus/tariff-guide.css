@@ -63,3 +63,12 @@
  .tariff-guide-intro{font-size:1rem}
  .tariff-guide-toggle{width:2.25rem;height:2.25rem}
 }
+@media print{
+ /* The inverse fees section uses its background token for dark print text.
+    The inset guide is a paper surface and needs its own background token. */
+ .source-home #kosten .tariff-guide{--bg:#fff;--surface-soft:#fff;background:#fff;color:var(--ink);border-color:#b3afbc;border-radius:0;overflow:visible}
+ .tariff-guide>summary,.tariff-guide[open]>summary{color:var(--ink)}
+ .tariff-guide-toggle{display:none}
+ .tariff-guide::details-content{content-visibility:visible}
+ .tariff-guide-body{display:block!important}
+}

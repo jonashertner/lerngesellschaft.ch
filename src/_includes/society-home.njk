@@ -9,7 +9,7 @@
     <div class="wrap hero-content">
       <h1 id="purpose-title">{{ landing.title | safe }}</h1>
       <p class="hero-intro">{{ landing.intro }}</p>
-      <div class="hero-action"><a class="primary-link" href="{{ landing.lernbusUrl }}">{{ landing.action }} <span aria-hidden="true">↗</span></a><span class="action-note">{{ landing.actionNote }}</span></div>
+      <div class="hero-action"><a class="primary-link" href="{{ landing.lernbusUrl }}">{{ landing.action }} <span aria-hidden="true">→</span></a><span class="action-note">{{ landing.actionNote }}</span></div>
     </div>
     <div class="wrap hero-controls"><button class="film-toggle" type="button" aria-controls="hero-video" data-pause-label="{{ landing.pauseLabel }}" data-play-label="{{ landing.playLabel }}" data-pending-label="{{ landing.pendingLabel }}" hidden><span class="film-toggle-icon" aria-hidden="true">▶</span><span class="film-toggle-label">{{ landing.playLabel }}</span></button></div>
   </section>
@@ -18,8 +18,7 @@
     <article class="pillar pillar-lernbus" id="lernbus">
       <h2>{{ landing.lernbusTitle }}</h2>
       <p class="pillar-description">{{ landing.lernbusDescription }}</p>
-      <p class="pillar-status">{{ landing.lernbusStatus }}</p>
-      <a class="text-link" href="{{ landing.lernbusUrl }}">{{ landing.lernbusLinkLabel }} <span aria-hidden="true">↗</span></a>
+      <a class="text-link" href="{{ landing.lernbusUrl }}">{{ landing.lernbusLinkLabel }} <span aria-hidden="true">→</span></a>
     </article>
     <article class="pillar" id="forscherbuehne">
       <p class="development-label">{{ landing.development }}</p>
@@ -34,4 +33,4 @@
   </section>
 </main>
 {% include "society-landing-footer.njk" %}
-<script src="/assets/hero-video.js?v=20260915-hero"></script>
+<script src="/assets/hero-video.js?v={{ siteAssets.heroVideo }}"></script>

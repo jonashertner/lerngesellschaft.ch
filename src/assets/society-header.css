@@ -1,0 +1,11 @@
+/* One association identity across the homepage, approach and legal pages. */
+.landing-header{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding-block:1.2rem;position:relative;background:#fff;color:#282030}
+.landing-brand{display:flex;align-items:baseline;gap:1rem;font:650 clamp(1.35rem,2vw,1.8rem)/1.2 var(--display,Bricolage,Arial,sans-serif);letter-spacing:-.045em;text-decoration:none}
+.landing-brand span{font:500 .875rem/1.2 var(--body,Hanken,Arial,sans-serif);letter-spacing:0;color:#635b68}
+.language-link{flex-shrink:0;display:inline-flex;align-items:center;justify-content:center;min-height:44px;min-width:44px;border:1px solid #dcd7df;font-size:.875rem;font-weight:600;border-radius:50%;text-decoration:none}
+.landing-header a:focus-visible{outline:3px solid #7543a7;outline-offset:5px}
+@media(max-width:640px){.landing-header{padding-block:.85rem}.landing-brand{flex-wrap:wrap;gap:.2rem .7rem;max-width:calc(100% - 44px - 1rem);overflow-wrap:anywhere}.landing-brand span{font-size:.875rem}}
+@media print{.landing-header{display:none}}
+
+/* These pages now have a header in document flow; avoid reserving its height twice. */
+.society-page .landing-header + main .subhero{padding-top:clamp(2.5rem,5vw,4rem)}

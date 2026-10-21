@@ -5,7 +5,7 @@
     <div class="contact-intro">
       <p class="eyebrow">{% if contactEnglish %}Get in touch{% else %}Kontakt{% endif %}</p>
       <h2 class="big">{% if contactEnglish %}Request a learning session{% else %}Lernstunde anfragen{% endif %}</h2>
-      <p class="lead">{% if contactEnglish %}Tell us a little about your family. We will get back to you within a few days to discuss your questions and the next steps.{% else %}Erzählen Sie uns kurz von Ihrer Familie. Wir melden uns innert weniger Tage, um Ihre Fragen und die nächsten Schritte zu besprechen.{% endif %}</p>
+      <p class="lead">{% if contactEnglish %}We will get back to you within a few days to discuss your questions and the next steps.{% else %}Wir melden uns innert weniger Tage, um Ihre Fragen und die nächsten Schritte zu besprechen.{% endif %}</p>
       <p class="contact-next">{% if contactEnglish %}Your enquiry is not a binding booking.{% else %}Ihre Anfrage ist noch keine verbindliche Buchung.{% endif %}</p>
       <a class="morelink" href="mailto:{{ lernbusContact.recipient | escape }}">{{ lernbusContact.recipient }}</a>
     </div>
@@ -16,7 +16,7 @@
           <div class="field wide"><label for="f-name">{% if contactEnglish %}Parent or guardian’s name{% else %}Name eines Elternteils oder einer erziehungsberechtigten Person{% endif %}</label><input id="f-name" name="name" type="text" autocomplete="name" maxlength="120" required /></div>
           <div class="field"><label for="f-contact">{% if contactEnglish %}Email address{% else %}E-Mail-Adresse{% endif %}</label><input id="f-contact" name="email" type="email" autocomplete="email" maxlength="254" required /></div>
           <div class="field"><label for="f-phone">{% if contactEnglish %}Phone number{% else %}Telefonnummer{% endif %}</label><input id="f-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" minlength="6" maxlength="40" required /></div>
-          <div class="field wide contact-count"><label for="f-child-count">{% if contactEnglish %}Number of children{% else %}Anzahl Kinder{% endif %}</label><input id="f-child-count" name="children_count" type="number" inputmode="numeric" min="1" max="10" step="1" value="1" required /></div>
+          <div class="field wide contact-count"><label for="f-child-count">{% if contactEnglish %}How many children is this enquiry for?{% else %}Für wie viele Kinder fragen Sie an?{% endif %}</label><input id="f-child-count" name="children_count" type="number" inputmode="numeric" min="1" max="10" step="1" value="1" required /></div>
           <div class="field wide" data-age-fallback>
             <label for="f-ages">{% if contactEnglish %}Age of each child, in years{% else %}Alter jedes Kindes in Jahren{% endif %}</label>
             <input id="f-ages" name="children_ages_years" type="text" maxlength="200" aria-describedby="contact-ages-help" required />

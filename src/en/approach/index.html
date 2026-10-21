@@ -1,3 +1,5 @@
+{% set landing = societyLanding.en %}
+{% set landingAlternate = '/ansatz/' %}
 {% set home = society.en %}
 {% set isHome = false %}
 {% set alternateUrl = "/ansatz/" %}
@@ -8,10 +10,27 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>How we work · Learning Society</title>
 <meta name="description" content="How we work: children learn best when they feel they are moving forward and know there is a person who knows them and believes they can do it." />
+<meta property="og:title" content="How we work · Learning Society" />
+<meta property="og:description" content="How we work: children learn best when they feel they are moving forward and know there is a person who knows them and believes they can do it." />
+<meta property="og:locale" content="en_GB" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://lerngesellschaft.ch/en/approach/" />
+<meta property="og:image" content="https://lerngesellschaft.ch/assets/media/hero-poster.jpg?v={{ siteAssets.heroPoster }}" />
+<meta property="og:image:type" content="image/jpeg" />
+<meta property="og:image:width" content="640" />
+<meta property="og:image:height" content="640" />
+<meta property="og:image:alt" content="Children doing experiments" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="How we work · Learning Society" />
+<meta name="twitter:description" content="How we work: children learn best when they feel they are moving forward and know there is a person who knows them and believes they can do it." />
+<meta name="twitter:image" content="https://lerngesellschaft.ch/assets/media/hero-poster.jpg?v={{ siteAssets.heroPoster }}" />
+<meta name="twitter:image:alt" content="Children doing experiments" />
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M16 3c5 0 9 3 9 8 0 3-2 4-2 7s3 3 3 6-4 5-10 5S6 31 6 27s3-3 3-6-2-4-2-7c0-5 4-8 9-8z' fill='%23ff3d8b'/%3E%3C/svg%3E" />
 <link rel="preload" href="/assets/fonts/bricolage-latin.woff2" as="font" type="font/woff2" crossorigin />
-<link rel="stylesheet" href="/assets/styles.css?v=20260915-hero" />
-<link rel="stylesheet" href="/assets/society.css?v=20260916-responsive" />
+<link rel="stylesheet" href="/assets/styles.css?v={{ siteAssets.styles }}" />
+<link rel="stylesheet" href="/assets/society.css?v={{ siteAssets.society }}" />
+<link rel="stylesheet" href="/assets/society-header.css?v={{ siteAssets.header }}" />
+<link rel="stylesheet" href="/assets/society-footer.css?v={{ siteAssets.footer }}" />
 <link rel="canonical" href="https://lerngesellschaft.ch/en/approach/" />
 <link rel="alternate" hreflang="de" href="https://lerngesellschaft.ch/ansatz/" />
 <link rel="alternate" hreflang="en" href="https://lerngesellschaft.ch/en/approach/" />
@@ -19,7 +38,7 @@
 </head>
 <body class="society-page">
 <a href="#main" class="skip">Skip to content</a>
-{% include "society-header.njk" %}
+{% include "society-landing-header.njk" %}
 <main id="main">
   <section class="subhero">
     <div class="accent-blob" style="width:30vw;height:30vw;background:var(--pink);right:-8vw;top:-2vw"></div>
@@ -27,7 +46,7 @@
       <a class="back" href="/en/"><span>&larr;</span> Back to overview</a>
       <p class="eyebrow" style="--dot:var(--pink-ink)">Our approach</p>
       <h1>How we work</h1>
-      <p class="lead">A child learns best when two things come together. They feel themselves moving forward. And they know there is a person who knows them and believes they can do this. Everything we do is built from these two things.</p>
+      <p class="lead">A child learns best when two things come together. They feel themselves moving forward. And they know there is a person who knows them and believes they can do this. These two things guide our work.</p>
     </div>
   </section>
   <section class="section" style="padding-top:0; --dot:var(--pink-ink)">
@@ -45,7 +64,9 @@
         </div>
         <div class="dsec" id="mensch">
           <h2>Someone who stays</h2>
-          <p>Trust grows slowly, and only with people who stay. When a child feels that someone really knows them, they dare to do more. Isabelle Hau, executive director of the Stanford Accelerator for Learning, puts it simply: relationships are the foundation of learning. Close, sustaining relationships in the first years of school predict better results years later, even once family background and IQ are taken into account. A long-term study of Chicago schools linked improvements in reading and mathematics to a combination of leadership, instruction, professional collaboration, learning climate, and relationships with parents and the community. The researchers describe trust as an important foundation for this collaboration. The study shows associations; it does not establish cause and effect (<a class="research-source" href="https://www.shankerinstitute.org/sites/default/files/Organizing-schools-for-improvemnt-Bryk%20%281%29.pdf#page=3">Bryk, 2010</a>).</p>
+          <p>Trust grows slowly, and only with people who stay. When a child feels that someone really knows them, they dare to do more. Isabelle Hau, <a class="research-source" href="https://dschool.stanford.edu/directory/isabelle-hau">executive director of the Stanford Accelerator for Learning</a>, puts it simply: relationships are the foundation of learning.</p>
+          <p>A study following 179 children linked kindergarten teachers’ reports of relationships marked by conflict and dependency with poorer results in the early primary years. The analysis also accounted for gender, ethnicity, verbal ability and early behaviour problems. It does not establish cause and effect (<a class="research-source" href="https://greatergood.berkeley.edu/images/uploads/Hamre__Pianta_2003.pdf#page=7">Hamre and Pianta, 2001, pp. 631–632</a>).</p>
+          <p>A long-term study of Chicago schools linked improvements in reading and mathematics to a combination of leadership, instruction, professional collaboration, learning climate, and relationships with parents and the community. The researchers describe trust as an important foundation for this collaboration. The study shows associations; it does not establish cause and effect (<a class="research-source" href="https://www.shankerinstitute.org/sites/default/files/Organizing-schools-for-improvemnt-Bryk%20%281%29.pdf#page=3">Bryk, 2010</a>).</p>
           <p>In our work, we commit to continuity: the same child comes to the same person every week, for a whole semester and often longer. That person thinks about the child between the sessions and brings back the question that was left open last week. The loveliest feeling for a child is that someone is counting on them and believes they can manage.</p>
         </div>
         <div class="dsec" id="maschine">
@@ -55,16 +76,17 @@
         </div>
         <div class="dsec" id="wege">
           <h2>Three paths, one aim</h2>
-          <p>The Forscherbühne awakens wonder and makes science something children and young people in Basel can experience directly. The Learning Bus accompanies each child individually, at their own pace, reliably alongside a person who builds trust and makes development possible. With Brain and Society we bring current knowledge into school about how learning works, how social competence grows, and what part people and technologies play in education. Our work follows the principles of the Reggio Emilia approach: children are understood as active shapers of their own education, and their paths of learning are made visible. Three paths, one aim: to support children in understanding the world, growing into their potential, and feeling understood in what makes them singular.</p>
+          <p>With Forscherbühne, we aim to inspire wonder and make science something children and young people in Basel can experience directly. Lernbus accompanies each child individually, at their own pace, reliably alongside a person who builds trust and makes development possible. With Brain and Society, we plan to bring current knowledge into schools about how learning works, how social competence grows, and what part people and technologies play in education. Our work follows the principles of the Reggio Emilia approach: children are understood as active shapers of their own education, and their paths of learning are made visible. Three paths, one aim: to support children in understanding the world, growing into their potential, and feeling understood for who they are.</p>
         </div>
       </div>
-      <p class="vignette">Every child wants to understand, and to be understood.</p>
+      <p class="vignette">Every child wants to understand and to be understood.</p>
       <div class="refs" id="quellen">
         <h2>Sources</h2>
         <ul>
           <li>EDK, the Swiss conference of cantonal education ministers (ed.), Überprüfung der Grundkompetenzen (ÜGK) 2024, language of schooling and mathematics, 4th HarmoS year (second year of primary school), national report, 2026, uegk-schweiz.ch.</li>
           <li>Hairong Lu, Dimitri Van der Linden and Arnold B. Bakker, <a class="research-source" href="https://pure.eur.nl/ws/portalfiles/portal/214355874/1-s2.0-S1053811925000783-main.pdf">The neuroscientific basis of flow: Learning progress guides task engagement and cognitive control</a>, NeuroImage 308 (2025), 121076. Methods: sections 2.1–2.3; results: section 3.2.</li>
           <li>Isabelle C. Hau, Welcome to the Era of Relational Intelligence, Stanford Social Innovation Review, Spring 2026; and, by the same author, Love to Learn: The Transformative Power of Care and Connection in Early Education, PublicAffairs, 2025.</li>
+          <li>Bridget K. Hamre and Robert C. Pianta, <a class="research-source" href="https://greatergood.berkeley.edu/images/uploads/Hamre__Pianta_2003.pdf#page=7">Early Teacher–Child Relationships and the Trajectory of Children’s School Outcomes through Eighth Grade</a>, Child Development 72(2), 2001, pp. 625–638; results: pp. 631–632.</li>
           <li>Anthony S. Bryk, <a class="research-source" href="https://www.shankerinstitute.org/sites/default/files/Organizing-schools-for-improvemnt-Bryk%20%281%29.pdf">Organizing Schools for Improvement</a>, Phi Delta Kappan 91(7), April 2010, pp. 23–30, especially pp. 25 and 27. <a class="research-source" href="https://consortium.uchicago.edu/sites/default/files/2018-10/EssentialSupports.pdf">Underlying research report</a>, 2006, pp. 26–29.</li>
           <li>Jenna H. Chin et al., <a class="research-source" href="https://pure.ewha.ac.kr/en/publications/young-childrens-creative-storytelling-with-chatgpt-vs-parent-comp/">Young Children’s Creative Storytelling with ChatGPT vs. Parent: Comparing Interactive Styles</a>, CHI EA ’24 (2024), Article 379. Link to the abstract in the university repository; <a class="research-source" href="https://doi.org/10.1145/3613905.3650770">ACM publication</a>.</li>
           <li>Carolyn Edwards, Lella Gandini and George Forman (eds.), The Hundred Languages of Children: The Reggio Emilia Experience in Transformation, 3rd edition, Praeger, 2012.</li>
@@ -77,6 +99,6 @@
     </div>
   </section>
 </main>
-{% include "society-footer.njk" %}
+{% include "society-landing-footer.njk" %}
 </body>
 </html>

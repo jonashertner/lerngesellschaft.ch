@@ -12,15 +12,26 @@ locale: de
 <link rel="canonical" href="https://lerngesellschaft.ch/lernbus/team/" />
 <link rel="alternate" hreflang="de-CH" href="https://lerngesellschaft.ch/lernbus/team/" />
 <link rel="alternate" hreflang="en" href="https://lerngesellschaft.ch/lernbus/team/en/" />
+<link rel="alternate" hreflang="x-default" href="https://lerngesellschaft.ch/lernbus/team/" />
 <meta property="og:title" content="Team · Lernbus" />
 <meta property="og:description" content="Die Mentorinnen und Mentoren des Lernbusses." />
 <meta property="og:locale" content="de_CH" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://lerngesellschaft.ch/lernbus/team/" />
+<meta property="og:image" content="{{ lernbusSocial.url }}" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="{{ lernbusSocial.width }}" />
+<meta property="og:image:height" content="{{ lernbusSocial.height }}" />
+<meta property="og:image:alt" content="Lernbus-Logo und eine Collage aus Papierformen und Lernmaterialien in Violett und Gelb. Basel · lernbus.ch." />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Team · Lernbus" />
+<meta name="twitter:description" content="Die Mentorinnen und Mentoren des Lernbusses." />
+<meta name="twitter:image" content="{{ lernbusSocial.url }}" />
+<meta name="twitter:image:alt" content="Lernbus-Logo und eine Collage aus Papierformen und Lernmaterialien in Violett und Gelb. Basel · lernbus.ch." />
 <link rel="icon" type="image/png" sizes="180x180" href="../img/favicon.png" />
 <link rel="apple-touch-icon" href="../img/apple-touch-icon.png" />
-<link rel="preload" href="../fonts/bricolage-latin.woff2" as="font" type="font/woff2" crossorigin />
-<link rel="preload" href="../fonts/hanken-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="/assets/fonts/bricolage-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="/assets/fonts/hanken-latin.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="stylesheet" href="../styles.css?v={{ lernbusAssets.styles }}" />
 <link rel="stylesheet" href="../detail.css?v={{ lernbusAssets.detail }}">
 <link rel="stylesheet" href="../testimonials.css?v={{ lernbusAssets.testimonials }}">
@@ -33,18 +44,20 @@ locale: de
 <header class="site-head">
   <div class="wrap">
     <a href="../index.html" class="brand">
-      <img class="brand-logo" src="../img/logo.webp" alt="Lernbus" width="800" height="344" />
+      <img class="brand-logo" src="../img/logo.webp" srcset="../img/logo-200.webp 200w, ../img/logo-400.webp 400w, ../img/logo.webp 800w" sizes="(max-width: 48rem) 104px, 127px" alt="Lernbus" width="800" height="344" />
       <span>Ein Angebot der Lerngesellschaft · Basel</span>
     </a>
     <div class="head-right">
       <details class="menu">
         <summary class="menu-btn"><span class="menu-ico" aria-hidden="true"><i></i><i></i></span><span class="vh">Menü</span></summary>
         <nav class="nav" aria-label="Hauptnavigation">
-          <a href="#team" class="navlink">Team</a>
-          <a href="../index.html" class="navlink navlink-up">Für Eltern</a>
+          <a href="/lernbus/" class="navlink">Angebot</a>
+          <a href="/lernbus/konzept/" class="navlink">Konzept</a>
+          <a href="/lernbus/#kosten" class="navlink">Kosten</a>
+          <a href="/lernbus/#kontakt" class="navlink nav-booking">Lernstunde anfragen</a>
         </nav>
       </details>
-      <a href="en/index.html" class="lang" aria-label="In English">EN</a>
+      <a href="en/index.html" class="lang" aria-label="EN · English" lang="en">EN</a>
     </div>
   </div>
 </header>
@@ -66,7 +79,7 @@ locale: de
       <div class="wrap">
         <p class="eyebrow" style="--dot:var(--violet); margin-bottom:1.1rem">Team</p>
         <h1>Die <span class="pop">Menschen</span> hinter dem Lernbus.</h1>
-        <p class="lead">Mentorinnen und Mentoren mit pädagogischer Ausbildung und Erfahrung in der Arbeit mit Kindern, sorgfältig und nach höchsten Ansprüchen ausgewählt.</p>
+        <p class="lead">Mentorinnen und Mentoren mit pädagogischer Ausbildung und Erfahrung in der Arbeit mit Kindern, sorgfältig ausgewählt.</p>
       </div>
     </div>
   </section>
@@ -80,7 +93,7 @@ locale: de
       {% include "lernbus-testimonials.njk" %}
       <p class="lead reveal" style="margin-top:2.6rem; max-width:58ch">Die Qualität wird laufend durch Teamsitzungen, fachlichen Austausch, Evaluation und Weiterbildung gesichert.</p>
       <div class="reveal" style="margin-top:2rem">
-        <a class="morelink" href="../index.html">Zurück zur Elternseite <span>&rarr;</span></a>
+        <a class="morelink" href="../index.html">Zur Lernbus-Startseite <span>&rarr;</span></a>
       </div>
     </div>
   </section>

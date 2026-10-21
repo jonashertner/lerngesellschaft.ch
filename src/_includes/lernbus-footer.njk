@@ -6,7 +6,7 @@
         <a class="footer-brand" href="{{ footerHome }}" aria-label="{% if footerEnglish %}Lernbus home{% else %}Lernbus Startseite{% endif %}">
           <img src="/lernbus/img/logo.webp" alt="Lernbus" width="800" height="344" loading="lazy" decoding="async">
         </a>
-        <p class="footer-attribution"><span>Lernbus · {% if footerEnglish %}a programme of{% else %}ein Angebot der{% endif %}</span><a href="https://lerngesellschaft.ch/{% if footerEnglish %}en/{% endif %}">Lerngesellschaft</a></p>
+        <p class="footer-attribution"><span>Lernbus · {% if footerEnglish %}a programme of{% else %}ein Angebot der{% endif %}</span><a href="/{% if footerEnglish %}en/{% endif %}">Lerngesellschaft</a></p>
       </div>
       <a class="footer-booking" href="{{ footerHome }}#kontakt">
         <span>{% if footerEnglish %}Request a learning session{% else %}Lernstunde anfragen{% endif %}</span>
@@ -25,7 +25,6 @@
   </div>
   <div class="wrap">
     <div class="footer-base">
-      <p>{% if footerEnglish %}Association · starting in October 2026{% else %}Verein · Start Oktober 2026{% endif %}</p>
       <nav class="footer-legal" aria-label="{% if footerEnglish %}Legal{% else %}Rechtliches{% endif %}">
         <a href="/{% if footerEnglish %}imprint{% else %}impressum{% endif %}/">{% if footerEnglish %}Legal information{% else %}Impressum{% endif %}</a>
         <a href="/lernbus/{% if footerEnglish %}en/terms{% else %}agb{% endif %}/">{% if footerEnglish %}Terms and conditions{% else %}AGB{% endif %}</a>

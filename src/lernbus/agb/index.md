@@ -7,7 +7,7 @@ legalProgramme: lernbus
 description: Die Allgemeinen Geschäftsbedingungen für Lernbus. Anmeldung durch Eltern oder Erziehungsberechtigte, Buchung pro Schulsemester.
 alternateUrl: /lernbus/en/terms/
 ---
-# Allgemeine Geschäftsbedingungen für Lernbus
+# Allgemeine Geschäfts&shy;bedingungen für Lernbus
 
 *Fassung vom 21. Oktober 2026*
 
@@ -61,7 +61,7 @@ Sagen wir eine Lektion ab, vereinbaren wir mit Ihnen einen Ersatztermin oder ers
 
 ### 4.5 Beendigung der Semesterbuchung
 
-Die Buchung gilt für das vereinbarte Schulsemester. Zwingende gesetzliche Rechte zur vorzeitigen Beendigung, insbesondere nach Art. 404 OR, bleiben vorbehalten. Eine Mitteilung zur Beendigung ist per E-Mail möglich.
+Die Buchung gilt für das vereinbarte Schulsemester. Zwingende gesetzliche Rechte zur vorzeitigen Beendigung, insbesondere nach Art. 404 OR, bleiben vorbehalten. Eine Mitteilung zur Beendigung ist per E-Mail möglich.
 
 Bei einer Beendigung rechnen wir die bis dahin erbrachten Leistungen sowie die nach Ziffer 4.1 geschuldeten Beiträge für bis dahin ausgefallene Lektionen ab und erstatten nicht verbrauchte Vorauszahlungen. Erfolgt die Beendigung zu einem besonders ungünstigen Zeitpunkt, kann nach den gesetzlichen Voraussetzungen Ersatz des dadurch entstandenen Schadens geschuldet sein.
 

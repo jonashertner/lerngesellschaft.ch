@@ -8,11 +8,27 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Legal information · Learning Society</title>
 <meta name="description" content="Legal information and privacy notice for Lerngesellschaft / Learning Society, Basel." />
+<meta property="og:title" content="Legal information · Learning Society" />
+<meta property="og:description" content="Legal information and privacy notice for Lerngesellschaft / Learning Society, Basel." />
+<meta property="og:locale" content="en_GB" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://lerngesellschaft.ch/imprint/" />
+<meta property="og:image" content="https://lerngesellschaft.ch/assets/media/hero-poster.jpg?v={{ siteAssets.heroPoster }}" />
+<meta property="og:image:type" content="image/jpeg" />
+<meta property="og:image:width" content="640" />
+<meta property="og:image:height" content="640" />
+<meta property="og:image:alt" content="Children doing experiments" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Legal information · Learning Society" />
+<meta name="twitter:description" content="Legal information and privacy notice for Lerngesellschaft / Learning Society, Basel." />
+<meta name="twitter:image" content="https://lerngesellschaft.ch/assets/media/hero-poster.jpg?v={{ siteAssets.heroPoster }}" />
+<meta name="twitter:image:alt" content="Children doing experiments" />
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M16 3c5 0 9 3 9 8 0 3-2 4-2 7s3 3 3 6-4 5-10 5S6 31 6 27s3-3 3-6-2-4-2-7c0-5 4-8 9-8z' fill='%23ff3d8b'/%3E%3C/svg%3E" />
 <link rel="preload" href="/assets/fonts/bricolage-latin.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="preload" href="/assets/fonts/hanken-latin.woff2" as="font" type="font/woff2" crossorigin />
-<link rel="stylesheet" href="/assets/society-landing.css?v=20260916-responsive" />
-<link rel="stylesheet" href="/assets/society-footer.css?v=20260916-landscape" />
+<link rel="stylesheet" href="/assets/society-landing.css?v={{ siteAssets.landing }}" />
+<link rel="stylesheet" href="/assets/society-header.css?v={{ siteAssets.header }}" />
+<link rel="stylesheet" href="/assets/society-footer.css?v={{ siteAssets.footer }}" />
 <link rel="canonical" href="https://lerngesellschaft.ch/imprint/" />
 <link rel="alternate" hreflang="de" href="https://lerngesellschaft.ch/impressum/" />
 <link rel="alternate" hreflang="en" href="https://lerngesellschaft.ch/imprint/" />
@@ -46,7 +62,8 @@
       <div class="legal-copy">
         <span class="legacy-anchor" id="anfragen" aria-hidden="true"></span>
         <p>We use your details only to handle your enquiry. Access is limited to the people responsible within the association.</p>
-        <p><strong>Contact form:</strong> Formspree processes your name, email address and phone number, the number and ages of your children, your optional message and technical data in the USA to deliver messages and protect the service. After you select “Request a learning session”, your enquiry is forwarded to {{ lernbusContact.recipient | escape }} and temporarily stored in a submission archive. <a href="https://formspree.io/legal/privacy-policy/">Formspree privacy policy</a>.</p>
+        <p><strong>Contact form:</strong> Formspree processes your name, email address and phone number, the number and ages of your children, your optional message and technical data in the USA to deliver messages and protect the service.</p>
+        <p>After you select “Request a learning session”, your enquiry is forwarded to {{ lernbusContact.recipient | escape }} and temporarily stored in a submission archive. <a href="https://formspree.io/legal/privacy-policy/">Formspree privacy policy</a>.</p>
         <p><strong>Email:</strong> Processed and stored through Microsoft 365 (Microsoft Corporation), including in the USA.</p>
         <p>You can also contact us directly by email or post. Email links and Forscherbühne enquiries open your email application; you send the message yourself.</p>
       </div>
@@ -54,14 +71,20 @@
     <section class="legal-section" id="whatsapp">
       <h2>Contacting Lernbus on WhatsApp</h2>
       <div class="legal-copy">
-        <p>If you contact Lernbus on WhatsApp, we process your phone number, profile name and the messages and attachments you send us to answer your enquiry and arrange learning support. The responsible members of the Lernbus team can read and reply to this correspondence in our shared inbox. We run the inbox with Chatwoot on our own hardware and use Tailscale for the encrypted connection.</p>
-        <p>Messages are transmitted through the WhatsApp Business Platform provided by WhatsApp/Meta. Data may also be processed outside Switzerland, including in the USA. The <a href="https://www.whatsapp.com/legal/privacy-policy-eea">WhatsApp privacy policy</a> also applies. Using WhatsApp is optional; you can contact us by email or post instead. Please agree a suitable channel with us before sending particularly sensitive information about your child. You can request access, correction or deletion of your Lernbus correspondence at <a href="mailto:info@lernbus.ch">info@lernbus.ch</a>.</p>
+        <p>If you contact Lernbus on WhatsApp, we process your phone number, profile name and the messages and attachments you send us to answer your enquiry and arrange learning support.</p>
+        <p>The responsible members of the Lernbus team can read and reply to this correspondence in our shared inbox. We run the inbox with Chatwoot on our own hardware and use Tailscale for the encrypted connection.</p>
+        <p>Messages are transmitted through the WhatsApp Business Platform provided by WhatsApp/Meta. Data may also be processed outside Switzerland, including in the USA. The <a href="https://www.whatsapp.com/legal/privacy-policy-eea">WhatsApp privacy policy</a> also applies.</p>
+        <p>Using WhatsApp is optional; you can contact us by email or post instead. Please agree a suitable channel with us before sending particularly sensitive information about your child.</p>
+        <p>You can request access, correction or deletion of your Lernbus correspondence at <a href="mailto:info@lernbus.ch">info@lernbus.ch</a>.</p>
       </div>
     </section>
     <section class="legal-section" id="termine">
       <h2>Previous calendar bookings</h2>
       <div class="legal-copy">
-        <p>The contact form replaces the previous booking calendar. For earlier reservations through our booking service hosted by OpenAI Sites and Cloudflare, your name, email address and phone number, your child’s name and date of birth, their calculated age, the appointment and optional notes were sent to Microsoft Bookings, including for processing in the USA. Our booking service stores technical reservation identifiers and appointment times for up to 90 days after the appointment; unresolved reservations are retained until resolved. Contact details, child details and notes are not permanently stored there. Entries were temporarily kept in the browser’s session storage so that an interrupted reservation could be recovered safely.</p>
+        <p>The contact form replaces the previous booking calendar.</p>
+        <p>For earlier reservations through our booking service hosted by OpenAI Sites and Cloudflare, your name, email address and phone number, your child’s name and date of birth, their calculated age, the appointment and optional notes were sent to Microsoft Bookings, including for processing in the USA.</p>
+        <p>Our booking service stores technical reservation identifiers and appointment times for up to 90 days after the appointment; unresolved reservations are retained until resolved.</p>
+        <p>Contact details, child details and notes are not permanently stored there. Entries were temporarily kept in the browser’s session storage so that an interrupted reservation could be recovered safely.</p>
       </div>
     </section>
     <section class="legal-section" id="aufbewahrung">

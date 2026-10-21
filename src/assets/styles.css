@@ -128,9 +128,9 @@ h2.big{ font-size:var(--fs-h2); max-width:18ch; margin-top:1rem; }
    the full-height surface, so brand, EN and the (now crossed) button stay put. */
 .site-head:not(.nav-inline) .menu{ order:3; }
 .site-head.menu-open,
-.site-head:not(.nav-inline):has(.menu[open]){ position:fixed; inset:0; overflow:auto; overscroll-behavior:contain; background:var(--bg); }
+.site-head.nav-enhanced:not(.nav-inline):has(.menu[open]){ position:fixed; inset:0; overflow:auto; overscroll-behavior:contain; background:var(--bg); }
 html.menu-locked, html.menu-locked body{ overflow:hidden; }
-body:has(.site-head:not(.nav-inline) .menu[open]){ overflow:hidden; }
+body:has(.site-head.nav-enhanced:not(.nav-inline) .menu[open]){ overflow:hidden; }
 .site-head:not(.nav-inline) .nav{ position:absolute; top:100%; left:var(--pad); right:var(--pad); display:flex; flex-direction:column;
   padding:.4rem 0 3rem; counter-reset:navi; }
 .site-head:not(.nav-inline) .navlink{ display:flex; align-items:baseline; gap:.9rem; padding:.5em 0; border-bottom:2px solid var(--line);
@@ -148,6 +148,14 @@ body:has(.site-head:not(.nav-inline) .menu[open]){ overflow:hidden; }
   letter-spacing:0; color:var(--ink-soft); }
 .site-head:not(.nav-inline) .navlink-up::before{ content:"\2190"; counter-increment:none; width:auto; height:auto; border-radius:0;
   font-size:1rem; letter-spacing:0; color:inherit; background:none !important; }
+/* Without enhancement, links remain in the page and cannot obscure their
+   destinations or prevent scrolling after native details navigation. */
+.site-head:not(.nav-enhanced){position:relative;inset:auto;overflow:visible}
+.site-head:not(.nav-enhanced):has(.menu[open]) .wrap{flex-direction:column;align-items:stretch}
+.site-head:not(.nav-enhanced):has(.menu[open]) .head-right{width:100%;align-items:flex-start;margin-left:0}
+.site-head:not(.nav-enhanced) .menu{flex:1;min-width:0}
+.site-head:not(.nav-enhanced) .nav{position:static}
+.society-page .site-head:not(.nav-enhanced) ~ main .subhero{padding-top:3rem}
 /* the call to action, as a pill at the foot of the panel */
 .site-head:not(.nav-inline) .navlink-cta{ display:inline-flex; align-self:flex-start; margin-top:1.6rem; padding:.85em 1.5em; border:0 !important;
   border-radius:999px; background:var(--pink); color:var(--ink); font-family:var(--body); font-weight:800; font-size:1.02rem; letter-spacing:0;

@@ -6,17 +6,53 @@
 <meta name="theme-color" content="#fafafa" />
 <title>{{ title }}</title>
 <meta name="description" content="{{ description | escape }}" />
+<meta property="og:title" content="{{ title | escape }}" />
+<meta property="og:description" content="{{ description | escape }}" />
+<meta property="og:locale" content="{% if lang == 'en' %}en_GB{% else %}de_CH{% endif %}" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://lerngesellschaft.ch{{ page.url }}" />
+{% if legalProgramme == 'lernbus' %}
+{% set shareImage = lernbusSocial.url %}
+{% set shareImageAlt = 'The Lernbus logo with a collage of paper shapes and learning materials in violet and yellow. Basel · lernbus.ch.' if lang == 'en' else 'Lernbus-Logo und eine Collage aus Papierformen und Lernmaterialien in Violett und Gelb. Basel · lernbus.ch.' %}
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="{{ lernbusSocial.width }}" />
+<meta property="og:image:height" content="{{ lernbusSocial.height }}" />
+{% else %}
+{% set shareImage = 'https://lerngesellschaft.ch/assets/media/hero-poster.jpg?v=' + siteAssets.heroPoster %}
+{% set shareImageAlt = 'Children doing experiments' if lang == 'en' else 'Kinder beim Experimentieren' %}
+<meta property="og:image:type" content="image/jpeg" />
+<meta property="og:image:width" content="640" />
+<meta property="og:image:height" content="640" />
+{% endif %}
+<meta property="og:image" content="{{ shareImage }}" />
+<meta property="og:image:alt" content="{{ shareImageAlt }}" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="{{ title | escape }}" />
+<meta name="twitter:description" content="{{ description | escape }}" />
+<meta name="twitter:image" content="{{ shareImage }}" />
+<meta name="twitter:image:alt" content="{{ shareImageAlt }}" />
 <link rel="canonical" href="https://lerngesellschaft.ch{{ page.url }}" />
 {% if alternateUrl %}
 <link rel="alternate" hreflang="de-CH" href="https://lerngesellschaft.ch/lernbus/agb/" />
 <link rel="alternate" hreflang="en" href="https://lerngesellschaft.ch/lernbus/en/terms/" />
+<link rel="alternate" hreflang="x-default" href="https://lerngesellschaft.ch/lernbus/agb/" />
 {% endif %}
 <link rel="preload" href="/assets/fonts/bricolage-latin.woff2" as="font" type="font/woff2" crossorigin />
-<link rel="stylesheet" href="/assets/styles.css" />
-<link rel="stylesheet" href="/assets/legal.css" />
+<link rel="stylesheet" href="/assets/styles.css?v={{ siteAssets.styles }}" />
+<link rel="stylesheet" href="/assets/legal.css?v={{ siteAssets.legal }}" />
+{% if legalProgramme != 'lernbus' %}
+<link rel="stylesheet" href="/assets/society-header.css?v={{ siteAssets.header }}" />
+<link rel="stylesheet" href="/assets/society-footer.css?v={{ siteAssets.footer }}" />
+{% endif %}
 </head>
 <body class="legal-page">
 <a href="#main" class="skip">{% if lang == 'en' %}Skip to content{% else %}Zum Inhalt springen{% endif %}</a>
+{% if legalProgramme != 'lernbus' %}
+{% set landing = societyLanding.de %}
+{% set landingHideLanguage = true %}
+{% set isLandingLegal = true %}
+{% include "society-landing-header.njk" %}
+{% else %}
 <header class="legal-head">
   <div class="wrap">
     {% if legalProgramme == 'lernbus' %}
@@ -31,9 +67,13 @@
     {% endif %}
   </div>
 </header>
+{% endif %}
 <main id="main" class="legal-content wrap">
   {{ content | safe }}
 </main>
+{% if legalProgramme != 'lernbus' %}
+{% include "society-landing-footer.njk" %}
+{% else %}
 <footer class="foot">
   <div class="wrap">
     <span>Lerngesellschaft / Learning Society · Basel</span>
@@ -42,5 +82,6 @@
     <a href="{{ page.url }}" aria-current="page">{% if lang == 'en' %}Terms and conditions{% else %}AGB{% endif %}</a>
   </div>
 </footer>
+{% endif %}
 </body>
 </html>

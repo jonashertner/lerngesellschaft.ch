@@ -273,6 +273,48 @@ test('restored child count cannot submit an incomplete age list without an input
   assert.equal(calls, 1);
 });
 
+test('restored lower count removes obsolete required ages before validation', async () => {
+  const ui = fixture(); let sent;
+  assert.notEqual(ui.form.noValidate, true);
+  const submit = bindContactForm(ui.form, {
+    fetchImpl: async (_url, options) => { sent = JSON.parse(options.body); return { ok: false, status: 422 }; }
+  });
+  // With automatic native validation, this stale blank field would prevent
+  // the submit event itself from reaching the synchronization handler.
+  assert.equal(ui.form.noValidate, true);
+  ui.ageInputs()[1].value = '';
+  ui.fields.children_count.value = '1';
+  assert.equal(ui.form.reportValidity(), false);
+  await submit(event());
+  assert.equal(ui.ageInputs().length, 1);
+  assert.equal(sent.children_count, 1);
+  assert.equal(sent.children_ages_years, 'Child 1: 3');
+  assert.equal(sent.child_2_age_years, undefined);
+  assert.equal(ui.ageInputs()[0].value, '3');
+});
+
+test('restored higher count validates remembered ages before sending', async () => {
+  for (const invalid of ['19', '3,5.0']) {
+    const ui = fixture(); let calls = 0; let sent;
+    const submit = bindContactForm(ui.form, {
+      fetchImpl: async (_url, options) => { calls++; sent = JSON.parse(options.body); return accepted(); }
+    });
+    ui.fields.children_count.value = '3'; ui.fields.children_count.dispatch('input');
+    ui.ageInputs()[2].value = invalid;
+    ui.fields.children_count.value = '2'; ui.fields.children_count.dispatch('input');
+    ui.fields.children_count.value = '3'; // Browser restore/autofill without input.
+    await submit(event());
+    assert.equal(calls, 0, `remembered invalid age: ${invalid}`);
+    assert.equal(ui.ageInputs()[2].value, invalid);
+    assert.notEqual(ui.ageInputs()[2].validationMessage, '');
+    ui.ageInputs()[2].value = '3,5'; ui.ageInputs()[2].dispatch('input');
+    await submit(event());
+    assert.equal(calls, 1);
+    assert.equal(sent.children_count, 3);
+    assert.equal(sent.child_3_age_years, 3.5);
+  }
+});
+
 test('native fallback requires count and all ages, message stays optional, privacy and status remain accessible', async () => {
   const html = await readFile(new URL('../src/_includes/lernbus-contact.njk', import.meta.url), 'utf8');
   assert.match(html, /action="\{\{ lernbusContact\.endpoint \| escape \}\}" method="post" data-direct-contact/);
@@ -286,6 +328,7 @@ test('native fallback requires count and all ages, message stays optional, priva
   assert.match(html, /id="kontakt"/); assert.match(html, /id="gespraech"/);
   assert.match(html, /data-contact-status role="status" aria-live="polite" aria-atomic="true"/);
   assert.doesNotMatch(html, /action="mailto:|type="submit"[^>]*disabled|type="date"|name="child_name"/);
+  assert.doesNotMatch(html, /\bnovalidate\b/i);
 });
 
 test('recipient-specific fallback and duplicate mounting retain one handler', async () => {

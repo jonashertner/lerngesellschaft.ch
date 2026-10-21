@@ -3927,6 +3927,379 @@
           }
         ]
       }
+    },
+    {
+      "authorization": "Jonas, 21 October 2026: thorough whole-site design, layout and typesetting review and refinements. Consistent return navigation and existing Conny qualifications visible before biography disclosure. Original approved copy, fees, dates, eligibility and policies preserved. Prepared locally; this design version awaits separate publication approval.",
+      "pages": {
+        "lernbus/index.html": [
+          {
+            "start": 667,
+            "end": 670,
+            "before": "Mehr über Conny",
+            "after": ""
+          },
+          {
+            "start": 709,
+            "end": 709,
+            "before": "",
+            "after": "Mehr über Conny"
+          }
+        ],
+        "lernbus/en/index.html": [
+          {
+            "start": 702,
+            "end": 705,
+            "before": "More about Conny",
+            "after": ""
+          },
+          {
+            "start": 746,
+            "end": 746,
+            "before": "",
+            "after": "More about Conny"
+          }
+        ],
+        "lernbus/konzept/index.html": [
+          {
+            "start": 22,
+            "end": 23,
+            "before": "Übersicht",
+            "after": "Zur Lernbus - Startseite"
+          },
+          {
+            "start": 1340,
+            "end": 1347,
+            "before": "Übersicht für Eltern mit Tarifen und Kontaktformular",
+            "after": "Lernbus - Startseite"
+          }
+        ],
+        "lernbus/en/konzept/index.html": [
+          {
+            "start": 31,
+            "end": 32,
+            "before": "Overview",
+            "after": "Back to Lernbus"
+          },
+          {
+            "start": 1492,
+            "end": 1499,
+            "before": "Parent overview , fees and contact form",
+            "after": "Back to Lernbus"
+          }
+        ],
+        "lernbus/team/index.html": [
+          {
+            "start": 11,
+            "end": 13,
+            "before": "Für Eltern",
+            "after": "Lernbus"
+          },
+          {
+            "start": 566,
+            "end": 569,
+            "before": "Zurück zur Elternseite",
+            "after": "Zur Lernbus - Startseite"
+          }
+        ],
+        "lernbus/team/en/index.html": [
+          {
+            "start": 11,
+            "end": 13,
+            "before": "For parents",
+            "after": "Lernbus"
+          },
+          {
+            "start": 864,
+            "end": 868,
+            "before": "the parent information page",
+            "after": "Lernbus"
+          }
+        ]
+      }
+    },
+    {
+      "date": "2026-10-21",
+      "authorization": "Jonas confirms Lernbus is live and requests removal of the planned October 2026 opening and a further thorough whole-site review. Remove stale launch copy, use present-tense location, clarify children included in an enquiry and shorten its introduction, remove undefined staff-selection superlatives, and align the association programme status with its current landing page. Five user-supplied German core blocks, prices, dates, preparation groups and policies preserved. Prepared locally; this exact revision is not published. Requested Argon model clarification remains pending.",
+      "pages": {
+        "lernbus/index.html": [
+          {
+            "start": 1519,
+            "end": 1527,
+            "before": "Erzählen Sie uns kurz von Ihrer Familie .",
+            "after": ""
+          },
+          {
+            "start": 1578,
+            "end": 1579,
+            "before": "Anzahl",
+            "after": "Für wie viele"
+          },
+          {
+            "start": 1580,
+            "end": 1580,
+            "before": "",
+            "after": "fragen Sie an ?"
+          },
+          {
+            "start": 1845,
+            "end": 1849,
+            "before": "und nach höchsten Ansprüchen",
+            "after": ""
+          },
+          {
+            "start": 2132,
+            "end": 2137,
+            "before": "Verein · Start Oktober 2026",
+            "after": ""
+          }
+        ],
+        "lernbus/en/index.html": [
+          {
+            "start": 1707,
+            "end": 1715,
+            "before": "Tell us a little about your family .",
+            "after": ""
+          },
+          {
+            "start": 1765,
+            "end": 1767,
+            "before": "Number of",
+            "after": "How many"
+          },
+          {
+            "start": 1768,
+            "end": 1768,
+            "before": "",
+            "after": "is this enquiry for ?"
+          },
+          {
+            "start": 2031,
+            "end": 2036,
+            "before": "to meet the highest standards",
+            "after": ""
+          },
+          {
+            "start": 2353,
+            "end": 2359,
+            "before": "Association · starting in October 2026",
+            "after": ""
+          }
+        ],
+        "lernbus/konzept/index.html": [
+          {
+            "start": 1076,
+            "end": 1078,
+            "before": "Wir starten",
+            "after": "Die Lernstunden finden"
+          },
+          {
+            "start": 1080,
+            "end": 1080,
+            "before": "",
+            "after": "statt"
+          },
+          {
+            "start": 1365,
+            "end": 1386,
+            "before": "Sie fördert die natürliche Neugier und den Lernwillen von Kindern und Jugendlichen auf drei Wegen : mit der Forscherbühne , mit",
+            "after": "Mit"
+          },
+          {
+            "start": 1388,
+            "end": 1388,
+            "before": "",
+            "after": "begleitet sie Kinder beim Lernen . Zwei weitere Angebote sind in Entwicklung : die Forscherbühne mit öffentlichen Veranstaltungen für Kinder"
+          },
+          {
+            "start": 1389,
+            "end": 1390,
+            "before": "mit",
+            "after": ""
+          },
+          {
+            "start": 1393,
+            "end": 1393,
+            "before": "",
+            "after": "mit Workshops für Schulen"
+          },
+          {
+            "start": 1419,
+            "end": 1424,
+            "before": "Verein · Start Oktober 2026",
+            "after": ""
+          }
+        ],
+        "lernbus/en/konzept/index.html": [
+          {
+            "start": 1219,
+            "end": 1221,
+            "before": "We begin",
+            "after": "Our learning sessions take place"
+          },
+          {
+            "start": 1524,
+            "end": 1526,
+            "before": "It encourages",
+            "after": "Through Lernbus , it supports"
+          },
+          {
+            "start": 1527,
+            "end": 1542,
+            "before": "' s and young people ' s natural curiosity and desire to learn through three",
+            "after": "in their learning . Two further"
+          },
+          {
+            "start": 1543,
+            "end": 1543,
+            "before": "",
+            "after": "are in development"
+          },
+          {
+            "start": 1546,
+            "end": 1547,
+            "before": "Lernbus",
+            "after": "with public events for children"
+          },
+          {
+            "start": 1552,
+            "end": 1552,
+            "before": "",
+            "after": ", with workshops for schools"
+          },
+          {
+            "start": 1581,
+            "end": 1587,
+            "before": "Association · starting in October 2026",
+            "after": ""
+          }
+        ],
+        "lernbus/team/index.html": [
+          {
+            "start": 35,
+            "end": 39,
+            "before": "und nach höchsten Ansprüchen",
+            "after": ""
+          },
+          {
+            "start": 590,
+            "end": 595,
+            "before": "Verein · Start Oktober 2026",
+            "after": ""
+          }
+        ],
+        "lernbus/team/en/index.html": [
+          {
+            "start": 33,
+            "end": 38,
+            "before": "to meet the highest standards",
+            "after": ""
+          },
+          {
+            "start": 888,
+            "end": 894,
+            "before": "Association · starting in October 2026",
+            "after": ""
+          }
+        ]
+      }
+    },
+    {
+      "id": "gemini-argon-navigation-20261021",
+      "authority": "User requested entire-site excellence review; Gemini Argon High findings independently reconciled. Navigation labels only: add clear enquiry actions, simplify headers and retain section access in concept contents. Core copy, policies and testimonials unchanged.",
+      "pages": {
+        "lernbus/konzept/index.html": [
+          {
+            "start": 10,
+            "end": 14,
+            "before": "Auf einen Blick Warum",
+            "after": "Lernbus"
+          },
+          {
+            "start": 15,
+            "end": 17,
+            "before": "Ziele Zielgruppe",
+            "after": ""
+          },
+          {
+            "start": 18,
+            "end": 19,
+            "before": "Qualität",
+            "after": ""
+          },
+          {
+            "start": 21,
+            "end": 26,
+            "before": "Trägerschaft Zur Lernbus - Startseite",
+            "after": ""
+          },
+          {
+            "start": 94,
+            "end": 94,
+            "before": "",
+            "after": "Auf einen Blick"
+          },
+          {
+            "start": 111,
+            "end": 111,
+            "before": "",
+            "after": "Trägerschaft"
+          }
+        ],
+        "lernbus/en/konzept/index.html": [
+          {
+            "start": 10,
+            "end": 14,
+            "before": "At a glance Why",
+            "after": "Lernbus"
+          },
+          {
+            "start": 15,
+            "end": 20,
+            "before": "Goals Who it is for",
+            "after": ""
+          },
+          {
+            "start": 23,
+            "end": 24,
+            "before": "Quality",
+            "after": ""
+          },
+          {
+            "start": 28,
+            "end": 34,
+            "before": "Who runs it Back to Lernbus",
+            "after": ""
+          },
+          {
+            "start": 104,
+            "end": 104,
+            "before": "",
+            "after": "At a glance"
+          },
+          {
+            "start": 126,
+            "end": 126,
+            "before": "",
+            "after": "Who runs it"
+          }
+        ],
+        "lernbus/team/index.html": [
+          {
+            "start": 10,
+            "end": 12,
+            "before": "Team Lernbus",
+            "after": "Angebot Konzept Kosten Lernstunde anfragen"
+          }
+        ],
+        "lernbus/team/en/index.html": [
+          {
+            "start": 10,
+            "end": 12,
+            "before": "Team Lernbus",
+            "after": "Our offer Our approach Fees Request a learning session"
+          }
+        ]
+      }
     }
   ]
 }

@@ -2,11 +2,11 @@
   <div class="wrap news-grid">
     <div class="news-intro">
       <p class="eyebrow">{% if locale == "en" %}Autumn 2026{% else %}Herbst 2026{% endif %}</p>
-      <h2 class="big" id="news-heading">{% if locale == "en" %}News / Dates{% else %}Aktuelles / Termine{% endif %}</h2>
+      <h2 class="big" id="news-heading">{% if locale == "en" %}News / Dates{% else %}Aktuelles&nbsp;/ Termine{% endif %}</h2>
       <h3>{% if locale == "en" %}Open doors this autumn.{% else %}Offene Türen im Herbst.{% endif %}</h3>
       <p>{% if locale == "en" %}Come along with your child, discover Lernbus together and try out the play materials. There will be time for your questions and a personal conversation.{% else %}Kommen Sie mit Ihrem Kind vorbei, entdecken Sie gemeinsam den Lernbus und probieren Sie die Spielmaterialien aus. Dabei bleibt Zeit für Ihre Fragen und ein persönliches Gespräch.{% endif %}</p>
       <p class="news-location"><strong>{% if locale == "en" %}Get to know us, without obligation.{% else %}Unverbindlich entdecken und kennenlernen.{% endif %}</strong><br>Münsterplatz 17 · 4051 Basel</p>
-      <a class="morelink" href="/lernbus/offene-tueren-2026.ics" download>{% if locale == "en" %}Save dates to your calendar{% else %}Termine im Kalender speichern{% endif %} <span aria-hidden="true">↓</span></a>
+      <a class="morelink" href="{{ '/lernbus/en/open-doors-2026.ics' if locale == 'en' else '/lernbus/offene-tueren-2026.ics' }}" download>{% if locale == "en" %}Save dates to your calendar{% else %}Termine im Kalender speichern{% endif %} <span aria-hidden="true">↓</span></a>
     </div>
     <div class="news-dates">
       <h3>{% if locale == "en" %}Introductory sessions{% else %}Kennenlernstunden{% endif %}</h3>

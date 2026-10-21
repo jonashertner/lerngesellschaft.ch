@@ -4,7 +4,7 @@ title: AGB · Lerngesellschaft
 permalink: /agb/
 description: Allgemeine Geschäftsbedingungen für die weiteren Bildungsangebote der Lerngesellschaft. Für Lernbus gelten eigene AGB.
 ---
-# Allgemeine Geschäftsbedingungen der Lerngesellschaft
+# Allgemeine Geschäfts&shy;bedingungen der Lerngesellschaft
 
 *Fassung vom 15. September 2026*
 

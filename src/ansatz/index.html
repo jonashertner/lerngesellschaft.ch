@@ -1,3 +1,5 @@
+{% set landing = societyLanding.de %}
+{% set landingAlternate = '/en/approach/' %}
 {% set home = society.de %}
 {% set isHome = false %}
 {% set alternateUrl = "/en/approach/" %}
@@ -8,10 +10,27 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Unser Ansatz · Lerngesellschaft</title>
 <meta name="description" content="Unser Ansatz: Kinder lernen am besten, wenn sie spüren, dass sie vorankommen, und wenn ein Mensch da ist, der sie kennt und ihnen etwas zutraut." />
+<meta property="og:title" content="Unser Ansatz · Lerngesellschaft" />
+<meta property="og:description" content="Unser Ansatz: Kinder lernen am besten, wenn sie spüren, dass sie vorankommen, und wenn ein Mensch da ist, der sie kennt und ihnen etwas zutraut." />
+<meta property="og:locale" content="de_CH" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://lerngesellschaft.ch/ansatz/" />
+<meta property="og:image" content="https://lerngesellschaft.ch/assets/media/hero-poster.jpg?v={{ siteAssets.heroPoster }}" />
+<meta property="og:image:type" content="image/jpeg" />
+<meta property="og:image:width" content="640" />
+<meta property="og:image:height" content="640" />
+<meta property="og:image:alt" content="Kinder beim Experimentieren" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Unser Ansatz · Lerngesellschaft" />
+<meta name="twitter:description" content="Unser Ansatz: Kinder lernen am besten, wenn sie spüren, dass sie vorankommen, und wenn ein Mensch da ist, der sie kennt und ihnen etwas zutraut." />
+<meta name="twitter:image" content="https://lerngesellschaft.ch/assets/media/hero-poster.jpg?v={{ siteAssets.heroPoster }}" />
+<meta name="twitter:image:alt" content="Kinder beim Experimentieren" />
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M16 3c5 0 9 3 9 8 0 3-2 4-2 7s3 3 3 6-4 5-10 5S6 31 6 27s3-3 3-6-2-4-2-7c0-5 4-8 9-8z' fill='%23ff3d8b'/%3E%3C/svg%3E" />
 <link rel="preload" href="/assets/fonts/bricolage-latin.woff2" as="font" type="font/woff2" crossorigin />
-<link rel="stylesheet" href="/assets/styles.css?v=20260915-hero" />
-<link rel="stylesheet" href="/assets/society.css?v=20260916-responsive" />
+<link rel="stylesheet" href="/assets/styles.css?v={{ siteAssets.styles }}" />
+<link rel="stylesheet" href="/assets/society.css?v={{ siteAssets.society }}" />
+<link rel="stylesheet" href="/assets/society-header.css?v={{ siteAssets.header }}" />
+<link rel="stylesheet" href="/assets/society-footer.css?v={{ siteAssets.footer }}" />
 <link rel="canonical" href="https://lerngesellschaft.ch/ansatz/" />
 <link rel="alternate" hreflang="de" href="https://lerngesellschaft.ch/ansatz/" />
 <link rel="alternate" hreflang="en" href="https://lerngesellschaft.ch/en/approach/" />
@@ -19,7 +38,7 @@
 </head>
 <body class="society-page">
 <a href="#main" class="skip">Zum Inhalt springen</a>
-{% include "society-header.njk" %}
+{% include "society-landing-header.njk" %}
 <main id="main">
   <section class="subhero">
     <div class="accent-blob" style="width:30vw;height:30vw;background:var(--pink);right:-8vw;top:-2vw"></div>
@@ -45,7 +64,9 @@
         </div>
         <div class="dsec" id="mensch">
           <h2>Ein Mensch, der bleibt</h2>
-          <p>Vertrauen wächst nur langsam und nur mit Menschen, die bleiben. Wenn ein Kind spürt, dass jemand es wirklich kennt, traut es sich mehr zu. Isabelle Hau, Leiterin des Lernforschungszentrums der Universität Stanford, bringt es auf den Punkt: Beziehungen sind das Fundament des Lernens. Enge, tragende Beziehungen in den ersten Schuljahren sagen bessere Leistungen Jahre später voraus, auch wenn man Herkunft und IQ herausrechnet. Eine Langzeituntersuchung an Chicagoer Schulen brachte Verbesserungen in Lesen und Mathematik mit dem Zusammenspiel von Schulleitung, Unterricht, fachlicher Zusammenarbeit, Lernklima und Beziehungen zu Eltern und Quartier in Verbindung. Die Forschenden beschreiben Vertrauen als wichtige Grundlage dieser Zusammenarbeit. Die Studie zeigt Zusammenhänge und belegt keine Ursache-Wirkungs-Beziehung (<a class="research-source" href="https://www.shankerinstitute.org/sites/default/files/Organizing-schools-for-improvemnt-Bryk%20%281%29.pdf#page=3">Bryk, 2010</a>).</p>
+          <p>Vertrauen wächst nur langsam und nur mit Menschen, die bleiben. Wenn ein Kind spürt, dass jemand es wirklich kennt, traut es sich mehr zu. Isabelle Hau, <a class="research-source" href="https://dschool.stanford.edu/directory/isabelle-hau">Executive Director des Stanford Accelerator for Learning</a>, bringt es auf den Punkt: Beziehungen sind das Fundament des Lernens.</p>
+          <p>Eine Langzeitstudie mit 179 Kindern fand einen Zusammenhang zwischen belasteten Beziehungen zur Kindergartenlehrperson und schwächeren Leistungen in den ersten Primarschuljahren. Die Lehrpersonen hatten Konflikte und Abhängigkeit eingeschätzt. Berücksichtigt wurden auch Geschlecht, ethnische Zugehörigkeit, sprachliche Fähigkeiten und frühe Verhaltensauffälligkeiten. Die Studie belegt keine Ursache-Wirkungs-Beziehung (<a class="research-source" href="https://greatergood.berkeley.edu/images/uploads/Hamre__Pianta_2003.pdf#page=7">Hamre und Pianta, 2001, S. 631–632</a>).</p>
+          <p>Eine Langzeituntersuchung an Chicagoer Schulen brachte Verbesserungen in Lesen und Mathematik mit dem Zusammenspiel von Schulleitung, Unterricht, fachlicher Zusammenarbeit, Lernklima und Beziehungen zu Eltern und Quartier in Verbindung. Die Forschenden beschreiben Vertrauen als wichtige Grundlage dieser Zusammenarbeit. Die Studie zeigt Zusammenhänge und belegt keine Ursache-Wirkungs-Beziehung (<a class="research-source" href="https://www.shankerinstitute.org/sites/default/files/Organizing-schools-for-improvemnt-Bryk%20%281%29.pdf#page=3">Bryk, 2010</a>).</p>
           <p>In unserer Arbeit setzen wir auf Kontinuität: Bei uns kommt jede Woche dasselbe Kind zur selben Person, ein Semester lang und oft länger. Die Person denkt zwischen den Stunden an das Kind und bringt die offene Frage von letzter Woche wieder mit. Das schönste Gefühl für ein Kind ist, dass jemand auf es zählt und ihm zutraut, dass es das schafft.</p>
         </div>
         <div class="dsec" id="maschine">
@@ -55,16 +76,17 @@
         </div>
         <div class="dsec" id="wege">
           <h2>Drei Wege, ein Ziel</h2>
-          <p>Die Forscherbühne weckt Staunen und macht Wissenschaft für Kinder und Jugendliche in Basel unmittelbar erlebbar. Der Lernbus begleitet jedes Kind individuell in seinem eigenen Tempo, verlässlich an der Seite eines Menschen, der Vertrauen aufbaut und Entwicklung ermöglicht. Mit Gehirn und Gesellschaft bringen wir aktuelles Wissen darüber in die Schule, wie Lernen gelingt, wie soziale Kompetenzen wachsen und welche Rolle Menschen und Technologien in Bildungsprozessen spielen. Unsere Arbeit orientiert sich dabei an den Grundsätzen der Reggio-Pädagogik: Kinder werden als aktive Mitgestalter ihrer Bildungsprozesse verstanden, und ihre Lernwege werden sichtbar gemacht. Drei Wege, ein Ziel: Kinder dabei zu unterstützen, die Welt zu verstehen, ihre Potenziale zu entfalten und sich in ihrer Einzigartigkeit verstanden zu fühlen.</p>
+          <p>Mit der Forscherbühne wollen wir Staunen wecken und Wissenschaft für Kinder und Jugendliche in Basel unmittelbar erlebbar machen. Der Lernbus begleitet jedes Kind individuell in seinem eigenen Tempo, verlässlich an der Seite eines Menschen, der Vertrauen aufbaut und Entwicklung ermöglicht. Mit Gehirn und Gesellschaft planen wir, aktuelles Wissen darüber in die Schule zu bringen, wie Lernen gelingt, wie soziale Kompetenzen wachsen und welche Rolle Menschen und Technologien in Bildungsprozessen spielen. Unsere Arbeit orientiert sich dabei an den Grundsätzen der Reggio-Pädagogik: Kinder werden als aktive Mitgestalter ihrer Bildungsprozesse verstanden, und ihre Lernwege werden sichtbar gemacht. Drei Wege, ein Ziel: Kinder dabei zu unterstützen, die Welt zu verstehen, ihre Potenziale zu entfalten und sich in ihrer Einzigartigkeit verstanden zu fühlen.</p>
         </div>
       </div>
-      <p class="vignette">Jedes Kind will verstehen, und verstanden werden.</p>
+      <p class="vignette">Jedes Kind will verstehen und verstanden werden.</p>
       <div class="refs" id="quellen">
         <h2>Quellen</h2>
         <ul>
           <li>EDK (Hrsg.), Überprüfung der Grundkompetenzen (ÜGK) 2024, Schulsprache und Mathematik, 4. Schuljahr HarmoS (2. Primarklasse), Nationaler Bericht, 2026, uegk-schweiz.ch.</li>
           <li>Hairong Lu, Dimitri Van der Linden und Arnold B. Bakker, <a class="research-source" href="https://pure.eur.nl/ws/portalfiles/portal/214355874/1-s2.0-S1053811925000783-main.pdf">The neuroscientific basis of flow: Learning progress guides task engagement and cognitive control</a>, NeuroImage 308 (2025), 121076. Methoden: Abschnitte 2.1–2.3; Ergebnisse: Abschnitt 3.2.</li>
           <li>Isabelle C. Hau, Welcome to the Era of Relational Intelligence, Stanford Social Innovation Review, Frühjahr 2026; dieselbe, Love to Learn: The Transformative Power of Care and Connection in Early Education, PublicAffairs, 2025.</li>
+          <li>Bridget K. Hamre und Robert C. Pianta, <a class="research-source" href="https://greatergood.berkeley.edu/images/uploads/Hamre__Pianta_2003.pdf#page=7">Early Teacher–Child Relationships and the Trajectory of Children’s School Outcomes through Eighth Grade</a>, Child Development 72(2), 2001, S. 625–638; Ergebnisse: S. 631–632.</li>
           <li>Anthony S. Bryk, <a class="research-source" href="https://www.shankerinstitute.org/sites/default/files/Organizing-schools-for-improvemnt-Bryk%20%281%29.pdf">Organizing Schools for Improvement</a>, Phi Delta Kappan 91(7), April 2010, S. 23–30, insbesondere S. 25 und 27. <a class="research-source" href="https://consortium.uchicago.edu/sites/default/files/2018-10/EssentialSupports.pdf">Zugrunde liegender Forschungsbericht</a>, 2006, S. 26–29.</li>
           <li>Jenna H. Chin et al., <a class="research-source" href="https://pure.ewha.ac.kr/en/publications/young-childrens-creative-storytelling-with-chatgpt-vs-parent-comp/">Young Children’s Creative Storytelling with ChatGPT vs. Parent: Comparing Interactive Styles</a>, CHI EA ’24 (2024), Artikel 379. Verlinkt ist der Abstract im Universitätsarchiv; <a class="research-source" href="https://doi.org/10.1145/3613905.3650770">Veröffentlichung bei ACM</a>.</li>
           <li>Carolyn Edwards, Lella Gandini und George Forman (Hrsg.), The Hundred Languages of Children: The Reggio Emilia Experience in Transformation, 3. Auflage, Praeger, 2012.</li>
@@ -77,6 +99,6 @@
     </div>
   </section>
 </main>
-{% include "society-footer.njk" %}
+{% include "society-landing-footer.njk" %}
 </body>
 </html>

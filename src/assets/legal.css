@@ -23,4 +23,5 @@
 .legal-page .foot :focus-visible{outline-color:#f4db4b}
 @media print{.legal-head,.legal-page .foot{display:none}.legal-page{font-size:11pt;background:white;color:#000}.legal-content{max-width:none;padding:0}.legal-content h1{font-size:24pt}.legal-content h2{font-size:14pt;break-after:avoid}.legal-content p{max-width:none;orphans:3;widows:3}}
 
-@media(max-width:48rem){.legal-content h1{hyphens:auto}}
+/* Author the compound-word break in the German title; avoid arbitrary splits. */
+.legal-content h1{hyphens:manual}
