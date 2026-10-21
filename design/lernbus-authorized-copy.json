@@ -4300,6 +4300,195 @@
           }
         ]
       }
+    },
+    {
+      "id": "visitor-refinement-20261021",
+      "authority": "Jonas requested a visitor-centred review of the entire site’s design, layout and content: speak to visitors, keep it light and make it excellent at all screen sizes. This bounded local refinement adds Basel context and three practical steps; makes headings more direct; retains the original process details in a disclosure; brings the existing preparatory-group explanation before prices; moves unchanged quality text into the mentor FAQ; clarifies concept formats and adds team links; shortens the German parent-name label and moves the unchanged nonbinding-enquiry note beside submission. The five supplied core blocks, rates, frequency, four-child groups, dates, policies and quotations remain protected. Current chat 01a15e1c-7af8-7861-bb29-1d70de7c9441. This records local preparation, not publication approval.",
+      "comparison": "Built candidate compared against the preserved publication at output/lernbus-quality-release-20261021/_site; all six preceding page token streams matched the existing authorization ledger before this append.",
+      "pages": {
+        "lernbus/index.html": [
+          {
+            "start": 10,
+            "end": 11,
+            "before": "Zielgruppe",
+            "after": "Für wen ?"
+          },
+          {
+            "start": 20,
+            "end": 20,
+            "before": "",
+            "after": "Lernbegleitung in Basel"
+          },
+          {
+            "start": 86,
+            "end": 87,
+            "before": "Zielgruppe",
+            "after": "Für wen ?"
+          },
+          {
+            "start": 619,
+            "end": 620,
+            "before": "Team",
+            "after": "Ihr Kind gut begleitet"
+          },
+          {
+            "start": 881,
+            "end": 881,
+            "before": "",
+            "after": "Kennenlernen Wir treffen Sie und Ihr Kind zum Kennenlerngespräch . Gemeinsam planen Wir besprechen , welche Form der Begleitung und welcher Tarif zu Ihnen passen . Die Buchung erfolgt pro Schulsemester . Wöchentlich lernen Ihr Kind besucht jede Woche eine Lernstunde von 60 Minuten , einzeln oder in einer Kleingruppe . Wir bleiben mit Ihnen im Gespräch . Was die Begleitung umfasst"
+          },
+          {
+            "start": 993,
+            "end": 993,
+            "before": "",
+            "after": ". Vorbereitungssemester : Es gibt separate Gruppen zur Vorbereitung auf den Kindergarten und auf die Schule . Jede Gruppe umfasst vier Kinder"
+          },
+          {
+            "start": 1109,
+            "end": 1131,
+            "before": "Vorbereitungssemester : Es gibt separate Gruppen zur Vorbereitung auf den Kindergarten und auf die Schule . Jede Gruppe umfasst vier Kinder .",
+            "after": ""
+          },
+          {
+            "start": 1536,
+            "end": 1544,
+            "before": "Ihre Anfrage ist noch keine verbindliche Buchung .",
+            "after": ""
+          },
+          {
+            "start": 1557,
+            "end": 1557,
+            "before": "",
+            "after": "Ihr"
+          },
+          {
+            "start": 1558,
+            "end": 1560,
+            "before": "eines Elternteils",
+            "after": "( Elternteil"
+          },
+          {
+            "start": 1561,
+            "end": 1563,
+            "before": "einer erziehungsberechtigten",
+            "after": "erziehungsberechtigte"
+          },
+          {
+            "start": 1564,
+            "end": 1564,
+            "before": "",
+            "after": ")"
+          },
+          {
+            "start": 1627,
+            "end": 1627,
+            "before": "",
+            "after": "Ihre Anfrage ist noch keine verbindliche Buchung ."
+          },
+          {
+            "start": 1860,
+            "end": 1860,
+            "before": "",
+            "after": "Rahmenbedingungen und Qualitätssicherung Die Mentorinnen und Mentoren arbeiten reflektiert , empathisch und fachlich fundiert . Durch ihre pädagogische Ausbildung und Erfahrung können sie an die individuellen Interessen und Bedürfnisse der Kinder anknüpfen . Die Qualität des Angebots wird gesichert und laufend weiterentwickelt ."
+          },
+          {
+            "start": 1951,
+            "end": 1994,
+            "before": ". Rahmenbedingungen und Qualitätssicherung Die Mentorinnen und Mentoren arbeiten reflektiert , empathisch und fachlich fundiert . Durch ihre pädagogische Ausbildung und Erfahrung können sie an die individuellen Interessen und Bedürfnisse der Kinder anknüpfen . Die Qualität des Angebots wird gesichert und laufend weiterentwickelt",
+            "after": ""
+          }
+        ],
+        "lernbus/en/index.html": [
+          {
+            "start": 27,
+            "end": 27,
+            "before": "",
+            "after": "Learning support in Basel"
+          },
+          {
+            "start": 654,
+            "end": 655,
+            "before": "Team",
+            "after": "People who care about your child"
+          },
+          {
+            "start": 916,
+            "end": 916,
+            "before": "",
+            "after": "Getting to know each other We meet you and your child for an introductory conversation . Planning together We discuss the format and rate that suit your family . You book one school semester at a time . Learning each week Your child attends a 60 - minute learning session each week , individually or in a small group . We stay in touch with you . What the support includes"
+          },
+          {
+            "start": 1063,
+            "end": 1063,
+            "before": "",
+            "after": "Preparatory semester : Separate groups prepare children for kindergarten or for school . Each group has four children ."
+          },
+          {
+            "start": 1194,
+            "end": 1213,
+            "before": "Preparatory semester : Separate groups prepare children for kindergarten or for school . Each group has four children .",
+            "after": ""
+          },
+          {
+            "start": 1726,
+            "end": 1734,
+            "before": "Your enquiry is not a binding booking .",
+            "after": ""
+          },
+          {
+            "start": 1818,
+            "end": 1818,
+            "before": "",
+            "after": "Your enquiry is not a binding booking ."
+          },
+          {
+            "start": 2047,
+            "end": 2047,
+            "before": "",
+            "after": "Professional standards and quality assurance Our mentors bring empathy , reflective practice and professional expertise to their work . Their educational training and experience enable them to respond to each child ' s interests and needs . We maintain and continually improve the quality of the programme ."
+          },
+          {
+            "start": 2141,
+            "end": 2189,
+            "before": ". Professional standards and quality assurance Our mentors bring empathy , reflective practice and professional expertise to their work . Their educational training and experience enable them to respond to each child ' s interests and needs . We maintain and continually improve the quality of the programme",
+            "after": ""
+          }
+        ],
+        "lernbus/konzept/index.html": [
+          {
+            "start": 165,
+            "end": 166,
+            "before": "Vorbereitungsgruppen",
+            "after": "Vorbereitung auf Kindergarten oder Schule in Gruppen"
+          },
+          {
+            "start": 1280,
+            "end": 1280,
+            "before": "",
+            "after": "Unser Team kennenlernen →"
+          }
+        ],
+        "lernbus/en/konzept/index.html": [
+          {
+            "start": 189,
+            "end": 190,
+            "before": "preparatory",
+            "after": ""
+          },
+          {
+            "start": 193,
+            "end": 194,
+            "before": "children",
+            "after": "preparing for kindergarten or primary school"
+          },
+          {
+            "start": 1429,
+            "end": 1429,
+            "before": "",
+            "after": "Meet our team →"
+          }
+        ]
+      }
     }
   ]
 }

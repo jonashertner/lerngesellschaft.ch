@@ -8,8 +8,8 @@
 .contact-card .field label{line-height:1.45}
 .contact-card input,.contact-card textarea{box-sizing:border-box;width:100%;min-width:0}
 .contact-card .contact-count input{max-width:7rem}
-.contact-ages{grid-column:1/-1;min-width:0;margin:0;padding:1.2rem;border:1px solid var(--hairline);border-radius:.8rem}
-.contact-ages legend{padding:0 .35rem;font-weight:700;font-size:1rem}
+.contact-ages{grid-column:1/-1;min-width:0;margin:0;padding:0;border:0;border-radius:0}
+.contact-ages legend{padding:0;font-weight:700;font-size:1rem}
 .contact-age-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,8rem),1fr));gap:1rem;margin-top:1rem}
 .contact-age-grid .field input{max-width:9rem}
 .contact-card .contact-help{font-size:.875rem;line-height:1.5;margin:.5rem 0 0;color:var(--teal-ink)}
@@ -25,5 +25,5 @@
 .contact-status[data-state="success"]{border-left:3px solid var(--violet);padding-left:1rem;font-weight:650}
 [data-direct-contact] button:disabled{opacity:.65;cursor:wait;transform:none;pointer-events:none}
 [data-direct-contact] [readonly]{opacity:.8}
-@media(max-width:38rem){.contact-card .form-grid{grid-template-columns:1fr}.contact-ages{padding:1rem}.contact-submit .btn{width:100%}}
+@media(max-width:38rem){.contact-card .form-grid{grid-template-columns:1fr}.contact-ages{padding:0}.contact-submit .btn{width:100%}}
 @media print{.contact-status{display:none}}

@@ -58,7 +58,7 @@ locale: de
       <details class="menu">
         <summary class="menu-btn"><span class="menu-ico" aria-hidden="true"><i></i><i></i></span><span class="vh">Menü</span></summary>
         <nav class="nav" aria-label="Hauptnavigation">
-          <a href="#zielgruppe" class="navlink">Zielgruppe</a>
+          <a href="#zielgruppe" class="navlink">Für wen?</a>
           <a href="#team" class="navlink">Team</a>
           <a href="#ablauf" class="navlink">Ablauf</a>
           <a href="#kosten" class="navlink">Kosten</a>
@@ -86,6 +86,7 @@ locale: de
     <div class="hero-scrim" aria-hidden="true"></div>
     <div class="hero-inner">
       <div class="wrap source-hero-grid">
+        <p class="eyebrow hero-context">Lernbegleitung in Basel</p>
         <h1>Wir beginnen dort, wo ein Kind steht.</h1>
         <div class="source-hero-copy">
         <p class="lead">Der Lernbus begleitet Kinder ab drei Jahren bis zum Ende der dritten Primarklasse. Wir knüpfen an ihre Stärken, Interessen und Bedürfnisse an. Wir begleiten sie langfristig und verlässlich. Wir stärken ihre Lerngrundlagen und festigen, was sie in der Schule lernen. Dabei verbinden wir Familie, Kindergarten und Schule.</p>
@@ -99,7 +100,7 @@ locale: de
   <!-- ZIELGRUPPE -->
   <section class="section" id="zielgruppe" style="--dot:var(--violet)">
     <div class="wrap">
-      <h2 class="big reveal">Zielgruppe</h2>
+      <h2 class="big reveal">Für wen?</h2>
       <ul class="fuerwen reveal">
         <li>Kinder <b>ab drei Jahren bis zum Ende der dritten Primarklasse</b></li>
         <li>Für Kinder, die beim <b>Lernen und selbstständigen Arbeiten</b> gestärkt werden sollen</li>
@@ -145,7 +146,7 @@ locale: de
   <!-- TEAM -->
   <section class="section team-section" id="team" aria-labelledby="team-heading">
     <div class="wrap">
-      <h2 class="big" id="team-heading">Team</h2>
+      <h2 class="big" id="team-heading">Ihr Kind gut begleitet</h2>
       {% set profileHeading = "h3" %}
       {% set bioHeading = "h4" %}
       {% set compactProfile = true %}
@@ -160,6 +161,14 @@ locale: de
     <div class="accent-blob" style="width:24vw;height:24vw;background:var(--cyan);right:-8vw;bottom:-4vw"></div>
     <div class="wrap">
       <h2 class="big reveal">Ablauf</h2>
+      <ol class="process-steps" role="list">
+        <li><h3>Kennenlernen</h3><p>Wir treffen Sie und Ihr Kind zum Kennenlerngespräch.</p></li>
+        <li><h3>Gemeinsam planen</h3><p>Wir besprechen, welche Form der Begleitung und welcher Tarif zu Ihnen passen. Die Buchung erfolgt pro Schulsemester.</p></li>
+        <li><h3>Wöchentlich lernen</h3><p>Ihr Kind besucht jede Woche eine Lernstunde von 60 Minuten, einzeln oder in einer Kleingruppe. Wir bleiben mit Ihnen im Gespräch.</p></li>
+      </ol>
+      <details class="content-disclosure">
+        <summary>Was die Begleitung umfasst</summary>
+        <div class="disclosure-body">
       <ul class="process-overview" role="list">
         <li><p><b>Kennenlerngespräch</b> mit den Eltern und dem Kind</p></li>
         <li><p><b>Wöchentliche Lernbegleitung</b> in Lernstunden von 60 Minuten, einzeln oder in einer Kleingruppe. Buchung pro Schulsemester.</p></li>
@@ -169,6 +178,8 @@ locale: de
         <li><p><b>Elterngespräche</b> sowie bedarfsgerechte Unterstützung von Kind und Eltern, einschliesslich Gesprächsbegleitung</p></li>
         <li><p><b>Kleingruppen in den Schulferien</b> zur Festigung und Vertiefung verschiedenster Fähigkeiten</p></li>
       </ul>
+        </div>
+      </details>
     </div>
   </section>
 
@@ -178,6 +189,7 @@ locale: de
       <p class="eyebrow reveal" style="--dot:var(--violet)">Beiträge</p>
       <h2 class="big reveal">Was kostet es?</h2>
       <p class="lead reveal" style="margin-top:1.4rem; max-width:58ch">Die Beiträge gelten pro Monat und Kind. Von Januar bis Juni sind sechs Monatsbeiträge zu bezahlen, von August bis Dezember fünf. Welcher Tarif passt, besprechen wir im Kennenlerngespräch.</p>
+      <p class="tariffs-note reveal"><strong>Vorbereitungssemester:</strong> Es gibt separate Gruppen zur Vorbereitung auf den Kindergarten und auf die Schule. Jede Gruppe umfasst vier Kinder.</p>
       <table class="tariffs reveal" role="table">
         <caption class="vh">Monatliche Beiträge pro Kind in Schweizer Franken: sechs Monatsbeiträge von Januar bis Juni, fünf von August bis Dezember</caption>
         <thead role="rowgroup">
@@ -190,7 +202,6 @@ locale: de
           <tr role="row"><th role="rowheader" scope="row"><span class="tname">Solidarisch</span><span class="tdesc">Mehr, als ein Platz kostet. Der Mehrbetrag fliesst vollständig in Förderplätze.</span></th><td role="cell" data-label="Einzel · monatlich">CHF 400</td><td role="cell" data-label="Zweier · monatlich">CHF 300</td><td role="cell" data-label="Vorbereitungs&shy;semester · monatlich">CHF 250</td></tr>
         </tbody>
       </table>
-      <p class="tariffs-note reveal"><strong>Vorbereitungssemester:</strong> Es gibt separate Gruppen zur Vorbereitung auf den Kindergarten und auf die Schule. Jede Gruppe umfasst vier Kinder.</p>
       {% include "lernbus-tariff-guide.njk" %}
       <p class="funding-link"><a href="#investieren">Einen Förderplatz ermöglichen <span aria-hidden="true">&rarr;</span></a></p>
     </div>
@@ -228,10 +239,13 @@ locale: de
           <p>Die Buchung über ein Schulsemester gibt Raum, einander kennenzulernen und an passenden Aufgaben dranzubleiben. Wir verbinden eine verlässliche Beziehung mit gezielter Förderung. Die Lektionen werden pro Schulsemester gebucht.</p>
           </div>
         </details>
-        <details class="faq-item">
+        <details class="faq-item" id="qualitaet">
           <summary><h3>Wer arbeitet mit meinem Kind?</h3></summary>
           <div class="faq-answer">
           <p>Mentorinnen und Mentoren mit pädagogischer Ausbildung und Erfahrung in der Arbeit mit Kindern. Sie werden sorgfältig ausgewählt. Die Qualität wird laufend durch Teamsitzungen, fachlichen Austausch, Evaluation und Weiterbildung gesichert.</p>
+          <h4>Rahmenbedingungen und Qualitätssicherung</h4>
+          <p>Die Mentorinnen und Mentoren arbeiten reflektiert, empathisch und fachlich fundiert. Durch ihre pädagogische Ausbildung und Erfahrung können sie an die individuellen Interessen und Bedürfnisse der Kinder anknüpfen.</p>
+          <p>Die Qualität des Angebots wird gesichert und laufend weiterentwickelt.</p>
           <p style="margin-top:.8rem"><a class="morelink" href="team/index.html">Unser Team kennenlernen <span>&rarr;</span></a></p>
           </div>
         </details>
@@ -248,15 +262,6 @@ locale: de
           </div>
         </details>
       </div>
-    </div>
-  </section>
-
-  <!-- RAHMENBEDINGUNGEN UND QUALITÄTSSICHERUNG -->
-  <section class="section tint" id="qualitaet" style="--dot:var(--violet)">
-    <div class="wrap">
-      <h2 class="big reveal">Rahmenbedingungen und Qualitätssicherung</h2>
-      <p class="lead reveal" style="margin-top:1.4rem; max-width:58ch">Die Mentorinnen und Mentoren arbeiten reflektiert, empathisch und fachlich fundiert. Durch ihre pädagogische Ausbildung und Erfahrung können sie an die individuellen Interessen und Bedürfnisse der Kinder anknüpfen.</p>
-      <p class="lead reveal" style="margin-top:1.2rem; max-width:58ch">Die Qualität des Angebots wird gesichert und laufend weiterentwickelt.</p>
     </div>
   </section>
 
