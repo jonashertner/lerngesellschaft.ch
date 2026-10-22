@@ -74,19 +74,28 @@
         lanes[i] = Math.floor(i / 6) / (filaments / 6 - 1) * 2 - 1;
         seeds[i] = ((i * 73 + 19) % 997) / 997;
       }
-      return { segments, lanes, seeds,
+      const indices = new Uint16Array(filaments * segments * 6);
+      let cursor = 0;
+      for (let strand = 0; strand < filaments; strand += 1) {
+        for (let j = 0; j < segments; j += 1) {
+          const at = (strand * (segments + 1) + j) * 2;
+          indices[cursor++] = at; indices[cursor++] = at + 2; indices[cursor++] = at + 3;
+          indices[cursor++] = at; indices[cursor++] = at + 3; indices[cursor++] = at + 1;
+        }
+      }
+      return { segments, lanes, seeds, indices,
         stats: Object.freeze({ filaments, particles, bundles: 6 }),
         curves: new Float32Array(6 * (segments + 1) * 9),
         pulses: new Float32Array(6 * (segments + 1)),
         path: new Float32Array((segments + 1) * 8),
         normals: new Float32Array((segments + 1) * 3),
-        lines: new Float32Array(filaments * segments * 6 * 8),
+        lines: new Float32Array(filaments * (segments + 1) * 2 * 8),
         points: new Float32Array(particles * 8) };
     }
 
     const meshes = { desktop: profile(96, 48, 1800), mobile: profile(96, 40, 1200) };
     let vertex = null, fragment = null;
-    let lineBuffer, pointBuffer;
+    let lineBuffer, pointBuffer, indexBuffer, indexedMesh = null;
     try {
       vertex = compile(gl.VERTEX_SHADER, vertexSource);
       fragment = compile(gl.FRAGMENT_SHADER, fragmentSource);
@@ -106,7 +115,9 @@
       if (lineBuffer) resources.push(lineBuffer);
       pointBuffer = gl.createBuffer();
       if (pointBuffer) resources.push(pointBuffer);
-      if (!lineBuffer || !pointBuffer) throw new Error('Unable to allocate the living-field geometry.');
+      indexBuffer = gl.createBuffer();
+      if (indexBuffer) resources.push(indexBuffer);
+      if (!lineBuffer || !pointBuffer || !indexBuffer) throw new Error('Unable to allocate the living-field geometry.');
     } catch (error) {
       resources.forEach(handle => gl.deleteBuffer(handle));
       if (program) gl.deleteProgram(program);
@@ -114,6 +125,24 @@
     } finally {
       if (vertex) gl.deleteShader(vertex);
       if (fragment) gl.deleteShader(fragment);
+    }
+
+    const curvedPoint = new Float64Array(3);
+    function smoothPoint(mesh, state, bundle, lo, across, at, along) {
+      const values = mesh.curves, start = bundle * (mesh.segments + 1) * 9 + lo;
+      const a = start + at * 9, b = a + 9;
+      const previous = start + (at > 0 ? at - 1 : mesh.segments - 1) * 9;
+      const following = start + (at + 2 <= mesh.segments ? at + 2 : 1) * 9;
+      for (let axis = 0; axis < 3; axis += 1) {
+        const p1 = values[a + axis] + (values[a + axis + 3] - values[a + axis]) * across;
+        const p2 = values[b + axis] + (values[b + axis + 3] - values[b + axis]) * across;
+        let p0 = values[previous + axis] + (values[previous + axis + 3] - values[previous + axis]) * across;
+        let p3 = values[following + axis] + (values[following + axis + 3] - values[following + axis]) * across;
+        if (at === 0) p0 = 2 * p1 - p2 + (p0 - 2 * p1 + p2) * state.closure;
+        if (at + 2 > mesh.segments) p3 = 2 * p2 - p1 + (p3 - 2 * p2 + p1) * state.closure;
+        curvedPoint[axis] = p1 + 0.5 * along * (p2 - p0 + along *
+          (2 * p0 - 5 * p1 + 4 * p2 - p3 + along * (3 * (p1 - p2) + p3 - p0)));
+      }
     }
 
     function sample(mesh, state, bundle, lane, u, seed, point, target, offset) {
@@ -131,6 +160,12 @@
         (values[c + 1] + (values[d + 1] - values[c + 1]) * across) * along;
       let z = (values[a + 2] + (values[b + 2] - values[a + 2]) * across) * (1 - along) +
         (values[c + 2] + (values[d + 2] - values[c + 2]) * across) * along;
+      if (point) {
+        // Moving lights follow a smooth tangent through shared curve samples;
+        // their direction no longer changes abruptly at polygon boundaries.
+        smoothPoint(mesh, state, bundle, lo, across, at, along);
+        x = curvedPoint[0]; y = curvedPoint[1]; z = curvedPoint[2];
+      }
       let proximity = 0, ripple = 0;
       if (state.pointerStrength > 0.001) {
         const dx = x - state.pointerX, dy = y - state.pointerY;
@@ -227,14 +262,13 @@
           normals[j * 3 + 1] = dx / length;
           normals[j * 3 + 2] = 0.5 * (Math.abs(dy) + Math.abs(dx)) / length / pixelRatio;
         }
-        for (let j = 0; j < mesh.segments; j += 1) {
-          // Adjacent strips share the same edge vertices, avoiding doubled bright joins.
-          for (let corner = 0; corner < 6; corner += 1) {
-            const end = corner === 1 || corner === 2 || corner === 4 ? j + 1 : j;
-            const sign = corner === 2 || corner === 4 || corner === 5 ? 1 : -1;
-            const at = end * 8, normal = end * 3;
-            const footprint = normals[normal + 2];
-            const edge = sign * (halfWidth + footprint);
+        // Every edge vertex is shared by its adjacent triangles. The immutable
+        // index buffer removes two thirds of vertex uploads and shader work.
+        for (let j = 0; j <= mesh.segments; j += 1) {
+          const at = j * 8, normal = j * 3;
+          const footprint = normals[normal + 2];
+          for (let side = 0; side < 2; side += 1) {
+            const edge = (side * 2 - 1) * (halfWidth + footprint);
             mesh.lines[cursor++] = (path[at] + normals[normal] * edge) * ndcX - 1;
             mesh.lines[cursor++] = 1 - (path[at + 1] + normals[normal + 1] * edge) * ndcY;
             mesh.lines[cursor++] = edge;
@@ -278,7 +312,12 @@
       gl.vertexAttribPointer(0, 4, gl.FLOAT, false, 32, 0);
       gl.vertexAttribPointer(1, 4, gl.FLOAT, false, 32, 16);
       gl.uniform1f(uniforms.kind, 0);
-      gl.drawArrays(gl.TRIANGLES, 0, mesh.lines.length / 8);
+      gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, indexBuffer);
+      if (indexedMesh !== mesh) {
+        gl.bufferData(gl.ELEMENT_ARRAY_BUFFER, mesh.indices, gl.STATIC_DRAW);
+        indexedMesh = mesh;
+      }
+      gl.drawElements(gl.TRIANGLES, mesh.indices.length, gl.UNSIGNED_SHORT, 0);
       gl.bindBuffer(gl.ARRAY_BUFFER, pointBuffer);
       gl.bufferData(gl.ARRAY_BUFFER, mesh.points, gl.DYNAMIC_DRAW);
       gl.vertexAttribPointer(0, 4, gl.FLOAT, false, 32, 0);
