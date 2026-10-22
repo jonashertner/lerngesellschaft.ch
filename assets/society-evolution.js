@@ -48,7 +48,7 @@
     }
     // Jittered absolute anchors permit O(1), history-independent time queries.
     // Adjacent pairs choose different forms, without imposing a repeating order.
-    const anchorTime = index => 6.2 + index * 10.6 + (random(900, index) - 0.5) * 2.8;
+    const anchorTime = index => 6.8 + index * 11.8 + (random(900, index) - 0.5) * 2.8;
     function anchorForm(index) {
       if (index === 0) return 1;
       if (index === 1) return random(901, 0) < 0.5 ? 0 : 2;
@@ -59,9 +59,9 @@
     const firstArrival = anchorTime(0);
     const rates = new Float64Array(18);
     for (let b = 0; b < 6; b += 1) {
-      rates[b] = 0.24 + random(950, b) * 0.15;
-      rates[b + 6] = 1.46 + random(951, b) * 0.38;
-      rates[b + 12] = 0.040 + (b < 3 ? 0 : 0.012) + b * 0.0008 + random(952, b) * 0.004;
+      rates[b] = 0.21 + random(950, b) * 0.12;
+      rates[b + 6] = 1.24 + random(951, b) * 0.30;
+      rates[b + 12] = 0.035 + (b < 3 ? 0 : 0.010) + b * 0.0008 + random(952, b) * 0.004;
     }
 
     function stateAt(inputTime, out = {}) {
@@ -79,7 +79,7 @@
       if (time < firstArrival) {
         blend = smooth(0.45, firstArrival, time);
       } else {
-        let index = Math.max(0, Math.floor((time - 6.2) / 10.6));
+        let index = Math.max(0, Math.floor((time - 6.8) / 11.8));
         while (anchorTime(index + 1) <= time) index += 1;
         while (anchorTime(index) > time && index > 0) index -= 1;
         const start = anchorTime(index), end = anchorTime(index + 1);
@@ -104,14 +104,14 @@
       out.canopyLift = 1.67 + noise(31, time, 15.7) * 0.19;
       out.canopyCurl = 0.19 + noise(32, time, 11.9) * 0.09;
       out.canopySpread = 1 + noise(33, time, 22.9) * 0.17;
-      rotation(out.view, noise(40, time, 23.7) * 0.13,
-        noise(41, time, 29.3) * 0.20, noise(42, time, 31.7) * 0.15);
+      rotation(out.view, noise(40, time, 23.7) * 0.09,
+        noise(41, time, 29.3) * 0.14, noise(42, time, 31.7) * 0.09);
       rotation(out.currentRotation, noise(43, time, 18.1) * 0.09,
-        0.05 + noise(44, time, 27.1) * 0.10, 0.12 + noise(45, time, 20.3) * 0.16);
-      rotation(out.apertureRotation, 0.58 + noise(46, time, 24.1) * 0.27,
-        -0.42 + noise(47, time, 26.3) * 0.24, -0.23 + noise(48, time, 19.9) * 0.24);
-      rotation(out.canopyRotation, -0.12 + noise(49, time, 21.1) * 0.16,
-        0.05 + noise(50, time, 28.7) * 0.16, -0.14 + noise(51, time, 25.9) * 0.18);
+        0.05 + noise(44, time, 27.1) * 0.10, 0.12 + noise(45, time, 20.3) * 0.12);
+      rotation(out.apertureRotation, 0.58 + noise(46, time, 24.1) * 0.20,
+        -0.42 + noise(47, time, 26.3) * 0.18, -0.23 + noise(48, time, 19.9) * 0.16);
+      rotation(out.canopyRotation, -0.12 + noise(49, time, 21.1) * 0.12,
+        0.05 + noise(50, time, 28.7) * 0.12, -0.14 + noise(51, time, 25.9) * 0.13);
       for (let b = 0; b < 6; b += 1) {
         const channel = 100 + b * 12;
         out.bundlePhase[b] = time * rates[b] + noise(channel, time, 8.7 + b * 0.43) * 0.8;

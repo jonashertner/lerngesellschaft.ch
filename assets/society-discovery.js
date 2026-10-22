@@ -27,5 +27,5 @@
       observer.unobserve(entry.target);
     }
   }, { threshold: 0.14 });
-  document.querySelectorAll('.idea-grid,.programmes-heading,.featured-programme,.future-programme,.association-grid').forEach(el => observer.observe(el));
+  document.querySelectorAll('.idea-grid,.lifelong-line,.programmes-heading,.initiative,.footer-conversation').forEach(el => observer.observe(el));
 })();
