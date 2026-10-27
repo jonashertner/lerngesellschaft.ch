@@ -19,6 +19,15 @@
     const a = hash(channel * 4099 + k), b = hash(channel * 4099 + k + 1);
     return (a + (b - a) * smooth(p - k)) * 2 - 1;
   }
+  function flightPath(channel, time, spacing, order = 0) {
+    const p = time / spacing + hash(channel + 1200) * 19, k = Math.floor(p), u = p - k;
+    const a = hash(channel * 4099 + k) * 2 - 1;
+    const change = hash(channel * 4099 + k + 1) * 2 - 1 - a, v = 1 - u;
+    // C4 drift keeps acceleration-led posture C2 through every change of direction.
+    if (order === 2) return change * 2520 * u ** 3 * v ** 3 * (1 - 2 * u) / (spacing * spacing);
+    if (order === 1) return change * 630 * u ** 4 * v ** 4 / spacing;
+    return a + change * u ** 5 * (126 + u * (-420 + u * (540 + u * (-315 + u * 70))));
+  }
 
   window.createRootsAndWingsRenderer = function createRootsAndWingsRenderer(canvas) {
     if (!canvas || typeof canvas.getContext !== 'function') throw new Error('An ASCII canvas is required.');
@@ -124,16 +133,16 @@
       deposit(left + 1, top + 1, light * fx * fy, warm, depth, kind);
     }
 
-    function drawWings(time) {
-      // Phase is continuous and always advancing. Slow modulation changes its pace.
-      const phase = time * TAU / 1.65 + 0.45 * Math.sin(time * 0.74) + 0.16 * Math.sin(time * 1.31);
+    function drawWings(time, phase, ease) {
       const breadth = 0.96 + noise(12, time, 8.7) * 0.025;
-      const flapDepth = 1.10 + noise(16, time, 5.7) * 0.05;
-      const beatLift = Math.sin(phase - 0.65) * 0.018;
+      // A few shallower strokes gently ease the effort; the beat never resets or stops.
+      const effort = 1 - ease * 0.25;
+      const flapDepth = (1.10 + noise(16, time, 5.7) * 0.05) * effort;
+      const beatLift = Math.sin(phase - 0.65) * 0.018 * effort;
       flightY += beatLift;
       for (let side = -1; side <= 1; side += 2) {
-        const sideBend = noise(side < 0 ? 32 : 33, time, 6.9) * 0.035;
-        const sidePhase = noise(side < 0 ? 44 : 45, time, 7.3) * 0.075;
+        const sideBend = noise(side < 0 ? 32 : 33, time, 6.9) * 0.025 + side * bankSin * 0.055;
+        const sidePhase = noise(side < 0 ? 44 : 45, time, 7.3) * 0.055 + side * bankSin * 0.13;
         for (let feather = 0; feather < feathers.length; feather += 1) {
           const shape = feathers[feather], f = shape.f;
           const tx = shape.x * breadth, ty = shape.y;
@@ -143,7 +152,9 @@
           for (let step = 0; step <= 40; step += 1) {
             const u = step / 40, bell = Math.sin(u * Math.PI), edge = u * u * u;
             const localPhase = phase - u * u * 0.72 - f * 0.19 + sidePhase;
-            const fold = 0.5 - 0.5 * Math.cos(localPhase + Math.sin(localPhase) * 0.16);
+            // A slightly quicker closing stroke and softer return, with delayed tips.
+            const stroke = localPhase + 0.18 * (1 - Math.cos(localPhase));
+            const fold = 0.5 - 0.5 * Math.cos(stroke);
             const hinge = 0.06 + fold * flapDepth + edge * sideBend;
             const hingeCos = Math.cos(hinge), hingeSin = Math.sin(hinge);
             const flex = Math.sin(localPhase - 0.65 + f * 3.1) * edge * 0.045;
@@ -153,7 +164,7 @@
             const z = radial * hingeSin * 0.58 + bell * (0.045 + sideBend) + flex * 0.5;
             const spread = (0.006 + bell * 0.022) * (1 - u * 0.58);
             const travellingLight = 0.5 + 0.5 * Math.cos(u * 5.2 - time * 1.45 - f * 2.3);
-            const membrane = 0.078 + travellingLight * 0.048;
+            const membrane = 0.090 + travellingLight * 0.053;
             const taper = (0.38 + bell * 0.62) * (1 - smooth((u - 0.80) / 0.20) * 0.55);
             const light = membrane * taper * (0.82 + hingeCos * 0.18);
             for (let lane = -1; lane <= 1; lane += 1) {
@@ -162,7 +173,7 @@
                 z + offset * shape.nx * hingeSin * 0.58, light * (lane === 0 ? 1.4 : 0.8), 0, 0);
             }
             // Light travels through the veins, never flashes the whole membrane.
-            const edgeLight = 1 + upperVein * smooth((u - 0.50) / 0.35) * 0.20;
+            const edgeLight = 1 + upperVein * smooth((u - 0.50) / 0.35) * 0.28;
             point(x, y, z + 0.008, vein * (0.34 + travellingLight * 0.14) * taper * edgeLight, 0, 0);
           }
         }
@@ -171,14 +182,17 @@
       for (let strand = 0; strand < 3; strand += 1) {
         for (let step = 0; step <= 36; step += 1) {
           const u = step / 36;
-          point((strand - 1) * 0.005 * Math.sin(u * Math.PI), -0.35 + u * 0.62, 0.035,
+          const tail = (1 - u) * (1 - u);
+          point((strand - 1) * 0.005 * Math.sin(u * Math.PI) + tail * bankSin * 0.025,
+            -0.35 + u * 0.62, 0.035 + tail * Math.sin(phase - 0.9) * 0.012 * effort,
             0.27 * Math.sin(u * Math.PI), 0, 1);
         }
       }
       for (let side = -1; side <= 1; side += 2) {
         for (let step = 0; step <= 18; step += 1) {
           const u = step / 18, curl = Math.sin(u * Math.PI * 0.75);
-          point(side * (0.006 + u * 0.064 + curl * 0.014), 0.21 + u * 0.15,
+          const flex = u * u * (Math.sin(time * 1.8 + side * 0.4) * 0.006 + bankSin * 0.02);
+          point(side * (0.006 + u * 0.064 + curl * 0.014) + flex, 0.21 + u * 0.15,
             0.035, 0.15 * (1 - u * 0.62), 0, side < 0 ? 2 : 3);
         }
       }
@@ -191,22 +205,29 @@
       prepare(width, height, ratio, mobile);
       scale = Math.min(width * 0.42, height * 0.44);
       const t = Number.isFinite(time) ? Math.max(0, time) : 0;
-      const yaw = Math.sin(t * 0.43) * 0.20 + noise(4, t, 9.1) * 0.11;
-      const bank = -Math.cos(t * 0.52) * 0.13 + noise(8, t, 7.3) * 0.055;
-      const pitch = Math.sin(t * 0.37) * 0.13 + noise(9, t, 11.1) * 0.035;
+      const phase = t * TAU / 1.65 + 0.45 * Math.sin(t * 0.74) + 0.16 * Math.sin(t * 1.31) + noise(28, t, 5.1) * 0.20;
+      const ease = smooth((noise(26, t, 5.6) - 0.05) / 0.65);
+      const vx = Math.cos(t * 0.52) * 0.052 * 0.52 + flightPath(20, t, 8.7, 1) * 0.105;
+      const vy = Math.cos(t * 0.39 + 0.3) * 0.055 * 0.39 + flightPath(21, t, 10.3, 1) * 0.08;
+      const ax = -Math.sin(t * 0.52) * 0.052 * 0.52 * 0.52 + flightPath(20, t, 8.7, 2) * 0.105;
+      // Posture follows the whole flight path, including its changing drift.
+      // Soft limits keep every turn continuous while the body settles as it slows.
+      const yaw = 0.22 * Math.tanh(vx * 8.5 + noise(4, t, 9.1) * 0.10);
+      const bank = -0.16 * Math.tanh(vx * 8 + ax * 20);
+      const pitch = 0.10 * Math.tanh(-vy * 13 + Math.sin(phase - 0.8) * 0.10 * (1 - ease * 0.25));
       yawCos = Math.cos(yaw); yawSin = Math.sin(yaw);
       bankCos = Math.cos(bank); bankSin = Math.sin(bank);
       pitchCos = Math.cos(pitch); pitchSin = Math.sin(pitch);
       // Mobile canvas extends beyond the viewport; reserve space inside its visible centre.
       flightScale = mobile ? Math.min(0.80, width / height * 0.64) : 1.02;
-      flightX = (Math.sin(t * 0.52) * 0.12 + noise(20, t, 8.7) * 0.055) * (mobile ? 0.65 : 1);
-      flightY = Math.sin(t * 0.39 + 0.3) * 0.10 + noise(21, t, 10.3) * 0.055;
+      flightX = (Math.sin(t * 0.52) * 0.052 + flightPath(20, t, 8.7) * 0.105) * (mobile ? 0.65 : 1);
+      flightY = Math.sin(t * 0.39 + 0.3) * 0.055 + flightPath(21, t, 10.3) * 0.08;
       pointerStrength = pointer && Number.isFinite(pointer.strength) ? clamp(pointer.strength) : 0;
       pointerX = pointer ? pointer.x * width / (scale * 2) : 0;
       pointerY = pointer ? -pointer.y * height / (scale * 2) : 0;
       burst = nextBurst;
       energy.fill(0); warmth.fill(0); facing.fill(0); peak.fill(0); activeCount = 0; visibleCount = 0;
-      drawWings(t);
+      drawWings(t, phase, ease);
       ctx.setTransform(ratio, 0, 0, ratio, 0, 0);
       ctx.globalAlpha = 1; ctx.globalCompositeOperation = 'source-over';
       ctx.fillStyle = '#080e20'; ctx.fillRect(0, 0, width, height);
