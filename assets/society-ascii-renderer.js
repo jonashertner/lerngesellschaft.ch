@@ -44,7 +44,7 @@
     let activeCount = 0, visibleCount = 0;
     let width = 1, height = 1, scale = 1, yawCos = 1, yawSin = 0;
     let bankCos = 1, bankSin = 0, pitchCos = 1, pitchSin = 0;
-    let flightX = 0, flightY = 0, flightScale = 1;
+    let flightX = 0, flightY = 0, flightScale = 1, originX = 0;
     let pointerX = 0, pointerY = 0, pointerStrength = 0, burst = null;
 
     // A swept upper wing and a smaller rounded lower wing meet at a concave notch.
@@ -117,13 +117,13 @@
         y += dx * 0.035 * influence; z += influence * 0.035;
       }
       if (burst && burst.age >= 0 && burst.age < 4) {
-        const dx = x - burst.x * width / (scale * 2), dy = y + burst.y * height / (scale * 2);
+        const dx = x - (burst.x * width / (scale * 2) - (originX - width * 0.5) / scale), dy = y + burst.y * height / (scale * 2);
         const distance = Math.hypot(dx, dy), wave = distance - burst.age * 0.70;
         const impulse = Math.exp(-wave * wave * 26 - burst.age * 1.1);
         light += impulse * 0.20; y += impulse * 0.012;
       }
       const perspective = 4.5 / (4.5 - z);
-      const column = (width * 0.5 + x * scale * perspective) / cellWidth - 0.5;
+      const column = (originX + x * scale * perspective) / cellWidth - 0.5;
       const row = (height * 0.49 - y * scale * perspective) / cellHeight - 0.5;
       const left = Math.floor(column), top = Math.floor(row), fx = column - left, fy = row - top;
       const depth = clamp(0.48 + z * 0.8);
@@ -198,7 +198,7 @@
       }
     }
 
-    function draw({ time = 0, width: nextWidth, height: nextHeight, pixelRatio = 1, mobile = false, pointer, burst: nextBurst } = {}) {
+    function draw({ time = 0, width: nextWidth, height: nextHeight, pixelRatio = 1, mobile = false, hero = false, arrivalTime = null, pointer, burst: nextBurst } = {}) {
       if (disposed || !(nextWidth > 1 && nextHeight > 1)) return;
       width = nextWidth; height = nextHeight;
       const ratio = Math.max(0.5, Math.min(2, pixelRatio));
@@ -207,9 +207,31 @@
       const t = Number.isFinite(time) ? Math.max(0, time) : 0;
       const phase = t * TAU / 1.65 + 0.45 * Math.sin(t * 0.74) + 0.16 * Math.sin(t * 1.31) + noise(28, t, 5.1) * 0.20;
       const ease = smooth((noise(26, t, 5.6) - 0.05) / 0.65);
-      const vx = Math.cos(t * 0.52) * 0.052 * 0.52 + flightPath(20, t, 8.7, 1) * 0.105;
-      const vy = Math.cos(t * 0.39 + 0.3) * 0.055 * 0.39 + flightPath(21, t, 10.3, 1) * 0.08;
-      const ax = -Math.sin(t * 0.52) * 0.052 * 0.52 * 0.52 + flightPath(20, t, 8.7, 2) * 0.105;
+      const hover = hero ? 0.45 : 1;
+      flightScale = mobile ? Math.min(0.80, width / height * 0.64) : 1.02;
+      originX = width * 0.5;
+      let arrivalVx = 0, arrivalAx = 0, arrivalVy = 0, arrivalLift = 0;
+      if (hero) {
+        flightScale = Math.min(mobile ? 0.80 : 1.02, width * 0.245 / scale);
+        const radius = scale * flightScale;
+        const start = -radius * 1.3 - 18;
+        const margin = radius * 1.2 + scale * 0.08 + Math.max(18, width * 0.04);
+        const destination = Math.min(width * 0.74, width - margin);
+        const u = arrivalTime === null ? 1 : clamp(arrivalTime / 8), remaining = 1 - u;
+        // A single approach: immediate flight, then a C4 landing into the live hover.
+        const progress = 1 - remaining ** 5;
+        const velocity = 5 * remaining ** 4 / 8;
+        const acceleration = -20 * remaining ** 3 / 64;
+        originX = start + (destination - start) * progress;
+        arrivalVx = (destination - start) / scale * velocity;
+        arrivalAx = (destination - start) / scale * acceleration;
+        const arc = mobile ? 0.16 : 0.24;
+        arrivalLift = arc * Math.sin(Math.PI * progress) ** 2;
+        arrivalVy = arc * Math.PI * Math.sin(TAU * progress) * velocity;
+      }
+      const vx = (Math.cos(t * 0.52) * 0.052 * 0.52 + flightPath(20, t, 8.7, 1) * 0.105) * hover + arrivalVx;
+      const vy = (Math.cos(t * 0.39 + 0.3) * 0.055 * 0.39 + flightPath(21, t, 10.3, 1) * 0.08) * hover + arrivalVy;
+      const ax = (-Math.sin(t * 0.52) * 0.052 * 0.52 * 0.52 + flightPath(20, t, 8.7, 2) * 0.105) * hover + arrivalAx;
       // Posture follows the whole flight path, including its changing drift.
       // Soft limits keep every turn continuous while the body settles as it slows.
       const yaw = 0.22 * Math.tanh(vx * 8.5 + noise(4, t, 9.1) * 0.10);
@@ -218,12 +240,10 @@
       yawCos = Math.cos(yaw); yawSin = Math.sin(yaw);
       bankCos = Math.cos(bank); bankSin = Math.sin(bank);
       pitchCos = Math.cos(pitch); pitchSin = Math.sin(pitch);
-      // Mobile canvas extends beyond the viewport; reserve space inside its visible centre.
-      flightScale = mobile ? Math.min(0.80, width / height * 0.64) : 1.02;
-      flightX = (Math.sin(t * 0.52) * 0.052 + flightPath(20, t, 8.7) * 0.105) * (mobile ? 0.65 : 1);
-      flightY = Math.sin(t * 0.39 + 0.3) * 0.055 + flightPath(21, t, 10.3) * 0.08;
+      flightX = (Math.sin(t * 0.52) * 0.052 + flightPath(20, t, 8.7) * 0.105) * (mobile ? 0.65 : 1) * hover;
+      flightY = (Math.sin(t * 0.39 + 0.3) * 0.055 + flightPath(21, t, 10.3) * 0.08) * hover + arrivalLift;
       pointerStrength = pointer && Number.isFinite(pointer.strength) ? clamp(pointer.strength) : 0;
-      pointerX = pointer ? pointer.x * width / (scale * 2) : 0;
+      pointerX = pointer ? pointer.x * width / (scale * 2) - (originX - width * 0.5) / scale : 0;
       pointerY = pointer ? -pointer.y * height / (scale * 2) : 0;
       burst = nextBurst;
       energy.fill(0); warmth.fill(0); facing.fill(0); peak.fill(0); activeCount = 0; visibleCount = 0;

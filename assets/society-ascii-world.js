@@ -29,6 +29,7 @@
     args.time = time;
     args.width = surface.width; args.height = surface.height;
     args.pixelRatio = surface.pixelRatio; args.mobile = surface.mobile;
+    args.hero = surface.hero; args.arrivalTime = surface.arrivalTime;
     args.burst = surface.burst;
     if (args.burst) args.burst.age = time - args.burst.time;
     try { surface.renderer.draw(args); }
@@ -51,7 +52,10 @@
       pointer.y += (pointer.ty - pointer.y) * ease;
       pointer.strength += ((pointer.active ? 1 : 0) - pointer.strength) * ease;
       if (surface.burst && time - surface.burst.time > 5) surface.burst = null;
-      if (surface.seen) draw(surface);
+      if (surface.seen && surface.available) {
+        if (surface.hero && surface.arrivalTime !== null) surface.arrivalTime += delta;
+        draw(surface);
+      }
     }
     if (running()) { if (!frame) frame = requestAnimationFrame(tick); }
     else lastDraw = 0;
@@ -128,6 +132,7 @@
     catch (_) { return; }
     if (!renderer || typeof renderer.draw !== 'function') return;
     const surface = { canvas, stage, renderer, pointer, available: true, seen: false,
+      hero: interactive, arrivalTime: interactive && !reduced.matches ? 0 : null,
       width: 1, height: 1, pixelRatio: 1, mobile: false, burst: null, press: null,
       args: { pointer } };
     surfaces.push(surface); controls.push(control);
@@ -155,7 +160,15 @@
   document.addEventListener('visibilitychange', sync);
   window.addEventListener('pagehide', () => { pageActive = false; sync(); });
   window.addEventListener('pageshow', () => { pageActive = true; surfaces.forEach(resize); checkVisibility(); });
-  if (reduced.addEventListener) reduced.addEventListener('change', sync); else reduced.addListener(sync);
+  function preferenceChanged() {
+    if (reduced.matches && userPaused === null) {
+      for (const surface of surfaces) {
+        if (surface.hero) { surface.arrivalTime = null; draw(surface); }
+      }
+    }
+    sync();
+  }
+  if (reduced.addEventListener) reduced.addEventListener('change', preferenceChanged); else reduced.addListener(preferenceChanged);
   if (typeof IntersectionObserver === 'function') {
     const observer = new IntersectionObserver(entries => {
       for (const entry of entries) {
