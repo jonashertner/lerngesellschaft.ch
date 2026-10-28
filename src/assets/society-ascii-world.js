@@ -32,7 +32,7 @@
     args.hero = surface.hero; args.arrivalTime = surface.arrivalTime;
     args.burst = surface.burst;
     if (args.burst) args.burst.age = time - args.burst.time;
-    try { surface.renderer.draw(args); }
+    try { surface.renderer.draw(args); surface.dirty = false; }
     catch (_) {
       surface.available = false;
       surface.stage.dataset.renderer = 'unavailable';
@@ -62,6 +62,10 @@
   }
 
   function sync() {
+    // An offscreen scene paints on first visibility, including while paused.
+    for (const surface of surfaces) {
+      if (pageActive && !document.hidden && surface.seen && surface.available && surface.dirty) draw(surface);
+    }
     updateControls();
     if (running()) { if (!frame) frame = requestAnimationFrame(tick); }
     else {
@@ -80,14 +84,18 @@
 
   function resize(surface) {
     const r = surface.canvas.getBoundingClientRect();
-    surface.width = Math.max(1, r.width); surface.height = Math.max(1, r.height);
-    surface.mobile = innerWidth < 760;
-    surface.pixelRatio = Math.min(devicePixelRatio || 1, surface.mobile ? 1.5 : 2);
+    const width = Math.max(1, r.width), height = Math.max(1, r.height);
+    const mobile = innerWidth < 760;
+    const pixelRatio = Math.min(devicePixelRatio || 1, mobile ? 1.5 : 2);
+    if (surface.width === width && surface.height === height &&
+        surface.mobile === mobile && surface.pixelRatio === pixelRatio && !surface.dirty) return;
+    surface.width = width; surface.height = height;
+    surface.mobile = mobile; surface.pixelRatio = pixelRatio; surface.dirty = true;
     const w = Math.round(surface.width * surface.pixelRatio);
     const h = Math.round(surface.height * surface.pixelRatio);
     if (surface.canvas.width !== w) surface.canvas.width = w;
     if (surface.canvas.height !== h) surface.canvas.height = h;
-    draw(surface);
+    if (pageActive && !document.hidden && surface.seen) draw(surface);
   }
 
   function locate(surface, event) {
@@ -131,7 +139,7 @@
     try { renderer = window.createRootsAndWingsRenderer(canvas); }
     catch (_) { return; }
     if (!renderer || typeof renderer.draw !== 'function') return;
-    const surface = { canvas, stage, renderer, pointer, available: true, seen: false,
+    const surface = { canvas, stage, renderer, pointer, available: true, seen: false, dirty: true,
       hero: interactive, arrivalTime: interactive && !reduced.matches ? 0 : null,
       width: 1, height: 1, pixelRatio: 1, mobile: false, burst: null, press: null,
       args: { pointer } };
@@ -147,6 +155,7 @@
         surface.renderer.dispose();
         surface.renderer = window.createRootsAndWingsRenderer(canvas);
         surface.available = Boolean(surface.renderer);
+        surface.dirty = true;
         resize(surface); checkVisibility();
       } catch (_) { surface.available = false; sync(); }
     });
