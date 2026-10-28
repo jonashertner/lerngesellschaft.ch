@@ -58,8 +58,18 @@
       const a = outline[Math.max(0, k - 1)], b = outline[k], c = outline[k + 1], d = outline[Math.min(outline.length - 1, k + 2)];
       const x = interpolate(a[0], b[0], c[0], d[0], t), y = interpolate(a[1], b[1], c[1], d[1], t);
       const length = Math.hypot(x, y - 0.16);
-      feathers.push({ f, x, y, nx: -(y - 0.16) / length, ny: x / length });
+      feathers.push({ f, x, y, nx: -(y - 0.16) / length, ny: x / length,
+        vein: Math.pow(0.5 + 0.5 * Math.cos(f * TAU * 7.1), 12),
+        upperVein: 1 - smooth((f - 0.42) / 0.14) });
     }
+    // Fixed membrane geometry is shared by every frame and both wings.
+    const samples = Array.from({ length: 41 }, (_, step) => {
+      const u = step / 40, bell = Math.sin(u * Math.PI);
+      return { u, bell, edge: u * u * u,
+        spread: (0.006 + bell * 0.022) * (1 - u * 0.58),
+        taper: (0.38 + bell * 0.62) * (1 - smooth((u - 0.80) / 0.20) * 0.55),
+        edgeLight: smooth((u - 0.50) / 0.35) };
+    });
 
     function prepare(nextWidth, nextHeight, ratio, mobile) {
       const desiredWidth = mobile ? 5.4 : 7.0, desiredHeight = mobile ? 7.4 : 9.0;
@@ -83,12 +93,10 @@
       atlasContext.textAlign = 'center'; atlasContext.textBaseline = 'middle';
       for (let color = 0; color < palettes.length; color += 1) {
         atlasContext.fillStyle = palettes[color];
-        for (let light = 1; light < 16; light += 1) {
-          atlasContext.globalAlpha = light / 15;
-          for (let g = 0; g < glyphs.length; g += 1) {
-            atlasContext.fillText(glyphs[g], (g + 0.5) * glyphWidth / ratio,
-              (color * 16 + light + 0.51) * glyphHeight / ratio);
-          }
+        // Only the full-opacity row is sampled; per-cell alpha stays continuous.
+        for (let g = 0; g < glyphs.length; g += 1) {
+          atlasContext.fillText(glyphs[g], (g + 0.5) * glyphWidth / ratio,
+            (color * 16 + 15 + 0.51) * glyphHeight / ratio);
         }
       }
       atlasContext.globalAlpha = 1;
@@ -147,10 +155,9 @@
           const shape = feathers[feather], f = shape.f;
           const tx = shape.x * breadth, ty = shape.y;
           const ax = 0.024, ay = 0.16 - f * 0.025;
-          const vein = Math.pow(0.5 + 0.5 * Math.cos(f * TAU * 7.1), 12);
-          const upperVein = 1 - smooth((f - 0.42) / 0.14);
-          for (let step = 0; step <= 40; step += 1) {
-            const u = step / 40, bell = Math.sin(u * Math.PI), edge = u * u * u;
+          const vein = shape.vein, upperVein = shape.upperVein;
+          for (let step = 0; step < samples.length; step += 1) {
+            const sample = samples[step], { u, bell, edge } = sample;
             const localPhase = phase - u * u * 0.72 - f * 0.19 + sidePhase;
             // A slightly quicker closing stroke and softer return, with delayed tips.
             const stroke = localPhase + 0.18 * (1 - Math.cos(localPhase));
@@ -162,10 +169,10 @@
             const x = side * radial * hingeCos;
             const y = ay + (ty - ay) * u + bell * (0.035 - f * 0.055) - 0.35 + flex;
             const z = radial * hingeSin * 0.58 + bell * (0.045 + sideBend) + flex * 0.5;
-            const spread = (0.006 + bell * 0.022) * (1 - u * 0.58);
+            const spread = sample.spread;
             const travellingLight = 0.5 + 0.5 * Math.cos(u * 5.2 - time * 1.45 - f * 2.3);
             const membrane = 0.090 + travellingLight * 0.053;
-            const taper = (0.38 + bell * 0.62) * (1 - smooth((u - 0.80) / 0.20) * 0.55);
+            const taper = sample.taper;
             const light = membrane * taper * (0.82 + hingeCos * 0.18);
             for (let lane = -1; lane <= 1; lane += 1) {
               const offset = lane * spread * 0.60;
@@ -173,7 +180,7 @@
                 z + offset * shape.nx * hingeSin * 0.58, light * (lane === 0 ? 1.4 : 0.8), 0, 0);
             }
             // Light travels through the veins, never flashes the whole membrane.
-            const edgeLight = 1 + upperVein * smooth((u - 0.50) / 0.35) * 0.28;
+            const edgeLight = 1 + upperVein * sample.edgeLight * 0.28;
             point(x, y, z + 0.008, vein * (0.34 + travellingLight * 0.14) * taper * edgeLight, 0, 0);
           }
         }
@@ -214,7 +221,8 @@
       if (hero) {
         flightScale = Math.min(mobile ? 0.80 : 1.02, width * 0.245 / scale);
         const radius = scale * flightScale;
-        const start = -radius * 1.3 - 18;
+        // Let the leading wing already touch the page on the very first draw.
+        const start = -radius * 0.28;
         const margin = radius * 1.2 + scale * 0.08 + Math.max(18, width * 0.04);
         const destination = Math.min(width * 0.74, width - margin);
         const duration = 20, cruise = 0.6, area = (1 + cruise) / 2;
@@ -232,11 +240,11 @@
         // Small, visit-specific wandering gives the crossing soft rises, dips
         // and changes of pace. The wingbeat retains its independent live clock.
         const weaveTime = Math.min(elapsed, duration), turn = hash(36) * TAU;
-        const sway = Math.sin(weaveTime * 0.79 + turn) * 0.045 + flightPath(32, weaveTime, 6.7) * 0.035;
-        const swayV = Math.cos(weaveTime * 0.79 + turn) * 0.045 * 0.79 + flightPath(32, weaveTime, 6.7, 1) * 0.035;
-        const swayA = -Math.sin(weaveTime * 0.79 + turn) * 0.045 * 0.79 ** 2 + flightPath(32, weaveTime, 6.7, 2) * 0.035;
-        const rise = Math.sin(weaveTime * 0.71 + turn * 0.7) * 0.105 + flightPath(33, weaveTime, 5.9) * 0.08;
-        const riseV = Math.cos(weaveTime * 0.71 + turn * 0.7) * 0.105 * 0.71 + flightPath(33, weaveTime, 5.9, 1) * 0.08;
+        const sway = Math.sin(weaveTime * 0.62 + turn) * 0.035 + flightPath(32, weaveTime, 8.5) * 0.025;
+        const swayV = Math.cos(weaveTime * 0.62 + turn) * 0.035 * 0.62 + flightPath(32, weaveTime, 8.5, 1) * 0.025;
+        const swayA = -Math.sin(weaveTime * 0.62 + turn) * 0.035 * 0.62 ** 2 + flightPath(32, weaveTime, 8.5, 2) * 0.025;
+        const rise = Math.sin(weaveTime * 0.57 + turn * 0.7) * 0.08 + flightPath(33, weaveTime, 7.5) * 0.06;
+        const riseV = Math.cos(weaveTime * 0.57 + turn * 0.7) * 0.08 * 0.57 + flightPath(33, weaveTime, 7.5, 1) * 0.06;
         originX = start + (destination - start) * progress + scale * sway * fade;
         arrivalVx = (destination - start) / scale * velocity + swayV * fade + sway * fadeV;
         arrivalAx = (destination - start) / scale * acceleration + swayA * fade + 2 * swayV * fadeV + sway * fadeA;
