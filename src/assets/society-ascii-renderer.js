@@ -217,17 +217,31 @@
         const start = -radius * 1.3 - 18;
         const margin = radius * 1.2 + scale * 0.08 + Math.max(18, width * 0.04);
         const destination = Math.min(width * 0.74, width - margin);
-        const u = arrivalTime === null ? 1 : clamp(arrivalTime / 8), remaining = 1 - u;
-        // A single approach: immediate flight, then a C4 landing into the live hover.
-        const progress = 1 - remaining ** 5;
-        const velocity = 5 * remaining ** 4 / 8;
-        const acceleration = -20 * remaining ** 3 / 64;
-        originX = start + (destination - start) * progress;
-        arrivalVx = (destination - start) / scale * velocity;
-        arrivalAx = (destination - start) / scale * acceleration;
-        const arc = mobile ? 0.16 : 0.24;
-        arrivalLift = arc * Math.sin(Math.PI * progress) ** 2;
-        arrivalVy = arc * Math.PI * Math.sin(TAU * progress) * velocity;
+        const duration = 20, cruise = 0.6, area = (1 + cruise) / 2;
+        const elapsed = arrivalTime === null ? duration : Math.max(0, arrivalTime);
+        const u = clamp(elapsed / duration), q = clamp((u - cruise) / (1 - cruise));
+        // Travel at an unhurried pace before gently settling. Integrating the C4
+        // speed taper avoids the initial rush of an ease-out position curve.
+        const taper = q ** 5 * (126 + q * (-420 + q * (540 + q * (-315 + q * 70))));
+        const integral = q ** 6 * (21 + q * (-60 + q * (67.5 + q * (-35 + q * 7))));
+        const progress = u <= cruise ? u / area : (cruise + (1 - cruise) * (q - integral)) / area;
+        const fade = 1 - taper, taperSeconds = duration * (1 - cruise);
+        const fadeV = -630 * q ** 4 * (1 - q) ** 4 / taperSeconds;
+        const fadeA = -2520 * q ** 3 * (1 - q) ** 3 * (1 - 2 * q) / (taperSeconds * taperSeconds);
+        const velocity = fade / (area * duration), acceleration = fadeV / (area * duration);
+        // Small, visit-specific wandering gives the crossing soft rises, dips
+        // and changes of pace. The wingbeat retains its independent live clock.
+        const weaveTime = Math.min(elapsed, duration), turn = hash(36) * TAU;
+        const sway = Math.sin(weaveTime * 0.79 + turn) * 0.045 + flightPath(32, weaveTime, 6.7) * 0.035;
+        const swayV = Math.cos(weaveTime * 0.79 + turn) * 0.045 * 0.79 + flightPath(32, weaveTime, 6.7, 1) * 0.035;
+        const swayA = -Math.sin(weaveTime * 0.79 + turn) * 0.045 * 0.79 ** 2 + flightPath(32, weaveTime, 6.7, 2) * 0.035;
+        const rise = Math.sin(weaveTime * 0.71 + turn * 0.7) * 0.105 + flightPath(33, weaveTime, 5.9) * 0.08;
+        const riseV = Math.cos(weaveTime * 0.71 + turn * 0.7) * 0.105 * 0.71 + flightPath(33, weaveTime, 5.9, 1) * 0.08;
+        originX = start + (destination - start) * progress + scale * sway * fade;
+        arrivalVx = (destination - start) / scale * velocity + swayV * fade + sway * fadeV;
+        arrivalAx = (destination - start) / scale * acceleration + swayA * fade + 2 * swayV * fadeV + sway * fadeA;
+        arrivalLift = rise * fade;
+        arrivalVy = riseV * fade + rise * fadeV;
       }
       const vx = (Math.cos(t * 0.52) * 0.052 * 0.52 + flightPath(20, t, 8.7, 1) * 0.105) * hover + arrivalVx;
       const vy = (Math.cos(t * 0.39 + 0.3) * 0.055 * 0.39 + flightPath(21, t, 10.3, 1) * 0.08) * hover + arrivalVy;
