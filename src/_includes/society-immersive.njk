@@ -40,7 +40,7 @@
   <h2 id="curiosity-question" aria-live="polite" aria-atomic="true">{{ experience.question | safe }}</h2>
   <button class="question-button" id="next-question" type="button" hidden><span>{{ experience.nextQuestion }}</span></button>
   <script type="application/json" id="curiosity-questions">{{ experience.questions | dump | safe }}</script>
-  <div class="footer-conversation"><p>{{ experience.associationText }}</p><a class="contact-link" href="mailto:team@jonashertner.com">{{ experience.contact }}</a></div>
+  <div class="footer-conversation"><p>{{ experience.associationText }}</p><a class="contact-link" href="mailto:team@jonashertner.com"><span class="contact-title">{{ experience.contact }}</span><span class="contact-address">team@jonashertner.com</span></a></div>
  </section>
  <div class="footer-directory">
   <div class="footer-principle"><p>{{ experience.footerLine }}</p><span>{{ experience.footerIdentity }}</span></div>
