@@ -172,7 +172,7 @@
   function preferenceChanged() {
     if (reduced.matches && userPaused === null) {
       for (const surface of surfaces) {
-        if (surface.hero) { surface.arrivalTime = null; draw(surface); }
+        if (surface.hero) { surface.arrivalTime = null; surface.dirty = true; }
       }
     }
     sync();
