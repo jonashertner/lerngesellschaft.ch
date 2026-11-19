@@ -34,7 +34,7 @@
                 <input type="checkbox" name="vorreservation_{{ option.id }}" value="{{ option.program | escape }}, {{ option.location | escape }}, {{ option.date }}, {{ option.time }}" data-zwischenhalt-reservation />
                 <span class="contact-reservation-details">
                   <strong>{{ option.program | escape }}</strong>
-                  <span><time datetime="{{ option.date }}">{% if contactEnglish %}From {{ option.dateEn }}{% else %}Ab {{ option.dateDe }}{% endif %}</time>, {{ option.time }}{% if not contactEnglish %}&nbsp;Uhr{% endif %}</span>
+                  <span><time datetime="{{ option.date }}">{% if contactEnglish %}From {{ option.dateEn }}{% else %}Ab {{ option.dateDe }}{% endif %}</time>, <span class="contact-reservation-time">{{ option.time }}{% if not contactEnglish %}&nbsp;Uhr{% endif %}</span></span>
                   <span>{{ option.location | escape }}</span>
                 </span>
               </label>
