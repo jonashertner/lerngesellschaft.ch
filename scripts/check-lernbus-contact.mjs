@@ -32,7 +32,8 @@ function fixture(locale = 'en', action = endpoint) {
     _gotcha: '', _subject: locale === 'en' ? 'Lernbus: request a learning session' : 'Lernbus: Lernstunde anfragen', language: locale
   }).map(([name, value]) => [name, Object.assign(new Element(), { name, value })]));
   for (const name of ['name', 'email', 'phone', 'children_count', 'children_ages_years']) fields[name].required = true;
-  const button = { textContent: locale === 'en' ? 'Request a learning session' : 'Lernstunde anfragen', disabled: false };
+  const reservations = [];
+  const button = { textContent: locale === 'en' ? 'Send enquiry' : 'Anfrage senden', disabled: false };
   const status = { textContent: '', dataset: {} };
   const attributes = {};
   const container = new Element();
@@ -47,6 +48,9 @@ function fixture(locale = 'en', action = endpoint) {
       'button[type="submit"]': button, '[data-age-fields]': container,
       '[data-age-fallback]': fallback, '[data-child-ages]': fieldset
     })[selector],
+    querySelectorAll: selector => selector === '[data-zwischenhalt-reservation]:enabled'
+      ? reservations.filter(input => !input.disabled)
+      : [],
     parentElement: { querySelector: () => status },
     reportValidity: () => [...Object.values(fields), ...ageInputs()].every(field => field.disabled || (
       !field.validationMessage && (!field.required || field.value.trim()) &&
@@ -56,7 +60,7 @@ function fixture(locale = 'en', action = endpoint) {
     removeAttribute: name => { delete attributes[name]; },
     addEventListener: (name, handler) => { form[name] = handler; }
   };
-  return { form, fields, button, status, attributes, ageInputs, container, fallback, fieldset };
+  return { form, fields, reservations, button, status, attributes, ageInputs, container, fallback, fieldset };
 }
 
 const event = () => ({ preventDefault() { this.prevented = true; } });
@@ -172,7 +176,48 @@ test('pending guard prevents duplicate requests; optional message can be blank',
   assert.match(ui.status.textContent, /does not yet confirm a booking/);
   assert.doesNotMatch(ui.status.textContent, /delivered|inbox/i);
   assert.equal(ui.button.disabled, false);
-  assert.equal(ui.button.textContent, 'Request a learning session');
+  assert.equal(ui.button.textContent, 'Send enquiry');
+});
+
+test('provisional reservations send only checked options, retain them on error and clear on success', async () => {
+  const ui = fixture('de');
+  const morning = {
+    name: 'vorreservation_kindergarten_hirzbrunnen',
+    value: 'Zwischenhalt Kindergarten, Quartierzentrum Hirzbrunnen, 2027-01-04, 09:30–12:00',
+    checked: true,
+    disabled: false
+  };
+  const lunch = {
+    name: 'vorreservation_mittag_hirzbrunnen',
+    value: 'Zwischenhalt Mittag, Quartierzentrum Hirzbrunnen, 2027-01-04, 12:15–14:00',
+    checked: true,
+    disabled: false
+  };
+  const iselin = {
+    name: 'vorreservation_kindergarten_iselin',
+    value: 'Zwischenhalt Kindergarten, Quartierzentrum Iselin, 2027-01-07, 09:00–11:30',
+    checked: false,
+    disabled: false
+  };
+  ui.reservations.push(morning, lunch, iselin);
+  let attempts = 0;
+  const submit = bindContactForm(ui.form, {
+    fetchImpl: async (_url, options) => {
+      assert.ok(ui.reservations.every(input => input.disabled));
+      const sent = JSON.parse(options.body);
+      assert.equal(sent[morning.name], morning.value);
+      assert.equal(sent[lunch.name], lunch.value);
+      assert.equal(sent[iselin.name], undefined);
+      return ++attempts === 1 ? { ok: false, status: 503 } : accepted();
+    }
+  });
+  await submit(event());
+  assert.equal(ui.status.dataset.state, 'error');
+  assert.deepEqual(ui.reservations.map(input => input.checked), [true, true, false]);
+  assert.ok(ui.reservations.every(input => !input.disabled));
+  await submit(event());
+  assert.equal(ui.status.dataset.state, 'success');
+  assert.ok(ui.reservations.every(input => !input.checked && !input.disabled));
 });
 
 test('timeout aborts without automatic resend or discarding inputs', async () => {
@@ -198,7 +243,7 @@ test('rate limiting retains data and gives localized retry guidance', async () =
   await submit(event());
   assert.deepEqual(values(ui), original);
   assert.match(ui.status.textContent, /einige Minuten/);
-  assert.equal(ui.button.textContent, 'Lernstunde anfragen');
+  assert.equal(ui.button.textContent, 'Anfrage senden');
 });
 
 test('German requests carry unambiguous child ages and German metadata', async () => {

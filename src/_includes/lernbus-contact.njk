@@ -4,13 +4,13 @@
   <div class="wrap contact-grid">
     <div class="contact-intro">
       <p class="eyebrow">{% if contactEnglish %}Get in touch{% else %}Kontakt{% endif %}</p>
-      <h2 class="big">{% if contactEnglish %}Request a learning session{% else %}Lernstunde anfragen{% endif %}</h2>
+      <h2 class="big">{% if contactEnglish %}Enquire about a learning session or Zwischenhalt{% else %}Lernstunde oder Zwischenhalt anfragen{% endif %}</h2>
       <p class="lead">{% if contactEnglish %}We will get back to you within a few days to discuss your questions and the next steps.{% else %}Wir melden uns innert weniger Tage, um Ihre Fragen und die nächsten Schritte zu besprechen.{% endif %}</p>
       <a class="morelink" href="mailto:{{ lernbusContact.recipient | escape }}">{{ lernbusContact.recipient }}</a>
     </div>
     <div class="book-card contact-card">
       <form id="anfrage" action="{{ lernbusContact.endpoint | escape }}" method="post" data-direct-contact data-contact-email="{{ lernbusContact.recipient | escape }}" data-locale="{{ locale | escape }}" aria-describedby="contact-required contact-note">
-        <p class="contact-required" id="contact-required">{% if contactEnglish %}All fields are required except your message.{% else %}Alle Angaben ausser der Nachricht sind erforderlich.{% endif %}</p>
+        <p class="contact-required" id="contact-required">{% if contactEnglish %}The provisional reservation and your message are optional. All other fields are required.{% else %}Alle Angaben ausser der Vorreservation und Ihrer Nachricht sind erforderlich.{% endif %}</p>
         <div class="form-grid">
           <div class="field wide"><label for="f-name">{% if contactEnglish %}Parent or guardian’s name{% else %}Ihr Name (Elternteil oder erziehungsberechtigte Person){% endif %}</label><input id="f-name" name="name" type="text" autocomplete="name" maxlength="120" required /></div>
           <div class="field"><label for="f-contact">{% if contactEnglish %}Email address{% else %}E-Mail-Adresse{% endif %}</label><input id="f-contact" name="email" type="email" autocomplete="email" maxlength="254" required /></div>
@@ -26,13 +26,29 @@
             <p class="contact-help" id="contact-age-unit">{% if contactEnglish %}In years; you can also enter an age such as 3.5.{% else %}In Jahren; auch Angaben wie 3,5 sind möglich.{% endif %}</p>
             <div class="contact-age-grid" data-age-fields></div>
           </fieldset>
+          <fieldset class="contact-reservations" aria-describedby="contact-reservation-note">
+            <legend>{% if contactEnglish %}Provisional reservation for Zwischenhalt{% else %}Vorreservation für den Zwischenhalt{% endif %} <span class="contact-optional">(optional)</span></legend>
+            <div class="contact-reservation-options">
+              {% for option in lernbusContact.reservations %}
+              <label class="check contact-reservation-option">
+                <input type="checkbox" name="vorreservation_{{ option.id }}" value="{{ option.program | escape }}, {{ option.location | escape }}, {{ option.date }}, {{ option.time }}" data-zwischenhalt-reservation />
+                <span class="contact-reservation-details">
+                  <strong>{{ option.program | escape }}</strong>
+                  <span><time datetime="{{ option.date }}">{% if contactEnglish %}From {{ option.dateEn }}{% else %}Ab {{ option.dateDe }}{% endif %}</time>, {{ option.time }}{% if not contactEnglish %}&nbsp;Uhr{% endif %}</span>
+                  <span>{{ option.location | escape }}</span>
+                </span>
+              </label>
+              {% endfor %}
+            </div>
+            <p class="contact-help" id="contact-reservation-note">{% if contactEnglish %}There are no Zwischenhalt sessions on public holidays or during school holidays. Your place is secured once the contract is signed.{% else %}An Feiertagen und während der Schulferien finden keine Zwischenhalte statt. Ihr Platz ist gesichert, sobald der Vertrag unterzeichnet ist.{% endif %}</p>
+          </fieldset>
           <div class="field wide"><label for="f-msg">{% if contactEnglish %}Your message <span class="contact-optional">(optional)</span>{% else %}Ihre Nachricht <span class="contact-optional">(optional)</span>{% endif %}</label><textarea id="f-msg" name="message" rows="4" maxlength="5000"></textarea></div>
         </div>
         <div class="contact-trap" aria-hidden="true"><label for="f-website">Website</label><input id="f-website" name="_gotcha" type="text" tabindex="-1" autocomplete="off" maxlength="200" /></div>
         <input type="hidden" name="_subject" value="{% if contactEnglish %}Lernbus: request a learning session{% else %}Lernbus: Lernstunde anfragen{% endif %}" />
         <input type="hidden" name="language" value="{{ locale | escape }}" />
         <p class="contact-next">{% if contactEnglish %}Your enquiry is not a binding booking.{% else %}Ihre Anfrage ist noch keine verbindliche Buchung.{% endif %}</p>
-        <div class="contact-submit"><button type="submit" class="btn btn-pink">{% if contactEnglish %}Request a learning session{% else %}Lernstunde anfragen{% endif %}</button></div>
+        <div class="contact-submit"><button type="submit" class="btn btn-pink">{% if contactEnglish %}Send enquiry{% else %}Anfrage senden{% endif %}</button></div>
       </form>
       <p class="book-note" id="contact-note">{% if contactEnglish %}Your enquiry is sent directly to {{ lernbusContact.recipient }}. <a class="contact-privacy" href="/imprint/#formulare">Contact form privacy</a>{% else %}Ihre Anfrage wird direkt an {{ lernbusContact.recipient }} übermittelt. <a class="contact-privacy" href="/impressum/#formulare">Datenschutz zum Kontaktformular</a>{% endif %}</p>
       <p class="contact-status" data-contact-status role="status" aria-live="polite" aria-atomic="true"></p>
