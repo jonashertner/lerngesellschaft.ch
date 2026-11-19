@@ -37,8 +37,8 @@
 <link rel="stylesheet" href="./source-home.css?v=7f1495441a76">
 <link rel="stylesheet" href="./home-refinement.css?v=e171108809f2">
 <link rel="stylesheet" href="./tariff-guide.css?v=cb305386bf49">
-<link rel="stylesheet" href="./contact.css?v=41912f1515c0">
-<script src="./contact.js?v=cfe31135e070" type="module"></script>
+<link rel="stylesheet" href="./contact.css?v=a96eef74f67c">
+<script src="./contact.js?v=8d6973863995" type="module"></script>
 <link rel="stylesheet" href="./navigation.css?v=c14506d0d664">
 <link rel="stylesheet" href="./footer.css?v=95a1c4a3cd54">
 </head>
@@ -472,13 +472,13 @@
   <div class="wrap contact-grid">
     <div class="contact-intro">
       <p class="eyebrow">Kontakt</p>
-      <h2 class="big">Lernstunde anfragen</h2>
+      <h2 class="big">Lernstunde oder Zwischenhalt anfragen</h2>
       <p class="lead">Wir melden uns innert weniger Tage, um Ihre Fragen und die nächsten Schritte zu besprechen.</p>
       <a class="morelink" href="mailto:info@lernbus.ch">info@lernbus.ch</a>
     </div>
     <div class="book-card contact-card">
       <form id="anfrage" action="https://formspree.io/f/maeyrgjk" method="post" data-direct-contact data-contact-email="info@lernbus.ch" data-locale="de" aria-describedby="contact-required contact-note">
-        <p class="contact-required" id="contact-required">Alle Angaben ausser der Nachricht sind erforderlich.</p>
+        <p class="contact-required" id="contact-required">Alle Angaben ausser der Vorreservation und Ihrer Nachricht sind erforderlich.</p>
         <div class="form-grid">
           <div class="field wide"><label for="f-name">Ihr Name (Elternteil oder erziehungsberechtigte Person)</label><input id="f-name" name="name" type="text" autocomplete="name" maxlength="120" required /></div>
           <div class="field"><label for="f-contact">E-Mail-Adresse</label><input id="f-contact" name="email" type="email" autocomplete="email" maxlength="254" required /></div>
@@ -494,13 +494,47 @@
             <p class="contact-help" id="contact-age-unit">In Jahren; auch Angaben wie 3,5 sind möglich.</p>
             <div class="contact-age-grid" data-age-fields></div>
           </fieldset>
+          <fieldset class="contact-reservations" aria-describedby="contact-reservation-note">
+            <legend>Vorreservation für den Zwischenhalt <span class="contact-optional">(optional)</span></legend>
+            <div class="contact-reservation-options">
+              
+              <label class="check contact-reservation-option">
+                <input type="checkbox" name="vorreservation_kindergarten_hirzbrunnen" value="Zwischenhalt Kindergarten, Quartierzentrum Hirzbrunnen, 2027-01-04, 09:30–12:00" data-zwischenhalt-reservation />
+                <span class="contact-reservation-details">
+                  <strong>Zwischenhalt Kindergarten</strong>
+                  <span><time datetime="2027-01-04">Ab Montag, 4. Januar 2027</time>, 09:30–12:00&nbsp;Uhr</span>
+                  <span>Quartierzentrum Hirzbrunnen</span>
+                </span>
+              </label>
+              
+              <label class="check contact-reservation-option">
+                <input type="checkbox" name="vorreservation_mittag_hirzbrunnen" value="Zwischenhalt Mittag, Quartierzentrum Hirzbrunnen, 2027-01-04, 12:15–14:00" data-zwischenhalt-reservation />
+                <span class="contact-reservation-details">
+                  <strong>Zwischenhalt Mittag</strong>
+                  <span><time datetime="2027-01-04">Ab Montag, 4. Januar 2027</time>, 12:15–14:00&nbsp;Uhr</span>
+                  <span>Quartierzentrum Hirzbrunnen</span>
+                </span>
+              </label>
+              
+              <label class="check contact-reservation-option">
+                <input type="checkbox" name="vorreservation_kindergarten_iselin" value="Zwischenhalt Kindergarten, Quartierzentrum Iselin, 2027-01-07, 09:00–11:30" data-zwischenhalt-reservation />
+                <span class="contact-reservation-details">
+                  <strong>Zwischenhalt Kindergarten</strong>
+                  <span><time datetime="2027-01-07">Ab Donnerstag, 7. Januar 2027</time>, 09:00–11:30&nbsp;Uhr</span>
+                  <span>Quartierzentrum Iselin</span>
+                </span>
+              </label>
+              
+            </div>
+            <p class="contact-help" id="contact-reservation-note">An Feiertagen und während der Schulferien finden keine Zwischenhalte statt. Ihr Platz ist gesichert, sobald der Vertrag unterzeichnet ist.</p>
+          </fieldset>
           <div class="field wide"><label for="f-msg">Ihre Nachricht <span class="contact-optional">(optional)</span></label><textarea id="f-msg" name="message" rows="4" maxlength="5000"></textarea></div>
         </div>
         <div class="contact-trap" aria-hidden="true"><label for="f-website">Website</label><input id="f-website" name="_gotcha" type="text" tabindex="-1" autocomplete="off" maxlength="200" /></div>
         <input type="hidden" name="_subject" value="Lernbus: Lernstunde anfragen" />
         <input type="hidden" name="language" value="de" />
         <p class="contact-next">Ihre Anfrage ist noch keine verbindliche Buchung.</p>
-        <div class="contact-submit"><button type="submit" class="btn btn-pink">Lernstunde anfragen</button></div>
+        <div class="contact-submit"><button type="submit" class="btn btn-pink">Anfrage senden</button></div>
       </form>
       <p class="book-note" id="contact-note">Ihre Anfrage wird direkt an info@lernbus.ch übermittelt. <a class="contact-privacy" href="/impressum/#formulare">Datenschutz zum Kontaktformular</a></p>
       <p class="contact-status" data-contact-status role="status" aria-live="polite" aria-atomic="true"></p>

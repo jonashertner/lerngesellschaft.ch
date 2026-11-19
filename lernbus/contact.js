@@ -200,6 +200,8 @@ export function bindContactForm(form, options = {}) {
       input.setCustomValidity(validAge(input.value.trim()) ? '' : copy.ageRequired);
     });
     if (!form.reportValidity()) return;
+    const reservations = Array.from(form.querySelectorAll('[data-zwischenhalt-reservation]:enabled'));
+    const selectedReservations = reservations.filter(input => input.checked);
     const payload = {
       name: value('name'),
       email: value('email'),
@@ -208,6 +210,7 @@ export function bindContactForm(form, options = {}) {
       children_ages_years: ages.inputs.map((input, index) => `${copy.child} ${index + 1}: ${Number(normalizedAge(input.value))}`).join('; '),
       ...Object.fromEntries(ages.inputs.map((input, index) => [`child_${index + 1}_age_years`, Number(normalizedAge(input.value))])),
       message: value('message'),
+      ...Object.fromEntries(selectedReservations.map(input => [input.name, input.value])),
       _gotcha: value('_gotcha'),
       _subject: locale === 'en' ? 'Lernbus: request a learning session' : 'Lernbus: Lernstunde anfragen',
       language: locale
@@ -219,10 +222,12 @@ export function bindContactForm(form, options = {}) {
     button.textContent = copy.sending;
     form.setAttribute('aria-busy', 'true');
     inputs.forEach(input => { input.readOnly = true; });
+    reservations.forEach(input => { input.disabled = true; });
     announce('pending', copy.sending);
     try {
       await sendContactMessage(endpoint, payload, options);
       inputs.forEach(input => { input.value = ''; });
+      reservations.forEach(input => { input.checked = false; });
       ages.clear();
       announce('success', copy.success);
     } catch (error) {
@@ -233,6 +238,7 @@ export function bindContactForm(form, options = {}) {
       button.textContent = readyLabel;
       form.removeAttribute('aria-busy');
       inputs.forEach((input, index) => { input.readOnly = previousReadOnly[index]; });
+      reservations.forEach(input => { input.disabled = false; });
     }
   };
   form[contactBinding] = submit;

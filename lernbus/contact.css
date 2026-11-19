@@ -8,8 +8,13 @@
 .contact-card .field label{line-height:1.45}
 .contact-card input,.contact-card textarea{box-sizing:border-box;width:100%;min-width:0}
 .contact-card .contact-count input{max-width:7rem}
-.contact-ages{grid-column:1/-1;min-width:0;margin:0;padding:0;border:0;border-radius:0}
-.contact-ages legend{padding:0;font-weight:700;font-size:1rem}
+.contact-ages,.contact-reservations{grid-column:1/-1;min-width:0;margin:0;padding:0;border:0;border-radius:0}
+.contact-ages legend,.contact-reservations legend{padding:0;font-weight:700;font-size:1rem}
+.contact-reservation-options{display:grid;gap:.75rem;margin:.65rem 0 .75rem}
+.contact-reservation-option{min-height:2.75rem;line-height:1.45;cursor:pointer}
+.contact-card .contact-reservation-option input{width:1.15rem}
+.contact-reservation-option input:focus-visible{outline:3px solid var(--violet);outline-offset:2px}
+.contact-reservation-details>span{display:block;color:var(--teal-ink)}
 .contact-age-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,8rem),1fr));gap:1rem;margin-top:1rem}
 .contact-age-grid .field input{max-width:9rem}
 .contact-card .contact-help{font-size:.875rem;line-height:1.5;margin:.5rem 0 0;color:var(--teal-ink)}
