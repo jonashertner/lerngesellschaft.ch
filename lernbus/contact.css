@@ -15,6 +15,7 @@
 .contact-card .contact-reservation-option input{width:1.15rem}
 .contact-reservation-option input:focus-visible{outline:3px solid var(--violet);outline-offset:2px}
 .contact-reservation-details>span{display:block;color:var(--teal-ink)}
+.contact-reservation-time{white-space:nowrap}
 .contact-age-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,8rem),1fr));gap:1rem;margin-top:1rem}
 .contact-age-grid .field input{max-width:9rem}
 .contact-card .contact-help{font-size:.875rem;line-height:1.5;margin:.5rem 0 0;color:var(--teal-ink)}
