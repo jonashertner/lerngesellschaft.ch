@@ -80,11 +80,11 @@ html { scroll-padding-top: var(--lernbus-header-height, 5.25rem); }
   font-weight: 750;
   letter-spacing: 0;
   margin: 0;
-  transition: background-color .15s ease, box-shadow .15s ease;
+  transition: background-color .15s ease;
 }
 .detail-page .site-head .nav .nav-booking::after { display: none; }
-.detail-page .site-head .nav .nav-booking:hover { background: var(--violet-deep); }
-.detail-page .site-head .nav .nav-booking[aria-current] { box-shadow: inset 0 -3px var(--yellow); }
+.detail-page .site-head .nav .nav-booking:hover,
+.detail-page .site-head .nav .nav-booking[aria-current] { background: var(--violet-deep); }
 .detail-page .site-head .menu-btn {
   border-radius: 4px;
   box-shadow: none;
