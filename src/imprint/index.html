@@ -1,102 +1,101 @@
-{% set landing = societyLanding.en %}
-{% set landingAlternate = "/impressum/" %}
-{% set isLandingLegal = true %}
+{% set s = societySite.en %}
+{% set isHome = false %}
+{% set pageTitle = "Imprint & privacy · Learning Society" %}
+{% set pageDescription = "Legal information and privacy notice for the non-profit association Lerngesellschaft / Learning Society, Basel." %}
+{% set canonicalPath = "/imprint/" %}
+{% set deUrl = "/impressum/" %}
+{% set enUrl = "/imprint/" %}
 <!DOCTYPE html>
-<html lang="en-GB">
+<html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Legal information · Learning Society</title>
-<meta name="description" content="Legal information and privacy notice for Lerngesellschaft / Learning Society, Basel." />
-<meta property="og:title" content="Legal information · Learning Society" />
-<meta property="og:description" content="Legal information and privacy notice for Lerngesellschaft / Learning Society, Basel." />
-<meta property="og:locale" content="en_GB" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://lerngesellschaft.ch/imprint/" />
-<meta property="og:image" content="https://lerngesellschaft.ch/assets/media/hero-poster.jpg?v={{ siteAssets.heroPoster }}" />
-<meta property="og:image:type" content="image/jpeg" />
-<meta property="og:image:width" content="640" />
-<meta property="og:image:height" content="640" />
-<meta property="og:image:alt" content="Children doing experiments" />
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Legal information · Learning Society" />
-<meta name="twitter:description" content="Legal information and privacy notice for Lerngesellschaft / Learning Society, Basel." />
-<meta name="twitter:image" content="https://lerngesellschaft.ch/assets/media/hero-poster.jpg?v={{ siteAssets.heroPoster }}" />
-<meta name="twitter:image:alt" content="Children doing experiments" />
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M16 3c5 0 9 3 9 8 0 3-2 4-2 7s3 3 3 6-4 5-10 5S6 31 6 27s3-3 3-6-2-4-2-7c0-5 4-8 9-8z' fill='%23ff3d8b'/%3E%3C/svg%3E" />
-<link rel="preload" href="/assets/fonts/bricolage-latin.woff2" as="font" type="font/woff2" crossorigin />
-<link rel="preload" href="/assets/fonts/hanken-latin.woff2" as="font" type="font/woff2" crossorigin />
-<link rel="stylesheet" href="/assets/society-landing.css?v={{ siteAssets.landing }}" />
-<link rel="stylesheet" href="/assets/society-header.css?v={{ siteAssets.header }}" />
-<link rel="stylesheet" href="/assets/society-footer.css?v={{ siteAssets.footer }}" />
-<link rel="canonical" href="https://lerngesellschaft.ch/imprint/" />
-<link rel="alternate" hreflang="de" href="https://lerngesellschaft.ch/impressum/" />
-<link rel="alternate" hreflang="en" href="https://lerngesellschaft.ch/imprint/" />
-<link rel="alternate" hreflang="x-default" href="https://lerngesellschaft.ch/impressum/" />
+{% include "society-head.njk" %}
 </head>
-<body class="society-landing society-legal-page">
-<a href="#main" class="skip">Skip to content</a>
-{% include "society-landing-header.njk" %}
-<main id="main" class="landing-legal wrap">
-  <header class="legal-intro">
-    <a class="legal-back" href="{{ landing.root }}"><span aria-hidden="true">←</span> {{ landing.backLabel }}</a>
-    <h1>Imprint &amp; privacy</h1>
-  </header>
-  <div class="legal-sections">
-    <section class="legal-section" id="verantwortlich">
-      <h2>Website operator</h2>
-      <div class="legal-copy">
-        <p>Lerngesellschaft / Learning Society<br>Non-profit association represented by Jonas Hertner<br>Münsterplatz 17, 4051 Basel, Switzerland<br><a href="mailto:team@jonashertner.com">team@jonashertner.com</a></p>
-        <p>{{ society.en.taxNote }}</p>
+<body class="society-page">
+<a href="#main" class="skip">{{ s.skip }}</a>
+{% include "society-site-header.njk" %}
+<main id="main">
+  <section class="interior-hero">
+    <div class="wrap-inner">
+      <a class="back-link" href="/en/"><span aria-hidden="true">←</span><span>{{ s.backHome }}</span></a>
+      <p class="eyebrow">Legal information</p>
+      <h1>Imprint &amp; privacy</h1>
+      <p class="interior-lead">Responsible body, association details and factual information on how personal data is handled on this website and when you contact us.</p>
+    </div>
+  </section>
+
+  <section class="interior-body">
+    <div class="wrap-inner">
+      <nav class="page-toc" aria-label="On this page">
+        <a href="#verantwortlich">Website operator</a>
+        <a href="#datenschutz">Website</a>
+        <a href="#formulare">Enquiries</a>
+        <a href="#whatsapp">WhatsApp (Lernbus)</a>
+        <a href="#termine">Earlier bookings</a>
+        <a href="#aufbewahrung">Retention &amp; rights</a>
+      </nav>
+
+      <div class="editorial-sections">
+        <section class="editorial-section" id="verantwortlich">
+          <h2>Website operator</h2>
+          <div class="editorial-copy">
+            <p>Lerngesellschaft / Learning Society<br>Non-profit association (Art.&nbsp;60&nbsp;ff. Swiss Civil Code), represented by Jonas Hertner<br>Münsterplatz 17, 4051 Basel, Switzerland<br><a href="mailto:team@jonashertner.com">team@jonashertner.com</a></p>
+            <p>As a non-profit association, Lerngesellschaft is tax-exempt in the canton of Basel-Stadt.</p>
+          </div>
+        </section>
+
+        <section class="editorial-section" id="datenschutz">
+          <h2>Website</h2>
+          <div class="editorial-copy">
+            <span class="legacy-anchor" id="hosting" aria-hidden="true"></span>
+            <p>No analytics or advertising trackers are used on this website. Fonts and images are loaded locally. GitHub Pages (GitHub, Inc., USA) processes technical connection data such as IP address, timestamp and requested page in order to deliver the site.</p>
+          </div>
+        </section>
+
+        <section class="editorial-section" id="formulare">
+          <h2>Enquiries</h2>
+          <div class="editorial-copy">
+            <span class="legacy-anchor" id="anfragen" aria-hidden="true"></span>
+            <p>Your details are used solely to handle your enquiry. Access is limited to the responsible people within the association.</p>
+            <p><strong>Contact form (Lernbus):</strong> Formspree processes in the USA your name, email address, phone number, number and ages of your children, any optional provisional reservation for Zwischenhalt, your optional message, and technical data needed to transmit and protect the service.</p>
+            <p>When submitted via the Lernbus enquiry form, your enquiry is forwarded to {{ lernbusContact.recipient | escape }} and temporarily stored in the form archive. <a href="https://formspree.io/legal/privacy-policy/">Formspree privacy policy</a>.</p>
+            <p><strong>Email:</strong> Processed and stored via Microsoft 365 (Microsoft Corporation), including in the USA.</p>
+            <p>You can also contact us directly by email or post. Email links open your own email application; you send the message yourself.</p>
+          </div>
+        </section>
+
+        <section class="editorial-section" id="whatsapp">
+          <h2>WhatsApp contact with Lernbus</h2>
+          <div class="editorial-copy">
+            <p>If you contact Lernbus via WhatsApp, we process your phone number, profile name, and the messages and attachments you send us in order to answer your enquiry and organise learning support.</p>
+            <p>The responsible members of the Lernbus team can read and reply to this correspondence in our shared inbox. We host that inbox with Chatwoot on our own hardware and use Tailscale for encrypted connectivity.</p>
+            <p>Transmission takes place via the WhatsApp Business Platform operated by WhatsApp/Meta, which may involve processing data outside Switzerland, in particular in the USA. The <a href="https://www.whatsapp.com/legal/privacy-policy-eea">WhatsApp privacy notice</a> also applies.</p>
+            <p>Using WhatsApp is voluntary; you may also contact us by email or post. Please share particularly sensitive details about your child only after agreeing on a suitable channel.</p>
+            <p>You may request access to, correction or deletion of your Lernbus correspondence at <a href="mailto:info@lernbus.ch">info@lernbus.ch</a>.</p>
+          </div>
+        </section>
+
+        <section class="editorial-section" id="termine">
+          <h2>Earlier calendar bookings</h2>
+          <div class="editorial-copy">
+            <p>The contact form replaces the earlier booking calendar.</p>
+            <p>For earlier reservations made via our booking service on OpenAI Sites and Cloudflare, your name, email address and phone number, your child’s name and date of birth, the age calculated from it, the appointment time and any optional notes were transmitted to Microsoft Bookings, including for processing in the USA.</p>
+            <p>Our booking service stores technical reservation identifiers and appointment times for up to 90 days after the appointment; unresolved reservations remain stored until clarified.</p>
+            <p>Contact details, child details and notes are not stored permanently there. To allow interrupted reservations to resume safely, entries were temporarily kept in the browser’s session storage.</p>
+          </div>
+        </section>
+
+        <section class="editorial-section" id="aufbewahrung">
+          <h2>Retention &amp; rights</h2>
+          <div class="editorial-copy">
+            <span class="legacy-anchor" id="rechte" aria-hidden="true"></span>
+            <p>Enquiries in our inbox are deleted once concluded; where collaboration begins, correspondence is retained until it ends, subject to statutory retention obligations.</p>
+            <p>You may request access, correction or deletion at <a href="mailto:team@jonashertner.com">team@jonashertner.com</a>. Supervisory authority for complaints: <a href="https://www.edoeb.admin.ch/en">Federal Data Protection and Information Commissioner (FDPIC)</a>.</p>
+          </div>
+        </section>
       </div>
-    </section>
-    <section class="legal-section" id="datenschutz">
-      <h2>Website</h2>
-      <div class="legal-copy">
-        <span class="legacy-anchor" id="hosting" aria-hidden="true"></span>
-        <p>No analytics or advertising trackers. Fonts and images are hosted locally. GitHub Pages (GitHub, Inc., USA) processes technical data such as IP address, time and page requested to deliver the website.</p>
-      </div>
-    </section>
-    <section class="legal-section" id="formulare">
-      <h2>Enquiries</h2>
-      <div class="legal-copy">
-        <span class="legacy-anchor" id="anfragen" aria-hidden="true"></span>
-        <p>We use your details only to handle your enquiry. Access is limited to the people responsible within the association.</p>
-        <p><strong>Contact form:</strong> Formspree processes your name, email address and phone number, the number and ages of your children, your optional message and technical data in the USA to deliver messages and protect the service.</p>
-        <p>After you select “Request a learning session”, your enquiry is forwarded to {{ lernbusContact.recipient | escape }} and temporarily stored in a submission archive. <a href="https://formspree.io/legal/privacy-policy/">Formspree privacy policy</a>.</p>
-        <p><strong>Email:</strong> Processed and stored through Microsoft 365 (Microsoft Corporation), including in the USA.</p>
-        <p>You can also contact us directly by email or post. Email links and Forscherbühne enquiries open your email application; you send the message yourself.</p>
-      </div>
-    </section>
-    <section class="legal-section" id="whatsapp">
-      <h2>Contacting Lernbus on WhatsApp</h2>
-      <div class="legal-copy">
-        <p>If you contact Lernbus on WhatsApp, we process your phone number, profile name and the messages and attachments you send us to answer your enquiry and arrange learning support.</p>
-        <p>The responsible members of the Lernbus team can read and reply to this correspondence in our shared inbox. We run the inbox with Chatwoot on our own hardware and use Tailscale for the encrypted connection.</p>
-        <p>Messages are transmitted through the WhatsApp Business Platform provided by WhatsApp/Meta. Data may also be processed outside Switzerland, including in the USA. The <a href="https://www.whatsapp.com/legal/privacy-policy-eea">WhatsApp privacy policy</a> also applies.</p>
-        <p>Using WhatsApp is optional; you can contact us by email or post instead. Please agree a suitable channel with us before sending particularly sensitive information about your child.</p>
-        <p>You can request access, correction or deletion of your Lernbus correspondence at <a href="mailto:info@lernbus.ch">info@lernbus.ch</a>.</p>
-      </div>
-    </section>
-    <section class="legal-section" id="termine">
-      <h2>Previous calendar bookings</h2>
-      <div class="legal-copy">
-        <p>The contact form replaces the previous booking calendar.</p>
-        <p>For earlier reservations through our booking service hosted by OpenAI Sites and Cloudflare, your name, email address and phone number, your child’s name and date of birth, their calculated age, the appointment and optional notes were sent to Microsoft Bookings, including for processing in the USA.</p>
-        <p>Our booking service stores technical reservation identifiers and appointment times for up to 90 days after the appointment; unresolved reservations are retained until resolved.</p>
-        <p>Contact details, child details and notes are not permanently stored there. Entries were temporarily kept in the browser’s session storage so that an interrupted reservation could be recovered safely.</p>
-      </div>
-    </section>
-    <section class="legal-section" id="aufbewahrung">
-      <h2>Retention &amp; rights</h2>
-      <div class="legal-copy">
-        <span class="legacy-anchor" id="rechte" aria-hidden="true"></span>
-        <p>Enquiries in our mailbox are deleted once handled. If we work together, correspondence is retained until that engagement ends.</p>
-        <p>Request access, correction or deletion at <a href="mailto:team@jonashertner.com">team@jonashertner.com</a>. Complaints: <a href="https://www.edoeb.admin.ch/en">Federal Data Protection and Information Commissioner</a>.</p>
-      </div>
-    </section>
-  </div>
+    </div>
+  </section>
 </main>
-{% include "society-landing-footer.njk" %}
+{% include "society-site-footer.njk" %}
 </body>
 </html>

@@ -1,16 +1,14 @@
 ---
-layout: agb.njk
+layout: society-agb.njk
+lang: de
 title: AGB · Lerngesellschaft
-permalink: /agb/
 description: Allgemeine Geschäftsbedingungen für die weiteren Bildungsangebote der Lerngesellschaft. Für Lernbus gelten eigene AGB.
+permalink: /agb/
 ---
-# Allgemeine Geschäfts&shy;bedingungen der Lerngesellschaft
-
-*Fassung vom 15. September 2026*
 
 **Für den Lernbus gelten die [eigenen AGB für Eltern und Erziehungsberechtigte](/lernbus/agb/).** Sie sind auch [auf Englisch verfügbar](/lernbus/en/terms/).
 
-Die nachstehenden Bedingungen gelten für die weiteren Bildungsangebote der Lerngesellschaft.
+Die nachstehenden Bedingungen gelten für die weiteren Bildungsangebote der Lerngesellschaft (Fassung vom 15.&nbsp;September&nbsp;2026).
 
 ## 1. Anmeldung und Vereinbarung
 
@@ -28,7 +26,7 @@ Wir begleiten die Kinder sorgfältig und entsprechend ihren Bedürfnissen. Einen
 
 Bitte teilen Sie uns Absagen möglichst 24 Stunden vorher mit. Sagen wir einen Termin ab, vereinbaren wir mit Ihnen einen Ersatztermin oder erstatten den dafür bezahlten Beitrag.
 
-Zwingende gesetzliche Rechte zur vorzeitigen Beendigung, insbesondere nach Art. 404 OR, bleiben vorbehalten. Eine Mitteilung zur Beendigung ist per E-Mail möglich.
+Zwingende gesetzliche Rechte zur vorzeitigen Beendigung, insbesondere nach Art.&nbsp;404&nbsp;OR, bleiben vorbehalten. Eine Mitteilung zur Beendigung ist per E-Mail möglich.
 
 Bei einer Beendigung rechnen wir die bereits erbrachten Leistungen ab und erstatten nicht verbrauchte Vorauszahlungen. Erfolgt die Beendigung zu einem besonders ungünstigen Zeitpunkt, kann nach den gesetzlichen Voraussetzungen Ersatz des dadurch entstandenen Schadens geschuldet sein.
 

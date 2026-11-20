@@ -1,0 +1,342 @@
+{
+  "de": {
+    "lang": "de",
+    "ogLocale": "de_CH",
+    "root": "/",
+    "alternate": "/en/",
+    "brand": "Lerngesellschaft",
+    "brandSub": "Learning Society",
+    "skip": "Zum Inhalt springen",
+    "menuLabel": "Menü",
+    "navLabel": "Hauptnavigation",
+    "langLabel": "Sprachwahl",
+    "deLabel": "DE: Auf Deutsch",
+    "enLabel": "EN: In English",
+    "backHome": "Zur Startseite",
+    "socialImageAlt": "Lerngesellschaft / Learning Society, gemeinnütziger Verein in Basel. Eine Welt, die lernt.",
+    "nav": [
+      { "id": "approach", "label": "Ansatz", "url": "/ansatz/" },
+      { "id": "programmes", "label": "Angebote", "url": "/#angebote", "homeUrl": "#angebote" },
+      { "id": "association", "label": "Verein", "url": "/#verein", "homeUrl": "#verein" },
+      { "id": "support", "label": "Unterstützen", "url": "/#investieren", "homeUrl": "#investieren" }
+    ],
+    "home": {
+      "title": "Lerngesellschaft / Learning Society · Basel",
+      "description": "Gemeinnütziger, im Kanton Basel-Stadt steuerbefreiter Verein: Wir stärken Neugier und Lernen von Kindern und Jugendlichen in Basel, beginnend mit dem Lernbus am Münsterplatz 17.",
+      "heroEyebrow": "Gemeinnütziger Verein · Basel",
+      "heroTitle": "Eine Welt,<br>die lernt.",
+      "heroSubtitle": "Wir stärken die Neugier und das Lernen von Kindern und Jugendlichen in Basel. Damit aus echtem Verstehen ein Leben lang Freude am Fragen wächst.",
+      "heroPrimary": "Angebote entdecken",
+      "heroSecondary": "Unser Ansatz",
+      "heroFoot": "Münsterplatz 17, Basel · Steuerbefreit im Kanton Basel-Stadt",
+      "pause": "Bewegung pausieren",
+      "play": "Bewegung starten",
+      "ideaKicker": "01 / Die Idee",
+      "ideaTitle": "Neugier braucht<br>ein Gegenüber.",
+      "ideaLead": "Kinder kommen mit Fragen zur Welt. Sie lernen nachhaltig, wenn sie spüren, dass sie vorankommen, und wenn ein Mensch an ihrer Seite bleibt, der sie kennt und ihnen etwas zutraut.",
+      "ideaBody": "In einer Zeit schneller Antworten und künstlicher Intelligenz wird eigenes Verstehen wichtiger denn je. Werkzeuge können unterstützen. Beziehung, Urteilskraft und pädagogische Verantwortung bleiben menschlich.",
+      "ideaAction": "Unseren Ansatz lesen",
+      "pillarsLabel": "Grundsätze der Lerngesellschaft",
+      "pillars": [
+        {
+          "title": "Beziehung, die trägt",
+          "text": "Verlässliche Begleitung durch denselben Menschen über Monate und Semester."
+        },
+        {
+          "title": "Fortschritt, der Mut macht",
+          "text": "Aufgaben am richtigen Punkt, an dem eigene Anstrengung sichtbar wirkt."
+        },
+        {
+          "title": "Offen für alle",
+          "text": "Sozial abgestufte Beiträge und Förderplätze unabhängig von Herkunft und Einkommen."
+        }
+      ],
+      "offersKicker": "02 / Angebote & Vorhaben",
+      "offersTitle": "Konkret in Basel.<br>Schritt für Schritt.",
+      "offersIntro": "Unser erstes Angebot, der Lernbus, begleitet Kinder am Münsterplatz. Zwei weitere Vorhaben für Schulen und Öffentlichkeit befinden sich in Vorbereitung.",
+      "activeBadge": "Aktiv",
+      "plannedBadge": "In Vorbereitung",
+      "lernbus": {
+        "number": "01",
+        "name": "Lernbus",
+        "audience": "Für Kinder ab drei Jahren bis zum Ende der dritten Primarklasse",
+        "description": "Langfristige, verlässliche Lernbegleitung und frühe Deutschförderung am Münsterplatz 17. Wöchentlich einzeln oder in einer Kleingruppe, in enger Verbindung von Familie, Kindergarten und Schule.",
+        "facts": "Münsterplatz 17, Basel · wöchentlich · sozial abgestufte Beiträge",
+        "url": "/lernbus/",
+        "action": "Zum Lernbus"
+      },
+      "planned": [
+        {
+          "id": "forscherbuehne",
+          "number": "02",
+          "name": "Forscherbühne",
+          "audience": "Für Kinder und Jugendliche in Basel",
+          "description": "Forschende zeigen reale Experimente live vor Publikum und machen naturwissenschaftliche Fragen anschaulich. Geplant als kostenloses, offenes Angebot.",
+          "url": "/forscherbuehne/",
+          "action": "Idee lesen"
+        },
+        {
+          "id": "gehirn-und-gesellschaft",
+          "number": "03",
+          "name": "Gehirn und Gesellschaft",
+          "audience": "Für Primarschulklassen",
+          "description": "Altersgerechte, interaktive Lektionen darüber, wie Lernen im Gehirn funktioniert, wie gutes Miteinander gelingt und wo künstliche Intelligenz hilft oder an Grenzen stösst.",
+          "url": "/gehirn-und-gesellschaft/",
+          "action": "Mehr zum Vorhaben"
+        }
+      ],
+      "openWorkLabel": "Texte & offene Werkzeuge",
+      "openWork": [
+        {
+          "label": "Essay · 2026",
+          "title": "Lernen in Beziehung",
+          "text": "Jonas Hertners Manifest über relationales Lernen aus der Zürcher Lernbegleitung, erhalten als eigenständige Lektüre mit Randnotizen.",
+          "url": "/essays/relational-learning/de/",
+          "action": "Essay lesen"
+        },
+        {
+          "label": "Offenes Werkzeug",
+          "title": "Atlas: Lehrplan 21",
+          "text": "Der Schweizer Lehrplan 21 als offene, interaktive Wissenskarte der Volksschule mit 1’526 Kompetenzstufen.",
+          "url": "/atlas/",
+          "action": "Karte öffnen"
+        }
+      ],
+      "peopleKicker": "03 / Menschen & Verein",
+      "peopleTitle": "Getragen von Menschen<br>in Basel.",
+      "associationLead": "Die Lerngesellschaft ist ein gemeinnütziger, politisch unabhängiger und konfessionell neutraler Verein nach Art.&nbsp;60&nbsp;ff.&nbsp;ZGB mit Sitz in Basel.",
+      "associationBody": "Menschen aus Pädagogik, Naturwissenschaften und Recht tragen die Arbeit gemeinsam. Der Vorstand wirkt ehrenamtlich. Im Kanton Basel-Stadt ist der Verein wegen Gemeinnützigkeit steuerbefreit.",
+      "associationFacts": [
+        { "label": "Rechtsform", "value": "Gemeinnütziger Verein (Art.&nbsp;60&nbsp;ff.&nbsp;ZGB)" },
+        { "label": "Steuerstatus", "value": "Steuerbefreit im Kanton Basel-Stadt" },
+        { "label": "Sitz", "value": "Münsterplatz 17, 4051 Basel" }
+      ],
+      "people": [
+        {
+          "name": "Conny Brandes",
+          "role": "Leiterin Lernbus",
+          "text": "Arbeitet seit 30 Jahren mit Kindern und bringt Erfahrung aus der Kita-Leitung sowie der frühen Deutschförderung mit.",
+          "url": "/lernbus/team/",
+          "action": "Team Lernbus"
+        },
+        {
+          "name": "Jonas Hertner",
+          "role": "Vertretung & Kontakt Verein",
+          "text": "Ansprechperson für Förderungen, Stiftungen, Schulen, Mitgliedschaft und allgemeine Fragen zum Verein.",
+          "url": "mailto:team@jonashertner.com",
+          "action": "team@jonashertner.com"
+        }
+      ],
+      "supportKicker": "04 / Unterstützen & Mitwirken",
+      "supportTitle": "Neugier darf keine<br>Geldfrage sein.",
+      "supportIntro": "Ihr Beitrag ermöglicht ermässigte Plätze und Freiplätze im Lernbus sowie den Aufbau kostenfreier Bildungsangebote für Kinder und Jugendliche in Basel. Zuwendungen an die Lerngesellschaft sind als Beiträge an einen im Kanton Basel-Stadt steuerbefreiten gemeinnützigen Verein im Rahmen der gesetzlichen Bestimmungen abziehbar.",
+      "supportNote": "Ob Stiftung, Privatperson, Schule oder künftiges Vereinsmitglied: Wir freuen uns auf das direkte Gespräch.",
+      "contactAction": "Kommen wir ins Gespräch.",
+      "contactMeta": "Jonas Hertner · team@jonashertner.com",
+      "mailLabel": "Kommen wir ins Gespräch. E-Mail an Jonas Hertner, Lerngesellschaft",
+      "observation": {
+        "count": "Beobachtungen",
+        "beat": "Flügelschlag",
+        "forewing": "Vorderflügel",
+        "hindwing": "Hinterflügel",
+        "focus": "Neugier",
+        "place": "Basel"
+      }
+    },
+    "footer": {
+      "navLabel": "Navigation im Seitenfuss",
+      "line": "Neugier stärken.<br>Verstehen ermöglichen.",
+      "status": "Gemeinnütziger Verein · Steuerbefreit im Kanton Basel-Stadt",
+      "exploreTitle": "Entdecken",
+      "legalTitle": "Verein & Recht",
+      "addressTitle": "In Basel zu Hause",
+      "country": "Schweiz",
+      "explore": [
+        { "label": "Unser Ansatz", "url": "/ansatz/" },
+        { "label": "Lernbus", "url": "/lernbus/" },
+        { "label": "Essay: Lernen in Beziehung", "url": "/essays/relational-learning/de/" },
+        { "label": "Atlas: Lehrplan 21", "url": "/atlas/" }
+      ],
+      "legal": [
+        { "label": "Impressum & Datenschutz", "url": "/impressum/" },
+        { "label": "Allgemeine Geschäftsbedingungen", "url": "/agb/" }
+      ],
+      "copyright": "© 2026 Lerngesellschaft",
+      "imprintLabel": "Impressum & Datenschutz",
+      "imprintUrl": "/impressum/",
+      "termsLabel": "AGB",
+      "termsUrl": "/agb/",
+      "top": "Nach oben"
+    }
+  },
+  "en": {
+    "lang": "en",
+    "ogLocale": "en_GB",
+    "root": "/en/",
+    "alternate": "/",
+    "brand": "Lerngesellschaft",
+    "brandSub": "Learning Society",
+    "skip": "Skip to content",
+    "menuLabel": "Menu",
+    "navLabel": "Main navigation",
+    "langLabel": "Language selection",
+    "deLabel": "DE: In German",
+    "enLabel": "EN: In English",
+    "backHome": "Back to homepage",
+    "socialImageAlt": "Lerngesellschaft / Learning Society, a non-profit association in Basel. A world that learns.",
+    "nav": [
+      { "id": "approach", "label": "Approach", "url": "/en/approach/" },
+      { "id": "programmes", "label": "Programmes", "url": "/en/#angebote", "homeUrl": "#angebote" },
+      { "id": "association", "label": "Association", "url": "/en/#verein", "homeUrl": "#verein" },
+      { "id": "support", "label": "Support", "url": "/en/#investieren", "homeUrl": "#investieren" }
+    ],
+    "home": {
+      "title": "Learning Society / Lerngesellschaft · Basel",
+      "description": "A tax-exempt non-profit association in Basel strengthening the curiosity and learning of children and young people, starting with Lernbus at Münsterplatz 17.",
+      "heroEyebrow": "Non-profit association · Basel",
+      "heroTitle": "A world<br>that learns.",
+      "heroSubtitle": "We strengthen the curiosity and learning of children and young people in Basel, so that genuine understanding grows into a lifelong habit of asking.",
+      "heroPrimary": "Explore programmes",
+      "heroSecondary": "Our approach",
+      "heroFoot": "Münsterplatz 17, Basel · Tax-exempt in the canton of Basel-Stadt",
+      "pause": "Pause motion",
+      "play": "Start motion",
+      "ideaKicker": "01 / The idea",
+      "ideaTitle": "Curiosity grows<br>in relationship.",
+      "ideaLead": "Children arrive in the world full of questions. Lasting learning happens when they feel themselves moving forward, and when someone who knows them stays alongside them and trusts what they can do.",
+      "ideaBody": "In an age of instant answers and artificial intelligence, genuine understanding matters more than ever. Digital tools can support. Relationship, judgement and pedagogical responsibility remain human.",
+      "ideaAction": "Read our approach",
+      "pillarsLabel": "Core principles of Learning Society",
+      "pillars": [
+        {
+          "title": "A relationship that lasts",
+          "text": "Consistent support from the same person across months and school semesters."
+        },
+        {
+          "title": "Progress that builds courage",
+          "text": "Tasks calibrated to the point where a child’s own effort visibly pays off."
+        },
+        {
+          "title": "Open to every child",
+          "text": "Income-tiered fees and subsidised places regardless of background or means."
+        }
+      ],
+      "offersKicker": "02 / Programmes & initiatives",
+      "offersTitle": "Grounded in Basel.<br>Step by step.",
+      "offersIntro": "Our first programme, Lernbus, already supports children at Münsterplatz. Two further initiatives for schools and the wider public are currently in development.",
+      "activeBadge": "Active",
+      "plannedBadge": "In development",
+      "lernbus": {
+        "number": "01",
+        "name": "Lernbus",
+        "audience": "For children from age three to the end of primary year three",
+        "description": "Consistent, long-term learning support and early German language development at Münsterplatz 17. Weekly, individually or in a small group, connecting family, kindergarten and school.",
+        "facts": "Münsterplatz 17, Basel · weekly · income-tiered fees",
+        "url": "/lernbus/en/",
+        "action": "Explore Lernbus"
+      },
+      "planned": [
+        {
+          "id": "forscherbuehne",
+          "number": "02",
+          "name": "Forscherbühne",
+          "audience": "For children and young people in Basel",
+          "description": "Researchers perform real experiments live in front of an audience and make scientific questions vivid and understandable. Planned as a free programme open to all.",
+          "url": "/en/forscherbuehne/",
+          "action": "Explore the idea"
+        },
+        {
+          "id": "gehirn-und-gesellschaft",
+          "number": "03",
+          "name": "Brain and Society",
+          "audience": "For primary school classes",
+          "description": "Age-appropriate, interactive lessons on how learning works in the brain, how groups live and work well together, and where artificial intelligence helps or reaches its limits.",
+          "url": "/en/brain-and-society/",
+          "action": "About the initiative"
+        }
+      ],
+      "openWorkLabel": "Writing & open tools",
+      "openWork": [
+        {
+          "label": "Essay · 2026",
+          "title": "Relational learning",
+          "text": "Jonas Hertner’s manifesto on relational learning from his tutoring work in Zurich, preserved as a standalone reading edition with sidenotes.",
+          "url": "/essays/relational-learning/en/",
+          "action": "Read the essay"
+        },
+        {
+          "label": "Open tool (German)",
+          "title": "Atlas: Lehrplan 21",
+          "text": "An open, interactive knowledge map of the Swiss primary and lower-secondary curriculum covering 1,526 competency steps.",
+          "url": "/atlas/",
+          "action": "Open the map"
+        }
+      ],
+      "peopleKicker": "03 / People & association",
+      "peopleTitle": "Carried by people<br>in Basel.",
+      "associationLead": "Lerngesellschaft / Learning Society is a non-profit, politically independent and denominationally neutral Swiss association (Art.&nbsp;60&nbsp;ff. Swiss Civil Code) based in Basel.",
+      "associationBody": "It brings together people from education, natural sciences and law. The board serves voluntarily. As a charitable association, Lerngesellschaft is tax-exempt in the canton of Basel-Stadt.",
+      "associationFacts": [
+        { "label": "Legal form", "value": "Non-profit association (Swiss Civil Code)" },
+        { "label": "Tax status", "value": "Tax-exempt in the canton of Basel-Stadt" },
+        { "label": "Address", "value": "Münsterplatz 17, 4051 Basel" }
+      ],
+      "people": [
+        {
+          "name": "Conny Brandes",
+          "role": "Head of Lernbus",
+          "text": "Has worked with children for 30 years, bringing experience from daycare leadership and early German language development.",
+          "url": "/lernbus/team/en/",
+          "action": "Meet the Lernbus team"
+        },
+        {
+          "name": "Jonas Hertner",
+          "role": "Association representative & contact",
+          "text": "Contact for funding, foundations, schools, membership and general enquiries about the association.",
+          "url": "mailto:team@jonashertner.com",
+          "action": "team@jonashertner.com"
+        }
+      ],
+      "supportKicker": "04 / Support & collaborate",
+      "supportTitle": "Curiosity should never<br>depend on income.",
+      "supportIntro": "Your support funds subsidised and free places at Lernbus and helps build free educational programmes for children and young people in Basel. Donations to Lerngesellschaft are tax-deductible under applicable Swiss law as contributions to a tax-exempt charitable association in Basel-Stadt.",
+      "supportNote": "Whether you represent a foundation, a school, a prospective member or an individual donor: we welcome a direct conversation.",
+      "contactAction": "Let’s start a conversation.",
+      "contactMeta": "Jonas Hertner · team@jonashertner.com",
+      "mailLabel": "Let’s start a conversation. Email Jonas Hertner, Learning Society",
+      "observation": {
+        "count": "observations",
+        "beat": "Wingbeat",
+        "forewing": "Forewing",
+        "hindwing": "Hindwing",
+        "focus": "Curiosity",
+        "place": "Basel"
+      }
+    },
+    "footer": {
+      "navLabel": "Footer navigation",
+      "line": "Strengthening curiosity.<br>Enabling understanding.",
+      "status": "Non-profit association · Tax-exempt in Basel-Stadt",
+      "exploreTitle": "Explore",
+      "legalTitle": "Association & legal",
+      "addressTitle": "At home in Basel",
+      "country": "Switzerland",
+      "explore": [
+        { "label": "Our approach", "url": "/en/approach/" },
+        { "label": "Lernbus", "url": "/lernbus/en/" },
+        { "label": "Essay: relational learning", "url": "/essays/relational-learning/en/" },
+        { "label": "Atlas: Lehrplan 21 (DE)", "url": "/atlas/" }
+      ],
+      "legal": [
+        { "label": "Imprint & privacy", "url": "/imprint/" },
+        { "label": "General terms (German)", "url": "/agb/" }
+      ],
+      "copyright": "© 2026 Lerngesellschaft",
+      "imprintLabel": "Imprint & privacy",
+      "imprintUrl": "/imprint/",
+      "termsLabel": "Terms (DE)",
+      "termsUrl": "/agb/",
+      "top": "Back to top"
+    }
+  }
+}

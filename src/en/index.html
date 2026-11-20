@@ -1,39 +1,17 @@
-{% set landing = societyLanding.en %}
+{% set s = societySite.en %}
 {% set isHome = true %}
-{% set experience = societyExperience.en %}
-{% set alternateUrl = "/" %}
+{% set pageTitle = s.home.title %}
+{% set pageDescription = s.home.description %}
+{% set canonicalPath = "/en/" %}
+{% set deUrl = "/" %}
+{% set enUrl = "/en/" %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Learning Society / Lerngesellschaft · Basel</title>
-<meta name="description" content="Learning at every age. Learning Society is a non-profit association in Basel. We begin with Lernbus, our first initiative for the youngest learners." />
-<meta property="og:title" content="Learning Society / Lerngesellschaft" />
-<meta property="og:description" content="Learning at every age. Learning Society is a non-profit association in Basel. We begin with Lernbus, our first initiative for the youngest learners." />
-<meta property="og:locale" content="en_GB" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://lerngesellschaft.ch/en/" />
-<meta name="twitter:card" content="summary" />
-<meta name="twitter:title" content="Learning Society / Lerngesellschaft" />
-<meta name="twitter:description" content="Learning at every age. Learning Society is a non-profit association in Basel. We begin with Lernbus, our first initiative for the youngest learners." />
-<link rel="icon" href="/assets/society-favicon.svg" type="image/svg+xml" />
-<link rel="preload" href="/fonts/BradfordLLWeb-Book.woff2" as="font" type="font/woff2" crossorigin />
-<link rel="preload" href="/assets/fonts/hanken-latin.woff2" as="font" type="font/woff2" crossorigin />
-<link rel="stylesheet" href="/assets/society-immersive.css?v=20261028-mobile-polish-1" />
-<link rel="preload" href="/assets/society-ascii-renderer.js?v=20261028-butterfly-immediate-1" as="script" />
-<link rel="preload" href="/assets/society-ascii-world.js?v=20261028-butterfly-immediate-1" as="script" />
-
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NGO","name":"Learning Society / Lerngesellschaft","areaServed":"Basel","description":"Learning at every age. Learning Society is a non-profit association in Basel. We begin with Lernbus, our first initiative for the youngest learners.","address":"Münsterplatz 17, 4051 Basel","email":"team@jonashertner.com"}
-</script>
-<link rel="canonical" href="https://lerngesellschaft.ch/en/" />
-<link rel="alternate" hreflang="de" href="https://lerngesellschaft.ch/" />
-<link rel="alternate" hreflang="en" href="https://lerngesellschaft.ch/en/" />
-<link rel="alternate" hreflang="x-default" href="https://lerngesellschaft.ch/" />
+{% include "society-head.njk" %}
 </head>
-<body class="society-immersive">
-<a href="#main" class="skip">Skip to content</a>
+<body class="society-home">
+<a href="#main" class="skip">{{ s.skip }}</a>
 {% include "society-immersive.njk" %}
 </body>
 </html>

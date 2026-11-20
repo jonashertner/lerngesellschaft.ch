@@ -1,81 +1,107 @@
-{% set home = society.en %}
+{% set s = societySite.en %}
 {% set isHome = false %}
-{% set alternateUrl = "/forscherbuehne/" %}
+{% set activeNav = "programmes" %}
+{% set pageNoindex = true %}
+{% set pageTitle = "Forscherbühne · Learning Society" %}
+{% set pageDescription = "Forscherbühne: researchers perform real experiments live in front of an audience and make scientific phenomena vivid and understandable. Planned as a free programme open to children and young people in Basel." %}
+{% set canonicalPath = "/en/forscherbuehne/" %}
+{% set deUrl = "/forscherbuehne/" %}
+{% set enUrl = "/en/forscherbuehne/" %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Forscherbühne · Learning Society</title>
-<meta name="description" content="Forscherbühne: researchers perform real experiments live in front of an audience and make scientific phenomena vivid and understandable. Free of charge and open to all children and young people in Basel." />
-<meta name="robots" content="noindex" />
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M16 3c5 0 9 3 9 8 0 3-2 4-2 7s3 3 3 6-4 5-10 5S6 31 6 27s3-3 3-6-2-4-2-7c0-5 4-8 9-8z' fill='%23ff3d8b'/%3E%3C/svg%3E" />
-<link rel="preload" href="/assets/fonts/bricolage-latin.woff2" as="font" type="font/woff2" crossorigin />
-<link rel="stylesheet" href="/assets/styles.css?v=20260915-hero" />
-<link rel="stylesheet" href="/assets/society.css?v=20260916-responsive" />
-<link rel="canonical" href="https://lerngesellschaft.ch/en/forscherbuehne/" />
-<link rel="alternate" hreflang="de" href="https://lerngesellschaft.ch/forscherbuehne/" />
-<link rel="alternate" hreflang="en" href="https://lerngesellschaft.ch/en/forscherbuehne/" />
-<link rel="alternate" hreflang="x-default" href="https://lerngesellschaft.ch/forscherbuehne/" />
+{% include "society-head.njk" %}
 </head>
 <body class="society-page">
-<a href="#main" class="skip">Skip to content</a>
-{% include "society-header.njk" %}
+<a href="#main" class="skip">{{ s.skip }}</a>
+{% include "society-site-header.njk" %}
 <main id="main">
-  <section class="subhero">
-    <div class="accent-blob" style="width:30vw;height:30vw;background:var(--pink);right:-8vw;top:-2vw"></div>
-    <div class="wrap">
-      <a class="back" href="/en/"><span>&larr;</span> Back to overview</a>
-      <p class="eyebrow" style="--dot:var(--pink-ink)">One path · Forscherbühne</p>
+  <section class="interior-hero">
+    <div class="wrap-inner">
+      <a class="back-link" href="/en/#angebote"><span aria-hidden="true">←</span><span>All programmes &amp; initiatives</span></a>
+      <p class="eyebrow">Initiative · Forscherbühne</p>
       <h1>Forscherbühne</h1>
-      <p class="lead">Science to wonder at and to think along with. On the Forscherbühne, our researchers' stage, children and young people experience science directly and authentically: researchers perform real experiments live in front of an audience and make scientific phenomena vivid and understandable.</p>
-      <div class="programme-notice"><strong>In development</strong><p>This page describes the planned programme. Dates and delivery are still being developed. You are welcome to express your interest.</p></div>
-      <dl class="programme-summary"><div><dt>For</dt><dd>Children and young people</dd></div><div><dt>Location</dt><dd>Basel</dd></div><div><dt>Participation</dt><dd>Planned to be free</dd></div></dl>
-      <div style="margin-top:1.9rem; display:flex; flex-wrap:wrap; gap:.9rem">
-        <a href="#buchen" class="btn btn-pink">Express interest</a>
+      <p class="interior-lead">Science to wonder at and think along with. On the Forscherbühne, children and young people experience science directly and authentically: researchers perform real experiments live in front of an audience and make scientific phenomena vivid and understandable.</p>
+      <div class="notice-box">
+        <strong>In development</strong>
+        <p>This page describes the planned programme. Dates and delivery are still being developed. You are welcome to register your interest.</p>
       </div>
+      <dl class="meta-strip">
+        <div><dt>For</dt><dd>Children and young people</dd></div>
+        <div><dt>Location</dt><dd>Basel</dd></div>
+        <div><dt>Participation</dt><dd>Planned to be free</dd></div>
+      </dl>
     </div>
   </section>
-  <section class="section" style="padding-top:0; --dot:var(--pink-ink)">
-    <div class="wrap">
-      <nav class="section-index" aria-label="On this page"><a href="#offen">Open to all</a><a href="#staunen">Shared wonder</a><a href="#vorbilder">Researchers as models</a><a href="#irrtuemer">Questions, trials and errors</a><a href="#zuhause">Science to take home</a><a href="#beginn">Where science begins</a><a href="#buchen">Express interest</a></nav>
-      <div class="detail">
-        <div class="dsec" id="offen">
+
+  <section class="interior-body">
+    <div class="wrap-inner">
+      <nav class="page-toc" aria-label="On this page">
+        <a href="#offen">Open to all</a>
+        <a href="#staunen">Shared wonder</a>
+        <a href="#vorbilder">Researchers as models</a>
+        <a href="#irrtuemer">Questions, trials &amp; errors</a>
+        <a href="#zuhause">Science to take home</a>
+        <a href="#beginn">Where science begins</a>
+        <a href="#buchen">Express interest</a>
+      </nav>
+
+      <div class="editorial-sections">
+        <section class="editorial-section" id="offen">
           <h2>Free of charge and open to all</h2>
-          <p>The Forscherbühne understands education as an opportunity for everyone. Taking part is therefore free, and open regardless of background, language or social situation. Children and young people are invited to come with their families, their school classes or the people who care for them. Science becomes something experienced together. The Forscherbühne draws on a long tradition of public science communication, as the Royal Institution in London has practised since 1825 with its Christmas Lectures for children, and brings this form of learning to Basel.</p>
-        </div>
-        <div class="dsec" id="staunen">
-          <h2>Shared wonder as the starting point of learning</h2>
-          <p>When an experiment produces an unexpected reaction, when something lights up, moves, or visibly changes, wonder arises. Educational research shows that curiosity is an essential engine of lasting learning. Out of wonder come questions, and questions are the starting point for understanding, for discovery, and for independent thought. The Forscherbühne creates the moments in which children want, out of their own motivation, to find out how things connect.</p>
-        </div>
-        <div class="dsec" id="vorbilder">
+          <div class="editorial-copy">
+            <p>The Forscherbühne understands education as an opportunity for everyone. Participation is therefore planned to be free and open regardless of background, language or social situation. Children and young people are invited to come with their families, school classes or carers. The Forscherbühne draws on a long tradition of public science communication, as practised by the Royal Institution in London since 1825 with its Christmas Lectures for young people, and brings this spirit to Basel.</p>
+          </div>
+        </section>
+
+        <section class="editorial-section" id="staunen">
+          <h2>Shared wonder as the starting point</h2>
+          <div class="editorial-copy">
+            <p>When an experiment produces an unexpected reaction, when something lights up, moves or visibly changes, wonder arises. Out of wonder come questions, and questions are the starting point for understanding, discovery and independent thought. The Forscherbühne creates moments in which children want, from their own curiosity, to find out how things connect.</p>
+          </div>
+        </section>
+
+        <section class="editorial-section" id="vorbilder">
           <h2>Researchers as models</h2>
-          <p>The experiments are carried out by scientists who share their enthusiasm for research and for finding things out with the children. What matters is not spectacular effects but understanding scientific connections together. Children encounter researchers as people who ask questions, make observations and look for explanations. In this way they gain an authentic insight into scientific thinking and scientific work.</p>
-        </div>
-        <div class="dsec" id="irrtuemer">
+          <div class="editorial-copy">
+            <p>The experiments are carried out by scientists who share their enthusiasm for research and discovery. What matters is not spectacle, but understanding scientific connections together. Children encounter researchers as people who observe carefully, ask questions and test explanations.</p>
+          </div>
+        </section>
+
+        <section class="editorial-section" id="irrtuemer">
           <h2>Learning through questions, trials and errors</h2>
-          <p>Scientific knowledge rarely arrives by a direct route. Children experience that doing research means forming hypotheses, testing ideas, and learning from what fails. Not every hypothesis leads straight to the right answer. It is precisely in this process that persistence, critical thinking and the ability to solve problems develop. The Forscherbühne conveys that mistakes are not obstacles but valuable steps on the way to new knowledge. Young children are not yet frightened of this. They put their hand up even when they are not sure of the answer. That fearlessness is often lost over the school years, and without it nobody produces anything that was not there before.</p>
-        </div>
-        <div class="dsec" id="zuhause">
+          <div class="editorial-copy">
+            <p>Scientific knowledge rarely arrives by a direct route. Children experience that doing research means forming hypotheses, testing ideas and learning from what fails. It is precisely in that process that persistence, critical thinking and problem solving grow. Young children put their hands up even when they are not yet sure of the answer; we want to protect and nurture that fearlessness.</p>
+          </div>
+        </section>
+
+        <section class="editorial-section" id="zuhause">
           <h2>Science to take home</h2>
-          <p>So that the joy of discovery lasts beyond the event, children are given ideas for experiments of their own that can be done with simple everyday materials. In this way inquiry is carried into family life, and children are encouraged to follow their questions independently, well beyond the Forscherbühne.</p>
-        </div>
+          <div class="editorial-copy">
+            <p>So that the joy of discovery continues beyond the event, children receive ideas for experiments of their own using simple everyday materials. In this way inquiry enters family life and encourages children to follow their questions independently.</p>
+          </div>
+        </section>
       </div>
 
-      <p class="vignette"><span class="vignette-label">An illustrative example</span>A girl is sitting in the front row. At the front, two clear liquids are mixed together, and suddenly the solution glows an intense blue. For a moment everything is completely still. The girl looks up at her father in astonishment, then turns her attention back to the experiment and asks quietly: how does that work?</p>
+      <blockquote class="vignette-quote">
+        <span class="vignette-label">An illustrative example</span>
+        A girl is sitting in the front row. At the front, two clear liquids are mixed together, and suddenly the solution glows an intense blue. For a moment everything is completely still. The girl looks up at her father in astonishment, then turns back to the experiment and asks quietly: how does that work?
+      </blockquote>
 
-      <div class="detail" style="margin-top:clamp(3rem, 2rem + 3vw, 4.5rem)">
-        <div class="dsec" id="beginn">
+      <div class="editorial-sections">
+        <section class="editorial-section" id="beginn">
           <h2>This is exactly where science begins</h2>
-          <p>Out of wonder comes a question, and out of the question the wish to understand the world better. Together with the research team, the children follow up on what they have observed. They form hypotheses, compare explanations, and discover step by step the scientific connections behind the phenomenon. In this way a surprising experience becomes a lasting process of learning: children experience that knowledge is not only handed to them, but comes into being through observing, asking and experimenting.</p>
-        </div>
+          <div class="editorial-copy">
+            <p>Out of wonder comes a question, and out of the question the wish to understand the world better. Together with the research team, the children follow up on what they have observed, form hypotheses, compare explanations and uncover step by step the scientific connections behind the phenomenon. Children experience that knowledge is not merely handed down, but built through observing, asking and testing.</p>
+          </div>
+        </section>
       </div>
 
-      <div id="buchen" style="margin-top:clamp(3.2rem, 2.2rem + 3vw, 5rem)">
-        <p class="eyebrow" style="--dot:var(--pink-ink)">Express interest</p>
-        <h2 class="big" style="max-width:22ch">Interested in the Forscherbühne?</h2>
-        <p class="lead" style="margin-top:1.2rem">School classes, libraries, neighbourhood centres and families can express their interest. The programme is in development and dates are not yet confirmed. Tell us who you have in mind.</p>
-        <div class="book-card">
+      <section class="interest-block" id="buchen" aria-labelledby="interest-title">
+        <p class="eyebrow">Express interest</p>
+        <h2 id="interest-title">Interested in the Forscherbühne?</h2>
+        <p class="interest-intro">School classes, libraries, neighbourhood centres and families are welcome to register their interest. The programme is in development and dates are not yet confirmed.</p>
+        <div class="interest-card">
           <form id="anfrage"><fieldset disabled><legend class="vh">Expression of interest</legend>
             <div class="form-grid">
               <div class="field"><label for="f-name">Your name</label><input id="f-name" name="name" type="text" autocomplete="name" required /></div>
@@ -91,15 +117,16 @@
               <div class="field"><label for="f-when">Preferred period (optional)</label><input id="f-when" name="when" type="text" placeholder="e.g. spring 2027" /></div>
               <div class="field wide"><label for="f-msg">Message (optional)</label><textarea id="f-msg" name="msg"></textarea></div>
             </div>
-            <div style="margin-top:1.4rem"><button type="submit" class="btn btn-pink">Prepare email</button></div>
-          </fieldset></form><noscript><p>Please contact us directly by email.</p></noscript>
-          <p class="book-note">The button opens a draft in your email application. You send the message from there. You can also write directly to <a href="mailto:team@jonashertner.com">team@jonashertner.com</a>.</p>
+            <div class="form-submit"><button type="submit" class="btn-primary-dark">Prepare email</button></div>
+          </fieldset></form>
+          <noscript><p class="form-note">Please write to us directly at <a href="mailto:team@jonashertner.com">team@jonashertner.com</a>.</p></noscript>
+          <p class="form-note">The button opens a draft in your email application. You send the message from there. You can also write directly to <a href="mailto:team@jonashertner.com">team@jonashertner.com</a>.</p>
         </div>
-      </div>
+      </section>
     </div>
   </section>
 </main>
-{% include "society-footer.njk" %}
+{% include "society-site-footer.njk" %}
 <script>
 (function(){var f=document.getElementById('anfrage');if(!f)return;
 f.addEventListener('submit',function(e){e.preventDefault();

@@ -1,84 +1,114 @@
-{% set home = society.en %}
+{% set s = societySite.en %}
 {% set isHome = false %}
-{% set alternateUrl = "/gehirn-und-gesellschaft/" %}
+{% set activeNav = "programmes" %}
+{% set pageNoindex = true %}
+{% set pageTitle = "Brain and Society · Learning Society" %}
+{% set pageDescription = "Brain and Society: planned age-appropriate, interactive lessons in primary school about how learning works, what supports living well together and what role artificial intelligence plays." %}
+{% set canonicalPath = "/en/brain-and-society/" %}
+{% set deUrl = "/gehirn-und-gesellschaft/" %}
+{% set enUrl = "/en/brain-and-society/" %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Brain and Society · Learning Society</title>
-<meta name="description" content="Brain and Society: age-appropriate, interactive lessons in primary school about how learning works, what makes living together well, and what part artificial intelligence plays." />
-<meta name="robots" content="noindex" />
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M16 3c5 0 9 3 9 8 0 3-2 4-2 7s3 3 3 6-4 5-10 5S6 31 6 27s3-3 3-6-2-4-2-7c0-5 4-8 9-8z' fill='%23ff3d8b'/%3E%3C/svg%3E" />
-<link rel="preload" href="/assets/fonts/bricolage-latin.woff2" as="font" type="font/woff2" crossorigin />
-<link rel="stylesheet" href="/assets/styles.css?v=20260915-hero" />
-<link rel="stylesheet" href="/assets/society.css?v=20260916-responsive" />
-<link rel="canonical" href="https://lerngesellschaft.ch/en/brain-and-society/" />
-<link rel="alternate" hreflang="de" href="https://lerngesellschaft.ch/gehirn-und-gesellschaft/" />
-<link rel="alternate" hreflang="en" href="https://lerngesellschaft.ch/en/brain-and-society/" />
-<link rel="alternate" hreflang="x-default" href="https://lerngesellschaft.ch/gehirn-und-gesellschaft/" />
+{% include "society-head.njk" %}
 </head>
 <body class="society-page">
-<a href="#main" class="skip">Skip to content</a>
-{% include "society-header.njk" %}
+<a href="#main" class="skip">{{ s.skip }}</a>
+{% include "society-site-header.njk" %}
 <main id="main">
-  <section class="subhero">
-    <div class="accent-blob" style="width:30vw;height:30vw;background:var(--tang);right:-8vw;top:-2vw"></div>
-    <div class="wrap">
-      <a class="back" href="/en/"><span>&larr;</span> Back to overview</a>
-      <p class="eyebrow" style="--dot:var(--orange-ink)">One path · Brain and Society</p>
+  <section class="interior-hero">
+    <div class="wrap-inner">
+      <a class="back-link" href="/en/#angebote"><span aria-hidden="true">←</span><span>All programmes &amp; initiatives</span></a>
+      <p class="eyebrow">Initiative · Brain and Society</p>
       <h1>Brain and Society</h1>
-      <p class="lead">Understanding how learning and living together work. We are developing visits to primary schools, working with whole classes. In age-appropriate, interactive lessons, children gain an insight into current findings from research on learning, development and the brain.</p>
-      <div class="programme-notice"><strong>In development</strong><p>This page describes the planned programme. Dates and delivery are still being developed. You are welcome to express your interest.</p></div>
-      <dl class="programme-summary"><div><dt>For</dt><dd>Primary school classes</dd></div><div><dt>Format</dt><dd>Interactive lessons</dd></div><div><dt>Location</dt><dd>At school</dd></div></dl>
+      <p class="interior-lead">Understanding how learning and living together work. We are developing visits to primary schools, working with whole classes. In age-appropriate, interactive lessons, children gain insight into current findings from research on learning, development and the brain.</p>
+      <div class="notice-box">
+        <strong>In development</strong>
+        <p>This page describes the planned programme. Dates and delivery are still being developed. Schools are welcome to register their interest.</p>
+      </div>
+      <dl class="meta-strip">
+        <div><dt>For</dt><dd>Primary school classes</dd></div>
+        <div><dt>Format</dt><dd>Interactive lessons</dd></div>
+        <div><dt>Location</dt><dd>At school</dd></div>
+      </dl>
     </div>
   </section>
-  <section class="section" style="padding-top:0; --dot:var(--orange-ink)">
-    <div class="wrap">
-      <nav class="section-index" aria-label="On this page"><a href="#worum">What it is about</a><a href="#lernen">How learning works</a><a href="#miteinander">Getting along well</a><a href="#maschine">What a machine can do</a><a href="#zukunft">Capacities for the future</a><a href="#verstehen">Understanding, not adopting</a><a href="#buchen">For schools</a></nav>
-      <div class="detail">
-        <div class="dsec" id="worum">
+
+  <section class="interior-body">
+    <div class="wrap-inner">
+      <nav class="page-toc" aria-label="On this page">
+        <a href="#worum">What it is about</a>
+        <a href="#lernen">How learning works</a>
+        <a href="#miteinander">Getting along well</a>
+        <a href="#maschine">Humans &amp; machines</a>
+        <a href="#zukunft">Capacities for the future</a>
+        <a href="#verstehen">Understanding, not adopting</a>
+        <a href="#buchen">For schools</a>
+      </nav>
+
+      <div class="editorial-sections">
+        <section class="editorial-section" id="worum">
           <h2>What it is about</h2>
-          <p>Children find out how learning works, what matters for getting along well together, and what part artificial intelligence plays in their everyday lives. Our aim is to strengthen children in understanding their own learning better, in building social competence, and in finding their way safely and responsibly in an increasingly digital world.</p>
-        </div>
-        <div class="dsec" id="lernen">
+          <div class="editorial-copy">
+            <p>Children explore how learning works, what matters for getting along well together and what part artificial intelligence plays in everyday life. Our aim is to help children understand their own learning better, build social competence and find their way safely and responsibly in an increasingly digital world.</p>
+          </div>
+        </section>
+
+        <section class="editorial-section" id="lernen">
           <h2>How learning works</h2>
-          <p>Children often experience learning as something that either succeeds or fails. Research on learning shows, however, that development is a process: competence comes from practice, persistence, and the readiness to take on something new. Together with the children we look at how learning happens in the brain and why mistakes are an important part of every process of learning. They find that difficulty is not a sign of lacking talent, but an indication of where development can happen. They also find that good learning often feels slow and effortful, while what goes down easily and quickly is just as quickly gone. Out of this grows an understanding of learning that gives courage.</p>
-        </div>
-        <div class="dsec" id="miteinander">
+          <div class="editorial-copy">
+            <p>Children often experience learning as something that either succeeds or fails. Research on learning shows, however, that development is a process: competence comes from practice, persistence and the readiness to meet new challenges. Together with the children, we look at how learning happens in the brain and why mistakes are an essential part of every learning process. They also discover that durable learning often feels slow and effortful, whereas what passes effortlessly tends to fade just as quickly.</p>
+          </div>
+        </section>
+
+        <section class="editorial-section" id="miteinander">
           <h2>How getting along well works</h2>
-          <p>Learning and social relationships are closely bound together. Children spend a large part of their day in groups, where they experience friendship, conflict, cooperation and belonging. The development of social and emotional competence is therefore an important foundation for successful learning. The American neuroscientist Matthew Lieberman describes the need to belong as a fundamental human need. Children therefore work on questions such as: how do we speak to one another with respect? How do we deal with conflict? How can we understand others and be understood ourselves? Together, strategies are developed for meeting disagreement constructively. Children find that conflict is part of living together, and that relationships can be strengthened through communication, understanding and mutual respect.</p>
-        </div>
-        <div class="dsec" id="maschine">
+          <div class="editorial-copy">
+            <p>Learning and social relationships are closely bound together. Children spend a large part of their day in groups where they experience friendship, conflict, cooperation and belonging. Neuroscientist Matthew Lieberman describes the need to belong as a fundamental human need. Together, children work on practical questions: how do we speak to one another with respect, how do we meet disagreement constructively, and how do we understand others and be understood ourselves?</p>
+          </div>
+        </section>
+
+        <section class="editorial-section" id="maschine">
           <h2>What a machine can do, and what it cannot</h2>
-          <p>Artificial intelligence will accompany children throughout their education and their working lives. It is all the more important to develop a realistic and differentiated understanding of this technology early on. Together we look at which tasks artificial intelligence solves well, where its limits lie, and why human capacities remain indispensable. Children learn to use technology critically and reflectively, and to distinguish between information, support, and a real human relationship. What becomes clear is this: machines can process information and deliver answers. But they can neither take responsibility nor shape a real relationship. Empathy, compassion, trust and human connection remain human capacities.</p>
-        </div>
-        <div class="dsec" id="zukunft">
+          <div class="editorial-copy">
+            <p>Artificial intelligence will accompany children throughout their education and working lives, making an early, realistic understanding essential. Together we examine which tasks AI handles well, where its limits lie and why human capacities remain indispensable. Machines can process information and generate answers; taking responsibility and sustaining genuine relationships remain human.</p>
+          </div>
+        </section>
+
+        <section class="editorial-section" id="zukunft">
           <h2>Capacities for the future</h2>
-          <p>Brain and Society does not only give children knowledge about learning, community and technology. The lessons build important future capacities at the same time: self-reflection, communication, empathy, critical thinking, and a responsible way of using digital tools. Children experience themselves not as passive listeners but as active shapers of their learning and of their life together. They develop a deeper understanding of themselves, of other people, and of the world they are growing up in.</p>
-        </div>
+          <div class="editorial-copy">
+            <p>Brain and Society builds more than factual knowledge about learning, community and technology. The lessons strengthen self-reflection, communication, empathy, critical thinking and responsible use of digital tools, inviting children to experience themselves as active shapers of their own learning.</p>
+          </div>
+        </section>
       </div>
 
-      <p class="vignette"><span class="vignette-label">An illustrative example</span>A boy is working on a word problem and asks an artificial intelligence to explain a solution. The answer sounds convincing, but it contains a flaw in reasoning. Together with the class, the solution is examined and checked step by step. In doing so the children discover that not every answer is automatically right, not even when it sounds very sure of itself.</p>
+      <blockquote class="vignette-quote">
+        <span class="vignette-label">An illustrative example</span>
+        A boy is working on a word problem and asks an artificial intelligence to explain a solution. The answer sounds convincing, yet contains a flaw in reasoning. Together with the class, the solution is examined step by step, and the children discover that not every answer is automatically right, even when it sounds completely sure of itself.
+      </blockquote>
 
-      <div class="detail" style="margin-top:clamp(3rem, 2rem + 3vw, 4.5rem)">
-        <div class="dsec" id="verstehen">
+      <div class="editorial-sections">
+        <section class="editorial-section" id="verstehen">
           <h2>Understanding rather than simply adopting</h2>
-          <p>Experiences like this one are at the heart of Brain and Society. Children learn to question information critically, to notice their own thinking, and to take responsibility for their learning. They find that technological tools can help, but that understanding only comes about when people ask questions, see how things connect, and reflect on what they find together. In this way they develop confidence, critical thinking, and the ability to use digital technology competently and responsibly: artificial intelligence can support, but the real educational work of understanding, judging and placing knowledge stays with people.</p>
-        </div>
+          <div class="editorial-copy">
+            <p>Experiences like this one sit at the heart of Brain and Society. Children learn to question information critically, notice their own thinking and take responsibility for their learning. Artificial intelligence can support, yet the real educational work of understanding, judging and placing knowledge remains with people.</p>
+          </div>
+        </section>
       </div>
 
-      <div id="buchen" style="margin-top:clamp(3.2rem, 2.2rem + 3vw, 5rem)">
-        <p class="eyebrow" style="--dot:var(--orange-ink)">For schools</p>
-        <h2 class="big" style="max-width:22ch">Interested for your class?</h2>
-        <p class="lead" style="margin-top:1.2rem">The programme is in development. Primary schools in Basel can already express interest for a class or a whole year group. Tell us which questions and topics are on your pupils’ minds.</p>
-        <div style="margin-top:1.6rem; display:flex; flex-wrap:wrap; gap:.9rem">
-          <a href="mailto:team@jonashertner.com?subject=Brain%20and%20Society%20request" class="btn btn-pink">Request by email</a>
+      <section class="interest-block" id="buchen" aria-labelledby="schools-title">
+        <p class="eyebrow">For schools</p>
+        <h2 id="schools-title">Interested for your class?</h2>
+        <p class="interest-intro">The programme is in development. Primary schools in Basel are welcome to express interest for a single class or a whole year group. Tell us which questions and topics are on your pupils’ minds.</p>
+        <div class="page-actions-bar" style="border-top:0; padding-top:0; margin-top:26px;">
+          <a href="mailto:team@jonashertner.com?subject=Brain%20and%20Society%20request" class="btn-primary-dark"><span>Request by email</span><span aria-hidden="true">→</span></a>
+          <a href="/en/approach/" class="btn-link-dark"><span>Read our approach</span></a>
         </div>
-      </div>
+      </section>
     </div>
   </section>
 </main>
-{% include "society-footer.njk" %}
+{% include "society-site-footer.njk" %}
 </body>
 </html>

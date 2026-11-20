@@ -1,0 +1,36 @@
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#080e20" />
+<title>{{ pageTitle }}</title>
+<meta name="description" content="{{ pageDescription | escape }}" />
+{% if pageNoindex %}<meta name="robots" content="noindex" />
+{% endif %}<meta property="og:title" content="{{ pageTitle | escape }}" />
+<meta property="og:description" content="{{ pageDescription | escape }}" />
+<meta property="og:locale" content="{{ s.ogLocale }}" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://lerngesellschaft.ch{{ canonicalPath }}" />
+<meta property="og:image" content="https://lerngesellschaft.ch/assets/media/society-social-card.png?v={{ siteAssets.societySocialCard }}" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="{{ s.socialImageAlt | escape }}" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="{{ pageTitle | escape }}" />
+<meta name="twitter:description" content="{{ pageDescription | escape }}" />
+<meta name="twitter:image" content="https://lerngesellschaft.ch/assets/media/society-social-card.png?v={{ siteAssets.societySocialCard }}" />
+<meta name="twitter:image:alt" content="{{ s.socialImageAlt | escape }}" />
+<link rel="icon" href="/assets/society-favicon.svg" type="image/svg+xml" />
+<link rel="preload" href="/fonts/BradfordLLWeb-Book.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="/assets/fonts/hanken-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="/assets/society-site.css?v={{ siteAssets.societySite }}" />
+{% if isHome %}<link rel="preload" href="/assets/society-earth-data.js?v={{ siteAssets.societyEarthData }}" as="script" />
+<link rel="preload" href="/assets/society-dot-renderer.js?v={{ siteAssets.societyDotRenderer }}" as="script" />
+<link rel="preload" href="/assets/society-dot-world.js?v={{ siteAssets.societyDotWorld }}" as="script" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NGO","name":"{% if s.lang == 'en' %}Learning Society / Lerngesellschaft{% else %}Lerngesellschaft / Learning Society{% endif %}","url":"https://lerngesellschaft.ch{{ canonicalPath }}","areaServed":"Basel","description":{{ pageDescription | dump | safe }},"email":"team@jonashertner.com","address":{"@type":"PostalAddress","streetAddress":"Münsterplatz 17","postalCode":"4051","addressLocality":"Basel","addressCountry":"CH"}}
+</script>
+{% endif %}<link rel="canonical" href="https://lerngesellschaft.ch{{ canonicalPath }}" />
+{% if deUrl and enUrl %}<link rel="alternate" hreflang="de" href="https://lerngesellschaft.ch{{ deUrl }}" />
+<link rel="alternate" hreflang="en" href="https://lerngesellschaft.ch{{ enUrl }}" />
+<link rel="alternate" hreflang="x-default" href="https://lerngesellschaft.ch{{ deUrl }}" />
+{% endif %}

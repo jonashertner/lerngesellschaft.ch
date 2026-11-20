@@ -1,57 +1,143 @@
-<header class="world-header">
- <a class="wordmark" href="{{ landing.root }}">Lerngesellschaft<span>Learning Society</span></a>
- <nav class="world-nav" aria-label="{{ experience.navLabel }}">
-  <a href="#idee">{{ experience.idea }}</a><a href="#wege">{{ experience.programmes }}</a><a href="#verein">{{ experience.association }}</a>
- </nav>
- <div class="languages"><a href="/" lang="de" aria-label="DE — Auf Deutsch"{% if landing.language == 'de' %} aria-current="page"{% endif %}>DE</a><span aria-hidden="true">/</span><a href="/en/" lang="en" aria-label="EN — In English"{% if landing.language == 'en' %} aria-current="page"{% endif %}>EN</a></div>
-</header>
+{% include "society-site-header.njk" %}
 <main id="main">
- <section class="world-hero" id="top" aria-labelledby="purpose-title">
-  <div class="hero-editorial">
-   <p class="eyebrow">{{ experience.location }}</p>
-   <h1 id="purpose-title">{{ experience.title | safe }}</h1>
-   <p class="hero-subtitle">{{ experience.subtitle | safe }}</p>
-   <div class="hero-actions"><a class="round-link" href="#idee"><span>{{ experience.explore }}</span></a><button id="motion-toggle" type="button" data-pause="{{ experience.pause }}" data-play="{{ experience.play }}" aria-pressed="false" hidden><span class="motion-label">{{ experience.pause }}</span></button></div>
-  </div>
-  <div class="sculpture-stage" aria-hidden="true"><canvas id="world-canvas"></canvas></div>
-  <div class="hero-bottom"><span class="hero-location">{{ experience.footerIdentity }} / Basel</span></div>
- </section>
- <section class="idea-section paper-section" id="idee" aria-labelledby="idea-title">
-  <div class="section-top"><span class="eyebrow">{{ experience.chapter }}</span><span class="section-rule" aria-hidden="true"></span></div>
-  <div class="idea-grid"><h2 id="idea-title">{{ experience.ideaTitle | safe }}</h2><div class="idea-copy"><p>{{ experience.intro }}</p><p class="small-statement">{{ experience.smallTitle }}</p></div></div>
-  <ul class="lifelong-line" aria-label="{{ experience.location }}">{% for word in experience.lifelongWords %}<li>{{ word }}</li>{% endfor %}</ul>
- </section>
- <section class="programmes-section paper-section" id="wege" aria-labelledby="programmes-title">
-  <span id="worum" class="legacy-anchor"></span><span id="ziele" class="legacy-anchor"></span>
-  <div class="section-top"><span class="eyebrow">{{ experience.programmesChapter }}</span><span class="section-rule" aria-hidden="true"></span></div>
-  <div class="programmes-heading"><h2 id="programmes-title">{{ experience.programmesTitle | safe }}</h2><p>{{ experience.programmesIntro }}</p></div>
-  <div class="initiative" id="lernbus">
-   <span class="eyebrow">{{ experience.lernbusSmall }}</span>
-   <a class="initiative-link" href="{{ landing.lernbusUrl }}"><span class="initiative-name">Lernbus</span><span class="initiative-note">{{ experience.lernbusNote }}</span><span class="initiative-action">{{ landing.action }}</span></a>
-  </div>
-  <span class="legacy-anchor" id="forscherbuehne"></span><span class="legacy-anchor" id="gehirn-und-gesellschaft"></span>
- </section>
+  <section class="world-hero" aria-labelledby="purpose-title">
+    <div class="hero-frame">
+      <div class="hero-editorial">
+        <p class="eyebrow">{{ s.home.heroEyebrow }}</p>
+        <h1 id="purpose-title">{{ s.home.heroTitle | safe }}</h1>
+        <p class="hero-subtitle">{{ s.home.heroSubtitle }}</p>
+        <div class="hero-actions">
+          <a class="hero-cta-primary" href="#angebote"><span>{{ s.home.heroPrimary }}</span><span aria-hidden="true">→</span></a>
+          <a class="hero-cta-secondary" href="{% if s.lang == 'en' %}/en/approach/{% else %}/ansatz/{% endif %}"><span>{{ s.home.heroSecondary }}</span></a>
+        </div>
+      </div>
+    </div>
+    <div class="sculpture-stage" aria-hidden="true" data-observation="{{ s.home.observation | dump | escape }}"><canvas id="world-canvas"></canvas></div>
+    <div class="hero-bottom">
+      <div class="hero-bottom-inner">
+        <span class="hero-location">{{ s.home.heroFoot }}</span>
+        <button class="motion-btn" id="motion-toggle" type="button" data-pause="{{ s.home.pause }}" data-play="{{ s.home.play }}" aria-pressed="false" hidden><span class="motion-label">{{ s.home.pause }}</span></button>
+      </div>
+    </div>
+  </section>
+
+  <section class="paper-section stone-surface" id="idee" aria-labelledby="idea-title">
+    <div class="wrap-inner">
+      <div class="section-top"><span class="eyebrow">{{ s.home.ideaKicker }}</span><span class="section-rule" aria-hidden="true"></span></div>
+      <div class="chapter-grid" data-reveal>
+        <h2 id="idea-title">{{ s.home.ideaTitle | safe }}</h2>
+        <div class="chapter-copy">
+          <p class="chapter-lead">{{ s.home.ideaLead }}</p>
+          <p class="chapter-body">{{ s.home.ideaBody }}</p>
+          <a class="inline-action" href="{% if s.lang == 'en' %}/en/approach/{% else %}/ansatz/{% endif %}"><span>{{ s.home.ideaAction }}</span><span class="arrow" aria-hidden="true">→</span></a>
+        </div>
+      </div>
+      <ul class="principles-strip" aria-label="{{ s.home.pillarsLabel }}" data-reveal>
+        {% for item in s.home.pillars %}
+        <li>
+          <h3 class="pillar-title">{{ item.title }}</h3>
+          <p class="pillar-text">{{ item.text }}</p>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </section>
+
+  <section class="paper-section paper-surface" id="angebote" aria-labelledby="offers-title">
+    <span id="wege" class="legacy-anchor" aria-hidden="true"></span>
+    <span id="worum" class="legacy-anchor" aria-hidden="true"></span>
+    <span id="ziele" class="legacy-anchor" aria-hidden="true"></span>
+    <div class="wrap-inner">
+      <div class="section-top"><span class="eyebrow">{{ s.home.offersKicker }}</span><span class="section-rule" aria-hidden="true"></span></div>
+      <div class="chapter-grid" data-reveal>
+        <h2 id="offers-title">{{ s.home.offersTitle | safe }}</h2>
+        <div class="chapter-copy">
+          <p class="chapter-lead">{{ s.home.offersIntro }}</p>
+        </div>
+      </div>
+      <div class="programmes-list">
+        <article class="programme-row programme-featured" id="lernbus" data-reveal>
+          <a class="programme-link" href="{{ s.home.lernbus.url }}">
+            <div>
+              <div class="programme-meta"><span class="programme-num">{{ s.home.lernbus.number }}</span><span class="status-badge status-badge-active">{{ s.home.activeBadge }}</span></div>
+              <span class="programme-name">{{ s.home.lernbus.name }}</span>
+              <span class="programme-audience">{{ s.home.lernbus.audience }}</span>
+            </div>
+            <div class="programme-desc">
+              <p>{{ s.home.lernbus.description }}</p>
+              <span class="programme-facts">{{ s.home.lernbus.facts }}</span>
+            </div>
+            <span class="programme-action"><span>{{ s.home.lernbus.action }}</span><span aria-hidden="true">→</span></span>
+          </a>
+        </article>
+        {% for item in s.home.planned %}
+        <article class="programme-row programme-planned" id="{{ item.id }}" data-reveal>
+          <a class="programme-link" href="{{ item.url }}">
+            <div>
+              <div class="programme-meta"><span class="programme-num">{{ item.number }}</span><span class="status-badge">{{ s.home.plannedBadge }}</span></div>
+              <span class="programme-name">{{ item.name }}</span>
+              <span class="programme-audience">{{ item.audience }}</span>
+            </div>
+            <div class="programme-desc">
+              <p>{{ item.description }}</p>
+            </div>
+            <span class="programme-action"><span>{{ item.action }}</span><span aria-hidden="true">→</span></span>
+          </a>
+        </article>
+        {% endfor %}
+      </div>
+      <div class="open-work" data-reveal>
+        <p class="eyebrow">{{ s.home.openWorkLabel }}</p>
+        <div class="open-work-grid">
+          {% for item in s.home.openWork %}
+          <a class="open-work-card" href="{{ item.url }}">
+            <div>
+              <span class="open-work-meta">{{ item.label }}</span>
+              <span class="open-work-title">{{ item.title }}</span>
+              <p class="open-work-text">{{ item.text }}</p>
+            </div>
+            <span class="open-work-action"><span>{{ item.action }}</span><span aria-hidden="true">→</span></span>
+          </a>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="paper-section stone-surface" id="verein" aria-labelledby="people-title">
+    <div class="wrap-inner">
+      <div class="section-top"><span class="eyebrow">{{ s.home.peopleKicker }}</span><span class="section-rule" aria-hidden="true"></span></div>
+      <div class="chapter-grid" data-reveal>
+        <h2 id="people-title">{{ s.home.peopleTitle | safe }}</h2>
+        <div class="chapter-copy">
+          <p class="chapter-lead">{{ s.home.associationLead | safe }}</p>
+          <p class="chapter-body">{{ s.home.associationBody }}</p>
+        </div>
+      </div>
+      <div class="association-grid" data-reveal>
+        <div>
+          <dl class="facts-list">
+            {% for fact in s.home.associationFacts %}
+            <div><dt>{{ fact.label }}</dt><dd>{{ fact.value | safe }}</dd></div>
+            {% endfor %}
+          </dl>
+        </div>
+        <div class="people-column">
+          {% for person in s.home.people %}
+          <article class="person-item">
+            <p class="person-role">{{ person.role }}</p>
+            <h3 class="person-name">{{ person.name }}</h3>
+            <p class="person-text">{{ person.text }}</p>
+            <a class="person-link" href="{{ person.url }}"><span>{{ person.action }}</span><span aria-hidden="true">→</span></a>
+          </article>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </section>
 </main>
-<footer class="world-footer">
- <div class="footer-world-stage" aria-hidden="true"><canvas id="footer-world-canvas"></canvas></div>
- <section class="footer-invitation" id="verein" aria-labelledby="curiosity-question">
-  <span class="legacy-anchor" id="investieren"></span>
-  <div class="section-top"><p class="eyebrow">{{ experience.questionKicker }}</p><span class="section-rule" aria-hidden="true"></span></div>
-  <h2 id="curiosity-question" aria-live="polite" aria-atomic="true">{{ experience.question | safe }}</h2>
-  <button class="question-button" id="next-question" type="button" hidden><span>{{ experience.nextQuestion }}</span></button>
-  <script type="application/json" id="curiosity-questions">{{ experience.questions | dump | safe }}</script>
-  <div class="footer-conversation"><p>{{ experience.associationText }}</p><a class="contact-link" href="mailto:team@jonashertner.com"><span class="contact-title">{{ experience.contact }}</span><span class="contact-address">team@jonashertner.com</span></a></div>
- </section>
- <div class="footer-directory">
-  <div class="footer-principle"><p>{{ experience.footerLine }}</p><span>{{ experience.footerIdentity }}</span></div>
-  <nav aria-label="{{ experience.footerNavLabel }}"><h3 class="eyebrow">{{ experience.footerExplore }}</h3><a href="#idee">{{ experience.idea }}</a><a href="{{ landing.lernbusUrl }}">{{ landing.action }}</a><div class="footer-languages"><a href="/" lang="de"{% if landing.language == 'de' %} aria-current="page"{% endif %}>Deutsch</a><a href="/en/" lang="en"{% if landing.language == 'en' %} aria-current="page"{% endif %}>English</a></div></nav>
-  <div class="footer-address"><h3 class="eyebrow">{{ experience.footerAddress }}</h3><address>Münsterplatz 17<br>4051 Basel<br>{{ experience.footerCountry }}</address></div>
- </div>
- <a class="footer-signature" href="{{ landing.root }}"><span>Lerngesellschaft</span><span>Learning Society</span></a>
- <div class="footer-bottom"><span>© 2026 Lerngesellschaft</span><a href="{{ landing.imprintUrl }}">{{ landing.imprint }}</a><button id="footer-motion-toggle" type="button" data-pause="{{ experience.pause }}" data-play="{{ experience.play }}" aria-pressed="false" hidden><span class="motion-label">{{ experience.pause }}</span></button><a href="#top" class="back-top">{{ experience.top }}</a></div>
-</footer>
-<noscript><style>.sculpture-stage,.footer-world-stage{display:none}.world-hero{min-height:640px;height:auto}.hero-editorial{width:100%;padding-top:160px;padding-bottom:150px}@media(max-width:700px){.world-hero{min-height:0}.hero-editorial{padding-top:0;padding-bottom:60px}}</style></noscript>
-<script src="/assets/society-earth-data.js?v=20261030-earth-1" defer></script>
-<script src="/assets/society-ascii-renderer.js?v=20261030-butterfly-earth-1" defer></script>
-<script src="/assets/society-ascii-world.js?v=20261030-butterfly-earth-1" defer></script>
-<script src="/assets/society-discovery.js?v=20261022-lifelong-1" defer></script>
+{% include "society-site-footer.njk" %}
+<noscript><style>.sculpture-stage,.footer-world-stage{display:none}.world-hero{min-height:0}.hero-editorial{width:100%;padding:44px 0 88px}.reveal-pending{opacity:1;transform:none}</style></noscript>
+<script src="/assets/society-earth-data.js?v={{ siteAssets.societyEarthData }}" defer></script>
+<script src="/assets/society-dot-renderer.js?v={{ siteAssets.societyDotRenderer }}" defer></script>
+<script src="/assets/society-dot-world.js?v={{ siteAssets.societyDotWorld }}" defer></script>

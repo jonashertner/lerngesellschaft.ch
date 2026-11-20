@@ -1,39 +1,17 @@
-{% set landing = societyLanding.de %}
+{% set s = societySite.de %}
 {% set isHome = true %}
-{% set experience = societyExperience.de %}
-{% set alternateUrl = "/en/" %}
+{% set pageTitle = s.home.title %}
+{% set pageDescription = s.home.description %}
+{% set canonicalPath = "/" %}
+{% set deUrl = "/" %}
+{% set enUrl = "/en/" %}
 <!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Lerngesellschaft / Learning Society · Basel</title>
-<meta name="description" content="Lernen in jedem Alter. Die Lerngesellschaft ist ein gemeinnütziger Verein in Basel. Mit Lernbus, unserer ersten Initiative für die Jüngsten, beginnen wir." />
-<meta property="og:title" content="Lerngesellschaft / Learning Society" />
-<meta property="og:description" content="Lernen in jedem Alter. Die Lerngesellschaft ist ein gemeinnütziger Verein in Basel. Mit Lernbus, unserer ersten Initiative für die Jüngsten, beginnen wir." />
-<meta property="og:locale" content="de_CH" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://lerngesellschaft.ch/" />
-<meta name="twitter:card" content="summary" />
-<meta name="twitter:title" content="Lerngesellschaft / Learning Society" />
-<meta name="twitter:description" content="Lernen in jedem Alter. Die Lerngesellschaft ist ein gemeinnütziger Verein in Basel. Mit Lernbus, unserer ersten Initiative für die Jüngsten, beginnen wir." />
-<link rel="icon" href="/assets/society-favicon.svg" type="image/svg+xml" />
-<link rel="preload" href="/fonts/BradfordLLWeb-Book.woff2" as="font" type="font/woff2" crossorigin />
-<link rel="preload" href="/assets/fonts/hanken-latin.woff2" as="font" type="font/woff2" crossorigin />
-<link rel="stylesheet" href="/assets/society-immersive.css?v=20261028-mobile-polish-1" />
-<link rel="preload" href="/assets/society-ascii-renderer.js?v=20261028-butterfly-immediate-1" as="script" />
-<link rel="preload" href="/assets/society-ascii-world.js?v=20261028-butterfly-immediate-1" as="script" />
-
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NGO","name":"Lerngesellschaft / Learning Society","areaServed":"Basel","description":"Lernen in jedem Alter. Die Lerngesellschaft ist ein gemeinnütziger Verein in Basel. Mit Lernbus, unserer ersten Initiative für die Jüngsten, beginnen wir.","address":"Münsterplatz 17, 4051 Basel","email":"team@jonashertner.com"}
-</script>
-<link rel="canonical" href="https://lerngesellschaft.ch/" />
-<link rel="alternate" hreflang="de" href="https://lerngesellschaft.ch/" />
-<link rel="alternate" hreflang="en" href="https://lerngesellschaft.ch/en/" />
-<link rel="alternate" hreflang="x-default" href="https://lerngesellschaft.ch/" />
+{% include "society-head.njk" %}
 </head>
-<body class="society-immersive">
-<a href="#main" class="skip">Zum Inhalt springen</a>
+<body class="society-home">
+<a href="#main" class="skip">{{ s.skip }}</a>
 {% include "society-immersive.njk" %}
 </body>
 </html>

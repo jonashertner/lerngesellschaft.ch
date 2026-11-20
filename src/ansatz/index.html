@@ -1,104 +1,110 @@
-{% set landing = societyLanding.de %}
-{% set landingAlternate = '/en/approach/' %}
-{% set home = society.de %}
+{% set s = societySite.de %}
 {% set isHome = false %}
-{% set alternateUrl = "/en/approach/" %}
+{% set activeNav = "approach" %}
+{% set pageTitle = "Unser Ansatz · Lerngesellschaft" %}
+{% set pageDescription = "Wie wir Lernen verstehen: Kinder lernen nachhaltig, wenn sie spüren, dass sie vorankommen, und wenn ein Mensch an ihrer Seite bleibt, der sie kennt und ihnen etwas zutraut." %}
+{% set canonicalPath = "/ansatz/" %}
+{% set deUrl = "/ansatz/" %}
+{% set enUrl = "/en/approach/" %}
 <!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Unser Ansatz · Lerngesellschaft</title>
-<meta name="description" content="Unser Ansatz: Kinder lernen am besten, wenn sie spüren, dass sie vorankommen, und wenn ein Mensch da ist, der sie kennt und ihnen etwas zutraut." />
-<meta property="og:title" content="Unser Ansatz · Lerngesellschaft" />
-<meta property="og:description" content="Unser Ansatz: Kinder lernen am besten, wenn sie spüren, dass sie vorankommen, und wenn ein Mensch da ist, der sie kennt und ihnen etwas zutraut." />
-<meta property="og:locale" content="de_CH" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://lerngesellschaft.ch/ansatz/" />
-<meta property="og:image" content="https://lerngesellschaft.ch/assets/media/hero-poster.jpg?v={{ siteAssets.heroPoster }}" />
-<meta property="og:image:type" content="image/jpeg" />
-<meta property="og:image:width" content="640" />
-<meta property="og:image:height" content="640" />
-<meta property="og:image:alt" content="Kinder beim Experimentieren" />
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Unser Ansatz · Lerngesellschaft" />
-<meta name="twitter:description" content="Unser Ansatz: Kinder lernen am besten, wenn sie spüren, dass sie vorankommen, und wenn ein Mensch da ist, der sie kennt und ihnen etwas zutraut." />
-<meta name="twitter:image" content="https://lerngesellschaft.ch/assets/media/hero-poster.jpg?v={{ siteAssets.heroPoster }}" />
-<meta name="twitter:image:alt" content="Kinder beim Experimentieren" />
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M16 3c5 0 9 3 9 8 0 3-2 4-2 7s3 3 3 6-4 5-10 5S6 31 6 27s3-3 3-6-2-4-2-7c0-5 4-8 9-8z' fill='%23ff3d8b'/%3E%3C/svg%3E" />
-<link rel="preload" href="/assets/fonts/bricolage-latin.woff2" as="font" type="font/woff2" crossorigin />
-<link rel="stylesheet" href="/assets/styles.css?v={{ siteAssets.styles }}" />
-<link rel="stylesheet" href="/assets/society.css?v={{ siteAssets.society }}" />
-<link rel="stylesheet" href="/assets/society-header.css?v={{ siteAssets.header }}" />
-<link rel="stylesheet" href="/assets/society-footer.css?v={{ siteAssets.footer }}" />
-<link rel="canonical" href="https://lerngesellschaft.ch/ansatz/" />
-<link rel="alternate" hreflang="de" href="https://lerngesellschaft.ch/ansatz/" />
-<link rel="alternate" hreflang="en" href="https://lerngesellschaft.ch/en/approach/" />
-<link rel="alternate" hreflang="x-default" href="https://lerngesellschaft.ch/ansatz/" />
+{% include "society-head.njk" %}
 </head>
 <body class="society-page">
-<a href="#main" class="skip">Zum Inhalt springen</a>
-{% include "society-landing-header.njk" %}
+<a href="#main" class="skip">{{ s.skip }}</a>
+{% include "society-site-header.njk" %}
 <main id="main">
-  <section class="subhero">
-    <div class="accent-blob" style="width:30vw;height:30vw;background:var(--pink);right:-8vw;top:-2vw"></div>
-    <div class="wrap">
-      <a class="back" href="/"><span>&larr;</span> Zurück zur Übersicht</a>
-      <p class="eyebrow" style="--dot:var(--pink-ink)">Unser Ansatz</p>
-      <h1>So arbeiten wir</h1>
-      <p class="lead">Ein Kind lernt am besten, wenn zwei Dinge zusammenkommen. Es spürt, dass es vorankommt. Und es weiss, da ist ein Mensch, der es kennt und ihm etwas zutraut. Aus diesen zwei Dingen ist alles gebaut, was wir tun.</p>
+  <section class="interior-hero">
+    <div class="wrap-inner">
+      <a class="back-link" href="/"><span aria-hidden="true">←</span><span>{{ s.backHome }}</span></a>
+      <p class="eyebrow">Unser Ansatz</p>
+      <h1>So arbeiten wir.</h1>
+      <p class="interior-lead">Ein Kind lernt nachhaltig, wenn zwei Dinge zusammenkommen: Es spürt, dass seine eigene Anstrengung Wirkung zeigt. Und es weiss, dass ein Mensch an seiner Seite bleibt, der es kennt und ihm etwas zutraut.</p>
     </div>
   </section>
-  <section class="section" style="padding-top:0; --dot:var(--pink-ink)">
-    <div class="wrap">
-      <nav class="section-index" aria-label="Auf dieser Seite"><a href="#dranbleiben">Dranbleiben</a><a href="#schwierigkeit">Gerade noch zu schaffen</a><a href="#mensch">Ein Mensch, der bleibt</a><a href="#maschine">Was menschliche Begleitung ausmacht</a><a href="#wege">Drei Wege, ein Ziel</a><a href="#quellen">Quellen</a></nav>
-      <div class="detail">
-        <div class="dsec" id="dranbleiben">
-          <h2>Ein Kind bleibt dran, wenn es spürt, dass es besser wird</h2>
-          <p>Fortschritt kann Mut machen. In einer Laborstudie mit jungen Erwachsenen hing mehr Lernfortschritt bei einer Computerspielaufgabe mit stärkerem Vertieftsein und weniger berichteter Ablenkung zusammen. Die Auswertung umfasste 52 Personen und einzelne Aufgabenphasen; eine Wirkung über Wochen oder bei Kindern wurde nicht untersucht (<a class="research-source" href="https://pure.eur.nl/ws/portalfiles/portal/214355874/1-s2.0-S1053811925000783-main.pdf">Lu et al., 2025</a>).</p>
-          <p>Für unsere Arbeit ist das ein Anhaltspunkt: Wir machen kleine Fortschritte sichtbar und besprechen mit dem Kind, was ihm schon gelingt und was es als Nächstes versuchen möchte.</p>
-        </div>
-        <div class="dsec" id="schwierigkeit">
+
+  <section class="interior-body">
+    <div class="wrap-inner">
+      <nav class="page-toc" aria-label="Auf dieser Seite">
+        <a href="#dranbleiben">Selbstwirksamkeit</a>
+        <a href="#schwierigkeit">Richtige Herausforderung</a>
+        <a href="#mensch">Beziehung und Kontinuität</a>
+        <a href="#maschine">Menschliche Begleitung und KI</a>
+        <a href="#wege">Vom Ansatz in die Praxis</a>
+        <a href="#quellen">Quellen</a>
+      </nav>
+
+      <div class="editorial-sections">
+        <section class="editorial-section" id="dranbleiben">
+          <h2>Ein Kind bleibt dran, wenn es Fortschritt spürt</h2>
+          <div class="editorial-copy">
+            <p>Lernen verlangt Ausdauer. Mut entsteht dort, wo ein Kind unmittelbar erfährt, dass eigenes Nachdenken und Üben einen Unterschied machen. Gestützt auf Befunde aus der Lern- und Motivationsforschung (etwa <a href="https://pure.eur.nl/ws/portalfiles/portal/214355874/1-s2.0-S1053811925000783-main.pdf">Lu et al., 2025</a>, wo erlebter Lernfortschritt in Aufgabenphasen mit Erwachsenen mit stärkerem Vertieftsein und geringerer Ablenkung einherging) richten wir unsere Begleitung darauf aus, Entwicklung sichtbar zu machen.</p>
+            <p>Konkret heisst das: Wir benennen kleine Schritte ehrlich, schauen gemeinsam zurück, was vor wenigen Wochen noch schwierig war, und überlegen zusammen mit dem Kind, was es als Nächstes anpacken möchte.</p>
+          </div>
+        </section>
+
+        <section class="editorial-section" id="schwierigkeit">
           <h2>Was gerade noch zu schaffen ist</h2>
-          <p>Wir wählen Aufgaben, die ein Kind fordern, ohne es zu überfordern. Wie anspruchsvoll eine Aufgabe gerade sein darf, prüfen wir gemeinsam mit dem Kind und passen sie an. Der Mensch an seiner Seite zeigt ihm rasch und freundlich, was als Nächstes dran ist. Ein Fehler zeigt, wo es weitergeht. Beim eigenen Ausprobieren und gemeinsamen Nachdenken kann neues Verständnis entstehen.</p>
-        </div>
-        <div class="dsec" id="mensch">
+          <div class="editorial-copy">
+            <p>Zu leichte Aufgaben langweilen; zu schwere Aufgaben entmutigen. Wir suchen mit jedem Kind den Bereich dazwischen: Aufgaben, die echtes Nachdenken fordern, ohne zu überfordern.</p>
+            <p>In der persönlichen Begleitung lässt sich dieser Punkt laufend neu justieren. Fehler gelten nicht als Makel, sondern als Hinweis darauf, wo das Verständnis noch eine Brücke braucht. Im eigenen Ausprobieren, Erklären und Verwerfen wächst tragfähiges Verstehen.</p>
+          </div>
+        </section>
+
+        <section class="editorial-section" id="mensch">
           <h2>Ein Mensch, der bleibt</h2>
-          <p>Vertrauen wächst nur langsam und nur mit Menschen, die bleiben. Wenn ein Kind spürt, dass jemand es wirklich kennt, traut es sich mehr zu. Isabelle Hau, <a class="research-source" href="https://dschool.stanford.edu/directory/isabelle-hau">Executive Director des Stanford Accelerator for Learning</a>, bringt es auf den Punkt: Beziehungen sind das Fundament des Lernens.</p>
-          <p>Eine Langzeitstudie mit 179 Kindern fand einen Zusammenhang zwischen belasteten Beziehungen zur Kindergartenlehrperson und schwächeren Leistungen in den ersten Primarschuljahren. Die Lehrpersonen hatten Konflikte und Abhängigkeit eingeschätzt. Berücksichtigt wurden auch Geschlecht, ethnische Zugehörigkeit, sprachliche Fähigkeiten und frühe Verhaltensauffälligkeiten. Die Studie belegt keine Ursache-Wirkungs-Beziehung (<a class="research-source" href="https://greatergood.berkeley.edu/images/uploads/Hamre__Pianta_2003.pdf#page=7">Hamre und Pianta, 2001, S. 631–632</a>).</p>
-          <p>Eine Langzeituntersuchung an Chicagoer Schulen brachte Verbesserungen in Lesen und Mathematik mit dem Zusammenspiel von Schulleitung, Unterricht, fachlicher Zusammenarbeit, Lernklima und Beziehungen zu Eltern und Quartier in Verbindung. Die Forschenden beschreiben Vertrauen als wichtige Grundlage dieser Zusammenarbeit. Die Studie zeigt Zusammenhänge und belegt keine Ursache-Wirkungs-Beziehung (<a class="research-source" href="https://www.shankerinstitute.org/sites/default/files/Organizing-schools-for-improvemnt-Bryk%20%281%29.pdf#page=3">Bryk, 2010</a>).</p>
-          <p>In unserer Arbeit setzen wir auf Kontinuität: Bei uns kommt jede Woche dasselbe Kind zur selben Person, ein Semester lang und oft länger. Die Person denkt zwischen den Stunden an das Kind und bringt die offene Frage von letzter Woche wieder mit. Das schönste Gefühl für ein Kind ist, dass jemand auf es zählt und ihm zutraut, dass es das schafft.</p>
-        </div>
-        <div class="dsec" id="maschine">
-          <h2>Was menschliche Begleitung ausmacht</h2>
-          <p>Eine kleine explorative Studie mit acht fünf- und sechsjährigen Kindern verglich das gemeinsame Geschichtenerzählen mit ChatGPT (GPT-4) und einem Elternteil. ChatGPT gab dabei häufiger positive Rückmeldungen. Dieser Befund beschreibt die untersuchten Erzählsituationen; wie viel Lob Kinder im Alltag erhalten, wurde nicht gemessen (<a class="research-source" href="https://pure.ewha.ac.kr/en/publications/young-childrens-creative-storytelling-with-chatgpt-vs-parent-comp/">Chin et al., 2024</a>).</p>
-          <p>Für unsere Arbeit gilt: Digitale Werkzeuge können unterstützen. Die Begleitung und die pädagogische Verantwortung trägt ein Mensch, der das Kind kennt, nachfragt und auch in schwierigen Momenten an seiner Seite bleibt.</p>
-        </div>
-        <div class="dsec" id="wege">
-          <h2>Drei Wege, ein Ziel</h2>
-          <p>Mit der Forscherbühne wollen wir Staunen wecken und Wissenschaft für Kinder und Jugendliche in Basel unmittelbar erlebbar machen. Der Lernbus begleitet jedes Kind individuell in seinem eigenen Tempo, verlässlich an der Seite eines Menschen, der Vertrauen aufbaut und Entwicklung ermöglicht. Mit Gehirn und Gesellschaft planen wir, aktuelles Wissen darüber in die Schule zu bringen, wie Lernen gelingt, wie soziale Kompetenzen wachsen und welche Rolle Menschen und Technologien in Bildungsprozessen spielen. Unsere Arbeit orientiert sich dabei an den Grundsätzen der Reggio-Pädagogik: Kinder werden als aktive Mitgestalter ihrer Bildungsprozesse verstanden, und ihre Lernwege werden sichtbar gemacht. Drei Wege, ein Ziel: Kinder dabei zu unterstützen, die Welt zu verstehen, ihre Potenziale zu entfalten und sich in ihrer Einzigartigkeit verstanden zu fühlen.</p>
-        </div>
+          <div class="editorial-copy">
+            <p>Vertrauen entsteht nicht auf Knopfdruck. Es wächst mit Verlässlichkeit. Wie <a href="https://dschool.stanford.edu/directory/isabelle-hau">Isabelle C.&nbsp;Hau</a> (Executive Director des Stanford Accelerator for Learning) betont, sind tragfähige Beziehungen das Fundament gelingenden Lernens. Auch die Entwicklungspsychologin Susan Engel zeigt in ihrer Forschung zu Neugier im Schulalltag, wie stark die Fragefreude von Kindern davon abhängt, ob Erwachsene ihre Fragen ernst nehmen und aufgreifen.</p>
+            <p>Langzeituntersuchungen stützen dieses Bild aus unterschiedlichen Perspektiven: <a href="https://greatergood.berkeley.edu/images/uploads/Hamre__Pianta_2003.pdf#page=7">Hamre und Pianta (2001, S.&nbsp;631–632)</a> beobachteten bei 179 Kindern über die Primarschuljahre hinweg einen deutlichen Zusammenhang zwischen frühen Beziehungen zur Kindergartenlehrperson und dem späteren schulischen Verlauf. Auf Ebene ganzer Schulen brachte <a href="https://www.shankerinstitute.org/sites/default/files/Organizing-schools-for-improvemnt-Bryk%20%281%29.pdf#page=3">Anthony S.&nbsp;Bryk (2010)</a> Fortschritte in Lesen und Mathematik mit relationalem Vertrauen zwischen Schulleitung, Lehrpersonen, Eltern und Umfeld in Verbindung. Beide Arbeiten zeigen empirische Zusammenhänge, keine mechanischen Kausalgesetze; für die pädagogische Praxis liefern sie ein klares Orientierungswissen.</p>
+            <p>Deshalb setzen wir auf Kontinuität: Im Lernbus begegnet jedes Kind Woche für Woche derselben Bezugsperson, über ein Semester und oft länger. Diese Person erinnert sich an die offene Frage aus der Vorwoche und traut dem Kind den nächsten Schritt zu.</p>
+          </div>
+        </section>
+
+        <section class="editorial-section" id="maschine">
+          <h2>Menschliche Begleitung im Zeitalter von KI</h2>
+          <div class="editorial-copy">
+            <p>Digitale Werkzeuge und künstliche Intelligenz gehören zum Alltag, in dem Kinder heute aufwachsen. Sie können Erklärungen anbieten, Übungsmaterial variieren oder zum Experimentieren anregen. Eine kleine explorative Studie von <a href="https://pure.ewha.ac.kr/en/publications/young-childrens-creative-storytelling-with-chatgpt-vs-parent-comp/">Chin et al. (2024)</a> mit acht fünf- und sechsjährigen Kindern zeigte etwa, dass ein Sprachmodell beim gemeinsamen Geschichtenerzählen häufiger bestätigend reagierte als Eltern in derselben Versuchsanordnung.</p>
+            <p>Zustimmung ersetzt jedoch keine pädagogische Beziehung. Eine Maschine kann Antworten generieren, aber weder ein Kind wirklich kennen noch Verantwortung übernehmen oder in einem schwierigen Moment verlässlich dableiben. Genau diese menschlichen Fähigkeiten stehen im Kern unserer Arbeit.</p>
+          </div>
+        </section>
+
+        <section class="editorial-section" id="wege">
+          <h2>Vom Ansatz in die Praxis</h2>
+          <div class="editorial-copy">
+            <p>Unsere Haltung orientiert sich an Grundsätzen der Reggio-Pädagogik: Kinder sind aktive Mitgestalterinnen und Mitgestalter ihres Lernens, und ihre Lernwege verdienen Aufmerksamkeit und Sichtbarkeit. Diese Grundlage trägt alle Vorhaben des Vereins.</p>
+            <p>Im <a href="/lernbus/">Lernbus</a> begleiten wir Kinder am Münsterplatz&nbsp;17 wöchentlich einzeln oder in einer Kleingruppe, langfristig und in enger Verbindung mit Eltern, Kindergarten und Schule. Mit der geplanten <a href="/forscherbuehne/">Forscherbühne</a> knüpfen wir an die Tradition öffentlicher Wissenschaftsvorlesungen für Kinder an, wie sie die Royal Institution in London seit 1825 mit ihren Christmas Lectures pflegt. Und mit <a href="/gehirn-und-gesellschaft/">Gehirn und Gesellschaft</a> bereiten wir interaktive Lektionen für Schulklassen vor, die Lernen, Miteinander und künstliche Intelligenz gemeinsam beleuchten.</p>
+            <p>Wer den zugrunde liegenden Gedanken vertiefen möchte, findet in Jonas Hertners eigenständigem Essay <a href="/essays/relational-learning/de/">«Lernen in Beziehung»</a> (2026) eine ausführlichere Auseinandersetzung mit relationalem Lernen.</p>
+          </div>
+        </section>
       </div>
-      <p class="vignette">Jedes Kind will verstehen und verstanden werden.</p>
-      <div class="refs" id="quellen">
-        <h2>Quellen</h2>
+
+      <blockquote class="vignette-quote">
+        Jedes Kind will die Welt verstehen und in seinem Fragen verstanden werden.
+      </blockquote>
+
+      <section class="sources-section" id="quellen" aria-labelledby="sources-title">
+        <h2 id="sources-title">Quellen und Literatur</h2>
         <ul>
-          <li>EDK (Hrsg.), Überprüfung der Grundkompetenzen (ÜGK) 2024, Schulsprache und Mathematik, 4. Schuljahr HarmoS (2. Primarklasse), Nationaler Bericht, 2026, uegk-schweiz.ch.</li>
-          <li>Hairong Lu, Dimitri Van der Linden und Arnold B. Bakker, <a class="research-source" href="https://pure.eur.nl/ws/portalfiles/portal/214355874/1-s2.0-S1053811925000783-main.pdf">The neuroscientific basis of flow: Learning progress guides task engagement and cognitive control</a>, NeuroImage 308 (2025), 121076. Methoden: Abschnitte 2.1–2.3; Ergebnisse: Abschnitt 3.2.</li>
-          <li>Isabelle C. Hau, Welcome to the Era of Relational Intelligence, Stanford Social Innovation Review, Frühjahr 2026; dieselbe, Love to Learn: The Transformative Power of Care and Connection in Early Education, PublicAffairs, 2025.</li>
-          <li>Bridget K. Hamre und Robert C. Pianta, <a class="research-source" href="https://greatergood.berkeley.edu/images/uploads/Hamre__Pianta_2003.pdf#page=7">Early Teacher–Child Relationships and the Trajectory of Children’s School Outcomes through Eighth Grade</a>, Child Development 72(2), 2001, S. 625–638; Ergebnisse: S. 631–632.</li>
-          <li>Anthony S. Bryk, <a class="research-source" href="https://www.shankerinstitute.org/sites/default/files/Organizing-schools-for-improvemnt-Bryk%20%281%29.pdf">Organizing Schools for Improvement</a>, Phi Delta Kappan 91(7), April 2010, S. 23–30, insbesondere S. 25 und 27. <a class="research-source" href="https://consortium.uchicago.edu/sites/default/files/2018-10/EssentialSupports.pdf">Zugrunde liegender Forschungsbericht</a>, 2006, S. 26–29.</li>
-          <li>Jenna H. Chin et al., <a class="research-source" href="https://pure.ewha.ac.kr/en/publications/young-childrens-creative-storytelling-with-chatgpt-vs-parent-comp/">Young Children’s Creative Storytelling with ChatGPT vs. Parent: Comparing Interactive Styles</a>, CHI EA ’24 (2024), Artikel 379. Verlinkt ist der Abstract im Universitätsarchiv; <a class="research-source" href="https://doi.org/10.1145/3613905.3650770">Veröffentlichung bei ACM</a>.</li>
-          <li>Carolyn Edwards, Lella Gandini und George Forman (Hrsg.), The Hundred Languages of Children: The Reggio Emilia Experience in Transformation, 3. Auflage, Praeger, 2012.</li>
-          <li>The Royal Institution, History of the Christmas Lectures, rigb.org.</li>
+          <li>Hairong Lu, Dimitri Van der Linden und Arnold B.&nbsp;Bakker, <a href="https://pure.eur.nl/ws/portalfiles/portal/214355874/1-s2.0-S1053811925000783-main.pdf">The neuroscientific basis of flow: Learning progress guides task engagement and cognitive control</a>, <em>NeuroImage</em> 308 (2025), 121076 (Methoden: Abschnitte 2.1–2.3; Ergebnisse: Abschnitt 3.2).</li>
+          <li>Isabelle C.&nbsp;Hau, <em>Welcome to the Era of Relational Intelligence</em>, Stanford Social Innovation Review 24(2), Frühjahr 2026; dieselbe, <em>Love to Learn: The Transformative Power of Care and Connection in Early Education</em>, PublicAffairs, 2025.</li>
+          <li>Susan Engel, <em>The Hungry Mind: The Origins of Curiosity in Childhood</em>, Harvard University Press, 2015; dieselbe, «Children’s Need to Know: Curiosity in Schools», <em>Harvard Educational Review</em> 81(4), 2011, S.&nbsp;625–645.</li>
+          <li>Bridget K.&nbsp;Hamre und Robert C.&nbsp;Pianta, <a href="https://greatergood.berkeley.edu/images/uploads/Hamre__Pianta_2003.pdf#page=7">Early Teacher–Child Relationships and the Trajectory of Children’s School Outcomes through Eighth Grade</a>, <em>Child Development</em> 72(2), 2001, S.&nbsp;625–638 (insbesondere S.&nbsp;631–632).</li>
+          <li>Anthony S.&nbsp;Bryk, <a href="https://www.shankerinstitute.org/sites/default/files/Organizing-schools-for-improvemnt-Bryk%20%281%29.pdf">Organizing Schools for Improvement</a>, <em>Phi Delta Kappan</em> 91(7), April 2010, S.&nbsp;23–30 (insbesondere S.&nbsp;25 und 27); <a href="https://consortium.uchicago.edu/sites/default/files/2018-10/EssentialSupports.pdf">zugrunde liegender Forschungsbericht</a>, 2006, S.&nbsp;26–29.</li>
+          <li>Jenna H.&nbsp;Chin et al., <a href="https://pure.ewha.ac.kr/en/publications/young-childrens-creative-storytelling-with-chatgpt-vs-parent-comp/">Young Children’s Creative Storytelling with ChatGPT vs. Parent: Comparing Interactive Styles</a>, CHI EA ’24 (2024), Artikel 379 (<a href="https://doi.org/10.1145/3613905.3650770">Veröffentlichung bei ACM</a>).</li>
+          <li>Carolyn Edwards, Lella Gandini und George Forman (Hrsg.), <em>The Hundred Languages of Children: The Reggio Emilia Experience in Transformation</em>, 3. Auflage, Praeger, 2012.</li>
+          <li>The Royal Institution, <a href="https://www.rigb.org/christmas-lectures/history-christmas-lectures">History of the Christmas Lectures</a>, rigb.org.</li>
         </ul>
-      </div>
-      <div class="invest-row" style="display:flex; flex-wrap:wrap; gap:.9rem">
-        <a href="/#wege" class="btn btn-ghost">Die drei Wege ansehen</a>
+      </section>
+
+      <div class="page-actions-bar">
+        <a href="/lernbus/" class="btn-primary-dark"><span>Den Lernbus kennenlernen</span><span aria-hidden="true">→</span></a>
+        <a href="/essays/relational-learning/de/" class="btn-link-dark"><span>Essay: Lernen in Beziehung</span><span aria-hidden="true">→</span></a>
+        <a href="/#angebote" class="btn-link-dark"><span>Alle Angebote &amp; Vorhaben</span></a>
       </div>
     </div>
   </section>
 </main>
-{% include "society-landing-footer.njk" %}
+{% include "society-site-footer.njk" %}
 </body>
 </html>

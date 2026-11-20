@@ -1,0 +1,17 @@
+<header class="site-header{% if isHome %} site-header-home{% endif %}" id="top">
+  <div class="site-header-inner">
+    <a class="wordmark" href="{{ s.root }}">{{ s.brand }}<span>{{ s.brandSub }}</span></a>
+    <nav class="site-nav" aria-label="{{ s.navLabel }}">
+      {% for item in s.nav %}<a href="{% if isHome and item.homeUrl %}{{ item.homeUrl }}{% else %}{{ item.url }}{% endif %}"{% if activeNav == item.id %} aria-current="page"{% endif %}>{{ item.label }}</a>{% endfor %}
+    </nav>
+    <div class="header-controls">
+      {% if not hideLanguageSwitch %}<div class="languages" role="navigation" aria-label="{{ s.langLabel }}"><a href="{{ deUrl or '/' }}" lang="de" aria-label="{{ s.deLabel }}"{% if s.lang == 'de' %} aria-current="page"{% endif %}>DE</a><span aria-hidden="true">/</span><a href="{{ enUrl or '/en/' }}" lang="en" aria-label="{{ s.enLabel }}"{% if s.lang == 'en' %} aria-current="page"{% endif %}>EN</a></div>{% endif %}
+      <details class="site-mobile-menu">
+        <summary>{{ s.menuLabel }}</summary>
+        <nav class="mobile-nav-panel" aria-label="{{ s.navLabel }}">
+          {% for item in s.nav %}<a href="{% if isHome and item.homeUrl %}{{ item.homeUrl }}{% else %}{{ item.url }}{% endif %}"{% if activeNav == item.id %} aria-current="page"{% endif %}>{{ item.label }}</a>{% endfor %}
+        </nav>
+      </details>
+    </div>
+  </div>
+</header>

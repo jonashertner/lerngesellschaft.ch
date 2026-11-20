@@ -1,0 +1,51 @@
+<footer class="world-footer{% if not isHome %} world-footer-compact{% endif %}">
+  {% if isHome %}<div class="footer-world-stage" aria-hidden="true"><canvas id="footer-world-canvas"></canvas></div>{% endif %}
+  <div class="world-footer-inner">
+    {% if isHome %}
+    <section class="footer-invitation" id="investieren" aria-labelledby="support-title">
+      <div class="section-top"><p class="eyebrow">{{ s.home.supportKicker }}</p><span class="section-rule" aria-hidden="true"></span></div>
+      <h2 id="support-title" data-reveal>{{ s.home.supportTitle | safe }}</h2>
+      <div class="footer-conversation" data-reveal>
+        <div class="footer-support-copy">
+          <p>{{ s.home.supportIntro }}</p>
+          <p>{{ s.home.supportNote }}</p>
+        </div>
+        <div class="contact-block">
+          <a class="contact-link" href="mailto:team@jonashertner.com" aria-label="{{ s.home.mailLabel }}"><span class="contact-title">{{ s.home.contactAction }}</span><span class="contact-address">{{ s.home.contactMeta }}</span></a>
+        </div>
+      </div>
+    </section>
+    {% endif %}
+    <div class="footer-directory">
+      <div class="footer-principle">
+        <p>{{ s.footer.line | safe }}</p>
+        <span>{{ s.footer.status }}</span>
+      </div>
+      <nav aria-label="{{ s.footer.exploreTitle }}">
+        <h3 class="eyebrow">{{ s.footer.exploreTitle }}</h3>
+        {% for item in s.footer.explore %}<a href="{{ item.url }}"{% if canonicalPath == item.url %} aria-current="page"{% endif %}>{{ item.label }}</a>{% endfor %}
+      </nav>
+      <nav aria-label="{{ s.footer.legalTitle }}">
+        <h3 class="eyebrow">{{ s.footer.legalTitle }}</h3>
+        {% for item in s.footer.legal %}<a href="{{ item.url }}"{% if canonicalPath == item.url %} aria-current="page"{% endif %}>{{ item.label }}</a>{% endfor %}
+        {% if not hideLanguageSwitch %}<div class="footer-languages"><a href="{{ deUrl or '/' }}" lang="de"{% if s.lang == 'de' %} aria-current="page"{% endif %}>Deutsch</a><a href="{{ enUrl or '/en/' }}" lang="en"{% if s.lang == 'en' %} aria-current="page"{% endif %}>English</a></div>{% endif %}
+      </nav>
+      <div class="footer-address">
+        <h3 class="eyebrow">{{ s.footer.addressTitle }}</h3>
+        <address>Münsterplatz 17<br>4051 Basel<br>{{ s.footer.country }}</address>
+        <a href="mailto:team@jonashertner.com">team@jonashertner.com</a>
+      </div>
+    </div>
+    <a class="footer-signature" href="{{ s.root }}"><span>{{ s.brand }}</span><span>{{ s.brandSub }}</span></a>
+    <div class="footer-bottom">
+      <span>{{ s.footer.copyright }}</span>
+      <div class="footer-bottom-links">
+        <a href="{{ s.footer.imprintUrl }}">{{ s.footer.imprintLabel }}</a>
+        <a href="{{ s.footer.termsUrl }}">{{ s.footer.termsLabel }}</a>
+        {% if isHome %}<button class="motion-btn" id="footer-motion-toggle" type="button" data-pause="{{ s.home.pause }}" data-play="{{ s.home.play }}" aria-pressed="false" hidden><span class="motion-label">{{ s.home.pause }}</span></button>{% endif %}
+        <a href="#top" class="back-top">{{ s.footer.top }}</a>
+      </div>
+    </div>
+  </div>
+</footer>
+<script src="/assets/society-discovery.js?v={{ siteAssets.societyDiscovery }}" defer></script>
