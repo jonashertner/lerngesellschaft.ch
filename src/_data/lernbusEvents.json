@@ -1,8 +1,8 @@
 [
   {
     "date": "2026-11-25",
-    "start": "16:00",
-    "end": "18:00",
+    "start": "16.00",
+    "end": "18.00",
     "de": "Mittwoch, 25. November",
     "en": "Wednesday, 25 November",
     "place": "Münsterplatz 17",
@@ -11,8 +11,8 @@
   },
   {
     "date": "2026-11-30",
-    "start": "14:30",
-    "end": "15:30",
+    "start": "14.30",
+    "end": "15.30",
     "de": "Montag, 30. November",
     "en": "Monday, 30 November",
     "place": "Quartierzentrum Iselin",
@@ -21,8 +21,8 @@
   },
   {
     "date": "2026-12-09",
-    "start": "16:00",
-    "end": "18:00",
+    "start": "16.00",
+    "end": "18.00",
     "de": "Mittwoch, 9. Dezember",
     "en": "Wednesday, 9 December",
     "place": "Münsterplatz 17",
@@ -31,8 +31,8 @@
   },
   {
     "date": "2026-12-11",
-    "start": "09:00",
-    "end": "12:00",
+    "start": "9.00",
+    "end": "12.00",
     "de": "Freitag, 11. Dezember",
     "en": "Friday, 11 December",
     "place": "Münsterplatz 17",
@@ -41,8 +41,8 @@
   },
   {
     "date": "2026-12-16",
-    "start": "14:00",
-    "end": "16:00",
+    "start": "14.00",
+    "end": "16.00",
     "de": "Mittwoch, 16. Dezember",
     "en": "Wednesday, 16 December",
     "place": "Quartiertreffpunkt Hirzbrunnen",

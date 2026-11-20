@@ -4,7 +4,7 @@
   <div class="wrap contact-grid">
     <div class="contact-intro">
       <p class="eyebrow">{% if contactEnglish %}Get in touch{% else %}Kontakt{% endif %}</p>
-      <h2 class="big">{% if contactEnglish %}Enquire about a learning session or Zwischenhalt{% else %}Lernstunde oder Zwischenhalt anfragen{% endif %}</h2>
+      <h2 class="big">{% if contactEnglish %}Enquire about a Lernbus lesson or Zwischenhalt{% else %}Lernbus-Lektion oder Zwischenhalt anfragen{% endif %}</h2>
       <p class="lead">{% if contactEnglish %}We will get back to you within a few days to discuss your questions and the next steps.{% else %}Wir melden uns innert weniger Tage, um Ihre Fragen und die nächsten Schritte zu besprechen.{% endif %}</p>
       <a class="morelink" href="mailto:{{ lernbusContact.recipient | escape }}">{{ lernbusContact.recipient }}</a>
     </div>
