@@ -5,3 +5,16 @@ _site
 *.log
 output/lernbus-site-preview/
 output/lernbus-site-preview.tar.gz
+
+# Working files kept beside the source in the owner's checkout. Never publish.
+/*.docx
+/*.pdf
+/*.jpeg
+/*.jpg
+/Logo Lernbus/
+/Steuern/
+/output/
+/shots/
+/tmp/
+/.claude/settings.local.json
+/.claude/worktrees/
