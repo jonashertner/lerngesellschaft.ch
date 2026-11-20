@@ -820,50 +820,17 @@ textarea:focus-visible {
   color: var(--accent);
 }
 
-/* People & Association Section */
-.association-grid {
-  display: grid;
-  grid-template-columns: 1.05fr 1fr;
-  gap: clamp(36px, 6vw, 92px);
-  margin-top: clamp(44px, 5vw, 68px);
-}
-
-.facts-list {
-  margin-top: 0;
+/* Association Facts Strip */
+.facts-strip {
+  margin-top: clamp(54px, 6vw, 84px);
+  padding-top: clamp(30px, 3.6vw, 44px);
   border-top: 1px solid var(--line);
-}
-
-.facts-list > div {
   display: grid;
-  grid-template-columns: 140px 1fr;
-  gap: 12px 20px;
-  padding: 13px 0;
-  border-bottom: 1px solid var(--line);
-  font-size: 14.5px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(24px, 4vw, 48px);
 }
 
-.facts-list dt {
-  color: var(--ink-soft);
-  font-weight: 500;
-}
-
-.facts-list dd {
-  color: var(--ink);
-}
-
-.people-column {
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-  border-top: 1px solid var(--line);
-}
-
-.person-item {
-  padding: 26px 0;
-  border-bottom: 1px solid var(--line);
-}
-
-.person-role {
+.facts-strip dt {
   font-size: 12px;
   font-weight: 500;
   letter-spacing: 0.1em;
@@ -871,39 +838,13 @@ textarea:focus-visible {
   color: var(--ink-soft);
 }
 
-.person-name {
+.facts-strip dd {
   margin-top: 8px;
-  font-size: clamp(26px, 2.5vw, 34px);
-  line-height: 1.15;
-  letter-spacing: -0.03em;
+  font-family: Bradford, Georgia, 'Times New Roman', serif;
+  font-size: clamp(20px, 1.7vw, 24px);
+  line-height: 1.28;
+  letter-spacing: -0.02em;
   color: var(--ink);
-}
-
-.person-text {
-  margin-top: 10px;
-  font-size: 15.5px;
-  line-height: 1.65;
-  color: var(--ink-soft);
-  max-width: 48ch;
-}
-
-.person-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-  min-height: 44px;
-  margin-top: 10px;
-  font-size: 14.5px;
-  font-weight: 500;
-  color: var(--ink);
-  border-bottom: 1px solid var(--ink);
-  padding: 6px 0;
-  transition: color 0.2s, border-color 0.2s;
-}
-
-.person-link:hover {
-  color: var(--accent);
-  border-color: var(--accent);
 }
 
 /* ==========================================================================
@@ -916,7 +857,7 @@ textarea:focus-visible {
   overflow: hidden;
   background: var(--night);
   color: var(--cream);
-  padding: clamp(72px, 7.5vw, 104px) var(--gutter) 28px;
+  padding: clamp(56px, 5.5vw, 84px) var(--gutter) 28px;
 }
 
 .world-footer-compact {
@@ -1025,8 +966,6 @@ textarea:focus-visible {
   display: grid;
   grid-template-columns: 1.35fr 1fr 1fr 1fr;
   gap: 36px 40px;
-  padding-top: 44px;
-  border-top: 1px solid var(--line-dark);
 }
 
 .world-footer-compact .footer-directory {
@@ -1701,7 +1640,8 @@ textarea:focus-visible {
     padding-top: 0;
   }
 
-  .principles-strip {
+  .principles-strip,
+  .facts-strip {
     grid-template-columns: 1fr;
     gap: 28px;
   }

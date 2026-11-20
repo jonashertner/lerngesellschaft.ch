@@ -15,7 +15,7 @@
     <div class="sculpture-stage" aria-hidden="true" data-observation="{{ s.home.observation | dump | escape }}"><canvas id="world-canvas"></canvas></div>
     <div class="hero-bottom">
       <div class="hero-bottom-inner">
-        <span class="hero-location">{{ s.home.heroFoot }}</span>
+        <span class="hero-location">{{ s.home.heroFoot | safe }}</span>
         <button class="motion-btn" id="motion-toggle" type="button" data-pause="{{ s.home.pause }}" data-play="{{ s.home.play }}" aria-pressed="false" hidden><span class="motion-label">{{ s.home.pause }}</span></button>
       </div>
     </div>
@@ -47,6 +47,8 @@
     <span id="wege" class="legacy-anchor" aria-hidden="true"></span>
     <span id="worum" class="legacy-anchor" aria-hidden="true"></span>
     <span id="ziele" class="legacy-anchor" aria-hidden="true"></span>
+    <span id="forscherbuehne" class="legacy-anchor" aria-hidden="true"></span>
+    <span id="gehirn-und-gesellschaft" class="legacy-anchor" aria-hidden="true"></span>
     <div class="wrap-inner">
       <div class="section-top"><span class="eyebrow">{{ s.home.offersKicker }}</span><span class="section-rule" aria-hidden="true"></span></div>
       <div class="chapter-grid" data-reveal>
@@ -70,36 +72,6 @@
             <span class="programme-action"><span>{{ s.home.lernbus.action }}</span><span aria-hidden="true">→</span></span>
           </a>
         </article>
-        {% for item in s.home.planned %}
-        <article class="programme-row programme-planned" id="{{ item.id }}" data-reveal>
-          <a class="programme-link" href="{{ item.url }}">
-            <div>
-              <div class="programme-meta"><span class="programme-num">{{ item.number }}</span><span class="status-badge">{{ s.home.plannedBadge }}</span></div>
-              <span class="programme-name">{{ item.name }}</span>
-              <span class="programme-audience">{{ item.audience }}</span>
-            </div>
-            <div class="programme-desc">
-              <p>{{ item.description }}</p>
-            </div>
-            <span class="programme-action"><span>{{ item.action }}</span><span aria-hidden="true">→</span></span>
-          </a>
-        </article>
-        {% endfor %}
-      </div>
-      <div class="open-work" data-reveal>
-        <p class="eyebrow">{{ s.home.openWorkLabel }}</p>
-        <div class="open-work-grid">
-          {% for item in s.home.openWork %}
-          <a class="open-work-card" href="{{ item.url }}">
-            <div>
-              <span class="open-work-meta">{{ item.label }}</span>
-              <span class="open-work-title">{{ item.title }}</span>
-              <p class="open-work-text">{{ item.text }}</p>
-            </div>
-            <span class="open-work-action"><span>{{ item.action }}</span><span aria-hidden="true">→</span></span>
-          </a>
-          {% endfor %}
-        </div>
       </div>
     </div>
   </section>
@@ -114,30 +86,16 @@
           <p class="chapter-body">{{ s.home.associationBody }}</p>
         </div>
       </div>
-      <div class="association-grid" data-reveal>
-        <div>
-          <dl class="facts-list">
-            {% for fact in s.home.associationFacts %}
-            <div><dt>{{ fact.label }}</dt><dd>{{ fact.value | safe }}</dd></div>
-            {% endfor %}
-          </dl>
-        </div>
-        <div class="people-column">
-          {% for person in s.home.people %}
-          <article class="person-item">
-            <p class="person-role">{{ person.role }}</p>
-            <h3 class="person-name">{{ person.name }}</h3>
-            <p class="person-text">{{ person.text }}</p>
-            <a class="person-link" href="{{ person.url }}"><span>{{ person.action }}</span><span aria-hidden="true">→</span></a>
-          </article>
-          {% endfor %}
-        </div>
-      </div>
+      <dl class="facts-strip" data-reveal>
+        {% for fact in s.home.associationFacts %}
+        <div><dt>{{ fact.label }}</dt><dd>{{ fact.value | safe }}</dd></div>
+        {% endfor %}
+      </dl>
     </div>
   </section>
 </main>
 {% include "society-site-footer.njk" %}
-<noscript><style>.sculpture-stage,.footer-world-stage{display:none}.world-hero{min-height:0}.hero-editorial{width:100%;padding:44px 0 88px}.reveal-pending{opacity:1;transform:none}</style></noscript>
+<noscript><style>.sculpture-stage{display:none}.world-hero{min-height:0}.hero-editorial{width:100%;padding:44px 0 88px}.reveal-pending{opacity:1;transform:none}</style></noscript>
 <script src="/assets/society-earth-data.js?v={{ siteAssets.societyEarthData }}" defer></script>
 <script src="/assets/society-dot-renderer.js?v={{ siteAssets.societyDotRenderer }}" defer></script>
 <script src="/assets/society-dot-world.js?v={{ siteAssets.societyDotWorld }}" defer></script>
