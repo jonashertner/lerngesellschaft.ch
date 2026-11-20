@@ -10,16 +10,26 @@ Ein Eleventy-Projekt. Es erzeugt lerngesellschaft.ch. Die Adresse lernbus.ch
 leitet auf https://lerngesellschaft.ch/lernbus/ weiter. Jeder Stand auf `main`
 wird automatisch veröffentlicht (`.github/workflows/deploy.yml`).
 
-## Arbeitsweise: immer über einen Pull Request
+## Arbeitsweise: direkt auf `main`, jeder Push ist sofort live
 
-1. Für jede Änderung einen neuen Branch von `main` anlegen.
+Änderungen werden direkt auf `main` committet. Etwa eine Minute nach dem Push
+sind sie öffentlich, ohne weitere Prüfung. Deshalb:
+
+1. Vor jeder Arbeit `git pull` ausführen. Auch Jonas und seine Werkzeuge
+   arbeiten direkt auf `main`.
 2. Nur die Dateien ändern, die für die gewünschte Änderung nötig sind.
-3. Bauen und prüfen (siehe unten), dann einen Pull Request gegen `main` öffnen.
-   Im Pull Request kurz beschreiben, was sich für Besucherinnen und Besucher
-   ändert und auf welchen Seiten (Deutsch und Englisch).
-4. Nie direkt auf `main` pushen, nie selbst mergen und keine Einstellungen des
-   Repositorys ändern. Jonas prüft und veröffentlicht. Der Merge ist die
-   Veröffentlichung.
+3. Vor jedem Push bauen und prüfen (siehe unten) und die geänderten Seiten in
+   der Vorschau ansehen. Schlägt eine Prüfung fehl, nicht pushen.
+4. Vor dem Push der Person, für die du arbeitest, kurz zeigen, was sich ändert,
+   und ihr Einverständnis abwarten.
+5. Klare Commit-Nachricht: was sich für Besucherinnen und Besucher ändert und
+   auf welchen Seiten (Deutsch und Englisch).
+6. Nach dem Push prüfen, ob der Workflow «deploy» erfolgreich war und die Seite
+   live richtig aussieht. Bei einem Fehler den Commit mit `git revert`
+   rückgängig machen und erneut pushen.
+7. Nie mit Force pushen, keine Branches löschen und keine Einstellungen des
+   Repositorys ändern. Grössere Umbauten auf einem eigenen Branch vorbereiten
+   und Jonas zeigen.
 
 ## Wo die Lernbus-Inhalte stehen
 
@@ -44,7 +54,7 @@ Standardsprache mit ss, ohne lange Gedankenstriche (Geviertstriche).
 
 Diese Bereiche haben rechtliche, finanzielle oder technische Folgen. Hier nur
 ändern, wenn Jonas es im konkreten Fall ausdrücklich verlangt hat, und dies im
-Pull Request vermerken:
+Commit vermerken:
 
 - AGB: `src/lernbus/agb/`, `src/lernbus/en/terms/`, `src/_includes/agb.njk`.
 - Tarife und Preise: `src/_data/lernbusTariffGuide.json`,
@@ -78,7 +88,7 @@ node --test scripts/check-lernbus-contact.mjs
 ```
 
 `npm run dev` startet eine Vorschau unter http://localhost:8080/lernbus/.
-Vor dem Pull Request die geänderten Seiten in der Vorschau ansehen, auf
+Vor dem Push die geänderten Seiten in der Vorschau ansehen, auf
 Desktop- und Handybreite.
 
 `scripts/check-lernbus-copy.py` vergleicht den Wortlaut mit einem älteren
