@@ -1,56 +1,52 @@
 [
   {
-    "date": "2026-10-23",
-    "start": "09:00",
-    "end": "11:00",
-    "de": "Freitag, 23. Oktober",
-    "en": "Friday, 23 October",
-    "startISO": "2026-10-23T09:00:00+02:00",
-    "endISO": "2026-10-23T11:00:00+02:00"
-  },
-  {
-    "date": "2026-10-26",
+    "date": "2026-11-25",
     "start": "16:00",
     "end": "18:00",
-    "de": "Montag, 26. Oktober",
-    "en": "Monday, 26 October",
-    "startISO": "2026-10-26T16:00:00+01:00",
-    "endISO": "2026-10-26T18:00:00+01:00"
+    "de": "Mittwoch, 25. November",
+    "en": "Wednesday, 25 November",
+    "place": "Münsterplatz 17",
+    "startISO": "2026-11-25T16:00:00+01:00",
+    "endISO": "2026-11-25T18:00:00+01:00"
   },
   {
-    "date": "2026-11-20",
-    "start": "09:00",
-    "end": "11:00",
-    "de": "Freitag, 20. November",
-    "en": "Friday, 20 November",
-    "startISO": "2026-11-20T09:00:00+01:00",
-    "endISO": "2026-11-20T11:00:00+01:00"
+    "date": "2026-11-30",
+    "start": "14:30",
+    "end": "15:30",
+    "de": "Montag, 30. November",
+    "en": "Monday, 30 November",
+    "place": "Quartierzentrum Iselin",
+    "startISO": "2026-11-30T14:30:00+01:00",
+    "endISO": "2026-11-30T15:30:00+01:00"
   },
   {
-    "date": "2026-11-23",
+    "date": "2026-12-09",
     "start": "16:00",
     "end": "18:00",
-    "de": "Montag, 23. November",
-    "en": "Monday, 23 November",
-    "startISO": "2026-11-23T16:00:00+01:00",
-    "endISO": "2026-11-23T18:00:00+01:00"
+    "de": "Mittwoch, 9. Dezember",
+    "en": "Wednesday, 9 December",
+    "place": "Münsterplatz 17",
+    "startISO": "2026-12-09T16:00:00+01:00",
+    "endISO": "2026-12-09T18:00:00+01:00"
   },
   {
     "date": "2026-12-11",
     "start": "09:00",
-    "end": "11:00",
-    "de": "Freitag, 11. Dezember",
-    "en": "Friday, 11 December",
+    "end": "12:00",
+    "de": "Freitag, 11. Dezember",
+    "en": "Friday, 11 December",
+    "place": "Münsterplatz 17",
     "startISO": "2026-12-11T09:00:00+01:00",
-    "endISO": "2026-12-11T11:00:00+01:00"
+    "endISO": "2026-12-11T12:00:00+01:00"
   },
   {
-    "date": "2026-12-14",
-    "start": "16:00",
-    "end": "18:00",
-    "de": "Montag, 14. Dezember",
-    "en": "Monday, 14 December",
-    "startISO": "2026-12-14T16:00:00+01:00",
-    "endISO": "2026-12-14T18:00:00+01:00"
+    "date": "2026-12-16",
+    "start": "14:00",
+    "end": "16:00",
+    "de": "Mittwoch, 16. Dezember",
+    "en": "Wednesday, 16 December",
+    "place": "Quartiertreffpunkt Hirzbrunnen",
+    "startISO": "2026-12-16T14:00:00+01:00",
+    "endISO": "2026-12-16T16:00:00+01:00"
   }
 ]

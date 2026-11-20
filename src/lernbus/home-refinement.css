@@ -90,3 +90,53 @@
 @media print{
  .source-home #warum,.source-home #kosten{--bg:#fff;--yellow:var(--ink);background:#fff;color:var(--ink)}
 }
+
+/* Angebotsübersicht (Für wen, wo und wann?) */
+.source-home .offers{grid-column:1/-1;width:100%;border-collapse:collapse;margin-top:2rem;font-size:1rem;line-height:1.5}
+.source-home .offers thead th{font-size:.875rem;font-weight:500;color:var(--teal-soft);text-align:left;padding:0 1rem .75rem 0;border-bottom:1px solid var(--hairline)}
+.source-home .offers tbody th,.source-home .offers td{text-align:left;vertical-align:top;padding:1.1rem 1rem 1.1rem 0;border-bottom:1px solid var(--hairline)}
+.source-home .offers tbody th{font-weight:700;color:var(--violet)}
+.source-home .offers td:nth-child(4){white-space:nowrap;font-variant-numeric:tabular-nums}
+@media(max-width:48rem){
+ .source-home .offers,.source-home .offers tbody,.source-home .offers tr{display:block;width:100%}
+ .source-home .offers thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%)}
+ .source-home .offers tbody tr{display:grid;grid-template-columns:minmax(0,1fr);gap:.35rem;padding:1.25rem 0;border-bottom:1px solid var(--hairline)}
+ .source-home .offers tbody th,.source-home .offers td{display:block;padding:0;border:0}
+ .source-home .offers tbody th{order:-1;font-size:1.25rem}
+ .source-home .offers td::before{content:attr(data-label) ": ";color:var(--teal-soft);font-size:.875rem}
+}
+
+/* Was der Lernbus bringt / Was wir anbieten */
+.source-home #ansatz>.wrap>h2.big{grid-column:1/-1}
+.source-home #angebot h2.big{font-size:clamp(2rem,3.6vw,3.6rem)}
+
+/* Ort pro Kennenlern-Termin */
+.event-list .event-place{flex-basis:100%;white-space:normal;color:var(--teal-soft);font-size:.9375rem}
+
+/* Zweiter Absatz im Kopfbereich */
+.source-home .hero .hero-sub{font-size:clamp(1.3rem,1.8vw,1.6rem);line-height:1.25;color:var(--violet);margin:1.75rem 0 .6rem;max-width:34ch}
+
+/* Abschnitt «Was der Lernbus bringt» dezent abgesetzt */
+.source-home section#ansatz{background:#f6f4f9}
+.source-home section#ansatz{position:relative;overflow:visible}
+.source-home .section-flower{position:absolute;z-index:2;bottom:-4.5rem;right:max(var(--pad),calc((100vw - var(--wrap)) / 2 + var(--pad)));width:150px;height:auto;transform:rotate(14deg);pointer-events:none}
+@media(max-width:48rem){
+ .source-home .section-flower{width:84px;bottom:-2.5rem}
+}
+
+/* Einstiegstext im Kopfbereich gleich gross */
+.source-home .hero .hero-more{margin-top:0}
+
+/* Bausteine-Ausschnitt bei «Was wir anbieten» */
+.source-home .offer-head{display:flex;align-items:flex-end;justify-content:flex-start;gap:3.5rem}
+.source-home .offer-art{flex:0 0 auto;width:250px;margin:0;order:-1}
+.source-home .offer-art img{display:block;width:100%;height:auto;padding:8px;background:#fff;box-shadow:0 12px 30px rgba(46,40,87,.14);transform:rotate(-3deg)}
+@media(max-width:48rem){
+ .source-home .offer-head{flex-direction:column;align-items:flex-start;gap:1.5rem}
+ .source-home .offer-art{width:52%;align-self:flex-start}
+}
+
+/* Mädchen mit Bausteinen (aus dem Bild unten auf der Seite) bei den Terminen */
+.news-intro .news-maedchen{display:block;width:300px;height:auto;margin:3rem 0 0}
+@media(max-width:48rem){.news-intro .news-maedchen{width:200px;margin-top:2rem}}
+
