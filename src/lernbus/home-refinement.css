@@ -140,3 +140,31 @@
 .news-intro .news-maedchen{display:block;width:300px;height:auto;margin:3rem 0 0}
 @media(max-width:48rem){.news-intro .news-maedchen{width:200px;margin-top:2rem}}
 
+/* Kopf, der zur Sonne hochschaut, bei der Angebotsübersicht */
+.source-home #zielgruppe .overview-head{grid-column:1/-1;display:flex;align-items:flex-end;justify-content:space-between;gap:2rem}
+.source-home #zielgruppe .overview-head h2{max-width:none;hyphens:auto;overflow-wrap:normal;word-break:normal;min-width:0}
+.source-home .kopf-sonne{position:relative;flex:0 0 auto;width:300px;height:250px;margin:-2rem 1rem -1rem 0}
+.source-home .kopf-sonne .ks-sonne{position:absolute;left:30px;top:6px;width:104px;height:auto}
+.source-home .kopf-sonne .ks-kopf{position:absolute;right:0;bottom:0;width:195px;height:auto;transform:rotate(26deg);transform-origin:60% 90%}
+@media(max-width:48rem){
+ .source-home .kopf-sonne{width:150px;height:125px;margin:-1rem 0 -.5rem}
+ .source-home .kopf-sonne .ks-sonne{width:52px}
+ .source-home .kopf-sonne .ks-kopf{width:90px}
+}
+
+/* Farbstift bei den Terminen */
+.news-intro .news-stift{display:block;width:230px;height:auto;margin:3rem 0 0 2rem;transform:scaleX(-1) rotate(4deg)}
+@media(max-width:48rem){.news-intro .news-stift{width:130px;margin:1.5rem 0 0 1rem}}
+/* Tariftabelle mit Zwischenhalt-Spalten */
+.source-home .tariffs--wide thead th{width:13.2%;font-size:.875rem;line-height:1.35}
+.source-home .tariffs--wide thead th:first-child,.source-home .tariffs--wide tbody th{width:34%}
+.source-home .tariffs--wide td{font-size:clamp(1.15rem,1.6vw,1.5rem);padding-inline:1rem}
+.source-home #kosten .tariffs-footnote{grid-column:1/-1;margin-top:1rem;font-size:.9375rem;line-height:1.5;color:var(--ink)}
+@media(max-width:64rem){.source-home .tariffs--wide thead th{font-size:.8125rem}}
+@media(max-width:48rem){
+ .source-home .tariffs--wide tbody tr{grid-template-columns:minmax(0,1fr);gap:0}
+ .source-home .tariffs--wide tbody th{width:auto;margin-bottom:.9rem}
+ .source-home .tariffs--wide td,.source-home .tariffs--wide td+td{display:flex;align-items:baseline;justify-content:space-between;gap:1rem;padding:.6rem 0;border:0;border-top:1px solid var(--hairline);font-size:1.25rem;white-space:nowrap}
+ .source-home .tariffs--wide td::before{content:attr(data-label);display:block;min-height:0;margin:0;flex:1 1 auto;font-size:.875rem;line-height:1.35;white-space:normal}
+}
+
