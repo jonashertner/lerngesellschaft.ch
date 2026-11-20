@@ -1,79 +1,62 @@
 BEGIN:VCALENDAR
 VERSION:2.0
-PRODID:-//Lernbus//Offene Tueren 2026//DE
+PRODID:-//Lernbus//Open Doors 2026//EN
 CALSCALE:GREGORIAN
 METHOD:PUBLISH
-X-WR-CALNAME:Lernbus – Open doors in autumn 2026
+X-WR-CALNAME:Lernbus – Get to know us 2026
 BEGIN:VEVENT
-UID:lernbus-offene-tueren-2026-10-23@lernbus.ch
-DTSTAMP:20261021T120000Z
-DTSTART:20261023T070000Z
-DTEND:20261023T090000Z
-SUMMARY:Lernbus – Open doors
+UID:lernbus-offene-tueren-2026-11-25@lernbus.ch
+DTSTAMP:20261120T120000Z
+DTSTART:20261125T150000Z
+DTEND:20261125T170000Z
+SUMMARY:Lernbus – get to know us
 LOCATION:Münsterplatz 17\, 4051 Basel
-DESCRIPTION:Discover Lernbus with your child\, try out the play materials a
- nd ask questions\, with no obligation.\nhttps://lerngesellschaft.ch/lernbu
- s/en/#aktuelles
+DESCRIPTION:Drop by\, get to know us and ask your questions.\nhttps://lerng
+ esellschaft.ch/lernbus/en/#aktuelles
 URL:https://lerngesellschaft.ch/lernbus/en/#aktuelles
 END:VEVENT
 BEGIN:VEVENT
-UID:lernbus-offene-tueren-2026-10-26@lernbus.ch
-DTSTAMP:20261021T120000Z
-DTSTART:20261026T150000Z
-DTEND:20261026T170000Z
-SUMMARY:Lernbus – Open doors
-LOCATION:Münsterplatz 17\, 4051 Basel
-DESCRIPTION:Discover Lernbus with your child\, try out the play materials a
- nd ask questions\, with no obligation.\nhttps://lerngesellschaft.ch/lernbu
- s/en/#aktuelles
+UID:lernbus-offene-tueren-2026-11-30@lernbus.ch
+DTSTAMP:20261120T120000Z
+DTSTART:20261130T133000Z
+DTEND:20261130T143000Z
+SUMMARY:Lernbus – get to know us
+LOCATION:Quartierzentrum Iselin\, Basel
+DESCRIPTION:Drop by\, get to know us and ask your questions.\nhttps://lerng
+ esellschaft.ch/lernbus/en/#aktuelles
 URL:https://lerngesellschaft.ch/lernbus/en/#aktuelles
 END:VEVENT
 BEGIN:VEVENT
-UID:lernbus-offene-tueren-2026-11-20@lernbus.ch
-DTSTAMP:20261021T120000Z
-DTSTART:20261120T080000Z
-DTEND:20261120T100000Z
-SUMMARY:Lernbus – Open doors
+UID:lernbus-offene-tueren-2026-12-09@lernbus.ch
+DTSTAMP:20261120T120000Z
+DTSTART:20261209T150000Z
+DTEND:20261209T170000Z
+SUMMARY:Lernbus – get to know us
 LOCATION:Münsterplatz 17\, 4051 Basel
-DESCRIPTION:Discover Lernbus with your child\, try out the play materials a
- nd ask questions\, with no obligation.\nhttps://lerngesellschaft.ch/lernbu
- s/en/#aktuelles
-URL:https://lerngesellschaft.ch/lernbus/en/#aktuelles
-END:VEVENT
-BEGIN:VEVENT
-UID:lernbus-offene-tueren-2026-11-23@lernbus.ch
-DTSTAMP:20261021T120000Z
-DTSTART:20261123T150000Z
-DTEND:20261123T170000Z
-SUMMARY:Lernbus – Open doors
-LOCATION:Münsterplatz 17\, 4051 Basel
-DESCRIPTION:Discover Lernbus with your child\, try out the play materials a
- nd ask questions\, with no obligation.\nhttps://lerngesellschaft.ch/lernbu
- s/en/#aktuelles
+DESCRIPTION:Drop by\, get to know us and ask your questions.\nhttps://lerng
+ esellschaft.ch/lernbus/en/#aktuelles
 URL:https://lerngesellschaft.ch/lernbus/en/#aktuelles
 END:VEVENT
 BEGIN:VEVENT
 UID:lernbus-offene-tueren-2026-12-11@lernbus.ch
-DTSTAMP:20261021T120000Z
+DTSTAMP:20261120T120000Z
 DTSTART:20261211T080000Z
-DTEND:20261211T100000Z
-SUMMARY:Lernbus – Open doors
+DTEND:20261211T110000Z
+SUMMARY:Lernbus – get to know us
 LOCATION:Münsterplatz 17\, 4051 Basel
-DESCRIPTION:Discover Lernbus with your child\, try out the play materials a
- nd ask questions\, with no obligation.\nhttps://lerngesellschaft.ch/lernbu
- s/en/#aktuelles
+DESCRIPTION:Drop by\, get to know us and ask your questions.\nhttps://lerng
+ esellschaft.ch/lernbus/en/#aktuelles
 URL:https://lerngesellschaft.ch/lernbus/en/#aktuelles
 END:VEVENT
 BEGIN:VEVENT
-UID:lernbus-offene-tueren-2026-12-14@lernbus.ch
-DTSTAMP:20261021T120000Z
-DTSTART:20261214T150000Z
-DTEND:20261214T170000Z
-SUMMARY:Lernbus – Open doors
-LOCATION:Münsterplatz 17\, 4051 Basel
-DESCRIPTION:Discover Lernbus with your child\, try out the play materials a
- nd ask questions\, with no obligation.\nhttps://lerngesellschaft.ch/lernbu
- s/en/#aktuelles
+UID:lernbus-offene-tueren-2026-12-16@lernbus.ch
+DTSTAMP:20261120T120000Z
+DTSTART:20261216T130000Z
+DTEND:20261216T150000Z
+SUMMARY:Lernbus – get to know us
+LOCATION:Quartiertreffpunkt Hirzbrunnen\, Basel
+DESCRIPTION:Drop by\, get to know us and ask your questions.\nhttps://lerng
+ esellschaft.ch/lernbus/en/#aktuelles
 URL:https://lerngesellschaft.ch/lernbus/en/#aktuelles
 END:VEVENT
 END:VCALENDAR
