@@ -24,8 +24,8 @@
 <link rel="preload" href="/assets/fonts/hanken-latin.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="stylesheet" href="/assets/society-site.css?v={{ siteAssets.societySite }}" />
 {% if isHome %}<link rel="preload" href="/assets/society-earth-data.js?v={{ siteAssets.societyEarthData }}" as="script" />
-<link rel="preload" href="/assets/society-dot-renderer.js?v={{ siteAssets.societyDotRenderer }}" as="script" />
-<link rel="preload" href="/assets/society-dot-world.js?v={{ siteAssets.societyDotWorld }}" as="script" />
+<link rel="preload" href="/assets/society-ascii-renderer.js?v={{ siteAssets.societyAsciiRenderer }}" as="script" />
+<link rel="preload" href="/assets/society-ascii-world.js?v={{ siteAssets.societyAsciiWorld }}" as="script" />
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"NGO","name":"{% if s.lang == 'en' %}Learning Society / Lerngesellschaft{% else %}Lerngesellschaft / Learning Society{% endif %}","url":"https://lerngesellschaft.ch{{ canonicalPath }}","areaServed":"Basel","description":{{ pageDescription | dump | safe }},"email":"team@jonashertner.com","address":{"@type":"PostalAddress","streetAddress":"Münsterplatz 17","postalCode":"4051","addressLocality":"Basel","addressCountry":"CH"}}
 </script>

@@ -12,8 +12,8 @@ export default () => Object.fromEntries(
     ['societySite', 'society-site.css'],
     ['societyDiscovery', 'society-discovery.js'],
     ['societyEarthData', 'society-earth-data.js'],
-    ['societyDotRenderer', 'society-dot-renderer.js'],
-    ['societyDotWorld', 'society-dot-world.js'],
+    ['societyAsciiRenderer', 'society-ascii-renderer.js'],
+    ['societyAsciiWorld', 'society-ascii-world.js'],
     ['societySocialCard', 'media/society-social-card.png']
   ].map(([key, filename]) => [
     key,

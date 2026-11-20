@@ -1,7 +1,7 @@
-/* The observed butterfly and its quiet companion share one clock and an optional, accessible motion preference. */
+/* Roots and wings share one clock and an optional, accessible motion preference. */
 (() => {
   'use strict';
-  if (typeof window.createDotButterflyRenderer !== 'function') return;
+  if (typeof window.createRootsAndWingsRenderer !== 'function') return;
   const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
   const surfaces = [], controls = [];
   let time = 0, userPaused = null, frame = 0, lastDraw = 0, pageActive = true;
@@ -85,7 +85,7 @@
   function resize(surface) {
     const r = surface.canvas.getBoundingClientRect();
     const width = Math.max(1, r.width), height = Math.max(1, r.height);
-    const mobile = innerWidth < 760;
+    const mobile = innerWidth <= 760;
     const pixelRatio = Math.min(devicePixelRatio || 1, mobile ? 1.5 : 2);
     if (surface.width === width && surface.height === height &&
         surface.mobile === mobile && surface.pixelRatio === pixelRatio && !surface.dirty) return;
@@ -135,21 +135,16 @@
     const stage = canvas && canvas.closest('.sculpture-stage, .footer-world-stage');
     if (!stage || !control) return;
     const pointer = { x: 0, y: 0, tx: 0, ty: 0, strength: 0, active: false };
-    // The hero carries a few words for its observation layer; the footer has none.
-    let words = null;
-    try { words = stage.dataset.observation ? JSON.parse(stage.dataset.observation) : null; }
-    catch (_) { words = null; }
-    const options = { words, language: document.documentElement.lang || undefined };
     let renderer;
-    try { renderer = window.createDotButterflyRenderer(canvas, options); }
+    try { renderer = window.createRootsAndWingsRenderer(canvas); }
     catch (_) { return; }
     if (!renderer || typeof renderer.draw !== 'function') return;
     const surface = { canvas, stage, renderer, pointer, available: true, seen: false, dirty: true,
       hero: interactive, arrivalTime: interactive && !reduced.matches ? 0 : null,
       width: 1, height: 1, pixelRatio: 1, mobile: false, burst: null, press: null,
-      options, args: { pointer } };
+      args: { pointer } };
     surfaces.push(surface); controls.push(control);
-    stage.dataset.renderer = 'dots';
+    stage.dataset.renderer = 'ascii';
     control.addEventListener('click', () => { userPaused = !paused(); sync(); });
     canvas.addEventListener('contextlost', event => {
       event.preventDefault(); surface.available = false;
@@ -158,7 +153,7 @@
     canvas.addEventListener('contextrestored', () => {
       try {
         surface.renderer.dispose();
-        surface.renderer = window.createDotButterflyRenderer(canvas, surface.options);
+        surface.renderer = window.createRootsAndWingsRenderer(canvas);
         surface.available = Boolean(surface.renderer);
         surface.dirty = true;
         resize(surface); checkVisibility();
@@ -204,9 +199,5 @@
     surfaces.forEach(surface => observer.observe(surface.stage));
   }
   window.addEventListener('resize', () => { surfaces.forEach(resize); checkVisibility(); }, { passive: true });
-  // A still frame, paused or reduced, is redrawn once its label type has loaded.
-  if (document.fonts && document.fonts.ready) {
-    document.fonts.ready.then(() => { surfaces.forEach(surface => { surface.dirty = true; }); sync(); }).catch(() => {});
-  }
   checkVisibility();
 })();

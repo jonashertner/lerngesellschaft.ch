@@ -12,7 +12,7 @@
         </div>
       </div>
     </div>
-    <div class="sculpture-stage" aria-hidden="true" data-observation="{{ s.home.observation | dump | escape }}"><canvas id="world-canvas"></canvas></div>
+    <div class="sculpture-stage" aria-hidden="true"><canvas id="world-canvas"></canvas></div>
     <div class="hero-bottom">
       <div class="hero-bottom-inner">
         <span class="hero-location">{{ s.home.heroFoot | safe }}</span>
@@ -97,5 +97,5 @@
 {% include "society-site-footer.njk" %}
 <noscript><style>.sculpture-stage{display:none}.world-hero{min-height:0}.hero-editorial{width:100%;padding:44px 0 88px}.reveal-pending{opacity:1;transform:none}</style></noscript>
 <script src="/assets/society-earth-data.js?v={{ siteAssets.societyEarthData }}" defer></script>
-<script src="/assets/society-dot-renderer.js?v={{ siteAssets.societyDotRenderer }}" defer></script>
-<script src="/assets/society-dot-world.js?v={{ siteAssets.societyDotWorld }}" defer></script>
+<script src="/assets/society-ascii-renderer.js?v={{ siteAssets.societyAsciiRenderer }}" defer></script>
+<script src="/assets/society-ascii-world.js?v={{ siteAssets.societyAsciiWorld }}" defer></script>
