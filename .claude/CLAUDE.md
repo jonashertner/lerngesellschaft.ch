@@ -64,6 +64,9 @@ Alle Inhalte und die Gestaltung des Lernbus, insbesondere:
 - Termine, Bilder, Elternstimmen und die CSS-Dateien in `src/lernbus/`.
 - Tarife und Preise: `src/_data/lernbusTariffGuide.json`,
   `src/_includes/lernbus-tariff-guide.njk` und Preisangaben in den Seiten.
+  `scripts/check-lernbus.mjs` prüft die Beträge der Tariftabelle. Bei einer
+  gewollten Preisänderung die erwarteten Beträge (und die Zahl der Preiszellen)
+  dort im selben Commit nachführen.
 - Texte und Felder des Kontaktformulars: `src/_data/lernbusContact.js` und
   `src/_includes/lernbus-contact.njk`.
 
@@ -79,7 +82,8 @@ dies mit Jonas zu klären.
   `lesson-booking.js`, `contact.js`, `src/_data/lernbusBooking.js`.
 - Alles ausserhalb des Lernbus: Vereinsseite `src/index.html`, `src/de/`,
   `src/en/`, `src/essays/` und die übrigen Ordner in `src/`.
-- Technik: `.github/`, `eleventy.config.js`, `package.json`, `scripts/`.
+- Technik: `.github/`, `eleventy.config.js`, `package.json`, `scripts/`
+  (ausser der Tarifprüfung, siehe oben).
 - Schriften: `src/fonts/` und `src/lernbus/fonts/`. Lizenz von Lineto:
   Dateinamen nicht ändern, Schriften nicht kopieren oder weitergeben.
 
