@@ -2,95 +2,306 @@
 
 
 
+
+
+
 <!DOCTYPE html>
 <html lang="de">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#080e20" />
 <title>Lerngesellschaft / Learning Society · Basel</title>
-<meta name="description" content="Lernen in jedem Alter. Die Lerngesellschaft ist ein gemeinnütziger Verein in Basel. Mit Lernbus, unserer ersten Initiative für die Jüngsten, beginnen wir." />
-<meta property="og:title" content="Lerngesellschaft / Learning Society" />
-<meta property="og:description" content="Lernen in jedem Alter. Die Lerngesellschaft ist ein gemeinnütziger Verein in Basel. Mit Lernbus, unserer ersten Initiative für die Jüngsten, beginnen wir." />
+<meta name="description" content="Gemeinnütziger, im Kanton Basel-Stadt steuerbefreiter Verein: Wir stärken Neugier und Lernen von Kindern und Jugendlichen in Basel, beginnend mit dem Lernbus am Münsterplatz 17." />
+<meta property="og:title" content="Lerngesellschaft / Learning Society · Basel" />
+<meta property="og:description" content="Gemeinnütziger, im Kanton Basel-Stadt steuerbefreiter Verein: Wir stärken Neugier und Lernen von Kindern und Jugendlichen in Basel, beginnend mit dem Lernbus am Münsterplatz 17." />
 <meta property="og:locale" content="de_CH" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://lerngesellschaft.ch/" />
-<meta name="twitter:card" content="summary" />
-<meta name="twitter:title" content="Lerngesellschaft / Learning Society" />
-<meta name="twitter:description" content="Lernen in jedem Alter. Die Lerngesellschaft ist ein gemeinnütziger Verein in Basel. Mit Lernbus, unserer ersten Initiative für die Jüngsten, beginnen wir." />
+<meta property="og:image" content="https://lerngesellschaft.ch/assets/media/society-social-card.png?v=8cb2ba351501" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Lerngesellschaft / Learning Society, gemeinnütziger Verein in Basel. Eine Welt, die lernt." />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Lerngesellschaft / Learning Society · Basel" />
+<meta name="twitter:description" content="Gemeinnütziger, im Kanton Basel-Stadt steuerbefreiter Verein: Wir stärken Neugier und Lernen von Kindern und Jugendlichen in Basel, beginnend mit dem Lernbus am Münsterplatz 17." />
+<meta name="twitter:image" content="https://lerngesellschaft.ch/assets/media/society-social-card.png?v=8cb2ba351501" />
+<meta name="twitter:image:alt" content="Lerngesellschaft / Learning Society, gemeinnütziger Verein in Basel. Eine Welt, die lernt." />
 <link rel="icon" href="/assets/society-favicon.svg" type="image/svg+xml" />
 <link rel="preload" href="/fonts/BradfordLLWeb-Book.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="preload" href="/assets/fonts/hanken-latin.woff2" as="font" type="font/woff2" crossorigin />
-<link rel="stylesheet" href="/assets/society-immersive.css?v=20261028-mobile-polish-1" />
-<link rel="preload" href="/assets/society-ascii-renderer.js?v=20261028-butterfly-immediate-1" as="script" />
-<link rel="preload" href="/assets/society-ascii-world.js?v=20261028-butterfly-immediate-1" as="script" />
-
+<link rel="stylesheet" href="/assets/society-site.css?v=2192de42a4c7" />
+<link rel="preload" href="/assets/society-earth-data.js?v=180349dcc0b1" as="script" />
+<link rel="preload" href="/assets/society-dot-renderer.js?v=b7d8ec5f4a61" as="script" />
+<link rel="preload" href="/assets/society-dot-world.js?v=cf34d8880067" as="script" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NGO","name":"Lerngesellschaft / Learning Society","areaServed":"Basel","description":"Lernen in jedem Alter. Die Lerngesellschaft ist ein gemeinnütziger Verein in Basel. Mit Lernbus, unserer ersten Initiative für die Jüngsten, beginnen wir.","address":"Münsterplatz 17, 4051 Basel","email":"team@jonashertner.com"}
+{"@context":"https://schema.org","@type":"NGO","name":"Lerngesellschaft / Learning Society","url":"https://lerngesellschaft.ch/","areaServed":"Basel","description":"Gemeinnütziger, im Kanton Basel-Stadt steuerbefreiter Verein: Wir stärken Neugier und Lernen von Kindern und Jugendlichen in Basel, beginnend mit dem Lernbus am Münsterplatz 17.","email":"team@jonashertner.com","address":{"@type":"PostalAddress","streetAddress":"Münsterplatz 17","postalCode":"4051","addressLocality":"Basel","addressCountry":"CH"}}
 </script>
 <link rel="canonical" href="https://lerngesellschaft.ch/" />
 <link rel="alternate" hreflang="de" href="https://lerngesellschaft.ch/" />
 <link rel="alternate" hreflang="en" href="https://lerngesellschaft.ch/en/" />
 <link rel="alternate" hreflang="x-default" href="https://lerngesellschaft.ch/" />
+
+
 </head>
-<body class="society-immersive">
+<body class="society-home">
 <a href="#main" class="skip">Zum Inhalt springen</a>
-<header class="world-header">
- <a class="wordmark" href="/">Lerngesellschaft<span>Learning Society</span></a>
- <nav class="world-nav" aria-label="Hauptnavigation">
-  <a href="#idee">Die Idee</a><a href="#wege">Unser Anfang</a><a href="#verein">Mit uns weiter</a>
- </nav>
- <div class="languages"><a href="/" lang="de" aria-label="DE — Auf Deutsch" aria-current="page">DE</a><span aria-hidden="true">/</span><a href="/en/" lang="en" aria-label="EN — In English">EN</a></div>
+<header class="site-header site-header-home" id="top">
+  <div class="site-header-inner">
+    <a class="wordmark" href="/">Lerngesellschaft<span>Learning Society</span></a>
+    <nav class="site-nav" aria-label="Hauptnavigation">
+      <a href="/ansatz/">Ansatz</a><a href="#angebote">Angebote</a><a href="#verein">Verein</a><a href="#investieren">Unterstützen</a>
+    </nav>
+    <div class="header-controls">
+      <div class="languages" role="navigation" aria-label="Sprachwahl"><a href="/" lang="de" aria-label="DE: Auf Deutsch" aria-current="page">DE</a><span aria-hidden="true">/</span><a href="/en/" lang="en" aria-label="EN: In English">EN</a></div>
+      <details class="site-mobile-menu">
+        <summary>Menü</summary>
+        <nav class="mobile-nav-panel" aria-label="Hauptnavigation">
+          <a href="/ansatz/">Ansatz</a><a href="#angebote">Angebote</a><a href="#verein">Verein</a><a href="#investieren">Unterstützen</a>
+        </nav>
+      </details>
+    </div>
+  </div>
 </header>
+
 <main id="main">
- <section class="world-hero" id="top" aria-labelledby="purpose-title">
-  <div class="hero-editorial">
-   <p class="eyebrow">Lernen. Ein Leben lang.</p>
-   <h1 id="purpose-title">Eine Welt,<br>die lernt.</h1>
-   <p class="hero-subtitle">Für eine Gesellschaft, die neugierig bleibt.<br>In jedem Alter.</p>
-   <div class="hero-actions"><a class="round-link" href="#idee"><span>Unsere Idee entdecken</span></a><button id="motion-toggle" type="button" data-pause="Bewegung pausieren" data-play="Bewegung starten" aria-pressed="false" hidden><span class="motion-label">Bewegung pausieren</span></button></div>
-  </div>
-  <div class="sculpture-stage" aria-hidden="true"><canvas id="world-canvas"></canvas></div>
-  <div class="hero-bottom"><span class="hero-location">Gemeinnütziger Verein / Basel</span></div>
- </section>
- <section class="idea-section paper-section" id="idee" aria-labelledby="idea-title">
-  <div class="section-top"><span class="eyebrow">01 / Ein Leben lang</span><span class="section-rule" aria-hidden="true"></span></div>
-  <div class="idea-grid"><h2 id="idea-title">Neugier kennt<br>kein Alter.</h2><div class="idea-copy"><p>Wir lernen, solange wir leben. Wir entdecken die Welt, hinterfragen Vertrautes und wagen einen neuen Anfang. Manchmal allein. Oft miteinander.</p><p class="small-statement">Die Lerngesellschaft setzt sich für Lernen in jedem Alter ein. Wir möchten Raum schaffen für Neugier, Begegnung und neue Möglichkeiten.</p></div></div>
-  <ul class="lifelong-line" aria-label="Lernen. Ein Leben lang."><li>Entdecken.</li><li>Weiterdenken.</li><li>Neu beginnen.</li></ul>
- </section>
- <section class="programmes-section paper-section" id="wege" aria-labelledby="programmes-title">
-  <span id="worum" class="legacy-anchor"></span><span id="ziele" class="legacy-anchor"></span>
-  <div class="section-top"><span class="eyebrow">02 / Unser Anfang</span><span class="section-rule" aria-hidden="true"></span></div>
-  <div class="programmes-heading"><h2 id="programmes-title">Mit den Jüngsten<br>fangen wir an.</h2><p>Unser erster Schritt heisst Lernbus. Von hier aus denken wir Lernen weiter: für alle Lebensphasen.</p></div>
-  <div class="initiative" id="lernbus">
-   <span class="eyebrow">Unsere erste Initiative</span>
-   <a class="initiative-link" href="/lernbus/"><span class="initiative-name">Lernbus</span><span class="initiative-note">Lernbegleitung für Kinder in Basel</span><span class="initiative-action">Zum Lernbus</span></a>
-  </div>
-  <span class="legacy-anchor" id="forscherbuehne"></span><span class="legacy-anchor" id="gehirn-und-gesellschaft"></span>
- </section>
+  <section class="world-hero" aria-labelledby="purpose-title">
+    <div class="hero-frame">
+      <div class="hero-editorial">
+        <p class="eyebrow">Gemeinnütziger Verein · Basel</p>
+        <h1 id="purpose-title">Eine Welt,<br>die lernt.</h1>
+        <p class="hero-subtitle">Wir stärken die Neugier und das Lernen von Kindern und Jugendlichen in Basel. Damit aus echtem Verstehen ein Leben lang Freude am Fragen wächst.</p>
+        <div class="hero-actions">
+          <a class="hero-cta-primary" href="#angebote"><span>Angebote entdecken</span><span aria-hidden="true">→</span></a>
+          <a class="hero-cta-secondary" href="/ansatz/"><span>Unser Ansatz</span></a>
+        </div>
+      </div>
+    </div>
+    <div class="sculpture-stage" aria-hidden="true" data-observation="{&quot;count&quot;:&quot;Beobachtungen&quot;,&quot;beat&quot;:&quot;Flügelschlag&quot;,&quot;forewing&quot;:&quot;Vorderflügel&quot;,&quot;hindwing&quot;:&quot;Hinterflügel&quot;,&quot;focus&quot;:&quot;Neugier&quot;,&quot;place&quot;:&quot;Basel&quot;}"><canvas id="world-canvas"></canvas></div>
+    <div class="hero-bottom">
+      <div class="hero-bottom-inner">
+        <span class="hero-location">Münsterplatz 17, Basel · Steuerbefreit im Kanton Basel-Stadt</span>
+        <button class="motion-btn" id="motion-toggle" type="button" data-pause="Bewegung pausieren" data-play="Bewegung starten" aria-pressed="false" hidden><span class="motion-label">Bewegung pausieren</span></button>
+      </div>
+    </div>
+  </section>
+
+  <section class="paper-section stone-surface" id="idee" aria-labelledby="idea-title">
+    <div class="wrap-inner">
+      <div class="section-top"><span class="eyebrow">01 / Die Idee</span><span class="section-rule" aria-hidden="true"></span></div>
+      <div class="chapter-grid" data-reveal>
+        <h2 id="idea-title">Neugier braucht<br>ein Gegenüber.</h2>
+        <div class="chapter-copy">
+          <p class="chapter-lead">Kinder kommen mit Fragen zur Welt. Sie lernen nachhaltig, wenn sie spüren, dass sie vorankommen, und wenn ein Mensch an ihrer Seite bleibt, der sie kennt und ihnen etwas zutraut.</p>
+          <p class="chapter-body">In einer Zeit schneller Antworten und künstlicher Intelligenz wird eigenes Verstehen wichtiger denn je. Werkzeuge können unterstützen. Beziehung, Urteilskraft und pädagogische Verantwortung bleiben menschlich.</p>
+          <a class="inline-action" href="/ansatz/"><span>Unseren Ansatz lesen</span><span class="arrow" aria-hidden="true">→</span></a>
+        </div>
+      </div>
+      <ul class="principles-strip" aria-label="Grundsätze der Lerngesellschaft" data-reveal>
+        
+        <li>
+          <h3 class="pillar-title">Beziehung, die trägt</h3>
+          <p class="pillar-text">Verlässliche Begleitung durch denselben Menschen über Monate und Semester.</p>
+        </li>
+        
+        <li>
+          <h3 class="pillar-title">Fortschritt, der Mut macht</h3>
+          <p class="pillar-text">Aufgaben am richtigen Punkt, an dem eigene Anstrengung sichtbar wirkt.</p>
+        </li>
+        
+        <li>
+          <h3 class="pillar-title">Offen für alle</h3>
+          <p class="pillar-text">Sozial abgestufte Beiträge und Förderplätze unabhängig von Herkunft und Einkommen.</p>
+        </li>
+        
+      </ul>
+    </div>
+  </section>
+
+  <section class="paper-section paper-surface" id="angebote" aria-labelledby="offers-title">
+    <span id="wege" class="legacy-anchor" aria-hidden="true"></span>
+    <span id="worum" class="legacy-anchor" aria-hidden="true"></span>
+    <span id="ziele" class="legacy-anchor" aria-hidden="true"></span>
+    <div class="wrap-inner">
+      <div class="section-top"><span class="eyebrow">02 / Angebote &amp; Vorhaben</span><span class="section-rule" aria-hidden="true"></span></div>
+      <div class="chapter-grid" data-reveal>
+        <h2 id="offers-title">Konkret in Basel.<br>Schritt für Schritt.</h2>
+        <div class="chapter-copy">
+          <p class="chapter-lead">Unser erstes Angebot, der Lernbus, begleitet Kinder am Münsterplatz. Zwei weitere Vorhaben für Schulen und Öffentlichkeit befinden sich in Vorbereitung.</p>
+        </div>
+      </div>
+      <div class="programmes-list">
+        <article class="programme-row programme-featured" id="lernbus" data-reveal>
+          <a class="programme-link" href="/lernbus/">
+            <div>
+              <div class="programme-meta"><span class="programme-num">01</span><span class="status-badge status-badge-active">Aktiv</span></div>
+              <span class="programme-name">Lernbus</span>
+              <span class="programme-audience">Für Kinder ab drei Jahren bis zum Ende der dritten Primarklasse</span>
+            </div>
+            <div class="programme-desc">
+              <p>Langfristige, verlässliche Lernbegleitung und frühe Deutschförderung am Münsterplatz 17. Wöchentlich einzeln oder in einer Kleingruppe, in enger Verbindung von Familie, Kindergarten und Schule.</p>
+              <span class="programme-facts">Münsterplatz 17, Basel · wöchentlich · sozial abgestufte Beiträge</span>
+            </div>
+            <span class="programme-action"><span>Zum Lernbus</span><span aria-hidden="true">→</span></span>
+          </a>
+        </article>
+        
+        <article class="programme-row programme-planned" id="forscherbuehne" data-reveal>
+          <a class="programme-link" href="/forscherbuehne/">
+            <div>
+              <div class="programme-meta"><span class="programme-num">02</span><span class="status-badge">In Vorbereitung</span></div>
+              <span class="programme-name">Forscherbühne</span>
+              <span class="programme-audience">Für Kinder und Jugendliche in Basel</span>
+            </div>
+            <div class="programme-desc">
+              <p>Forschende zeigen reale Experimente live vor Publikum und machen naturwissenschaftliche Fragen anschaulich. Geplant als kostenloses, offenes Angebot.</p>
+            </div>
+            <span class="programme-action"><span>Idee lesen</span><span aria-hidden="true">→</span></span>
+          </a>
+        </article>
+        
+        <article class="programme-row programme-planned" id="gehirn-und-gesellschaft" data-reveal>
+          <a class="programme-link" href="/gehirn-und-gesellschaft/">
+            <div>
+              <div class="programme-meta"><span class="programme-num">03</span><span class="status-badge">In Vorbereitung</span></div>
+              <span class="programme-name">Gehirn und Gesellschaft</span>
+              <span class="programme-audience">Für Primarschulklassen</span>
+            </div>
+            <div class="programme-desc">
+              <p>Altersgerechte, interaktive Lektionen darüber, wie Lernen im Gehirn funktioniert, wie gutes Miteinander gelingt und wo künstliche Intelligenz hilft oder an Grenzen stösst.</p>
+            </div>
+            <span class="programme-action"><span>Mehr zum Vorhaben</span><span aria-hidden="true">→</span></span>
+          </a>
+        </article>
+        
+      </div>
+      <div class="open-work" data-reveal>
+        <p class="eyebrow">Texte &amp; offene Werkzeuge</p>
+        <div class="open-work-grid">
+          
+          <a class="open-work-card" href="/essays/relational-learning/de/">
+            <div>
+              <span class="open-work-meta">Essay · 2026</span>
+              <span class="open-work-title">Lernen in Beziehung</span>
+              <p class="open-work-text">Jonas Hertners Manifest über relationales Lernen aus der Zürcher Lernbegleitung, erhalten als eigenständige Lektüre mit Randnotizen.</p>
+            </div>
+            <span class="open-work-action"><span>Essay lesen</span><span aria-hidden="true">→</span></span>
+          </a>
+          
+          <a class="open-work-card" href="/atlas/">
+            <div>
+              <span class="open-work-meta">Offenes Werkzeug</span>
+              <span class="open-work-title">Atlas: Lehrplan 21</span>
+              <p class="open-work-text">Der Schweizer Lehrplan 21 als offene, interaktive Wissenskarte der Volksschule mit 1’526 Kompetenzstufen.</p>
+            </div>
+            <span class="open-work-action"><span>Karte öffnen</span><span aria-hidden="true">→</span></span>
+          </a>
+          
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="paper-section stone-surface" id="verein" aria-labelledby="people-title">
+    <div class="wrap-inner">
+      <div class="section-top"><span class="eyebrow">03 / Menschen &amp; Verein</span><span class="section-rule" aria-hidden="true"></span></div>
+      <div class="chapter-grid" data-reveal>
+        <h2 id="people-title">Getragen von Menschen<br>in Basel.</h2>
+        <div class="chapter-copy">
+          <p class="chapter-lead">Die Lerngesellschaft ist ein gemeinnütziger, politisch unabhängiger und konfessionell neutraler Verein nach Art.&nbsp;60&nbsp;ff.&nbsp;ZGB mit Sitz in Basel.</p>
+          <p class="chapter-body">Menschen aus Pädagogik, Naturwissenschaften und Recht tragen die Arbeit gemeinsam. Der Vorstand wirkt ehrenamtlich. Im Kanton Basel-Stadt ist der Verein wegen Gemeinnützigkeit steuerbefreit.</p>
+        </div>
+      </div>
+      <div class="association-grid" data-reveal>
+        <div>
+          <dl class="facts-list">
+            
+            <div><dt>Rechtsform</dt><dd>Gemeinnütziger Verein (Art.&nbsp;60&nbsp;ff.&nbsp;ZGB)</dd></div>
+            
+            <div><dt>Steuerstatus</dt><dd>Steuerbefreit im Kanton Basel-Stadt</dd></div>
+            
+            <div><dt>Sitz</dt><dd>Münsterplatz 17, 4051 Basel</dd></div>
+            
+          </dl>
+        </div>
+        <div class="people-column">
+          
+          <article class="person-item">
+            <p class="person-role">Leiterin Lernbus</p>
+            <h3 class="person-name">Conny Brandes</h3>
+            <p class="person-text">Arbeitet seit 30 Jahren mit Kindern und bringt Erfahrung aus der Kita-Leitung sowie der frühen Deutschförderung mit.</p>
+            <a class="person-link" href="/lernbus/team/"><span>Team Lernbus</span><span aria-hidden="true">→</span></a>
+          </article>
+          
+          <article class="person-item">
+            <p class="person-role">Vertretung &amp; Kontakt Verein</p>
+            <h3 class="person-name">Jonas Hertner</h3>
+            <p class="person-text">Ansprechperson für Förderungen, Stiftungen, Schulen, Mitgliedschaft und allgemeine Fragen zum Verein.</p>
+            <a class="person-link" href="mailto:team@jonashertner.com"><span>team@jonashertner.com</span><span aria-hidden="true">→</span></a>
+          </article>
+          
+        </div>
+      </div>
+    </div>
+  </section>
 </main>
 <footer class="world-footer">
- <div class="footer-world-stage" aria-hidden="true"><canvas id="footer-world-canvas"></canvas></div>
- <section class="footer-invitation" id="verein" aria-labelledby="curiosity-question">
-  <span class="legacy-anchor" id="investieren"></span>
-  <div class="section-top"><p class="eyebrow">03 / Gemeinsam weiter</p><span class="section-rule" aria-hidden="true"></span></div>
-  <h2 id="curiosity-question" aria-live="polite" aria-atomic="true">Was möchtest du<br>morgen verstehen?</h2>
-  <button class="question-button" id="next-question" type="button" hidden><span>Weiterfragen</span></button>
-  <script type="application/json" id="curiosity-questions">["Was möchtest du<br>morgen verstehen?","Welche Frage lässt<br>dich nicht mehr los?","Was können wir<br>voneinander lernen?"]</script>
-  <div class="footer-conversation"><p>Wir sind ein gemeinnütziger Verein in Basel. Uns verbindet die Idee einer Gesellschaft, die ein Leben lang lernt. Möchtest du mitdenken, etwas beitragen oder uns kennenlernen?</p><a class="contact-link" href="mailto:team@jonashertner.com"><span class="contact-title">Kommen wir ins Gespräch.</span><span class="contact-address">team@jonashertner.com</span></a></div>
- </section>
- <div class="footer-directory">
-  <div class="footer-principle"><p>Neugierig bleiben. Ein Leben lang.</p><span>Gemeinnütziger Verein</span></div>
-  <nav aria-label="Navigation im Seitenfuss"><h3 class="eyebrow">Entdecken</h3><a href="#idee">Die Idee</a><a href="/lernbus/">Zum Lernbus</a><div class="footer-languages"><a href="/" lang="de" aria-current="page">Deutsch</a><a href="/en/" lang="en">English</a></div></nav>
-  <div class="footer-address"><h3 class="eyebrow">In Basel zu Hause</h3><address>Münsterplatz 17<br>4051 Basel<br>Schweiz</address></div>
- </div>
- <a class="footer-signature" href="/"><span>Lerngesellschaft</span><span>Learning Society</span></a>
- <div class="footer-bottom"><span>© 2026 Lerngesellschaft</span><a href="/impressum/">Impressum &amp; Datenschutz</a><button id="footer-motion-toggle" type="button" data-pause="Bewegung pausieren" data-play="Bewegung starten" aria-pressed="false" hidden><span class="motion-label">Bewegung pausieren</span></button><a href="#top" class="back-top">Zurück nach oben</a></div>
+  <div class="footer-world-stage" aria-hidden="true"><canvas id="footer-world-canvas"></canvas></div>
+  <div class="world-footer-inner">
+    
+    <section class="footer-invitation" id="investieren" aria-labelledby="support-title">
+      <div class="section-top"><p class="eyebrow">04 / Unterstützen &amp; Mitwirken</p><span class="section-rule" aria-hidden="true"></span></div>
+      <h2 id="support-title" data-reveal>Neugier darf keine<br>Geldfrage sein.</h2>
+      <div class="footer-conversation" data-reveal>
+        <div class="footer-support-copy">
+          <p>Ihr Beitrag ermöglicht ermässigte Plätze und Freiplätze im Lernbus sowie den Aufbau kostenfreier Bildungsangebote für Kinder und Jugendliche in Basel. Zuwendungen an die Lerngesellschaft sind als Beiträge an einen im Kanton Basel-Stadt steuerbefreiten gemeinnützigen Verein im Rahmen der gesetzlichen Bestimmungen abziehbar.</p>
+          <p>Ob Stiftung, Privatperson, Schule oder künftiges Vereinsmitglied: Wir freuen uns auf das direkte Gespräch.</p>
+        </div>
+        <div class="contact-block">
+          <a class="contact-link" href="mailto:team@jonashertner.com" aria-label="Kommen wir ins Gespräch. E-Mail an Jonas Hertner, Lerngesellschaft"><span class="contact-title">Kommen wir ins Gespräch.</span><span class="contact-address">Jonas Hertner · team@jonashertner.com</span></a>
+        </div>
+      </div>
+    </section>
+    
+    <div class="footer-directory">
+      <div class="footer-principle">
+        <p>Neugier stärken.<br>Verstehen ermöglichen.</p>
+        <span>Gemeinnütziger Verein · Steuerbefreit im Kanton Basel-Stadt</span>
+      </div>
+      <nav aria-label="Entdecken">
+        <h3 class="eyebrow">Entdecken</h3>
+        <a href="/ansatz/">Unser Ansatz</a><a href="/lernbus/">Lernbus</a><a href="/essays/relational-learning/de/">Essay: Lernen in Beziehung</a><a href="/atlas/">Atlas: Lehrplan 21</a>
+      </nav>
+      <nav aria-label="Verein &amp; Recht">
+        <h3 class="eyebrow">Verein &amp; Recht</h3>
+        <a href="/impressum/">Impressum &amp; Datenschutz</a><a href="/agb/">Allgemeine Geschäftsbedingungen</a>
+        <div class="footer-languages"><a href="/" lang="de" aria-current="page">Deutsch</a><a href="/en/" lang="en">English</a></div>
+      </nav>
+      <div class="footer-address">
+        <h3 class="eyebrow">In Basel zu Hause</h3>
+        <address>Münsterplatz 17<br>4051 Basel<br>Schweiz</address>
+        <a href="mailto:team@jonashertner.com">team@jonashertner.com</a>
+      </div>
+    </div>
+    <a class="footer-signature" href="/"><span>Lerngesellschaft</span><span>Learning Society</span></a>
+    <div class="footer-bottom">
+      <span>© 2026 Lerngesellschaft</span>
+      <div class="footer-bottom-links">
+        <a href="/impressum/">Impressum &amp; Datenschutz</a>
+        <a href="/agb/">AGB</a>
+        <button class="motion-btn" id="footer-motion-toggle" type="button" data-pause="Bewegung pausieren" data-play="Bewegung starten" aria-pressed="false" hidden><span class="motion-label">Bewegung pausieren</span></button>
+        <a href="#top" class="back-top">Nach oben</a>
+      </div>
+    </div>
+  </div>
 </footer>
-<noscript><style>.sculpture-stage,.footer-world-stage{display:none}.world-hero{min-height:640px;height:auto}.hero-editorial{width:100%;padding-top:160px;padding-bottom:150px}@media(max-width:700px){.world-hero{min-height:0}.hero-editorial{padding-top:0;padding-bottom:60px}}</style></noscript>
-<script src="/assets/society-earth-data.js?v=20261030-earth-1" defer></script>
-<script src="/assets/society-ascii-renderer.js?v=20261030-butterfly-earth-1" defer></script>
-<script src="/assets/society-ascii-world.js?v=20261030-butterfly-earth-1" defer></script>
-<script src="/assets/society-discovery.js?v=20261022-lifelong-1" defer></script>
+<script src="/assets/society-discovery.js?v=c1b154554736" defer></script>
+
+<noscript><style>.sculpture-stage,.footer-world-stage{display:none}.world-hero{min-height:0}.hero-editorial{width:100%;padding:44px 0 88px}.reveal-pending{opacity:1;transform:none}</style></noscript>
+<script src="/assets/society-earth-data.js?v=180349dcc0b1" defer></script>
+<script src="/assets/society-dot-renderer.js?v=b7d8ec5f4a61" defer></script>
+<script src="/assets/society-dot-world.js?v=cf34d8880067" defer></script>
 
 </body>
 </html>

@@ -1,7 +1,7 @@
-/* Roots and wings share one clock and an optional, accessible motion preference. */
+/* The observed butterfly and its quiet companion share one clock and an optional, accessible motion preference. */
 (() => {
   'use strict';
-  if (typeof window.createRootsAndWingsRenderer !== 'function') return;
+  if (typeof window.createDotButterflyRenderer !== 'function') return;
   const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
   const surfaces = [], controls = [];
   let time = 0, userPaused = null, frame = 0, lastDraw = 0, pageActive = true;
@@ -135,16 +135,21 @@
     const stage = canvas && canvas.closest('.sculpture-stage, .footer-world-stage');
     if (!stage || !control) return;
     const pointer = { x: 0, y: 0, tx: 0, ty: 0, strength: 0, active: false };
+    // The hero carries a few words for its observation layer; the footer has none.
+    let words = null;
+    try { words = stage.dataset.observation ? JSON.parse(stage.dataset.observation) : null; }
+    catch (_) { words = null; }
+    const options = { words, language: document.documentElement.lang || undefined };
     let renderer;
-    try { renderer = window.createRootsAndWingsRenderer(canvas); }
+    try { renderer = window.createDotButterflyRenderer(canvas, options); }
     catch (_) { return; }
     if (!renderer || typeof renderer.draw !== 'function') return;
     const surface = { canvas, stage, renderer, pointer, available: true, seen: false, dirty: true,
       hero: interactive, arrivalTime: interactive && !reduced.matches ? 0 : null,
       width: 1, height: 1, pixelRatio: 1, mobile: false, burst: null, press: null,
-      args: { pointer } };
+      options, args: { pointer } };
     surfaces.push(surface); controls.push(control);
-    stage.dataset.renderer = 'ascii';
+    stage.dataset.renderer = 'dots';
     control.addEventListener('click', () => { userPaused = !paused(); sync(); });
     canvas.addEventListener('contextlost', event => {
       event.preventDefault(); surface.available = false;
@@ -153,7 +158,7 @@
     canvas.addEventListener('contextrestored', () => {
       try {
         surface.renderer.dispose();
-        surface.renderer = window.createRootsAndWingsRenderer(canvas);
+        surface.renderer = window.createDotButterflyRenderer(canvas, surface.options);
         surface.available = Boolean(surface.renderer);
         surface.dirty = true;
         resize(surface); checkVisibility();
@@ -199,5 +204,9 @@
     surfaces.forEach(surface => observer.observe(surface.stage));
   }
   window.addEventListener('resize', () => { surfaces.forEach(resize); checkVisibility(); }, { passive: true });
+  // A still frame, paused or reduced, is redrawn once its label type has loaded.
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(() => { surfaces.forEach(surface => { surface.dirty = true; }); sync(); }).catch(() => {});
+  }
   checkVisibility();
 })();

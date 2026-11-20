@@ -1,10 +1,12 @@
 # Lerngesellschaft / Learning Society
 
-> A non-profit association in Basel committed to learning at every age and throughout life. Its first initiative is Lernbus, for the youngest learners. The association's wider purpose is lifelong learning; no additional adult programme is currently presented as available. The current German and English websites share one canonical domain, lerngesellschaft.ch. learningsociety.ch redirects to the English homepage.
+> A tax-exempt non-profit association (Verein, Art. 60 ff. Swiss Civil Code) in Basel strengthening the curiosity and learning of children and young people, so that genuine understanding grows into a lifelong habit of asking. Its active flagship programme is Lernbus at Münsterplatz 17, Basel. Two further initiatives (Forscherbühne and Brain and Society / Gehirn und Gesellschaft) are in development. German and English sites share one canonical domain, lerngesellschaft.ch; learningsociety.ch redirects to https://lerngesellschaft.ch/en/.
 
 ## Current association
 
-Contact: team@jonashertner.com
+Legal form: Non-profit Swiss association (gemeinnütziger Verein), politically independent and denominationally neutral, tax-exempt in the canton of Basel-Stadt.
+Representative & contact: Jonas Hertner (team@jonashertner.com)
+Head of Lernbus: Conny Brandes (info@lernbus.ch)
 Address: Münsterplatz 17, 4051 Basel, Switzerland.
 
 - [German homepage](https://lerngesellschaft.ch/)
@@ -19,11 +21,13 @@ Address: Münsterplatz 17, 4051 Basel, Switzerland.
 - [Lernbus terms, English](https://lerngesellschaft.ch/lernbus/en/terms/)
 - [Lernbus team, German](https://lerngesellschaft.ch/lernbus/team/)
 - [Lernbus team, English](https://lerngesellschaft.ch/lernbus/team/en/)
+- [Atlas: Lehrplan 21, German interactive map](https://lerngesellschaft.ch/atlas/)
 - [Legal information, German](https://lerngesellschaft.ch/impressum/)
 - [Legal information, English](https://lerngesellschaft.ch/imprint/)
 - [Terms and conditions, German](https://lerngesellschaft.ch/agb/)
 
-The current programme details and status are described on these pages. Forscherbühne and Gehirn und Gesellschaft are in preparation.
+Active programme: Lernbus (individual and small-group learning support and early German language development for children from age three to the end of primary year three).
+In development (marked noindex): Forscherbühne and Gehirn und Gesellschaft / Brain and Society.
 
 ## Preserved essay: relational learning
 
