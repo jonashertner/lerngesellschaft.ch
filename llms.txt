@@ -1,10 +1,10 @@
 # Lerngesellschaft / Learning Society
 
-> A tax-exempt non-profit association (Verein, Art. 60 ff. Swiss Civil Code) in Basel strengthening the curiosity and learning of children and young people, so that genuine understanding grows into a lifelong habit of asking. Its active flagship programme is Lernbus at Münsterplatz 17, Basel. Two further initiatives (Forscherbühne and Brain and Society / Gehirn und Gesellschaft) are in development. German and English sites share one canonical domain, lerngesellschaft.ch; learningsociety.ch redirects to https://lerngesellschaft.ch/en/.
+> A non-profit association (Verein, Art. 60 ff. Swiss Civil Code) in Basel strengthening the curiosity and learning of children and young people, so that genuine understanding grows into a lifelong habit of asking. Its active flagship programme is Lernbus at Münsterplatz 17, Basel. Two further initiatives (Forscherbühne and Brain and Society / Gehirn und Gesellschaft) are in development. German and English sites share one canonical domain, lerngesellschaft.ch; learningsociety.ch redirects to https://lerngesellschaft.ch/en/.
 
 ## Current association
 
-Legal form: Non-profit Swiss association (gemeinnütziger Verein), politically independent and denominationally neutral, tax-exempt in the canton of Basel-Stadt.
+Legal form: Non-profit Swiss association (gemeinnütziger Verein), politically independent and denominationally neutral.
 Representative & contact: Jonas Hertner (team@jonashertner.com)
 Head of Lernbus: Conny Brandes (info@lernbus.ch)
 Address: Münsterplatz 17, 4051 Basel, Switzerland.
